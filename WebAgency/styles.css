@@ -169,7 +169,7 @@ nav a:hover, nav a:focus, a.active {
   opacity: 1;
 }
 
-#carousel-circle-left {
+.carousel-circle-left {
   background-color: rgba(0, 0, 0, 0.3);
   display: inline-block;
   top: 42.5%;
@@ -181,7 +181,7 @@ nav a:hover, nav a:focus, a.active {
   position: absolute;
 }
 
-#carousel-circle-right {
+.carousel-circle-right {
   background-color: rgba(0, 0, 0, 0.3);
   display: inline-block;
   top: 42.5%;

@@ -25,17 +25,31 @@
 <body>
 
   <!-- HEADER -->
-  <header>
-    <div id="header-menu" class="">
-      <div id="header-logo">
-        <img src="images/logo.png" title="Logo of WebAgency" alt="Logo de WebAgency">
-  </div>
+  <header class="header">
+    <!--    <div id="header-menu" class="">-->
+    <!--  <div  id="header-logo">-->
+    <img src="images/logo.png" class="logo" title="Logo of WebAgency" alt="Logo de WebAgency">
+    <!--</div>-->
+    <!--<div id="header-list">-->
 
-      </div>
+
+
+    <nav>
+      <input class="menu-btn" type="checkbox" id="menu-btn" />
+      <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+      <ul class="menu">
+        <li><a href="#home">Accueil</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#projets">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <!--    </div>-->
+    <!--  </div>-->
   </header>
 
   <!-- Section Welcome Carousel -->
-  <section class="carousel">
+  <section id="home" class="carousel">
     <div class="carousel-wrapper">
       <span id="item-1"></span>
       <span id="item-2"></span>
@@ -68,6 +82,11 @@
   </section>
 
   <!-- Section Services -->
+  <section id="services">
+
+  </section>
+
+  <!-- Section Projets -->
   <section>
 
   </section>

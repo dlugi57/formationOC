@@ -6,8 +6,6 @@ body {
   font-size: 1em;
 }
 
-
-
 h1 {
   color: #fff;
   text-transform: uppercase;
@@ -27,6 +25,8 @@ li {
   color: #5cadd3;
 }
 
+
+
 /* HEADER */
 /*https://codepen.io/mutedblues/pen/MmPNPG*/
 /* header */
@@ -37,6 +37,7 @@ li {
   width: 100%;
   height: 100px;
   z-index: 3;
+  border-bottom: 1px solid #3491B2;
 }
 
 .header ul {
@@ -427,10 +428,13 @@ li {
   text-align: left;
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
+  opacity: 0;
+  transition: visibility 0.4s linear, opacity 0.4s linear;
 }
 
 .gallery .img-block:hover div {
   visibility: visible;
+  opacity: 1;
 }
 
 .navbar-portfolio {
@@ -447,16 +451,15 @@ li {
   display: inline-block;
   width: 89px;
   text-align: center;
-  padding: 10px 0;
+  padding: 10px 0 10px 15px;
   font-size: 0.8em;
   font-weight: 600;
   background-color: #e5e5e5;
   cursor: pointer;
   margin-bottom: 35px;
   border-bottom: 3px solid transparent;
-  text-decoration :none;
+  text-decoration: none;
 }
-
 
 .radio-all-works {
   border-radius: 5px 0 0 5px;
@@ -466,17 +469,17 @@ li {
   border-radius: 0 5px 5px 0;
 }
 
-#radio-all-works:checked ~ .radio-all-works,
-#radio-creative:checked ~ .radio-creative,
-#radio-corporate:checked ~ .radio-corporate,
-#radio-portfolio:checked ~ .radio-portfolio {
-    background-color: #5cadd3;
-    color: white;
-    border-bottom: 3px solid rgb(52, 145, 178);
+#radio-all-works:checked~.radio-all-works,
+#radio-creative:checked~.radio-creative,
+#radio-corporate:checked~.radio-corporate,
+#radio-portfolio:checked~.radio-portfolio {
+  background-color: #5cadd3;
+  color: white;
+  border-bottom: 3px solid rgb(52, 145, 178);
 }
 
 /* ----------------------------------------------------------------------------------------------------------------------*/
-.radio-all-works{
+/*.radio-all-works{
   left:27px
 }
 .radio-creative{
@@ -500,35 +503,32 @@ left: 40px;
 }
 #radio-portfolio + .fa-caret-down{
 left: 23px;
-}
+}*/
 /*------------------------------------------------------------------------------------------------*/
 .navbar-portfolio label:hover {
   background-color: #cbc9c9;
   border-bottom: 3px solid rgb(52, 145, 178);
-
 }
 
 .fa-caret-down {
   visibility: hidden;
   top: 25px;
-/*  left: 50px;*/
+  right: 35px;
   position: relative;
-
   color: rgb(52, 145, 178);
-  font-size: 1.2em;
+  font-size: 1.5em;
 }
 
-.navbar-portfolio label:hover + .fa-caret-down {
+.navbar-portfolio label:hover .fa-caret-down {
   visibility: visible;
 }
 
-#radio-all-works:checked + .fa-caret-down,
-#radio-creative:checked + .fa-caret-down,
-#radio-corporate:checked + .fa-caret-down,
-#radio-portfolio:checked + .fa-caret-down{
+#radio-all-works:checked+label>.fa-caret-down,
+#radio-creative:checked+label>.fa-caret-down,
+#radio-corporate:checked+label>.fa-caret-down,
+#radio-portfolio:checked+label>.fa-caret-down {
   visibility: visible;
 }
-
 
 .gallery h3 {
   margin-top: 65px;
@@ -553,6 +553,93 @@ left: 23px;
   border: 2px solid white;
   border-radius: 50%;
   background-color: #5cadd3;
+}
+
+/*                     CONTACT                             */
+.contact {
+  position: relative;
+  border-bottom: 1px solid #3491B2;
+}
+
+
+#blueCover {
+  width: 100%;
+  height: 600px;
+  background: rgba(92, 173, 211, 0.25);
+  z-index: 2;
+
+}
+
+
+#blueCover:hover iframe {
+    z-index: 4;
+}
+
+iframe {
+  position: absolute;
+  z-index: -1;
+  border: 0;
+  width: 100%;
+  height: 600px;
+}
+
+.contact-form {
+  position: absolute;
+  z-index: 5;
+  right: 10%;
+  top: 7%;
+  width: 300px;
+  background-color: rgba(255, 255, 255, 0.70);
+  padding: 20px;
+}
+
+.contact-form h2 {
+  margin-bottom: 10px;
+  margin-top: 0px;
+}
+
+.contact-form p {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.contact-input, .contact-textarea {
+  width: 100%;
+  padding: 8px 15px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+#contact-phone {
+    border-bottom: 1px dotted #000;
+}
+
+
+#contact-send {
+    padding: 0;
+    background-color: #5cadd3;
+    border: none;
+
+    color: #fff;
+
+    width: 143px;
+    height: 34px;
+    border-radius: 3px;
+    font-weight: bold;
+    border-bottom: 3px solid #4494BB;
+}
+
+footer{
+    margin: 20px;
+    color: #3491B2;
+    text-align: center;
+}
+
+footer p{
+    font-weight: bold;
 }
 
 /* Header*/

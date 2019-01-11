@@ -19,6 +19,8 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="tablet.css">
+  <link rel="stylesheet" href="mobile.css">
   <link rel="shortcut icon" type="image/x-icon" href="images/ico/favicon.ico">
 </head>
 
@@ -47,30 +49,25 @@
     <div class="wrapper">
       <span id="item-1"></span>
       <span id="item-2"></span>
-
+      <div class="text">
+        <h1> <span>WebAgency</span>  : L'agence de tous vos projets!</h1>
+        <p>Vous avez une projet web ? La WebAgency vous aide à le réaliser. </p>
+        <a class="button" href="#services">Plus d'infos</a>
+      </div>
       <div class="item image-one">
-        <div class="text">
-          <h1> <span>WebAgency</span>  : L'agence de tous vos projets!</h1>
-          <p>Vous avez une projet web ? La WebAgency vous aide à le réaliser. </p>
-          <a class="button" href="#">Plus d'infos</a>
-        </div>
 
-        <span class="circle-left"></span>
-        <a class="arrow arrow-prev" href="#item-2"></a>
-        <span class="circle-right"></span>
-        <a class="arrow arrow-next" href="#item-2"></a>
+        <a href="#item-2"><span class="circle-right"><span class="arrow arrow-next"></span> </span></a>
       </div>
 
       <div class="item image-two">
-        <div class="text">
+        <!--    <div class="text">
           <h1>Item 2</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus accumsan pretium dolor vel convallis. Aliquam erat volutpat.</p>
           <a class="button" href="#">Plus d'infos</a>
-        </div>
-        <span class="circle-left"></span>
-        <a class="arrow arrow-prev" href="#item-1"></a>
-        <span class="circle-right"></span>
-        <a class="arrow arrow-next" href="#item-1"></a>
+        </div>-->
+
+        <a href="#item-1"><span class="circle-left"><span class="arrow arrow-prev"></span> </span></a>
+
       </div>
     </div>
   </section>
@@ -177,7 +174,7 @@
   </section>
 
   <!-- Section Map -->
-  <section class="contact">
+  <section id="contact" class="contact">
     <div id="blueCover">
 
 

@@ -1,0 +1,60 @@
+@media all and (max-width: 480px)
+{
+
+  h2 {
+    font-size: 1.3em;
+    margin-top: 10px;
+  }
+  p{
+    font-size: 0.8em;
+  }
+
+  /* CAROUSEL */
+  #home {
+    height: 450px;
+  }
+
+  .carousel .image-one, .carousel .image-two {
+    margin-top: 50px;
+    height: 350px;
+  }
+
+  .carousel .text {
+    top: 100px;
+  }
+
+  .carousel .text h1 {
+    font-size: 1.5em;
+  }
+
+  .carousel .button {
+    font-size: 0.8em;
+  }
+
+/* PROJETS */
+.navbar-portfolio {
+  margin-top: 17px;
+}
+
+.navbar-portfolio label {
+
+    width: auto;
+
+}
+
+  /* CONTACT */
+  .contact-form {
+
+    width: 250px;
+}
+.contact-input, .contact-textarea {
+
+    margin: 3px 0;
+
+}
+#blueCover, iframe {
+
+    height: 500px;
+
+}
+}

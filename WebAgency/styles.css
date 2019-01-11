@@ -4,12 +4,18 @@ body {
   font-family: 'FontAwesome', 'Roboto-Regular', sans-serif;
   color: #65696e;
   font-size: 1em;
+
+
+
+   min-width:350px;        /* Suppose you want minimum width of 1000px */
+
 }
 
 h1 {
   color: #fff;
   text-transform: uppercase;
   font-size: 2em;
+  transition: all 2s;
 }
 
 h2 {
@@ -36,7 +42,7 @@ li {
   position: fixed;
   width: 100%;
   height: 100px;
-  z-index: 3;
+  z-index: 999;
   border-bottom: 1px solid #3491B2;
 }
 
@@ -151,9 +157,11 @@ li {
 
 .carousel .text {
   position: absolute;
-  top: 25%;
+  top: 250px;
   width: 45%;
   margin-left: 10%;
+  z-index: 99;
+  transition: all 2s;
 }
 
 .carousel .button {
@@ -168,6 +176,7 @@ li {
   border-radius: 3px;
   font-weight: bold;
   border-bottom: 3px solid #4494BB;
+      margin-top: 20px;
 }
 
 .carousel p {
@@ -198,14 +207,14 @@ li {
 }
 
 .carousel .arrow {
-  border: solid white;
+ border: solid white;
   border-width: 0 3px 3px 0;
   display: inline-block;
   padding: 8px;
 }
 
 .carousel .arrow-prev {
-  left: 15px;
+ left: 15px;
   position: absolute;
   top: 50%;
   transform: translateY(-50%) rotate(135deg);
@@ -218,14 +227,10 @@ li {
   transform: translateY(-50%) rotate(-45deg);
 }
 
-@media (max-width: 480px) {
-  .carousel .arrow {
-    background-size: 10px;
-    background-position: 10px 50%;
-  }
-}
 
-/*Select every element*/
+
+
+
 [id^="item"] {
   display: none;
 }
@@ -272,6 +277,7 @@ li {
   border-top-right-radius: 90px;
   left: 0px;
   position: absolute;
+/*  transform: rotate(225deg);*/
 }
 
 .carousel .circle-right {
@@ -290,6 +296,7 @@ li {
 .services {
   padding-top: 20px;
   padding-bottom: 20px;
+
 }
 
 .services i {
@@ -318,7 +325,8 @@ li {
   width: 50%;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 50px;
+  margin-top: 25px;
+  transition: all 2s;
 }
 
 .services .description {
@@ -591,6 +599,7 @@ iframe {
   width: 300px;
   background-color: rgba(255, 255, 255, 0.70);
   padding: 20px;
+  transition: all 2s;
 }
 
 .contact-form h2 {
@@ -640,59 +649,4 @@ footer{
 
 footer p{
     font-weight: bold;
-}
-
-/* Header*/
-/* 48em = 768px */
-@media (min-width: 48em) {
-  .header li {
-    float: left;
-  }
-
-  .header li a {
-    padding: 39px 15px;
-  }
-
-  .header .menu {
-    clear: none;
-    float: right;
-    max-height: none;
-    right: 8%;
-  }
-
-  .header .menu-icon {
-    display: none;
-  }
-}
-
-/*Header and carousel*/
-@media (max-width: 768px) {
-  h1 {
-    color: pink;
-  }
-
-  .header {
-    height: 50px;
-  }
-
-  .header .logo {
-    width: 150px;
-    padding: 9px 20px;
-  }
-
-  #home {
-    height: 650px;
-  }
-
-  .carousel .image-one, .carousel .image-two {
-    margin-top: 50px;
-  }
-
-  .services .content {
-    flex-direction: column;
-  }
-
-  .services .descriptions {
-    width: 80%;
-  }
 }

@@ -6,14 +6,30 @@
 
   <!-- Meta data -->
   <meta charset="utf-8">
-  <!-- Le viewport est configuré dans l'en-tête de la page HTML -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Nous sommes une agence web, qui réalise des sites web pour différents clients.">
-  <meta name="keywords" content="WebAgency, HTML5, CSS">
-  <meta name="author" content="Dlugosz Piotr">
 
   <!-- Website Title -->
-  <title>WebAgency</title>
+  <title>WebAgency - Réalisation des sites Web</title>
+
+  <!-- Le viewport est configuré dans l'en-tête de la page HTML -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="WebAgence une agence web, qui réalise des sites web pour différents clients.">
+  <meta name="keywords" content="WebAgency, Site Web , SEO, UX, UI">
+  <meta name="author" content="Dlugosz Piotr">
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="https://dlugi57.github.io/">
+  <meta name="twitter:title" content="WebAgency - Réalisation des sites Web">
+  <meta name="twitter:description" content="WebAgence une agence web, qui réalise des sites web pour différents clients.">
+  <meta name="twitter:creator" content="@author_handle">
+  <meta name="twitter:image" content="http://www.example.com/image.jpg">
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content="WebAgency - Réalisation des sites Web" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://dlugi57.github.io/" />
+  <meta property="og:image" content="https://dlugi57.github.io/images/social-og.jpg" />
+  <meta property="og:description" content="WebAgence une agence web, qui réalise des sites web pour différents clients." />
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
@@ -29,16 +45,15 @@
   <!-- HEADER -->
   <header class="header">
 
-    <img src="images/logo-WebAgency.png" class="logo" title="Logo of WebAgency" alt="Logo de WebAgency">
-
+    <img src="images/logo-WebAgency.png" class="logo" title="Logo de WebAgency" alt="Logo de WebAgency">
     <nav>
       <input class="menu-btn" type="checkbox" id="menu-btn" />
       <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
       <ul class="menu">
-        <li><a href="#home">Accueil</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#projets">Portfolio</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a title="Accueil de WebAgency" href="#home">Accueil</a></li>
+        <li><a title="Services de WebAgency" href="#services">Services</a></li>
+        <li><a title="Portfolio de WebAgency" href="#projets">Portfolio</a></li>
+        <li><a title="Contact de WebAgency" href="#contact">Contact</a></li>
       </ul>
     </nav>
 
@@ -46,123 +61,135 @@
 
   <!-- Section Welcome Carousel -->
   <section id="home" class="carousel">
-    <div class="wrapper">
-      <span id="item-1"></span>
-      <span id="item-2"></span>
+
+    <div class="slider">
+      <span id="background-1"></span>
+      <span id="background-2"></span>
+
       <div class="text">
-        <h1> <span>WebAgency</span>  : L'agence de tous vos projets!</h1>
-        <p>Vous avez une projet web ? La WebAgency vous aide à le réaliser. </p>
+        <h1><span>WebAgency</span> : L'agence de tous vos projets!</h1>
+        <p>Vous avez une projet web ? La WebAgency vous aide à le réaliser.</p>
         <a class="button" href="#services">Plus d'infos</a>
       </div>
-      <div class="item image-one">
 
-        <a href="#item-2"><span class="circle-right"><span class="arrow arrow-next"></span> </span></a>
+      <div class="image image-one">
+        <a href="#background-2"><span class="circle-right"><span class="arrow arrow-next"></span> </span></a>
       </div>
 
-      <div class="item image-two">
-        <!--    <div class="text">
-          <h1>Item 2</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus accumsan pretium dolor vel convallis. Aliquam erat volutpat.</p>
-          <a class="button" href="#">Plus d'infos</a>
-        </div>-->
-
-        <a href="#item-1"><span class="circle-left"><span class="arrow arrow-prev"></span> </span></a>
-
+      <div class="image image-two">
+        <a href="#background-1"><span class="circle-left"><span class="arrow arrow-prev"></span> </span></a>
       </div>
     </div>
   </section>
 
   <!-- Section Services -->
-  <section id="services" class="services">
+  <section class="services">
+
+    <div class="ancre100" id="services"></div>
+
     <div class="introduction">
       <h2>NOS SERVICES</h2>
       <hr><i class="fas fa-circle"></i>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sodales fermentum viverra.<br> Aenean vitae libero blandit, pulvinar lectus bibendum, maximus mauris.<br> Pellentesque ultrices sem et dui tempus cursus. </p>
+      <p>Agence Web spécialisée dans la refonte de site Internet & référencement.<br> Faites confiance à une équipe d’experts web pour la création de votre site internet.<br> Un Site Performant. Un Site Sécurisé.</p>
     </div>
+
     <div class="content">
+
       <div class="photo content-block">
         <img src="images/services-ordinateur.png" title="Nos services en ligne" alt="services de webservice">
       </div>
+
         <div class="descriptions content-block">
+
           <div class="description">
             <h3>UX Design</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sodales fermentum viverra.</p>
+            <p>WebAgency vous accompagne pour créer la meilleure expérience utilisateur qui convient à votre projet web.</p>
+
             <div class="icones">
               <i class="fas fa-chart-line fa-2x"></i><br/><i class="fas fa-circle fa-sm"></i>
             </div>
           </div>
+
           <div class="description">
-            <h3>UX Design</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sodales fermentum viverra.</p>
+            <h3>UI Design</h3>
+            <p>WebAgency pour des projets de création ou de refonte d'interfaces web et mobile.</p>
+
             <div class="icones">
               <i class="fas fa-cubes  fa-2x"></i><br/><i class="fas fa-circle fa-sm"></i>
             </div>
           </div>
+
           <div class="description">
-            <h3>UX Design</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sodales fermentum viverra.</p>
+            <h3>SEO</h3>
+            <p>WebAgency une équipe d'experts en référencement naturel spécialisés en acquisition de trafic qualifié.</p>
+
             <div class="icones">
               <i class="fas fa-chart-pie  fa-2x"></i><br/><i class="fas fa-circle fa-sm"></i>
             </div>
           </div>
         </div>
       </div>
-
-
   </section>
 
   <!-- Section Projets -->
-  <section id="projets" class="projets">
+  <section class="projets">
+
+    <div class="ancre100" id="projets"></div>
+
     <div class="introduction">
       <h2>NOS PROJETS</h2>
       <hr><i class="fas fa-circle"></i>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sodales fermentum viverra.<br> Aenean vitae libero blandit, pulvinar lectus bibendum, maximus mauris.<br> Pellentesque ultrices sem et dui tempus cursus. </p>
+      <p>Découvrez toutes nos réalisations web. <br> Notre agence web a réalisé de très nombreux projets dans de multiples domaines. <br>Avec nous, votre projet bénéficiera de notre regard créatif et du sens du détail</p>
     </div>
 
     <div class="navbar-portfolio">
+
       <input type="radio" name="navPortfolio" id="radio-all-works" class="lienAllWorks" checked /><label for="radio-all-works" class="radio-all-works">All works<i class="fa fa-caret-down"></i></label><input type="radio" name="navPortfolio" id="radio-creative" class="lienCreative" /><label for="radio-creative" class="radio-creative">Créative<i class="fa fa-caret-down"></i></label><input type="radio" name="navPortfolio" id="radio-corporate" class="lienCorporate" /><label for="radio-corporate" class="radio-corporate">Corporate<i class="fa fa-caret-down"></i></label><input type="radio" name="navPortfolio" id="radio-portfolio" class="lienPortfolio" /><label for="radio-portfolio" class="radio-portfolio">Portfolio<i class="fa fa-caret-down"></i></label><i class="fa fa-caret-down"></i>
 
-
-
       <div class="gallery">
-
-
 
         <div class="img-block creative"><img class="img-creative" src="images/portfolio-lunette.jpg" alt="">
           <div class="legende creative"><i class="fa fa-eye"></i><h3>Portfolio item 4</h3>
             <p>Lorem Ipsum Dolor W plecy</p>
           </div>
         </div>
+
         <div class="img-block creative"><img class="img-creative" src="images/portfolio-lapin.jpg" alt="">
           <div class="legende creative"><i class="fa fa-eye"></i><h3>Portfolio item 4</h3>
             <p>Lorem Ipsum Dolor W plecy</p>
           </div>
         </div>
+
         <div class="img-block creative"><img class="img-creative" src="images/portfolio-pompadour.jpg" alt="">
           <div class="legende creative"><i class="fa fa-eye"></i><h3>Portfolio item 4</h3>
             <p>Lorem Ipsum Dolor W plecy</p>
           </div>
         </div>
+
         <div class="img-block corporate"><img class="img-corporate" src="images/portfolio-carte.jpg" alt="">
           <div class="legende corporate"><i class="fa fa-eye"></i><h3>Portfolio item 4</h3>
             <p>Lorem Ipsum Dolor W plecy</p>
           </div>
         </div>
+
         <div class="img-block corporate"><img class="img-corporate" src="images/portfolio-sacs.jpg" alt="">
           <div class="legende corporate"><i class="fa fa-eye"></i><h3>Portfolio item 4</h3>
             <p>Lorem Ipsum Dolor W plecy</p>
           </div>
         </div>
+
         <div class="img-block corporate"><img class="img-corporate" src="images/portfolio-tableau.jpg" alt="">
           <div class="legende corporate"><i class="fa fa-eye"></i><h3>Portfolio item 4</h3>
             <p>Lorem Ipsum Dolor W plecy</p>
           </div>
         </div>
+
         <div class="img-block portfolio"><img class="img-portfolio" src="images/portfolio-fusee.jpg" alt="">
           <div class="legende portfolio"><i class="fa fa-eye"></i><h3>Portfolio item 4</h3>
             <p>Lorem Ipsum Dolor W plecy</p>
           </div>
         </div>
+
         <div class="img-block portfolio"><img class="img-portfolio" src="images/portfolio-bureau.jpg" alt="">
           <div class="legende portfolio"><i class="fa fa-eye"></i><h3>Portfolio item 4</h3>
             <p>Lorem Ipsum Dolor W plecy</p>
@@ -175,8 +202,8 @@
 
   <!-- Section Map -->
   <section id="contact" class="contact">
-    <div id="blueCover">
 
+    <div id="blueCover">
 
       <div class="contact-form">
         <h2>Contact Info</h2>
@@ -185,22 +212,13 @@
         <p><span id="contact-phone">Tel :</span> 01 02 03 04 05</p>
 
         <form method="post" action="index.html">
-
           <input type="text" class="contact-input" id="name-input" name="firstname" placeholder="Name">
-
           <input type="text" class="contact-input" id="email-input" name="email" placeholder="Email">
-
           <input type="text" class="contact-input" id="subject-input" name="subject" placeholder="Subject">
-
           <textarea name="message" class="contact-textarea" rows="8" cols="80" placeholder="Messages"></textarea>
-
           <input id="contact-send" type="submit" value="Send Message">
-  </form>
+        </form>
       </div>
-
-
-
-
       <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11550.048731018758!2d7.132073238206603!3d43.63751111594753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12cdd47cfafc71e3%3A0x260819a71ab66502!2sVilleneuve-Loubet+Plage%2C+06270+Villeneuve-Loubet!5e0!3m2!1sfr!2sfr!4v1547153173436" allowfullscreen></iframe>
     </div>
   </section>

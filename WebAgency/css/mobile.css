@@ -9,6 +9,12 @@
     font-size: 0.8em;
   }
 
+  .ancre100 {
+    padding-top: 50px;
+    top: -50px;
+    margin-bottom: -50px;
+}
+
   /* CAROUSEL */
   #home {
     height: 450px;

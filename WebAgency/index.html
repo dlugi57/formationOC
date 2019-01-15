@@ -73,11 +73,13 @@
       </div>
 
       <div class="image image-one">
-        <a href="#background-2"><span class="circle-right"><span class="arrow arrow-next"></span> </span></a>
+        <a href="#background-2"><span class="circle-right"><span class="arrow arrow-next"></span></span></a>
+        <span class="circle-left"><span class="arrow arrow-prev"></span></span>
       </div>
 
       <div class="image image-two">
-        <a href="#background-1"><span class="circle-left"><span class="arrow arrow-prev"></span> </span></a>
+        <a href="#background-1"><span class="circle-left"><span class="arrow arrow-prev"></span></span></a>
+        <span class="circle-right"><span class="arrow arrow-next"></span></span>
       </div>
     </div>
   </section>
@@ -99,7 +101,7 @@
         <img src="images/services-ordinateur.png" title="Nos services en ligne" alt="services de webservice">
       </div>
 
-        <div class="descriptions content-block">
+        <!--<div class="descriptions content-block">
 
           <div class="description">
             <h3>UX Design</h3>
@@ -127,7 +129,30 @@
               <i class="fas fa-chart-pie  fa-2x"></i><br/><i class="fas fa-circle fa-sm"></i>
             </div>
           </div>
-        </div>
+        </div>-->
+        <ul class="descriptions content-block">
+          <li class="description">
+            <h3>UX Design</h3>
+            <p>WebAgency vous accompagne pour créer la meilleure expérience utilisateur qui convient à votre projet web.</p>
+            <div class="icones">
+              <i class="fas fa-chart-line fa-2x"></i><br/><i class="fas fa-circle fa-sm"></i>
+            </div>
+          </li>
+          <li class="description">
+            <h3>UI Design</h3>
+            <p>WebAgency pour des projets de création ou de refonte d'interfaces web et mobile.</p>
+            <div class="icones">
+              <i class="fas fa-cubes  fa-2x"></i><br/><i class="fas fa-circle fa-sm"></i>
+            </div>
+          </li>
+          <li class="description">
+            <h3>SEO</h3>
+            <p>WebAgency une équipe d'experts en référencement naturel spécialisés en acquisition de trafic qualifié.</p>
+            <div class="icones">
+              <i class="fas fa-chart-pie  fa-2x"></i><br/><i class="fas fa-circle fa-sm"></i>
+            </div>
+          </li>
+        </ul>
       </div>
   </section>
 
@@ -144,10 +169,16 @@
 
     <div class="navbar-portfolio">
 
-      <input type="radio" name="navPortfolio" id="radio-all-works" class="lienAllWorks" checked /><label for="radio-all-works" class="radio-all-works">All works<i class="fa fa-caret-down"></i></label><input type="radio" name="navPortfolio" id="radio-creative" class="lienCreative" /><label for="radio-creative" class="radio-creative">Créative<i class="fa fa-caret-down"></i></label><input type="radio" name="navPortfolio" id="radio-corporate" class="lienCorporate" /><label for="radio-corporate" class="radio-corporate">Corporate<i class="fa fa-caret-down"></i></label><input type="radio" name="navPortfolio" id="radio-portfolio" class="lienPortfolio" /><label for="radio-portfolio" class="radio-portfolio">Portfolio<i class="fa fa-caret-down"></i></label><i class="fa fa-caret-down"></i>
+      <input type="radio" name="navPortfolio" id="radio-all-works" class="lienAllWorks" checked /><label for="radio-all-works" class="radio-all-works">All Works<i class="fa fa-caret-down"></i></label>
+      <!--
+      --><input type="radio" name="navPortfolio" id="radio-creative" class="lienCreative" /><label for="radio-creative" class="radio-creative">Creative<i class="fa fa-caret-down"></i></label>
+      <!--
+      --><input type="radio" name="navPortfolio" id="radio-corporate" class="lienCorporate" /><label for="radio-corporate" class="radio-corporate">Corporate<i class="fa fa-caret-down"></i></label>
+      <!--
+      --><input type="radio" name="navPortfolio" id="radio-portfolio" class="lienPortfolio" /><label for="radio-portfolio" class="radio-portfolio">Portfolio<i class="fa fa-caret-down"></i></label><i class="fa fa-caret-down"></i>
 
       <div class="gallery">
-
+        <!--
         <div class="img-block creative"><img class="img-creative" src="images/portfolio-lunette.jpg" alt="">
           <div class="legende creative"><i class="fa fa-eye"></i><h3>Portfolio item 4</h3>
             <p>Lorem Ipsum Dolor W plecy</p>
@@ -195,7 +226,54 @@
             <p>Lorem Ipsum Dolor W plecy</p>
           </div>
         </div>
+-->
+        <figure class="img-block creative"><img class="img-creative" src="images/portfolio-lunette.jpg" alt="Projet de lunette">
+          <figcaption class="legende creative"><i class="fa fa-eye"></i><h3>Projet de Logo</h3>
+            <p>Réalisé pour Optique 2000</p>
+          </figcaption>
+        </figure>
 
+        <figure class="img-block creative"><img class="img-creative" src="images/portfolio-lapin.jpg" alt="Projet de lapin">
+          <figcaption class="legende creative"><i class="fa fa-eye"></i><h3>Projet de Site Web</h3>
+            <p>Crée pour Donnie Darco</p>
+          </figcaption>
+        </figure>
+
+        <figure class="img-block creative"><img class="img-creative" src="images/portfolio-pompadour.jpg" alt="Projet de pompadour">
+          <figcaption class="legende creative"><i class="fa fa-eye"></i><h3>Projet de Logo</h3>
+            <p>Réalisé pour Pompadour</p>
+          </figcaption>
+        </figure>
+
+        <figure class="img-block corporate"><img class="img-corporate" src="images/portfolio-carte.jpg" alt="Projet de carte">
+          <figcaption class="legende corporate"><i class="fa fa-eye"></i><h3>Projet de newsletter</h3>
+            <p>Réalisé pour NiceMatin</p>
+          </figcaption>
+        </figure>
+
+        <figure class="img-block corporate"><img class="img-corporate" src="images/portfolio-sacs.jpg" alt="Projet de sacs">
+          <figcaption class="legende corporate"><i class="fa fa-eye"></i><h3>Projets de Site Web</h3>
+            <p>Crée pour Shopping</p>
+          </figcaption>
+        </figure>
+
+        <figure class="img-block corporate"><img class="img-corporate" src="images/portfolio-tableau.jpg" alt="Projet de tableau">
+          <figcaption class="legende corporate"><i class="fa fa-eye"></i><h3>Projets de Site Web</h3>
+            <p>Crée pour LA</p>
+          </figcaption>
+        </figure>
+
+        <figure class="img-block portfolio"><img class="img-portfolio" src="images/portfolio-fusee.jpg" alt="Projet de fusee">
+          <figcaption class="legende portfolio"><i class="fa fa-eye"></i><h3>Projet de Logo</h3>
+            <p>Réalisé pour NASA</p>
+          </figcaption>
+        </figure>
+
+        <figure class="img-block portfolio"><img class="img-portfolio" src="images/portfolio-bureau.jpg" alt="Projet de bureau">
+          <figcaption class="legende portfolio"><i class="fa fa-eye"></i><h3>Projet de Site Web</h3>
+            <p>Crée pour IKEA</p>
+          </figcaption>
+        </figure>
       </div>
     </div>
   </section>
@@ -203,7 +281,7 @@
   <!-- Section Map -->
   <section id="contact" class="contact">
 
-    <div id="blueCover">
+
 
       <div class="contact-form">
         <h2>Contact Info</h2>
@@ -215,18 +293,16 @@
           <input type="text" class="contact-input" id="name-input" name="firstname" placeholder="Name">
           <input type="text" class="contact-input" id="email-input" name="email" placeholder="Email">
           <input type="text" class="contact-input" id="subject-input" name="subject" placeholder="Subject">
-          <textarea name="message" class="contact-textarea" rows="8" cols="80" placeholder="Messages"></textarea>
+          <textarea name="message" class="contact-textarea" rows="8" cols="80" placeholder="Message"></textarea>
           <input id="contact-send" type="submit" value="Send Message">
         </form>
       </div>
+      <div id="blueCover">
       <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11550.048731018758!2d7.132073238206603!3d43.63751111594753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12cdd47cfafc71e3%3A0x260819a71ab66502!2sVilleneuve-Loubet+Plage%2C+06270+Villeneuve-Loubet!5e0!3m2!1sfr!2sfr!4v1547153173436" allowfullscreen></iframe>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>Dlugosz Piotr Webagency 2018</p>
-  </footer> <!-- FOOTER -->
+
 
 </body>
 

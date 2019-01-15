@@ -224,9 +224,13 @@ li {
   transform: translateY(-50%) rotate(-45deg);
 }
 /*-----------------------------------------------------------------------------------------------*/
-[id^="image"] {
-  display: none;
+#background-1 ,#background-2{
+    display: none;
 }
+
+/*[id^="background"] {
+  display: none;
+}*/
 
 .carousel .image-one {
   z-index: 2;

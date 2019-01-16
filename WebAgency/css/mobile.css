@@ -36,6 +36,10 @@
     font-size: 0.8em;
   }
 
+  .loading-space {
+    top: 444px;
+  }
+
   /* PROJETS */
   .navbar-portfolio {
     margin-top: 17px;
@@ -46,10 +50,9 @@
   }
 
   /* CONTACT */
-/*  .contact-form {
+  /*  .contact-form {
     width: 250px;
   }*/
-
   .contact-input, .contact-textarea {
     margin: 3px 0;
   }

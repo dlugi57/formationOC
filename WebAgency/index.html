@@ -3,10 +3,8 @@
 <html lang="fr" dir="ltr">
 
 <head>
-
   <!-- Meta data -->
   <meta charset="utf-8">
-
   <!-- Website Title -->
   <title>WebAgency - Réalisation des sites Web</title>
 
@@ -22,7 +20,7 @@
   <meta name="twitter:title" content="WebAgency - Réalisation des sites Web">
   <meta name="twitter:description" content="WebAgence une agence web, qui réalise des sites web pour différents clients.">
   <meta name="twitter:creator" content="@author_handle">
-  <meta name="twitter:image" content="http://www.example.com/image.jpg">
+  <meta name="twitter:image" content="https://dlugi57.github.io/images/social-og.jpg">
 
   <!-- Open Graph data -->
   <meta property="og:title" content="WebAgency - Réalisation des sites Web" />
@@ -44,8 +42,9 @@
 
   <!-- HEADER -->
   <header class="header">
-
-    <img src="images/logo-WebAgency.png" class="logo" title="Logo de WebAgency" alt="Logo de WebAgency">
+    <!-- Logo -->
+    <a href="#home"><img src="images/logo-WebAgency.png" class="logo" title="Logo de WebAgency" alt="Logo de WebAgency"/></a>
+    <!-- Navbar menu -->
     <nav>
       <input class="menu-btn" type="checkbox" id="menu-btn" />
       <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
@@ -56,89 +55,55 @@
         <li><a title="Contact de WebAgency" href="#contact">Contact</a></li>
       </ul>
     </nav>
-
   </header>
 
-  <!-- Section Welcome Carousel -->
+  <!-- SECTION CAROUSEL -->
   <section id="home" class="carousel">
-
+    <!-- Slider container -->
     <div class="slider">
+      <!-- Photo targets -->
       <span id="background-1"></span>
       <span id="background-2"></span>
-
+      <!-- Main title content -->
       <div class="text">
         <h1><span>WebAgency</span> : L'agence de tous vos projets!</h1>
         <p>Vous avez une projet web ? La WebAgency vous aide à le réaliser.</p>
         <a class="button" href="#services">Plus d'infos</a>
       </div>
-
+      <!-- First photo content-->
       <div class="image image-one">
         <a href="#background-2"><span class="circle-right"><span class="arrow arrow-next"></span></span></a>
         <span class="circle-left"><span class="arrow arrow-prev"></span></span>
       </div>
-
+      <!-- Second photo content-->
       <div class="image image-two">
         <a href="#background-1"><span class="circle-left"><span class="arrow arrow-prev"></span></span></a>
         <span class="circle-right"><span class="arrow arrow-next"></span></span>
-
       </div>
-
-
+      <!-- Loading process line -->
       <div class="loading-space">
-        <div class="loading-line">
-
-        </div>
-
+        <div class="loading-line"></div>
       </div>
-    </div>
+    </div><!-- /slider -->
   </section>
 
-  <!-- Section Services -->
+  <!-- SECTION SERVICES -->
   <section class="services">
-
+    <!-- break point to get the right position of the section after navbar click -->
     <div class="ancre100" id="services"></div>
-
+    <!-- Services title -->
     <div class="introduction">
       <h2>NOS SERVICES</h2>
       <hr><i class="fas fa-circle"></i>
       <p>Agence Web spécialisée dans la refonte de site Internet & référencement.<br> Faites confiance à une équipe d’experts web pour la création de votre site internet.<br> Un Site Performant. Un Site Sécurisé.</p>
     </div>
-
+    <!-- Services content -->
     <div class="content">
-
+      <!-- Services main photo -->
       <div class="photo content-block">
         <img src="images/services-ordinateur.png" title="Nos services en ligne" alt="services de webservice">
       </div>
-
-        <!--<div class="descriptions content-block">
-
-          <div class="description">
-            <h3>UX Design</h3>
-            <p>WebAgency vous accompagne pour créer la meilleure expérience utilisateur qui convient à votre projet web.</p>
-
-            <div class="icones">
-              <i class="fas fa-chart-line fa-2x"></i><br/><i class="fas fa-circle fa-sm"></i>
-            </div>
-          </div>
-
-          <div class="description">
-            <h3>UI Design</h3>
-            <p>WebAgency pour des projets de création ou de refonte d'interfaces web et mobile.</p>
-
-            <div class="icones">
-              <i class="fas fa-cubes  fa-2x"></i><br/><i class="fas fa-circle fa-sm"></i>
-            </div>
-          </div>
-
-          <div class="description">
-            <h3>SEO</h3>
-            <p>WebAgency une équipe d'experts en référencement naturel spécialisés en acquisition de trafic qualifié.</p>
-
-            <div class="icones">
-              <i class="fas fa-chart-pie  fa-2x"></i><br/><i class="fas fa-circle fa-sm"></i>
-            </div>
-          </div>
-        </div>-->
+        <!-- Services descriptions list -->
         <ul class="descriptions content-block">
           <li class="description">
             <h3>UX Design</h3>
@@ -162,80 +127,30 @@
             </div>
           </li>
         </ul>
-      </div>
+      </div><!-- /content -->
   </section>
 
-  <!-- Section Projets -->
+  <!-- SECTION PROJETS -->
   <section class="projets">
-
+    <!-- break point to get the right position of the section after navbar click -->
     <div class="ancre100" id="projets"></div>
-
+    <!-- Projets title -->
     <div class="introduction">
       <h2>NOS PROJETS</h2>
       <hr><i class="fas fa-circle"></i>
       <p>Découvrez toutes nos réalisations web. <br> Notre agence web a réalisé de très nombreux projets dans de multiples domaines. <br>Avec nous, votre projet bénéficiera de notre regard créatif et du sens du détail</p>
     </div>
-
+    <!-- Gallery and navbar container -->
     <div class="navbar-portfolio">
-
-      <input type="radio" name="navPortfolio" id="radio-all-works" class="lienAllWorks" checked /><label for="radio-all-works" class="radio-all-works">All Works<i class="fa fa-caret-down"></i></label>
-      <!--
-      --><input type="radio" name="navPortfolio" id="radio-creative" class="lienCreative" /><label for="radio-creative" class="radio-creative">Creative<i class="fa fa-caret-down"></i></label>
-      <!--
-      --><input type="radio" name="navPortfolio" id="radio-corporate" class="lienCorporate" /><label for="radio-corporate" class="radio-corporate">Corporate<i class="fa fa-caret-down"></i></label>
-      <!--
+      <!-- Navigation buttons -->
+      <!-- no space between tags to get correct apparence -->
+      <input type="radio" name="navPortfolio" id="radio-all-works" class="lienAllWorks" checked /><label for="radio-all-works" class="radio-all-works">All Works<i class="fa fa-caret-down"></i></label><!--
+      --><input type="radio" name="navPortfolio" id="radio-creative" class="lienCreative" /><label for="radio-creative" class="radio-creative">Creative<i class="fa fa-caret-down"></i></label><!--
+      --><input type="radio" name="navPortfolio" id="radio-corporate" class="lienCorporate" /><label for="radio-corporate" class="radio-corporate">Corporate<i class="fa fa-caret-down"></i></label><!--
       --><input type="radio" name="navPortfolio" id="radio-portfolio" class="lienPortfolio" /><label for="radio-portfolio" class="radio-portfolio">Portfolio<i class="fa fa-caret-down"></i></label><i class="fa fa-caret-down"></i>
-
+      <!-- Projects gallery -->
       <div class="gallery">
-        <!--
-        <div class="img-block creative"><img class="img-creative" src="images/portfolio-lunette.jpg" alt="">
-          <div class="legende creative"><i class="fa fa-eye"></i><h3>Portfolio item 4</h3>
-            <p>Lorem Ipsum Dolor W plecy</p>
-          </div>
-        </div>
 
-        <div class="img-block creative"><img class="img-creative" src="images/portfolio-lapin.jpg" alt="">
-          <div class="legende creative"><i class="fa fa-eye"></i><h3>Portfolio item 4</h3>
-            <p>Lorem Ipsum Dolor W plecy</p>
-          </div>
-        </div>
-
-        <div class="img-block creative"><img class="img-creative" src="images/portfolio-pompadour.jpg" alt="">
-          <div class="legende creative"><i class="fa fa-eye"></i><h3>Portfolio item 4</h3>
-            <p>Lorem Ipsum Dolor W plecy</p>
-          </div>
-        </div>
-
-        <div class="img-block corporate"><img class="img-corporate" src="images/portfolio-carte.jpg" alt="">
-          <div class="legende corporate"><i class="fa fa-eye"></i><h3>Portfolio item 4</h3>
-            <p>Lorem Ipsum Dolor W plecy</p>
-          </div>
-        </div>
-
-        <div class="img-block corporate"><img class="img-corporate" src="images/portfolio-sacs.jpg" alt="">
-          <div class="legende corporate"><i class="fa fa-eye"></i><h3>Portfolio item 4</h3>
-            <p>Lorem Ipsum Dolor W plecy</p>
-          </div>
-        </div>
-
-        <div class="img-block corporate"><img class="img-corporate" src="images/portfolio-tableau.jpg" alt="">
-          <div class="legende corporate"><i class="fa fa-eye"></i><h3>Portfolio item 4</h3>
-            <p>Lorem Ipsum Dolor W plecy</p>
-          </div>
-        </div>
-
-        <div class="img-block portfolio"><img class="img-portfolio" src="images/portfolio-fusee.jpg" alt="">
-          <div class="legende portfolio"><i class="fa fa-eye"></i><h3>Portfolio item 4</h3>
-            <p>Lorem Ipsum Dolor W plecy</p>
-          </div>
-        </div>
-
-        <div class="img-block portfolio"><img class="img-portfolio" src="images/portfolio-bureau.jpg" alt="">
-          <div class="legende portfolio"><i class="fa fa-eye"></i><h3>Portfolio item 4</h3>
-            <p>Lorem Ipsum Dolor W plecy</p>
-          </div>
-        </div>
--->
         <figure class="img-block creative"><img class="img-creative" src="images/portfolio-lunette.jpg" alt="Projet de lunette">
           <figcaption class="legende creative"><i class="fa fa-eye"></i><h3>Projet de Logo</h3>
             <p>Réalisé pour Optique 2000</p>
@@ -283,15 +198,13 @@
             <p>Crée pour IKEA</p>
           </figcaption>
         </figure>
-      </div>
-    </div>
+      </div><!-- /gallery -->
+    </div><!-- /navbar-portfolio -->
   </section>
 
-  <!-- Section Map -->
+  <!-- SECTION CONTACT -->
   <section id="contact" class="contact">
-
-
-
+    <!-- Form container-->
     <div class="contact-form">
       <h2>Contact Info</h2>
       <strong>WebAgency SAS</strong>
@@ -305,14 +218,12 @@
         <textarea name="message" class="contact-textarea" rows="8" cols="80" placeholder="Message"></textarea>
         <input id="contact-send" type="submit" value="Send Message">
         </form>
-    </div>
+    </div><!-- /contact-form -->
+    <!-- Map with blue cover -->
     <div id="blueCover">
       <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.2216096807206!2d2.347636915650275!3d48.87305177928891!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e145ccb3091%3A0x9495beee8c96ec27!2s25+Rue+d&#39;Hauteville%2C+75010+Paris!5e0!3m2!1sfr!2sfr!4v1547675654873" allowfullscreen></iframe>
     </div>
   </section>
-
-
-
 </body>
 
 </html>

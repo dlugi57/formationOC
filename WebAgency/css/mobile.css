@@ -1,4 +1,7 @@
+/* MOBILE PHONE STYLES */
 @media all and (max-width: 480px) {
+
+  /* GLOBAL */
   h2 {
     font-size: 1.3em;
     margin-top: 10px;
@@ -14,7 +17,7 @@
     margin-bottom: -50px;
   }
 
-  /* CAROUSEL */
+  /* CAROUSEL SECTION */
   #home {
     height: 450px;
   }
@@ -40,7 +43,7 @@
     top: 444px;
   }
 
-  /* PROJETS */
+  /* PROJETS  SECTION*/
   .navbar-portfolio {
     margin-top: 17px;
   }
@@ -49,10 +52,7 @@
     width: auto;
   }
 
-  /* CONTACT */
-  /*  .contact-form {
-    width: 250px;
-  }*/
+  /* CONTACT SECTION */
   .contact-input, .contact-textarea {
     margin: 3px 0;
   }

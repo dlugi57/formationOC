@@ -1,3 +1,4 @@
+/* GLOBAL STYLE */
 body {
   width: 100%;
   margin: auto;
@@ -5,7 +6,6 @@ body {
   color: #65696e;
   font-size: 1em;
   min-width: 350px;
-  /* Suppose you want minimum width of 1000px */
 }
 
 h1 {
@@ -24,6 +24,7 @@ li {
   list-style: none;
 }
 
+/* break point to get the right position of the section after navbar click */
 .ancre100 {
   padding-top: 100px;
   position: relative;
@@ -33,7 +34,6 @@ li {
 
 /* HEADER */
 /*https://codepen.io/mutedblues/pen/MmPNPG*/
-/* header */
 .header {
   background-color: #fff;
   box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, .1);
@@ -51,15 +51,21 @@ li {
   background-color: #fff;
 }
 
+.header li {
+  float: left;
+}
+
+
 .header li a {
   display: block;
-  padding: 20px 20px;
+  padding: 39px 15px;
   border-top: 3px solid transparent;
   text-decoration: none;
   cursor: pointer;
   color: #65696e;
 }
 
+/* change apparence of navbar menu after hover */
 .header li a:hover {
   color: darkgray;
   border-top: 3px solid #5cadd3;
@@ -75,15 +81,19 @@ li {
 }
 
 .header .menu {
-  clear: both;
-  max-height: 0;
+  clear: none;
+  float: right;
+  max-height: none;
+  right: 8%;
   transition: max-height .2s ease-out;
   position: relative;
 }
 
+
+/* hamburger manu icon */
 .header .menu-icon {
   cursor: pointer;
-  display: inline-block;
+  display: none;
   float: right;
   padding: 23px 20px;
   position: relative;
@@ -91,6 +101,7 @@ li {
   right: 12%;
 }
 
+/* middle line of hamburger */
 .header .menu-icon .navicon {
   background: #333;
   display: block;
@@ -100,6 +111,7 @@ li {
   width: 18px;
 }
 
+/* add two other lines of hamburger */
 .header .menu-icon .navicon:before,
 .header .menu-icon .navicon:after {
   background: #333;
@@ -111,10 +123,12 @@ li {
   width: 100%;
 }
 
+/* place firs hamburger line */
 .header .menu-icon .navicon:before {
   top: 5px;
 }
 
+/* place second line */
 .header .menu-icon .navicon:after {
   top: -5px;
 }
@@ -123,28 +137,33 @@ li {
   display: none;
 }
 
+/* after button click open menu */
 .header .menu-btn:checked~.menu {
   max-height: 240px;
 }
 
+/* hide middle line from hamburger */
 .header .menu-btn:checked~.menu-icon .navicon {
   background: transparent;
 }
 
+/* turn first line to make cross */
 .header .menu-btn:checked~.menu-icon .navicon:before {
   transform: rotate(-45deg);
 }
 
+/* turn second line to make cross */
 .header .menu-btn:checked~.menu-icon .navicon:after {
   transform: rotate(45deg);
 }
 
+/* puts lines on the top to get perfect cross */
 .header .menu-btn:checked~.menu-icon:not(.steps) .navicon:before,
 .header .menu-btn:checked~.menu-icon:not(.steps) .navicon:after {
   top: 0;
 }
 
-/* CAROUSEL */
+/* CAROUSEL SECTION */
 #home {
   height: 700px;
 }
@@ -201,6 +220,7 @@ li {
   transition: all 0.5s ease-in-out;
 }
 
+/* make arrows with hiding half of borders */
 .carousel .arrow {
   border: solid white;
   border-width: 0 3px 3px 0;
@@ -208,6 +228,7 @@ li {
   padding: 8px;
 }
 
+/* get arrow in right possition */
 .carousel .arrow-prev {
   left: 15px;
   position: absolute;
@@ -215,6 +236,7 @@ li {
   transform: translateY(-50%) rotate(135deg);
 }
 
+/* get arrow in right position */
 .carousel .arrow-next {
   right: 15px;
   position: absolute;
@@ -222,14 +244,37 @@ li {
   transform: translateY(-50%) rotate(-45deg);
 }
 
-/*-----------------------------------------------------------------------------------------------*/
+/* arrows circles shadows */
+.carousel .circle-left {
+  background-color: rgba(0, 0, 0, 0.3);
+  display: inline-block;
+  top: 42.5%;
+  height: 90px;
+  width: 45px;
+  border-bottom-right-radius: 90px;
+  border-top-right-radius: 90px;
+  left: 0px;
+  position: absolute;
+}
+
+.carousel .circle-right {
+  background-color: rgba(0, 0, 0, 0.3);
+  display: inline-block;
+  top: 42.5%;
+  height: 90px;
+  width: 45px;
+  border-bottom-left-radius: 90px;
+  border-top-left-radius: 90px;
+  right: 0px;
+  position: absolute;
+}
+
+/* hide span tag to get carousel img on correct position */
 #background-1, #background-2 {
   display: none;
 }
 
-/*[id^="background"] {
-  display: none;
-}*/
+/* putting img of carousel in div tag */
 .carousel .image-one {
   z-index: 2;
   opacity: 1;
@@ -248,44 +293,23 @@ li {
   margin-top: 100px;
 }
 
-*:target~.image-one {
+/* after right arrow click change opacity to get nice transition effect */
+#background-2:target~.image-one {
   opacity: 0;
 }
 
+/* after left arrow click show first photo */
 #background-1:target~.image-one {
   opacity: 1;
 }
 
+/* after right arrow click show second photo */
 #background-2:target~.image-two {
   z-index: 2;
   opacity: 1;
 }
 
-.carousel .circle-left {
-  background-color: rgba(0, 0, 0, 0.3);
-  display: inline-block;
-  top: 42.5%;
-  height: 90px;
-  width: 45px;
-  border-bottom-right-radius: 90px;
-  border-top-right-radius: 90px;
-  left: 0px;
-  position: absolute;
-  /*  transform: rotate(225deg);*/
-}
-
-.carousel .circle-right {
-  background-color: rgba(0, 0, 0, 0.3);
-  display: inline-block;
-  top: 42.5%;
-  height: 90px;
-  width: 45px;
-  border-bottom-left-radius: 90px;
-  border-top-left-radius: 90px;
-  right: 0px;
-  position: absolute;
-}
-
+/* loading bar */
 .loading-space {
   position: absolute;
   top: 694px;
@@ -303,12 +327,8 @@ li {
   transition: all 2s;
 }
 
-/*#background-1:target~.loading-space div {
-
-}*/
-
+/* after reight arrow click loading bar takes all width */
 #background-2:target~.loading-space div {
-
   width: 100%;
 }
 
@@ -326,9 +346,6 @@ li {
   border-radius: 50%;
 }
 
-/*.services p {
-  margin-top: 0px;
-}*/
 .services .content {
   display: flex;
   flex-direction: row;
@@ -392,7 +409,6 @@ li {
   left: 48px;
   border: 4px solid white;
   border-radius: 50%;
-  /*  font-size: 0.8em;*/
 }
 
 .icones .fa-chart-line, .icones .fa-cubes, .icones .fa-chart-pie {
@@ -410,8 +426,6 @@ li {
   color: black;
 }
 
-.description i {}
-
 .introduction hr {
   width: 150px;
   border: 1px solid #ebebeb;
@@ -421,7 +435,7 @@ li {
   display: block;
 }
 
-/* PROJETS*/
+/* PROJETS SECTION */
 .projets {
   background-color: #f5f5f5;
   padding-top: 20px;
@@ -438,20 +452,14 @@ li {
   justify-content: center;
   align-items: center;
   max-width: 1800px;
-margin: auto;
+  margin: auto;
 }
 
 .gallery img {
   width: 325px;
 }
 
-/*#radio-creative:checked~.gallery div:not(.creative),
-#radio-corporate:checked~.gallery div:not(.corporate),
-#radio-portfolio:checked~.gallery div:not(.portfolio) {
-  position: absolute;
-  z-index: -3;
-  opacity: 0;
-}*/
+/* if radio button checkek hide all elements without selected class */
 #radio-creative:checked~.gallery figure:not(.creative),
 #radio-corporate:checked~.gallery figure:not(.corporate),
 #radio-portfolio:checked~.gallery figure:not(.portfolio) {
@@ -481,11 +489,13 @@ margin: auto;
   transition: visibility 0.4s linear, opacity 0.4s linear;
 }
 
+/* after mouse hover shows img description */
 .gallery .img-block:hover figcaption {
   visibility: visible;
   opacity: 1;
 }
 
+/* navigation menu */
 .navbar-portfolio {
   margin-top: 57px;
   text-align: center;
@@ -518,6 +528,7 @@ margin: auto;
   border-radius: 0 5px 5px 0;
 }
 
+/* change color of clicked menu button */
 #radio-all-works:checked~.radio-all-works,
 #radio-creative:checked~.radio-creative,
 #radio-corporate:checked~.radio-corporate,
@@ -527,33 +538,7 @@ margin: auto;
   border-bottom: 3px solid rgb(52, 145, 178);
 }
 
-/* ----------------------------------------------------------------------------------------------------------------------*/
-/*.radio-all-works{
-  left:27px
-}
-.radio-creative{
-  left: 10px;
-}
-.radio-corporate{
-  right: 10px;
-}
-.radio-portfolio{
-  right :27px;
-}
-
-#radio-all-works + .fa-caret-down{
-left: 77px;
-}
-#radio-creative + .fa-caret-down{
-left: 60px;
-}
-#radio-corporate + .fa-caret-down{
-left: 40px;
-}
-#radio-portfolio + .fa-caret-down{
-left: 23px;
-}*/
-/*------------------------------------------------------------------------------------------------*/
+/* change color of hovered button */
 .navbar-portfolio label:hover {
   background-color: #5cadd3;
   color: white;
@@ -569,10 +554,12 @@ left: 23px;
   font-size: 1.5em;
 }
 
+/* shows little triangle on the bottom of hovered menu button */
 .navbar-portfolio label:hover .fa-caret-down {
   visibility: visible;
 }
 
+/* shows little triangle on the bottom of clicked menu button */
 #radio-all-works:checked+label>.fa-caret-down,
 #radio-creative:checked+label>.fa-caret-down,
 #radio-corporate:checked+label>.fa-caret-down,
@@ -605,7 +592,7 @@ left: 23px;
   background-color: #5cadd3;
 }
 
-/*                     CONTACT                             */
+/* CONTACT SECTION */
 .contact {
   position: relative;
   border-bottom: 1px solid #3491B2;
@@ -616,9 +603,9 @@ left: 23px;
   height: 600px;
   background: rgba(92, 173, 211, 0.25);
   z-index: 2;
-
 }
 
+/* shows blue cover over the map on hover */
 #blueCover:hover iframe {
   z-index: 4;
 }
@@ -678,7 +665,6 @@ iframe {
   font-weight: bold;
   border-bottom: 3px solid #4494BB;
 }
-
 
 /*@media screen
   and (min-width: 1100px)

@@ -1,34 +1,5 @@
-/* Header*/
-/* 48em = 768px */
-@media (min-width: 48em) {
-  .header li {
-    float: left;
-  }
-
-  .header li a {
-    padding: 39px 15px;
-  }
-
-  .header .menu {
-    clear: none;
-    float: right;
-    max-height: none;
-    right: 8%;
-  }
-
-  .header .menu-icon {
-    display: none;
-  }
-}
-
+/* TABLETTES */
 @media (max-width: 768px) {
-
-
-
-
-
-
-
   h2 {
     font-size: 1.6em;
     margin-top: 10px;
@@ -54,27 +25,49 @@
     padding: 9px 20px;
   }
 
-  /* CAROUSEL */
-  .carousel .circle-left {
-    background-color: rgba(0, 0, 0, 0);
-    /*  transform: rotate(225deg);*/
+  .header li {
+    float: none;
   }
 
+  .header li a {
+    padding: 20px 20px;
+  }
+
+  .header .menu-icon {
+    display: inline-block;
+  }
+
+  /* shows menu on all width of the screen  */
+  .header .menu {
+    clear: both;
+    max-height: 0;
+    float: none;
+    right: inherit;
+  }
+
+  /* CAROUSEL */
+  #home {
+    height: 550px;
+  }
+
+  /* hide arrow shadow circle */
+  .carousel .circle-left {
+    background-color: rgba(0, 0, 0, 0);
+  }
+
+  /* hide arrow shadow circle */
   .carousel .circle-right {
     background-color: rgba(0, 0, 0, 0);
   }
 
+  /* show arrow shadow circle */
   .carousel .circle-left:hover {
     background-color: rgba(0, 0, 0, 0.3);
-    /*  transform: rotate(225deg);*/
   }
 
+  /* show arrow shadow circle */
   .carousel .circle-right:hover {
     background-color: rgba(0, 0, 0, 0.3);
-  }
-
-  #home {
-    height: 550px;
   }
 
   .carousel .image-one, .carousel .image-two {
@@ -95,11 +88,11 @@
   }
 
   .loading-space {
-  top: 544px;
-}
-
+    top: 544px;
+  }
 
   /* SERVICES */
+  /* puts service list on the bottom of img */
   .services .content {
     flex-direction: column;
   }
@@ -137,6 +130,7 @@
   }
 
   /* CONTACT */
+  /* take contact form above the map */
   .contact-form {
     left: 0;
     right: 0;

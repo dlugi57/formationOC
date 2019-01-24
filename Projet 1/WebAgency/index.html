@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+
+<html lang="fr" dir="ltr">
+
+<head>
+  <!-- Meta data -->
+  <meta charset="utf-8">
+  <!-- Website Title -->
+  <title>WebAgency - Réalisation des sites Web</title>
+
+  <!-- Le viewport est configuré dans l'en-tête de la page HTML -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="WebAgence une agence web, qui réalise des sites web pour différents clients.">
+  <meta name="keywords" content="WebAgency, Site Web , SEO, UX, UI">
+  <meta name="author" content="Dlugosz Piotr">
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="https://dlugi57.github.io/">
+  <meta name="twitter:title" content="WebAgency - Réalisation des sites Web">
+  <meta name="twitter:description" content="WebAgence une agence web, qui réalise des sites web pour différents clients.">
+  <meta name="twitter:creator" content="@author_handle">
+  <meta name="twitter:image" content="https://dlugi57.github.io/images/social-og.jpg">
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content="WebAgency - Réalisation des sites Web" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://dlugi57.github.io/" />
+  <meta property="og:image" content="https://dlugi57.github.io/images/social-og.jpg" />
+  <meta property="og:description" content="WebAgence une agence web, qui réalise des sites web pour différents clients." />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/tablet.css">
+  <link rel="stylesheet" href="css/mobile.css">
+  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <!-- Logo -->
+    <a href="#home"><img src="images/logo-WebAgency.png" class="logo" title="Logo de WebAgency" alt="Logo de WebAgency"/></a>
+    <!-- Navbar menu -->
+    <nav>
+      <input class="menu-btn" type="checkbox" id="menu-btn" />
+      <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+      <ul class="menu">
+        <li><a title="Accueil de WebAgency" href="#home">Accueil</a></li>
+        <li><a title="Services de WebAgency" href="#services">Services</a></li>
+        <li><a title="Portfolio de WebAgency" href="#projets">Portfolio</a></li>
+        <li><a title="Contact de WebAgency" href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- SECTION CAROUSEL -->
+  <section id="home" class="carousel">
+    <!-- Slider container -->
+    <div class="slider">
+      <!-- Photo targets -->
+      <span id="background-1"></span>
+      <span id="background-2"></span>
+      <!-- Main title content -->
+      <div class="text">
+        <h1><span>WebAgency</span> : L'agence de tous vos projets!</h1>
+        <p>Vous avez une projet web ? La WebAgency vous aide à le réaliser.</p>
+        <a class="button" href="#services">Plus d'infos</a>
+      </div>
+      <!-- First photo content-->
+      <div class="image image-one">
+        <a href="#background-2"><span class="circle-right"><span class="arrow arrow-next"></span></span></a>
+        <span class="circle-left"><span class="arrow arrow-prev"></span></span>
+      </div>
+      <!-- Second photo content-->
+      <div class="image image-two">
+        <a href="#background-1"><span class="circle-left"><span class="arrow arrow-prev"></span></span></a>
+        <span class="circle-right"><span class="arrow arrow-next"></span></span>
+      </div>
+      <!-- Loading process line -->
+      <div class="loading-space">
+        <div class="loading-line"></div>
+      </div>
+    </div><!-- /slider -->
+  </section>
+
+  <!-- SECTION SERVICES -->
+  <section class="services">
+    <!-- break point to get the right position of the section after navbar click -->
+    <div class="ancre100" id="services"></div>
+    <!-- Services title -->
+    <div class="introduction">
+      <h2>NOS SERVICES</h2>
+      <hr><i class="fas fa-circle"></i>
+      <p>Agence Web spécialisée dans la refonte de site Internet & référencement.<br> Faites confiance à une équipe d’experts web pour la création de votre site internet.<br> Un Site Performant. Un Site Sécurisé.</p>
+    </div>
+    <!-- Services content -->
+    <div class="content">
+      <!-- Services main photo -->
+      <div class="photo content-block">
+        <img src="images/services-ordinateur.png" title="Nos services en ligne" alt="services de webservice">
+      </div>
+        <!-- Services descriptions list -->
+        <ul class="descriptions content-block">
+          <li class="description">
+            <h3>UX Design</h3>
+            <p>WebAgency vous accompagne pour créer la meilleure expérience utilisateur qui convient à votre projet web.</p>
+            <div class="icones">
+              <i class="fas fa-chart-line fa-2x"></i><br/><i class="fas fa-circle fa-sm"></i>
+            </div>
+          </li>
+          <li class="description">
+            <h3>UI Design</h3>
+            <p>WebAgency pour des projets de création ou de refonte d'interfaces web et mobile.</p>
+            <div class="icones">
+              <i class="fas fa-cubes  fa-2x"></i><br/><i class="fas fa-circle fa-sm"></i>
+            </div>
+          </li>
+          <li class="description">
+            <h3>SEO</h3>
+            <p>WebAgency une équipe d'experts en référencement naturel spécialisés en acquisition de trafic qualifié.</p>
+            <div class="icones">
+              <i class="fas fa-chart-pie  fa-2x"></i><br/><i class="fas fa-circle fa-sm"></i>
+            </div>
+          </li>
+        </ul>
+      </div><!-- /content -->
+  </section>
+
+  <!-- SECTION PROJETS -->
+  <section class="projets">
+    <!-- break point to get the right position of the section after navbar click -->
+    <div class="ancre100" id="projets"></div>
+    <!-- Projets title -->
+    <div class="introduction">
+      <h2>NOS PROJETS</h2>
+      <hr><i class="fas fa-circle"></i>
+      <p>Découvrez toutes nos réalisations web. <br> Notre agence web a réalisé de très nombreux projets dans de multiples domaines. <br>Avec nous, votre projet bénéficiera de notre regard créatif et du sens du détail</p>
+    </div>
+    <!-- Gallery and navbar container -->
+    <div class="navbar-portfolio">
+      <!-- Navigation buttons -->
+      <!-- no space between tags to get correct apparence -->
+      <input type="radio" name="navPortfolio" id="radio-all-works" class="lienAllWorks" checked /><label for="radio-all-works" class="radio-all-works">All Works<i class="fa fa-caret-down"></i></label><!--
+      --><input type="radio" name="navPortfolio" id="radio-creative" class="lienCreative" /><label for="radio-creative" class="radio-creative">Creative<i class="fa fa-caret-down"></i></label><!--
+      --><input type="radio" name="navPortfolio" id="radio-corporate" class="lienCorporate" /><label for="radio-corporate" class="radio-corporate">Corporate<i class="fa fa-caret-down"></i></label><!--
+      --><input type="radio" name="navPortfolio" id="radio-portfolio" class="lienPortfolio" /><label for="radio-portfolio" class="radio-portfolio">Portfolio<i class="fa fa-caret-down"></i></label><i class="fa fa-caret-down"></i>
+      <!-- Projects gallery -->
+      <div class="gallery">
+
+        <figure class="img-block creative"><img class="img-creative" src="images/portfolio-lunette.jpg" alt="Projet de lunette">
+          <figcaption class="legende creative"><i class="fa fa-eye"></i><h3>Projet de Logo</h3>
+            <p>Réalisé pour Optique 2000</p>
+          </figcaption>
+        </figure>
+
+        <figure class="img-block creative"><img class="img-creative" src="images/portfolio-lapin.jpg" alt="Projet de lapin">
+          <figcaption class="legende creative"><i class="fa fa-eye"></i><h3>Projet de Site Web</h3>
+            <p>Crée pour Donnie Darco</p>
+          </figcaption>
+        </figure>
+
+        <figure class="img-block creative"><img class="img-creative" src="images/portfolio-pompadour.jpg" alt="Projet de pompadour">
+          <figcaption class="legende creative"><i class="fa fa-eye"></i><h3>Projet de Logo</h3>
+            <p>Réalisé pour Pompadour</p>
+          </figcaption>
+        </figure>
+
+        <figure class="img-block corporate"><img class="img-corporate" src="images/portfolio-carte.jpg" alt="Projet de carte">
+          <figcaption class="legende corporate"><i class="fa fa-eye"></i><h3>Projet de newsletter</h3>
+            <p>Réalisé pour NiceMatin</p>
+          </figcaption>
+        </figure>
+
+        <figure class="img-block corporate"><img class="img-corporate" src="images/portfolio-sacs.jpg" alt="Projet de sacs">
+          <figcaption class="legende corporate"><i class="fa fa-eye"></i><h3>Projets de Site Web</h3>
+            <p>Crée pour Shopping</p>
+          </figcaption>
+        </figure>
+
+        <figure class="img-block corporate"><img class="img-corporate" src="images/portfolio-tableau.jpg" alt="Projet de tableau">
+          <figcaption class="legende corporate"><i class="fa fa-eye"></i><h3>Projets de Site Web</h3>
+            <p>Crée pour LA</p>
+          </figcaption>
+        </figure>
+
+        <figure class="img-block portfolio"><img class="img-portfolio" src="images/portfolio-fusee.jpg" alt="Projet de fusee">
+          <figcaption class="legende portfolio"><i class="fa fa-eye"></i><h3>Projet de Logo</h3>
+            <p>Réalisé pour NASA</p>
+          </figcaption>
+        </figure>
+
+        <figure class="img-block portfolio"><img class="img-portfolio" src="images/portfolio-bureau.jpg" alt="Projet de bureau">
+          <figcaption class="legende portfolio"><i class="fa fa-eye"></i><h3>Projet de Site Web</h3>
+            <p>Crée pour IKEA</p>
+          </figcaption>
+        </figure>
+      </div><!-- /gallery -->
+    </div><!-- /navbar-portfolio -->
+  </section>
+
+  <!-- SECTION CONTACT -->
+  <section id="contact" class="contact">
+    <!-- Form container-->
+    <div class="contact-form">
+      <h2>Contact Info</h2>
+      <strong>WebAgency SAS</strong>
+      <p>25 Rue d'Hauteville 75010 Paris</p>
+      <p><span id="contact-phone">Tel :</span> 01 02 03 04 05</p>
+
+      <form method="post" action="#home">
+        <input type="text" class="contact-input" id="name-input" name="firstname" placeholder="Name">
+        <input type="text" class="contact-input" id="email-input" name="email" placeholder="Email">
+        <input type="text" class="contact-input" id="subject-input" name="subject" placeholder="Subject">
+        <textarea name="message" class="contact-textarea" rows="8" cols="80" placeholder="Message"></textarea>
+        <input id="contact-send" type="submit" value="Send Message">
+        </form>
+    </div><!-- /contact-form -->
+    <!-- Map with blue cover -->
+    <div id="blueCover">
+      <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.2216096807206!2d2.347636915650275!3d48.87305177928891!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e145ccb3091%3A0x9495beee8c96ec27!2s25+Rue+d&#39;Hauteville%2C+75010+Paris!5e0!3m2!1sfr!2sfr!4v1547675654873" allowfullscreen></iframe>
+    </div>
+  </section>
+</body>
+
+</html>

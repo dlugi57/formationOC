@@ -1,0 +1,145 @@
+/* TABLETTES */
+@media (max-width: 768px) {
+  h2 {
+    font-size: 1.6em;
+    margin-top: 10px;
+  }
+
+  p {
+    font-size: 0.9em;
+  }
+
+  .ancre100 {
+    padding-top: 50px;
+    top: -50px;
+    margin-bottom: -50px;
+  }
+
+  /* HEADER */
+  .header {
+    height: 50px;
+  }
+
+  .header .logo {
+    width: 150px;
+    padding: 9px 20px;
+  }
+
+  .header li {
+    float: none;
+  }
+
+  .header li a {
+    padding: 20px 20px;
+  }
+
+  .header .menu-icon {
+    display: inline-block;
+  }
+
+  /* shows menu on all width of the screen  */
+  .header .menu {
+    clear: both;
+    max-height: 0;
+    float: none;
+    right: inherit;
+  }
+
+  /* CAROUSEL */
+  #home {
+    height: 550px;
+  }
+
+  /* hide arrow shadow circle */
+  .carousel .circle-left {
+    background-color: rgba(0, 0, 0, 0);
+  }
+
+  /* hide arrow shadow circle */
+  .carousel .circle-right {
+    background-color: rgba(0, 0, 0, 0);
+  }
+
+  /* show arrow shadow circle */
+  .carousel .circle-left:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+
+  /* show arrow shadow circle */
+  .carousel .circle-right:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+
+  .carousel .image-one, .carousel .image-two {
+    margin-top: 50px;
+    height: 450px;
+  }
+
+  .carousel .text {
+    top: 150px;
+  }
+
+  .carousel .text h1 {
+    font-size: 1.8em;
+  }
+
+  .carousel .button {
+    font-size: 0.9em;
+  }
+
+  .loading-space {
+    top: 544px;
+  }
+
+  /* SERVICES */
+  /* puts service list on the bottom of img */
+  .services .content {
+    flex-direction: column;
+  }
+
+  .services .descriptions {
+    width: 80%;
+    margin-top: 0px;
+  }
+
+  .services .description {
+    height: 100px;
+    margin-right: 0%;
+  }
+
+  .services .photo {
+    width: auto;
+    margin: auto;
+  }
+
+  /* PROJETS */
+  .navbar-portfolio {
+    margin-top: 37px;
+  }
+
+  .navbar-portfolio label {
+    margin-bottom: 15px;
+  }
+
+  .projets p {
+    margin-top: 0px;
+  }
+
+  .img-block {
+    margin: 10px;
+  }
+
+  /* CONTACT */
+  /* take contact form above the map */
+  .contact-form {
+    left: 0;
+    right: 0;
+    margin-left: 25px;
+    margin-right: 25px;
+    position: inherit;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    background-color: #f5f5f5;
+    width: inherit;
+  }
+}

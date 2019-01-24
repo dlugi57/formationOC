@@ -1,0 +1,63 @@
+/* MOBILE PHONE STYLES */
+@media all and (max-width: 480px) {
+
+  /* GLOBAL */
+  h2 {
+    font-size: 1.3em;
+    margin-top: 10px;
+  }
+
+  p {
+    font-size: 0.8em;
+  }
+
+  .ancre100 {
+    padding-top: 50px;
+    top: -50px;
+    margin-bottom: -50px;
+  }
+
+  /* CAROUSEL SECTION */
+  #home {
+    height: 450px;
+  }
+
+  .carousel .image-one, .carousel .image-two {
+    margin-top: 50px;
+    height: 350px;
+  }
+
+  .carousel .text {
+    top: 100px;
+  }
+
+  .carousel .text h1 {
+    font-size: 1.5em;
+  }
+
+  .carousel .button {
+    font-size: 0.8em;
+  }
+
+  .loading-space {
+    top: 444px;
+  }
+
+  /* PROJETS  SECTION*/
+  .navbar-portfolio {
+    margin-top: 17px;
+  }
+
+  .navbar-portfolio label {
+    width: auto;
+  }
+
+  /* CONTACT SECTION */
+  .contact-input, .contact-textarea {
+    margin: 3px 0;
+  }
+
+  #blueCover, iframe {
+    height: 500px;
+  }
+}

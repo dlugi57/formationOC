@@ -12,3 +12,15 @@ Version: 0.1.0
 h3{
   color: red;
 }
+.homeBtn:before {
+    content: "\f015";
+}
+
+.footer-widgets {
+    padding: 30px 0;
+    background-color: #252525;
+}
+.widget-area .widget {
+     margin-bottom: 10px; 
+     padding-top: 10px;
+}

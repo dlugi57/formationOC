@@ -6,21 +6,42 @@ Author URI:
 Template: Sydney
 Version: 0.1.0
 */
-.maintitle{
+.maintitle {
   color: red;
 }
-h3{
+
+h3 {
   color: red;
 }
+
 .homeBtn:before {
-    content: "\f015";
+  content: "\f015";
 }
 
 .footer-widgets {
-    padding: 30px 0;
-    background-color: #252525;
+  padding: 30px 0;
+  background-color: #252525;
 }
+
 .widget-area .widget {
-     margin-bottom: 10px; 
-     padding-top: 10px;
+  margin-bottom: 10px;
+  padding-top: 10px;
+}
+
+.wp-block-button__link:hover {
+  background-color: #32373c;
+}
+
+.section-col-titre {
+  font-size: 2em;
+}
+
+.wp-block-column {
+  width: 250px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.wp-block-column:hover {
+  width: 250px;
+  box-shadow: 0 4px 8px 0 rgba(214, 80, 80, 0.2), 0 6px 20px 0 rgba(214, 80, 80, 0.19);
 }

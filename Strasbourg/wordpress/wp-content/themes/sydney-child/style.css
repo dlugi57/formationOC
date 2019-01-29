@@ -6,8 +6,21 @@ Author URI:
 Template: Sydney
 Version: 0.1.0
 */
+ul {
+  list-style: none;
+}
+
+hr {
+  border-top: 4px solid #eee;
+  width: 50%;
+}
+
 .maintitle {
   color: red;
+}
+
+.widget-area a {
+  color: #c5c5c5;
 }
 
 h3 {
@@ -28,8 +41,21 @@ h3 {
   padding-top: 10px;
 }
 
+.wp-block-button__link {
+  background-color: #d65050;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid #d65050;
+  border-radius: 3px;
+}
+
+.is-style-squared .wp-block-button__link {
+    border-radius: 3px;
+}
+
 .wp-block-button__link:hover {
-  background-color: #32373c;
+  background-color: transparent;
+  color: #d65050;
+  transition: all 0.3s ease-in-out;
 }
 
 .section-col-titre {
@@ -44,4 +70,51 @@ h3 {
 .wp-block-column:hover {
   width: 250px;
   box-shadow: 0 4px 8px 0 rgba(214, 80, 80, 0.2), 0 6px 20px 0 rgba(214, 80, 80, 0.19);
+}
+
+#LastPost {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#LastPost:hover {
+  box-shadow: 0 4px 8px 0 rgba(214, 80, 80, 0.2), 0 6px 20px 0 rgba(214, 80, 80, 0.19);
+}
+
+.wp-block-columns {
+  justify-content: center;
+}
+
+.widgettitle {
+  padding-top: 0.5em;
+  font-size: 2em;
+  margin-bottom: 0.3em;
+}
+
+.rpwe-block h3 {
+  margin-bottom: 0;
+  font-size: larger;
+}
+
+#sfsi-plus-widget-7 {
+  justify-content: center;
+}
+
+.sfsi_plus_widget {
+  display: flex;
+  justify-content: center;
+}
+
+#sidebar-footer {
+  text-align: center;
+}
+
+@media (min-width: 600px) {
+  .wp-block-column:not(:last-child) {
+    margin-left: 32px;
+  }
+
+  #LastPost {
+    margin-left: 32px;
+    margin-right: 32px;
+  }
 }

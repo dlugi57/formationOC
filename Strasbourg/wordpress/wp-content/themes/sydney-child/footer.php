@@ -21,7 +21,7 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info container">
-			<a href="#">To sem ja</a></div><!-- .site-info -->
+			<a href="http://localhost/formationoc/Strasbourg/wordpress/sitemap_index.xml">Site Map</a> | Copyright © 2018 Office de tourisme de Strasbourg et sa région</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 
 	<?php do_action('sydney_after_footer'); ?>

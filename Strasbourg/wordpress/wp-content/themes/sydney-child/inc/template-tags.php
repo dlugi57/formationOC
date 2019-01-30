@@ -78,7 +78,7 @@ function sydney_posted_on() {
 	);
 
 	$posted_on = sprintf(
-		_x( 'Posted %s', 'post date', 'sydney' ),
+		_x( 'Posté %s', 'post date', 'sydney' ),
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 	);
 
@@ -97,7 +97,7 @@ function sydney_posted_on() {
 
 	$categories_list = get_the_category_list( __( ', ', 'sydney' ) );
 	if ( !is_single() && $categories_list && sydney_categorized_blog() ) {
-		printf( '<span class="cat-links">' . __( 'Posted in %1$s', 'sydney' ) . '</span>', $categories_list );
+		printf( '<span class="cat-links">' . __( 'Posté dans %1$s', 'sydney' ) . '</span>', $categories_list );
 	}
 }
 endif;
@@ -273,7 +273,7 @@ function sydney_post_date() {
 	);
 	$posted_on = sprintf(
 		/* translators: %s: post date. */
-		esc_html_x( 'Posted on %s', 'post date', 'sydney' ),
+		esc_html_x( 'Publié %s', 'post date', 'sydney' ),
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 	);
 	echo '<span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.

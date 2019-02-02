@@ -123,3 +123,24 @@ h3 {
 
 
 /* ACTUALITES */
+
+
+/* plus d'infos */
+
+.page-wrap{
+  padding-top: 20px;
+}
+
+.hentry .title-post {
+  font-size: 50px;
+text-align: center;
+}
+
+
+
+@media (max-width: 600px){
+  .wp-block-media-text {
+       display: inherit; 
+  }
+
+}

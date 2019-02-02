@@ -30,6 +30,11 @@ h3 {
 .homeBtn:before {
   content: "\f015";
 }
+#mainnav ul li::before {
+  margin: 0px 5px 0 0;
+  font-size: 20px;
+}
+
 
 .footer-widgets {
   padding: 30px 0;
@@ -140,7 +145,7 @@ text-align: center;
 
 @media (max-width: 600px){
   .wp-block-media-text {
-       display: inherit; 
+       display: inherit;
   }
 
 }

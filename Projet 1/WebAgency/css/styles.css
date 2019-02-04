@@ -2,7 +2,7 @@
 body {
   width: 100%;
   margin: auto;
-  font-family: 'FontAwesome', 'Roboto-Regular', sans-serif;
+  font-family: 'Roboto', sans-serif;
   color: #65696e;
   font-size: 1em;
   min-width: 350px;
@@ -11,7 +11,7 @@ body {
 h1 {
   color: #fff;
   text-transform: uppercase;
-  font-size: 2em;
+  font-size: 2.4em;
   transition: all 2s;
 }
 
@@ -173,7 +173,7 @@ li {
   margin-left: 10%;
   z-index: 99;
   transition: all 2s;
-  max-width: 625px;
+  max-width: 630px;
 }
 
 .carousel .button {
@@ -195,9 +195,6 @@ li {
   color: #fff;
 }
 
-.carousel h1 {
-  font-weight: bold;
-}
 
 .carousel .text span {
   color: #5cadd3;
@@ -230,16 +227,16 @@ li {
 .carousel .arrow-prev {
   left: 15px;
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%) rotate(135deg);
+  top: 40%;
+  transform: rotate(135deg);
 }
 
 /* get arrow in right position */
 .carousel .arrow-next {
   right: 15px;
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%) rotate(-45deg);
+  top: 40%;
+  transform: rotate(-45deg);
 }
 
 /* arrows circles shadows */

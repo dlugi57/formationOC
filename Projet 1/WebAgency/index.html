@@ -31,10 +31,10 @@
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css" />
-  <link rel="stylesheet" href="css/tablet.css">
-  <link rel="stylesheet" href="css/mobile.css">
+  <link rel="stylesheet" media="all and (max-width: 768px)" href="css/tablet.css">
+  <link rel="stylesheet" media="all and (max-width: 480px)" href="css/mobile.css">
   <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
 </head>
 
@@ -212,10 +212,10 @@
       <p><span id="contact-phone">Tel :</span> 01 02 03 04 05</p>
 
       <form method="post" action="#home">
-        <input type="text" class="contact-input" id="name-input" name="firstname" placeholder="Name">
-        <input type="text" class="contact-input" id="email-input" name="email" placeholder="Email">
+        <input type="text" class="contact-input" id="name-input" name="firstname" placeholder="Name" required>
+        <input type="email" class="contact-input" id="email-input" name="email" placeholder="Email" required>
         <input type="text" class="contact-input" id="subject-input" name="subject" placeholder="Subject">
-        <textarea name="message" class="contact-textarea" rows="8" cols="80" placeholder="Message"></textarea>
+        <textarea name="message" class="contact-textarea" rows="8" cols="80" placeholder="Message" required></textarea>
         <input id="contact-send" type="submit" value="Send Message">
         </form>
     </div><!-- /contact-form -->

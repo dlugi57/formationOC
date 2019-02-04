@@ -1,5 +1,5 @@
 /* TABLETTES */
-@media (max-width: 768px) {
+@media all and (max-width: 768px) {
   h2 {
     font-size: 1.6em;
     margin-top: 10px;
@@ -80,7 +80,7 @@
   }
 
   .carousel .text h1 {
-    font-size: 1.8em;
+    font-size: 2em;
   }
 
   .carousel .button {

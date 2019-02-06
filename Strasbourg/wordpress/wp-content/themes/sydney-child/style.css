@@ -22,7 +22,6 @@ hr {
 .widget-area a {
   color: #c5c5c5;
 }
-
 .homeBtn>a::before {
   font-family: FontAwesome;
   padding-right: 6px;
@@ -182,4 +181,35 @@ hr {
   .wp-block-media-text {
     display: inherit;
   }
+}
+
+/* de mois*/
+tr{
+  color: red;
+}
+td{
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+    padding: .5em;
+    border-left: none;
+    border-right: none;
+}
+.event-table-img{
+  text-align: left;
+  width: 200px;
+}
+.event-table-img img{
+  max-height: 150px;
+
+}
+
+.event-table-btn{
+  text-align: right;
+  width: 152px;
+}
+.event-table-time{
+ width: 20%;
+}
+.event-table-description{
+width: 50%;
 }

@@ -22,6 +22,7 @@ hr {
 .widget-area a {
   color: #c5c5c5;
 }
+
 .homeBtn>a::before {
   font-family: FontAwesome;
   padding-right: 6px;
@@ -184,32 +185,68 @@ hr {
 }
 
 /* de mois*/
-tr{
-  color: red;
+td {
+  padding: .5em;
+  border-left: none;
+  border-right: none;
+  border: none;
 }
-td{
+
+.event-table-tr {
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
-    padding: .5em;
-    border-left: none;
-    border-right: none;
-}
-.event-table-img{
-  text-align: left;
-  width: 200px;
-}
-.event-table-img img{
-  max-height: 150px;
-
 }
 
-.event-table-btn{
+.event-table-tr:hover {
+  background-color: rgba(214, 80, 80,0.5);
+}
+
+.event-table-btn {
   text-align: right;
   width: 152px;
 }
-.event-table-time{
- width: 20%;
+
+.event-table-btn a {
+  padding: 10px 20px 10px 20px;
 }
-.event-table-description{
-width: 50%;
+
+.event-table-time {
+  width: 10%;
+}
+
+.event-table-name {
+  width: 20%;
+  font-weight: 600;
+}
+
+.event-table-description {
+  width: 50%;
+}
+
+.event-table-description p {
+  margin: 0;
+}
+
+@media all and (max-width: 768px) {
+  .event-table-tr {
+    display: inline-grid;
+  }
+
+  .event-table-btn {
+    text-align: center;
+    width: 100%;
+  }
+
+  .event-table-time {
+    width: 100%;
+  }
+
+  .event-table-name {
+    width: 100%;
+    font-weight: 600;
+  }
+
+  .event-table-description {
+    width: 100%;
+  }
 }

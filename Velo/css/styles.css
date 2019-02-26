@@ -1,0 +1,39 @@
+/* GLOBAL STYLE */
+body {
+  width: 100%;
+  margin: auto;
+  font-family: 'Roboto', sans-serif;
+  color: #65696e;
+  font-size: 1em;
+  min-width: 350px;
+}
+
+/* break point to get the right position of the section after navbar click */
+/* break point to get the right position of the section after navbar click */
+.ancre100 {
+  padding-top: 100px;
+  position: relative;
+  top: -100px;
+  margin-bottom: -100px;
+
+  border: 5px solid green;
+}
+.slider, .reservation, .counter {
+  height:100vh;
+  border: 5px solid red;
+}
+
+#reservation-container{
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+article{
+  border: 5px solid blue;
+  height: 100%;
+  width: 80%;
+}
+aside{
+  border: 5px solid yellow;
+  width: 20%;
+}

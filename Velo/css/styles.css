@@ -7,6 +7,108 @@ body {
   font-size: 1em;
   min-width: 350px;
 }
+.slider, .reservation, .counter {
+  height:100vh;
+  border: 5px solid red;
+}
+
+
+
+
+
+
+
+#sliderTitle {
+  position: absolute;
+  top: 250px;
+  right: 10%;
+
+  z-index: 99;
+  transition: all 2s;
+}
+#sliderText {
+  position: absolute;
+  top: 300px;
+  right: 10%;
+
+  z-index: 99;
+  transition: all 2s;
+}
+#sliderPlayBtn{
+  position: absolute;
+  top: 350px;
+  right: 10%;
+
+  z-index: 99;
+  transition: all 2s;
+}
+#sliderStopBtn{
+  position: absolute;
+  top: 350px;
+  right: 15%;
+
+  z-index: 99;
+  transition: all 2s;
+}
+
+
+
+/* make arrows with hiding half of borders */
+.carousel .arrow {
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 8px;
+}
+
+/* get arrow in right possition */
+.carousel .arrow-prev {
+  left: 15px;
+  position: absolute;
+  top: 40%;
+  transform: rotate(135deg);
+}
+
+/* get arrow in right position */
+.carousel .arrow-next {
+  right: 15px;
+  position: absolute;
+  top: 40%;
+  transform: rotate(-45deg);
+}
+
+/* arrows circles shadows */
+.carousel .circle-left {
+  background-color: rgba(0, 0, 0, 0.3);
+  display: inline-block;
+  top: 42.5%;
+  height: 90px;
+  width: 45px;
+  border-bottom-right-radius: 90px;
+  border-top-right-radius: 90px;
+  left: 0px;
+  position: absolute;
+}
+
+.carousel .circle-right {
+  background-color: rgba(0, 0, 0, 0.3);
+  display: inline-block;
+  top: 42.5%;
+  height: 90px;
+  width: 45px;
+  border-bottom-left-radius: 90px;
+  border-top-left-radius: 90px;
+  right: 0px;
+  position: absolute;
+}
+
+#sliderImage{
+  height: 550px;
+  background-size: cover;
+  background-position: center;
+  margin-top: 100px;
+}
+
 
 /* break point to get the right position of the section after navbar click */
 /* break point to get the right position of the section after navbar click */
@@ -18,11 +120,15 @@ body {
 
   border: 5px solid green;
 }
-.slider, .reservation, .counter {
-  height:100vh;
-  border: 5px solid red;
-}
 
+
+
+
+
+#reservation-map{
+  height: 600px;
+  width: -webkit-fill-available;
+}
 #reservation-container{
   display: flex;
   flex-direction: row;

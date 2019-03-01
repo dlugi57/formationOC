@@ -31,7 +31,7 @@ slides.push({
 var carousel = {
   slides: [],
   slideNumber: 0,
-  intervalSlider:'',
+  intervalSlider: '',
   initialize() {
     document.getElementById("sliderImage").src = this.slides[this.slideNumber].image;
     document.getElementById("sliderTitle").textContent = this.slides[this.slideNumber].title;
@@ -52,12 +52,12 @@ var carousel = {
     }
     carousel.initialize();
   },
-  playSlider(){
+  playSlider() {
     this.intervalSlider = setInterval(function() {
       carousel.nextSlide();
     }, 5000);
   },
-  stopSlider(){
+  stopSlider() {
     clearInterval(this.intervalSlider);
   }
 

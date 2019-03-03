@@ -8,7 +8,7 @@ body {
   min-width: 350px;
 }
 .slider, .reservation, .counter {
-  height:100vh;
+
   border: 5px solid red;
 }
 
@@ -129,17 +129,19 @@ body {
   height: 600px;
   width: -webkit-fill-available;
 }
+/*tutaj na komorce dorzuc flex-direction column */
 #reservation-container{
   display: flex;
   flex-direction: row;
-  height: 100%;
-}
-article{
-  border: 5px solid blue;
-  height: 100%;
-  width: 80%;
+
 }
 aside{
   border: 5px solid yellow;
-  width: 20%;
+  position: relative;
+flex-direction: column;
+width: 35%;
+/*height: 40em;
+border: 1px solid #a0a0a0;
+background: #fff;
+font-weight: bold;*/
 }

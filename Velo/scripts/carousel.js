@@ -1,3 +1,4 @@
+//play slider() musialem urzyc funkcji w srodku bo sie nic nie dzialo jak nie bylo funkcji 
 var slides = [];
 
 slides.push({
@@ -36,7 +37,7 @@ var carousel = {
     document.getElementById("sliderImage").src = this.slides[this.slideNumber].image;
     document.getElementById("sliderTitle").textContent = this.slides[this.slideNumber].title;
     document.getElementById("sliderText").textContent = this.slides[this.slideNumber].text;
-    console.log(this.slideNumber);
+    //console.log(this.slideNumber);---------------------------------------------------------------------------------------------------
   },
   nextSlide() {
     this.slideNumber++;

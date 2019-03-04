@@ -88,15 +88,29 @@
 
       </article>-->
       <aside class="description">
+        <div id="description-aside" class="">
+          <h2 id="station-name"></h2>
+          <p id="station-address"></p>
+          <p id="station-bike"></p>
+          <p id="station-stand"></p>
+          <p id="station-card"></p>
+          <p id="station-number"></p>
+          <p id="station-status"></p>
+          <button id="station-reserver-btn" href="#">Reserve</button>
+        </div>
+        <div id="reservation-aside" class="">
+          <form>
+            <input id="name-reservation" type="text" name=""  placeholder="name">
+            <input id="surname-reservation" type="text" name=""  placeholder="surname">
+  </form>
+            <canvas id="canvas" width="300" height="200"></canvas>
+            <button id="station-clear-btn" href="#">Clear</button>
+            <button id="station-anuler-btn" href="#">Anuler</button>
+            <button id="station-confirmer-btn" href="#">Confirmer</button>
+
+        </div>
 
 
-        <h2 id="station-name"></h2>
-        <p id="station-address"></p>
-        <p id="station-bike"></p>
-        <p id="station-stand"></p>
-        <p id="station-card"></p>
-        <p id="station-number"></p>
-        <p id="station-status"></p>
 
 
 
@@ -109,11 +123,14 @@
   <!-- SECTION COUNTER -->
   <section class="counter">
     <div class="ancre100" id="counter"></div>
+    <p id="counter-info">counter-info</p>
+    <p id="counter-time">counter-time</p>
   </section>
   <script type="text/javascript" src="scripts/ajax.js"></script>
   <script type="text/javascript" src="scripts/carousel.js"></script>
   <script type="text/javascript" src="scripts/map.js"></script>
   <script type="text/javascript" src="scripts/stations.js"></script>
+  <script type="text/javascript" src="scripts/reservation.js"></script>
 
 </body>
 

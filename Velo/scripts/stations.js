@@ -5,7 +5,7 @@
 
 var stations = {
 
-
+  name: '',
   key: "62114b2e5a5efa9d593e73b53d562e2cf63b4cbb",
   city: "Toulouse",
   url() {
@@ -52,8 +52,11 @@ var stations = {
 
   },
   stationDetails(station) {
+    this.name = station.name;
     console.log("station from function stationDetails");
     console.log(station);
+    document.getElementById("station-reserver-btn").style.display = "block";
+
 
     document.getElementById("station-name").textContent = station.name;
     document.getElementById("station-address").textContent = station.address;
@@ -61,14 +64,26 @@ var stations = {
     document.getElementById("station-stand").textContent = station.available_bike_stands;
     document.getElementById("station-card").textContent = station.banking;
     document.getElementById("station-number").textContent = station.number;
-    document.getElementById("station-status").textContent = station.status;
 
 
-//tuutaj musisz ukryc guzik jak nie bedzie rowerow 
-//tutaj tez pokazesz canvas
 
 
-  }
+    if (station.status === "CLOSED") {
+      document.getElementById("station-status").textContent = "Ferme";
+      document.getElementById("station-reserver-btn").style.display = "none";
+    } else {
+      document.getElementById("station-status").textContent = "Ouvert";
+    }
+    if (station.available_bikes < 1) {
+      document.getElementById("station-reserver-btn").style.display = "none";
+    }
+
+    //tuutaj musisz ukryc guzik jak nie bedzie rowerow
+    //tutaj tez pokazesz canvas
+
+
+  },
+
 
 }
 
@@ -102,6 +117,13 @@ var orangeIcon = L.icon({
   iconAnchor: [0, 40], // point of the icon which will correspond to marker's location
   //  shadowAnchor: [4, 62],  // the same for the shadow
   //  popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+});
+
+var reserverBtn = document.getElementById("station-reserver-btn");
+reserverBtn.addEventListener("click", function() {
+  document.getElementById("description-aside").style.display = "none";
+  document.getElementById("reservation-aside").style.display = "block";
+
 });
 
 

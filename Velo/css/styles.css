@@ -7,51 +7,42 @@ body {
   font-size: 1em;
   min-width: 350px;
 }
-.slider, .reservation, .counter {
 
+.slider, .reservation, .counter {
   border: 5px solid red;
 }
-
-
-
-
-
-
 
 #sliderTitle {
   position: absolute;
   top: 250px;
   right: 10%;
-
   z-index: 99;
   transition: all 2s;
 }
+
 #sliderText {
   position: absolute;
   top: 300px;
   right: 10%;
-
   z-index: 99;
   transition: all 2s;
 }
-#sliderPlayBtn{
+
+#sliderPlayBtn {
   position: absolute;
   top: 350px;
   right: 10%;
-
   z-index: 99;
   transition: all 2s;
 }
-#sliderStopBtn{
+
+#sliderStopBtn {
   position: absolute;
   top: 350px;
   right: 15%;
-
   z-index: 99;
   transition: all 2s;
 }
-
-
 
 /* make arrows with hiding half of borders */
 .carousel .arrow {
@@ -102,13 +93,12 @@ body {
   position: absolute;
 }
 
-#sliderImage{
+#sliderImage {
   height: 550px;
   background-size: cover;
   background-position: center;
   margin-top: 100px;
 }
-
 
 /* break point to get the right position of the section after navbar click */
 /* break point to get the right position of the section after navbar click */
@@ -117,31 +107,42 @@ body {
   position: relative;
   top: -100px;
   margin-bottom: -100px;
-
   border: 5px solid green;
 }
 
-
-
-
-
-#reservation-map{
+#reservation-map {
   height: 600px;
   width: -webkit-fill-available;
 }
+
 /*tutaj na komorce dorzuc flex-direction column */
-#reservation-container{
+#reservation-container {
   display: flex;
   flex-direction: row;
-
 }
-aside{
+
+aside {
   border: 5px solid yellow;
   position: relative;
-flex-direction: column;
-width: 35%;
-/*height: 40em;
+  flex-direction: column;
+  width: 35%;
+  min-width: 300px;
+  /*height: 40em;
 border: 1px solid #a0a0a0;
 background: #fff;
 font-weight: bold;*/
+}
+
+#station-reserver-btn {
+  display: none;
+}
+
+
+
+#canvas {
+  border: 5px solid pink;
+}
+
+#reservation-aside{
+  display: none;
 }

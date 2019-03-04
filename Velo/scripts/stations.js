@@ -64,7 +64,8 @@ var stations = {
     document.getElementById("station-status").textContent = station.status;
 
 
-
+//tuutaj musisz ukryc guzik jak nie bedzie rowerow 
+//tutaj tez pokazesz canvas
 
 
   }

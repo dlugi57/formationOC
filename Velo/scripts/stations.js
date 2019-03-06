@@ -16,7 +16,7 @@ class Stations {
 
     console.log("chuj");
     this.url = 'https://api.jcdecaux.com/vls/v1/stations?contract=' + this.city + '&apiKey=' + this.key;
-
+    var that = this;
     ajaxGet(this.url, function(reponse) {
       var listeStations = JSON.parse(reponse);
       var markers = new L.MarkerClusterGroup();
@@ -46,7 +46,27 @@ class Stations {
             var stationInfos = JSON.parse(reponse);
 
 
-            this.stationDetails(stationInfos);
+            that.stationDetails(stationInfos);
+
+            /*  document.getElementById("station-reserver-btn").style.display = "block";
+            document.getElementById("station-name").textContent = stationInfos.name;
+            document.getElementById("station-address").textContent = stationInfos.address;
+            document.getElementById("station-bike").textContent = stationInfos.available_bikes;
+            document.getElementById("station-stand").textContent = stationInfos.available_bike_stands;
+            document.getElementById("station-card").textContent = stationInfos.banking;
+            document.getElementById("station-number").textContent = stationInfos.number;
+            if (stationInfos.status === "CLOSED") {
+              document.getElementById("station-status").textContent = "Ferme";
+              document.getElementById("station-reserver-btn").style.display = "none";
+            } else {
+              document.getElementById("station-status").textContent = "Ouvert";
+            }
+            if (stationInfos.available_bikes < 1) {
+              document.getElementById("station-reserver-btn").style.display = "none";
+            }
+*/
+            //tuutaj musisz ukryc guzik jak nie bedzie rowerow
+            //tutaj tez pokazesz canvas
 
           })
           //  console.log(stationInfos.name);
@@ -59,38 +79,38 @@ class Stations {
 
   };
 
-    stationDetails(station) {
-      this.name = station.name;
-      console.log("station from function stationDetails");
-      console.log(station);
-      document.getElementById("station-reserver-btn").style.display = "block";
+  stationDetails(station) {
+    console.log("chujek");
+    document.getElementById("description-aside").style.display = "block";
+    document.getElementById("station-reserver-btn").style.display = "block";
+    document.getElementById("station-name").textContent = station.name;
+    document.getElementById("station-address").textContent = station.address;
+    var bikesFree = station.available_bikes;
+
+    document.getElementById("station-stand").textContent = station.available_bike_stands;
+    document.getElementById("station-card").textContent = station.banking;
+    document.getElementById("station-number").textContent = station.number;
+    if (station.status === "CLOSED") {
+      document.getElementById("station-status").textContent = "Ferme";
+      document.getElementById("station-reserver-btn").style.display = "none";
+    } else {
+      document.getElementById("station-status").textContent = "Ouvert";
+    }
+    if (station.available_bikes < 1) {
+      document.getElementById("station-reserver-btn").style.display = "none";
+    }
+    if (sessionStorage.stationName !== '' && station.name === sessionStorage.stationName) {
+      console.log("napisz tutaj ze zarezerwowales juz ta stacje");
+      document.getElementById("station-reserver-btn").style.display = "none";
+      bikesFree = bikesFree - 1;
+    }
+
+    document.getElementById("station-bike").textContent = bikesFree;
+    //tuutaj musisz ukryc guzik jak nie bedzie rowerow
+    //tutaj tez pokazesz canvas
 
 
-      document.getElementById("station-name").textContent = station.name;
-      document.getElementById("station-address").textContent = station.address;
-      document.getElementById("station-bike").textContent = station.available_bikes;
-      document.getElementById("station-stand").textContent = station.available_bike_stands;
-      document.getElementById("station-card").textContent = station.banking;
-      document.getElementById("station-number").textContent = station.number;
-
-
-
-
-      if (station.status === "CLOSED") {
-        document.getElementById("station-status").textContent = "Ferme";
-        document.getElementById("station-reserver-btn").style.display = "none";
-      } else {
-        document.getElementById("station-status").textContent = "Ouvert";
-      }
-      if (station.available_bikes < 1) {
-        document.getElementById("station-reserver-btn").style.display = "none";
-      }
-
-      //tuutaj musisz ukryc guzik jak nie bedzie rowerow
-      //tutaj tez pokazesz canvas
-
-
-    };
+  };
 
 
 }
@@ -132,12 +152,3 @@ var orangeIcon = L.icon({
 
 
 //stations.showStations();
-var myStations = new Stations("62114b2e5a5efa9d593e73b53d562e2cf63b4cbb", "Toulouse");
-myStations.showStations();
-
-var reserverBtn = document.getElementById("station-reserver-btn");
-reserverBtn.addEventListener("click", function() {
-  document.getElementById("description-aside").style.display = "none";
-  document.getElementById("reservation-aside").style.display = "block";
-//console.log(myStations.stationName());
-});

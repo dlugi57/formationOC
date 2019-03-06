@@ -45,6 +45,7 @@ class Carousel {
     document.getElementById("sliderTitle").textContent = this.slides[this.slideNumber].title;
     document.getElementById("sliderText").textContent = this.slides[this.slideNumber].text;
     //console.log(this.slideNumber);---------------------------------------------------------------------------------------------------
+
   }
   nextSlide() {
     this.slideNumber++;

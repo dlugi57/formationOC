@@ -46,27 +46,7 @@ class Stations {
             var stationInfos = JSON.parse(reponse);
 
 
-            //this.stationDetails(stationInfos);
-
-            document.getElementById("station-reserver-btn").style.display = "block";
-            document.getElementById("station-name").textContent = stationInfos.name;
-            document.getElementById("station-address").textContent = stationInfos.address;
-            document.getElementById("station-bike").textContent = stationInfos.available_bikes;
-            document.getElementById("station-stand").textContent = stationInfos.available_bike_stands;
-            document.getElementById("station-card").textContent = stationInfos.banking;
-            document.getElementById("station-number").textContent = stationInfos.number;
-            if (stationInfos.status === "CLOSED") {
-              document.getElementById("station-status").textContent = "Ferme";
-              document.getElementById("station-reserver-btn").style.display = "none";
-            } else {
-              document.getElementById("station-status").textContent = "Ouvert";
-            }
-            if (stationInfos.available_bikes < 1) {
-              document.getElementById("station-reserver-btn").style.display = "none";
-            }
-
-            //tuutaj musisz ukryc guzik jak nie bedzie rowerow
-            //tutaj tez pokazesz canvas
+            this.stationDetails(stationInfos);
 
           })
           //  console.log(stationInfos.name);
@@ -79,7 +59,7 @@ class Stations {
 
   };
 
-  /*  stationDetails(station) {
+    stationDetails(station) {
       this.name = station.name;
       console.log("station from function stationDetails");
       console.log(station);
@@ -110,7 +90,7 @@ class Stations {
       //tutaj tez pokazesz canvas
 
 
-    };*/
+    };
 
 
 }

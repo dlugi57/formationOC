@@ -1,19 +1,23 @@
-//czy tworze variables czy proprietes w funkcji ktora znajduje sie w obiekcie
-//jak dodac priopreties do string na przykladzie url
-//mam stacje z detalami zrekuperowana z listy albo z nowym ajax get
+//chuj mnie strzela
+//jak zawolac funkcje w funkcji
+//jak zawolac jedna variable w innej
+//jak przekazac nazwe kliknietej stacji
 
 
-var stations = {
+class Stations {
 
-  name: '',
-  key: "62114b2e5a5efa9d593e73b53d562e2cf63b4cbb",
-  city: "Toulouse",
-  url() {
-    return 'https://api.jcdecaux.com/vls/v1/stations?contract=' + this.city + '&apiKey=' + this.key;
-  },
+  constructor(key, city) {
+    this.key = key;
+    this.city = city;
 
+  }
   showStations() {
-    ajaxGet(this.url(), function(reponse) {
+    var key = this.key;
+
+    console.log("chuj");
+    this.url = 'https://api.jcdecaux.com/vls/v1/stations?contract=' + this.city + '&apiKey=' + this.key;
+
+    ajaxGet(this.url, function(reponse) {
       var listeStations = JSON.parse(reponse);
       var markers = new L.MarkerClusterGroup();
 
@@ -34,55 +38,79 @@ var stations = {
         }).on('click', function(a) {
           console.log("station from list");
           console.log(station);
-          stations.stationDetails(station);
+          //  console.log(this.key);
 
-          /*  ajaxGet("https://api.jcdecaux.com/vls/v1/stations/" + station.number + "?contract=" + stations.city + "&apiKey=" + stations.key, function(reponse) {
-              var stationInfos = JSON.parse(reponse);
-              stations.stationDetails(stationInfos);
-              console.log("station from details");
-              console.log(stationInfos);
+          //  this.stationDetails(station);
 
-            })*/
-          console.log(station.name);
-        }));
+          ajaxGet("https://api.jcdecaux.com/vls/v1/stations/" + station.number + "?contract=" + station.contract_name + "&apiKey=" + key, function(reponse) {
+            var stationInfos = JSON.parse(reponse);
+
+
+            //this.stationDetails(stationInfos);
+
+            document.getElementById("station-reserver-btn").style.display = "block";
+            document.getElementById("station-name").textContent = stationInfos.name;
+            document.getElementById("station-address").textContent = stationInfos.address;
+            document.getElementById("station-bike").textContent = stationInfos.available_bikes;
+            document.getElementById("station-stand").textContent = stationInfos.available_bike_stands;
+            document.getElementById("station-card").textContent = stationInfos.banking;
+            document.getElementById("station-number").textContent = stationInfos.number;
+            if (stationInfos.status === "CLOSED") {
+              document.getElementById("station-status").textContent = "Ferme";
+              document.getElementById("station-reserver-btn").style.display = "none";
+            } else {
+              document.getElementById("station-status").textContent = "Ouvert";
+            }
+            if (stationInfos.available_bikes < 1) {
+              document.getElementById("station-reserver-btn").style.display = "none";
+            }
+
+            //tuutaj musisz ukryc guzik jak nie bedzie rowerow
+            //tutaj tez pokazesz canvas
+
+          })
+          //  console.log(stationInfos.name);
+        }))
       })
       mymap.addLayer(markers);
+
       //console.log(markers);
-    });
+    })
 
-  },
-  stationDetails(station) {
-    this.name = station.name;
-    console.log("station from function stationDetails");
-    console.log(station);
-    document.getElementById("station-reserver-btn").style.display = "block";
+  };
 
-
-    document.getElementById("station-name").textContent = station.name;
-    document.getElementById("station-address").textContent = station.address;
-    document.getElementById("station-bike").textContent = station.available_bikes;
-    document.getElementById("station-stand").textContent = station.available_bike_stands;
-    document.getElementById("station-card").textContent = station.banking;
-    document.getElementById("station-number").textContent = station.number;
+  /*  stationDetails(station) {
+      this.name = station.name;
+      console.log("station from function stationDetails");
+      console.log(station);
+      document.getElementById("station-reserver-btn").style.display = "block";
 
 
+      document.getElementById("station-name").textContent = station.name;
+      document.getElementById("station-address").textContent = station.address;
+      document.getElementById("station-bike").textContent = station.available_bikes;
+      document.getElementById("station-stand").textContent = station.available_bike_stands;
+      document.getElementById("station-card").textContent = station.banking;
+      document.getElementById("station-number").textContent = station.number;
 
 
-    if (station.status === "CLOSED") {
-      document.getElementById("station-status").textContent = "Ferme";
-      document.getElementById("station-reserver-btn").style.display = "none";
-    } else {
-      document.getElementById("station-status").textContent = "Ouvert";
-    }
-    if (station.available_bikes < 1) {
-      document.getElementById("station-reserver-btn").style.display = "none";
-    }
-
-    //tuutaj musisz ukryc guzik jak nie bedzie rowerow
-    //tutaj tez pokazesz canvas
 
 
-  },
+      if (station.status === "CLOSED") {
+        document.getElementById("station-status").textContent = "Ferme";
+        document.getElementById("station-reserver-btn").style.display = "none";
+      } else {
+        document.getElementById("station-status").textContent = "Ouvert";
+      }
+      if (station.available_bikes < 1) {
+        document.getElementById("station-reserver-btn").style.display = "none";
+      }
+
+      //tuutaj musisz ukryc guzik jak nie bedzie rowerow
+      //tutaj tez pokazesz canvas
+
+
+    };*/
 
 
 }
@@ -119,13 +147,17 @@ var orangeIcon = L.icon({
   //  popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
 });
 
+
+
+
+
+//stations.showStations();
+var myStations = new Stations("62114b2e5a5efa9d593e73b53d562e2cf63b4cbb", "Toulouse");
+myStations.showStations();
+
 var reserverBtn = document.getElementById("station-reserver-btn");
 reserverBtn.addEventListener("click", function() {
   document.getElementById("description-aside").style.display = "none";
   document.getElementById("reservation-aside").style.display = "block";
-
+//console.log(myStations.stationName());
 });
-
-
-
-stations.showStations();

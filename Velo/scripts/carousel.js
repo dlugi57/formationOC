@@ -1,4 +1,4 @@
-//play slider() musialem urzyc funkcji w srodku bo sie nic nie dzialo jak nie bylo funkcji 
+//play slider() musialem urzyc funkcji w srodku bo sie nic nie dzialo jak nie bylo funkcji
 var slides = [];
 
 slides.push({
@@ -29,35 +29,44 @@ slides.push({
 
 
 
-var carousel = {
-  slides: [],
-  slideNumber: 0,
-  intervalSlider: '',
+class Carousel {
+
+  constructor(slides) {
+    this.slides = slides;
+    this.slideNumber = 0;
+    this.intervalSlider = '';
+  }
+
+  //slides: [],
+  //slideNumber: 0,
+  //intervalSlider: '',
   initialize() {
     document.getElementById("sliderImage").src = this.slides[this.slideNumber].image;
     document.getElementById("sliderTitle").textContent = this.slides[this.slideNumber].title;
     document.getElementById("sliderText").textContent = this.slides[this.slideNumber].text;
     //console.log(this.slideNumber);---------------------------------------------------------------------------------------------------
-  },
+  }
   nextSlide() {
     this.slideNumber++;
     if (this.slideNumber > this.slides.length - 1) {
       this.slideNumber = 0;
     }
-    carousel.initialize();
-  },
+    this.initialize();
+  }
   previousSlide() {
     this.slideNumber--;
     if (this.slideNumber < 0) {
       this.slideNumber = this.slides.length - 1;
     }
-    carousel.initialize();
-  },
+    this.initialize();
+  }
   playSlider() {
+
+    //  this.intervalSlider = setInterval(this.nextSlide(), 5000);
     this.intervalSlider = setInterval(function() {
-      carousel.nextSlide();
+      this.nextSlide();
     }, 5000);
-  },
+  }
   stopSlider() {
     clearInterval(this.intervalSlider);
   }
@@ -66,26 +75,26 @@ var carousel = {
 
 };
 
-
-carousel.slides = slides;
-carousel.initialize();
-carousel.playSlider();
+var newCarousel = new Carousel(slides);
+//carousel.slides = slides;
+newCarousel.initialize();
+newCarousel.playSlider();
 /*var playSlider = setInterval(function() {
   carousel.nextSlide();
 }, 1000);*/
 var rightBtn = document.getElementById("sliderRightBtn");
 rightBtn.addEventListener("click", function() {
-  carousel.nextSlide();
+  newCarousel.nextSlide();
   //carousel.initialize();
 });
 var leftBtn = document.getElementById("sliderLeftBtn");
 leftBtn.addEventListener("click", function() {
-  carousel.previousSlide();
+  newCarousel.previousSlide();
   //carousel.initialize();
 });
 var startBtn = document.getElementById("sliderPlayBtn");
 startBtn.addEventListener("click", function() {
-  carousel.playSlider();
+  newCarousel.playSlider();
   /*  setInterval(function() {
       carousel.nextSlide();
     }, 1000);*/
@@ -95,16 +104,16 @@ var stopBtn = document.getElementById("sliderStopBtn");
 stopBtn.addEventListener("click", function() {
   //  clearInterval(playSlider);
   //carousel.initialize();
-  carousel.stopSlider();
+  newCarousel.stopSlider();
 });
 
 document.addEventListener("keyup", function(e) {
 
   if (e.keyCode === 37) {
-    carousel.previousSlide();
-    carousel.initialize();
+    newCarousel.previousSlide();
+    newCarousel.initialize();
   } else if (e.keyCode === 39) {
-    carousel.nextSlide();
+    newCarousel.nextSlide();
     //carousel.initialize();
   }
 

@@ -48,7 +48,8 @@ class Reservation {
       document.getElementById("name-reservation").setAttribute('value', localStorage.getItem('name'));
       document.getElementById("surname-reservation").setAttribute('value', localStorage.getItem('surname'));
     }
-    if (sessionStorage.stationName !== '') {
+    console.log(sessionStorage.stationName);
+    if (sessionStorage.stationName !== '' && sessionStorage.stationName !== undefined) {
       document.getElementById("counter-info").textContent = this.nom + " " + this.prenom + " " + this.station;
       //this.showCounter();
       clearInterval(this.counterInter);
@@ -71,7 +72,9 @@ class Reservation {
       sessionStorage.setItem("minutes", this.minutes);
       sessionStorage.setItem("secondes", this.secondes);
     } else if (this.minutes === 0 && this.secondes === 0) {
-      document.getElementById("counter-second").textContent = "koniec rezerwacji";
+      document.getElementById("counter-info").textContent = "koniec rezerwacji";
+      this.deleteRes();
+      console.log("to juz jest koniec");
     }
     if (this.secondes < 10) {
       document.getElementById("counter-second").textContent = "0" + this.secondes;
@@ -85,6 +88,12 @@ class Reservation {
     } else {
       document.getElementById("counter-minut").textContent = this.minutes;
     }
+
+  }
+
+  deleteRes() {
+    clearInterval(this.counterInter);
+    sessionStorage.clear();
 
   }
   /*  showCounter() {

@@ -1,5 +1,4 @@
-//play slider() musialem urzyc funkcji w srodku bo sie nic nie dzialo jak nie bylo funkcji
-
+// play jak kllikalem kilka razy to powielal funkcje 
 
 
 class Carousel {

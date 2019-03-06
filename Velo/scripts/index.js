@@ -96,8 +96,19 @@ document.getElementById("reservation-aside").style.display = "none";
 document.getElementById("description-aside").style.display = "none";
 //  reservation.showReservation();
 
-
+window.scrollTo(0,document.body.scrollHeight);
 myReservation.setReservation();
 
 
 })
+
+var anulerResBtn = document.getElementById("station-anuler-btn");
+anulerResBtn.addEventListener("click", function(){
+
+document.getElementById("reservation-aside").style.display = "none";
+
+});
+
+/* CANVAS -----------------------------------------------------------------------------------------------------------------*/
+var newCanvas = new Canvas();
+newCanvas.startDrawing();

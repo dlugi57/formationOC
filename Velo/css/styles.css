@@ -112,7 +112,7 @@ body {
 }
 
 #reservation-map {
-  height: 700px;
+  height: 650px;
   width: -webkit-fill-available;
 }
 
@@ -145,5 +145,5 @@ font-weight: bold;*/
 }
 
 #reservation-aside{
-  display: none;
+  /*display: none;*/
 }

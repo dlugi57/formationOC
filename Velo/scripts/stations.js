@@ -1,9 +1,4 @@
-//chuj mnie strzela
-//jak zawolac funkcje w funkcji
-//jak zawolac jedna variable w innej
-//jak przekazac nazwe kliknietej stacji
-
-
+// problem ze straconymi klasami bind i that 
 class Stations {
 
   constructor(key, city) {

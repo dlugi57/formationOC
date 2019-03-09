@@ -16,7 +16,7 @@ class Reservation {
     this.surnameRes = document.getElementById("surname-reservation").value;
     this.stationRes = document.getElementById("station-name").innerHTML;
     this.secondes = 0;
-    this.minutes = 20;
+    this.minutes = 1;
 
     localStorage.setItem("name", this.nameRes);
     localStorage.setItem("surname", this.surnameRes);

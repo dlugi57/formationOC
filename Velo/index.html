@@ -61,8 +61,8 @@
   <!-- SECTION SLIDER -->
   <section class="carousel">
     <div class="ancre100" id="slider"></div>
-    <div class="" id="">
-      <img class="" id="sliderImage" src="" alt="">
+    <div class="slider-block" id="slider-block">
+    <!-- <img class="" id="sliderImage" src="" alt="">-->
       <h3 id="sliderTitle">Title</h3>
       <p id="sliderText">Descritpion</p>
 
@@ -80,22 +80,29 @@
   <!-- SECTION RESERVATION -->
   <section class="reservation">
     <div class="ancre100" id="reservation"></div>
-
+    <div class="introduction">
+      <h2>Choisissez votre station</h2>
+    </div>
     <div id="reservation-container">
       <div id="reservation-map"></div>
 
       <!--<article class="map">
 
       </article>-->
-      <aside class="description">
+      <aside class="description" id="description">
+
         <div id="description-aside" class="">
-          <h2 id="station-name"></h2>
-          <p id="station-address"></p>
-          <p id="station-bike"></p>
-          <p id="station-stand"></p>
+          <p id="details-station">Détails de la station : </p>
+
+
+          <h2 id="station-status"></h2>
+          <p id="adresse">Adresse : <span id="station-address"></span></p>
+          <p><span id="station-stand"></span> places</p>
+          <p> <span id="station-bike"></span> vélos disponibles</p>
+
           <p id="station-card"></p>
           <p id="station-number"></p>
-          <p id="station-status"></p>
+          <p id="station-name"></p>
           <button id="station-reserver-btn" href="#">Reserve</button>
         </div>
         <div id="reservation-aside" class="">

@@ -1,27 +1,28 @@
 var slides = [];
 
 slides.push({
-  image: "images/slide0.jpg",
+
+  image: "url('../Velo/images/slide0.jpg')",
   title: "title0",
   text: "text0"
 });
 slides.push({
-  image: "images/slide1.jpg",
+  image: "url('../Velo/images/slide1.jpg')",
   title: "title1",
   text: "text1"
 });
 slides.push({
-  image: "images/slide2.jpg",
+  image: "url('../Velo/images/slide2.jpg')",
   title: "title2",
   text: "text2"
 });
 slides.push({
-  image: "images/slide3.jpg",
+  image: "url('../Velo/images/slide3.jpg')",
   title: "title3",
   text: "text3"
 });
 slides.push({
-  image: "images/slide4.jpg",
+  image: "url('../Velo/images/slide4.jpg')",
   title: "title4",
   text: "text4"
 });

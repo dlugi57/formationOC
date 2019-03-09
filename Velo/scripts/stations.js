@@ -1,4 +1,4 @@
-// problem ze straconymi klasami bind i that 
+// problem ze straconymi klasami bind i that
 class Stations {
 
   constructor(key, city) {
@@ -76,6 +76,7 @@ class Stations {
 
   stationDetails(station) {
     console.log("chujek");
+    document.getElementById("description").style.display = "block";
     document.getElementById("description-aside").style.display = "block";
     document.getElementById("station-reserver-btn").style.display = "block";
     document.getElementById("station-name").textContent = station.name;
@@ -86,10 +87,12 @@ class Stations {
     document.getElementById("station-card").textContent = station.banking;
     document.getElementById("station-number").textContent = station.number;
     if (station.status === "CLOSED") {
-      document.getElementById("station-status").textContent = "Ferme";
+      document.getElementById("station-status").textContent = "Station ferme";
+      document.getElementById("station-status").style.backgroundColor = "#D9534F"
       document.getElementById("station-reserver-btn").style.display = "none";
     } else {
-      document.getElementById("station-status").textContent = "Ouvert";
+      document.getElementById("station-status").textContent = "Station ouvert";
+      document.getElementById("station-status").style.backgroundColor = "#5CB85C"
     }
     if (station.available_bikes < 1) {
       document.getElementById("station-reserver-btn").style.display = "none";

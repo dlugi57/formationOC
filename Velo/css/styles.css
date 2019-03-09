@@ -6,10 +6,17 @@ body {
   color: #65696e;
   font-size: 1em;
   min-width: 350px;
+  background-color: rgba(240, 240, 240, 0.7);
 }
 
 .slider, .reservation, .counter {
-  border: 5px solid red;
+
+}
+
+.introduction h2{
+  text-align: center;
+  text-transform: uppercase;
+    font-size: xx-large;
 }
 
 #sliderTitle {
@@ -28,20 +35,23 @@ body {
   transition: all 2s;
 }
 
-#sliderPlayBtn {
+
+#sliderStopBtn, #sliderPlayBtn {
   position: absolute;
-  top: 350px;
-  right: 10%;
+  top: 580px;
+      right: 50%;
+      font-size: 40px;
+      color: white;
   z-index: 99;
   transition: all 2s;
 }
 
-#sliderStopBtn {
-  position: absolute;
-  top: 350px;
-  right: 15%;
-  z-index: 99;
-  transition: all 2s;
+.slider-block{
+  height: 550px;
+background-size: cover;
+background-position: center;
+margin-top: 100px;
+transition: all 2s;
 }
 
 /* make arrows with hiding half of borders */
@@ -93,12 +103,12 @@ body {
   position: absolute;
 }
 
-#sliderImage {
+/*#sliderImage {
   height: 550px;
   background-size: cover;
   background-position: center;
   margin-top: 100px;
-}
+}*/
 
 /* break point to get the right position of the section after navbar click */
 /* break point to get the right position of the section after navbar click */
@@ -107,27 +117,50 @@ body {
   position: relative;
   top: -100px;
   margin-bottom: -100px;
-  border: 5px solid green;
+
   z-index: -10;
 }
 
 #reservation-map {
-  height: 650px;
+/*  height: 550px;*/
   width: -webkit-fill-available;
+
 }
 
 /*tutaj na komorce dorzuc flex-direction column */
 #reservation-container {
   display: flex;
+  height: 500px;
   flex-direction: row;
+  box-shadow: 5px 5px 10px 0 #c0c0c0;
+margin: 0 2em 2em 2em;
+padding: 2em;
+background-color: white;
+
+}
+
+#description{
+/*  display: none;---------------------------------------------------------------------------------------*/
+}
+
+#description-aside, #reservation-aside{
+  margin:0 1em 1em 1em;
+}
+
+#details-station{
+  margin-top: 0;
 }
 
 aside {
-  border: 5px solid yellow;
+
   position: relative;
   flex-direction: column;
   width: 35%;
   min-width: 300px;
+  /*    margin: 0 2em 2em 0;
+      box-shadow: 5px 5px 10px 0 #c0c0c0;
+      height: 550px;*/
+
   /*height: 40em;
 border: 1px solid #a0a0a0;
 background: #fff;
@@ -136,6 +169,18 @@ font-weight: bold;*/
 
 #station-reserver-btn {
   display: none;
+  background-color:#5CB85C;
+-moz-border-radius:5px;
+-webkit-border-radius:5px;
+border-radius:5px;
+border:1px solid #5CB85C;
+cursor:pointer;
+color:#ffffff;
+font-size:15px;
+font-weight:bold;
+padding:6px 24px;
+text-decoration:none;
+text-shadow:0px 1px 0px #86ae47;
 }
 
 
@@ -145,5 +190,18 @@ font-weight: bold;*/
 }
 
 #reservation-aside{
-  /*display: none;*/
+  display: none;
+}
+
+#station-status{
+  text-align: center;
+  /*background-color: #5CB85C;*/
+    border-radius: 5px;
+    color: white
+}
+#adresse {
+  font-weight: 900;
+}
+#station-address{
+  font-weight: 100;
 }

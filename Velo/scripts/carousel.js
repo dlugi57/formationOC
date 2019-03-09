@@ -1,4 +1,4 @@
-// play jak kllikalem kilka razy to powielal funkcje 
+// play jak kllikalem kilka razy to powielal funkcje
 
 
 class Carousel {
@@ -14,7 +14,9 @@ slideNumber = 0;
   //slideNumber: 0,
   //intervalSlider: '',
   initialize() {
-    document.getElementById("sliderImage").src = this.slides[this.slideNumber].image;
+    //document.getElementById("sliderImage").src = this.slides[this.slideNumber].image;
+//document.getElementById("slider-block").style.backgroundImage = "url('../Velo/"+this.slides[this.slideNumber].image+"')";
+    document.getElementById("slider-block").style.backgroundImage = this.slides[this.slideNumber].image;
     document.getElementById("sliderTitle").textContent = this.slides[this.slideNumber].title;
     document.getElementById("sliderText").textContent = this.slides[this.slideNumber].text;
     //console.log(this.slideNumber);---------------------------------------------------------------------------------------------------

@@ -80,7 +80,16 @@ myStations.showStations();
 
 var reserverBtn = document.getElementById("station-reserver-btn");
 reserverBtn.addEventListener("click", function() {
+document.getElementById("description-aside").style.display = "none";
+var checkName = document.getElementById("name-reservation").value;
+var checkSurname = document.getElementById("surname-reservation").value;
+
   //document.getElementById("description-aside").style.display = "none";
+  if (checkName == null||checkName=="",checkSurname==null||checkSurname=="") {
+    document.getElementById("info-champs").textContent = "Veuillez renseigner ce champ";
+    console.log("you need to put things into imput");
+    return false;
+  }
   document.getElementById("reservation-aside").style.display = "block";
 //console.log(myStations.stationName());
 });
@@ -90,11 +99,16 @@ reserverBtn.addEventListener("click", function() {
 
 var myReservation = new Reservation();
 myReservation.showReservation();
+//myReservation.counter();
 
 var confirmerBtn = document.getElementById("station-confirmer-btn");
 confirmerBtn.addEventListener("click", function() {
 document.getElementById("reservation-aside").style.display = "none";
-document.getElementById("description-aside").style.display = "none";
+document.getElementById("description-aside").style.display = "block";
+document.getElementById("info-champs").textContent = "Vous avez réservé cette station";
+document.getElementById("station-reserver-btn").style.display = "none";
+
+//document.getElementById("description").style.display = "none";
 //  reservation.showReservation();
 
 window.scrollTo(0,document.body.scrollHeight);
@@ -107,9 +121,17 @@ var anulerResBtn = document.getElementById("station-anuler-btn");
 anulerResBtn.addEventListener("click", function(){
 
 document.getElementById("reservation-aside").style.display = "none";
+document.getElementById("description-aside").style.display = "block";
 
 });
 
 /* CANVAS -----------------------------------------------------------------------------------------------------------------*/
 var newCanvas = new Canvas();
 newCanvas.startDrawing();
+newCanvas.startTouching();
+var clearResBtn = document.getElementById("station-clear-btn");
+clearResBtn.addEventListener("click" , function(){
+
+newCanvas.clearCanvas();
+
+})

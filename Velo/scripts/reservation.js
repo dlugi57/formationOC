@@ -50,7 +50,7 @@ class Reservation {
     }
     console.log(sessionStorage.stationName);
     if (sessionStorage.stationName !== '' && sessionStorage.stationName !== undefined) {
-      document.getElementById("counter-info").textContent = this.nom + " " + this.prenom + " " + this.station;
+      document.getElementById("counter-info").textContent = "Vélo réservé à la station " + this.station + " par " + this.prenom + " " + this.nom;
       //this.showCounter();
       clearInterval(this.counterInter);
       this.counterInter = setInterval(this.counter.bind(this), 1000);
@@ -62,6 +62,21 @@ class Reservation {
   }
 
   counter() {
+    console.log("tutaj mam conditions");
+    var minElt = document.getElementById("counter-minut");
+    var secElt = document.getElementById("counter-second");
+    if (this.secondes < 10) {
+      secElt.textContent = "0" + this.secondes + "s";
+    } else {
+      secElt.textContent = this.secondes + "s";
+    }
+
+
+    if (this.minutes < 10) {
+      minElt.textContent = "Temps restant 0" + this.minutes + " min";
+    } else {
+      minElt.textContent = "Temps restant " + this.minutes + " min";
+    }
     if (this.minutes >= 0 && this.secondes > 0) {
       this.secondes--;
       sessionStorage.setItem("secondes", this.secondes);
@@ -72,22 +87,15 @@ class Reservation {
       sessionStorage.setItem("minutes", this.minutes);
       sessionStorage.setItem("secondes", this.secondes);
     } else if (this.minutes === 0 && this.secondes === 0) {
-      document.getElementById("counter-info").textContent = "koniec rezerwacji";
+      document.getElementById("counter-info").textContent = "Aucune réservation en cours";
       this.deleteRes();
+      //document.getElementById("counter-time").textContent = "Aucune réservation en cours";
+
+      secElt.textContent = "chuj";
+      minElt.textContent = "chuj";
       console.log("to juz jest koniec");
     }
-    if (this.secondes < 10) {
-      document.getElementById("counter-second").textContent = "0" + this.secondes;
-    } else {
-      document.getElementById("counter-second").textContent = this.secondes;
-    }
 
-
-    if (this.minutes < 10) {
-      document.getElementById("counter-minut").textContent = "0" + this.minutes;
-    } else {
-      document.getElementById("counter-minut").textContent = this.minutes;
-    }
 
   }
 

@@ -2,11 +2,12 @@
 
 
 class Carousel {
-intervalSlider;
-slideNumber = 0;
+//intervalSlider;
+//slideNumber = 0;
   constructor(slides) {
     this.slides = slides;
-
+    this.intervalSlider;
+    this.slideNumber = 0;
   //  this.intervalSlider = '';
   }
 
@@ -17,8 +18,8 @@ slideNumber = 0;
     //document.getElementById("sliderImage").src = this.slides[this.slideNumber].image;
 //document.getElementById("slider-block").style.backgroundImage = "url('../Velo/"+this.slides[this.slideNumber].image+"')";
     document.getElementById("slider-block").style.backgroundImage = this.slides[this.slideNumber].image;
-    document.getElementById("sliderTitle").textContent = this.slides[this.slideNumber].title;
-    document.getElementById("sliderText").textContent = this.slides[this.slideNumber].text;
+    document.getElementById("sliderTitle").innerHTML = this.slides[this.slideNumber].title;
+    document.getElementById("sliderText").innerHTML = this.slides[this.slideNumber].text;
     //console.log(this.slideNumber);---------------------------------------------------------------------------------------------------
 
   }

@@ -6,16 +6,22 @@
 class Canvas {
   //canvas;
   //context;
-  canvas = document.getElementById("canvas");
-  context = this.canvas.getContext("2d");
-  test = false;
+  //canvas = document.getElementById("canvas");
+  //context = this.canvas.getContext("2d");
+  //test = false;
+  constructor(){
+    this.canvas = document.getElementById("canvas");
+    this.context = this.canvas.getContext("2d");
+    this.test = false;
+
+  }
   startDrawing() {
     //  this.canvas = document.getElementById("canvas");
     //this.context = this.canvas.getContext("2d");
     this.clearCanvas();
     var that = this;
     this.canvas.addEventListener("mousedown", function(e) {
-
+document.getElementById("station-confirmer-btn").style.display = "initial";
       that.test = true;
       that.context.beginPath();
       that.context.moveTo(e.offsetX, e.offsetY);

@@ -45,7 +45,7 @@
   <!-- HEADER -->
   <header class="header">
     <!-- Logo -->
-    <a href="#home"><img src="" class="logo" title="" alt=""/></a>
+    <a href="#home"><img src="images/logo.png" class="logo" title="" alt=""/></a>
     <!-- Navbar menu -->
     <nav>
       <input class="menu-btn" type="checkbox" id="menu-btn" />
@@ -63,9 +63,10 @@
     <div class="ancre100" id="slider"></div>
     <div class="slider-block" id="slider-block">
       <!-- <img class="" id="sliderImage" src="" alt="">-->
-      <h3 id="sliderTitle">Title</h3>
-      <p id="sliderText">Descritpion</p>
-
+      <div id="slider-description">
+        <h3 id="sliderTitle">Title</h3>
+        <p id="sliderText">Descritpion</p>
+      </div>
     </div>
 
     <a id="sliderRightBtn"><span class="circle-right"><span class="arrow arrow-next"></span></span></a>
@@ -104,21 +105,23 @@
           <p id="station-number"></p>
           <p id=""></p>
           <form>
-            <label for="name-reservation">Nom</label><input id="name-reservation" type="text" name=""  placeholder="Nom"><br>
-            <label for="surname-reservation">Prenom</label><input id="surname-reservation" type="text" name=""  placeholder="Prenom">
+            <label title="Nom obligatoire" for="name-reservation">Nom*</label><input id="name-reservation" type="text" name=""  placeholder="Nom"><br>
+            <label title="Prenom obligatoire" for="surname-reservation">Prenom*</label><input id="surname-reservation" type="text" name=""  placeholder="Prenom">
             <p id="info-champs"></p>
 
 
 
           </form>
-            <button id="station-reserver-btn" href="#">Reserve</button>
+          <button id="station-reserver-btn" href="#">Reserve</button>
         </div>
         <div id="reservation-aside" class="">
-
+          <h2>Signature</h2>
+          <p>Veuillez signer et confirmer pour valider votre réservation</p>
           <canvas id="canvas" width="300" height="200"></canvas>
-          <button id="station-clear-btn" href="#">Clear</button>
-          <button id="station-anuler-btn" href="#">Anuler</button>
-          <button id="station-confirmer-btn" href="#">Confirmer</button>
+
+          <button class="confirmation-btns" id="station-clear-btn" href="#">Clear</button>
+          <button class="confirmation-btns" id="station-anuler-btn" href="#">Anuler</button>
+          <button class="confirmation-btns" id="station-confirmer-btn" href="#">Confirmer</button>
 
         </div>
 

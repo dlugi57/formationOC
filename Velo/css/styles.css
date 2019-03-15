@@ -17,20 +17,39 @@ body {
   font-size: xx-large;
 }
 
-#sliderTitle {
+#slider-description {
+  width: 40%;
+  text-align: center;
+  box-shadow: 5px 5px 10px 0 #c0c0c0;
+  /* margin: auto auto 50px auto; */
+  padding: 2em;
+  background-color: rgba(255, 255, 255, 0.8);
+  margin-top: 150px;
+  margin-left: 10%;
   position: absolute;
+  /*opacity: 0.8;*/
+}
+
+#sliderTitle {
+  /*  position: absolute;
   top: 250px;
   right: 10%;
-  z-index: 99;
+  z-index: 99;*/
+  color: #e4b44d;
+  font-size: 2em;
   transition: all 2s;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 #sliderText {
-  position: absolute;
+  /*  position: absolute;
   top: 300px;
   right: 10%;
-  z-index: 99;
+  z-index: 99;*/
+  font-size: 1.5em;
   transition: all 2s;
+  margin-bottom: 0;
 }
 
 #sliderStopBtn, #sliderPlayBtn {
@@ -136,7 +155,8 @@ body {
 }
 
 #description {
-    display: none;/*---------------------------------------------------------------------------------------*/
+  display: none;
+  /*---------------------------------------------------------------------------------------*/
 }
 
 #description-aside, #reservation-aside {
@@ -177,16 +197,31 @@ font-weight: bold;*/
   text-shadow: 0px 1px 0px #86ae47;
   margin: auto;
 }
- #name-reservation,#surname-reservation{
 
- }
+#name-reservation{
+  margin-bottom: 1em;
+  border-radius: 5px;
+    width: 100%;
+    padding: 0.3em;
+}
+
+#surname-reservation {
+  margin-bottom: 1em;
+  border-radius: 5px;
+    width: 100%;
+    padding: 0.3em;
+}
+
+#info-champs{
+  margin-top: 0;
+}
 
 #canvas {
   border: 5px solid pink;
 }
 
 #reservation-aside {
-display: none;
+  display: none;
 }
 
 #station-status {
@@ -204,9 +239,49 @@ display: none;
   font-weight: 100;
 }
 
-/* COUNTER*/
+.confirmation-btns{
 
-#counter-container{
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 6px 15px;
+    text-decoration: none;
+}
+
+#station-confirmer-btn{
+  border: 1px solid #5CB85C;
+  background-color: #5CB85C;
+  display: none;
+}
+#station-anuler-btn{
+  border: 1px solid #D9534F;
+  background-color: #D9534F;
+
+
+}
+#station-clear-btn{
+  border: 1px solid #65696e;
+  background-color: #65696e;
+}
+
+#reservation-aside h2{
+  text-align: center;
+  background-color: #5CB85C;
+  border-radius: 5px;
+  color: white
+}
+#reservation-aside p{
+  text-align: center;
+
+}
+
+/* COUNTER*/
+#counter-container {
   width: 40%;
   text-align: center;
   box-shadow: 5px 5px 10px 0 #c0c0c0;

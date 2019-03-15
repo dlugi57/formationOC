@@ -2,14 +2,19 @@
 class Reservation {
   //  minutes;
   //  seconds;
-  nameRes;
+/*  nameRes;
   surnameRes;
   stationRes;
   secondes;
   minutes;
-  counterInter;
+  counterInter;*/
   constructor() {
-
+    this.nameRes;
+    this.surnameRes;
+    this.stationRes;
+    this.secondes;
+    this.minutes;
+    this.counterInter;
   }
   setReservation() {
     this.nameRes = document.getElementById("name-reservation").value;
@@ -77,6 +82,7 @@ class Reservation {
     } else {
       minElt.textContent = "Temps restant " + this.minutes + " min";
     }
+
     if (this.minutes >= 0 && this.secondes > 0) {
       this.secondes--;
       sessionStorage.setItem("secondes", this.secondes);
@@ -86,14 +92,16 @@ class Reservation {
       this.minutes--;
       sessionStorage.setItem("minutes", this.minutes);
       sessionStorage.setItem("secondes", this.secondes);
-    } else if (this.minutes === 0 && this.secondes === 0) {
+    } else if (this.minutes == 0 && this.secondes == 0) {
+      console.log(this.minutes);
+      console.log(this.secondes);
       document.getElementById("counter-info").textContent = "Aucune réservation en cours";
       this.deleteRes();
       //document.getElementById("counter-time").textContent = "Aucune réservation en cours";
 
-      secElt.textContent = "chuj";
-      minElt.textContent = "chuj";
-      console.log("to juz jest koniec");
+      secElt.textContent = "";
+      minElt.textContent = "";
+      console.log("Aucune réservation en cours");
     }
 
 

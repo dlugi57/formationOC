@@ -3,28 +3,28 @@ var slides = [];
 slides.push({
 
   image: "url('../Velo/images/slide0.jpg')",
-  title: "title0",
-  text: "text0"
+  title: "Bienvenue sur l'application de réservation <b>Vélô</b> à Toulouse !",
+  text: "Découvrez son fonctionnement"
 });
 slides.push({
   image: "url('../Velo/images/slide1.jpg')",
-  title: "title1",
-  text: "text1"
+  title: "Choisir votre station",
+  text: "Selectionnez le marqueur correspondant à la station de votre choix."
 });
 slides.push({
   image: "url('../Velo/images/slide2.jpg')",
-  title: "title2",
-  text: "text2"
+  title: "Valider la réservation",
+  text: "Vérifiez le nombre de <b>Vélôs</b> disponibles ,entrez votre nom et prénom puis cliquez &quot;Reserve&quot;"
 });
 slides.push({
   image: "url('../Velo/images/slide3.jpg')",
-  title: "title3",
-  text: "text3"
+  title: "Confirmer la réservation",
+  text: "Laissez votre signature dans le carré blanc et cliquez sur &quot;confirmer&quot; pour enregistrer votre reservation."
 });
 slides.push({
   image: "url('../Velo/images/slide4.jpg')",
-  title: "title4",
-  text: "text4"
+  title: "Réservation en cours",
+  text: "Retrouvez toutes les informations concernant votre réservation en cours, ainsi que la possibilité de l'annuler à tout moment."
 });
 
 var newCarousel = new Carousel(slides);
@@ -80,16 +80,17 @@ myStations.showStations();
 
 var reserverBtn = document.getElementById("station-reserver-btn");
 reserverBtn.addEventListener("click", function() {
-document.getElementById("description-aside").style.display = "none";
+
 var checkName = document.getElementById("name-reservation").value;
 var checkSurname = document.getElementById("surname-reservation").value;
 
   //document.getElementById("description-aside").style.display = "none";
-  if (checkName == null||checkName=="",checkSurname==null||checkSurname=="") {
-    document.getElementById("info-champs").textContent = "Veuillez renseigner ce champ";
+  if (checkName == null||checkName=="" || checkSurname==null||checkSurname=="") {
+    document.getElementById("info-champs").textContent = "Nom et prénom obligatoire";
     console.log("you need to put things into imput");
     return false;
   }
+  document.getElementById("description-aside").style.display = "none";
   document.getElementById("reservation-aside").style.display = "block";
 //console.log(myStations.stationName());
 });
@@ -119,9 +120,10 @@ myReservation.setReservation();
 
 var anulerResBtn = document.getElementById("station-anuler-btn");
 anulerResBtn.addEventListener("click", function(){
-
+document.getElementById("station-confirmer-btn").style.display = "none";
 document.getElementById("reservation-aside").style.display = "none";
 document.getElementById("description-aside").style.display = "block";
+newCanvas.clearCanvas();
 
 });
 
@@ -131,7 +133,7 @@ newCanvas.startDrawing();
 newCanvas.startTouching();
 var clearResBtn = document.getElementById("station-clear-btn");
 clearResBtn.addEventListener("click" , function(){
-
+document.getElementById("station-confirmer-btn").style.display = "none";
 newCanvas.clearCanvas();
 
 })

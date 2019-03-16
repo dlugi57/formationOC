@@ -5,11 +5,9 @@ body {
   font-family: 'Roboto', sans-serif;
   color: #65696e;
   font-size: 1em;
-  min-width: 350px;
+  min-width: 370px;
   background-color: rgba(240, 240, 240, 0.7);
 }
-
-.slider, .reservation, .counter {}
 
 .introduction h2 {
   text-align: center;
@@ -17,24 +15,28 @@ body {
   font-size: xx-large;
 }
 
+/* break point to get the right position of the section after navbar click */
+.ancre100 {
+  padding-top: 100px;
+  position: relative;
+  top: -100px;
+  margin-bottom: -100px;
+  z-index: -10;
+}
+
+/* CAROUSEL */
 #slider-description {
   width: 40%;
   text-align: center;
   box-shadow: 3px 3px 10px 0 #c0c0c0;
-  /* margin: auto auto 50px auto; */
   padding: 2em;
   background-color: rgba(255, 255, 255, 0.8);
   margin-top: 150px;
   margin-left: 10%;
   position: absolute;
-  /*opacity: 0.8;*/
 }
 
 #sliderTitle {
-  /*  position: absolute;
-  top: 250px;
-  right: 10%;
-  z-index: 99;*/
   color: #e4b44d;
   font-size: 2em;
   transition: all 2s;
@@ -43,10 +45,6 @@ body {
 }
 
 #sliderText {
-  /*  position: absolute;
-  top: 300px;
-  right: 10%;
-  z-index: 99;*/
   font-size: 1.5em;
   transition: all 2s;
   margin-bottom: 0;
@@ -55,9 +53,9 @@ body {
 #sliderStopBtn, #sliderPlayBtn {
   position: absolute;
   top: 565px;
-  right: 50%;
+  right: 45%;
   font-size: 40px;
-  color: white;
+  color: #65696e;
   z-index: 99;
   transition: all 2s;
   cursor: pointer;
@@ -66,12 +64,11 @@ body {
 .slider-block {
   height: 550px;
   background-size: cover;
-  background-position: center;
+  background-position: right;
   margin-top: 100px;
   transition: all 1s;
 }
 
-/* make arrows with hiding half of borders */
 .carousel .arrow {
   border: solid white;
   border-width: 0 3px 3px 0;
@@ -95,15 +92,16 @@ body {
   transform: rotate(-45deg);
 }
 
-.circle{
+.circle {
   height: 90px;
   width: 90px;
   border-radius: 50%;
-border: 5px solid #65696e;
-      position: absolute;
-      right: -32px;
-          bottom: -23px;
+  border: 5px solid #65696e;
+  position: absolute;
+  right: -32px;
+  bottom: -23px;
 }
+
 /* arrows circles shadows */
 .carousel .circle-left {
   background-color: rgba(0, 0, 0, 0.3);
@@ -131,28 +129,14 @@ border: 5px solid #65696e;
   cursor: pointer;
 }
 
-/*#sliderImage {
-  height: 550px;
-  background-size: cover;
-  background-position: center;
-  margin-top: 100px;
-}*/
-/* break point to get the right position of the section after navbar click */
-/* break point to get the right position of the section after navbar click */
-.ancre100 {
-  padding-top: 100px;
-  position: relative;
-  top: -100px;
-  margin-bottom: -100px;
-  z-index: -10;
-}
+/* RESERVATION */
 
 #reservation-map {
-  /*  height: 550px;*/
   width: -webkit-fill-available;
+  width: -moz-available;
+  min-height: 450px;
 }
 
-/*tutaj na komorce dorzuc flex-direction column */
 #reservation-container {
   display: flex;
   height: 480px;
@@ -165,7 +149,6 @@ border: 5px solid #65696e;
 
 #description {
   display: none;
-  /*---------------------------------------------------------------------------------------*/
 }
 
 #description-aside, #reservation-aside {
@@ -181,14 +164,6 @@ aside {
   flex-direction: column;
   width: 35%;
   min-width: 320px;
-  /*text-align: center;*/
-  /*    margin: 0 2em 2em 0;
-      box-shadow: 5px 5px 10px 0 #c0c0c0;
-      height: 550px;*/
-  /*height: 40em;
-border: 1px solid #a0a0a0;
-background: #fff;
-font-weight: bold;*/
 }
 
 #station-reserver-btn {
@@ -208,21 +183,21 @@ font-weight: bold;*/
   margin: auto;
 }
 
-#name-reservation{
+#name-reservation {
   margin-bottom: 1em;
   border-radius: 5px;
-    width: 100%;
-    padding: 0.3em;
+  width: 100%;
+  padding: 0.3em;
 }
 
 #surname-reservation {
   margin-bottom: 1em;
   border-radius: 5px;
-    width: 100%;
-    padding: 0.3em;
+  width: 100%;
+  padding: 0.3em;
 }
 
-#info-champs{
+#info-champs {
   margin-top: 0;
 }
 
@@ -237,7 +212,6 @@ font-weight: bold;*/
 
 #station-status {
   text-align: center;
-  /*background-color: #5CB85C;*/
   border-radius: 5px;
   color: white;
 }
@@ -250,45 +224,43 @@ font-weight: bold;*/
   font-weight: 100;
 }
 
-.confirmation-btns{
-
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
-
-    cursor: pointer;
-    color: #ffffff;
-    font-size: 15px;
-    font-weight: bold;
-    padding: 6px 15px;
-    text-decoration: none;
+.confirmation-btns {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 6px 15px;
+  text-decoration: none;
 }
 
-#station-confirmer-btn{
+#station-confirmer-btn {
   border: 1px solid #5CB85C;
   background-color: #5CB85C;
   display: none;
 }
-#station-anuler-btn{
+
+#station-anuler-btn {
   border: 1px solid #D9534F;
   background-color: #D9534F;
-
-
 }
-#station-clear-btn{
+
+#station-clear-btn {
   border: 1px solid #65696e;
   background-color: #65696e;
 }
 
-#reservation-aside h2{
+#reservation-aside h2 {
   text-align: center;
   background-color: #5CB85C;
   border-radius: 5px;
   color: white;
 }
-#reservation-aside p{
-  text-align: center;
 
+#reservation-aside p {
+  text-align: center;
 }
 
 /* COUNTER*/
@@ -303,12 +275,10 @@ font-weight: bold;*/
   margin: auto;
 }
 
-#counter-block{
+#counter-block {
   height: 550px;
   background-size: cover;
   background-position: center;
-  /*margin-top: 100px;*/
   transition: all 1s;
-  background-image: url('../images/slide0.jpg');
-  opacity: 0.8;
+  background-image: url('../images/reservation.jpg');
 }

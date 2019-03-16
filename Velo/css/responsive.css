@@ -1,0 +1,55 @@
+/* Change position of the background*/
+@media (max-width: 1000px) {
+  .slider-block {
+    background-position: left;
+  }
+}
+/* Delete the left margin to get whole canvas on mobile screen */
+@media (max-width: 480px) {
+  #canvas {
+    margin-left: -50px;
+  }
+}
+
+/*All media querys from 768px*/
+@media (max-width: 768px) {
+  .slider-block {
+    background-position: center;
+  }
+
+  .header .menu-icon {
+    display: block;
+  }
+
+  .header li a {
+    padding: 20px 20px;
+  }
+
+  .header .menu {
+    clear: both;
+    max-height: 0;
+    float: none;
+    right: inherit;
+  }
+
+  .header li {
+    float: none;
+  }
+
+  #slider-description {
+    width: 60%;
+    top: 10%;
+    position: relative;
+    margin: auto;
+  }
+
+  #reservation-container {
+    flex-direction: column;
+    height: inherit;
+  }
+
+  aside {
+    width: inherit;
+    min-width: inherit;
+  }
+}

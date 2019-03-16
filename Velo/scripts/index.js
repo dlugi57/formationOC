@@ -1,7 +1,5 @@
 class Index {
-  constructor() {
 
-  }
   carousel() {
 
     var slides = [];
@@ -34,34 +32,22 @@ class Index {
     });
 
     var newCarousel = new Carousel(slides);
-    //carousel.slides = slides;
     newCarousel.initialize();
     newCarousel.playSlider();
-    /*var playSlider = setInterval(function() {
-      carousel.nextSlide();
-    }, 1000);*/
     var rightBtn = document.getElementById("sliderRightBtn");
     rightBtn.addEventListener("click", function() {
       newCarousel.nextSlide();
-      //carousel.initialize();
     });
     var leftBtn = document.getElementById("sliderLeftBtn");
     leftBtn.addEventListener("click", function() {
       newCarousel.previousSlide();
-      //carousel.initialize();
     });
     var startBtn = document.getElementById("sliderPlayBtn");
     startBtn.addEventListener("click", function() {
       newCarousel.playSlider();
-      /*  setInterval(function() {
-          carousel.nextSlide();
-        }, 1000);*/
-      //carousel.initialize();
     });
     var stopBtn = document.getElementById("sliderStopBtn");
     stopBtn.addEventListener("click", function() {
-      //  clearInterval(playSlider);
-      //carousel.initialize();
       newCarousel.stopSlider();
     });
 
@@ -72,7 +58,6 @@ class Index {
         newCarousel.initialize();
       } else if (e.keyCode === 39) {
         newCarousel.nextSlide();
-        //carousel.initialize();
       }
 
     })
@@ -81,7 +66,7 @@ class Index {
   };
 
 
-  stations(){
+  stations() {
 
     var myStations = new Stations("62114b2e5a5efa9d593e73b53d562e2cf63b4cbb", "Toulouse");
     myStations.showStations();
@@ -91,25 +76,20 @@ class Index {
 
       var checkName = document.getElementById("name-reservation").value;
       var checkSurname = document.getElementById("surname-reservation").value;
-
-      //document.getElementById("description-aside").style.display = "none";
       if (checkName == null || checkName == "" || checkSurname == null || checkSurname == "") {
         document.getElementById("info-champs").textContent = "Nom et prénom obligatoire";
-        console.log("you need to put things into imput");
         return false;
       }
       document.getElementById("description-aside").style.display = "none";
       document.getElementById("reservation-aside").style.display = "block";
-      //console.log(myStations.stationName());
     });
 
   };
 
-  reservation(){
+  reservation() {
 
     var myReservation = new Reservation();
     myReservation.showReservation();
-    //myReservation.counter();
 
     var confirmerBtn = document.getElementById("station-confirmer-btn");
     confirmerBtn.addEventListener("click", function() {
@@ -117,9 +97,6 @@ class Index {
       document.getElementById("description-aside").style.display = "block";
       document.getElementById("info-champs").textContent = "Vous avez réservé cette station";
       document.getElementById("station-reserver-btn").style.display = "none";
-
-      //document.getElementById("description").style.display = "none";
-      //  reservation.showReservation();
 
       window.scrollTo(0, document.body.scrollHeight);
       myReservation.setReservation();
@@ -141,7 +118,7 @@ class Index {
   };
 
 
-  canvas(){
+  canvas() {
     var newCanvas = new Canvas();
     newCanvas.startDrawing();
     newCanvas.startTouching();
@@ -165,10 +142,3 @@ var reservation = new Index;
 reservation.reservation();
 var canvas = new Index;
 canvas.canvas();
-/* STATIONS ------------------------------------------------------------------------------*/
-
-/* RESERVATIONS ---------------------------------------------------------------------------------*/
-
-
-
-/* CANVAS -----------------------------------------------------------------------------------------------------------------*/

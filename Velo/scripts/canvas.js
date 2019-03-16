@@ -30,7 +30,28 @@ document.getElementById("canvas").style.borderColor = "#5CB85C";
       that.context.moveTo(e.offsetX, e.offsetY);
       console.log(e.offsetX);
 
-      that.canvas.addEventListener("mousemove", that.draw.bind(that));
+      //that.canvas.addEventListener("mousemove", that.draw.bind(that));
+
+that.canvas.addEventListener("mousemove", function(event){
+
+  if (that.test === true) {
+    console.log("przeciagam");
+    //var that = this;
+    var x = event.offsetX;
+    var y = event.offsetY;
+  //  this.context.strokeStyle = "black";
+    that.context.lineTo(x, y);
+    //this.context.lineWidth = "1";
+    that.context.stroke();
+  }
+});
+
+
+
+
+
+
+
       //that.draws();
       //that.stopDrawing();
 
@@ -51,6 +72,8 @@ document.getElementById("canvas").style.borderColor = "#5CB85C";
       var touchY = e.touches[0].clientY - rect.top;
       //  var touchX = e.touches[0].pageX;
       //  var touchY = e.touches[0].pageY;
+      document.getElementById("station-confirmer-btn").style.display = "initial";
+      document.getElementById("canvas").style.borderColor = "#5CB85C";
 
       console.log(touchX);
 
@@ -58,7 +81,7 @@ document.getElementById("canvas").style.borderColor = "#5CB85C";
       that.context.beginPath();
       that.context.moveTo(touchX, touchY);
 
-      that.canvas.addEventListener("touchmove", that.draw1.bind(that));
+      that.canvas.addEventListener("touchmove", that.draw.bind(that));
       //that.draws();
       //that.stopDrawing();
 
@@ -89,7 +112,7 @@ document.getElementById("canvas").style.borderColor = "#5CB85C";
 
 
   }*/
-
+/*
 
   draw() {
     if (this.test === true) {
@@ -106,8 +129,8 @@ document.getElementById("canvas").style.borderColor = "#5CB85C";
 
 
 
-  }
-  draw1() {
+  }*/
+  draw() {
     if (this.test === true) {
       console.log("przeciagam");
       //var that = this;

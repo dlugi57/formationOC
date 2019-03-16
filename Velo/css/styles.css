@@ -20,7 +20,7 @@ body {
 #slider-description {
   width: 40%;
   text-align: center;
-  box-shadow: 5px 5px 10px 0 #c0c0c0;
+  box-shadow: 3px 3px 10px 0 #c0c0c0;
   /* margin: auto auto 50px auto; */
   padding: 2em;
   background-color: rgba(255, 255, 255, 0.8);
@@ -54,7 +54,7 @@ body {
 
 #sliderStopBtn, #sliderPlayBtn {
   position: absolute;
-  top: 580px;
+  top: 565px;
   right: 50%;
   font-size: 40px;
   color: white;
@@ -68,7 +68,7 @@ body {
   background-size: cover;
   background-position: center;
   margin-top: 100px;
-  transition: all 2s;
+  transition: all 1s;
 }
 
 /* make arrows with hiding half of borders */
@@ -95,6 +95,15 @@ body {
   transform: rotate(-45deg);
 }
 
+.circle{
+  height: 90px;
+  width: 90px;
+  border-radius: 50%;
+border: 5px solid #65696e;
+      position: absolute;
+      right: -32px;
+          bottom: -23px;
+}
 /* arrows circles shadows */
 .carousel .circle-left {
   background-color: rgba(0, 0, 0, 0.3);
@@ -146,7 +155,7 @@ body {
 /*tutaj na komorce dorzuc flex-direction column */
 #reservation-container {
   display: flex;
-  height: 500px;
+  height: 480px;
   flex-direction: row;
   box-shadow: 5px 5px 10px 0 #c0c0c0;
   margin: 0 2em 2em 2em;
@@ -172,6 +181,7 @@ aside {
   flex-direction: column;
   width: 35%;
   min-width: 320px;
+  /*text-align: center;*/
   /*    margin: 0 2em 2em 0;
       box-shadow: 5px 5px 10px 0 #c0c0c0;
       height: 550px;*/
@@ -217,18 +227,19 @@ font-weight: bold;*/
 }
 
 #canvas {
-  border: 5px solid pink;
+  border: 5px solid #D9534F;
 }
 
 #reservation-aside {
   display: none;
+  text-align: center;
 }
 
 #station-status {
   text-align: center;
   /*background-color: #5CB85C;*/
   border-radius: 5px;
-  color: white
+  color: white;
 }
 
 #adresse {
@@ -273,7 +284,7 @@ font-weight: bold;*/
   text-align: center;
   background-color: #5CB85C;
   border-radius: 5px;
-  color: white
+  color: white;
 }
 #reservation-aside p{
   text-align: center;
@@ -284,8 +295,20 @@ font-weight: bold;*/
 #counter-container {
   width: 40%;
   text-align: center;
-  box-shadow: 5px 5px 10px 0 #c0c0c0;
-  margin: auto auto 50px auto;
+  box-shadow: 3px 3px 10px 0 #c0c0c0;
   padding: 2em;
   background-color: white;
+  position: relative;
+  top: 40%;
+  margin: auto;
+}
+
+#counter-block{
+  height: 550px;
+  background-size: cover;
+  background-position: center;
+  /*margin-top: 100px;*/
+  transition: all 1s;
+  background-image: url('../images/slide0.jpg');
+  opacity: 0.8;
 }

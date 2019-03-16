@@ -22,6 +22,9 @@ class Canvas {
     var that = this;
     this.canvas.addEventListener("mousedown", function(e) {
 document.getElementById("station-confirmer-btn").style.display = "initial";
+document.getElementById("canvas").style.borderColor = "#5CB85C";
+
+
       that.test = true;
       that.context.beginPath();
       that.context.moveTo(e.offsetX, e.offsetY);

@@ -34,7 +34,7 @@
 <link rel="stylesheet" href="css/header.css" />
 <link rel="stylesheet" href="css/styles.css" />
 
-<!--<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">-->
+<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
 
 <head>
   <meta charset="utf-8">
@@ -72,8 +72,8 @@
     <a id="sliderRightBtn"><span class="circle-right"><span class="arrow arrow-next"></span></span></a>
     <a id="sliderLeftBtn"><span class="circle-left"><span class="arrow arrow-prev"></span></span></a>
 
-    <a id="sliderPlayBtn"><i class="fas fa-play"></i></a>
-    <a id="sliderStopBtn"><i class="fas fa-pause"></i></a>
+    <a id="sliderPlayBtn"><span class="circle"></span><i class="fas fa-play"></i></a>
+    <a id="sliderStopBtn"><span class="circle"></span><i class="fas fa-pause"></i></a>
 
 
   </section>
@@ -138,10 +138,16 @@
   <!-- SECTION COUNTER -->
   <section class="counter">
     <div class="ancre100" id="counter"></div>
-    <div id="counter-container" class="">
-      <p id="counter-info">Aucune réservation en cours</p>
-      <p id="counter-time"> <span id="counter-minut"></span> <span id="counter-second"></span></p>
+    <div class="introduction">
+      <h2>votre Réservation</h2>
     </div>
+    <div id="counter-block">
+      <div id="counter-container" class="">
+        <p id="counter-info">Aucune réservation en cours</p>
+        <p id="counter-time"> <span id="counter-minut"></span> <span id="counter-second"></span></p>
+      </div>
+    </div>
+
 
   </section>
   <script type="text/javascript" src="scripts/ajax.js"></script>

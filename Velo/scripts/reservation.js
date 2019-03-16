@@ -49,7 +49,8 @@ class Reservation {
     //  this.nom = document.getElementById("name-reservation").value;
     //this.prenom = document.getElementById("surname-reservation").value;
     console.log(this.nom);
-    if (localStorage.name !== '') {
+    console.log(localStorage.name);
+    if (localStorage.name !== '' && localStorage.name !== null && localStorage.name !== undefined) {
       document.getElementById("name-reservation").setAttribute('value', localStorage.getItem('name'));
       document.getElementById("surname-reservation").setAttribute('value', localStorage.getItem('surname'));
     }

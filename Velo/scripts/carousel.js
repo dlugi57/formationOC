@@ -1,26 +1,17 @@
-// play jak kllikalem kilka razy to powielal funkcje
-
-
 class Carousel {
-//intervalSlider;
-//slideNumber = 0;
   constructor(slides) {
     this.slides = slides;
     this.intervalSlider;
     this.slideNumber = 0;
-  //  this.intervalSlider = '';
   }
 
-  //slides: [],
-  //slideNumber: 0,
-  //intervalSlider: '',
+
   initialize() {
-    //document.getElementById("sliderImage").src = this.slides[this.slideNumber].image;
-//document.getElementById("slider-block").style.backgroundImage = "url('../Velo/"+this.slides[this.slideNumber].image+"')";
+
     document.getElementById("slider-block").style.backgroundImage = this.slides[this.slideNumber].image;
     document.getElementById("sliderTitle").innerHTML = this.slides[this.slideNumber].title;
     document.getElementById("sliderText").innerHTML = this.slides[this.slideNumber].text;
-    //console.log(this.slideNumber);---------------------------------------------------------------------------------------------------
+
 
   }
   nextSlide() {
@@ -39,7 +30,6 @@ class Carousel {
   }
   playSlider() {
 
-     //this.intervalSlider = setInterval("this.nextSlide()", 5000);
     this.intervalSlider = setInterval(this.nextSlide.bind(this), 5000);
     document.getElementById("sliderPlayBtn").style.display = "none";
     document.getElementById("sliderStopBtn").style.display = "block";
@@ -49,14 +39,4 @@ class Carousel {
     document.getElementById("sliderPlayBtn").style.display = "block";
     document.getElementById("sliderStopBtn").style.display = "none";
   }
-
-
-
 };
-
-
-/*
-var playSlider = setInterval(function () {
-    carousel.nextSlide();
-}, 1000);
-*/

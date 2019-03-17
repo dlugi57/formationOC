@@ -1,13 +1,5 @@
-//czy moge urzywac wielkich liter na poczatku nazwy obiektu
 class Reservation {
-  //  minutes;
-  //  seconds;
-/*  nameRes;
-  surnameRes;
-  stationRes;
-  secondes;
-  minutes;
-  counterInter;*/
+
   constructor() {
     this.nameRes;
     this.surnameRes;
@@ -32,8 +24,6 @@ class Reservation {
   }
   showReservation() {
 
-
-
     this.nom = localStorage.name;
 
     this.prenom = localStorage.surname;
@@ -43,32 +33,20 @@ class Reservation {
     this.minutes = sessionStorage.minutes;
     this.secondes = sessionStorage.secondes;
 
-    //  this.seconds
-
-
-    //  this.nom = document.getElementById("name-reservation").value;
-    //this.prenom = document.getElementById("surname-reservation").value;
-    console.log(this.nom);
-    console.log(localStorage.name);
     if (localStorage.name !== '' && localStorage.name !== null && localStorage.name !== undefined) {
       document.getElementById("name-reservation").setAttribute('value', localStorage.getItem('name'));
       document.getElementById("surname-reservation").setAttribute('value', localStorage.getItem('surname'));
     }
-    console.log(sessionStorage.stationName);
+
     if (sessionStorage.stationName !== '' && sessionStorage.stationName !== undefined) {
       document.getElementById("counter-info").textContent = "Vélo réservé à la station " + this.station + " par " + this.prenom + " " + this.nom;
-      //this.showCounter();
       clearInterval(this.counterInter);
       this.counterInter = setInterval(this.counter.bind(this), 1000);
     }
-
-    //sessionStorage.setItem("nomStation", Station.nom);
-    //w jaki sposob mam to zrobic ????? znaczy sie w jaki sposob zrobic zegar
-
   }
 
   counter() {
-    console.log("tutaj mam conditions");
+
     var minElt = document.getElementById("counter-minut");
     var secElt = document.getElementById("counter-second");
     if (this.secondes < 10) {
@@ -76,7 +54,6 @@ class Reservation {
     } else {
       secElt.textContent = this.secondes + "s";
     }
-
 
     if (this.minutes < 10) {
       minElt.textContent = "Temps restant 0" + this.minutes + " min";
@@ -94,15 +71,11 @@ class Reservation {
       sessionStorage.setItem("minutes", this.minutes);
       sessionStorage.setItem("secondes", this.secondes);
     } else if (this.minutes == 0 && this.secondes == 0) {
-      console.log(this.minutes);
-      console.log(this.secondes);
       document.getElementById("counter-info").textContent = "Aucune réservation en cours";
       this.deleteRes();
-      //document.getElementById("counter-time").textContent = "Aucune réservation en cours";
 
       secElt.textContent = "";
       minElt.textContent = "";
-      console.log("Aucune réservation en cours");
     }
 
 
@@ -113,13 +86,5 @@ class Reservation {
     sessionStorage.clear();
 
   }
-  /*  showCounter() {
-      //var t = this;
-      this.counterInter = setInterval(this.counter.bind(this), 1000);
-      //this.showLoading.bind(this)
-      this.counter = setInterval(function() {
-        this.counter();
-      }, 5000);
 
-    }*/
 }

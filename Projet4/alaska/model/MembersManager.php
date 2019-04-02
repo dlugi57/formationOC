@@ -31,6 +31,7 @@ class MemberManager extends Manager
             $newMember = $member->execute(array($nick, $pass_hache, $email));
             session_start();
             $_SESSION['nick'] = $nick;
+            $_SESSION['admin'] = 0;
             header("Location: index.php?action=home&nick=".$_SESSION['nick']);
             return $newMember;
 

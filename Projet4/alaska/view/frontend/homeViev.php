@@ -11,13 +11,16 @@
 <?php
 
 if (isset($_SESSION['nick'])) {
-  echo "<p>tutaj pokazuje session nick i admin </p>";
+  echo "<p>tutaj pokazuje session nick</p>";
   echo $_SESSION['nick'];
 }
 if (isset($_SESSION['admin'])) {
   if ($_SESSION['admin'] == 1) {
-    echo "<p>tutaj pokazuje session nick i admin </p>";
+    echo "<p>jestes adminem </p>";
     echo '<a href="?action=createPost">Create Post</a></br>';
+    echo $_SESSION['admin'];
+  }else {
+    echo "<p>jestes pionkiem</p>";
     echo $_SESSION['admin'];
   }
 

@@ -16,11 +16,15 @@
                     echo $_GET['error'];
                   };
            ?></p>
-          <label>Votre pseudo : <input type="text" name="nick" placeholder="pseudo"></label></br>
-          <label>Votre e-mail : <input type="text" name="email" placeholder="e-mail" /></label></br>
+           <?php
+           $letter = chr(rand(65,90));
+           echo "<p>".$letter."@gmail.com</p>";
+            ?>
+          <label>Votre pseudo : <input type="text" name="nick" placeholder="pseudo" value="test"></label></br>
+          <label>Votre e-mail : <input type="text" name="email" placeholder="e-mail" value="<?=$letter."@gmail.com"?>" /></label></br>
           <label>Confirmez votre e-mail : <input type="text" name="email_confirm" placeholder="confirm e-mail" /></label></br>
-          <label>Créez un mot de passe : <input type="password" name="password" placeholder="Password" /></label></br>
-          <label>Confirmez votre mot de passe : <input type="password" name="password_confirm" placeholder="confirm Password" /></label></br>
+          <label>Créez un mot de passe : <input type="password" name="password" placeholder="Password" value="test" /></label></br>
+          <label>Confirmez votre mot de passe : <input type="password" name="password_confirm" placeholder="confirm Password" value="test" /></label></br>
       </p>
       <button type="button submit" class="btn btn-outline-light btn-lg col-xs-12" name="login">Check</button>
   </form>

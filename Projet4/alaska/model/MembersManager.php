@@ -29,14 +29,11 @@ class MemberManager extends Manager
             $pass_hache = password_hash($pass, PASSWORD_DEFAULT);
             $member = $db->prepare('INSERT INTO membres(pseudo, pass, email, date_inscription) VALUES(?, ?, ?, NOW())');
             $newMember = $member->execute(array($nick, $pass_hache, $email));
-  /*          session_start();
-            $_SESSION['id'] = $userinfo['id'];
-            $_SESSION['alias'] = $userinfo['alias'];
-            $_SESSION['email'] = $userinfo['email'];
-            $_SESSION['admin'] = $userinfo['admin'];
-            header("Location: index.php?action=loged&id=".$_SESSION['id']);*/
+            session_start();
+            $_SESSION['nick'] = $nick;
+            header("Location: index.php?action=home&nick=".$_SESSION['nick']);
             return $newMember;
-            print_r($newMember);
+
           }else {
             //echo "<p>user already exists</p>";
             header('Location: ?action=createMember&error=user already exists');//--------------------------------------------------------

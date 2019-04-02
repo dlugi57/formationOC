@@ -12,7 +12,7 @@
   <form class="login-form" method="post" action="index.php?action=newMember">
       <p>
 
-          <label>Votre pseudo : <input type="text" name="pseudo" placeholder="pseudo"></label></br>
+          <label>Votre pseudo : <input type="text" name="nick" placeholder="pseudo"></label></br>
           <label>Votre e-mail : <input type="text" name="email" placeholder="e-mail" /></label></br>
           <label>Confirmez votre e-mail : <input type="text" name="email_confirm" placeholder="confirm e-mail" /></label></br>
           <label>Créez un mot de passe : <input type="password" name="password" placeholder="Password" /></label></br>

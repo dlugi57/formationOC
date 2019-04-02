@@ -57,6 +57,16 @@ function createPage(){
 
 function newMember($nick, $pass, $email){
 
+  $commentManager = new \OpenClassrooms\Blog\Model\CommentManager();
+
+  $affectedLines = $commentManager->postComment($postId, $author, $comment);
+
+  if ($affectedLines === false) {
+      throw new Exception('Impossible d\'ajouter le commentaire !');
+  }
+  else {
+      echo "<p>udalo sie</p> ";
+  }
 
 
 }

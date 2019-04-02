@@ -39,9 +39,16 @@ try {
         elseif ($_GET['action'] == 'createMember') {
           createPage();
         }
-        elseif ($_GET['action'] == 'createMember') {
+        elseif ($_GET['action'] == 'newMember') {
           if (!empty($_POST['nick']) && !empty($_POST['email'])&& !empty($_POST['email_confirm'])&& !empty($_POST['password'])&& !empty($_POST['password_confirm'])) {
-              addComment($_GET['id'], $_POST['author'], $_POST['comment']);
+            if ($_POST['email'] !== $_POST['email_confirm']) {
+              throw new Exception("wrong email !");
+            }
+            if ($_POST['password'] !== $_POST['password_confirm']) {
+              throw new Exception("wrong pass !");
+            }
+            newMember(empty($_POST['nick'], $_POST['password'], $_POST['email'])
+              //addComment($_GET['id'], $_POST['author'], $_POST['comment']);
           }
           else {
               throw new Exception("Tous les champs ne sont pas remplis !");

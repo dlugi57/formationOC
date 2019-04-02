@@ -40,7 +40,7 @@ try {
           createPage();
         }
         elseif ($_GET['action'] == 'createMember') {
-          if (!empty($_POST['author']) && !empty($_POST['comment'])) {
+          if (!empty($_POST['nick']) && !empty($_POST['email'])&& !empty($_POST['email_confirm'])&& !empty($_POST['password'])&& !empty($_POST['password_confirm'])) {
               addComment($_GET['id'], $_POST['author'], $_POST['comment']);
           }
           else {

@@ -47,7 +47,7 @@ try {
             if ($_POST['password'] !== $_POST['password_confirm']) {
               throw new Exception("wrong pass !");
             }
-            newMember(empty($_POST['nick'], $_POST['password'], $_POST['email'])
+            newMember($_POST['nick'], $_POST['password'], $_POST['email']);
               //addComment($_GET['id'], $_POST['author'], $_POST['comment']);
           }
           else {

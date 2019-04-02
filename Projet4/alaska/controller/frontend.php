@@ -3,6 +3,7 @@
 // Chargement des classes
 require_once('model/PostManager.php');
 require_once('model/CommentManager.php');
+require_once('model/MembersManager.php');
 
 function listPosts()
 {
@@ -57,11 +58,11 @@ function createPage(){
 
 function newMember($nick, $pass, $email){
 
-  $commentManager = new \OpenClassrooms\Blog\Model\CommentManager();
+  $memberManager = new \OpenClassrooms\Blog\Model\MemberManager();
 
-  $affectedLines = $commentManager->postComment($postId, $author, $comment);
+  $newMember = $memberManager->addMember($nick, $pass, $email);
 
-  if ($affectedLines === false) {
+  if ($newMember === false) {
       throw new Exception('Impossible d\'ajouter le commentaire !');
   }
   else {

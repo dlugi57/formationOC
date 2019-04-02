@@ -6,25 +6,25 @@ require_once("model/Manager.php");
 
 class MemberManager extends Manager
 {
-    public function getComments($postId)
+  /*  public function getComments($postId)
     {
         $db = $this->dbConnect();
         $comments = $db->prepare('SELECT id, author, comment, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin%ss\') AS comment_date_fr FROM comments WHERE post_id = ? ORDER BY comment_date DESC');
         $comments->execute(array($postId));
 
         return $comments;
-    }
+    }*/
 
-    public function postComment($postId, $author, $comment)
+    public function addMember($nick, $pass, $email)
     {
         $db = $this->dbConnect();
-        $comments = $db->prepare('INSERT INTO comments(post_id, author, comment, comment_date) VALUES(?, ?, ?, NOW())');
-        $affectedLines = $comments->execute(array($postId, $author, $comment));
+        $member = $db->prepare('INSERT INTO membres(pseudo, pass, email, date_inscription) VALUES(?, ?, ?, NOW())');
+        $newMember = $member->execute(array($nick, $pass, $email));
 
-        return $affectedLines;
+        return $newMember;
     }
 
-    public function getComment($commentId)
+  /*  public function getComment($commentId)
     {
         $db = $this->dbConnect();
         $request = $db->prepare('SELECT id, post_id, author, comment, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin%ss\') AS comment_date_fr FROM comments WHERE id = ?');
@@ -40,5 +40,5 @@ class MemberManager extends Manager
         $request = $db->prepare('UPDATE comments SET author = :author, comment = :comment, comment_date = NOW() WHERE id = :id');
         $request->execute(array('author' => $author, 'comment' => $comment, 'id' => $commentId));
         return $request;
-    }
+    }*/
 }

@@ -35,6 +35,18 @@ try {
                 throw new Exception("Aucun identifiant de commentaire envoyé");
             }
         }
+        //redirection to new member page
+        elseif ($_GET['action'] == 'createMember') {
+          createPage();
+        }
+        elseif ($_GET['action'] == 'createMember') {
+          if (!empty($_POST['author']) && !empty($_POST['comment'])) {
+              addComment($_GET['id'], $_POST['author'], $_POST['comment']);
+          }
+          else {
+              throw new Exception("Tous les champs ne sont pas remplis !");
+          }
+        }
     }
     else {
         listPosts();

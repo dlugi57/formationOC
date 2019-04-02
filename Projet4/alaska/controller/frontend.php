@@ -50,3 +50,13 @@ function editComment($commentId)
 
 	require('view/frontend/editView.php');
 }
+
+function createPage(){
+  require('view/frontend/createMemberViev.php');
+}
+
+function newMember($nick, $pass, $email){
+
+
+
+}

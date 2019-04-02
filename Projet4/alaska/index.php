@@ -1,6 +1,7 @@
 
 <?php
 require('controller/frontend.php');
+require('controller/backend.php');
 try {
     if (isset($_GET['action'])) {
         if ($_GET['action'] == 'listPosts') {
@@ -57,6 +58,16 @@ try {
         }
         elseif ($_GET['action'] == 'home') {
           homePage();
+        }
+        elseif ($_GET['action']== 'newPost') {
+          if (!empty($_POST['postTitle']) && !empty($_POST['postContent'])) {
+            createPost($_POST['postTitle'],$_POST['postContent']);
+            // code...
+          }
+        }
+        elseif ($_GET['action']== 'createPost') {
+          require('view/backend/postViev.php');
+          // code...
         }
     }
     else {

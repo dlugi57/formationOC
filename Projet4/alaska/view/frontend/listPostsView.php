@@ -3,7 +3,7 @@
 <?php ob_start(); ?>
 <h1>Mon super blog !</h1>
 <p class="navigator">Derniers billets du blog :</p>
-<a href="?action=createMember">Create</a>
+<a href="?action=home">Home</a>
 
 <?php
 while ($data = $posts->fetch())

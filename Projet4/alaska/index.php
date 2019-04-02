@@ -39,7 +39,7 @@ try {
         elseif ($_GET['action'] == 'createMember') {
           createPage();
         }
-        
+
         elseif ($_GET['action'] == 'newMember') {
           if (!empty($_POST['nick']) && !empty($_POST['email'])&& !empty($_POST['email_confirm'])&& !empty($_POST['password'])&& !empty($_POST['password_confirm'])) {
             if ($_POST['email'] !== $_POST['email_confirm']) {
@@ -55,9 +55,12 @@ try {
               throw new Exception("Tous les champs ne sont pas remplis !");
           }
         }
+        elseif ($_GET['action'] == 'home') {
+          homePage();
+        }
     }
     else {
-        listPosts();
+        homePage();
     }
 }
 catch(Exception $e) { // S'il y a eu une erreur, alors...

@@ -27,7 +27,7 @@ class MemberManager extends Manager
 
 
             $pass_hache = password_hash($pass, PASSWORD_DEFAULT);
-            $member = $db->prepare('INSERT INTO membres(pseudo, pass, email, date_inscription) VALUES(?, ?, ?, NOW())');
+            $member = $db->prepare('INSERT INTO membres(pseudo, pass, email, date_inscription, admin) VALUES(?, ?, ?, NOW(),0)');
             $newMember = $member->execute(array($nick, $pass_hache, $email));
             session_start();
             $_SESSION['nick'] = $nick;
@@ -41,6 +41,37 @@ class MemberManager extends Manager
         }else {
           header('Location: ?action=createMember&error=Shitty mail');
         }
+    }
+
+    public function login($login, $password){
+
+      $db = $this->dbConnect();
+      //  Récupération de l'utilisateur et de son pass hashé
+      $user = $db->prepare('SELECT admin, pass FROM membres WHERE pseudo = :pseudo');
+      $user->execute(array(
+          'pseudo' => $login));
+      $connectMember = $user->fetch();
+
+      // Comparaison du pass envoyé via le formulaire avec la base
+      $isPasswordCorrect = password_verify($password, $connectMember['pass']);
+
+      if (!$connectMember)
+      {
+          echo '<p>Mauvais identifiant ou mot de passe nie ma wyniku bazy  !</p>';
+      }
+      else
+      {
+          if ($isPasswordCorrect) {
+              session_start();
+              $_SESSION['admin'] = $connectMember['admin'];
+              $_SESSION['nick'] = $login;
+              echo 'Vous êtes connecté !';
+              //return $connectMember;
+          }
+          else {
+              echo '<p>Mauvais identifiant ou mot de passe sprawdzil poprawnosc !</p>';
+          }
+      }
     }
 
   /*  public function getComment($commentId)

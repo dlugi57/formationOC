@@ -72,6 +72,17 @@ function newMember($nick, $pass, $email){
   else {
       echo "<p>udalo sie</p> ";
   }
+}
 
+function connect($login,$password){
+  $memberManager = new \OpenClassrooms\Blog\Model\MemberManager();
 
+  $connectMember = $memberManager->login($login,$password);
+
+  /*if ($connectMember === false) {
+      echo "<p>nie udalo sie juz w frontend</p> ";
+  }
+  else {
+      echo "<p>udalo sie zalogowac</p> ";
+  }*/
 }

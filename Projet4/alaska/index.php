@@ -69,6 +69,15 @@ try {
           require('view/backend/postViev.php');
           // code...
         }
+        elseif ($_GET['action'] == 'loginPage') {
+          require('view/frontend/connectViev.php');
+        }
+        elseif ($_GET['action'] == 'login') {
+          if (!empty($_POST['login']) && !empty($_POST['pass'])) {
+            connect($_POST['login'],$_POST['pass']);
+            // code...
+          }
+        }
     }
     else {
         homePage();

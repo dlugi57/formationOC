@@ -11,7 +11,11 @@
 
   <form class="login-form" method="post" action="index.php?action=newMember">
       <p>
-
+          <p> <?php
+                  if (isset($_GET['error'])) {
+                    echo $_GET['error'];
+                  };
+           ?></p>
           <label>Votre pseudo : <input type="text" name="nick" placeholder="pseudo"></label></br>
           <label>Votre e-mail : <input type="text" name="email" placeholder="e-mail" /></label></br>
           <label>Confirmez votre e-mail : <input type="text" name="email_confirm" placeholder="confirm e-mail" /></label></br>

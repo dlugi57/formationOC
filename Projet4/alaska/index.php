@@ -39,6 +39,7 @@ try {
         elseif ($_GET['action'] == 'createMember') {
           createPage();
         }
+        
         elseif ($_GET['action'] == 'newMember') {
           if (!empty($_POST['nick']) && !empty($_POST['email'])&& !empty($_POST['email_confirm'])&& !empty($_POST['password'])&& !empty($_POST['password_confirm'])) {
             if ($_POST['email'] !== $_POST['email_confirm']) {

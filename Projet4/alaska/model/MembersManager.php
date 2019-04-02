@@ -32,10 +32,11 @@ class MemberManager extends Manager
 
             return $newMember;
           }else {
-            echo "<p>user already exists</p>";
+            //echo "<p>user already exists</p>";
+            header('Location: ?action=createMember&error=user already exists');//--------------------------------------------------------
           }
         }else {
-          echo "<p>shit mail</p>";
+          header('Location: ?action=createMember&error=Shitty mail');
         }
     }
 

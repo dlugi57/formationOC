@@ -18,10 +18,25 @@ class MemberManager extends Manager
     public function addMember($nick, $pass, $email)
     {
         $db = $this->dbConnect();
-        $member = $db->prepare('INSERT INTO membres(pseudo, pass, email, date_inscription) VALUES(?, ?, ?, NOW())');
-        $newMember = $member->execute(array($nick, $pass, $email));
 
-        return $newMember;
+        $mailCheck = $db->prepare('SELECT COUNT(*) FROM membres WHERE email = ?');
+        $mailCheck->execute(array($email));
+        $mailCheckData = $mailCheck->fetch();
+        if(filter_var($email, FILTER_VALIDATE_EMAIL)) {
+          if($mailCheckData['COUNT(*)'] == 0){
+
+
+            $pass_hache = password_hash($pass, PASSWORD_DEFAULT);
+            $member = $db->prepare('INSERT INTO membres(pseudo, pass, email, date_inscription) VALUES(?, ?, ?, NOW())');
+            $newMember = $member->execute(array($nick, $pass_hache, $email));
+
+            return $newMember;
+          }else {
+            echo "<p>user already exists</p>";
+          }
+        }else {
+          echo "<p>shit mail</p>";
+        }
     }
 
   /*  public function getComment($commentId)

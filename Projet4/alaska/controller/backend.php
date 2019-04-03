@@ -21,6 +21,19 @@ function createPost($postTitle, $postContent)
         header('Location: index.php?action=listPosts');
     }
 }
+
+function editPost($postId){
+  $postManager = new \OpenClassrooms\Blog\Model\PostManager();
+
+  $post = $postManager->getPost($postId);
+
+  if (!empty($_POST['postTitle']) && !empty($_POST['postContent'])) {
+    $postManager->updatePost($postId, $_POST['postTitle'], $_POST['postContent']);
+    header('Location: index.php?action=post&id=' . $post['id']);
+  }
+
+  require('view/backend/editPostView.php');
+}
 /*
 function editComment($commentId)
 {

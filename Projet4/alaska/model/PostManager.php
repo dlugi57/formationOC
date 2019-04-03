@@ -32,4 +32,12 @@ class PostManager extends Manager
 
         return $addedPost;
     }
+
+    public function updatePost($postId, $postTitle, $postContent)
+    {
+        $db = $this->dbConnect();
+        $request = $db->prepare('UPDATE posts SET title = :title, content = :content, creation_date = NOW() WHERE id = :id');
+        $request->execute(array('title' => $postTitle, 'content' => $postContent, 'id' => $postId));
+        return $request;
+    }
 }

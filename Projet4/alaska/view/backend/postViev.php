@@ -8,7 +8,7 @@
 
 
 <div class="comments">
-<h2>Commentaires</h2>
+<h2>Create post</h2>
 
 <form action="index.php?action=newPost" method="post">
     <div>

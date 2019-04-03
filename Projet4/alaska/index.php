@@ -73,11 +73,21 @@ try {
           if (!empty($_POST['postTitle']) && !empty($_POST['postContent'])) {
             createPost($_POST['postTitle'],$_POST['postContent']);
             // code...
+          }else {
+            echo "<p>nic tutaj nie ma</p>";
           }
         }
         elseif ($_GET['action']== 'createPost') {
           require('view/backend/postViev.php');
           // code...
+        }
+        elseif ($_GET['action'] == 'editPost') {
+          if (isset($_GET['id']) && $_GET['id'] > 0) {
+              editPost($_GET['id']);
+          }
+          else {
+              throw new Exception("Aucun identifiant de commentaire envoyé");
+          }
         }
         elseif ($_GET['action'] == 'loginPage') {
           require('view/frontend/connectViev.php');

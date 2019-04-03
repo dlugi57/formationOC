@@ -31,6 +31,7 @@ function deleteComment($commentId)
 
 }
 
+
 function createPost($postTitle, $postContent)
 {
     $postManager = new \OpenClassrooms\Blog\Model\PostManager();
@@ -56,6 +57,16 @@ function editPost($postId){
   }
 
   require('view/backend/editPostView.php');
+}
+
+
+function deletePost($postId){
+		$postManager = new \OpenClassrooms\Blog\Model\PostManager();
+
+		$post = $postManager->removePost($postId);
+
+		header('Location: index.php?action=listPosts');
+
 }
 /*
 function editComment($commentId)

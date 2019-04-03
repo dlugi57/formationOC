@@ -10,10 +10,11 @@ while ($data = $posts->fetch())
 {
 ?>
     <div class="news">
-        <h3>
+        <h3><a href="index.php?action=post&amp;id=<?= $data['id'] ?>">
             <?= htmlspecialchars($data['title']) ?>
-            <em>le <?= $data['creation_date_fr'] ?></em>
+            <em>le <?= $data['creation_date_fr'] ?></em></a>
             <em><a href="index.php?action=editPost&amp;id=<?= $data['id'] ?>">Modifier post</a></em>
+            <em><a href="index.php?action=deletePost&amp;id=<?= $data['id'] ?>">Supprimer post</a></em>
         </h3>
 
         <p>

@@ -40,4 +40,12 @@ class PostManager extends Manager
         $request->execute(array('title' => $postTitle, 'content' => $postContent, 'id' => $postId));
         return $request;
     }
+
+    public function removePost($postId){
+        $db = $this->dbConnect();
+        $request = $db->prepare('DELETE FROM posts WHERE id = :id');
+        $request->execute(array('id' => $postId));
+        echo "<p>usuneles komentarz</p>";
+        $request->closeCursor();
+    }
 }

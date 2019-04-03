@@ -55,6 +55,17 @@ try {
               throw new Exception("Aucun identifiant de commentaire envoyé");
           }
         }
+        elseif ($_GET['action'] == 'reportComment') {
+          // code...
+          if (isset($_GET['id']) && $_GET['id'] > 0 && isset($_GET['report'])) {
+
+              reportComment($_GET['id'], $_GET['report']);
+          }
+          else {
+              throw new Exception("Aucun identifiant de commentaire envoyé report");
+          }
+        }
+        //reportComment
         //redirection to new member page
         elseif ($_GET['action'] == 'createMember') {
           createPage();
@@ -98,6 +109,15 @@ try {
               throw new Exception("Aucun identifiant de commentaire envoyé");
           }
         }
+        elseif ($_GET['action'] == 'deletePost') {
+          // code...
+          if (isset($_GET['id']) && $_GET['id'] > 0) {
+              deletePost($_GET['id']);
+          }
+          else {
+              throw new Exception("Aucun identifiant de commentaire envoyé");
+          }
+        }
         elseif ($_GET['action'] == 'loginPage') {
           require('view/frontend/connectViev.php');
         }
@@ -105,6 +125,8 @@ try {
           if (!empty($_POST['login']) && !empty($_POST['pass'])) {
             connect($_POST['login'],$_POST['pass']);
             // code...
+          }else {
+            echo "<p>nic tutaj nie ma</p>";
           }
         }
         elseif ($_GET['action'] == 'deconnect') {

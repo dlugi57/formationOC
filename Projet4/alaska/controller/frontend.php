@@ -42,6 +42,15 @@ function addComment($postId, $author, $comment)
     }
 }
 
+function reportComment($commentId, $commentReport)
+{
+  $commentManager = new \OpenClassrooms\Blog\Model\CommentManager();
+
+  $comment = $commentManager->alertComment($commentId, $commentReport);
+
+  header('Location: index.php?action=post&id=' . $_GET['post_id']);
+}
+
 
 
 

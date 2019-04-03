@@ -15,6 +15,7 @@ $title = htmlspecialchars($post['title']); ?>
         <em>le <?= $post['creation_date_fr'] ?></em>
 
         <em><a href="index.php?action=editPost&amp;id=<?= $post['id'] ?>">Modifier post</a></em>
+        <em><a href="index.php?action=deletePost&amp;id=<?= $post['id'] ?>">Supprimer post</a></em>
     </h3>
 
     <p>
@@ -43,7 +44,14 @@ $title = htmlspecialchars($post['title']); ?>
 while ($comment = $comments->fetch())
 {
 ?>
-    <p><strong><?= htmlspecialchars($comment['author']) ?></strong> le <?= $comment['comment_date_fr'] ?>(<a href="index.php?action=editComment&amp;id=<?= $comment['id'] ?>">modifier</a>)(<a href="index.php?action=deleteComment&amp;id=<?= $comment['id'] ?>&amp;post_id=<?= $comment['post_id'] ?>">supprimer</a>)</p>
+    <p><strong><?= htmlspecialchars($comment['author']) ?></strong> le <?= $comment['comment_date_fr'] ?>
+      repport -><?= nl2br(htmlspecialchars($comment['report'])) ?>
+      (<a href="index.php?action=editComment&amp;id=<?= $comment['id'] ?>">modifier</a>)
+      (<a href="index.php?action=deleteComment&amp;id=<?= $comment['id'] ?>&amp;post_id=<?= $comment['post_id'] ?>">supprimer</a>)
+      (<a href="index.php?action=reportComment&amp;id=<?= $comment['id'] ?>&amp;report=1&amp;post_id=<?= $comment['post_id'] ?>">Signaler</a>)
+      (<a href="index.php?action=reportComment&amp;id=<?= $comment['id'] ?>&amp;report=0&amp;post_id=<?= $comment['post_id'] ?>">Unsignaler</a>)
+
+    </p>
     <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
 
 

@@ -1,4 +1,7 @@
 <?php session_start(); ?>
+<?php $title = 'Mon blog'; ?>
+
+<?php ob_start(); ?>
 <h1>strona glowna</h1>
 
 
@@ -29,5 +32,12 @@ if (isset($_SESSION['admin'])) {
 
 
 ?>
+<p id="test"></p>
+<script type="text/javascript">
+  console.log("test w dupke");
+  $('#test').html("test");
+</script>
 
-<p></p>
+<?php $content = ob_get_clean(); ?>
+
+<?php require('template.php'); ?>

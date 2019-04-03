@@ -42,19 +42,12 @@ function addComment($postId, $author, $comment)
     }
 }
 
-function editComment($commentId)
-{
-	$commentManager = new \OpenClassrooms\Blog\Model\CommentManager();
 
-	$comment = $commentManager->getComment($commentId);
 
-	if (!empty($_POST['author']) && !empty($_POST['comment'])) {
-		$commentManager->editComment($commentId, $_POST['author'], $_POST['comment']);
-		header('Location: index.php?action=post&id=' . $comment['post_id']);
-	}
 
-	require('view/frontend/editView.php');
-}
+
+
+
 
 function createPage(){
   require('view/frontend/createMemberViev.php');

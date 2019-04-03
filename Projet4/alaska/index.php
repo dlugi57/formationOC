@@ -46,6 +46,15 @@ try {
                 throw new Exception("Aucun identifiant de commentaire envoyé");
             }
         }
+        elseif ($_GET['action'] == 'deleteComment') {
+          // code...
+          if (isset($_GET['id']) && $_GET['id'] > 0) {
+              deleteComment($_GET['id']);
+          }
+          else {
+              throw new Exception("Aucun identifiant de commentaire envoyé");
+          }
+        }
         //redirection to new member page
         elseif ($_GET['action'] == 'createMember') {
           createPage();

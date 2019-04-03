@@ -20,6 +20,17 @@ function editComment($commentId)
 	require('view/backend/editCommentView.php');
 }
 
+function deleteComment($commentId)
+{
+	$commentManager = new \OpenClassrooms\Blog\Model\CommentManager();
+
+	$comment = $commentManager->removeComment($commentId);
+
+  header('Location: index.php?action=post&id=' . $_GET['post_id']);
+
+
+}
+
 function createPost($postTitle, $postContent)
 {
     $postManager = new \OpenClassrooms\Blog\Model\PostManager();

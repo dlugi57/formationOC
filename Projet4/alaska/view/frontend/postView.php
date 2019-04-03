@@ -5,7 +5,7 @@ $title = htmlspecialchars($post['title']); ?>
 
 <?php ob_start(); ?>
 <h1>Mon super blog !</h1>
-<p class="navigator"><a href="index.php">Retour à la liste des billets</a></p>
+<p class="navigator"><a href="index.php">Home</a></p>
 
 
 
@@ -13,6 +13,8 @@ $title = htmlspecialchars($post['title']); ?>
     <h3>
         <?= htmlspecialchars($post['title']) ?>
         <em>le <?= $post['creation_date_fr'] ?></em>
+
+        <em><a href="index.php?action=editPost&amp;id=<?= $post['id'] ?>">Modifier post</a></em>
     </h3>
 
     <p>
@@ -41,7 +43,7 @@ $title = htmlspecialchars($post['title']); ?>
 while ($comment = $comments->fetch())
 {
 ?>
-    <p><strong><?= htmlspecialchars($comment['author']) ?></strong> le <?= $comment['comment_date_fr'] ?>(<a href="index.php?action=editComment&amp;id=<?= $comment['id'] ?>">modifier</a>)</p>
+    <p><strong><?= htmlspecialchars($comment['author']) ?></strong> le <?= $comment['comment_date_fr'] ?>(<a href="index.php?action=editComment&amp;id=<?= $comment['id'] ?>">modifier</a>)(<a href="index.php?action=deleteComment&amp;id=<?= $comment['id'] ?>&amp;post_id=<?= $comment['post_id'] ?>">supprimer</a>)</p>
     <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
 
 

@@ -86,3 +86,11 @@ function connect($login,$password){
       echo "<p>udalo sie zalogowac</p> ";
   }*/
 }
+
+function logout(){
+  session_start();
+  // Suppression des variables de session et de la session
+  $_SESSION = array();
+  session_destroy();
+  header("Location: index.php?action=home");
+}

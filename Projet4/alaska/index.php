@@ -78,6 +78,9 @@ try {
             // code...
           }
         }
+        elseif ($_GET['action'] == 'deconnect') {
+          logout();
+        }
     }
     else {
         homePage();

@@ -7,6 +7,7 @@
 <a href="?action=createMember">Create</a></br>
 
 <a href="?action=loginPage">Login</a></br>
+<a href="?action=deconnect">Deconexion</a></br>
 
 <?php
 

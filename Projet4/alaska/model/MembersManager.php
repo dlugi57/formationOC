@@ -67,6 +67,7 @@ class MemberManager extends Manager
               $_SESSION['admin'] = $connectMember['admin'];
               $_SESSION['nick'] = $login;
               echo 'Vous êtes connecté !';
+              header("Location: index.php?action=home&nick=".$_SESSION['nick']);
               //return $connectMember;
           }
           else {
@@ -74,6 +75,8 @@ class MemberManager extends Manager
           }
       }
     }
+
+
 
   /*  public function getComment($commentId)
     {

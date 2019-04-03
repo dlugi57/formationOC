@@ -1,4 +1,7 @@
-<?php $title = htmlspecialchars($post['title']); ?>
+<?php
+session_start();
+
+$title = htmlspecialchars($post['title']); ?>
 
 <?php ob_start(); ?>
 <h1>Mon super blog !</h1>
@@ -19,10 +22,11 @@
 <div class="comments">
 <h2>Commentaires</h2>
 
-<form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post">
+<form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>&amp;author=<?php echo $_SESSION['nick'] ?>" method="post">
     <div>
-        <label for="author">Auteur</label><br />
-        <input type="text" id="author" name="author" />
+      <!--  <label for="author">Auteur</label><br />
+        <input type="text" id="author" name="author" />-->
+        <p><?php echo $_SESSION['nick'] ?></p>
     </div>
     <div>
         <label for="comment">Commentaire</label><br />

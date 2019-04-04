@@ -49,23 +49,12 @@ while ($comment = $comments->fetch())
 {
 ?>
     <p><strong><?= htmlspecialchars($comment['author']) ?></strong> le <?= $comment['comment_date_fr'] ?>
-      repport -><?= nl2br(htmlspecialchars($comment['report']));
-      $html = "";
-      if (isset($admin))
-      {
-        if ($admin == 1)
-        {
-          $html .= '(<a href="index.php?action=editComment&amp;id='. $comment['id'] .'">modifier</a>)
-          (<a href="index.php?action=deleteComment&amp;id='. $comment['id'] .'&amp;post_id='. $comment['post_id'] .'">supprimer</a>)
-          (<a href="index.php?action=reportComment&amp;id='. $comment['id'] .'&amp;report=0&amp;post_id='. $comment['post_id'] .'">Unsignaler</a>)';
-        }elseif ($admin == 0 && $comment['report'] == 0)
-        {
-          $html .= '(<a href="index.php?action=reportComment&amp;id='. $comment['id'] .'&amp;report=1&amp;post_id='. $comment['post_id'] .'">Signaler</a>)';// code...
-        }
-        // i need to add some conditions to hide comment after report
-      }
-      echo $html;
-?>
+      repport -><?= nl2br(htmlspecialchars($comment['report'])) ?>
+      (<a href="index.php?action=editComment&amp;id=<?= $comment['id'] ?>">modifier</a>)
+      (<a href="index.php?action=deleteComment&amp;id=<?= $comment['id'] ?>&amp;post_id=<?= $comment['post_id'] ?>">supprimer</a>)
+      (<a href="index.php?action=reportComment&amp;id=<?= $comment['id'] ?>&amp;report=1&amp;post_id=<?= $comment['post_id'] ?>">Signaler</a>)
+      (<a href="index.php?action=reportComment&amp;id=<?= $comment['id'] ?>&amp;report=0&amp;post_id=<?= $comment['post_id'] ?>">Unsignaler</a>)
+
     </p>
     <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
 

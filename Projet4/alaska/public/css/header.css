@@ -1,7 +1,7 @@
 /* HEADER */
 /*https://codepen.io/mutedblues/pen/MmPNPG*/
 .header {
-  background-color: #fff;
+  /*background-color: #fff;*/
   box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, .1);
   position: fixed;
   width: 100%;
@@ -15,7 +15,7 @@
   padding: 0;
   list-style: none;
   overflow: hidden;
-  background-color: #fff;
+  /*background-color: #fff;*/
 }
 
 .header li {
@@ -28,7 +28,8 @@
   border-top: 3px solid transparent;
   text-decoration: none;
   cursor: pointer;
-  color: #65696e;
+  /*color: #65696e;*/
+  color: black;
 }
 
 /* change apparence of navbar menu after hover */

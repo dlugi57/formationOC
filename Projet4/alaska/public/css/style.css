@@ -1,59 +1,71 @@
-body
-{
-  margin-top: 100px;
+body {
+  /*margin-top: 50px;*/
 }
-h1, h3
-{
-    text-align:center;
+
+h1, h3 {
+  text-align: center;
 }
-h3
-{
-    background-color:black;
-    color:white;
-    font-size:0.9em;
-    margin-bottom:0px;
+
+h3 {
+  background-color: black;
+  color: white;
+  font-size: 0.9em;
+  margin-bottom: 0px;
 }
-.news p
-{
-    background-color:#CCCCCC;
-    margin-top:0px;
+
+.news p {
+  background-color: #CCCCCC;
+  margin-top: 0px;
 }
-.news
-{
-    width:70%;
-    margin:auto;
+
+.news {
+  width: 70%;
+  margin: auto;
 }
-.comments
-{
-    width:70%;
-    margin:auto;
+
+.comments {
+  width: 70%;
+  margin: auto;
 }
-.navigator
-{
-    width:70%;
-    margin:auto;
+
+.navigator {
+  width: 70%;
+  margin: auto;
 }
-a
-{
-    text-decoration: none;
-    color: blue;
+
+a {
+  text-decoration: none;
+  color: blue;
 }
 
 /* ************************************ */
-
-.ancre100 {
+/*.ancre100 {
   padding-top: 100px;
   position: relative;
   top: -100px;
   margin-bottom: -100px;
   z-index: -10;
+}*/
+.introBlock {
+  /*height: 550px;*/
+  background-size: cover;
+  background-position: center;
+  /*margin-top: 50px;*/
+  transition: all 1s;
+  background-image: url('../images/background.jpg');
+  height: 100vh;
+  min-height: 35em;
+  overflow: hidden;
+  position: relative;
+  background-attachment: fixed;
 }
 
-.introBlock {
-  height: 550px;
-  background-size: cover;
-  background-position: right;
-  margin-top: 100px;
-  transition: all 1s;
-  background-image: url('../alaska/images/background.jpg');
+#introTitle {
+  text-align: center;
+}
+
+#introescription {
+  position: relative;
+  top: 35vh;
+  text-align: center;
 }

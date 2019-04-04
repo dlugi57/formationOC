@@ -2,14 +2,13 @@
 <?php $title = "Jean Forteroche - Billet simple pour l'Alaska"; ?>
 
 <?php ob_start(); ?>
-<h1>strona glowna</h1>
 
 <!-- SECTION SLIDER -->
 <section class="intro">
   <div class="ancre100" id="intro"></div>
   <div class="introBlock" id="introBlock">
     <div id="introescription">
-      <h3 id="introTitle">Title</h3>
+      <h1 id="introTitle">Billet simple pour l'Alaska</h1>
       <p id="introText">Descritpion</p>
     </div>
   </div>

@@ -17,9 +17,18 @@ $title = htmlspecialchars($post['title']); ?>
     <h3>
         <?= htmlspecialchars($post['title']) ?>
         <em>le <?= $post['creation_date_fr'] ?></em>
-
-        <em><a href="index.php?action=editPost&amp;id=<?= $post['id'] ?>">Modifier post</a></em>
-        <em><a href="index.php?action=deletePost&amp;id=<?= $post['id'] ?>">Supprimer post</a></em>
+        <?php
+        if (isset($admin))
+        {
+          if ($admin == 1)
+          {
+            ?>
+            <em><a href="index.php?action=editPost&amp;id=<?= $post['id'] ?>">Modifier post</a></em>
+            <em><a href="index.php?action=deletePost&amp;id=<?= $post['id'] ?>">Supprimer post</a></em>
+            <?php
+          }
+        }
+        ?>
     </h3>
 
     <p>
@@ -28,23 +37,30 @@ $title = htmlspecialchars($post['title']); ?>
 </div>
 <div class="comments">
 <h2>Commentaires</h2>
-
-<form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>&amp;author=<?php if (isset($nick)) { echo $nick;} ?>" method="post">
-    <div>
-      <!--  <label for="author">Auteur</label><br />
-        <input type="text" id="author" name="author" />-->
-        <p><?php if (isset($nick)) { echo $nick;} ?></p>
-    </div>
-    <div>
-        <label for="comment">Commentaire</label><br />
-        <textarea id="comment" name="comment"></textarea>
-    </div>
-    <div>
-        <input type="submit" />
-    </div>
-</form>
-
 <?php
+if (isset($admin))
+{
+  if ($admin == 1 || $admin == 0)
+  {
+    ?>
+    <form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>&amp;author=<?php if (isset($nick)) { echo $nick;} ?>" method="post">
+        <div>
+            <p><?php if (isset($nick)) { echo $nick;} ?></p>
+        </div>
+        <div>
+            <label for="comment">Commentaire</label><br />
+            <textarea id="comment" name="comment"></textarea>
+        </div>
+        <div>
+            <input type="submit" />
+        </div>
+    </form>
+    <?php
+  }
+}
+
+
+
 while ($comment = $comments->fetch())
 {
 ?>

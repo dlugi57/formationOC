@@ -42,7 +42,7 @@
   float: left;
   padding: 10px;
   margin-left: 12%;
-  height: 80px;
+  height: 50px;
 }
 
 .header .menu {
@@ -126,4 +126,9 @@
 .header .menu-btn:checked~.menu-icon:not(.steps) .navicon:before,
 .header .menu-btn:checked~.menu-icon:not(.steps) .navicon:after {
   top: 0;
+}
+
+#nickHeader {
+  padding: 15px 15px;
+  float: left;
 }

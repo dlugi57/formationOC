@@ -1,6 +1,7 @@
 <?php
-session_start();
-
+if (isset($_SESSION['nick'])) {
+  $nick =  $_SESSION['nick'];
+}
 $title = htmlspecialchars($post['title']); ?>
 
 <?php ob_start(); ?>
@@ -25,11 +26,11 @@ $title = htmlspecialchars($post['title']); ?>
 <div class="comments">
 <h2>Commentaires</h2>
 
-<form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>&amp;author=<?php echo $_SESSION['nick'] ?>" method="post">
+<form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>&amp;author=<?php if (isset($nick)) { echo $nick;} ?>" method="post">
     <div>
       <!--  <label for="author">Auteur</label><br />
         <input type="text" id="author" name="author" />-->
-        <p><?php echo $_SESSION['nick'] ?></p>
+        <p><?php if (isset($nick)) { echo $nick;} ?></p>
     </div>
     <div>
         <label for="comment">Commentaire</label><br />
@@ -62,4 +63,4 @@ while ($comment = $comments->fetch())
 </div>
 <?php $content = ob_get_clean(); ?>
 
-<?php require('template.php'); ?>
+<?php require('template.php');

@@ -118,14 +118,7 @@ try {
               throw new Exception("Aucun identifiant de commentaire envoyé");
           }
         }
-        elseif ($_GET['action'] == 'lastPost') {
-          if (isset($_GET['id']) && $_GET['id'] > 0) {
-              lastPost($_GET['id']);
-          }
-          else {
-              throw new Exception("Aucun identifiant de commentaire envoyé");
-          }
-        }
+
         elseif ($_GET['action'] == 'loginPage') {
           require('view/frontend/connectViev.php');
         }

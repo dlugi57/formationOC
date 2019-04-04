@@ -9,7 +9,8 @@ class PostManager extends Manager
     public function getPosts()
     {
         $db = $this->dbConnect();
-        $req = $db->query('SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%imin%ss\') AS creation_date_fr FROM posts ORDER BY creation_date DESC LIMIT 0, 5');
+        //$req = $db->query('SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%imin%ss\') AS creation_date_fr FROM posts ORDER BY creation_date DESC LIMIT 0, 5');
+        $req = $db->query('SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%imin%ss\') AS creation_date_fr FROM posts ORDER BY creation_date DESC');
 
         return $req;
     }
@@ -47,5 +48,17 @@ class PostManager extends Manager
         $request->execute(array('id' => $postId));
         echo "<p>usuneles komentarz</p>";
         $request->closeCursor();
+    }
+
+    public function newestPost(){
+
+      $db = $this->dbConnect();
+      $req = $db->query('SELECT title, content FROM posts ORDER BY id DESC LIMIT 1;');
+      //$req->execute(array($postId));
+      //$lastPost = $req->fetch();
+$lastPost = $req->fetch();
+      return $lastPost;
+
+      //SELECT parentid FROM table2 WHERE id = LAST_INSERT_ID();
     }
 }

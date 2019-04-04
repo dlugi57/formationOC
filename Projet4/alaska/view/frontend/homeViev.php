@@ -34,8 +34,10 @@
 <section id="book">
 
   <div id="bookDescription">
-    <h1 id="bookTitle">Billet simple pour l'Alaska</h1>
-    <p id="bookText">Le nouveau roman de Jean Forteroche</p>
+    <p>Dernier chapitre</p>
+    <h1 id="bookTitle"><?= $lastPost1['title'] ?> </h1>
+        <?php //echo '<p>tutaj'.$lastPost1['content'].'</p>'; ?>
+    <p id="bookText"><?= $lastPost1['content'] ?></p>
   </div>
 
 </section>

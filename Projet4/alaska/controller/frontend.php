@@ -5,10 +5,14 @@ require_once('model/PostManager.php');
 require_once('model/CommentManager.php');
 require_once('model/MembersManager.php');
 
-function homePage(){
+function homePage()
+{
 
+  $postManager = new \OpenClassrooms\Blog\Model\PostManager();
+  $lastPost1 = $postManager->newestPost();
   require('view/frontend/homeViev.php');
- require('view/frontend/header.php');
+  require('view/frontend/header.php');
+
 }
 
 function listPosts()
@@ -29,6 +33,7 @@ function post()
 
     require('view/frontend/postView.php');
 }
+
 
 function addComment($postId, $author, $comment)
 {

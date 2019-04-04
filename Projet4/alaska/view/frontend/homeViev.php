@@ -18,7 +18,7 @@
 
 
 
-<a href="index.php?action=listPosts">liste des billets</a></br>
+
 <?php
 if (isset($_SESSION['nick'])) {
   echo "<p>tutaj pokazuje session nick</p>";
@@ -38,8 +38,9 @@ if (isset($_SESSION['admin'])) {
  ?>
 
 
-?>
+
 <p id="test"></p>
+<p>here i will put author section</p>
 <script type="text/javascript">
   console.log("test w dupke");
   $('#test').html("test");

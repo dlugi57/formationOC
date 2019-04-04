@@ -8,8 +8,8 @@ if (isset($_SESSION['admin'])) {
 $title = htmlspecialchars($post['title']); ?>
 
 <?php ob_start(); ?>
-<h1>Mon super blog !</h1>
-<p class="navigator"><a href="index.php">Home</a></p>
+<h1> <?= $title ?></h1>
+
 
 
 
@@ -45,10 +45,9 @@ if (isset($admin))
     ?>
     <form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>&amp;author=<?php if (isset($nick)) { echo $nick;} ?>" method="post">
         <div>
-            <p><?php if (isset($nick)) { echo $nick;} ?></p>
+            <p>Auteur : <?php if (isset($nick)) { echo $nick;} ?></p>
         </div>
         <div>
-            <label for="comment">Commentaire</label><br />
             <textarea id="comment" name="comment"></textarea>
         </div>
         <div>

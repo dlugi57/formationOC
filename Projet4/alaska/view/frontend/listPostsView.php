@@ -1,11 +1,11 @@
-<?php $title = 'Mon blog';
+<?php $title = 'Liste des chapitres - Jean Forteroche';
 if (isset($_SESSION['admin'])) {
   $admin = $_SESSION['admin'];
 }
 ob_start(); ?>
-<h1>Mon super blog !</h1>
-<p class="navigator">Derniers billets du blog :</p>
-<a href="?action=home">Home</a>
+<h1>Billet simple pour l'Alaska</h1>
+<p class="navigator">Liste des chapitres disponibles</p>
+
 
 <?php
 while ($data = $posts->fetch())
@@ -21,8 +21,8 @@ while ($data = $posts->fetch())
               if ($admin == 1)
               {
                 ?>
-                <em><a href="index.php?action=editPost&amp;id=<?= $data['id'] ?>">Modifier post</a></em>
-                <em><a href="index.php?action=deletePost&amp;id=<?= $data['id'] ?>">Supprimer post</a></em>
+                <em><a href="index.php?action=editPost&amp;id=<?= $data['id'] ?>">Modifier</a></em>
+                <em><a href="index.php?action=deletePost&amp;id=<?= $data['id'] ?>">Supprimer</a></em>
                 <?php
               }
             }

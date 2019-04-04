@@ -1,22 +1,22 @@
-<?php $title = "Create Post" ?>
+<?php $title = "Nouveau chapitre" ?>
 
 <?php ob_start(); ?>
-<h1>Mon super blog !</h1>
-<p class="navigator"><a href="index.php">Retour à la liste des billets</a></p>
+<h1>Nouveau chapitre</h1>
+
 
 
 
 
 <div class="comments">
-<h2>Create post</h2>
+
 
 <form action="index.php?action=newPost" method="post">
     <div>
-        <label for="postTitle">Title</label><br />
+        <label for="postTitle">Titre</label><br />
         <input type="text" id="postTitle" name="postTitle" />
     </div>
     <div>
-        <label for="postContent">Content</label><br />
+        <label for="postContent">Contenu</label><br />
         <textarea id="postContent" name="postContent"></textarea>
     </div>
     <div>

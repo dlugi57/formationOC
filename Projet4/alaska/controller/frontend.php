@@ -6,8 +6,9 @@ require_once('model/CommentManager.php');
 require_once('model/MembersManager.php');
 
 function homePage(){
-  
+
   require('view/frontend/homeViev.php');
+ require('view/frontend/header.php');
 }
 
 function listPosts()

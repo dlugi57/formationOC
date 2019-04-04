@@ -1,0 +1,129 @@
+/* HEADER */
+/*https://codepen.io/mutedblues/pen/MmPNPG*/
+.header {
+  background-color: #fff;
+  box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, .1);
+  position: fixed;
+  width: 100%;
+  height: 50px;
+  z-index: 9999;
+  top: 0;
+}
+
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.header li {
+  float: left;
+}
+
+.header li a {
+  display: block;
+  padding: 10px 15px;
+  border-top: 3px solid transparent;
+  text-decoration: none;
+  cursor: pointer;
+  color: #65696e;
+}
+
+/* change apparence of navbar menu after hover */
+.header li a:hover {
+  color: darkgray;
+  border-top: 3px solid #e4b44d;
+}
+
+.header .logo {
+  display: block;
+  float: left;
+  padding: 10px;
+  margin-left: 12%;
+  height: 80px;
+}
+
+.header .menu {
+  clear: none;
+  float: right;
+  max-height: none;
+  right: 8%;
+  transition: max-height .2s ease-out;
+  position: relative;
+}
+
+/* hamburger manu icon */
+.header .menu-icon {
+  cursor: pointer;
+  display: none;
+  float: right;
+  padding: 23px 20px;
+  position: relative;
+  user-select: none;
+  right: 12%;
+  top: 25px;
+}
+
+/* middle line of hamburger */
+.header .menu-icon .navicon {
+  background: #333;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 18px;
+}
+
+/* add two other lines of hamburger */
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+  background: #333;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+
+/* place firs hamburger line */
+.header .menu-icon .navicon:before {
+  top: 5px;
+}
+
+/* place second line */
+.header .menu-icon .navicon:after {
+  top: -5px;
+}
+
+.header .menu-btn {
+  display: none;
+}
+
+/* after button click open menu */
+.header .menu-btn:checked~.menu {
+  max-height: 240px;
+}
+
+/* hide middle line from hamburger */
+.header .menu-btn:checked~.menu-icon .navicon {
+  background: transparent;
+}
+
+/* turn first line to make cross */
+.header .menu-btn:checked~.menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+/* turn second line to make cross */
+.header .menu-btn:checked~.menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+/* puts lines on the top to get perfect cross */
+.header .menu-btn:checked~.menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked~.menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}

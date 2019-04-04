@@ -34,13 +34,20 @@
 <section id="book">
 
   <div id="bookDescription">
-    <p>Dernier chapitre</p>
-    <h1 id="bookTitle"><?= $lastPost1['title'] ?> </h1>
+    <p>DERNIER CHAPITRE</p>
+    <h2 id="bookTitle"><?= $lastPost1['title'] ?> </h2>
         <?php //echo '<p>tutaj'.$lastPost1['content'].'</p>'; ?>
     <p id="bookText"><?= $lastPost1['content'] ?></p>
+    <p id="bookText1"></p>
   </div>
 
 </section>
+
+<footer id="footer">
+  <ul class="copyright">
+    <li>Copyright © Jean Forteroche</li><li>DESIGN : SUNNY MOMENTS</li>
+  </ul>
+</footer>
 
 
 

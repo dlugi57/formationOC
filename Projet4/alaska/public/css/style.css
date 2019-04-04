@@ -1,5 +1,6 @@
 body {
   margin-top: 50px;
+  color: #232323;
 }
 
 h1, h3 {
@@ -63,10 +64,66 @@ a {
 
 #introTitle {
   text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 2em;
 }
 
-#introescription {
+#introDescription {
   position: relative;
   top: 35vh;
   text-align: center;
+  font-size: 2em;
+}
+
+/* AUTHOR */
+
+
+#biography h2 {
+  text-transform: uppercase;
+  font-size: 3em;
+
+}
+#biography {
+margin-right: 1em;
+
+}
+
+.author {
+  background-image: linear-gradient(to right, rgb(76, 143, 186), white);
+  /*  background-color: rgb(76, 143, 186);*/
+  height: 750px;
+  padding: 3em;
+}
+
+#portrait{
+
+}
+
+.authorBlock {
+  display: flex;
+  flex-direction: row;
+
+
+
+  box-shadow: 5px 5px 10px 0 #c0c0c0;
+  margin: 2em;
+  padding: 3em;
+  background-color: white;
+}
+
+/*BOOK*/
+#book {
+  /*height: 550px;*/
+  background-size: cover;
+  background-position: center;
+  /*margin-top: 50px;*/
+  transition: all 1s;
+  background-image: url('../images/background2.jpg');
+  height: 100vh;
+  min-height: 35em;
+  overflow: hidden;
+  position: relative;
+  background-attachment: fixed;
+  margin-top: -50px;
 }

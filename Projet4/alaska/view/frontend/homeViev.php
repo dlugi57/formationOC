@@ -7,11 +7,37 @@
 <section class="intro">
   <div class="ancre100" id="intro"></div>
   <div class="introBlock" id="introBlock">
-    <div id="introescription">
+    <div id="introDescription">
       <h1 id="introTitle">Billet simple pour l'Alaska</h1>
-      <p id="introText">Descritpion</p>
+      <p id="introText">Le nouveau roman de Jean Forteroche</p>
     </div>
   </div>
+</section>
+
+<section class="author">
+
+
+  <div class="authorBlock">
+
+
+    <div id="biography">
+      <h2>Jean Forteroche</h2>
+      <p>Jean Forteroche né le 21 juin 1948 à Łódź, est un écrivain polonais, auteur d'histoires fantastiques et de fantasy. Il est surtout connu pour sa série littéraire Le Sorceleur qui a ensuite été adaptée en la série de jeu vidéo The Witcher.</p>
+    </div>
+    <div id="portrait">
+      <img src="public/images/portrait.jpeg" alt="">
+    </div>
+  </div>
+
+</section>
+
+<section id="book">
+
+  <div id="bookDescription">
+    <h1 id="bookTitle">Billet simple pour l'Alaska</h1>
+    <p id="bookText">Le nouveau roman de Jean Forteroche</p>
+  </div>
+
 </section>
 
 
@@ -20,7 +46,7 @@
 
 
 <?php
-if (isset($_SESSION['nick'])) {
+/*if (isset($_SESSION['nick'])) {
   echo "<p>tutaj pokazuje session nick</p>";
   echo $_SESSION['nick'];
 }
@@ -34,16 +60,17 @@ if (isset($_SESSION['admin'])) {
     echo $_SESSION['admin'];
   }
 
-}
+}*/
  ?>
 
 
 
 <p id="test"></p>
-<p>here i will put author section</p>
+
 <script type="text/javascript">
-  console.log("test w dupke");
-  $('#test').html("test");
+  //console.log("test w dupke");
+  //$('#test').html("test");
+  $("#test").hide();
 </script>
 
 <?php $content = ob_get_clean(); ?>

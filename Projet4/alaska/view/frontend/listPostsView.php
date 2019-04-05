@@ -4,14 +4,14 @@ if (isset($_SESSION['admin'])) {
 }
 ob_start(); ?>
 <h1>Billet simple pour l'Alaska</h1>
-<p class="navigator">Liste des chapitres disponibles</p>
+<p>Liste des chapitres disponibles</p>
 
 
 <?php
 while ($data = $posts->fetch())
 {
 ?>
-    <div class="news">
+    <div>
         <h3><a href="index.php?action=post&amp;id=<?= $data['id'] ?>">
             <?= htmlspecialchars($data['title']) ?>
             <em>le <?= $data['creation_date_fr'] ?></em></a>
@@ -30,9 +30,7 @@ while ($data = $posts->fetch())
         </h3>
 
         <p>
-            <?= nl2br(htmlspecialchars($data['content'])) ?>
-            <br />
-            <em><a href="index.php?action=post&amp;id=<?= $data['id'] ?>">Commentaires</a></em>
+            <?= nl2br(htmlspecialchars($data['extraits'])) ?> ... <a href="index.php?action=post&amp;id=<?= $data['id'] ?>">[Lire la suite]</a>
         </p>
     </div>
 <?php

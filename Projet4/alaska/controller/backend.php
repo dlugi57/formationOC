@@ -11,11 +11,16 @@ function editComment($commentId)
 	$commentManager = new \OpenClassrooms\Blog\Model\CommentManager();
 
 	$comment = $commentManager->getComment($commentId);
-
-	if (!empty($_POST['author']) && !empty($_POST['comment'])) {
-		$commentManager->editComment($commentId, $_POST['author'], $_POST['comment']);
-		header('Location: index.php?action=post&id=' . $comment['post_id']);
+	if ($comment === false) {
+			throw new Exception('Nie ma takiego numeru kiepie');
 	}
+	else {
+		if (!empty($_POST['comment'])) {
+			$commentManager->editComment($commentId, $_POST['comment']);
+			header('Location: index.php?action=post&id=' . $comment['post_id']);
+		}
+	}
+
 
 	require('view/backend/editCommentView.php');
 }

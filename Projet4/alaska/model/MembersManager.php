@@ -48,7 +48,7 @@ class MemberManager extends Manager
 
       $db = $this->dbConnect();
       //  Récupération de l'utilisateur et de son pass hashé
-      $user = $db->prepare('SELECT admin, pass FROM membres WHERE pseudo = :pseudo');
+      $user = $db->prepare('SELECT admin, pass, id FROM membres WHERE pseudo = :pseudo');
       $user->execute(array(
           'pseudo' => $login));
       $connectMember = $user->fetch();
@@ -66,8 +66,9 @@ class MemberManager extends Manager
               session_start();
               $_SESSION['admin'] = $connectMember['admin'];
               $_SESSION['nick'] = $login;
+              $_SESSION['userId'] = $connectMember['id'];
               echo 'Vous êtes connecté !';
-              header("Location: index.php?action=home&nick=".$_SESSION['nick']);
+              header("Location: index.php?action=home&nick=".$_SESSION['userId']);
               //return $connectMember;
           }
           else {

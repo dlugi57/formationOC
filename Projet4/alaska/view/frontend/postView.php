@@ -5,6 +5,9 @@ if (isset($_SESSION['nick'])) {
 if (isset($_SESSION['admin'])) {
   $admin = $_SESSION['admin'];
 }
+if (isset($_SESSION['userId'])) {
+  $userId = $_SESSION['userId'];
+}
 $title = htmlspecialchars($post['title']);
 $subTitle = "subtitle"; ?>
 
@@ -40,7 +43,7 @@ if (isset($admin))
   if ($admin == 1 || $admin == 0)
   {
     ?>
-    <form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>&amp;author=<?php if (isset($nick)) { echo $nick;} ?>" method="post">
+    <form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>&amp;author=<?php if (isset($userId)) { echo $userId;} ?>" method="post">
         <div>
             <p>Auteur : <?php if (isset($nick)) { echo $nick;} ?></p>
         </div>
@@ -60,19 +63,19 @@ if (isset($admin))
 while ($comment = $comments->fetch())
 {
 ?>
-    <p><strong><?= htmlspecialchars($comment['author']) ?></strong> le <?= $comment['comment_date_fr'] ?>
+    <p><strong><?= htmlspecialchars($comment['pseudo']) ?></strong> le <?= $comment['comment_date_fr'] ?>
       repport -><?= nl2br(htmlspecialchars($comment['report']));
       $html = "";
       if (isset($admin))
       {
         if ($admin == 1)
         {
-          $html .= '(<a href="index.php?action=editComment&amp;id='. $comment['id'] .'">modifier</a>)
-          (<a href="index.php?action=deleteComment&amp;id='. $comment['id'] .'&amp;post_id='. $comment['post_id'] .'">supprimer</a>)
-          (<a href="index.php?action=reportComment&amp;id='. $comment['id'] .'&amp;report=0&amp;post_id='. $comment['post_id'] .'">Unsignaler</a>)';
+          $html .= '(<a href="index.php?action=editComment&amp;id='. $comment['c_id'] .'">modifier</a>)
+          (<a href="index.php?action=deleteComment&amp;id='. $comment['c_id'] .'&amp;post_id='. $comment['post_id'] .'">supprimer</a>)
+          (<a href="index.php?action=reportComment&amp;id='. $comment['c_id'] .'&amp;report=0&amp;post_id='. $comment['post_id'] .'">Unsignaler</a>)';
         }elseif ($admin == 0 && $comment['report'] == 0)
         {
-          $html .= '(<a href="index.php?action=reportComment&amp;id='. $comment['id'] .'&amp;report=1&amp;post_id='. $comment['post_id'] .'">Signaler</a>)';// code...
+          $html .= '(<a href="index.php?action=reportComment&amp;id='. $comment['c_id'] .'&amp;report=1&amp;post_id='. $comment['post_id'] .'">Signaler</a>)';// code...
         }
         // i need to add some conditions to hide comment after report
       }

@@ -9,10 +9,11 @@
 <div class="comments">
   <h2 >Editer un commentaire</h2>
 
-  <form action="index.php?action=editComment&amp;id=<?= $comment['id'] ?>" method="post">
+  <form action="index.php?action=editComment&amp;id=<?= $comment['c_id'] ?>" method="post">
     <div>
-      <label for="author" class="col-sm-2 col-form-label">Auteur</label><br />
-      <input type="text" id="author" name="author" value="<?= htmlspecialchars($comment['author']) ?>" class="form-control" />
+      <!--<label for="author" class="col-sm-2 col-form-label">Auteur</label><br />-->
+      <p>Author <?= htmlspecialchars($comment['pseudo']) ?></p>
+      <!--<input type="text" id="author" name="author" value="<?= htmlspecialchars($comment['author']) ?>" class="form-control" />-->
     </div>
     <div>
       <label for="comment" class="col-sm-2 col-form-label">Commentaire</label><br />

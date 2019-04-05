@@ -27,7 +27,7 @@ function listPosts()
 {
     $postManager = new \OpenClassrooms\Blog\Model\PostManager();
     $posts = $postManager->getPosts();
-    
+
 
     require('view/frontend/listPostsView.php');
 }
@@ -40,7 +40,14 @@ function post()
     $post = $postManager->getPost($_GET['id']);
     $comments = $commentManager->getComments($_GET['id']);
 
-    require('view/frontend/postView.php');
+    if ($post === false) {
+        throw new Exception('nie ma takiego numeru posta chujku w post funkcji');
+    }
+    else {
+        require('view/frontend/postView.php');
+    }
+
+
 }
 
 

@@ -10,10 +10,10 @@ ob_start(); ?>
 while ($data = $posts->fetch())
 {
 ?>
-<section>
+<section class="postList">
   <div>
       <h3>
-        <a href="index.php?action=post&amp;id=<?= $data['id'] ?>">
+        <a id="postListTitle" href="index.php?action=post&amp;id=<?= $data['id'] ?>">
           <?= htmlspecialchars($data['title']) ?>
         </a>
       </h3>
@@ -27,8 +27,9 @@ while ($data = $posts->fetch())
         if ($admin == 1)
         {
           ?>
-          <a href="index.php?action=editPost&amp;id=<?= $data['id'] ?>">Modifier</a>
-          <a href="index.php?action=deletePost&amp;id=<?= $data['id'] ?>">Supprimer</a>
+          <a class="btn btn-outline-dark btn-perso-list" href="index.php?action=post&amp;id=<?= $data['id'] ?>">LIRE LE CHAPITRE</a>
+          <a class="btn btn-outline-success" href="index.php?action=editPost&amp;id=<?= $data['id'] ?>">Modifier</a>
+          <a class="btn btn-outline-danger" href="index.php?action=deletePost&amp;id=<?= $data['id'] ?>">Supprimer</a>
           <?php
         }
       }

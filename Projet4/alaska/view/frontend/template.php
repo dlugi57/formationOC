@@ -12,7 +12,7 @@
     <body>
         <?php require('view/frontend/header.php') ?>
         <?php
-        if (strpos($_SERVER['REQUEST_URI'], "listPosts") !== false){
+        if (strpos($_SERVER['REQUEST_URI'], "listPosts") !== false || strpos($_SERVER['REQUEST_URI'], "post") !== false){
           ?>
 
           <!-- SECTION INTRO -->

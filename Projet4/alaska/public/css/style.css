@@ -171,6 +171,25 @@ footer {
 
 /* LIST */
 
-.listTitle{
-  text-align: center;
+
+
+.postList{
+  margin: 4em;
+}
+
+.postList h3{
+  margin: 1.5em 0 1em 0;
+}
+
+
+#postListTitle{
+  color: #232323;;
+  text-transform: uppercase;
+  text-decoration: none;
+
+}
+
+.btn-perso-list{
+  border-color: #232323;
+  color: #232323;
 }

@@ -33,7 +33,7 @@
     <p><a id="last-btn" href="index.php?action=post&amp;id=<?= $lastPost1['id'] ?>">DERNIER CHAPITRE</a></p>
     <h2 id="bookTitle"><?= $lastPost1['title'] ?> </h2>
     <p id="bookText"><?= $lastPost1['extraits'] ?>...<a id="last-btn" href="index.php?action=post&amp;id=<?= $lastPost1['id'] ?>">[Lire la suite]</a></p>
-    <button type="button" class="btn btn-outline-dark btn-lg btn-perso">LIRE LE LIVRE</button>
+    <a href="index.php?action=listPosts" class="btn btn-outline-dark btn-lg btn-perso">LIRE LE LIVRE</a>
   </div>
 </section>
 

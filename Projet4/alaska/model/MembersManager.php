@@ -19,11 +19,11 @@ class MemberManager extends Manager
     {
         $db = $this->dbConnect();
 
-        $mailCheck = $db->prepare('SELECT COUNT(*) FROM membres WHERE email = ?');
-        $mailCheck->execute(array($email));
-        $mailCheckData = $mailCheck->fetch();
+        $nickCheck = $db->prepare('SELECT COUNT(*) FROM membres WHERE pseudo = ?');
+        $nickCheck->execute(array($nick));
+        $nickCheckData = $nickCheck->fetch();
         if(filter_var($email, FILTER_VALIDATE_EMAIL)) {
-          if($mailCheckData['COUNT(*)'] == 0){
+          if($nickCheckData['COUNT(*)'] == 0){
 
 
             $pass_hache = password_hash($pass, PASSWORD_DEFAULT);

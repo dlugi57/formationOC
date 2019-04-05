@@ -10,7 +10,7 @@ class PostManager extends Manager
     {
         $db = $this->dbConnect();
         //$req = $db->query('SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%imin%ss\') AS creation_date_fr FROM posts ORDER BY creation_date DESC LIMIT 0, 5');
-        $req = $db->query('SELECT id, title, content, extraits, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%imin%ss\') AS creation_date_fr FROM posts ORDER BY creation_date DESC');
+        $req = $db->query('SELECT id, title, content, extraits, DATE_FORMAT(creation_date, \'%d/%m/%Y à %HH%i\') AS creation_date_fr FROM posts ORDER BY creation_date DESC');
 
         return $req;
     }

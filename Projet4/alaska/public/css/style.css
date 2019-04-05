@@ -138,3 +138,39 @@ footer {
   margin-left: 1em;
   padding-left: 1em;
 }
+
+/* HEADLINE */
+
+.headlineBlock {
+  /*height: 550px;*/
+  background-size: cover;
+  background-position: center;
+  /*margin-top: 50px;*/
+  transition: all 1s;
+  background-image: url('../images/background.jpg');
+  height: 50vh;
+
+  overflow: hidden;
+  position: relative;
+  background-attachment: fixed;
+  margin-top: -50px;
+}
+
+#headlineTitle {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+#headlineDescription {
+  position: relative;
+  top: 20vh;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+/* LIST */
+
+.listTitle{
+  text-align: center;
+}

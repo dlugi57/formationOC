@@ -37,11 +37,6 @@
   </div>
 </section>
 
-<footer id="footer">
-  <ul class="copyright">
-    <li>Copyright © Jean Forteroche</li><li>DESIGN : SUNNY MOMENTS</li>
-  </ul>
-</footer>
 
 <?php $content = ob_get_clean(); ?>
 

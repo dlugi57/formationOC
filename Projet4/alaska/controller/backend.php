@@ -35,23 +35,18 @@ function deleteComment($commentId)
 function createPost($postTitle, $postContent)
 {
 
-
+/*
 		$words = explode(' ', $postContent);
 		$count = 55;
 		$extraits = '';
 		for ($i = 0; $i < $count && isset($words[$i]); $i++) {
 				$extraits .= " ".$words[$i];
 		}
-
-
-
-
-
-
+*/
 
     $postManager = new \OpenClassrooms\Blog\Model\PostManager();
 
-    $addedPost = $postManager->addPost($postTitle, $postContent, $extraits);
+    $addedPost = $postManager->addPost($postTitle, $postContent);
 
     if ($addedPost === false) {
         throw new Exception('Impossible d\'ajouter le post !');
@@ -69,16 +64,8 @@ function editPost($postId){
 
   if (!empty($_POST['postTitle']) && !empty($_POST['postContent'])) {
 
-		$postContent = $_POST['postContent'];
-		$words = explode(' ', $postContent);
-		$count = 55;
-		$extraits = '';
-		for ($i = 0; $i < $count && isset($words[$i]); $i++) {
-				$extraits .= " ".$words[$i];
-		}
 
-
-    $postManager->updatePost($postId, $_POST['postTitle'], $_POST['postContent'], $extraits);
+    $postManager->updatePost($postId, $_POST['postTitle'], $_POST['postContent']);
     header('Location: index.php?action=post&id=' . $post['id']);
   }
 

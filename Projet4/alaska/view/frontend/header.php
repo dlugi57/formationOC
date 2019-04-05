@@ -22,7 +22,7 @@
 
 
         }
-        echo '<li><a href="?action=deconnect">Deconexion</a></li>';
+        echo '<li><a href="?action=deconnect">Deconnexion</a></li>';
       }else {
         echo '<li><a href="?action=createMember">Inscription</a></li>';
         echo '<li><a href="?action=loginPage">Login</a></li>';

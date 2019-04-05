@@ -10,6 +10,14 @@ function homePage()
 
   $postManager = new \OpenClassrooms\Blog\Model\PostManager();
   $lastPost1 = $postManager->newestPost();
+
+  $words = explode(' ', $lastPost1['content']);
+  $count = 55;
+  $extrait = '';
+  for ($i = 0; $i < $count && isset($words[$i]); $i++) {
+      $extrait .= " ".$words[$i];
+  }
+
   require('view/frontend/homeViev.php');
   require('view/frontend/header.php');
 
@@ -19,6 +27,7 @@ function listPosts()
 {
     $postManager = new \OpenClassrooms\Blog\Model\PostManager();
     $posts = $postManager->getPosts();
+    
 
     require('view/frontend/listPostsView.php');
 }

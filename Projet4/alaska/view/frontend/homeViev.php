@@ -31,8 +31,8 @@
 <section id="book">
   <div id="bookDescription">
     <p><a id="last-btn" href="index.php?action=post&amp;id=<?= $lastPost1['id'] ?>">DERNIER CHAPITRE</a></p>
-    <h2 id="bookTitle"><?= $lastPost1['title'] ?> </h2>
-    <p id="bookText"><?= $extrait ?>...<a id="last-btn" href="index.php?action=post&amp;id=<?= $lastPost1['id'] ?>">[Lire la suite]</a></p>
+    <h2 id="bookTitle"><?= htmlspecialchars($lastPost1['title']) ?> </h2>
+    <p id="bookText"><?= htmlspecialchars($extrait) ?>...<a id="last-btn" href="index.php?action=post&amp;id=<?= htmlspecialchars($lastPost1['id']) ?>">[Lire la suite]</a></p>
     <a href="index.php?action=listPosts" class="btn btn-outline-dark btn-lg btn-perso">LIRE LE LIVRE</a>
   </div>
 </section>

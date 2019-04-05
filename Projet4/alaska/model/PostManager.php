@@ -25,20 +25,20 @@ class PostManager extends Manager
         return $post;
     }
 
-    public function addPost($postTitle, $postContent)
+    public function addPost($postTitle, $postContent, $extraits)
     {
         $db = $this->dbConnect();
-        $addPost = $db->prepare('INSERT INTO posts(title, content, creation_date) VALUES(?, ?, NOW())');
-        $addedPost = $addPost->execute(array($postTitle, $postContent));
+        $addPost = $db->prepare('INSERT INTO posts(title, content, extraits, creation_date) VALUES(?, ?, ?, NOW())');
+        $addedPost = $addPost->execute(array($postTitle, $postContent, $extraits));
 
         return $addedPost;
     }
 
-    public function updatePost($postId, $postTitle, $postContent)
+    public function updatePost($postId, $postTitle, $postContent, $extraits)
     {
         $db = $this->dbConnect();
-        $request = $db->prepare('UPDATE posts SET title = :title, content = :content, creation_date = NOW() WHERE id = :id');
-        $request->execute(array('title' => $postTitle, 'content' => $postContent, 'id' => $postId));
+        $request = $db->prepare('UPDATE posts SET title = :title, content = :content, extraits = :extraits, creation_date = NOW() WHERE id = :id');
+        $request->execute(array('title' => $postTitle, 'content' => $postContent, 'extraits' => $extraits, 'id' => $postId));
         return $request;
     }
 

@@ -5,15 +5,12 @@ if (isset($_SESSION['nick'])) {
 if (isset($_SESSION['admin'])) {
   $admin = $_SESSION['admin'];
 }
-$title = htmlspecialchars($post['title']); ?>
+$title = htmlspecialchars($post['title']);
+$subTitle = "subtitle"; ?>
 
 <?php ob_start(); ?>
-<h1> <?= $title ?></h1>
 
-
-
-
-<div class="news">
+<div>
     <h3>
         <?= htmlspecialchars($post['title']) ?>
         <em>le <?= $post['creation_date_fr'] ?></em>
@@ -35,7 +32,7 @@ $title = htmlspecialchars($post['title']); ?>
         <?= nl2br(htmlspecialchars($post['content'])) ?>
     </p>
 </div>
-<div class="comments">
+<div>
 <h2>Commentaires</h2>
 <?php
 if (isset($admin))
@@ -48,7 +45,7 @@ if (isset($admin))
             <p>Auteur : <?php if (isset($nick)) { echo $nick;} ?></p>
         </div>
         <div>
-            <textarea id="comment" name="comment"></textarea>
+            <textarea name="comment"></textarea>
         </div>
         <div>
             <input type="submit" />

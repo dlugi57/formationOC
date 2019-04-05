@@ -30,10 +30,10 @@
 <!-- SECTION BOOK -->
 <section id="book">
   <div id="bookDescription">
-    <p>DERNIER CHAPITRE</p>
+    <p><a id="last-btn" href="index.php?action=post&amp;id=<?= $lastPost1['id'] ?>">DERNIER CHAPITRE</a></p>
     <h2 id="bookTitle"><?= $lastPost1['title'] ?> </h2>
     <p id="bookText"><?= $lastPost1['content'] ?></p>
-    <p id="bookText1"></p>
+    <button type="button" class="btn btn-outline-dark btn-lg btn-perso">VOIR LE LIVRE</button>
   </div>
 </section>
 

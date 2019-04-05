@@ -53,10 +53,8 @@ class PostManager extends Manager
     public function newestPost(){
 
       $db = $this->dbConnect();
-      $req = $db->query('SELECT title, content FROM posts ORDER BY id DESC LIMIT 1;');
-      //$req->execute(array($postId));
-      //$lastPost = $req->fetch();
-$lastPost = $req->fetch();
+      $req = $db->query('SELECT id, title, content FROM posts ORDER BY id DESC LIMIT 1;');
+      $lastPost = $req->fetch();
       return $lastPost;
 
       //SELECT parentid FROM table2 WHERE id = LAST_INSERT_ID();

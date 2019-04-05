@@ -37,7 +37,7 @@ function createPost($postTitle, $postContent)
 
 
 		$words = explode(' ', $postContent);
-		$count = 25;
+		$count = 55;
 		$extraits = '';
 		for ($i = 0; $i < $count && isset($words[$i]); $i++) {
 				$extraits .= " ".$words[$i];
@@ -71,7 +71,7 @@ function editPost($postId){
 
 		$postContent = $_POST['postContent'];
 		$words = explode(' ', $postContent);
-		$count = 25;
+		$count = 55;
 		$extraits = '';
 		for ($i = 0; $i < $count && isset($words[$i]); $i++) {
 				$extraits .= " ".$words[$i];

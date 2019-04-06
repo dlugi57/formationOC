@@ -68,7 +68,8 @@ class MemberManager extends Manager
               $_SESSION['nick'] = $login;
               $_SESSION['userId'] = $connectMember['id'];
               echo 'Vous êtes connecté !';
-              header("Location: index.php?action=home&nick=".$_SESSION['userId']);
+              header("Location: index.php?action=home&nick=".$_SESSION['nick']);
+
               //return $connectMember;
           }
           else {

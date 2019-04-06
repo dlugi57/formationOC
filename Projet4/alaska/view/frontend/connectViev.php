@@ -25,7 +25,7 @@
           <label>Créez un mot de passe : <input type="password" name="pass" placeholder="Password" value="test" /></label></br>
 
       </p>
-      <button type="button submit" class="btn btn-outline-light btn-lg col-xs-12" name="login1">Check</button>
+      <button type="submit" class="btn btn-outline-light btn-lg col-xs-12" name="login1">Check</button>
   </form>
 </div>
 

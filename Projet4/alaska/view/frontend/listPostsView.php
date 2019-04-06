@@ -31,16 +31,14 @@ while ($data = $posts->fetch())
       </p>
       <a class="btn btn-outline-dark btn-perso-list" href="index.php?action=post&amp;id=<?= $data['id'] ?>">LIRE LE CHAPITRE</a>
       <?php
-      if (isset($admin))
-      {
-        if ($admin == 1)
-        {
+      if (isset($admin)):
+        if ($admin == 1):
           ?>
           <a class="btn btn-outline-success" href="index.php?action=editPost&amp;id=<?= $data['id'] ?>">Modifier</a>
           <a class="btn btn-outline-danger" href="index.php?action=deletePost&amp;id=<?= $data['id'] ?>">Supprimer</a>
           <?php
-        }
-      }
+        endif;
+      endif;
       ?>
   </div>
 </section>

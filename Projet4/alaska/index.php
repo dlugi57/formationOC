@@ -25,7 +25,7 @@ try {
                 }
             }*/
             if (isset($_GET['id']) && $_GET['id'] > 0) {
-                if (!empty($_POST['comment'])) {
+                if (!empty($_POST['comment']) && trim($_POST['comment']) !== '') {
                     addComment($_GET['id'], $_GET['author'], $_POST['comment']);
                 }
                 else {

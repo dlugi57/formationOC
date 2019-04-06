@@ -6,4 +6,5 @@ usun wszystkie komentarze jak usuniesz post
 wyczysc baze z tych salych usersow
 zrob liste komentarzy zasygnalizowanych
 dodac trim do creacji urzytkownikow
-zmien ify w indexie na switch 
+zmien ify w indexie na switch
+zmien w template wyswietlanie zdjecia

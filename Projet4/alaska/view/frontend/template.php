@@ -11,27 +11,8 @@
 
     <body>
         <?php require('view/frontend/header.php') ?>
-        <?php
-        if (strpos($_SERVER['REQUEST_URI'], "listPosts") !== false || strpos($_SERVER['REQUEST_URI'], "post") !== false){
-          ?>
 
-          <!-- SECTION INTRO -->
-          <section class="headline">
-            <div class="ancre100" id="intro"></div>
-            <div class="headlineBlock" id="headlineBlock">
-              <div id="headlineDescription">
-                <h1 id="headlineTitle"><?= $title ?></h1>
-                <p id="headlineText"><?= $subTitle ?></p>
-              </div>
-            </div>
-          </section>
-
-
-          <?php
-          //require('view/frontend/header.php');
-        };
-        ?>
-        <?php if ($_GET['action'] == 'commentList'): ?>
+        <?php if ($_GET['action'] !== 'home'): ?>
           <section class="headline">
             <div class="ancre100" id="intro"></div>
             <div class="headlineBlock" id="headlineBlock">

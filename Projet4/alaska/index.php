@@ -65,6 +65,9 @@ try {
               throw new Exception("Aucun identifiant de commentaire envoyé report");
           }
         }
+        elseif ($_GET['action'] == 'commentList') {
+          commentList();
+        }
         //reportComment
         //redirection to new member page
         elseif ($_GET['action'] == 'createMember') {

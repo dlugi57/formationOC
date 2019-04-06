@@ -36,6 +36,17 @@ function deleteComment($commentId)
 
 }
 
+function commentList()
+{
+	$commentManager = new \OpenClassrooms\Blog\Model\CommentManager();
+
+	$showComments = $commentManager->getAllComments();
+
+	require('view/backend/commentsListView.php');
+
+
+}
+
 
 function createPost($postTitle, $postContent)
 {

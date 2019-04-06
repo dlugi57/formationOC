@@ -4,4 +4,6 @@ jak po zalogowaniu wrocic na te sama strone jak zapamietac url
 zrobic errory
 usun wszystkie komentarze jak usuniesz post
 wyczysc baze z tych salych usersow
-zrob liste komentarzy zasygnalizowanych 
+zrob liste komentarzy zasygnalizowanych
+dodac trim do creacji urzytkownikow
+zmien ify w indexie na switch 

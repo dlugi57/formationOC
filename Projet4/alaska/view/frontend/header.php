@@ -14,19 +14,24 @@
       <li><a href="index.php?action=listPosts">Livre</a></li>
 
       <?php
-      if (isset($_SESSION['admin'])) {
+      if (isset($_SESSION['admin'])):
 
-        if ($_SESSION['admin'] == 1) {
+        if ($_SESSION['admin'] == 1):
+          ?>
+          <li><a href="?action=createPost">Nouveau chapitre</a></li>
+          <li><a href="?action=commentList">Commentaires</a></li>
+          <?php
+        endif;
+        ?>
+        <li><a href="?action=deconnect">Deconnexion</a></li>
+        <?php
+      else:
 
-          echo '<li><a href="?action=createPost">Nouveau chapitre</a></li>';
-
-
-        }
-        echo '<li><a href="?action=deconnect">Deconnexion</a></li>';
-      }else {
-        echo '<li><a href="?action=createMember">Inscription</a></li>';
-        echo '<li><a href="?action=loginPage">Login</a></li>';
-      }
+        ?>
+        <li><a href="?action=createMember">Inscription</a></li>
+        <li><a href="?action=loginPage">Login</a></li>
+        <?php
+      endif;
 //-----------------------------------------------------------------------------------------------------------------------
 
       ?>

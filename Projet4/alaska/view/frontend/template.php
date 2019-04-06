@@ -31,6 +31,17 @@
           //require('view/frontend/header.php');
         };
         ?>
+        <?php if ($_GET['action'] == 'commentList'): ?>
+          <section class="headline">
+            <div class="ancre100" id="intro"></div>
+            <div class="headlineBlock" id="headlineBlock">
+              <div id="headlineDescription">
+                <h1 id="headlineTitle"><?= $title ?></h1>
+                <p id="headlineText"><?= $subTitle ?></p>
+              </div>
+            </div>
+          </section>
+        <?php endif; ?>
         <?= $content ?>
 
 

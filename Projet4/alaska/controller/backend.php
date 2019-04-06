@@ -17,7 +17,13 @@ function editComment($commentId)
 	else {
 		if (!empty($_POST['comment'])) {
 			$commentManager->editComment($commentId, $_POST['comment']);
-			header('Location: index.php?action=post&id=' . $comment['post_id']);
+
+			if ($_GET['post_id'] == 'allComments') {
+				header('Location: index.php?action=commentList');
+			}else {
+				header('Location: index.php?action=post&id=' . $comment['post_id']);
+			}
+
 		}
 	}
 
@@ -31,8 +37,11 @@ function deleteComment($commentId)
 
 	$comment = $commentManager->removeComment($commentId);
 
-  header('Location: index.php?action=post&id=' . $_GET['post_id']);
-
+	if ($_GET['post_id'] == 'commentList') {
+		header('Location: index.php?action=commentList');
+	}else {
+		header('Location: index.php?action=post&id=' . $_GET['post_id']);
+	}
 
 }
 

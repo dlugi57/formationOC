@@ -1,4 +1,5 @@
-<?php $title = "Nouveau chapitre" ?>
+<?php $title = "Nouveau chapitre";
+$subTitle = "subtitle"; ?>
 
 <?php ob_start(); ?>
 <h1>Nouveau chapitre</h1>

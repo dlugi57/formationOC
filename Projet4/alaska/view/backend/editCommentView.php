@@ -1,4 +1,5 @@
-<?php $title = 'Mon blog'; ?>
+<?php $title = 'Mon blog';
+$subTitle = "subtitle"; ?>
 
 <?php ob_start(); ?>
 
@@ -9,7 +10,7 @@
 <div class="comments">
   <h2 >Editer un commentaire</h2>
 
-  <form action="index.php?action=editComment&amp;id=<?= $comment['c_id'] ?>" method="post">
+  <form action="index.php?action=editComment&amp;id=<?= $comment['c_id'] ?><?php if (isset($_GET['post_id'])): echo "&amp;post_id=".$_GET['post_id']; endif; ?>" method="post">
     <div>
       <!--<label for="author" class="col-sm-2 col-form-label">Auteur</label><br />-->
       <p>Author <?= htmlspecialchars($comment['pseudo']) ?></p>

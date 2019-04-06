@@ -1,4 +1,5 @@
-<?php $title = 'Mon blog'; ?>
+<?php $title = 'Mon blog';
+$subTitle = "subtitle"; ?>
 
 <?php ob_start(); ?>
 

@@ -71,7 +71,13 @@ function reportComment($commentId, $commentReport)
 
   $comment = $commentManager->alertComment($commentId, $commentReport);
 
-  header('Location: index.php?action=post&id=' . $_GET['post_id']);
+  if ($_GET['post_id'] == 'commentList') {
+    header('Location: index.php?action=commentList');
+  }else {
+    header('Location: index.php?action=post&id=' . $_GET['post_id']);
+  }
+
+
 }
 
 

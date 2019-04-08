@@ -86,7 +86,9 @@ try {
               //addComment($_GET['id'], $_POST['author'], $_POST['comment']);
           }
           else {
+
               throw new Exception("Tous les champs ne sont pas remplis !");
+
           }
         }
         elseif ($_GET['action'] == 'home') {
@@ -142,7 +144,15 @@ try {
     }
 }
 catch(Exception $e) { // S'il y a eu une erreur, alors...
-    echo 'Erreur : ' . $e->getMessage();
+  //  echo 'Erreur : ' . $e->getMessage();
+    $errorMsg = $e->getMessage();
+    require('view/frontend/errorView.php');
+
+    ?>
+    <script type="text/javascript">
+      console.log("<?php echo 'Erreur : ' . $e->getMessage(); ?>");
+    </script>
+    <?php
 }
 /*catch(Exception $e) {
     $errorMessage = $e->getMessage();

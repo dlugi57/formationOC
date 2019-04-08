@@ -34,7 +34,7 @@ $subTitle = 'subtitle';
 
 
 
-<div class="container">
+<div class="container inscription">
 <div class="row justify-content-center">
                     <div class="col-md-4">
                         <div class="card">

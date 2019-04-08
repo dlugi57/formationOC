@@ -3,13 +3,8 @@ body {
   color: #232323;
 }
 
-
-
-
-
 a {
   text-decoration: none;
-
 }
 
 /* ************************************ */
@@ -98,19 +93,18 @@ a {
   text-align: center;
 }
 
-.btn-perso{
+.btn-perso {
   border-color: #232323;
   color: #232323;
   margin-top: 3em;
 }
 
-#last-btn{
+#last-btn {
   padding: 10px 15px;
-
-    text-decoration: none;
-    cursor: pointer;
-    /* color: #65696e; */
-    color: #232323;
+  text-decoration: none;
+  cursor: pointer;
+  /* color: #65696e; */
+  color: #232323;
 }
 
 /*FOOTER*/
@@ -140,7 +134,6 @@ footer {
 }
 
 /* HEADLINE */
-
 .headlineBlock {
   /*height: 550px;*/
   background-size: cover;
@@ -149,7 +142,6 @@ footer {
   transition: all 1s;
   background-image: url('../images/background.jpg');
   height: 50vh;
-
   overflow: hidden;
   position: relative;
   background-attachment: fixed;
@@ -170,26 +162,61 @@ footer {
 }
 
 /* LIST */
-
-
-
-.postList{
+.postList {
   margin: 4em;
 }
 
-.postList h3{
+.postList h3 {
   margin: 1.5em 0 1em 0;
 }
 
-
-#postListTitle{
-  color: #232323;;
+#postListTitle {
+  color: #232323;
+  ;
   text-transform: uppercase;
   text-decoration: none;
-
 }
 
-.btn-perso-list{
+.btn-perso-list {
   border-color: #232323;
   color: #232323;
+}
+
+/* INSCRIPTION*/
+.container {
+  padding-top: 3em;
+  padding-bottom: 3em;
+}
+
+/* ERROR */
+.errorShow {
+  background-size: cover;
+  background-position: top;
+  /* margin-top: 50px; */
+  background-repeat: no-repeat;
+  margin-top: -50px;
+  transition: all 1s;
+  background-image: url('../images/error.gif');
+  height: 100vh;
+  min-height: 35em;
+  overflow: hidden;
+  position: relative;
+  background-attachment: fixed;
+}
+
+.errorShadow {
+  height: 100vh;
+  background-color: #232323ab;
+}
+
+.errorContainer {
+  text-align: center;
+  padding-top: 20vh;
+  color: white;
+}
+
+#oops {
+  font-size: 10em;
+  color: white;
+  font-weight: 100;
 }

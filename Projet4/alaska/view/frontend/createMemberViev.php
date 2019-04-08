@@ -1,4 +1,6 @@
-<?php $title = 'Mon blog'; ?>
+<?php $title = 'Mon blog';
+$subTitle = 'subtitle';
+?>
 
 <?php ob_start(); ?>
 
@@ -6,7 +8,7 @@
 
 
 
-<div class="createMembres">
+<!--<div class="createMembres">
   <h2 >Create membres</h2>
 
   <form class="login-form" method="post" action="index.php?action=newMember">
@@ -28,6 +30,70 @@
       </p>
       <button type="button submit" class="btn btn-primary btn-lg col-xs-12" name="login">Check</button>
   </form>
+</div>-->
+
+
+
+<div class="container">
+<div class="row justify-content-center">
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-header">Inscription</div>
+                            <div class="card-body">
+                                <form class="form-horizontal" method="post" action="index.php?action=newMember">
+                                    <div class="form-group">
+                                        <label for="nick" class="cols-sm-2 control-label">Pseudo</label>
+                                        <div class="cols-sm-10">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" name="nick" id="nick" placeholder="Entrez votre pseudo" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email" class="cols-sm-2 control-label">Votre e-mail : </label>
+                                        <div class="cols-sm-10">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" name="email" id="email" placeholder="Entrez votre Email" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="username" class="cols-sm-2 control-label">Confirmez votre e-mail : </label>
+                                        <div class="cols-sm-10">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" name="email_confirm" id="username" placeholder="Confirmez votre e-mail" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password" class="cols-sm-2 control-label">Créez un mot de passe : </label>
+                                        <div class="cols-sm-10">
+                                            <div class="input-group">
+                                                <input type="password" class="form-control" name="password" id="password" placeholder="Mot de passe" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="confirm" class="cols-sm-2 control-label">Répéter mot de passe</label>
+                                        <div class="cols-sm-10">
+                                            <div class="input-group">
+                                                <input type="password" class="form-control" name="password_confirm" id="confirm" placeholder="Confirmez votre mot de passe " />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group ">
+                                            <button type="button submit" class="btn btn-primary btn-lg btn-block login-button" name="login">Envoyer</button>
+
+                                    </div>
+                                    <div class="login-register">
+                                        <a href="index.php">Retour au site</a>
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
 </div>
 
 <?php $content = ob_get_clean(); ?>

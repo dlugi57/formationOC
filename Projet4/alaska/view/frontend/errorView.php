@@ -2,11 +2,9 @@
 <section class="errorShow">
   <div class="errorShadow">
     <div class="errorContainer">
-
       <p id="oops">OOPS!</p>
-    <p>cxhuj<?= $errorMsg ?></p>
-    <?php     echo '</br><a href="'. $_SERVER['HTTP_REFERER'] .'">Back</a>'; ?>
+      <p><?= $errorMsg ?></p>
+      <a class="btn btn-outline-primary btn-lg" href="<?= $_SERVER['HTTP_REFERER'] ?>">Retour au site</a>
     </div>
   </div>
-
 </section>

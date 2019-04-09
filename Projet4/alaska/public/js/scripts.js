@@ -1,5 +1,5 @@
 console.log("scripts");
-
+/*
 $('#registerBtn').click(function() {
 
   if ($.trim($('#nick').val()) == "") {
@@ -76,8 +76,15 @@ $('#registerBtn').click(function() {
     $('.invalid-feedback').text("Le mot de passe doit contenir au moins 1 caractère en majuscule");
     return false;
   }
+  re = /^\w+$/;
+if(!re.test(passwordValue)) {
+$('#confirmPass').addClass('is-invalid');
+$('.invalid-feedback').text("Le mot de passe doit contenir lettres ou chiffres");
+  return false;
+}
 
 
 
 
 })
+*/

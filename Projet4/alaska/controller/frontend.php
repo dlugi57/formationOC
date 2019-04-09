@@ -99,7 +99,7 @@ function newMember($nick, $pass, $email){
   $newMember = $memberManager->addMember($nick, $pass, $email);
 
   if ($newMember === false) {
-      throw new Exception('Impossible d\'ajouter le commentaire !');
+      throw new Exception('Impossible d\'ajouter le membre !');
 
     //  require('view/frontend/createMemberViev.php');
   }

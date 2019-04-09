@@ -4,7 +4,7 @@
   <a href="?action=home"><img src="public/images/logo.png" class="logo" title="" alt=""/></a>
   <?php       if (isset($_SESSION['nick'])) {
                 $nick = $_SESSION['nick'];
-                echo '<p id="nickHeader">Bonjour '.$nick.' </p>';
+                echo '<p id="nickHeader">Bonjour '.htmlspecialchars($nick).' </p>';
               } ?>
   <!-- Navbar menu -->
   <nav>

@@ -36,14 +36,12 @@ class MemberManager extends Manager
             return $newMember;
 
           }else {
-            //echo "<p>user already exists</p>";
-            header('Location: ?action=createMember&error=user already exists');//--------------------------------------------------------
+            $errorMsg = "Identifiant déjà utilisé";
+            header('Location: ?action=createMember&error='. urlencode($errorMsg) .'');
           }
         }else {
-
-        //  echo "<p>chujowy mail</p>";
-        //  require('view/frontend/createMemberViev.php');
-         header('Location: ?action=createMember&error=Shitty mail');
+          $errorMsg = "Format d'adresse mail non valide";
+          header('Location: ?action=createMember&error='. urlencode($errorMsg) .'');
         }
     }
 

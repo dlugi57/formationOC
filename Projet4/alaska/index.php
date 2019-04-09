@@ -75,21 +75,27 @@ try {
         }
 
         elseif ($_GET['action'] == 'newMember') {
-          if (!empty($_POST['nick']) && !empty($_POST['email'])&& !empty($_POST['email_confirm'])&& !empty($_POST['password'])&& !empty($_POST['password_confirm'])) {
-            if ($_POST['email'] !== $_POST['email_confirm']) {
-              throw new Exception("wrong email !");
-            }
-            if ($_POST['password'] !== $_POST['password_confirm']) {
-              throw new Exception("wrong pass !");
-            }
+          if (!empty($_POST['nick']) && !empty($_POST['email'])&& !empty($_POST['email_confirm'])&& !empty($_POST['password'])&& !empty($_POST['password_confirm']) && trim($_POST['nick']) !== '' && trim($_POST['email']) !== '' && trim($_POST['email_confirm']) !== '' && trim($_POST['password']) !== '' && trim($_POST['password_confirm']) !== ''):
+
+            if ($_POST['email'] !== $_POST['email_confirm']):
+
+              throw new Exception("Email doit être identique !");
+
+            endif;
+            
+            if ($_POST['password'] !== $_POST['password_confirm']):
+
+              throw new Exception("Le mot de passe doit être identique !");
+
+            endif;
+
             newMember($_POST['nick'], $_POST['password'], $_POST['email']);
-              //addComment($_GET['id'], $_POST['author'], $_POST['comment']);
-          }
-          else {
+
+          else:
 
               throw new Exception("Tous les champs ne sont pas remplis !");
 
-          }
+          endif;//checking if inputs are populate
         }
         elseif ($_GET['action'] == 'home') {
           homePage();

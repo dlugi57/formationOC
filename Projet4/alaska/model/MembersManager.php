@@ -40,7 +40,10 @@ class MemberManager extends Manager
             header('Location: ?action=createMember&error=user already exists');//--------------------------------------------------------
           }
         }else {
-          header('Location: ?action=createMember&error=Shitty mail');
+
+        //  echo "<p>chujowy mail</p>";
+        //  require('view/frontend/createMemberViev.php');
+         header('Location: ?action=createMember&error=Shitty mail');
         }
     }
 

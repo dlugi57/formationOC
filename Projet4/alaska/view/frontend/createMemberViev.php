@@ -47,7 +47,7 @@ $subTitle = 'subtitle';
                                         <div class="cols-sm-10">
                                             <div class="input-group">
                                                 <input type="text" class="form-control" name="nick" id="nick" placeholder="Entrez votre pseudo" autofocus/>
-                                                <div class="invalid-feedback">Please provide a valid city.</div>
+                                                <div class="invalid-feedback">Formulaire mal ramplis</div>
                                             </div>
                                         </div>
                                     </div>
@@ -56,7 +56,7 @@ $subTitle = 'subtitle';
                                         <div class="cols-sm-10">
                                             <div class="input-group">
                                                 <input type="text" class="form-control" name="email" id="email" placeholder="Entrez votre Email" />
-                                                <div class="invalid-feedback">Please provide a valid city.</div>
+                                                <div class="invalid-feedback">Formulaire mal ramplis</div>
                                             </div>
                                         </div>
                                     </div>
@@ -65,6 +65,7 @@ $subTitle = 'subtitle';
                                         <div class="cols-sm-10">
                                             <div class="input-group">
                                                 <input type="text" class="form-control" name="email_confirm" id="confirmMail" placeholder="Confirmez votre e-mail" />
+                                                <div class="invalid-feedback">Formulaire mal ramplis</div>
                                             </div>
                                         </div>
                                     </div>
@@ -73,6 +74,7 @@ $subTitle = 'subtitle';
                                         <div class="cols-sm-10">
                                             <div class="input-group">
                                                 <input type="password" class="form-control" name="password" id="password" placeholder="Mot de passe" />
+                                                <div class="invalid-feedback">Formulaire mal ramplis</div>
                                             </div>
                                         </div>
                                     </div>
@@ -81,6 +83,7 @@ $subTitle = 'subtitle';
                                         <div class="cols-sm-10">
                                             <div class="input-group">
                                                 <input type="password" class="form-control" name="password_confirm" id="confirmPass" placeholder="Confirmez votre mot de passe " />
+                                                <div class="invalid-feedback">Formulaire mal ramplis</div>
                                             </div>
                                         </div>
                                     </div>

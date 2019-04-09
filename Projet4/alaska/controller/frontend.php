@@ -91,6 +91,7 @@ function createPage(){
   require('view/frontend/createMemberViev.php');
 }
 
+
 function newMember($nick, $pass, $email){
 
   $memberManager = new \OpenClassrooms\Blog\Model\MemberManager();
@@ -99,8 +100,11 @@ function newMember($nick, $pass, $email){
 
   if ($newMember === false) {
       throw new Exception('Impossible d\'ajouter le commentaire !');
+
+    //  require('view/frontend/createMemberViev.php');
   }
   else {
+    //header('Location: ?action=createMember&error=udalo mail');
       echo "<p>udalo sie</p> ";
   }
 }

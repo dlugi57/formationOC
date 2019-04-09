@@ -40,12 +40,14 @@ $subTitle = 'subtitle';
                         <div class="card">
                             <div class="card-header">Inscription</div>
                             <div class="card-body">
-                                <form class="form-horizontal" method="post" action="index.php?action=newMember">
+                                <form id="inscriptionForm" class="form-horizontal" method="post" action="index.php?action=newMember">
                                     <div class="form-group">
+                                      <p id="dziwka"></p>
                                         <label for="nick" class="cols-sm-2 control-label">Pseudo</label>
                                         <div class="cols-sm-10">
                                             <div class="input-group">
-                                                <input type="text" class="form-control" name="nick" id="nick" placeholder="Entrez votre pseudo" required/>
+                                                <input type="text" class="form-control" name="nick" id="nick" placeholder="Entrez votre pseudo" autofocus/>
+                                                <div class="invalid-feedback">Please provide a valid city.</div>
                                             </div>
                                         </div>
                                     </div>
@@ -53,15 +55,16 @@ $subTitle = 'subtitle';
                                         <label for="email" class="cols-sm-2 control-label">Votre e-mail : </label>
                                         <div class="cols-sm-10">
                                             <div class="input-group">
-                                                <input type="text" class="form-control" name="email" id="email" placeholder="Entrez votre Email" required/>
+                                                <input type="text" class="form-control" name="email" id="email" placeholder="Entrez votre Email" />
+                                                <div class="invalid-feedback">Please provide a valid city.</div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="username" class="cols-sm-2 control-label">Confirmez votre e-mail : </label>
+                                        <label for="confirmMail" class="cols-sm-2 control-label">Confirmez votre e-mail : </label>
                                         <div class="cols-sm-10">
                                             <div class="input-group">
-                                                <input type="text" class="form-control" name="email_confirm" id="username" placeholder="Confirmez votre e-mail" required/>
+                                                <input type="text" class="form-control" name="email_confirm" id="confirmMail" placeholder="Confirmez votre e-mail" />
                                             </div>
                                         </div>
                                     </div>
@@ -69,20 +72,20 @@ $subTitle = 'subtitle';
                                         <label for="password" class="cols-sm-2 control-label">Créez un mot de passe : </label>
                                         <div class="cols-sm-10">
                                             <div class="input-group">
-                                                <input type="password" class="form-control" name="password" id="password" placeholder="Mot de passe" required/>
+                                                <input type="password" class="form-control" name="password" id="password" placeholder="Mot de passe" />
                                             </div>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="confirm" class="cols-sm-2 control-label">Répéter mot de passe</label>
+                                        <label for="confirmPass" class="cols-sm-2 control-label">Répéter mot de passe</label>
                                         <div class="cols-sm-10">
                                             <div class="input-group">
-                                                <input type="password" class="form-control" name="password_confirm" id="confirm" placeholder="Confirmez votre mot de passe " required/>
+                                                <input type="password" class="form-control" name="password_confirm" id="confirmPass" placeholder="Confirmez votre mot de passe " />
                                             </div>
                                         </div>
                                     </div>
                                     <div class="form-group ">
-                                            <button type="button submit" class="btn btn-primary btn-lg btn-block login-button" name="login">Envoyer</button>
+                                            <button id="registerBtn" type="button submit" class="btn btn-primary btn-lg btn-block login-button" name="login">Envoyer</button>
 
                                     </div>
                                     <div class="login-register">

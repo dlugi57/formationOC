@@ -148,13 +148,5 @@ catch(Exception $e) { // S'il y a eu une erreur, alors...
     $errorMsg = $e->getMessage();
     require('view/frontend/errorView.php');
 
-    ?>
-    <script type="text/javascript">
-      console.log("<?php echo 'Erreur : ' . $e->getMessage(); ?>");
-    </script>
-    <?php
+
 }
-/*catch(Exception $e) {
-    $errorMessage = $e->getMessage();
-    require('view/frontend/errorView.php');
-}*/

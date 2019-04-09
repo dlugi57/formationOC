@@ -1,6 +1,7 @@
 body {
   margin-top: 50px;
   color: #232323;
+  height: 100%;
 }
 
 a {
@@ -113,6 +114,8 @@ footer {
   background-color: #1d242a;
   text-align: center;
   color: white;
+    bottom: 0;
+    width: 100%;
 }
 
 .copyright {
@@ -186,6 +189,12 @@ footer {
 .container {
   padding-top: 3em;
   padding-bottom: 3em;
+}
+
+/* connexion */
+
+.connexion{
+  min-height: 87vh;
 }
 
 /* ERROR */

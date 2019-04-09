@@ -18,7 +18,6 @@ class MemberManager extends Manager
     public function addMember($nick, $pass, $email)
     {
         $db = $this->dbConnect();
-
         $nickCheck = $db->prepare('SELECT COUNT(*) FROM membres WHERE pseudo = ?');
         $nickCheck->execute(array($nick));
         $nickCheckData = $nickCheck->fetch();
@@ -34,7 +33,6 @@ class MemberManager extends Manager
             $_SESSION['admin'] = 0;
             header("Location: index.php?action=home&nick=".$_SESSION['nick']);
             return $newMember;
-
           }else
           {
             $errorMsg = "Identifiant déjà utilisé";

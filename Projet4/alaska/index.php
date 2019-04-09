@@ -82,7 +82,7 @@ try {
               throw new Exception("Email doit être identique !");
 
             endif;
-            
+
             if ($_POST['password'] !== $_POST['password_confirm']):
 
               throw new Exception("Le mot de passe doit être identique !");
@@ -139,6 +139,7 @@ try {
             // code...
           }else {
             echo "<p>nic tutaj nie ma</p>";
+            throw new Exception("Aucun identifiant de commentaire envoyé");
           }
         }
         elseif ($_GET['action'] == 'deconnect') {

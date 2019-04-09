@@ -14,7 +14,7 @@
 
         <?php
         if (isset($_GET['action'])):
-          if (($_GET['action'] !== 'home') && ($_GET['action'] !== 'createMember')): ?>
+          if (($_GET['action'] !== 'home') && ($_GET['action'] !== 'createMember') && ($_GET['action'] !== 'loginPage')): ?>
             <section class="headline">
               <div class="ancre100" id="intro"></div>
               <div class="headlineBlock" id="headlineBlock">

@@ -20,7 +20,7 @@
                         <label for="login" class="cols-sm-2 control-label">Pseudo</label>
                         <div class="cols-sm-10">
                             <div class="input-group">
-                                <input type="text" class="form-control" name="login" id="login" placeholder="Entrez votre pseudo" autofocus />
+                                <input type="text" class="form-control" name="login" id="login" placeholder="Entrez votre pseudo" autofocus required/>
                                 <div class="invalid-feedback">Formulaire mal ramplis</div>
                             </div>
                         </div>
@@ -30,7 +30,7 @@
                         <label for="pass" class="cols-sm-2 control-label">Mot de passe : </label>
                         <div class="cols-sm-10">
                             <div class="input-group">
-                                <input type="password" class="form-control" name="pass" id="pass" placeholder="Mot de passe" />
+                                <input type="password" class="form-control" name="pass" id="pass" placeholder="Mot de passe" required/>
                                 <div class="invalid-feedback">Formulaire mal ramplis</div>
                             </div>
                         </div>

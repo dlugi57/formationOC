@@ -1,5 +1,5 @@
 console.log("scripts");
-/*
+
 $('#registerBtn').click(function() {
 
   if ($.trim($('#nick').val()) == "") {
@@ -48,7 +48,6 @@ $('#registerBtn').click(function() {
     return false;
   }
 
-
   var passwordValue = $('#password').val();
 
   if (passwordValue.length < 8) {
@@ -56,7 +55,6 @@ $('#registerBtn').click(function() {
     $('.invalid-feedback').text("Le mot de passe doit être de 8 caractères minimum");
     return false;
   }
-
   re = /[0-9]/;
   if (!re.test(passwordValue)) {
     $('#confirmPass').addClass('is-invalid');
@@ -71,20 +69,32 @@ $('#registerBtn').click(function() {
   }
   re = /[A-Z]/;
   if (!re.test(passwordValue)) {
-
     $('#confirmPass').addClass('is-invalid');
     $('.invalid-feedback').text("Le mot de passe doit contenir au moins 1 caractère en majuscule");
     return false;
   }
   re = /^\w+$/;
-if(!re.test(passwordValue)) {
-$('#confirmPass').addClass('is-invalid');
-$('.invalid-feedback').text("Le mot de passe doit contenir lettres ou chiffres");
-  return false;
-}
-
-
-
-
+  if (!re.test(passwordValue)) {
+    $('#confirmPass').addClass('is-invalid');
+    $('.invalid-feedback').text("Le mot de passe doit contenir QUE des lettres ou des chiffres");
+    return false;
+  }
 })
-*/
+
+//CONNEXION PAGE CONDITIONS
+$('#loginBtn').click(function(){
+  if ($.trim($('#login').val()) == "") {
+    $('#login').addClass('is-invalid');
+    $('.invalid-feedback').text("Champs obligatoire");
+    return false;
+  } else {
+    $('#login').removeClass('is-invalid');
+  }
+  if ($.trim($('#pass').val()) == "") {
+    $('#pass').addClass('is-invalid');
+    $('.invalid-feedback').text("Champs obligatoire");
+    return false;
+  } else {
+    $('#pass').removeClass('is-invalid');
+  }
+})

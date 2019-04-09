@@ -104,16 +104,14 @@ function newMember($nick, $pass, $email){
 }
 
 function connect($login,$password){
+  
   $memberManager = new \OpenClassrooms\Blog\Model\MemberManager();
 
   $connectMember = $memberManager->login($login,$password);
 
-  /*if ($connectMember === false) {
-      echo "<p>nie udalo sie juz w frontend</p> ";
+  if ($connectMember === false) {
+      throw new Exception('Impossible de se connecter ! ');
   }
-  else {
-      echo "<p>udalo sie zalogowac</p> ";
-  }*/
 }
 
 function logout(){

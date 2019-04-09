@@ -45,7 +45,7 @@ if (isset($admin))
     ?>
     <form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>&amp;author=<?php if (isset($userId)) { echo $userId;} ?>" method="post">
         <div>
-            <p>Auteur : <?php if (isset($nick)) { echo $nick;} ?></p>
+            <p>Auteur : <?php if (isset($nick)) { echo htmlspecialchars($nick);} ?></p>
         </div>
         <div>
             <textarea name="comment"></textarea>

@@ -129,20 +129,24 @@ try {
               throw new Exception("Aucun identifiant de commentaire envoyé");
           }
         }
-
+        // LOGIN PAGE
         elseif ($_GET['action'] == 'loginPage') {
           require('view/frontend/connectViev.php');
         }
-        elseif ($_GET['action'] == 'login') {
-          if (!empty($_POST['login']) && !empty($_POST['pass'])) {
+        // LOGIN
+        elseif ($_GET['action'] == 'login')
+        {
+          if (!empty($_POST['login']) && !empty($_POST['pass']) && trim($_POST['login']) !== '' && trim($_POST['pass']) !== '')
+          {
             connect($_POST['login'],$_POST['pass']);
-            // code...
-          }else {
-            echo "<p>nic tutaj nie ma</p>";
-            throw new Exception("Aucun identifiant de commentaire envoyé");
+          }else
+          {
+            throw new Exception("Les champs ne sont pas remplis !");
           }
         }
-        elseif ($_GET['action'] == 'deconnect') {
+
+        elseif ($_GET['action'] == 'deconnect')
+        {
           logout();
         }
     }

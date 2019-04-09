@@ -100,12 +100,6 @@ function newMember($nick, $pass, $email){
 
   if ($newMember === false) {
       throw new Exception('Impossible d\'ajouter le membre !');
-
-    //  require('view/frontend/createMemberViev.php');
-  }
-  else {
-    //header('Location: ?action=createMember&error=udalo mail');
-      echo "<p>udalo sie</p> ";
   }
 }
 

@@ -9,7 +9,7 @@ ob_start(); ?>
 <?php
 while ($data = $posts->fetch())
 {
-  $postsContent = nl2br(htmlspecialchars($data['content']));
+  $postsContent = nl2br($data['content']);
   $words = explode(' ', $postsContent);
   $count = 55;
   $extraits = '';

@@ -4,7 +4,7 @@
   <div class="row justify-content-center">
     <div class="col-sm-8 col-md-6 col-lg-4">
         <div class="card">
-            <div class="card-header">Connexion</div>
+          <div class="card-header">Connexion</div>
             <div class="card-body">
                 <form id="loginForm" class="form-horizontal" method="post" action="index.php?action=login">
                     <div class="form-group">

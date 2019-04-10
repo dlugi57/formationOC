@@ -24,6 +24,10 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cloud.tinymce.com/5/tinymce.min.js?apiKey=wla0vfvhs3281qj2cpgsqhpxll4j76pv2sy1kqiqk4moj66c"></script>
+<!--<script>tinymce.init({ selector:'textarea' });</script>-->
+
+
 
 <!-- Stylesheets from page css-->
 <link href="public/css/style.css" rel="stylesheet" />

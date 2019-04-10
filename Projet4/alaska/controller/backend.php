@@ -60,25 +60,19 @@ function commentList()
 function createPost($postTitle, $postContent)
 {
 
-/*
-		$words = explode(' ', $postContent);
-		$count = 55;
-		$extraits = '';
-		for ($i = 0; $i < $count && isset($words[$i]); $i++) {
-				$extraits .= " ".$words[$i];
-		}
-*/
-
-    $postManager = new \OpenClassrooms\Blog\Model\PostManager();
+		$postManager = new \OpenClassrooms\Blog\Model\PostManager();
 
     $addedPost = $postManager->addPost($postTitle, $postContent);
 
-    if ($addedPost === false) {
+    if ($addedPost === false)
+		{
         throw new Exception('Impossible d\'ajouter le post !');
     }
-    else {
+    else
+		{
         header('Location: index.php?action=listPosts');
     }
+		
 }
 
 function editPost($postId){

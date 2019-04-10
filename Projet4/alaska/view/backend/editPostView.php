@@ -13,11 +13,11 @@ $subTitle = "La vie c'est une longue histoire, mais un mauvais chapitre n'est pa
   <form action="index.php?action=editPost&amp;id=<?= $post['id'] ?>" method="post">
     <div>
       <label for="author" class="col-sm-2 col-form-label">Title</label><br />
-      <input type="text" id="author" name="postTitle" value="<?= htmlspecialchars($post['title']) ?>" class="form-control" />
+      <input type="text" id="author" name="postTitle" value="<?= $post['title'] ?>" class="form-control" />
     </div>
     <div>
       <label for="comment" class="col-sm-2 col-form-label">Content</label><br />
-      <textarea id="comment" name="postContent" class="form-control"><?= htmlspecialchars($post['content']) ?></textarea>
+      <textarea id="comment" name="postContent" class="form-control"><?= $post['content'] ?></textarea>
     </div>
     <div>
       <input type="submit" class="btn btn-primary" />

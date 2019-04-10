@@ -16,14 +16,7 @@ try {
             }
         }
         elseif ($_GET['action'] == 'addComment') {
-            /*if (isset($_GET['id']) && $_GET['id'] > 0) {
-                if (!empty($_POST['author']) && !empty($_POST['comment'])) {
-                    addComment($_GET['id'], $_POST['author'], $_POST['comment']);
-                }
-                else {
-                    throw new Exception("Tous les champs ne sont pas remplis !");
-                }
-            }*/
+
             if (isset($_GET['id']) && $_GET['id'] > 0) {
                 if (!empty($_POST['comment']) && trim($_POST['comment']) !== '') {
                     addComment($_GET['id'], $_GET['author'], $_POST['comment']);
@@ -100,12 +93,16 @@ try {
         elseif ($_GET['action'] == 'home') {
           homePage();
         }
-        elseif ($_GET['action']== 'newPost') {
-          if (!empty($_POST['postTitle']) && !empty($_POST['postContent'])) {
+
+// NEW POST
+        elseif ($_GET['action']== 'newPost')
+        {
+          if (!empty($_POST['postTitle']) && !empty($_POST['postContent']) && trim($_POST['postTitle']) !== '' && trim($_POST['postContent']) !== '')
+          {
             createPost($_POST['postTitle'],$_POST['postContent']);
-            // code...
-          }else {
-            echo "<p>nic tutaj nie ma</p>";
+          }else
+          {
+            throw new Exception("Essaie d'écrire quelque chose ! ");
           }
         }
         elseif ($_GET['action']== 'createPost') {

@@ -83,18 +83,46 @@ $('#registerBtn').click(function() {
 
 //CONNEXION PAGE CONDITIONS
 $('#loginBtn').click(function(){
-  if ($.trim($('#login').val()) == "") {
+  if ($.trim($('#login').val()) == "")
+  {
     $('#login').addClass('is-invalid');
     $('.invalid-feedback').text("Champs obligatoire");
     return false;
-  } else {
+  } else
+  {
     $('#login').removeClass('is-invalid');
   }
-  if ($.trim($('#pass').val()) == "") {
+  if ($.trim($('#pass').val()) == "")
+  {
     $('#pass').addClass('is-invalid');
     $('.invalid-feedback').text("Champs obligatoire");
     return false;
-  } else {
+  } else
+  {
     $('#pass').removeClass('is-invalid');
+  }
+})
+
+//POST ADMIN
+$('#addPostBtn').click(function(){
+  if ($.trim($('#postTitle').val()) == "")
+  {
+    $('#postTitle').addClass('is-invalid');
+    $('.invalid-feedback').text("Champs obligatoire");
+    return false;
+  } else
+  {
+    $('#postTitle').removeClass('is-invalid');
+  }
+
+  var editorContent = tinyMCE.get('postContent').getContent();
+  if (editorContent == "")
+  {
+    $('#invalidContent').show();
+    $('#invalidContent').text("Champs obligatoire");
+    return false;
+  } else
+  {
+    $('#invalidContent').hide();
   }
 })

@@ -1,8 +1,7 @@
-<?php $title = "Nouveau chapitre";
-$subTitle = "subtitle"; ?>
-
-<?php ob_start(); ?>
-
+<?php
+$title = "Nouveau chapitre";
+$subTitle = "Quand rien ne va plus, ça peut être le commencement d'un nouveau chapitre.";
+ob_start(); ?>
 
 <div class="container connexion">
   <div class="row justify-content-center">
@@ -11,13 +10,12 @@ $subTitle = "subtitle"; ?>
             <div class="card-body">
               <form action="index.php?action=newPost" method="post">
                 <div class="form-group">
-                  <label for="postTitle">Titre</label>
                   <input type="text" class="form-control" id="postTitle" name="postTitle" placeholder="Titre" />
                 </div>
                 <div class="form-group">
                   <textarea id="postContent" name="postContent"></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-outline-secondary btn-block">Enregistre</button>
               </form>
         </div>
       </div>
@@ -25,31 +23,12 @@ $subTitle = "subtitle"; ?>
   </div>
 </div>
 
-
-
-<!--
-<div class="comments">
-<form action="index.php?action=newPost" method="post">
-    <div>
-        <label for="postTitle">Titre</label><br />
-        <input type="text" id="postTitle" name="postTitle" />
-    </div>
-    <div>
-        <label for="postContent">Contenu</label><br />
-        <textarea id="postContent" name="postContent"></textarea>
-    </div>
-    <div>
-        <input type="submit" />
-    </div>
-</form>
-</div>
--->
 <script>
 tinymce.init({
     selector: '#postContent',
-    height: 300,
+    height: 400,
 });
 </script>
-<?php $content = ob_get_clean(); ?>
-
-<?php require('view/frontend/template.php'); ?>
+<?php
+$content = ob_get_clean();
+require('view/frontend/template.php');

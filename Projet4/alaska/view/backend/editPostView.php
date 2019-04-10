@@ -1,5 +1,5 @@
 <?php $title = 'Mon blog';
-$subTitle = "subtitle"; ?>
+$subTitle = "La vie c'est une longue histoire, mais un mauvais chapitre n'est pas nécessairement la fin du livre."; ?>
 
 <?php ob_start(); ?>
 

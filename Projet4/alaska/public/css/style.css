@@ -48,9 +48,7 @@ a {
   font-size: 2em;
 }
 
-#bookText p{
-  background-color: transparent;
-}
+
 
 /* AUTHOR */
 #biography h2 {
@@ -113,6 +111,15 @@ a {
   cursor: pointer;
   /* color: #65696e; */
   color: #232323;
+}
+
+#bookTitle{
+  text-transform: uppercase;
+
+}
+#bookText {
+  text-align: justify;
+text-justify: inter-word;
 }
 
 /*FOOTER*/
@@ -209,6 +216,11 @@ footer {
   margin-bottom: 2em;
   font-weight: 500;
   text-transform: uppercase;
+}
+
+#postText{
+  text-align: justify;
+text-justify: inter-word;
 }
 
 /* INSCRIPTION*/

@@ -16,9 +16,9 @@ ob_start(); ?>
 <section class="postViev">
   <div class="postVievContent">
     <p id="postDate">Mise en ligne le <?= $post['creation_date_fr'] ?></p>
-    <p>
-      <?= nl2br($post['content']) ?>
-    </p>
+    <div id="postText">
+      <?= $post['content'] ?>
+    </div>
     <?php
     if (isset($admin))
     {
@@ -61,10 +61,10 @@ if (isset($admin))
   if ($admin == 1)
   {
     ?>
-    <a class="btn btn-outline-warning" href="index.php?action=editComment&amp;id=<?= $comment['c_id'] ?>">Modifier</a>
+    <a class="btn btn-outline-success" href="index.php?action=editComment&amp;id=<?= $comment['c_id'] ?>">Modifier</a>
     <a class="btn btn-outline-danger" href="index.php?action=deleteComment&amp;id=<?= $comment['c_id'] ?>&amp;post_id='. $comment['post_id'] .'">Supprimer</a>
     <?php if ($comment['report'] == 1): ?>
-          <a class="btn btn-outline-success" href="index.php?action=reportComment&amp;id=<?= $comment['c_id'] ?>&amp;report=0&amp;post_id=<?= $comment['post_id'] ?>">Accepter</a>
+          <a class="btn btn-outline-primary" href="index.php?action=reportComment&amp;id=<?= $comment['c_id'] ?>&amp;report=0&amp;post_id=<?= $comment['post_id'] ?>">Accepter</a>
     <?php endif; ?>
 
     <?php

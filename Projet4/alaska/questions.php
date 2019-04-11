@@ -9,3 +9,4 @@ dodac trim do creacji urzytkownikow
 zmien ify w indexie na switch
 zmien w template wyswietlanie zdjecia
 dokoncz bledy z chapitre
+finish edit post z otrzymanym wynikiem z bazy danych 

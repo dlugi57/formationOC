@@ -109,7 +109,7 @@ function editPost($postId)
 			}
 		}
 	}
-require('view/backend/editPostView.php');
+	require('view/backend/editPostView.php');
 }
 
 

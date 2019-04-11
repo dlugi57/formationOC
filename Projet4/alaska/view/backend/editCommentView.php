@@ -3,7 +3,7 @@ $title = 'Modification des commentaires';
 $subTitle = 'Auteur du commentaire : '.$comment['pseudo'].'';
 ob_start(); ?>
 
-<div class="container connexion">
+<div class="container">
   <div class="row justify-content-center">
     <div class="col-sm-10 col-md-10 col-lg-10">
       <div class="card">
@@ -13,7 +13,7 @@ ob_start(); ?>
               <p>Author: <?= htmlspecialchars($comment['pseudo']) ?></p>
             </div>
             <div class="form-group">
-              <textarea id="comment" name="comment" class="form-control"><?= htmlspecialchars($comment['comment']) ?></textarea>
+              <textarea id="comment" name="comment" class="form-control" required><?= htmlspecialchars($comment['comment']) ?></textarea>
               <div class="invalid-feedback invalidContent">Formulaire mal ramplis</div>
             </div>
             <button class="btn btn-outline-warning btn-block" href="index.php?action=post&amp;id=<?= $comment['post_id'] ?>">Retour au billet</button>

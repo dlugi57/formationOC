@@ -4,7 +4,7 @@ $subTitle = "La vie c'est une longue histoire, mais un mauvais chapitre n'est pa
 ob_start(); ?>
 
 
-<div class="container connexion">
+<div class="container">
   <div class="row justify-content-center">
     <div class="col-sm-10 col-md-10 col-lg-10">
       <div class="card">

@@ -12,7 +12,8 @@ $title = htmlspecialchars($post['title']);
 $subTitle = "subtitle"; ?>
 
 <?php ob_start(); ?>
-
+<div class="container">
+  <div class="row justify-content-center">
 <div>
     <h3>
         <?= htmlspecialchars($post['title']) ?>
@@ -89,6 +90,8 @@ while ($comment = $comments->fetch())
 <?php
 }
 ?>
+</div>
+</div>
 </div>
 <?php $content = ob_get_clean(); ?>
 

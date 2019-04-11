@@ -152,4 +152,14 @@ $('#updatePostBtn').click(function(){
 })
 
 //UPDATE COMMENT
-updateCommentBtn
+$('#updateCommentBtn').click(function(){
+  if ($.trim($('#comment').val()) == "")
+  {
+    $('#comment').addClass('is-invalid');
+    $('.invalid-feedback').text("Champs obligatoire");
+    return false;
+  } else
+  {
+    $('#comment').removeClass('is-invalid');
+  }
+})

@@ -6,7 +6,7 @@ ob_start(); ?>
 
 <div class="container">
   <div class="row justify-content-center">
-    <div class="col-sm-10 col-md-10 col-lg-10">
+    <div class="col-sm-12 col-md-12 col-lg-10">
       <div class="card">
         <div class="card-body">
           <form action="index.php?action=editPost&amp;id=<?= $post['id'] ?>" method="post">

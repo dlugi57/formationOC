@@ -8,34 +8,35 @@ if (isset($_SESSION['admin'])) {
 if (isset($_SESSION['userId'])) {
   $userId = $_SESSION['userId'];
 }
-$title = htmlspecialchars($post['title']);
-$subTitle = "subtitle"; ?>
+$title = "BILLET SIMPLE POUR L'ALASKA";
+$subTitle = htmlspecialchars($post['title']);
 
-<?php ob_start(); ?>
-<div class="container">
-  <div class="row justify-content-center">
-<div>
-    <h3>
-        <?= htmlspecialchars($post['title']) ?>
-        <em>le <?= $post['creation_date_fr'] ?></em>
-        <?php
-        if (isset($admin))
-        {
-          if ($admin == 1)
-          {
-            ?>
-            <em><a href="index.php?action=editPost&amp;id=<?= $post['id'] ?>">Modifier post</a></em>
-            <em><a href="index.php?action=deletePost&amp;id=<?= $post['id'] ?>">Supprimer post</a></em>
-            <?php
-          }
-        }
-        ?>
-    </h3>
+ob_start(); ?>
 
+<section class="postViev">
+  <div class="postVievContent">
+    <p id="postDate">Mise en ligne le <?= $post['creation_date_fr'] ?></p>
     <p>
-        <?= nl2br($post['content']) ?>
+      <?= nl2br($post['content']) ?>
     </p>
-</div>
+    <?php
+    if (isset($admin))
+    {
+      if ($admin == 1)
+      {
+        ?>
+        <a class="btn btn-outline-success" href="index.php?action=editPost&amp;id=<?= $post['id'] ?>">Modifier post</a>
+        <a class="btn btn-outline-danger" href="index.php?action=deletePost&amp;id=<?= $post['id'] ?>">Supprimer post</a>
+        <?php
+      }
+    }
+    ?>
+  </div>
+</section>
+
+<section class="postComments">
+
+
 <div>
 <h2>Commentaires</h2>
 <?php
@@ -91,8 +92,8 @@ while ($comment = $comments->fetch())
 }
 ?>
 </div>
-</div>
-</div>
+</section>
+
 <?php $content = ob_get_clean(); ?>
 
 <?php require('template.php');

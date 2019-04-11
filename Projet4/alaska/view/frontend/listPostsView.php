@@ -5,7 +5,7 @@ if (isset($_SESSION['admin'])) {
   $admin = $_SESSION['admin'];
 }
 ob_start(); ?>
-
+<section class="postList">
 <?php
 while ($data = $posts->fetch())
 {
@@ -18,8 +18,8 @@ while ($data = $posts->fetch())
   }
 
 ?>
-<section class="postList">
-  <div>
+
+  <div class="postListContent">
       <h3>
         <a id="postListTitle" href="index.php?action=post&amp;id=<?= $data['id'] ?>">
           <?= htmlspecialchars($data['title']) ?>
@@ -41,11 +41,12 @@ while ($data = $posts->fetch())
       endif;
       ?>
   </div>
-</section>
+
 <?php
 }
 $posts->closeCursor();
 ?>
+</section>
 <?php $content = ob_get_clean(); ?>
 
 <?php require('template.php'); ?>

@@ -11,23 +11,32 @@ function editComment($commentId)
 	$commentManager = new \OpenClassrooms\Blog\Model\CommentManager();
 
 	$comment = $commentManager->getComment($commentId);
-	if ($comment === false) {
-			throw new Exception('Nie ma takiego numeru kiepie');
+
+	if ($comment === false)
+	{
+			throw new Exception('Impossible de trouver un commentaire');
 	}
-	else {
-		if (!empty($_POST['comment'])) {
+	else
+	{
+		if (!empty($_POST['comment']))
+		{
 			$commentManager->editComment($commentId, $_POST['comment']);
 
-			if ($_GET['post_id'] == 'allComments') {
-				header('Location: index.php?action=commentList');
-			}else {
-				header('Location: index.php?action=post&id=' . $comment['post_id']);
+			if ($commentManager === false)
+			{
+				throw new Exception('Impossible de modifier un commentaire');
+			}else
+			{
+				if ($_GET['post_id'] == 'allComments')
+				{
+					header('Location: index.php?action=commentList');
+				}else
+				{
+					header('Location: index.php?action=post&id=' . $comment['post_id']);
+				}
 			}
-
 		}
 	}
-
-
 	require('view/backend/editCommentView.php');
 }
 

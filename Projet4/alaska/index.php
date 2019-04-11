@@ -31,14 +31,19 @@ try {
                 throw new Exception("Aucun identifiant de billet envoyé");
             }
         }
-        elseif ($_GET['action'] == 'editComment') {
-            if (isset($_GET['id']) && $_GET['id'] > 0) {
+//COMMENT MODIFICATION
+        elseif ($_GET['action'] == 'editComment')
+        {
+            if (isset($_GET['id']) && $_GET['id'] > 0)
+            {
                 editComment($_GET['id']);
             }
-            else {
+            else
+            {
                 throw new Exception("Aucun identifiant de commentaire envoyé");
             }
         }
+        
         elseif ($_GET['action'] == 'deleteComment') {
           // code...
           if (isset($_GET['id']) && $_GET['id'] > 0) {
@@ -48,8 +53,9 @@ try {
               throw new Exception("Aucun identifiant de commentaire envoyé");
           }
         }
-        elseif ($_GET['action'] == 'reportComment') {
-          // code...
+        elseif ($_GET['action'] == 'reportComment')
+        {
+
           if (isset($_GET['id']) && $_GET['id'] > 0 && isset($_GET['report'])) {
 
               reportComment($_GET['id'], $_GET['report']);
@@ -58,16 +64,18 @@ try {
               throw new Exception("Aucun identifiant de commentaire envoyé report");
           }
         }
-        elseif ($_GET['action'] == 'commentList') {
+        elseif ($_GET['action'] == 'commentList')
+        {
           commentList();
         }
-        //reportComment
-        //redirection to new member page
-        elseif ($_GET['action'] == 'createMember') {
+// NEW MEMBER PAGE
+        elseif ($_GET['action'] == 'createMember')
+        {
           createPage();
         }
-
-        elseif ($_GET['action'] == 'newMember') {
+//NEW MEMBER
+        elseif ($_GET['action'] == 'newMember')
+        {
           if (!empty($_POST['nick']) && !empty($_POST['email'])&& !empty($_POST['email_confirm'])&& !empty($_POST['password'])&& !empty($_POST['password_confirm']) && trim($_POST['nick']) !== '' && trim($_POST['email']) !== '' && trim($_POST['email_confirm']) !== '' && trim($_POST['password']) !== '' && trim($_POST['password_confirm']) !== ''):
 
             if ($_POST['email'] !== $_POST['email_confirm']):

@@ -1,6 +1,6 @@
 <?php
-$title = 'Mon blog';
-$subTitle = "subtitle";
+$title = 'Modification des commentaires';
+$subTitle = 'Auteur du commentaire : '.$comment['pseudo'].'';
 ob_start(); ?>
 
 <div class="container connexion">

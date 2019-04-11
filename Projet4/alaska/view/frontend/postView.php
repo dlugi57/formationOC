@@ -40,6 +40,47 @@ ob_start(); ?>
 <div>
 <h2>Commentaires</h2>
 <?php
+
+
+
+
+while ($comment = $comments->fetch())
+{
+?>
+    <p><strong><?= htmlspecialchars($comment['pseudo']) ?></strong> le <?= $comment['comment_date_fr'] ?>
+      repport -><?= $comment['report'];
+      //$html = "";
+
+
+?>
+    </p>
+    <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
+<?php
+if (isset($admin))
+{
+  if ($admin == 1)
+  {
+    ?>
+    <a class="btn btn-outline-warning" href="index.php?action=editComment&amp;id=<?= $comment['c_id'] ?>">Modifier</a>
+    <a class="btn btn-outline-danger" href="index.php?action=deleteComment&amp;id=<?= $comment['c_id'] ?>&amp;post_id='. $comment['post_id'] .'">Supprimer</a>
+    <?php if ($comment['report'] == 1): ?>
+          <a class="btn btn-outline-success" href="index.php?action=reportComment&amp;id=<?= $comment['c_id'] ?>&amp;report=0&amp;post_id=<?= $comment['post_id'] ?>">Accepter</a>
+    <?php endif; ?>
+
+    <?php
+  }elseif ($admin == 0 && $comment['report'] == 0)
+  {
+    ?>
+    <a class="btn btn-outline-secondary" href="index.php?action=reportComment&amp;id=<?= $comment['c_id'] ?>&amp;report=1&amp;post_id=<?= $comment['post_id'] ?>">Signaler</a>
+    <?php
+  }
+  // i need to add some conditions to hide comment after report
+}
+ ?>
+
+
+<?php
+}
 if (isset($admin))
 {
   if ($admin == 1 || $admin == 0)
@@ -58,37 +99,6 @@ if (isset($admin))
     </form>
     <?php
   }
-}
-
-
-
-while ($comment = $comments->fetch())
-{
-?>
-    <p><strong><?= htmlspecialchars($comment['pseudo']) ?></strong> le <?= $comment['comment_date_fr'] ?>
-      repport -><?= nl2br(htmlspecialchars($comment['report']));
-      $html = "";
-      if (isset($admin))
-      {
-        if ($admin == 1)
-        {
-          $html .= '(<a href="index.php?action=editComment&amp;id='. $comment['c_id'] .'">modifier</a>)
-          (<a href="index.php?action=deleteComment&amp;id='. $comment['c_id'] .'&amp;post_id='. $comment['post_id'] .'">supprimer</a>)
-          (<a href="index.php?action=reportComment&amp;id='. $comment['c_id'] .'&amp;report=0&amp;post_id='. $comment['post_id'] .'">Unsignaler</a>)';
-        }elseif ($admin == 0 && $comment['report'] == 0)
-        {
-          $html .= '(<a href="index.php?action=reportComment&amp;id='. $comment['c_id'] .'&amp;report=1&amp;post_id='. $comment['post_id'] .'">Signaler</a>)';// code...
-        }
-        // i need to add some conditions to hide comment after report
-      }
-      echo $html;
-?>
-    </p>
-    <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
-
-
-
-<?php
 }
 ?>
 </div>

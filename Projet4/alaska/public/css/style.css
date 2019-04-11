@@ -48,6 +48,10 @@ a {
   font-size: 2em;
 }
 
+#bookText p{
+  background-color: transparent;
+}
+
 /* AUTHOR */
 #biography h2 {
   text-transform: uppercase;

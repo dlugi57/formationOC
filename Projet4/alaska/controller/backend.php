@@ -100,7 +100,13 @@ function editPost($postId)
 		if (!empty($_POST['postTitle']) && !empty($_POST['postContent'])  && trim($_POST['postTitle']) !== '' && trim($_POST['postContent']) !== '')
 		{
 			$postManager->updatePost($postId, $_POST['postTitle'], $_POST['postContent']);
-			header('Location: index.php?action=post&id=' . $post['id']);
+			if ($postManager === false)
+			{
+				throw new Exception('Impossible de modifier le post !');
+			}else
+			{
+				header('Location: index.php?action=post&id=' . $post['id']);
+			}
 		}
 	}
 require('view/backend/editPostView.php');

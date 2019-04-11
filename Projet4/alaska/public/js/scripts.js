@@ -150,3 +150,6 @@ $('#updatePostBtn').click(function(){
     $('.invalidContent').hide();
   }
 })
+
+//UPDATE COMMENT
+updateCommentBtn

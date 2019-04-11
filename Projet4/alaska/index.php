@@ -109,28 +109,37 @@ try {
           require('view/backend/postViev.php');
           // code...
         }
-        elseif ($_GET['action'] == 'editPost') {
-          if (isset($_GET['id']) && $_GET['id'] > 0) {
+//UPDATE POST
+        elseif ($_GET['action'] == 'editPost')
+        {
+          if (isset($_GET['id']) && $_GET['id'] > 0)
+          {
               editPost($_GET['id']);
           }
-          else {
-              throw new Exception("Aucun identifiant de commentaire envoyé");
+          else
+          {
+              throw new Exception("Aucun identifiant de chapitre envoyé");
           }
         }
-        elseif ($_GET['action'] == 'deletePost') {
+
+        elseif ($_GET['action'] == 'deletePost')
+        {
           // code...
-          if (isset($_GET['id']) && $_GET['id'] > 0) {
+          if (isset($_GET['id']) && $_GET['id'] > 0)
+          {
               deletePost($_GET['id']);
           }
-          else {
+          else
+          {
               throw new Exception("Aucun identifiant de commentaire envoyé");
           }
         }
-        // LOGIN PAGE
-        elseif ($_GET['action'] == 'loginPage') {
+// LOGIN PAGE
+        elseif ($_GET['action'] == 'loginPage')
+        {
           require('view/frontend/connectViev.php');
         }
-        // LOGIN
+// LOGIN
         elseif ($_GET['action'] == 'login')
         {
           if (!empty($_POST['login']) && !empty($_POST['pass']) && trim($_POST['login']) !== '' && trim($_POST['pass']) !== '')

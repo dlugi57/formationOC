@@ -118,11 +118,35 @@ $('#addPostBtn').click(function(){
   var editorContent = tinyMCE.get('postContent').getContent();
   if (editorContent == "")
   {
-    $('#invalidContent').show();
-    $('#invalidContent').text("Champs obligatoire");
+    $('.invalidContent').show();
+    $('.invalidContent').text("Champs obligatoire");
     return false;
   } else
   {
-    $('#invalidContent').hide();
+    $('.invalidContent').hide();
+  }
+})
+
+//UPDATE POST
+$('#updatePostBtn').click(function(){
+  if ($.trim($('#postTitleUpd').val()) == "")
+  {
+    $('#postTitleUpd').addClass('is-invalid');
+    $('.invalid-feedback').text("Champs obligatoire");
+    return false;
+  } else
+  {
+    $('#postTitleUpd').removeClass('is-invalid');
+  }
+
+  var editorContent = tinyMCE.get('updateContent').getContent();
+  if (editorContent == "")
+  {
+    $('.invalidContent').show();
+    $('.invalidContent').text("Champs obligatoire");
+    return false;
+  } else
+  {
+    $('.invalidContent').hide();
   }
 })

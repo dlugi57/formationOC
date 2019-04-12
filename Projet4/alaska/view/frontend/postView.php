@@ -35,104 +35,80 @@ ob_start(); ?>
 </section>
 
 <section class="postComments">
-
-
-<div>
-<h2>COMMENTAIRES</h2>
-<hr>
-<?php
-
-
-
-
-while ($comment = $comments->fetch())
-{
-?>
-<div class="commentContent">
-<?php
-if ($comment['report'] == 1) {
-  ?>
-
-  <p><strong><?= htmlspecialchars($comment['pseudo']) ?></strong> LE <?= $comment['comment_date_fr'] ?></p>
-  <p id="reportingComment">Commentaire signalé <i class="fas fa-exclamation-triangle"></i></p>
-  <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
-
-
-  <?php
-}else {
-  ?>
-
-  <p><strong><?= htmlspecialchars($comment['pseudo']) ?></strong> LE <?= $comment['comment_date_fr'] ?></p>
-  <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
-  <?php
-}
-
-
- ?>
-
-
-<?php
-if (isset($admin))
-{
-  if ($admin == 1)
-  {
-    ?>
-    <a class="btn btn-outline-success" href="index.php?action=editComment&amp;id=<?= $comment['c_id'] ?>">Modifier</a>
-    <a class="btn btn-outline-danger" href="index.php?action=deleteComment&amp;id=<?= $comment['c_id'] ?>&amp;post_id='. $comment['post_id'] .'">Supprimer</a>
-    <?php if ($comment['report'] == 1): ?>
-          <a class="btn btn-outline-primary" href="index.php?action=reportComment&amp;id=<?= $comment['c_id'] ?>&amp;report=0&amp;post_id=<?= $comment['post_id'] ?>">Accepter</a>
-    <?php endif; ?>
-
+  <div>
+    <h2>COMMENTAIRES</h2>
+    <hr>
     <?php
-  }elseif ($admin == 0 && $comment['report'] == 0)
-  {
-    ?>
-    <a class="btn btn-outline-secondary" href="index.php?action=reportComment&amp;id=<?= $comment['c_id'] ?>&amp;report=1&amp;post_id=<?= $comment['post_id'] ?>">Signaler</a>
-    <?php
-  }
-  // i need to add some conditions to hide comment after report
-}
- ?>
-<hr>
-</div>
+    while ($comment = $comments->fetch())
+    {
+      ?>
+      <div class="commentContent">
+        <?php
+        if ($comment['report'] == 1)
+        {
+          ?>
+          <p><strong><?= htmlspecialchars($comment['pseudo']) ?></strong> LE <?= $comment['comment_date_fr'] ?></p>
+          <p id="reportingComment">Commentaire signalé <i class="fas fa-exclamation-triangle"></i></p>
+          <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
+          <?php
+        }else
+        {
+          ?>
+          <p><strong><?= htmlspecialchars($comment['pseudo']) ?></strong> LE <?= $comment['comment_date_fr'] ?></p>
+          <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
+          <?php
+        }
 
-<?php
-}
-if (isset($admin))
-{
-  if ($admin == 1 || $admin == 0)
-  {
-    ?>
-    <div class="container-fluid">
-      <div class="row justify-content-center">
-        <div class="w-100">
-          <h3>LAISSEZ UN COMMENTAIRE</h3>
-        <form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>&amp;author=<?php if (isset($userId)) { echo $userId;} ?>" method="post">
-        <div class="form-group">
-            <p>Auteur : <?php if (isset($nick)) { echo htmlspecialchars($nick);} ?></p>
+        if (isset($admin))
+        {
+          if ($admin == 1)
+          {
+            ?>
+            <a class="btn btn-outline-success" href="index.php?action=editComment&amp;id=<?= $comment['c_id'] ?>">Modifier</a>
+            <a class="btn btn-outline-danger" href="index.php?action=deleteComment&amp;id=<?= $comment['c_id'] ?>&amp;post_id='. $comment['post_id'] .'">Supprimer</a>
+            <?php if ($comment['report'] == 1): ?>
+              <a class="btn btn-outline-primary" href="index.php?action=reportComment&amp;id=<?= $comment['c_id'] ?>&amp;report=0&amp;post_id=<?= $comment['post_id'] ?>">Accepter</a>
+            <?php endif;
+          }elseif ($admin == 0 && $comment['report'] == 0)
+          {
+            ?>
+            <a class="btn btn-outline-secondary" href="index.php?action=reportComment&amp;id=<?= $comment['c_id'] ?>&amp;report=1&amp;post_id=<?= $comment['post_id'] ?>">Signaler</a>
+            <?php
+          }
+        }
+        ?>
+        <hr>
+      </div>
+      <?php
+    }
+    if (isset($admin))
+    {
+      if ($admin == 1 || $admin == 0)
+      {
+        ?>
+        <div class="container-fluid">
+          <div class="row justify-content-center">
+            <div class="w-100">
+              <h3>LAISSEZ UN COMMENTAIRE</h3>
+              <form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>&amp;author=<?php if (isset($userId)) { echo $userId;} ?>" method="post">
+                <div class="form-group">
+                  <p>Auteur : <?php if (isset($nick)) { echo htmlspecialchars($nick);} ?></p>
+                </div>
+                <div class="form-group">
+                  <textarea id="" name="comment" class="form-control" required><?= htmlspecialchars($comment['comment']) ?></textarea>
+                  <div class="invalid-feedback invalidContent">Formulaire mal ramplis</div>
+                </div>
+                <button id="" type="submit" class="btn btn-outline-success btn-block">Enregistre</button>
+              </form>
+            </div>
+          </div>
         </div>
-
-
-        <div class="form-group">
-          <textarea id="" name="comment" class="form-control" required><?= htmlspecialchars($comment['comment']) ?></textarea>
-          <div class="invalid-feedback invalidContent">Formulaire mal ramplis</div>
-        </div>
-
-
-
-
-
-
-        <button id="" type="submit" class="btn btn-outline-success btn-block">Enregistre</button>
-    </form>
-    </div></div></div>
-    <?php
-  }
-}
-?>
-</div>
+        <?php
+      }
+    }
+    ?>
+  </div>
 </section>
-
-<?php $content = ob_get_clean(); ?>
-
-<?php require('template.php');
+<?php
+$content = ob_get_clean();
+require('template.php');

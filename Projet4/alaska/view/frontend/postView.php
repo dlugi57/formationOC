@@ -72,8 +72,7 @@ ob_start(); ?>
           }elseif ($admin == 0 && $comment['report'] == 0)
           {
             ?>
-
-            <a class="btn btn-outline-secondary" href="index.php?action=reportComment&amp;id=<?= $comment['c_id'] ?>&amp;report=1&amp;post_id=<?= $comment['post_id'] ?>">Signaler</a>
+            <a class="btn btn-outline-secondary" data-href="index.php?action=reportComment&amp;id=<?= $comment['c_id'] ?>&amp;report=1&amp;post_id=<?= $comment['post_id'] ?>" href="index.php?action=reportComment&amp;id=<?= $comment['c_id'] ?>&amp;report=1&amp;post_id=<?= $comment['post_id'] ?>" data-toggle="modal" data-target="#modalShow">Signaler</a>
             <?php
           }
         }

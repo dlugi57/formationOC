@@ -176,3 +176,8 @@ $('#commentPostBtn').click(function(){
     $('#commentPostContent').removeClass('is-invalid');
   }
 })
+
+
+$('#modalShow').on('show.bs.modal', function(e) {
+    $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
+});

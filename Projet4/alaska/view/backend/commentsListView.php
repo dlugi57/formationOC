@@ -5,6 +5,15 @@ $subTitle = "liste de commentaires"; ?>
 
 <?php ob_start(); ?>
 <section class="postComments">
+  <div class="btn-group btn-group-toggle w-100" data-toggle="buttons">
+  <label class="btn btn-secondary active w-100">
+    <input type="radio" name="options" id="option1" autocomplete="off" checked> Active
+  </label>
+  <label class="btn btn-secondary w-100">
+    <input type="radio" name="options" id="option2" autocomplete="off"> Radio
+  </label>
+
+</div>
 <div>
 
 <?php
@@ -27,8 +36,7 @@ while ($comments = $showComments->fetch())
 
 
 
-          <!--  <a href="index.php?action=post&amp;id=<?= $comments['post_id'] ?>"><strong><?= htmlspecialchars($comments['pseudo']) ?></strong> le <?= $comments['comment_date_fr'] ?>repport -><?= htmlspecialchars($comments['report']);?>
-          </a>-->
+
 
 
 

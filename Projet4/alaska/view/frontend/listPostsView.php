@@ -33,9 +33,10 @@ while ($data = $posts->fetch())
       <?php
       if (isset($admin)):
         if ($admin == 1):
+          $modalMsg = "Êtes vous sûr de vouloir supprimer ?";
           ?>
           <a class="btn btn-outline-success" href="index.php?action=editPost&amp;id=<?= $data['id'] ?>">Modifier</a>
-          <a class="btn btn-outline-danger" href="index.php?action=deletePost&amp;id=<?= $data['id'] ?>">Supprimer</a>
+          <a class="btn btn-outline-danger" data-href="index.php?action=deletePost&amp;id=<?= $data['id'] ?>" href="index.php?action=deletePost&amp;id=<?= $data['id'] ?>" data-toggle="modal" data-target="#modalShow">Supprimer</a>
           <?php
         endif;
       endif;

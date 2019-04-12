@@ -28,8 +28,14 @@ function listPosts()
     $postManager = new \OpenClassrooms\Blog\Model\PostManager();
     $posts = $postManager->getPosts();
 
+    if ($posts === false)
+    {
+        throw new Exception('Impossible d\'afficher le contenue !');
+    }else
+    {
+        require('view/frontend/listPostsView.php');
+    }
 
-    require('view/frontend/listPostsView.php');
 }
 
 function post()
@@ -40,14 +46,14 @@ function post()
     $post = $postManager->getPost($_GET['id']);
     $comments = $commentManager->getComments($_GET['id']);
 
-    if ($post === false) {
-        throw new Exception('nie ma takiego numeru posta chujku w post funkcji');
+    if ($post === false)
+    {
+        throw new Exception('Impossible d\'afficher le chapitre !');
     }
-    else {
+    else
+    {
         require('view/frontend/postView.php');
     }
-
-
 }
 
 

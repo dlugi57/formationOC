@@ -49,8 +49,8 @@
                 <?php if (isset($modalMsg)) {echo $modalMsg;} ?>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <a type="" class="btn btn-danger btn-ok">Save changes</a>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Retour</button>
+                <a type="" class="btn btn-danger btn-ok">OK</a>
               </div>
             </div>
           </div>

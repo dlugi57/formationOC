@@ -3,15 +3,21 @@ session_start();
 require('controller/frontend.php');
 require('controller/backend.php');
 try {
-    if (isset($_GET['action'])) {
-        if ($_GET['action'] == 'listPosts') {
+    if (isset($_GET['action']))
+    {
+//POST LIST
+        if ($_GET['action'] == 'listPosts')
+        {
             listPosts();
         }
+//POST
         elseif ($_GET['action'] == 'post') {
-            if (isset($_GET['id']) && $_GET['id'] > 0) {
+            if (isset($_GET['id']) && $_GET['id'] > 0)
+            {
                 post();
             }
-            else {
+            else
+            {
                 throw new Exception("Aucun identifiant de billet envoyé");
             }
         }

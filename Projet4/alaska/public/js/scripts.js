@@ -181,3 +181,28 @@ $('#commentPostBtn').click(function(){
 $('#modalShow').on('show.bs.modal', function(e) {
     $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
 });
+
+
+
+$('#commentsReported').click(function(){
+
+  $('.notReported').hide();
+  $('.reported').show();
+
+})
+
+$('#commentsAll').click(function(){
+
+  $('.notReported').show();
+  $('.reported').show();
+
+})
+
+
+$('#commentsNotReported').click(function(){
+
+  $('.reported').hide();
+    $('.notReported').show();
+
+
+})

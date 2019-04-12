@@ -244,6 +244,12 @@ text-justify: inter-word;
   color: #dc3545;
 }
 
+/*COMMENT LIST*/
+
+#radioComments{
+  margin-top: 2em;
+}
+
 /* INSCRIPTION*/
 .container {
   padding-top: 3em;

@@ -5,15 +5,21 @@ $subTitle = "liste de commentaires"; ?>
 
 <?php ob_start(); ?>
 <section class="postComments">
-  <div class="btn-group btn-group-toggle w-100" data-toggle="buttons">
-  <label class="btn btn-outline-danger active w-100">
-    <input type="radio" name="options" id="option1" autocomplete="off" checked> SIGNALE
+  <div id="radioComments" class="btn-group btn-group-toggle w-100" data-toggle="buttons">
+
+  <label id="commentsReported" class="btn btn-outline-danger w-100">
+    <input type="radio" name="options"  autocomplete="off" > SIGNALE
   </label>
-  <label class="btn btn-outline-success w-100">
-    <input type="radio" name="options" id="option2" autocomplete="off"> TOUS
+  <label id="commentsAll" class="btn btn-outline-success active w-100">
+    <input type="radio" name="options" autocomplete="off" checked> TOUS
+  </label>
+  <label id="commentsNotReported" class="btn btn-outline-primary w-100">
+    <input type="radio" name="options"  autocomplete="off" >NON SIGNALE
   </label>
 
+
 </div>
+<hr>
 <div>
 
 <?php

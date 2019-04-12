@@ -137,17 +137,16 @@ try {
               throw new Exception("Aucun identifiant de chapitre envoyé");
           }
         }
-
+//DELETE POST
         elseif ($_GET['action'] == 'deletePost')
         {
-          // code...
           if (isset($_GET['id']) && $_GET['id'] > 0)
           {
               deletePost($_GET['id']);
           }
           else
           {
-              throw new Exception("Aucun identifiant de commentaire envoyé");
+              throw new Exception("Aucun identifiant de chapitre envoyé");
           }
         }
 // LOGIN PAGE

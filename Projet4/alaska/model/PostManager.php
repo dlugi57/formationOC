@@ -44,7 +44,10 @@ class PostManager extends Manager
         $db = $this->dbConnect();
         $request = $db->prepare('DELETE FROM posts WHERE id = :id');
         $request->execute(array('id' => $postId));
-        echo "<p>usuneles komentarz</p>";
+
+        $delete_comment = $db->prepare('DELETE FROM comments WHERE post_id = :post_id');
+        $delete_comment->execute(array('post_id' => $postId));
+
         $request->closeCursor();
     }
 
@@ -53,8 +56,7 @@ class PostManager extends Manager
       $db = $this->dbConnect();
       $req = $db->query('SELECT id, title, content FROM posts ORDER BY id DESC LIMIT 1;');
       $lastPost = $req->fetch();
+      
       return $lastPost;
-
-      //SELECT parentid FROM table2 WHERE id = LAST_INSERT_ID();
     }
 }

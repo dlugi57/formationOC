@@ -191,7 +191,7 @@ footer {
   margin: 1.5em 0 1em 0;
 }
 
-#postListTitle {
+.postListTitle {
   color: #232323;
 
   text-transform: uppercase;
@@ -236,7 +236,11 @@ text-justify: inter-word;
   text-transform: uppercase;
 }
 
-#reportingComment{
+.commentLink{
+  color: #232323;
+}
+
+.reportingComment{
   color: #dc3545;
 }
 

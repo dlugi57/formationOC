@@ -21,7 +21,7 @@ while ($data = $posts->fetch())
 
   <div class="postListContent">
       <h3>
-        <a id="postListTitle" href="index.php?action=post&amp;id=<?= $data['id'] ?>">
+        <a class="postListTitle" href="index.php?action=post&amp;id=<?= $data['id'] ?>">
           <?= htmlspecialchars($data['title']) ?>
         </a>
       </h3>

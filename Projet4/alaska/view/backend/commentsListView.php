@@ -1,33 +1,49 @@
 <?php
 
 $title = "Commentaires";
-$subTitle = "subtitle"; ?>
+$subTitle = "liste de commentaires"; ?>
 
 <?php ob_start(); ?>
-
+<section class="postComments">
 <div>
 
 <?php
 
 while ($comments = $showComments->fetch())
 {
+  $modalMsg = "Êtes vous sûr de vouloir supprimer ?";
 ?>
+
 <?php if ($comments['report'] == 1): ?>
-        <div class="reported">
+        <div class="reported commentContent">
 <?php else:?>
-        <div class="notReported">
+        <div class="notReported commentContent">
 <?php endif; ?>
 
+          <p><a class="commentLink" href="index.php?action=post&amp;id=<?= $comments['post_id'] ?>"><strong><?= htmlspecialchars($comments['pseudo']) ?></strong> LE <?= $comments['comment_date_fr'] ?></a></p>
+<?php if ($comments['report'] == 1): ?>
+          <p class="reportingComment">Commentaire signalé <i class="fas fa-exclamation-triangle"></i></p>
+<?php endif;?>
 
-          <p>
-            <a href="index.php?action=post&amp;id=<?= $comments['post_id'] ?>"><strong><?= htmlspecialchars($comments['pseudo']) ?></strong> le <?= $comments['comment_date_fr'] ?>repport -><?= nl2br(htmlspecialchars($comments['report']));?>
-            </a>
-            <a href="index.php?action=editComment&amp;id=<?= $comments['c_id'] ?>&amp;post_id=allComments">modifier</a>
-            <a href="index.php?action=deleteComment&amp;id=<?= $comments['c_id'] ?>&amp;post_id=commentList">supprimer</a>
-            <a href="index.php?action=reportComment&amp;id=<?= $comments['c_id'] ?>&amp;report=0&amp;post_id=commentList">Unsignaler</a>
 
-          </p>
+
+          <!--  <a href="index.php?action=post&amp;id=<?= $comments['post_id'] ?>"><strong><?= htmlspecialchars($comments['pseudo']) ?></strong> le <?= $comments['comment_date_fr'] ?>repport -><?= htmlspecialchars($comments['report']);?>
+          </a>-->
+
+
+
           <p><?= nl2br(htmlspecialchars($comments['comment'])) ?></p>
+          <a class="btn btn-outline-success" href="index.php?action=editComment&amp;id=<?= $comments['c_id'] ?>&amp;post_id=allComments">Modifier</a>
+
+
+          <a class="btn btn-outline-danger" data-href="index.php?action=deleteComment&amp;id=<?= $comments['c_id'] ?>&amp;post_id=commentList" href="index.php?action=deleteComment&amp;id=<?= $comments['c_id'] ?>&amp;post_id=commentList" data-toggle="modal" data-target="#modalShow">Supprimer</a>
+
+          <?php if ($comments['report'] == 1): ?>
+                              <a class="btn btn-outline-primary" href="index.php?action=reportComment&amp;id=<?= $comments['c_id'] ?>&amp;report=0&amp;post_id=commentList">Accepter</a>
+          <?php endif;?>
+
+
+        <hr>
         </div>
 
 
@@ -35,6 +51,7 @@ while ($comments = $showComments->fetch())
 }
 ?>
 </div>
+</section>
 <?php $content = ob_get_clean(); ?>
 
 <?php require('view/frontend/template.php');

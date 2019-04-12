@@ -44,21 +44,17 @@ ob_start(); ?>
     {
       ?>
       <div class="commentContent">
+        <p><strong><?= htmlspecialchars($comment['pseudo']) ?></strong> LE <?= $comment['comment_date_fr'] ?></p>
         <?php
         if ($comment['report'] == 1)
         {
           ?>
-          <p><strong><?= htmlspecialchars($comment['pseudo']) ?></strong> LE <?= $comment['comment_date_fr'] ?></p>
-          <p id="reportingComment">Commentaire signalé <i class="fas fa-exclamation-triangle"></i></p>
-          <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
-          <?php
-        }else
-        {
-          ?>
-          <p><strong><?= htmlspecialchars($comment['pseudo']) ?></strong> LE <?= $comment['comment_date_fr'] ?></p>
-          <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
+          <p class="reportingComment">Commentaire signalé <i class="fas fa-exclamation-triangle"></i></p>
           <?php
         }
+        ?>
+        <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
+        <?php
 
         if (isset($admin))
         {
@@ -67,10 +63,13 @@ ob_start(); ?>
             $modalMsg = "Êtes vous sûr de vouloir supprimer ?";
             ?>
             <a class="btn btn-outline-success" href="index.php?action=editComment&amp;id=<?= $comment['c_id'] ?>">Modifier</a>
+
             <a class="btn btn-outline-danger" data-href="index.php?action=deleteComment&amp;id=<?= $comment['c_id'] ?>&amp;post_id=<?= $comment['post_id'] ?>" href="index.php?action=deleteComment&amp;id=<?= $comment['c_id'] ?>&amp;post_id=<?= $comment['post_id'] ?>" data-toggle="modal" data-target="#modalShow">Supprimer</a>
+
             <?php if ($comment['report'] == 1): ?>
               <a class="btn btn-outline-primary" href="index.php?action=reportComment&amp;id=<?= $comment['c_id'] ?>&amp;report=0&amp;post_id=<?= $comment['post_id'] ?>">Accepter</a>
             <?php endif;
+
           }elseif ($admin == 0 && $comment['report'] == 0)
           {
             $modalMsg = "Souhaitez-vous signaler ce commentaire ?";

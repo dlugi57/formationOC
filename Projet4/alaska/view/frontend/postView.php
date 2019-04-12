@@ -38,7 +38,8 @@ ob_start(); ?>
 
 
 <div>
-<h2>Commentaires</h2>
+<h2>COMMENTAIRES</h2>
+<hr>
 <?php
 
 
@@ -47,14 +48,29 @@ ob_start(); ?>
 while ($comment = $comments->fetch())
 {
 ?>
-    <p><strong><?= htmlspecialchars($comment['pseudo']) ?></strong> le <?= $comment['comment_date_fr'] ?>
-      repport -><?= $comment['report'];
-      //$html = "";
+<div class="commentContent">
+<?php
+if ($comment['report'] == 1) {
+  ?>
+
+  <p><strong><?= htmlspecialchars($comment['pseudo']) ?></strong> LE <?= $comment['comment_date_fr'] ?></p>
+  <p id="reportingComment">Commentaire signalé <i class="fas fa-exclamation-triangle"></i></p>
+  <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
 
 
-?>
-    </p>
-    <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
+  <?php
+}else {
+  ?>
+
+  <p><strong><?= htmlspecialchars($comment['pseudo']) ?></strong> LE <?= $comment['comment_date_fr'] ?></p>
+  <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
+  <?php
+}
+
+
+ ?>
+
+
 <?php
 if (isset($admin))
 {
@@ -77,7 +93,8 @@ if (isset($admin))
   // i need to add some conditions to hide comment after report
 }
  ?>
-
+<hr>
+</div>
 
 <?php
 }
@@ -86,17 +103,29 @@ if (isset($admin))
   if ($admin == 1 || $admin == 0)
   {
     ?>
-    <form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>&amp;author=<?php if (isset($userId)) { echo $userId;} ?>" method="post">
-        <div>
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+        <div class="w-100">
+          <h3>LAISSEZ UN COMMENTAIRE</h3>
+        <form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>&amp;author=<?php if (isset($userId)) { echo $userId;} ?>" method="post">
+        <div class="form-group">
             <p>Auteur : <?php if (isset($nick)) { echo htmlspecialchars($nick);} ?></p>
         </div>
-        <div>
-            <textarea name="comment"></textarea>
+
+
+        <div class="form-group">
+          <textarea id="" name="comment" class="form-control" required><?= htmlspecialchars($comment['comment']) ?></textarea>
+          <div class="invalid-feedback invalidContent">Formulaire mal ramplis</div>
         </div>
-        <div>
-            <input type="submit" />
-        </div>
+
+
+
+
+
+
+        <button id="" type="submit" class="btn btn-outline-success btn-block">Enregistre</button>
     </form>
+    </div></div></div>
     <?php
   }
 }

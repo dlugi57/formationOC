@@ -95,7 +95,7 @@ a {
 }
 
 #bookDescription {
-  margin: 8em 2em;
+  margin: 8em 10%;
   text-align: center;
 }
 
@@ -221,6 +221,23 @@ footer {
 #postText{
   text-align: justify;
 text-justify: inter-word;
+}
+
+.postComments{
+  margin: 1em 20% 5em 20%;
+}
+
+.postComments hr{
+  margin-top: 3em;
+  margin-bottom: 3em;
+}
+
+.postComments strong{
+  text-transform: uppercase;
+}
+
+#reportingComment{
+  color: #dc3545;
 }
 
 /* INSCRIPTION*/

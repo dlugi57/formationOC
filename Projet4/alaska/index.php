@@ -15,19 +15,21 @@ try {
                 throw new Exception("Aucun identifiant de billet envoyé");
             }
         }
-        elseif ($_GET['action'] == 'addComment') {
-
-            if (isset($_GET['id']) && $_GET['id'] > 0) {
+//ADD COMMENT
+        elseif ($_GET['action'] == 'addComment')
+        {
+            if (isset($_GET['id']) && $_GET['id'] > 0)
+            {
                 if (!empty($_POST['comment']) && trim($_POST['comment']) !== '') {
                     addComment($_GET['id'], $_GET['author'], $_POST['comment']);
                 }
-                else {
+                else
+                {
                     throw new Exception("Tous les champs ne sont pas remplis !");
                 }
             }
-
-
-            else {
+            else
+            {
                 throw new Exception("Aucun identifiant de billet envoyé");
             }
         }
@@ -43,7 +45,7 @@ try {
                 throw new Exception("Aucun identifiant de commentaire envoyé");
             }
         }
-        
+
         elseif ($_GET['action'] == 'deleteComment') {
           // code...
           if (isset($_GET['id']) && $_GET['id'] > 0) {

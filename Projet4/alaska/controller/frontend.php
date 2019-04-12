@@ -57,10 +57,12 @@ function addComment($postId, $author, $comment)
 
     $affectedLines = $commentManager->postComment($postId, $author, $comment);
 
-    if ($affectedLines === false) {
+    if ($affectedLines === false)
+    {
         throw new Exception('Impossible d\'ajouter le commentaire !');
     }
-    else {
+    else
+    {
         header('Location: index.php?action=post&id=' . $postId);
     }
 }
@@ -104,7 +106,7 @@ function newMember($nick, $pass, $email){
 }
 
 function connect($login,$password){
-  
+
   $memberManager = new \OpenClassrooms\Blog\Model\MemberManager();
 
   $connectMember = $memberManager->login($login,$password);

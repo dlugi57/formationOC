@@ -24,9 +24,10 @@ ob_start(); ?>
     {
       if ($admin == 1)
       {
+        $modalMsg = "Êtes vous sûr de vouloir supprimer ?";
         ?>
         <a class="btn btn-outline-success" href="index.php?action=editPost&amp;id=<?= $post['id'] ?>">Modifier post</a>
-        <a class="btn btn-outline-danger" href="index.php?action=deletePost&amp;id=<?= $post['id'] ?>">Supprimer post</a>
+        <a class="btn btn-outline-danger" data-href="index.php?action=deletePost&amp;id=<?= $post['id'] ?>" href="index.php?action=deletePost&amp;id=<?= $post['id'] ?>" data-toggle="modal" data-target="#modalShow">Supprimer post</a>
         <?php
       }
     }
@@ -63,9 +64,10 @@ ob_start(); ?>
         {
           if ($admin == 1)
           {
+            $modalMsg = "Êtes vous sûr de vouloir supprimer ?";
             ?>
             <a class="btn btn-outline-success" href="index.php?action=editComment&amp;id=<?= $comment['c_id'] ?>">Modifier</a>
-            <a class="btn btn-outline-danger" href="index.php?action=deleteComment&amp;id=<?= $comment['c_id'] ?>&amp;post_id=<?= $comment['post_id'] ?>">Supprimer</a>
+            <a class="btn btn-outline-danger" data-href="index.php?action=deleteComment&amp;id=<?= $comment['c_id'] ?>&amp;post_id=<?= $comment['post_id'] ?>" href="index.php?action=deleteComment&amp;id=<?= $comment['c_id'] ?>&amp;post_id=<?= $comment['post_id'] ?>" data-toggle="modal" data-target="#modalShow">Supprimer</a>
             <?php if ($comment['report'] == 1): ?>
               <a class="btn btn-outline-primary" href="index.php?action=reportComment&amp;id=<?= $comment['c_id'] ?>&amp;report=0&amp;post_id=<?= $comment['post_id'] ?>">Accepter</a>
             <?php endif;

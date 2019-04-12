@@ -71,6 +71,7 @@ ob_start(); ?>
             <?php endif;
           }elseif ($admin == 0 && $comment['report'] == 0)
           {
+            $modalMsg = "Souhaitez-vous signaler ce commentaire ?";
             ?>
             <a class="btn btn-outline-secondary" data-href="index.php?action=reportComment&amp;id=<?= $comment['c_id'] ?>&amp;report=1&amp;post_id=<?= $comment['post_id'] ?>" href="index.php?action=reportComment&amp;id=<?= $comment['c_id'] ?>&amp;report=1&amp;post_id=<?= $comment['post_id'] ?>" data-toggle="modal" data-target="#modalShow">Signaler</a>
             <?php

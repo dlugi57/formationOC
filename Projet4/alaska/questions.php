@@ -10,3 +10,5 @@ zmien ify w indexie na switch
 
 
 pamietaj usunac komentarze z posta
+
+zapytaj sie o use 

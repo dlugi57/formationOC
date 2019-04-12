@@ -6,11 +6,11 @@ $subTitle = "liste de commentaires"; ?>
 <?php ob_start(); ?>
 <section class="postComments">
   <div class="btn-group btn-group-toggle w-100" data-toggle="buttons">
-  <label class="btn btn-secondary active w-100">
-    <input type="radio" name="options" id="option1" autocomplete="off" checked> Active
+  <label class="btn btn-outline-danger active w-100">
+    <input type="radio" name="options" id="option1" autocomplete="off" checked> SIGNALE
   </label>
-  <label class="btn btn-secondary w-100">
-    <input type="radio" name="options" id="option2" autocomplete="off"> Radio
+  <label class="btn btn-outline-success w-100">
+    <input type="radio" name="options" id="option2" autocomplete="off"> TOUS
   </label>
 
 </div>

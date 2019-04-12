@@ -56,7 +56,7 @@ class PostManager extends Manager
       $db = $this->dbConnect();
       $req = $db->query('SELECT id, title, content FROM posts ORDER BY id DESC LIMIT 1;');
       $lastPost = $req->fetch();
-      
+
       return $lastPost;
     }
 }

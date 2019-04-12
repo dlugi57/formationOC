@@ -65,13 +65,14 @@ ob_start(); ?>
           {
             ?>
             <a class="btn btn-outline-success" href="index.php?action=editComment&amp;id=<?= $comment['c_id'] ?>">Modifier</a>
-            <a class="btn btn-outline-danger" href="index.php?action=deleteComment&amp;id=<?= $comment['c_id'] ?>&amp;post_id='. $comment['post_id'] .'">Supprimer</a>
+            <a class="btn btn-outline-danger" href="index.php?action=deleteComment&amp;id=<?= $comment['c_id'] ?>&amp;post_id=<?= $comment['post_id'] ?>">Supprimer</a>
             <?php if ($comment['report'] == 1): ?>
               <a class="btn btn-outline-primary" href="index.php?action=reportComment&amp;id=<?= $comment['c_id'] ?>&amp;report=0&amp;post_id=<?= $comment['post_id'] ?>">Accepter</a>
             <?php endif;
           }elseif ($admin == 0 && $comment['report'] == 0)
           {
             ?>
+
             <a class="btn btn-outline-secondary" href="index.php?action=reportComment&amp;id=<?= $comment['c_id'] ?>&amp;report=1&amp;post_id=<?= $comment['post_id'] ?>">Signaler</a>
             <?php
           }
@@ -114,6 +115,7 @@ ob_start(); ?>
     ?>
   </div>
 </section>
+
 <?php
 $content = ob_get_clean();
 require('template.php');

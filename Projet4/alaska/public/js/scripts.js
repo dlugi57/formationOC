@@ -163,3 +163,16 @@ $('#updateCommentBtn').click(function(){
     $('#comment').removeClass('is-invalid');
   }
 })
+
+//ADD COMMENT
+$('#commentPostBtn').click(function(){
+  if ($.trim($('#commentPostContent').val()) == "")
+  {
+    $('#commentPostContent').addClass('is-invalid');
+    $('.invalid-feedback').text("Champs obligatoire");
+    return false;
+  } else
+  {
+    $('#commentPostContent').removeClass('is-invalid');
+  }
+})

@@ -95,17 +95,18 @@ ob_start(); ?>
                   <p>Auteur : <?php if (isset($nick)) { echo htmlspecialchars($nick);} ?></p>
                 </div>
                 <div class="form-group">
-                  <textarea id="" name="comment" class="form-control"><?= htmlspecialchars($comment['comment']) ?></textarea>
+                  <textarea id="commentPostContent" name="comment" class="form-control" required><?= htmlspecialchars($comment['comment']) ?></textarea>
                   <div class="invalid-feedback invalidContent">Formulaire mal ramplis</div>
                 </div>
-                <button id="" type="submit" class="btn btn-outline-success btn-block">Enregistre</button>
+                <button id="commentPostBtn" type="submit" class="btn btn-outline-success btn-block">Enregistre</button>
               </form>
             </div>
           </div>
         </div>
         <?php
       }
-    }else {
+    }else
+    {
       ?>
       <a class="btn btn-outline-secondary btn-block"  href="?action=createMember">Ajouter un commentaire</a>
       <?php

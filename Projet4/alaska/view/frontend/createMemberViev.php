@@ -1,5 +1,7 @@
-<?php ob_start(); ?>
-
+<?php
+$title = "Connexion";
+ob_start();
+?>
 <div class="container inscription">
   <div class="row justify-content-center">
     <div class="col-md-6">

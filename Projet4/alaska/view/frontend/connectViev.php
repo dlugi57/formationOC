@@ -1,5 +1,7 @@
-<?php ob_start(); ?>
-
+<?php
+$title = "LogIn";
+ob_start();
+?>
 <div class="container connexion">
   <div class="row justify-content-center">
     <div class="col-sm-8 col-md-6 col-lg-4">

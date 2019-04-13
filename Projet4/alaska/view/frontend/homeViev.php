@@ -1,7 +1,7 @@
-<?php // session_start(); ?>
-<?php $title = "Jean Forteroche - Billet simple pour l'Alaska"; ?>
-
-<?php ob_start(); ?>
+<?php
+$title = "Jean Forteroche - Billet simple pour l'Alaska";
+ob_start();
+?>
 
 <!-- SECTION INTRO -->
 <section class="intro">
@@ -38,6 +38,6 @@
 </section>
 
 
-<?php $content = ob_get_clean(); ?>
-
-<?php require('template.php'); ?>
+<?php
+$content = ob_get_clean();
+require('template.php'); 

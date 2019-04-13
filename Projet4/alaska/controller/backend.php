@@ -5,7 +5,7 @@
 require_once('model/CommentManager.php');
 require_once('model/MemberManager.php');*/
 
-require "lib/autoload.php";
+//require "lib/autoload.php";
 
 function editComment($commentId)
 {

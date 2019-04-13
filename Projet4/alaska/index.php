@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+require "lib/autoload.php";
 require('controller/frontend.php');
 require('controller/backend.php');
 try {

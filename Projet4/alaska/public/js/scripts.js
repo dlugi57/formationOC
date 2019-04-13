@@ -178,31 +178,26 @@ $('#commentPostBtn').click(function(){
 })
 
 
+//MODAL
+//Function to get adres from submit button and put it into modal window to accept
 $('#modalShow').on('show.bs.modal', function(e) {
-    $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
+  $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
 });
 
 
-
+//shows and hide comments in comment list page
 $('#commentsReported').click(function(){
-
   $('.notReported').hide();
   $('.reported').show();
-
 })
 
 $('#commentsAll').click(function(){
-
   $('.notReported').show();
   $('.reported').show();
-
 })
 
 
 $('#commentsNotReported').click(function(){
-
   $('.reported').hide();
-    $('.notReported').show();
-
-
+  $('.notReported').show();
 })

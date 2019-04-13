@@ -31,9 +31,9 @@
         <?= $content ?>
 
         <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalShow">
+        <!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalShow">
           Launch demo modal
-        </button>
+        </button>-->
 
         <!-- Modal -->
         <div class="modal fade" id="modalShow" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

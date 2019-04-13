@@ -1,7 +1,8 @@
 <?php
 $title = "Nouveau chapitre";
 $subTitle = "Quand rien ne va plus, ça peut être le commencement d'un nouveau chapitre.";
-ob_start(); ?>
+ob_start();
+?>
 
 <div class="container connexion">
   <div class="row justify-content-center">

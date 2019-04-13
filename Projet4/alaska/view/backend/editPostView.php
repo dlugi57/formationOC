@@ -3,7 +3,6 @@ $title = 'Mon blog';
 $subTitle = "La vie c'est une longue histoire, mais un mauvais chapitre n'est pas nécessairement la fin du livre.";
 ob_start(); ?>
 
-
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-sm-12 col-md-12 col-lg-10">

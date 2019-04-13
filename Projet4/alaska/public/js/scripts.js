@@ -1,5 +1,5 @@
 console.log("scripts");
-
+//INSCRIPTION PAGE CONDITIONS
 $('#registerBtn').click(function() {
 
   if ($.trim($('#nick').val()) == "") {
@@ -82,97 +82,81 @@ $('#registerBtn').click(function() {
 })
 
 //CONNEXION PAGE CONDITIONS
-$('#loginBtn').click(function(){
-  if ($.trim($('#login').val()) == "")
-  {
+$('#loginBtn').click(function() {
+  if ($.trim($('#login').val()) == "") {
     $('#login').addClass('is-invalid');
     $('.invalid-feedback').text("Champs obligatoire");
     return false;
-  } else
-  {
+  } else {
     $('#login').removeClass('is-invalid');
   }
-  if ($.trim($('#pass').val()) == "")
-  {
+  if ($.trim($('#pass').val()) == "") {
     $('#pass').addClass('is-invalid');
     $('.invalid-feedback').text("Champs obligatoire");
     return false;
-  } else
-  {
+  } else {
     $('#pass').removeClass('is-invalid');
   }
 })
 
 //POST ADMIN
-$('#addPostBtn').click(function(){
-  if ($.trim($('#postTitle').val()) == "")
-  {
+$('#addPostBtn').click(function() {
+  if ($.trim($('#postTitle').val()) == "") {
     $('#postTitle').addClass('is-invalid');
     $('.invalid-feedback').text("Champs obligatoire");
     return false;
-  } else
-  {
+  } else {
     $('#postTitle').removeClass('is-invalid');
   }
 
   var editorContent = tinyMCE.get('postContent').getContent();
-  if (editorContent == "")
-  {
+  if (editorContent == "") {
     $('.invalidContent').show();
     $('.invalidContent').text("Champs obligatoire");
     return false;
-  } else
-  {
+  } else {
     $('.invalidContent').hide();
   }
 })
 
 //UPDATE POST
-$('#updatePostBtn').click(function(){
-  if ($.trim($('#postTitleUpd').val()) == "")
-  {
+$('#updatePostBtn').click(function() {
+  if ($.trim($('#postTitleUpd').val()) == "") {
     $('#postTitleUpd').addClass('is-invalid');
     $('.invalid-feedback').text("Champs obligatoire");
     return false;
-  } else
-  {
+  } else {
     $('#postTitleUpd').removeClass('is-invalid');
   }
 
   var editorContent = tinyMCE.get('updateContent').getContent();
-  if (editorContent == "")
-  {
+  if (editorContent == "") {
     $('.invalidContent').show();
     $('.invalidContent').text("Champs obligatoire");
     return false;
-  } else
-  {
+  } else {
     $('.invalidContent').hide();
   }
 })
 
 //UPDATE COMMENT
-$('#updateCommentBtn').click(function(){
-  if ($.trim($('#comment').val()) == "")
-  {
+$('#updateCommentBtn').click(function() {
+  if ($.trim($('#comment').val()) == "") {
     $('#comment').addClass('is-invalid');
     $('.invalid-feedback').text("Champs obligatoire");
     return false;
-  } else
-  {
+  } else {
     $('#comment').removeClass('is-invalid');
   }
 })
 
 //ADD COMMENT
-$('#commentPostBtn').click(function(){
-  if ($.trim($('#commentPostContent').val()) == "")
-  {
+$('#commentPostBtn').click(function() {
+  if ($.trim($('#commentPostContent').val()) == "") {
     $('#commentPostContent').addClass('is-invalid');
     $('.invalid-feedback').text("Champs obligatoire");
     return false;
-  } else
-  {
+  } else {
     $('#commentPostContent').removeClass('is-invalid');
   }
 })
@@ -184,20 +168,19 @@ $('#modalShow').on('show.bs.modal', function(e) {
   $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
 });
 
-
+//COMMENTS PAGE
 //shows and hide comments in comment list page
-$('#commentsReported').click(function(){
+$('#commentsReported').click(function() {
   $('.notReported').hide();
   $('.reported').show();
 })
 
-$('#commentsAll').click(function(){
+$('#commentsAll').click(function() {
   $('.notReported').show();
   $('.reported').show();
 })
 
-
-$('#commentsNotReported').click(function(){
+$('#commentsNotReported').click(function() {
   $('.reported').hide();
   $('.notReported').show();
 })

@@ -10,7 +10,6 @@ require_once('model/MemberManager.php');*/
 function editComment($commentId)
 {
 	$commentManager = new \OpenClassrooms\Blog\Model\CommentManager();
-
 	$comment = $commentManager->getComment($commentId);
 
 	if ($comment === false)
@@ -44,34 +43,40 @@ function editComment($commentId)
 function deleteComment($commentId)
 {
 	$commentManager = new \OpenClassrooms\Blog\Model\CommentManager();
-
 	$comment = $commentManager->removeComment($commentId);
 
-	if ($_GET['post_id'] == 'commentList') {
-		header('Location: index.php?action=commentList');
-	}else {
-		header('Location: index.php?action=post&id=' . $_GET['post_id']);
+	if ($comment === false)
+	{
+			throw new Exception('Impossible de supprimer le commentaire !');
+	}else
+	{
+			if ($_GET['post_id'] == 'commentList')
+			{
+				header('Location: index.php?action=commentList');
+			}else
+			{
+				header('Location: index.php?action=post&id=' . $_GET['post_id']);
+			}
 	}
-
 }
 
 function commentList()
 {
 	$commentManager = new \OpenClassrooms\Blog\Model\CommentManager();
-
 	$showComments = $commentManager->getAllComments();
 
-	require('view/backend/commentsListView.php');
-
-
+	if ($showComments === false)
+	{
+			throw new Exception('Impossible d\'afficher les commentaires !');
+	}else
+	{
+			require('view/backend/commentsListView.php');
+	}
 }
-
 
 function createPost($postTitle, $postContent)
 {
-
 		$postManager = new \OpenClassrooms\Blog\Model\PostManager();
-
     $addedPost = $postManager->addPost($postTitle, $postContent);
 
     if ($addedPost === false)
@@ -82,14 +87,11 @@ function createPost($postTitle, $postContent)
 		{
         header('Location: index.php?action=listPosts');
     }
-
 }
 
 function editPost($postId)
 {
-
   $postManager = new \OpenClassrooms\Blog\Model\PostManager();
-
   $post = $postManager->getPost($postId);
 
 	if ($post === false)
@@ -113,28 +115,16 @@ function editPost($postId)
 	require('view/backend/editPostView.php');
 }
 
-
-function deletePost($postId){
+function deletePost($postId)
+{
 		$postManager = new \OpenClassrooms\Blog\Model\PostManager();
-
 		$post = $postManager->removePost($postId);
 
-		header('Location: index.php?action=listPosts');
+		if ($post === false) {
+				throw new Exception('Impossible de supprimer le post !');
+		}else
+		{
+				header('Location: index.php?action=listPosts');
+		}
 
 }
-/*
-function editComment($commentId)
-{
-	$commentManager = new \OpenClassrooms\Blog\Model\CommentManager();
-
-	$comment = $commentManager->getComment($commentId);
-
-	if (!empty($_POST['author']) && !empty($_POST['comment'])) {
-		$commentManager->editComment($commentId, $_POST['author'], $_POST['comment']);
-		header('Location: index.php?action=post&id=' . $comment['post_id']);
-	}
-
-	require('view/frontend/editView.php');
-}
-
-*/

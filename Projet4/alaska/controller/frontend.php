@@ -10,14 +10,14 @@ require_once('model/MemberManager.php');
 
 function homePage()
 {
-
   $postManager = new \OpenClassrooms\Blog\Model\PostManager();
   $lastPost1 = $postManager->newestPost();
-
+  //shows extraits of the post
   $words = explode(' ', $lastPost1['content']);
   $count = 55;
   $extrait = '';
-  for ($i = 0; $i < $count && isset($words[$i]); $i++) {
+  for ($i = 0; $i < $count && isset($words[$i]); $i++)
+  {
       $extrait .= " ".$words[$i];
   }
 
@@ -63,7 +63,6 @@ function post()
 function addComment($postId, $author, $comment)
 {
     $commentManager = new \OpenClassrooms\Blog\Model\CommentManager();
-
     $affectedLines = $commentManager->postComment($postId, $author, $comment);
 
     if ($affectedLines === false)
@@ -79,32 +78,32 @@ function addComment($postId, $author, $comment)
 function reportComment($commentId, $commentReport)
 {
   $commentManager = new \OpenClassrooms\Blog\Model\CommentManager();
-
   $comment = $commentManager->alertComment($commentId, $commentReport);
 
-  if ($_GET['post_id'] == 'commentList') {
-    header('Location: index.php?action=commentList');
-  }else {
-    header('Location: index.php?action=post&id=' . $_GET['post_id']);
+  if ($comment === false)
+  {
+      throw new Exception('Impossible d\'signaler le commentaire !');
+  }else
+  {
+      if ($_GET['post_id'] == 'commentList')
+      {
+        header('Location: index.php?action=commentList');
+      }else
+      {
+        header('Location: index.php?action=post&id=' . $_GET['post_id']);
+      }
   }
-
-
 }
 
 
-
-
-
-
-
-
-function createPage(){
+function createPage()
+{
   require('view/frontend/createMemberViev.php');
 }
 
 
-function newMember($nick, $pass, $email){
-
+function newMember($nick, $pass, $email)
+{
   $memberManager = new \OpenClassrooms\Blog\Model\MemberManager();
 
   $newMember = $memberManager->addMember($nick, $pass, $email);
@@ -114,18 +113,19 @@ function newMember($nick, $pass, $email){
   }
 }
 
-function connect($login,$password){
-
+function connect($login,$password)
+{
   $memberManager = new \OpenClassrooms\Blog\Model\MemberManager();
-
   $connectMember = $memberManager->login($login,$password);
 
-  if ($connectMember === false) {
+  if ($connectMember === false)
+  {
       throw new Exception('Impossible de se connecter ! ');
   }
 }
 
-function logout(){
+function logout()
+{
   session_start();
   // Suppression des variables de session et de la session
   $_SESSION = array();

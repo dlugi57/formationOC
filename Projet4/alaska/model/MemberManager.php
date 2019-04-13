@@ -14,25 +14,26 @@ class MemberManager extends Manager
         $nickCheckData = $nickCheck->fetch();
         if(filter_var($email, FILTER_VALIDATE_EMAIL))
         {
-          if($nickCheckData['COUNT(*)'] == 0)
-          {
-            $pass_hache = password_hash($pass, PASSWORD_DEFAULT);
-            $member = $db->prepare('INSERT INTO membres(pseudo, pass, email, date_inscription, admin) VALUES(?, ?, ?, NOW(),0)');
-            $newMember = $member->execute(array($nick, $pass_hache, $email));
-            session_start();
-            $_SESSION['nick'] = $nick;
-            $_SESSION['admin'] = 0;
-            header("Location: index.php?action=home&nick=".$_SESSION['nick']);
-            return $newMember;
-          }else
-          {
-            $errorMsg = "Identifiant déjà utilisé";
-            header('Location: ?action=createMember&error='. urlencode($errorMsg) .'');
-          }
+            if($nickCheckData['COUNT(*)'] == 0)
+            {
+                $pass_hache = password_hash($pass, PASSWORD_DEFAULT);
+                $member = $db->prepare('INSERT INTO membres(pseudo, pass, email, date_inscription, admin) VALUES(?, ?, ?, NOW(),0)');
+                $newMember = $member->execute(array($nick, $pass_hache, $email));
+                session_start();
+                $_SESSION['nick'] = $nick;
+                $_SESSION['admin'] = 0;
+                header("Location: index.php?action=home&nick=".$_SESSION['nick']);
+                
+                return $newMember;
+            }else
+            {
+                $errorMsg = "Identifiant déjà utilisé";
+                header('Location: ?action=createMember&error='. urlencode($errorMsg) .'');
+            }
         }else
         {
-          $errorMsg = "Format d'adresse mail non valide";
-          header('Location: ?action=createMember&error='. urlencode($errorMsg) .'');
+            $errorMsg = "Format d'adresse mail non valide";
+            header('Location: ?action=createMember&error='. urlencode($errorMsg) .'');
         }
     }
 
@@ -53,7 +54,8 @@ class MemberManager extends Manager
       }
       else
       {
-          if ($isPasswordCorrect) {
+          if ($isPasswordCorrect)
+          {
               session_start();
               $_SESSION['admin'] = $connectMember['admin'];
               $_SESSION['nick'] = $login;
@@ -61,7 +63,8 @@ class MemberManager extends Manager
 
               header("Location: index.php?action=home&nick=".$_SESSION['nick']);
           }
-          else {
+          else
+          {
               $errorMsg = "Mauvais identifiant ou mot de passe !";
               header('Location: ?action=loginPage&error='. urlencode($errorMsg) .'');
           }

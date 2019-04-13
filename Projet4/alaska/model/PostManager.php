@@ -29,6 +29,7 @@ class PostManager extends Manager
         $db = $this->dbConnect();
         $addPost = $db->prepare('INSERT INTO posts(title, content, creation_date) VALUES(?, ?, NOW())');
         $addedPost = $addPost->execute(array($postTitle, $postContent));
+
         return $addedPost;
     }
 
@@ -37,6 +38,7 @@ class PostManager extends Manager
         $db = $this->dbConnect();
         $request = $db->prepare('UPDATE posts SET title = :title, content = :content, creation_date = NOW() WHERE id = :id');
         $request->execute(array('title' => $postTitle, 'content' => $postContent, 'id' => $postId));
+
         return $request;
     }
 

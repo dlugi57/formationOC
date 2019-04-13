@@ -11,19 +11,9 @@ a {
   text-decoration: none;
 }
 
-/* ************************************ */
-/*.ancre100 {
-  padding-top: 100px;
-  position: relative;
-  top: -100px;
-  margin-bottom: -100px;
-  z-index: -10;
-}*/
 .introBlock {
-  /*height: 550px;*/
   background-size: cover;
   background-position: center;
-  /*margin-top: 50px;*/
   transition: all 1s;
   background-image: url('../images/background.jpg');
   height: 100vh;
@@ -48,8 +38,6 @@ a {
   font-size: 2em;
 }
 
-
-
 /* AUTHOR */
 #biography h2 {
   text-transform: uppercase;
@@ -61,8 +49,6 @@ a {
 }
 
 .author {
-  /*  background-image: linear-gradient(to right, rgb(76, 143, 186), white);*/
-  /*  background-color: rgb(76, 143, 186);*/
   height: 750px;
   padding: 3em;
 }
@@ -72,7 +58,6 @@ a {
 .authorBlock {
   display: flex;
   flex-direction: row;
-  /*  box-shadow: 5px 5px 10px 0 #c0c0c0;*/
   margin: 2em;
   padding: 3em;
   background-color: white;
@@ -80,10 +65,8 @@ a {
 
 /*BOOK*/
 #book {
-  /*height: 550px;*/
   background-size: cover;
   background-position: center;
-  /*margin-top: 50px;*/
   transition: all 1s;
   background-image: url('../images/background2.jpg');
   height: 100vh;
@@ -109,17 +92,16 @@ a {
   padding: 10px 15px;
   text-decoration: none;
   cursor: pointer;
-  /* color: #65696e; */
   color: #232323;
 }
 
-#bookTitle{
+#bookTitle {
   text-transform: uppercase;
-
 }
+
 #bookText {
   text-align: justify;
-text-justify: inter-word;
+  text-justify: inter-word;
 }
 
 /*FOOTER*/
@@ -128,8 +110,8 @@ footer {
   background-color: #1d242a;
   text-align: center;
   color: white;
-    bottom: 0;
-    width: 100%;
+  bottom: 0;
+  width: 100%;
 }
 
 .copyright {
@@ -152,10 +134,8 @@ footer {
 
 /* HEADLINE */
 .headlineBlock {
-  /*height: 550px;*/
   background-size: cover;
   background-position: center;
-  /*margin-top: 50px;*/
   transition: all 1s;
   background-image: url('../images/background2.jpg');
   height: 50vh;
@@ -178,7 +158,7 @@ footer {
   font-size: 1.5em;
 }
 
-#headlineText{
+#headlineText {
   text-transform: uppercase;
 }
 
@@ -193,12 +173,11 @@ footer {
 
 .postListTitle {
   color: #232323;
-
   text-transform: uppercase;
   text-decoration: none;
 }
 
-.postListContent{
+.postListContent {
   margin-bottom: 5em;
 }
 
@@ -208,45 +187,44 @@ footer {
 }
 
 /*POST*/
-.postViev{
+.postViev {
   margin: 3em 10% 5em 10%;
 }
 
-#postDate{
+#postDate {
   margin-bottom: 2em;
   font-weight: 500;
   text-transform: uppercase;
 }
 
-#postText{
+#postText {
   text-align: justify;
-text-justify: inter-word;
+  text-justify: inter-word;
 }
 
-.postComments{
+.postComments {
   margin: 1em 20% 5em 20%;
 }
 
-.postComments hr{
+.postComments hr {
   margin-top: 3em;
   margin-bottom: 3em;
 }
 
-.postComments strong{
+.postComments strong {
   text-transform: uppercase;
 }
 
-.commentLink{
+.commentLink {
   color: #232323;
 }
 
-.reportingComment{
+.reportingComment {
   color: #dc3545;
 }
 
 /*COMMENT LIST*/
-
-#radioComments{
+#radioComments {
   margin-top: 2em;
 }
 
@@ -257,8 +235,7 @@ text-justify: inter-word;
 }
 
 /* connexion */
-
-.connexion{
+.connexion {
   min-height: 87vh;
 }
 
@@ -266,7 +243,6 @@ text-justify: inter-word;
 .errorShow {
   background-size: cover;
   background-position: top;
-  /* margin-top: 50px; */
   background-repeat: no-repeat;
   margin-top: -50px;
   transition: all 1s;

@@ -1,29 +1,26 @@
 <?php
-// Chargement des classes
-/*
-require_once('model/PostManager.php');
-require_once('model/CommentManager.php');
-require_once('model/MemberManager.php');
-*/
-
-//require "lib/autoload.php";
-
 function homePage()
 {
   $postManager = new \OpenClassrooms\Blog\Model\PostManager();
-  $lastPost1 = $postManager->newestPost();
-  //shows extraits of the post
-  $words = explode(' ', $lastPost1['content']);
-  $count = 55;
-  $extrait = '';
-  for ($i = 0; $i < $count && isset($words[$i]); $i++)
+  $lastPost = $postManager->newestPost();
+
+  if ($lastPost === false)
   {
-      $extrait .= " ".$words[$i];
+      throw new Exception('Impossible d\'afficher le contenue !');
+  }else
+  {
+      //shows extraits of the post
+      $words = explode(' ', $lastPost['content']);
+      $count = 55;
+      $extrait = '';
+      for ($i = 0; $i < $count && isset($words[$i]); $i++)
+      {
+          $extrait .= " ".$words[$i];
+      }
+
+      require('view/frontend/homeViev.php');
+      require('view/frontend/header.php');
   }
-
-  require('view/frontend/homeViev.php');
-  require('view/frontend/header.php');
-
 }
 
 function listPosts()

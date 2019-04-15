@@ -1,14 +1,17 @@
 <?php
 $title = "Billet simple pour l'Alaska";
 $subTitle = 'Liste des chapitres disponibles';
+//get some information about authorisation status
 if (isset($_SESSION['admin'])) {
   $admin = $_SESSION['admin'];
 }
 ob_start(); ?>
+<!-- POST LIST -->
 <section class="postList">
 <?php
 while ($data = $posts->fetch())
 {
+  //some manipulations to get extract of the post
   $postsContent = nl2br($data['content']);
   $words = explode(' ', $postsContent);
   $count = 55;
@@ -31,6 +34,7 @@ while ($data = $posts->fetch())
     </p>
     <a class="btn btn-outline-dark btn-perso-list" href="index.php?action=post&amp;id=<?= $data['id'] ?>">LIRE LE CHAPITRE</a>
     <?php
+    //with different authorisation show or hide buttons
     if (isset($admin)):
       if ($admin == 1):
         $modalMsg = "Êtes vous sûr de vouloir supprimer ?";

@@ -30,9 +30,9 @@ ob_start();
 <!-- SECTION BOOK -->
 <section id="book">
   <div id="bookDescription">
-    <p><a id="last-btn" href="index.php?action=post&amp;id=<?= $lastPost1['id'] ?>">DERNIER CHAPITRE</a></p>
-    <h2 id="bookTitle"><?= htmlspecialchars($lastPost1['title']) ?> </h2>
-    <div id="bookText"><?= $extrait ?>...<a id="last-btn" href="index.php?action=post&amp;id=<?= htmlspecialchars($lastPost1['id']) ?>">[Lire la suite]</a></div>
+    <p><a id="last-btn" href="index.php?action=post&amp;id=<?= $lastPost['id'] ?>">DERNIER CHAPITRE</a></p>
+    <h2 id="bookTitle"><?= htmlspecialchars($lastPost['title']) ?> </h2>
+    <div id="bookText"><?= $extrait ?>...<a id="last-btn" href="index.php?action=post&amp;id=<?= htmlspecialchars($lastPost['id']) ?>">[Lire la suite]</a></div>
     <a href="index.php?action=listPosts" class="btn btn-outline-dark btn-lg btn-perso">LIRE LE LIVRE</a>
   </div>
 </section>
@@ -40,4 +40,4 @@ ob_start();
 
 <?php
 $content = ob_get_clean();
-require('template.php'); 
+require('template.php');

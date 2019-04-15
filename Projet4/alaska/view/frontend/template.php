@@ -10,6 +10,7 @@
   <body>
     <?php
     require('view/frontend/header.php');
+    //for some pages there is different aspect with smaller photo and subtitle
     if (isset($_GET['action'])):
       if (($_GET['action'] !== 'home') && ($_GET['action'] !== 'createMember') && ($_GET['action'] !== 'loginPage')): ?>
         <section class="headline">
@@ -27,7 +28,8 @@
      ?>
     <?= $content ?>
 
-    <!-- Modal -->
+    <!-- MODAL -->
+    <!-- Modal is visible only few times with deleting and reporting -->
     <div class="modal fade" id="modalShow" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -53,6 +55,7 @@
         <li>Copyright © Jean Forteroche</li><li>DESIGN : SUNNY MOMENTS</li>
       </ul>
     </footer>
+    <!-- SCRIPTS -->
     <script src="public/js/scripts.js" type="text/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

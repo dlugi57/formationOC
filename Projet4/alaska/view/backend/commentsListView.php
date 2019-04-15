@@ -19,7 +19,9 @@ ob_start(); ?>
     <?php
     while ($comments = $showComments->fetch())
     {
+      //send message to modal
       $modalMsg = "Êtes vous sûr de vouloir supprimer ?";
+      //change class to show different types of comments in list
       if ($comments['report'] == 1):
       ?>
         <div class="reported commentContent">
@@ -32,6 +34,7 @@ ob_start(); ?>
       ?>
         <p><a class="commentLink" href="index.php?action=post&amp;id=<?= $comments['post_id'] ?>"><strong><?= htmlspecialchars($comments['pseudo']) ?></strong> LE <?= $comments['comment_date_fr'] ?></a></p>
         <?php
+        //if reported show button 
         if ($comments['report'] == 1):
         ?>
           <p class="reportingComment">Commentaire signalé <i class="fas fa-exclamation-triangle"></i></p>

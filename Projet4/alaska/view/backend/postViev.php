@@ -27,6 +27,7 @@ ob_start();
 </div>
 
 <script>
+//initialisation of tiny mce
 tinymce.init({
     selector: '#postContent',
     height: 400,

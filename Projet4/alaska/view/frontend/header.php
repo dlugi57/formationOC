@@ -16,6 +16,7 @@
     <ul class="menu">
       <li><a href="index.php?action=listPosts">Livre</a></li>
       <?php
+      //with different authorisation show or hide buttons
       if (isset($_SESSION['admin'])):
         if ($_SESSION['admin'] == 1):
           ?>

@@ -9,7 +9,7 @@
   top: 0;
 }
 
-.header.header-scroll{
+.header.header-scroll {
   background-color: white;
 }
 
@@ -138,17 +138,14 @@
   float: left;
 }
 
-/*All media querys from 768px*/
+/*All media querys from 900px*/
 @media (max-width: 900px) {
-
-
   .header .menu-icon {
     display: block;
   }
 
   .header li a {
-  /*  padding: 20px 20px;*/
-  background-color: white;
+    background-color: white;
   }
 
   .header .menu {
@@ -163,6 +160,4 @@
   .header li {
     float: none;
   }
-
-
 }

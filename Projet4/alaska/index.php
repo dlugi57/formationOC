@@ -102,7 +102,7 @@ try {
 
                 throw new Exception("Tous les champs ne sont pas remplis !");
 
-            endif;//checking if inputs are populate
+            endif;
         break;
 //HOME
         case 'home':

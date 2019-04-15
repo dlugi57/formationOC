@@ -99,7 +99,7 @@ $('#loginBtn').click(function() {
   }
 })
 
-//POST ADMIN
+//POST ADMIN CONDITIONS
 $('#addPostBtn').click(function() {
   if ($.trim($('#postTitle').val()) == "") {
     $('#postTitle').addClass('is-invalid');
@@ -119,7 +119,7 @@ $('#addPostBtn').click(function() {
   }
 })
 
-//UPDATE POST
+//UPDATE POST CONDITIONS
 $('#updatePostBtn').click(function() {
   if ($.trim($('#postTitleUpd').val()) == "") {
     $('#postTitleUpd').addClass('is-invalid');
@@ -139,7 +139,7 @@ $('#updatePostBtn').click(function() {
   }
 })
 
-//UPDATE COMMENT
+//UPDATE COMMENT CONDITIONS
 $('#updateCommentBtn').click(function() {
   if ($.trim($('#comment').val()) == "") {
     $('#comment').addClass('is-invalid');
@@ -150,7 +150,7 @@ $('#updateCommentBtn').click(function() {
   }
 })
 
-//ADD COMMENT
+//ADD COMMENT CONDITIONS
 $('#commentPostBtn').click(function() {
   if ($.trim($('#commentPostContent').val()) == "") {
     $('#commentPostContent').addClass('is-invalid');
@@ -185,19 +185,12 @@ $('#commentsNotReported').click(function() {
   $('.notReported').show();
 })
 
-/*$(window).scroll(function(){
-
-
-        $('.header').addClass('header-scroll')
-
-
-});*/
-
+//add some class to header if page move change background color to white
 $(window).on("scroll", function() {
-    var scrollPos = $(window).scrollTop();
-    if (scrollPos <= 0) {
-        $('.header').removeClass('header-scroll')
-    } else {
-        $('.header').addClass('header-scroll');
-    }
+  var scrollPos = $(window).scrollTop();
+  if (scrollPos <= 0) {
+    $('.header').removeClass('header-scroll')
+  } else {
+    $('.header').addClass('header-scroll');
+  }
 });

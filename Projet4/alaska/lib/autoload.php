@@ -12,8 +12,3 @@ spl_autoload_register(function($classname)
         throw new Exception('Pb autoload : Le fichier ' . $file . ' n\'existe pas.');
     }
 });
-/*spl_autoload_register(function($classname)
-{
-    $parts = explode('\\', $classname);
-    require 'model/'.end($parts) . '.php';
-});*/

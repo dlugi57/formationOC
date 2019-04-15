@@ -1,12 +1,4 @@
 <?php
-
-// Chargement des classes
-/*require_once('model/PostManager.php');
-require_once('model/CommentManager.php');
-require_once('model/MemberManager.php');*/
-
-//require "lib/autoload.php";
-
 function editComment($commentId)
 {
 	$commentManager = new \OpenClassrooms\Blog\Model\CommentManager();

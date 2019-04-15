@@ -1,4 +1,5 @@
 <?php
+//get some information about authorisation status and nick to post comments
 if (isset($_SESSION['nick'])) {
   $nick =  $_SESSION['nick'];
 }
@@ -13,6 +14,7 @@ $subTitle = htmlspecialchars($post['title']);
 
 ob_start(); ?>
 
+<!-- POST -->
 <section class="postViev">
   <div class="postVievContent">
     <p id="postDate">Mise en ligne le <?= $post['creation_date_fr'] ?></p>
@@ -20,10 +22,12 @@ ob_start(); ?>
       <?= $post['content'] ?>
     </div>
     <?php
+    //with different authorisation show or hide buttons
     if (isset($admin))
     {
       if ($admin == 1)
       {
+        //send message to modal
         $modalMsg = "Êtes vous sûr de vouloir supprimer ?";
         ?>
         <a class="btn btn-outline-success" href="index.php?action=editPost&amp;id=<?= $post['id'] ?>">Modifier post</a>
@@ -35,6 +39,7 @@ ob_start(); ?>
   </div>
 </section>
 
+<!-- COMMENTS -->
 <section class="postComments">
   <div>
     <h2>COMMENTAIRES</h2>
@@ -46,6 +51,7 @@ ob_start(); ?>
       <div class="commentContent">
         <p><strong><?= htmlspecialchars($comment['pseudo']) ?></strong> LE <?= $comment['comment_date_fr'] ?></p>
         <?php
+        //if comment was reported shows paragraph with information
         if ($comment['report'] == 1)
         {
           ?>
@@ -55,11 +61,12 @@ ob_start(); ?>
         ?>
         <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
         <?php
-
+        //with different authorisation show or hide buttons
         if (isset($admin))
         {
           if ($admin == 1)
           {
+            //send message to modal
             $modalMsg = "Êtes vous sûr de vouloir supprimer ?";
             ?>
             <a class="btn btn-outline-success" href="index.php?action=editComment&amp;id=<?= $comment['c_id'] ?>">Modifier</a>
@@ -70,8 +77,9 @@ ob_start(); ?>
               <a class="btn btn-outline-primary" href="index.php?action=reportComment&amp;id=<?= $comment['c_id'] ?>&amp;report=0&amp;post_id=<?= $comment['post_id'] ?>">Accepter</a>
             <?php endif;
 
-          }elseif ($admin == 0 && $comment['report'] == 0)
+          }elseif ($admin == 0 && $comment['report'] == 0)//shows for users report button
           {
+            //send message to modal
             $modalMsg = "Souhaitez-vous signaler ce commentaire ?";
             ?>
             <a class="btn btn-outline-secondary" data-href="index.php?action=reportComment&amp;id=<?= $comment['c_id'] ?>&amp;report=1&amp;post_id=<?= $comment['post_id'] ?>" href="index.php?action=reportComment&amp;id=<?= $comment['c_id'] ?>&amp;report=1&amp;post_id=<?= $comment['post_id'] ?>" data-toggle="modal" data-target="#modalShow">Signaler</a>
@@ -83,6 +91,7 @@ ob_start(); ?>
       </div>
       <?php
     }
+    //with different authorisation show or hide buttons and input to left comments
     if (isset($admin))
     {
       if ($admin == 1 || $admin == 0)

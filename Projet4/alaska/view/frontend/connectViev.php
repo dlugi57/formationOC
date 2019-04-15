@@ -11,6 +11,7 @@ ob_start();
                 <form id="loginForm" class="form-horizontal" method="post" action="index.php?action=login">
                     <div class="form-group">
                       <?php
+                      //show error messages from server
                       if (isset($_GET['error'])) {
                         ?>
                         <div class="alert alert-danger" role="alert">

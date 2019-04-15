@@ -6,17 +6,17 @@
 
 <!-- Twitter Card data -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:site" content="http://piotr.la-gaude.com/Velo/">
+<meta name="twitter:site" content="http://piotr.la-gaude.com/Alaska/">
 <meta name="twitter:title" content="Jean Forteroche - Billet simple pour l'Alaska">
 <meta name="twitter:description" content="Billet simple pour l'Alaska - un nouveau roman de Jean Forteroche sous forme de blog">
 <meta name="twitter:creator" content="@author_handle">
-<meta name="twitter:image" content="http://piotr.la-gaude.com/Velo/images/social-og.jpg">
+<meta name="twitter:image" content="http://piotr.la-gaude.com/Alaska/public/images/social-og.jpg">
 
 <!-- Open Graph data -->
 <meta property="og:title" content="Jean Forteroche - Billet simple pour l'Alaska" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="http://piotr.la-gaude.com/Velo/" />
-<meta property="og:image" content="http://piotr.la-gaude.com/Velo/images/social-og.jpg" />
+<meta property="og:url" content="http://piotr.la-gaude.com/Alaska/" />
+<meta property="og:image" content="http://piotr.la-gaude.com/Alaska/public/images/social-og.jpg" />
 <meta property="og:description" content="Billet simple pour l'Alaska - un nouveau roman de Jean Forteroche sous forme de blog" />
 
 <!-- Stylesheets & Scripts for map and fonts-->

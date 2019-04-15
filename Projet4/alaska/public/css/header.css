@@ -9,6 +9,10 @@
   top: 0;
 }
 
+.header.header-scroll{
+  background-color: white;
+}
+
 .header:hover {
   background-color: #fff;
 }
@@ -65,7 +69,6 @@
   position: relative;
   user-select: none;
   right: 12%;
-  top: 25px;
 }
 
 /* middle line of hamburger */
@@ -133,4 +136,33 @@
 #nickHeader {
   padding: 15px 15px;
   float: left;
+}
+
+/*All media querys from 768px*/
+@media (max-width: 900px) {
+
+
+  .header .menu-icon {
+    display: block;
+  }
+
+  .header li a {
+  /*  padding: 20px 20px;*/
+  background-color: white;
+  }
+
+  .header .menu {
+    clear: both;
+    max-height: 0;
+    float: none;
+    right: inherit;
+    box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, .3);
+    top: -21px;
+  }
+
+  .header li {
+    float: none;
+  }
+
+
 }

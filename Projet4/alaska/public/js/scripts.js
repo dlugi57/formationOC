@@ -184,3 +184,20 @@ $('#commentsNotReported').click(function() {
   $('.reported').hide();
   $('.notReported').show();
 })
+
+/*$(window).scroll(function(){
+
+
+        $('.header').addClass('header-scroll')
+
+
+});*/
+
+$(window).on("scroll", function() {
+    var scrollPos = $(window).scrollTop();
+    if (scrollPos <= 0) {
+        $('.header').removeClass('header-scroll')
+    } else {
+        $('.header').addClass('header-scroll');
+    }
+});

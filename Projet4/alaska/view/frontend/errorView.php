@@ -12,7 +12,13 @@
         <div class="errorContainer">
           <p id="oops">OOPS!</p>
           <p><?= $errorMsg ?></p>
+          <?php
+          if (isset($_SERVER['HTTP_REFERER'])) {
+          ?>
           <a class="btn btn-outline-primary btn-lg" href="<?= $_SERVER['HTTP_REFERER'] ?>">Retour au site</a>
+          <?php
+          }
+          ?>
         </div>
       </div>
     </section>

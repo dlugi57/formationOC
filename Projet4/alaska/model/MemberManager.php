@@ -22,8 +22,11 @@ class MemberManager extends Manager
                 session_start();
                 $_SESSION['nick'] = $nick;
                 $_SESSION['admin'] = 0;
-                header("Location: index.php?action=home&nick=".$_SESSION['nick']);
-                
+                $last_id = $db->lastInsertId();
+                $_SESSION['userId'] = $last_id;
+
+                header("Location: index.php?action=home&nick=".$last_id);
+
                 return $newMember;
             }else
             {

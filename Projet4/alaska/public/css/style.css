@@ -109,6 +109,10 @@ a {
   text-justify: inter-word;
 }
 
+#bookText p {
+  background-color: transparent !important;
+}
+
 /*FOOTER*/
 footer {
   padding: 1em;

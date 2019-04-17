@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="Public/dist/css/AdminLTE.min.css">
 <!-- AdminLTE Skins. Choose a skin from the css/skins
      folder instead of downloading all of them to reduce the load. -->
-<link rel="stylesheet" href="Public/dist/css/skins/_all-skins.min.css">
+<link rel="stylesheet" href="Public/dist/css/skins/skin-blue.min.css">
 <!-- Morris chart -->
 <link rel="stylesheet" href="Public/bower_components/morris.js/morris.css">
 <!-- jvectormap -->

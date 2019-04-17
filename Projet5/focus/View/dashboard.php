@@ -8,8 +8,7 @@ ob_start();
 
 
 
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
@@ -523,8 +522,7 @@ ob_start();
 
     </section>
     <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
+
   <footer class="main-footer">
     <div class="pull-right hidden-xs">
       <b>Version</b> 2.4.0

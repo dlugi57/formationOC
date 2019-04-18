@@ -9,7 +9,7 @@ class ClientManager extends Manager
     public function getClient()
     {
         $db = $this->dbConnect();
-        $req = $db->query('SELECT id_client, name, email, adress, city, post_code, contact_by, description, DATE_FORMAT(creation_date, \'%d/%m/%Y\') AS creation_date_fr FROM clientss ORDER BY creation_date DESC');
+        $req = $db->query('SELECT id_client, name, email, adress, city, post_code, contact_by, description, DATE_FORMAT(creation_date, \'%d/%m/%Y\') AS creation_date_fr FROM clients ORDER BY creation_date DESC');
 
         return $req;
     }

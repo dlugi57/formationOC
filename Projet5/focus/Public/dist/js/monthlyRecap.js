@@ -23,7 +23,7 @@ $(function () {
     labels  : arrayFromPHPMonth,
     datasets: [
       {
-        label               : 'Electronics',
+        label               : 'Seances',
         fillColor           : 'rgb(210, 214, 222)',
         strokeColor         : 'rgb(210, 214, 222)',
         pointColor          : 'rgb(210, 214, 222)',
@@ -33,7 +33,7 @@ $(function () {
         data                : [1, 2, 8, 7]
       },
       {
-        label               : 'Digital Goods',
+        label               : 'Clients',
         fillColor           : 'rgba(60,141,188,0.9)',
         strokeColor         : 'rgba(60,141,188,0.8)',
         pointColor          : '#3b8bba',

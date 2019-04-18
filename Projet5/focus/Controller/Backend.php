@@ -3,7 +3,9 @@
 namespace Controller;
 
 require_once "Model/ClientManager.php";
+require_once "Model/SeanceManager.php";
 
+use Model\SeanceManager;
 use Model\ClientManager;
 use Exception;
 
@@ -30,5 +32,24 @@ class Backend
             require('View/clientsList.php');
         }
 
+    }
+
+
+
+
+
+
+    public function listSeances()
+    {
+      $seancesManager = new SeanceManager();
+      $seances = $seancesManager->getSeances();
+
+      if ($seances === false)
+      {
+          throw new Exception('Impossible d\'afficher le contenue !');
+      }else
+      {
+          require('View/seancesList.php');
+      }
     }
 }

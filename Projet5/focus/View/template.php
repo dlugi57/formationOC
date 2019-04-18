@@ -108,7 +108,7 @@
             <i class="fa fa-users"></i>
             <span>Clients</span>
             <span class="pull-right-container">
-              <span class="label label-primary pull-right">4</span>
+              <span class="label label-primary pull-right"><?= $countClients['nb'] ?></span>
             </span>
           </a>
           <ul class="treeview-menu">
@@ -128,7 +128,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/layout/top-nav.html"><i class="fa fa-list-ul"></i>Liste</a></li>
+            <li><a href="index.php?action=listSeances"><i class="fa fa-list-ul"></i>Liste</a></li>
             <li><a href="pages/layout/boxed.html"><i class="fa fa-plus"></i>Ajouter</a></li>
           </ul>
         </li>

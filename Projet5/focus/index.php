@@ -13,16 +13,22 @@ $controller = new Backend();
 
 try {
     if (isset($_GET['action'])):
-//POST LIST
-      switch ($_GET['action']):
 
+      switch ($_GET['action']):
+//DASHBOARD
         case 'dashboard':
             $dashboard = $controller->dashboard();
             //dashboard();
         break;
-
+//CLIENT LIST
         case 'listClients':
             $clientsList = $controller->listClients();
+            //listClients();
+        break;
+
+//CLIENT LIST
+        case 'listSeances':
+            $seancesList = $controller->listSeances();
             //listClients();
         break;
 

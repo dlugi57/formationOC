@@ -16,6 +16,11 @@ class Backend
       $clientsManager = new ClientManager();
       $countClients = $clientsManager->countClients();
 
+      $seancesManager = new SeanceManager();
+      $countSeances = $seancesManager->countSeances();
+      $countFutureSeances = $seancesManager->countFutureSeances();
+
+
       require('View/dashboard.php');
 
     }

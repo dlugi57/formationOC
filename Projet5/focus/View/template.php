@@ -123,8 +123,8 @@
             <i class="fa fa-camera"></i>
             <span>Seances</span>
             <span class="pull-right-container">
-              <small class="label pull-right bg-yellow">12</small>
-              <small class="label pull-right bg-green">16</small>
+              <small class="label pull-right bg-yellow"><?= $countSeances['nb'] ?></small>
+              <small class="label pull-right bg-green"><?= $countFutureSeances['nb'] ?></small>
             </span>
           </a>
           <ul class="treeview-menu">

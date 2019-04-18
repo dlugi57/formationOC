@@ -14,6 +14,25 @@ class SeanceManager extends Manager
     return $req;
   }
 
+  public function countSeances()
+  {
+    $db = $this->dbConnect();
+    $sql = 'SELECT COUNT(*) AS nb FROM seances';
+    $result = $db->query($sql);
+    $countSeances = $result->fetch();
+    return $countSeances;
+
+  }
+
+  public function countFutureSeances()
+  {
+    $db = $this->dbConnect();
+    $sql = 'SELECT COUNT(*) AS nb FROM seances WHERE seance_date >= CURDATE()';
+    $result = $db->query($sql);
+    $countFutureSeances = $result->fetch();
+    return $countFutureSeances;
+  }
+
 
 
 

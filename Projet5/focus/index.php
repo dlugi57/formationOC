@@ -17,7 +17,9 @@ try {
       switch ($_GET['action']):
 //DASHBOARD
         case 'dashboard':
+      //  $sumBrut = $controller->sumBrut();
             $dashboard = $controller->dashboard();
+
             //dashboard();
         break;
 //CLIENT LIST

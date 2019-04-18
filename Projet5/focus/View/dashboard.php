@@ -26,7 +26,7 @@ ob_start();
           <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
-              <h3>150</h3>
+              <h3><?= $sumNetSeances['sumPrise'] ?></h3>
 
               <p>Net</p>
             </div>
@@ -40,7 +40,7 @@ ob_start();
           <!-- small box -->
           <div class="small-box bg-green">
             <div class="inner">
-              <h3>53<sup style="font-size: 20px">%</sup></h3>
+              <h3><?= $sumBrut ?></h3>
 
               <p>Brut</p>
             </div>

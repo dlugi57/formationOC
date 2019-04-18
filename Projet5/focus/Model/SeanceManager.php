@@ -33,6 +33,17 @@ class SeanceManager extends Manager
     return $countFutureSeances;
   }
 
+  public function totals()
+  {
+
+    $db = $this->dbConnect();
+    $sql = 'SELECT SUM(prise) AS sumPrise,SUM(depenses) AS sumDep, SUM(km) AS sumKm FROM `seances`';
+    $result = $db->query($sql);
+    $sumSeances = $result->fetch();
+    return $sumSeances;
+
+  }
+
 
 
 

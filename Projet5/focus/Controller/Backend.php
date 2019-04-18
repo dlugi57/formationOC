@@ -15,9 +15,7 @@ class Backend
       $clientsManager = new ClientManager();
       $lastClient = $clientsManager->lastClient();
       require('View/dashboard.php');
-
-
-
+      
     }
     public function listClients()
     {

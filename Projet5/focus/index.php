@@ -1,12 +1,14 @@
 <?php
 session_start();
-require "autoload.php";
+require_once "Controller/Backend.php";
+
 //require('Controller/frontend.php');
 //require('Controller/backend.php');
 use Controller\Backend;
 
 $controller = new Backend();
-$dashboard = $controller->dashboard();
+
+
 
 
 try {
@@ -15,20 +17,28 @@ try {
       switch ($_GET['action']):
 
         case 'dashboard':
-            $dashboard;
+            $dashboard = $controller->dashboard();
+            //dashboard();
+        break;
+
+        case 'listClients':
+            $clientsList = $controller->listClients();
+            //listClients();
         break;
 
 //DEFAULT HOME
         default:
-            $dashboard;
+            $dashboard = $controller->dashboard();
+            //dashboard();
         break;
       endswitch;
     else :
-        $dashboard;
+        $dashboard = $controller->dashboard();
+      //  dashboard();
     endif;
 }
 catch(Exception $e)
 {
     $errorMsg = $e->getMessage();
-  //  require('view/frontend/errorView.php');
+    require('view/errorView.php');
 }

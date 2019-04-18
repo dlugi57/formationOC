@@ -112,7 +112,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/layout/top-nav.html"><i class="fa fa-list-ul"></i> Liste</a></li>
+            <li><a href="index.php?action=listClients"><i class="fa fa-list-ul"></i> Liste</a></li>
             <li><a href="pages/layout/boxed.html"><i class="fa fa-user-plus"></i> Ajouter</a></li>
 
           </ul>

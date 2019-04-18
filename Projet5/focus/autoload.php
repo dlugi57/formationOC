@@ -1,4 +1,4 @@
-<?php
+<?php/*
 spl_autoload_register(function($classname)
 {
     $parts = explode('\\', $classname);
@@ -7,8 +7,12 @@ spl_autoload_register(function($classname)
     if (file_exists($file = 'Controller/' . $classname . '.php'))
     {
       require $file;
-    } else
+    }elseif (file_exists($file = 'Model/' . $classname . '.php')) {
+      require $file;
+    }
+     else
     {
         throw new Exception('Pb autoload : Le fichier ' . $file . ' n\'existe pas.');
     }
 });
+*/

@@ -2,20 +2,25 @@
 
 namespace Controller;
 
+require_once "Model/ClientManager.php";
+
+use Model\ClientManager;
+use Exception;
+
 class Backend
 {
-    public function dashboard()
+    function dashboard()
     {
 
 
-      require('view/dashboard.php');
+      require('View/dashboard.php');
 
 
 
     }
-    public function listClients()
+    function listClients()
     {
-        $clientsManager = new Model\ClientManager();
+        $clientsManager = new ClientManager();
         $clients = $clientsManager->getClient();
 
         if ($clients === false)

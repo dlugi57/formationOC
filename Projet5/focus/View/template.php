@@ -265,10 +265,13 @@
 <script src="Public/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
 <!-- FastClick -->
 <script src="Public/bower_components/fastclick/lib/fastclick.js"></script>
+<!-- ChartJS -->
+<script src="Public/bower_components/chart.js/Chart.js"></script>
 <!-- AdminLTE App -->
 <script src="Public/dist/js/adminlte.min.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="Public/dist/js/pages/dashboard.js"></script>
+<script src="Public/dist/js/pages/dashboard2.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="Public/dist/js/demo.js"></script>
 </body>

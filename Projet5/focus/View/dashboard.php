@@ -12,7 +12,7 @@ ob_start();
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Dashboard
+        Dashboard <?= $lastClient['email'] ?>
         <small>Control panel</small>
       </h1>
 

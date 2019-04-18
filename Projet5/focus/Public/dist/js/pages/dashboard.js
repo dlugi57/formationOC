@@ -4,6 +4,7 @@
  * Description:
  *      This is a demo file used only for the main dashboard (index.html)
  **/
+ /*
 
 $(function () {
 
@@ -46,6 +47,13 @@ $(function () {
   });
 
   /* jQueryKnob */
+
+
+
+/*
+
+
+
   $('.knob').knob();
 
   // jvectormap data
@@ -126,6 +134,12 @@ $(function () {
 
   /* Morris.js Charts */
   // Sales chart
+
+
+
+
+
+  /*
   var area = new Morris.Area({
     element   : 'revenue-chart',
     resize    : true,
@@ -198,6 +212,11 @@ $(function () {
   });
 
   /* The todo list plugin */
+
+
+
+
+  /*
   $('.todo-list').todoList({
     onCheck  : function () {
       window.console.log($(this), 'The element has been checked');
@@ -208,3 +227,4 @@ $(function () {
   });
 
 });
+*/

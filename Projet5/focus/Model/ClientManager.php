@@ -14,6 +14,15 @@ class ClientManager extends Manager
         return $req;
     }
 
+    public function lastClient(){
+
+      $db = $this->dbConnect();
+      $req = $db->query('SELECT id_client, name, email FROM clients ORDER BY id_client DESC LIMIT 1;');
+      $lastClient = $req->fetch();
+
+      return $lastClient;
+    }
+
 
 /*
     public function getPost($postId)

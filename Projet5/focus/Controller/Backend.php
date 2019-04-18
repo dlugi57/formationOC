@@ -9,16 +9,17 @@ use Exception;
 
 class Backend
 {
-    function dashboard()
+    public function dashboard()
     {
 
-
+      $clientsManager = new ClientManager();
+      $lastClient = $clientsManager->lastClient();
       require('View/dashboard.php');
 
 
 
     }
-    function listClients()
+    public function listClients()
     {
         $clientsManager = new ClientManager();
         $clients = $clientsManager->getClient();

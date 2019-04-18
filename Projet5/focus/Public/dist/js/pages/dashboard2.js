@@ -6,7 +6,7 @@ $(function () {
    * -------
    * Here we will create a few charts using ChartJS
    */
-
+/*
   // -----------------------
   // - MONTHLY SALES CHART -
   // -----------------------
@@ -87,7 +87,7 @@ $(function () {
   // ---------------------------
   // - END MONTHLY SALES CHART -
   // ---------------------------
-
+*/
   // -------------
   // - PIE CHART -
   // -------------

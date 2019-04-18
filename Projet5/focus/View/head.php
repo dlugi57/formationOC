@@ -7,7 +7,7 @@
 <!-- Ionicons -->
 <link rel="stylesheet" href="Public/bower_components/Ionicons/css/ionicons.min.css">
 <!-- Theme style -->
-<link rel="stylesheet" href="Public/dist/css/AdminLTE.min.css">
+<link rel="stylesheet" href="Public/dist/css/AdminLTE.css">
 <!-- AdminLTE Skins. Choose a skin from the css/skins
      folder instead of downloading all of them to reduce the load. -->
 <link rel="stylesheet" href="Public/dist/css/skins/skin-blue.min.css">

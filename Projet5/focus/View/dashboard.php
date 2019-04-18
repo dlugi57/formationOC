@@ -26,12 +26,12 @@ ob_start();
           <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
-              <h3><?= $sumNetSeances['sumPrise'] ?></h3>
+              <h3><?= $sumNet ?><sup style="font-size: 20px">€</sup></h3>
 
               <p>Net</p>
             </div>
             <div class="icon">
-              <i class="ion ion-bag"></i>
+              <i class="fa fa-home"></i>
             </div>
           </div>
         </div>
@@ -40,12 +40,12 @@ ob_start();
           <!-- small box -->
           <div class="small-box bg-green">
             <div class="inner">
-              <h3><?= $sumBrut ?></h3>
+              <h3><?= $sumBrutSeances['sumPrise'] ?><sup style="font-size: 20px">€</sup></h3>
 
               <p>Brut</p>
             </div>
             <div class="icon">
-              <i class="ion ion-stats-bars"></i>
+              <i class="fa fa-money"></i>
             </div>
           </div>
         </div>
@@ -73,7 +73,7 @@ ob_start();
               <p>Seances</p>
             </div>
             <div class="icon">
-              <i class="ion ion-pie-graph"></i>
+              <i class="fa fa-camera"></i>
             </div>
           </div>
         </div>

@@ -19,20 +19,20 @@ class Backend
       $seancesManager = new SeanceManager();
       $countSeances = $seancesManager->countSeances();
       $countFutureSeances = $seancesManager->countFutureSeances();
-      $sumNetSeances = $seancesManager->totals();
+      $sumBrutSeances = $seancesManager->totals();
 
-      $sumBrut =  Backend::sumBrut();
+      $sumNet =  Backend::sumNet();
 
 
       require('View/dashboard.php');
 
     }
 
-    public function sumBrut(){
+    public function sumNet(){
       $seancesManager = new SeanceManager();
-      $sumBrutSeances = $seancesManager->totals();
+      $sumNetSeances = $seancesManager->totals();
 
-      $summary = $sumBrutSeances['sumPrise'] - $sumBrutSeances['sumDep'] - ($sumBrutSeances['sumKm'] * 0.15);
+      $summary = $sumNetSeances['sumPrise'] - $sumNetSeances['sumDep'] - ($sumNetSeances['sumKm'] * 0.15);
 
       return $summary;
 

@@ -12,7 +12,7 @@ ob_start();
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Dashboard <?= $lastClient['email'] ?>
+        Dashboard
         <small>Control panel</small>
       </h1>
 
@@ -28,7 +28,7 @@ ob_start();
             <div class="inner">
               <h3>150</h3>
 
-              <p>New Orders</p>
+              <p>Net</p>
             </div>
             <div class="icon">
               <i class="ion ion-bag"></i>
@@ -42,7 +42,7 @@ ob_start();
             <div class="inner">
               <h3>53<sup style="font-size: 20px">%</sup></h3>
 
-              <p>Bounce Rate</p>
+              <p>Brut</p>
             </div>
             <div class="icon">
               <i class="ion ion-stats-bars"></i>
@@ -54,12 +54,12 @@ ob_start();
           <!-- small box -->
           <div class="small-box bg-yellow">
             <div class="inner">
-              <h3>44</h3>
+              <h3><?= $countClients['nb'] ?></h3>
 
-              <p>User Registrations</p>
+              <p>Clients</p>
             </div>
             <div class="icon">
-              <i class="ion ion-person-add"></i>
+              <i class="fa fa-users"></i>
             </div>
           </div>
         </div>

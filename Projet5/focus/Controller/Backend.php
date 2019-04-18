@@ -11,16 +11,16 @@ class Backend
 {
     public function dashboard()
     {
-
       $clientsManager = new ClientManager();
-      $lastClient = $clientsManager->lastClient();
+      $countClients = $clientsManager->countClients();
+
       require('View/dashboard.php');
-      
+
     }
     public function listClients()
     {
         $clientsManager = new ClientManager();
-        $clients = $clientsManager->getClient();
+        $clients = $clientsManager->getClients();
 
         if ($clients === false)
         {

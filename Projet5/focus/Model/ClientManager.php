@@ -6,7 +6,7 @@ require_once("Model/Manager.php");
 
 class ClientManager extends Manager
 {
-    public function getClient()
+    public function getClients()
     {
         $db = $this->dbConnect();
         $req = $db->query('SELECT id_client, name, email, adress, city, post_code, contact_by, description, DATE_FORMAT(creation_date, \'%d/%m/%Y\') AS creation_date_fr FROM clients ORDER BY creation_date DESC');
@@ -14,13 +14,14 @@ class ClientManager extends Manager
         return $req;
     }
 
-    public function lastClient(){
-
+    public function countClients()
+    {
       $db = $this->dbConnect();
-      $req = $db->query('SELECT id_client, name, email FROM clients ORDER BY id_client DESC LIMIT 1;');
-      $lastClient = $req->fetch();
+      $sql = 'SELECT COUNT(*) AS nb FROM clients';
+      $result = $db->query($sql);
+      $countClients = $result->fetch();
+      return $countClients;
 
-      return $lastClient;
     }
 
 

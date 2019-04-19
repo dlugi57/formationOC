@@ -46,3 +46,33 @@
   <!-- /.footer -->
 </div>
 <!-- /.box -->
+<?php
+$contactByArray = array();
+$colors = array('#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de');
+
+while ($data = $contactBy->fetch())
+{
+
+$contactByObj = new stdClass();
+$contactByObj->value = $data['nb'];
+$contactByObj->color = '#f56954';
+$contactByObj->highlight = '#f56954';
+$contactByObj->label = $data['contact_by'];
+
+
+  array_push($contactByArray,$contactByObj);
+
+
+
+
+
+
+}
+print_r($contactByArray);
+?>
+<script type="text/javascript">
+var afpContactBy = <?php echo json_encode($contactByArray); ?>;
+console.log(afpContactBy);
+
+
+</script>

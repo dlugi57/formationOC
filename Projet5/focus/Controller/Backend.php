@@ -16,6 +16,8 @@ class Backend
       $clientsManager = new ClientManager();
       $countClients = $clientsManager->countClients();
       $monthClients = $clientsManager->monthClients();
+      $contactBy = $clientsManager->contactBy();
+
 
       $seancesManager = new SeanceManager();
       $countSeances = $seancesManager->countSeances();

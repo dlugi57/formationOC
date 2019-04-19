@@ -32,6 +32,14 @@ class ClientManager extends Manager
       return $req;
     }
 
+    public function contactBy(){
+      $db = $this->dbConnect();
+      $sql = 'SELECT count(*) as nb, contact_by FROM clients GROUP BY contact_by';
+      $req = $db->query($sql);
+
+      return $req;
+    }
+
 
 /*
     public function getPost($postId)

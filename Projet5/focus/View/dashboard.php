@@ -99,7 +99,7 @@ ob_start();
 
         <!-- Left col -->
         <section class="col-lg-8">
-
+<?php require('widgets/monthlyCash.php'); ?>
           <?php require('widgets/clients.php'); ?>
           <?php require('widgets/seances.php'); ?>
 

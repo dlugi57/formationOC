@@ -21,6 +21,7 @@ class Backend
       $countSeances = $seancesManager->countSeances();
       $countFutureSeances = $seancesManager->countFutureSeances();
       $sumBrutSeances = $seancesManager->totals();
+      $monthSeances = $seancesManager->monthSeances();
 
       $sumNet =  Backend::sumNet();
 

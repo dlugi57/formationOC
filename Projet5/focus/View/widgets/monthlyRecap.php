@@ -25,7 +25,7 @@
         <div class="row">
           <div class="col-md-8">
             <p class="text-center">
-              <strong>Sales: 1 Jan, 2014 - 30 Jul, 2014</strong>
+              <strong>Szary seances</strong>
             </p>
 
             <div class="chart">
@@ -135,14 +135,31 @@
       $monthName = date('F', mktime(0, 0, 0, $monthNum, 10));
       array_push($resultsNb,$data['nb']);
       array_push($resultsMonth, $monthName);
-      print_r($resultsNb);
+      //print_r($resultsNb);
     ?>
 
     <?php
     }
 
      ?>
+     <?php
+     $resultsNbSeance = array();
+     //$resultsMonthSeance = array();
+     while ($data = $monthSeances->fetch())
+     {
+       //$monthNumSeance  = $data['month'];
+      // $monthName = date('F', mktime(0, 0, 0, $monthNum, 10));
+       array_push($resultsNbSeance,$data['nb']);
+    //   array_push($resultsMonth, $monthName);
+       print_r($resultsNbSeance);
+     ?>
+
+     <?php
+     }
+
+      ?>
     <script type="text/javascript">
+    var arrayFromPHPNbSeances = <?php echo json_encode($resultsNbSeance); ?>;
     var arrayFromPHPMonth = <?php echo json_encode($resultsMonth); ?>;
     var arrayFromPHPNb = <?php echo json_encode($resultsNb); ?>;
 

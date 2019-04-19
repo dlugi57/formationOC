@@ -37,7 +37,7 @@ $(function () {
         pointStrokeColor    : 'rgba(60,141,188,1)',
         pointHighlightFill  : '#fff',
         pointHighlightStroke: 'rgba(60,141,188,1)',
-        data                : arrayFromPHPNb
+        data                : arrayFromPHPDepenses
       }
     ]
   }

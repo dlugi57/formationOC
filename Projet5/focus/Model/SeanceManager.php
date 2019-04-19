@@ -44,9 +44,10 @@ class SeanceManager extends Manager
 
   }
 
-  public function monthSeances(){
+  public function monthSeances()
+  {
     $db = $this->dbConnect();
-    $sql = 'SELECT Month(creation_date) as month, Count(*) as nb, SUM(prise) as cash FROM seances GROUP BY Month(creation_date) LIMIT 0,6';
+    $sql = 'SELECT Month(creation_date) as month, Count(*) as nb, SUM(prise) as cash, SUM(depenses) as paied, SUM(km) as drove FROM seances GROUP BY Month(creation_date) LIMIT 0,6';
     $req = $db->query($sql);
 
     return $req;

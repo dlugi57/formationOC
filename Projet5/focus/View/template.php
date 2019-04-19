@@ -270,7 +270,8 @@
 <!-- AdminLTE App -->
 <script src="Public/dist/js/adminlte.min.js"></script>
 
-<script src="Public/dist/js/monthlyCash.js"></script>
+
+
 <script src="Public/dist/js/monthlyRecap.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="Public/dist/js/pages/dashboard.js"></script>

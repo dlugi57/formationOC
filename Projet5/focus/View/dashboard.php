@@ -91,17 +91,18 @@ ob_start();
       <!-- Main row -->
       <div class="row">
 
-        <section class="col-md-12">
-          <?php require('widgets/monthlyRecap.php'); ?>
-        </section>
+    <!--    <section class="col-md-12">
+
+    </section>-->
       <!-- /.col -->
 
 
         <!-- Left col -->
         <section class="col-lg-8">
-<?php require('widgets/monthlyCash.php'); ?>
+
           <?php require('widgets/clients.php'); ?>
           <?php require('widgets/seances.php'); ?>
+          <?php require('widgets/monthlyRecap.php'); ?>
 
         </section>
         <!-- /.Left col -->

@@ -1,6 +1,6 @@
 <div class="box box-default">
   <div class="box-header with-border">
-    <h3 class="box-title">Browser Usage</h3>
+    <h3 class="box-title">Contacte Par</h3>
 
     <div class="box-tools pull-right">
       <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -20,12 +20,30 @@
       <!-- /.col -->
       <div class="col-md-4">
         <ul class="chart-legend clearfix">
-          <li><i class="fa fa-circle-o text-red"></i> Chrome</li>
-          <li><i class="fa fa-circle-o text-green"></i> IE</li>
-          <li><i class="fa fa-circle-o text-yellow"></i> FireFox</li>
-          <li><i class="fa fa-circle-o text-aqua"></i> Safari</li>
-          <li><i class="fa fa-circle-o text-light-blue"></i> Opera</li>
-          <li><i class="fa fa-circle-o text-gray"></i> Navigator</li>
+
+          <?php
+          $contactByArray = array();
+          $colors = array('#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de','#f56954', '#00a65a', '#f39c12');
+          $colorsIcon = array('text-red', 'text-green', 'text-yellow', 'text-aqua', 'text-light-blue', 'text-gray', 'text-red', 'text-green', 'text-yellow');
+          $colorNumber = 0;
+
+          $result = $contactBy->fetchAll(); // PDO
+
+          foreach($result as $data)
+          {
+            ?>
+            <li><i class="fa fa-circle-o <?= $colorsIcon[$colorNumber]  ?>"></i> <?= $data['contact_by']  ?></li>
+            <?php
+            $contactByObj = new stdClass();
+            $contactByObj->value = $data['nb'];
+            $contactByObj->color = $colors[$colorNumber];
+            $contactByObj->highlight = $colors[$colorNumber];
+            $contactByObj->label = $data['contact_by'];
+            $colorNumber = $colorNumber + 1;
+
+            array_push($contactByArray,$contactByObj);
+          };
+          ?>
         </ul>
       </div>
       <!-- /.col -->
@@ -35,44 +53,28 @@
   <!-- /.box-body -->
   <div class="box-footer no-padding">
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#">United States of America
-        <span class="pull-right text-red"><i class="fa fa-angle-down"></i> 12%</span></a></li>
-      <li><a href="#">India <span class="pull-right text-green"><i class="fa fa-angle-up"></i> 4%</span></a>
-      </li>
-      <li><a href="#">China
-        <span class="pull-right text-yellow"><i class="fa fa-angle-left"></i> 0%</span></a></li>
+      <?php
+      $loopCounter = 0;
+      foreach($result as $data)
+      {
+        ?>
+        <li><a href="#"><?= $data['contact_by'] ?>
+          <span class="pull-right <?= $colorsIcon[$loopCounter]  ?>"> <?= $data['nb'] ?></span></a>
+        </li>
+        <?php
+        $loopCounter = $loopCounter + 1;
+        if ($loopCounter === 3)
+        {
+          break;
+        }
+      };
+      ?>
     </ul>
   </div>
   <!-- /.footer -->
 </div>
 <!-- /.box -->
-<?php
-$contactByArray = array();
-$colors = array('#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de');
 
-while ($data = $contactBy->fetch())
-{
-
-$contactByObj = new stdClass();
-$contactByObj->value = $data['nb'];
-$contactByObj->color = '#f56954';
-$contactByObj->highlight = '#f56954';
-$contactByObj->label = $data['contact_by'];
-
-
-  array_push($contactByArray,$contactByObj);
-
-
-
-
-
-
-}
-print_r($contactByArray);
-?>
 <script type="text/javascript">
 var afpContactBy = <?php echo json_encode($contactByArray); ?>;
-console.log(afpContactBy);
-
-
 </script>

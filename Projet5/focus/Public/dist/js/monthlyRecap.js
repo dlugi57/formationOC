@@ -1,5 +1,5 @@
 
-
+/*
 
 
 $(function () {
@@ -37,7 +37,7 @@ $(function () {
         pointStrokeColor    : 'rgba(60,141,188,1)',
         pointHighlightFill  : '#fff',
         pointHighlightStroke: 'rgba(60,141,188,1)',
-        data                : arrayFromPHPDepenses
+        data                : arrayFromPHPCashNet
       }
     ]
   }
@@ -161,3 +161,4 @@ $(function () {
 
 
 });
+*/

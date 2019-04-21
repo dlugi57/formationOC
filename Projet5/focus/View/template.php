@@ -12,11 +12,13 @@
 <div class="wrapper">
   <header class="main-header">
     <!-- Logo -->
-    <a href="index2.html" class="logo">
+    <a href="index.php?action=dashboard" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>Fo</b>cus</span>
-      <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Sunny</b>Moments</span>
+      <!-- logo for regular state and mobile devices
+      <span class="logo-lg"><b>Sunny</b>Moments</span>-->
+      <img class="logo-img" src="Public/dist/img/logo.png" ></span>
+
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
@@ -99,7 +101,7 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION  </li>
         <li>
-          <a href="pages/widgets.html">
+          <a href="index.php?action=dashboard">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
           </a>
         </li>
@@ -108,7 +110,7 @@
             <i class="fa fa-users"></i>
             <span>Clients</span>
             <span class="pull-right-container">
-              <span class="label label-primary pull-right"><?= $countClients['nb'] ?></span>
+              <?php if(isset($countClients['nb'])){echo '<span class="label label-primary pull-right">'. $countClients['nb'];}else{echo '<i class="fa fa-angle-left pull-right"></i>';}  ?></span>
             </span>
           </a>
           <ul class="treeview-menu">
@@ -123,8 +125,8 @@
             <i class="fa fa-camera"></i>
             <span>Seances</span>
             <span class="pull-right-container">
-              <small class="label pull-right bg-yellow"><?= $countSeances['nb'] ?></small>
-              <small class="label pull-right bg-green"><?= $countFutureSeances['nb'] ?></small>
+              <small class="label pull-right bg-yellow"><?php if (isset($countSeances['nb'])) {echo $countSeances['nb'];}  ?></small>
+              <?php if (isset($countFutureSeances['nb'])) {echo '<small class="label pull-right bg-green">'. $countFutureSeances['nb'];}else{echo '<i class="fa fa-angle-left pull-right"></i>';} ?></small>
             </span>
           </a>
           <ul class="treeview-menu">

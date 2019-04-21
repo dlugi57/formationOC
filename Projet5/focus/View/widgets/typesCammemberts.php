@@ -20,31 +20,32 @@
       <!-- /.col -->
       <div class="col-md-4">
         <ul class="chart-legend clearfix">
-
           <?php
+          //array to populate data to show
           $contactByArray = array();
+          //array with colors of cammemberts
           $colors = array('#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de','#f56954', '#00a65a', '#f39c12');
+          //array with colors of icons next to the cammemberts
           $colorsIcon = array('text-red', 'text-green', 'text-yellow', 'text-aqua', 'text-light-blue', 'text-gray', 'text-red', 'text-green', 'text-yellow');
-
-
+          //initialize first color
           $colorNumber = 0;
-
-          $result = $contactBy->fetchAll(); // PDO
-
-
-
+          //fetch of the result
+          $result = $contactBy->fetchAll();
+          //first of 2 loops client
           foreach($result as $data)
           {
             ?>
             <li><i class="fa fa-circle-o <?= $colorsIcon[$colorNumber]  ?>"></i> <?= $data['contact_by']  ?></li>
             <?php
+            //create object to send to the js
             $contactByObj = new stdClass();
             $contactByObj->value = $data['nb'];
             $contactByObj->color = $colors[$colorNumber];
             $contactByObj->highlight = $colors[$colorNumber];
             $contactByObj->label = $data['contact_by'];
+            //change color
             $colorNumber = $colorNumber + 1;
-
+            //put object into array to send to the js
             array_push($contactByArray,$contactByObj);
           };
           ?>
@@ -58,7 +59,9 @@
   <div class="box-footer no-padding">
     <ul class="nav nav-pills nav-stacked">
       <?php
+      //initilize loop counter and color
       $loopCounter = 0;
+      //second loop client
       foreach($result as $data)
       {
         ?>
@@ -66,7 +69,9 @@
           <span class="pull-right <?= $colorsIcon[$loopCounter]  ?>"> <?= $data['nb'] ?></span></a>
         </li>
         <?php
+        //change color and counter
         $loopCounter = $loopCounter + 1;
+        //limit of the list lines
         if ($loopCounter === 3)
         {
           break;
@@ -101,29 +106,29 @@
       <div class="col-md-4">
         <ul class="chart-legend clearfix">
           <?php
-
+          //array to populate data to show
           $typeSessionArray = array();
+          //fetch of data
           $resultSession = $typeSession->fetchAll();
-          //$result = $contactBy->fetchAll();
-
+          //initialize colors
           $colorSessionNumber = 0;
-          foreach ($resultSession as $data) {
+          //first of two session loops
+          foreach ($resultSession as $data)
+          {
             ?>
             <li><i class="fa fa-circle-o <?= $colorsIcon[$colorSessionNumber]  ?>"></i> <?= $data['type']  ?></li>
             <?php
+            //create object to send to the js
             $typeSessionObj = new stdClass();
             $typeSessionObj->value = $data['nb'];
             $typeSessionObj->color = $colors[$colorSessionNumber];
             $typeSessionObj->highlight = $colors[$colorSessionNumber];
             $typeSessionObj->label = $data['type'];
+            //change color
             $colorSessionNumber = $colorSessionNumber + 1;
-
+            //put the object into array to send it to the js
             array_push($typeSessionArray,$typeSessionObj);
           }
-
-
-
-
            ?>
         </ul>
       </div>
@@ -135,28 +140,31 @@
   <div class="box-footer no-padding">
     <ul class="nav nav-pills nav-stacked">
       <?php
+      //initialize counter and color
       $loopSessionCounter = 0;
+      //second loop of session
       foreach ($resultSession as $data)
       {
-         ?>
+        ?>
          <li><a href="#"><?= $data['type'] ?>
            <span class="pull-right <?= $colorsIcon[$loopSessionCounter]  ?>"> <?= $data['nb'] ?></span></a>
          </li>
         <?php
+        //change color and counter
         $loopSessionCounter = $loopSessionCounter + 1;
         if ($loopSessionCounter === 3)
         {
           break;
         }
       }
-       ?>
-
+      ?>
     </ul>
   </div>
   <!-- /.footer -->
 </div>
 <!-- /.box -->
 <script type="text/javascript">
+//send data from PHP into JS 
 var afpContactBy = <?php echo json_encode($contactByArray); ?>;
 var afpTypeSession = <?php echo json_encode($typeSessionArray); ?>;
 </script>

@@ -1,8 +1,7 @@
 <!-- AREA CHART -->
 <div class="box box-primary">
   <div class="box-header with-border">
-    <h3 class="box-title">Money</h3>
-
+    <h3 class="box-title"><i class="fa fa-area-chart text-gray"></i> Brut & <i class="fa fa-area-chart text-primary"></i> Net</h3>
     <div class="box-tools pull-right">
       <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
       </button>
@@ -20,8 +19,7 @@
 <!-- BAR CHART -->
 <div class="box box-success">
   <div class="box-header with-border">
-    <h3 class="box-title">Bar Chart</h3>
-
+    <h3 class="box-title"><i class="fa fa-bar-chart-o text-gray"></i> Seances & <i class="fa fa-bar-chart text-green"></i> Clients</h3>
     <div class="box-tools pull-right">
       <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
       </button>
@@ -37,12 +35,12 @@
 </div>
 <!-- /.box -->
 <?php
+//create array to send them into js
 $resultsNb = array();
 $resultsMonth = array();
 $resultsNbSeance = array();
 $resultsMonthCash = array();
 $resultsMonthCashNet = array();
-//$resultsMonthDepenses = array();
 
 while ($data = $monthClients->fetch())
 {
@@ -55,19 +53,15 @@ while ($data = $monthClients->fetch())
 while ($data = $monthSeances->fetch())
 {
   $depenses = $data['drove'] * 0.15 + $data['paied'];
-
   $cashNet = $data['cash'] - $depenses;
   array_push($resultsMonthCashNet,$cashNet);
-  //array_push($resultsMonthDepenses,$depenses);
   array_push($resultsNbSeance,$data['nb']);
   array_push($resultsMonthCash, $data['cash']);
-  print_r($resultsNbSeance);
 }
 
 ?>
 <script type="text/javascript">
 var arrayFromPHPCashNet = <?php echo json_encode($resultsMonthCashNet); ?>;
-//var arrayFromPHPDepenses = <?php// echo json_encode($resultsMonthDepenses); ?>;
 var arrayFromPHPCash = <?php echo json_encode($resultsMonthCash); ?>;
 var arrayFromPHPNbSeances = <?php echo json_encode($resultsNbSeance); ?>;
 var arrayFromPHPMonth = <?php echo json_encode($resultsMonth); ?>;

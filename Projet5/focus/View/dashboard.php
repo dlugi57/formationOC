@@ -109,8 +109,8 @@ ob_start();
         <!-- right col (We are only adding the ID to make the widgets sortable)-->
         <section class="col-lg-4">
 
-          <?php require('widgets/typeSession.php') ?>
-          <?php require('widgets/contactePar.php') ?>
+          <?php require('widgets/typesCammemberts.php') ?>
+
 
 
 

@@ -53,6 +53,14 @@ class SeanceManager extends Manager
     return $req;
   }
 
+  public function typeSession(){
+    $db = $this->dbConnect();
+    $sql = 'SELECT count(*) as nb, type FROM seances GROUP BY type LIMIT 0,8';
+    $req = $db->query($sql);
+
+    return $req;
+  }
+
 
 
 

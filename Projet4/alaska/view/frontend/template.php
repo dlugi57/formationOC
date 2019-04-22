@@ -12,7 +12,8 @@
     require('view/frontend/header.php');
     //for some pages there is different aspect with smaller photo and subtitle
     if (isset($_GET['action'])):
-      if (($_GET['action'] !== 'home') && ($_GET['action'] !== 'createMember') && ($_GET['action'] !== 'loginPage')): ?>
+      //if (($_GET['action'] !== 'home') && ($_GET['action'] !== 'createMember') && ($_GET['action'] !== 'loginPage')):
+      if (($_GET['action'] === 'listPosts') || ($_GET['action'] === 'post') || ($_GET['action'] === 'editComment') || ($_GET['action'] === 'commentList') || ($_GET['action'] === 'createPost') || ($_GET['action'] === 'editPost')): ?>
         <section class="headline">
           <div class="ancre100" id="intro"></div>
           <div class="headlineBlock" id="headlineBlock">

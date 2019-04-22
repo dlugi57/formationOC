@@ -1,131 +1,139 @@
 <?php
-function homePage()
+namespace OpenClassrooms\Blog\Controller;
+
+require_once('model/PostManager.php');
+require_once('model/CommentManager.php');
+require_once('model/MemberManager.php');
+class Frontend
 {
-  $postManager = new \OpenClassrooms\Blog\Model\PostManager();
-  $lastPost = $postManager->newestPost();
-
-  if ($lastPost === false)
+  function homePage()
   {
-      throw new Exception('Impossible d\'afficher le contenue !');
-  }else
-  {
-      //shows extraits of the post
-      $words = explode(' ', $lastPost['content']);
-      $count = 55;
-      $extrait = '';
-      for ($i = 0; $i < $count && isset($words[$i]); $i++)
-      {
-          $extrait .= " ".$words[$i];
-      }
-
-      require('view/frontend/homeViev.php');
-      require('view/frontend/header.php');
-  }
-}
-
-function listPosts()
-{
     $postManager = new \OpenClassrooms\Blog\Model\PostManager();
-    $posts = $postManager->getPosts();
+    $lastPost = $postManager->newestPost();
 
-    if ($posts === false)
+    if ($lastPost === false)
     {
         throw new Exception('Impossible d\'afficher le contenue !');
     }else
     {
-        require('view/frontend/listPostsView.php');
+        //shows extraits of the post
+        $words = explode(' ', $lastPost['content']);
+        $count = 55;
+        $extrait = '';
+        for ($i = 0; $i < $count && isset($words[$i]); $i++)
+        {
+            $extrait .= " ".$words[$i];
+        }
+
+        require('view/frontend/homeViev.php');
+        require('view/frontend/header.php');
     }
+  }
 
-}
-
-function post()
-{
-    $postManager = new \OpenClassrooms\Blog\Model\PostManager();
-    $commentManager = new \OpenClassrooms\Blog\Model\CommentManager();
-
-    $post = $postManager->getPost($_GET['id']);
-    $comments = $commentManager->getComments($_GET['id']);
-
-    if ($post === false)
-    {
-        throw new Exception('Impossible d\'afficher le chapitre !');
-    }
-    else
-    {
-        require('view/frontend/postView.php');
-    }
-}
-
-
-function addComment($postId, $author, $comment)
-{
-    $commentManager = new \OpenClassrooms\Blog\Model\CommentManager();
-    $affectedLines = $commentManager->postComment($postId, $author, $comment);
-
-    if ($affectedLines === false)
-    {
-        throw new Exception('Impossible d\'ajouter le commentaire !');
-    }
-    else
-    {
-        header('Location: index.php?action=post&id=' . $postId);
-    }
-}
-
-function reportComment($commentId, $commentReport)
-{
-  $commentManager = new \OpenClassrooms\Blog\Model\CommentManager();
-  $comment = $commentManager->alertComment($commentId, $commentReport);
-
-  if ($comment === false)
+  function listPosts()
   {
-      throw new Exception('Impossible d\'signaler le commentaire !');
-  }else
-  {
-      if ($_GET['post_id'] == 'commentList')
+      $postManager = new \OpenClassrooms\Blog\Model\PostManager();
+      $posts = $postManager->getPosts();
+
+      if ($posts === false)
       {
-        header('Location: index.php?action=commentList');
+          throw new Exception('Impossible d\'afficher le contenue !');
       }else
       {
-        header('Location: index.php?action=post&id=' . $_GET['post_id']);
+          require('view/frontend/listPostsView.php');
+      }
+
+  }
+
+  function post()
+  {
+      $postManager = new \OpenClassrooms\Blog\Model\PostManager();
+      $commentManager = new \OpenClassrooms\Blog\Model\CommentManager();
+
+      $post = $postManager->getPost($_GET['id']);
+      $comments = $commentManager->getComments($_GET['id']);
+
+      if ($post === false)
+      {
+          throw new Exception('Impossible d\'afficher le chapitre !');
+      }
+      else
+      {
+          require('view/frontend/postView.php');
       }
   }
-}
 
 
-function createPage()
-{
-  require('view/frontend/createMemberViev.php');
-}
-
-
-function newMember($nick, $pass, $email)
-{
-  $memberManager = new \OpenClassrooms\Blog\Model\MemberManager();
-
-  $newMember = $memberManager->addMember($nick, $pass, $email);
-
-  if ($newMember === false) {
-      throw new Exception('Impossible d\'ajouter le membre !');
-  }
-}
-
-function connect($login,$password)
-{
-  $memberManager = new \OpenClassrooms\Blog\Model\MemberManager();
-  $connectMember = $memberManager->login($login,$password);
-
-  if ($connectMember === false)
+  function addComment($postId, $author, $comment)
   {
-      throw new Exception('Impossible de se connecter ! ');
-  }
-}
+      $commentManager = new \OpenClassrooms\Blog\Model\CommentManager();
+      $affectedLines = $commentManager->postComment($postId, $author, $comment);
 
-function logout()
-{
-  session_start();
-  // Suppression des variables de session et de la session
-  $_SESSION = array();
-  session_destroy();
-  header("Location: index.php?action=home");
+      if ($affectedLines === false)
+      {
+          throw new Exception('Impossible d\'ajouter le commentaire !');
+      }
+      else
+      {
+          header('Location: index.php?action=post&id=' . $postId);
+      }
+  }
+
+  function reportComment($commentId, $commentReport)
+  {
+    $commentManager = new \OpenClassrooms\Blog\Model\CommentManager();
+    $comment = $commentManager->alertComment($commentId, $commentReport);
+
+    if ($comment === false)
+    {
+        throw new Exception('Impossible d\'signaler le commentaire !');
+    }else
+    {
+        if ($_GET['post_id'] == 'commentList')
+        {
+          header('Location: index.php?action=commentList');
+        }else
+        {
+          header('Location: index.php?action=post&id=' . $_GET['post_id']);
+        }
+    }
+  }
+
+
+  function createPage()
+  {
+    require('view/frontend/createMemberViev.php');
+  }
+
+
+  function newMember($nick, $pass, $email)
+  {
+    $memberManager = new \OpenClassrooms\Blog\Model\MemberManager();
+
+    $newMember = $memberManager->addMember($nick, $pass, $email);
+
+    if ($newMember === false) {
+        throw new Exception('Impossible d\'ajouter le membre !');
+    }
+  }
+
+  function connect($login,$password)
+  {
+    $memberManager = new \OpenClassrooms\Blog\Model\MemberManager();
+    $connectMember = $memberManager->login($login,$password);
+
+    if ($connectMember === false)
+    {
+        throw new Exception('Impossible de se connecter ! ');
+    }
+  }
+
+  function logout()
+  {
+    session_start();
+    // Suppression des variables de session et de la session
+    $_SESSION = array();
+    session_destroy();
+    header("Location: index.php?action=home");
+  }
 }

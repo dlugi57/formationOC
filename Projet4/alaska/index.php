@@ -1,21 +1,22 @@
 <?php
 session_start();
-require "lib/autoload.php";
 require('controller/frontend.php');
 require('controller/backend.php');
+$backendController = new \OpenClassrooms\Blog\Controller\Backend();
+$frontendController = new \OpenClassrooms\Blog\Controller\Frontend();
 try {
     if (isset($_GET['action'])):
 //POST LIST
       switch ($_GET['action']):
 
         case 'listPosts':
-            listPosts();
+            $postList = $frontendController->listPosts();
         break;
 //POST
         case 'post':
             if (isset($_GET['id']) && $_GET['id'] > 0)
             {
-                post();
+                $postPage = $frontendController->post();
             }
             else
             {
@@ -26,8 +27,9 @@ try {
         case 'addComment':
             if (isset($_GET['id']) && $_GET['id'] > 0)
             {
-                if (!empty($_POST['comment']) && trim($_POST['comment']) !== '') {
-                    addComment($_GET['id'], $_GET['author'], $_POST['comment']);
+                if (!empty($_POST['comment']) && trim($_POST['comment']) !== '')
+                {
+                    $commentAdd = $frontendController->addComment($_GET['id'], $_GET['author'], $_POST['comment']);
                 }
                 else
                 {
@@ -43,7 +45,7 @@ try {
         case 'editComment':
             if (isset($_GET['id']) && $_GET['id'] > 0)
             {
-                editComment($_GET['id']);
+                $commentEdit = $backendController->editComment($_GET['id']);
             }
             else
             {
@@ -54,7 +56,7 @@ try {
         case 'deleteComment':
             if (isset($_GET['id']) && $_GET['id'] > 0)
             {
-                deleteComment($_GET['id']);
+                $commentDelete = $backendController->deleteComment($_GET['id']);
             }
             else
             {
@@ -65,7 +67,7 @@ try {
         case 'reportComment':
             if (isset($_GET['id']) && $_GET['id'] > 0 && isset($_GET['report']))
             {
-                reportComment($_GET['id'], $_GET['report']);
+                $commentReport = $frontendController->reportComment($_GET['id'], $_GET['report']);
             }
             else
             {
@@ -74,11 +76,12 @@ try {
         break;
 //COMMENT LIST
         case 'commentList':
-            commentList();
+            $commentList = $backendController->commentList();
+
         break;
 // NEW MEMBER PAGE
         case 'createMember':
-            createPage();
+            $memberPage = $frontendController->createPage();
         break;
 //NEW MEMBER
         case 'newMember':
@@ -96,7 +99,7 @@ try {
 
                 endif;
 
-                newMember($_POST['nick'], $_POST['password'], $_POST['email']);
+                $memberNew = $frontendController->newMember($_POST['nick'], $_POST['password'], $_POST['email']);
 
             else:
 
@@ -106,13 +109,13 @@ try {
         break;
 //HOME
         case 'home':
-            homePage();
+            $pageHome = $frontendController->homePage();
         break;
 // NEW POST
         case 'newPost':
             if (!empty($_POST['postTitle']) && !empty($_POST['postContent']) && trim($_POST['postTitle']) !== '' && trim($_POST['postContent']) !== '')
             {
-              createPost($_POST['postTitle'],$_POST['postContent']);
+              $postCreate = $backendController->createPost($_POST['postTitle'],$_POST['postContent']);
             }else
             {
               throw new Exception("Essaie d'écrire quelque chose ! ");
@@ -126,7 +129,7 @@ try {
         case 'editPost':
             if (isset($_GET['id']) && $_GET['id'] > 0)
             {
-                editPost($_GET['id']);
+                $postEdit = $backendController->editPost($_GET['id']);
             }
             else
             {
@@ -137,7 +140,7 @@ try {
         case 'deletePost':
             if (isset($_GET['id']) && $_GET['id'] > 0)
             {
-                deletePost($_GET['id']);
+                $postDelete = $backendController->deletePost($_GET['id']);
             }
             else
             {
@@ -152,7 +155,7 @@ try {
         case 'login':
             if (!empty($_POST['login']) && !empty($_POST['pass']) && trim($_POST['login']) !== '' && trim($_POST['pass']) !== '')
             {
-              connect($_POST['login'],$_POST['pass']);
+              $connect = $frontendController->connect($_POST['login'],$_POST['pass']);
             }else
             {
               throw new Exception("Les champs ne sont pas remplis !");
@@ -160,15 +163,16 @@ try {
         break;
 //DECONNECT
         case 'deconnect':
-            logout();
+            $logout = $frontendController->logout();
+
         break;
 //DEFAULT HOME
         default:
-          homePage();
+          $pageHome = $frontendController->homePage();
         break;
       endswitch;
     else :
-        homePage();
+        $pageHome = $frontendController->homePage();
     endif;
 }
 catch(Exception $e)

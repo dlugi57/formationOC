@@ -116,14 +116,14 @@
           foreach ($resultSession as $data)
           {
             ?>
-            <li><i class="fa fa-circle-o <?= $colorsIcon[$colorSessionNumber]  ?>"></i> <?= $data['type']  ?></li>
+            <li><i class="fa fa-circle-o <?= $colorsIcon[$colorSessionNumber]  ?>"></i> <?= $data['nom_type']  ?></li>
             <?php
             //create object to send to the js
             $typeSessionObj = new stdClass();
             $typeSessionObj->value = $data['nb'];
             $typeSessionObj->color = $colors[$colorSessionNumber];
             $typeSessionObj->highlight = $colors[$colorSessionNumber];
-            $typeSessionObj->label = $data['type'];
+            $typeSessionObj->label = $data['nom_type'];
             //change color
             $colorSessionNumber = $colorSessionNumber + 1;
             //put the object into array to send it to the js
@@ -146,7 +146,7 @@
       foreach ($resultSession as $data)
       {
         ?>
-         <li><a href="#"><?= $data['type'] ?>
+         <li><a href="#"><?= $data['nom_type'] ?>
            <span class="pull-right <?= $colorsIcon[$loopSessionCounter]  ?>"> <?= $data['nb'] ?></span></a>
          </li>
         <?php
@@ -164,7 +164,7 @@
 </div>
 <!-- /.box -->
 <script type="text/javascript">
-//send data from PHP into JS 
+//send data from PHP into JS
 var afpContactBy = <?php echo json_encode($contactByArray); ?>;
 var afpTypeSession = <?php echo json_encode($typeSessionArray); ?>;
 </script>

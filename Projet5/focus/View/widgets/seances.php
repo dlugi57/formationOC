@@ -29,7 +29,7 @@ while ($seance = $seancesList->fetch()) {
   <tr class='clickableRow' data-href='index.php?action=seance&amp;id=<?= $seance['id_seance'] ?>'>
     <td><?= $seance['name'] ?></td>
     <td><?= $seance['seance_date_fr'] ?></td>
-    <td><span class="label label-success"><?= $seance['type'] ?></span></td>
+    <td><span class="label label-success"><?= $seance['nom_type'] ?></span></td>
     <td><?= $seance['place'] ?></td>
   </tr>
   <?php

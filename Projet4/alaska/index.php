@@ -1,9 +1,14 @@
 <?php
 session_start();
-require('controller/frontend.php');
-require('controller/backend.php');
+require('controller/Frontend.php');
+require('controller/Backend.php');
 $backendController = new \OpenClassrooms\Blog\Controller\Backend();
 $frontendController = new \OpenClassrooms\Blog\Controller\Frontend();
+//acces only for admin user made some conditions
+if (isset($_SESSION['admin'])) {
+  $admin = $_SESSION['admin'];
+}
+
 try {
     if (isset($_GET['action'])):
 //POST LIST
@@ -43,24 +48,36 @@ try {
         break;
 //COMMENT MODIFICATION
         case 'editComment':
-            if (isset($_GET['id']) && $_GET['id'] > 0)
+            if (isset($admin) && $admin == 1)
             {
-                $commentEdit = $backendController->editComment($_GET['id']);
-            }
-            else
+                if (isset($_GET['id']) && $_GET['id'] > 0)
+                {
+                    $commentEdit = $backendController->editComment($_GET['id']);
+                }
+                else
+                {
+                    throw new Exception("Aucun identifiant de commentaire envoyé");
+                }
+            }else
             {
-                throw new Exception("Aucun identifiant de commentaire envoyé");
+                throw new Exception("Accès interdit au public");
             }
         break;
 //DELETE COMMENT
         case 'deleteComment':
-            if (isset($_GET['id']) && $_GET['id'] > 0)
+            if (isset($admin) && $admin == 1)
             {
-                $commentDelete = $backendController->deleteComment($_GET['id']);
-            }
-            else
+                if (isset($_GET['id']) && $_GET['id'] > 0)
+                {
+                    $commentDelete = $backendController->deleteComment($_GET['id']);
+                }
+                else
+                {
+                    throw new Exception("Aucun identifiant de commentaire envoyé");
+                }
+            }else
             {
-                throw new Exception("Aucun identifiant de commentaire envoyé");
+                throw new Exception("Accès interdit au public");
             }
         break;
 //REPORT COMMENT
@@ -76,8 +93,13 @@ try {
         break;
 //COMMENT LIST
         case 'commentList':
-            $commentList = $backendController->commentList();
-
+            if (isset($admin) && $admin == 1)
+            {
+                $commentList = $backendController->commentList();
+            }else
+            {
+                throw new Exception("Accès interdit au public");
+            }
         break;
 // NEW MEMBER PAGE
         case 'createMember':
@@ -113,38 +135,62 @@ try {
         break;
 // NEW POST
         case 'newPost':
-            if (!empty($_POST['postTitle']) && !empty($_POST['postContent']) && trim($_POST['postTitle']) !== '' && trim($_POST['postContent']) !== '')
+            if (isset($admin) && $admin == 1)
             {
-              $postCreate = $backendController->createPost($_POST['postTitle'],$_POST['postContent']);
+                if (!empty($_POST['postTitle']) && !empty($_POST['postContent']) && trim($_POST['postTitle']) !== '' && trim($_POST['postContent']) !== '')
+                {
+                  $postCreate = $backendController->createPost($_POST['postTitle'],$_POST['postContent']);
+                }else
+                {
+                  throw new Exception("Essaie d'écrire quelque chose ! ");
+                }
             }else
             {
-              throw new Exception("Essaie d'écrire quelque chose ! ");
+                throw new Exception("Accès interdit au public");
             }
         break;
 //CREATE POST
         case 'createPost':
-            require('view/backend/postViev.php');
+            if (isset($admin) && $admin == 1)
+            {
+                  require('view/backend/postViev.php');
+            }else
+            {
+                throw new Exception("Accès interdit au public");
+            }
         break;
 //UPDATE POST
         case 'editPost':
-            if (isset($_GET['id']) && $_GET['id'] > 0)
+            if (isset($admin) && $admin == 1)
             {
-                $postEdit = $backendController->editPost($_GET['id']);
-            }
-            else
+                if (isset($_GET['id']) && $_GET['id'] > 0)
+                {
+                    $postEdit = $backendController->editPost($_GET['id']);
+                }
+                else
+                {
+                    throw new Exception("Aucun identifiant de chapitre envoyé");
+                }
+            }else
             {
-                throw new Exception("Aucun identifiant de chapitre envoyé");
+                throw new Exception("Accès interdit au public");
             }
         break;
 //DELETE POST
         case 'deletePost':
-            if (isset($_GET['id']) && $_GET['id'] > 0)
+            if (isset($admin) && $admin == 1)
             {
-                $postDelete = $backendController->deletePost($_GET['id']);
-            }
-            else
+                if (isset($_GET['id']) && $_GET['id'] > 0)
+                {
+                    $postDelete = $backendController->deletePost($_GET['id']);
+                }
+                else
+                {
+                    throw new Exception("Aucun identifiant de chapitre envoyé");
+                }
+            }else
             {
-                throw new Exception("Aucun identifiant de chapitre envoyé");
+                throw new Exception("Accès interdit au public");
             }
         break;
 // LOGIN PAGE

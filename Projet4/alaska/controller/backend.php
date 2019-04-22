@@ -4,6 +4,7 @@ namespace OpenClassrooms\Blog\Controller;
 require_once('model/PostManager.php');
 require_once('model/CommentManager.php');
 require_once('model/MemberManager.php');
+use Exception;
 class Backend
 {
 	public function editComment($commentId)

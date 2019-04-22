@@ -1,7 +1,7 @@
 <!-- TABLE: LATEST ORDERS -->
 <div class="box box-info">
   <div class="box-header with-border">
-    <h3 class="box-title">Latest Orders</h3>
+    <h3 class="box-title">Seances</h3>
 
     <div class="box-tools pull-right">
       <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -15,21 +15,29 @@
       <table class="table no-margin">
         <thead>
         <tr>
-          <th>Order ID</th>
-          <th>Item</th>
-          <th>Status</th>
-          <th>Popularity</th>
+          <th>Nom</th>
+          <th>Date</th>
+          <th>Type</th>
+          <th>Ville</th>
         </tr>
         </thead>
         <tbody>
-        <tr>
-          <td><a href="pages/examples/invoice.html">OR9842</a></td>
-          <td>Call of Duty IV</td>
-          <td><span class="label label-success">Shipped</span></td>
-          <td>
-            <div class="sparkbar" data-color="#00a65a" data-height="20">90,80,90,-70,61,-83,63</div>
-          </td>
-        </tr>
+<?php
+
+while ($seance = $seancesList->fetch()) {
+  ?>
+  <tr class='clickableRow' data-href='index.php?action=seance&amp;id=<?= $seance['id_seance'] ?>'>
+    <td><?= $seance['name'] ?></td>
+    <td><?= $seance['seance_date_fr'] ?></td>
+    <td><span class="label label-success"><?= $seance['type'] ?></span></td>
+    <td><?= $seance['place'] ?></td>
+  </tr>
+  <?php
+}
+
+ ?>
+
+<!--
         <tr>
           <td><a href="pages/examples/invoice.html">OR1848</a></td>
           <td>Samsung Smart TV</td>
@@ -78,6 +86,7 @@
             <div class="sparkbar" data-color="#00a65a" data-height="20">90,80,90,-70,61,-83,63</div>
           </td>
         </tr>
+      -->
         </tbody>
       </table>
     </div>
@@ -85,8 +94,8 @@
   </div>
   <!-- /.box-body -->
   <div class="box-footer clearfix">
-    <a href="javascript:void(0)" class="btn btn-sm btn-info btn-flat pull-left">Place New Order</a>
-    <a href="javascript:void(0)" class="btn btn-sm btn-default btn-flat pull-right">View All Orders</a>
+    <a href="index.php?action=newSeance" class="btn btn-sm btn-info btn-flat pull-left">Ajouter Seance</a>
+    <a href="index.php?action=listSeances" class="btn btn-sm btn-default btn-flat pull-right">Seances List</a>
   </div>
   <!-- /.box-footer -->
 </div>

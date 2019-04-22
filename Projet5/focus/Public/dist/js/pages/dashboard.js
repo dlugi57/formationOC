@@ -1,7 +1,3 @@
-
-
-
-
 $(function () {
 
   'use strict';
@@ -9,8 +5,7 @@ $(function () {
   if (document.location.href.indexOf("dashboard") >= 0) {
       console.log("zmien to stworz script balise i tam zawolaj te js w dashboard html");
 
-  $(".sendToClient").click(function() {
-    console.log("chujek");
+  $(".clickableRow").click(function() {
       window.location = $(this).data("href");
   });
 

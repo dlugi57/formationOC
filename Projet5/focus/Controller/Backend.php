@@ -26,6 +26,7 @@ class Backend
       $sumBrutSeances = $seancesManager->totals();
       $monthSeances = $seancesManager->monthSeances();
       $typeSession = $seancesManager->typeSession();
+      $seancesList= $seancesManager->getSeances();
 
       $sumNet =  Backend::sumNet();
 

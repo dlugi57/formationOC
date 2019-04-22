@@ -5,7 +5,14 @@
 $(function () {
 
   'use strict';
+  console.log(document.location.href);
+  if (document.location.href.indexOf("dashboard") >= 0) {
+      console.log("zmien to stworz script balise i tam zawolaj te js w dashboard html");
 
+  $(".sendToClient").click(function() {
+    console.log("chujek");
+      window.location = $(this).data("href");
+  });
 
   //--------------
   //- AREA CHART -
@@ -160,7 +167,6 @@ $(function () {
 
 
 
-});
 
 
 // -------------
@@ -246,3 +252,5 @@ pieChartCont.Doughnut(PieData, pieOptionsCont);
 // -----------------
 // - END PIE CHART -
 // -----------------
+}
+});

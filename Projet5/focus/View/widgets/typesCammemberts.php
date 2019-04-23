@@ -24,11 +24,11 @@
           //array to populate data to show
           $contactByArray = array();
           //array with colors of cammemberts
-          $colors = array('#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de','#f56954', '#00a65a', '#f39c12');
+          //$colors = array('#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de','#f56954', '#00a65a', '#f39c12');
           //array with colors of icons next to the cammemberts
-          $colorsIcon = array('text-red', 'text-green', 'text-yellow', 'text-aqua', 'text-light-blue', 'text-gray', 'text-red', 'text-green', 'text-yellow');
+          //$colorsIcon = array('text-red', 'text-green', 'text-yellow', 'text-aqua', 'text-light-blue', 'text-gray', 'text-red', 'text-green', 'text-yellow');
           //initialize first color
-          $colorNumber = 0;
+          //$colorNumber = 0;
           //fetch of the result
           $result = $contactBy->fetchAll();
           //first of 2 loops client
@@ -44,7 +44,7 @@
             $contactByObj->highlight = $data['color_camembert'];
             $contactByObj->label = $data['nom_contact_by'];
             //change color
-            $colorNumber = $colorNumber + 1;
+            //$colorNumber = $colorNumber + 1;
             //put object into array to send to the js
             array_push($contactByArray,$contactByObj);
           };

@@ -19,6 +19,7 @@
           <th>Nom</th>
           <th>Telephone</th>
           <th>Email</th>
+          <th>Contact par</th>
           <th>Ville</th>
         </tr>
         </thead>
@@ -31,7 +32,8 @@
               <td><?= $client['name'] ?></td>
               <td><?= $client['tel'] ?></td>
               <td><?= $client['email'] ?></td>
-              <td><?= $client['city'] ?></td>
+              <td><span class="label <?= $client['color_boot']  ?>"><?= $client['nom_contact_by'] ?></span></td>
+              <td><?= $client['city'] ?></td>              
             </tr>
             <?php
           }

@@ -9,7 +9,11 @@ class ClientManager extends Manager
     public function getClients()
     {
         $db = $this->dbConnect();
-        $req = $db->query('SELECT *, DATE_FORMAT(creation_date, \'%d/%m/%Y\') AS creation_date_fr FROM clients ORDER BY creation_date DESC');
+
+        //$req = $db->query('SELECT *,seances.creation_date AS creation_date_seance, DATE_FORMAT(seance_date, \'%d/%m/%Y\') AS seance_date_fr FROM seances INNER JOIN clients ON seances.clients_id = clients.id_client INNER JOIN type_seance ON type = id_type_seance ORDER BY seance_date ASC');
+
+        $req = $db->query('SELECT *, DATE_FORMAT(creation_date, \'%d/%m/%Y\') AS creation_date_fr FROM clients INNER JOIN contact_by ON contact_by = id_contact_by ORDER BY creation_date DESC');
+        //  $req = $db->query('SELECT *, DATE_FORMAT(creation_date, \'%d/%m/%Y\') AS creation_date_fr FROM clients ORDER BY creation_date DESC');
 
         return $req;
     }

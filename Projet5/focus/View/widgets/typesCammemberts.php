@@ -111,21 +111,21 @@
           //fetch of data
           $resultSession = $typeSession->fetchAll();
           //initialize colors
-          $colorSessionNumber = 0;
+          //$colorSessionNumber = 0;
           //first of two session loops
           foreach ($resultSession as $data)
           {
             ?>
-            <li><i class="fa fa-circle-o <?= $colorsIcon[$colorSessionNumber]  ?>"></i> <?= $data['nom_type']  ?></li>
+            <li><i class="fa fa-circle-o <?= $data['color_dash'];  ?>"></i> <?= $data['nom_type']  ?></li>
             <?php
             //create object to send to the js
             $typeSessionObj = new stdClass();
             $typeSessionObj->value = $data['nb'];
-            $typeSessionObj->color = $colors[$colorSessionNumber];
-            $typeSessionObj->highlight = $colors[$colorSessionNumber];
+            $typeSessionObj->color = $data['color_camembert'];
+            $typeSessionObj->highlight = $data['color_camembert'];
             $typeSessionObj->label = $data['nom_type'];
             //change color
-            $colorSessionNumber = $colorSessionNumber + 1;
+            //$colorSessionNumber = $colorSessionNumber + 1;
             //put the object into array to send it to the js
             array_push($typeSessionArray,$typeSessionObj);
           }
@@ -147,7 +147,7 @@
       {
         ?>
          <li><a href="#"><?= $data['nom_type'] ?>
-           <span class="pull-right <?= $colorsIcon[$loopSessionCounter]  ?>"> <?= $data['nb'] ?></span></a>
+           <span class="pull-right <?= $data['color_dash'];  ?>"> <?= $data['nb'] ?></span></a>
          </li>
         <?php
         //change color and counter

@@ -4933,6 +4933,8 @@ table.text-center th {
 .chart canvas {
   width: 100% !important;
 }
+
+
 /*
  * Misc: print
  * -----------
@@ -4975,5 +4977,39 @@ table.text-center th {
   .table-responsive > .table tr th,
   .table-responsive > .table tr td {
     white-space: normal !important;
+  }
+}
+/*
+*
+*
+MAIN
+*
+*
+*/
+.logo-img{
+  width: 70%;
+}
+.logo-img-small{
+  width: 100%;
+}
+
+@media (max-width: 767px) {
+  .logo-img{
+    width: 20%;
+  }
+}
+@media (max-width: 580px) {
+  .logo-img{
+    width: 25%;
+  }
+}
+@media (max-width: 480px) {
+  .logo-img{
+    width: 30%;
+  }
+}
+@media (max-width: 380px) {
+  .logo-img{
+    width: 40%;
   }
 }

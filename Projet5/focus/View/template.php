@@ -14,10 +14,10 @@
     <!-- Logo -->
     <a href="index.php?action=dashboard" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>Fo</b>cus</span>
+      <span class="logo-mini"><img class="logo-img-small" src="Public/dist/img/logo-rond.png" ></span>
       <!-- logo for regular state and mobile devices
       <span class="logo-lg"><b>Sunny</b>Moments</span>-->
-      <img class="logo-img" src="Public/dist/img/logo.png" ></span>
+      <span class="logo-lg"><img class="logo-img" src="Public/dist/img/logo.png" ></span>
 
     </a>
     <!-- Header Navbar: style can be found in header.less -->

@@ -35,14 +35,14 @@
           foreach($result as $data)
           {
             ?>
-            <li><i class="fa fa-circle-o <?= $colorsIcon[$colorNumber]  ?>"></i> <?= $data['contact_by']  ?></li>
+            <li><i class="fa fa-circle-o <?= $data['color_dash'];  ?>"></i> <?= $data['nom_contact_by']  ?></li>
             <?php
             //create object to send to the js
             $contactByObj = new stdClass();
             $contactByObj->value = $data['nb'];
-            $contactByObj->color = $colors[$colorNumber];
-            $contactByObj->highlight = $colors[$colorNumber];
-            $contactByObj->label = $data['contact_by'];
+            $contactByObj->color = $data['color_camembert'];
+            $contactByObj->highlight = $data['color_camembert'];
+            $contactByObj->label = $data['nom_contact_by'];
             //change color
             $colorNumber = $colorNumber + 1;
             //put object into array to send to the js
@@ -65,8 +65,8 @@
       foreach($result as $data)
       {
         ?>
-        <li><a href="#"><?= $data['contact_by'] ?>
-          <span class="pull-right <?= $colorsIcon[$loopCounter]  ?>"> <?= $data['nb'] ?></span></a>
+        <li><a href="#"><?= $data['nom_contact_by'] ?>
+          <span class="pull-right <?= $data['color_dash'];  ?>"> <?= $data['nb'] ?></span></a>
         </li>
         <?php
         //change color and counter

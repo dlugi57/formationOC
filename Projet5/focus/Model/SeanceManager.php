@@ -64,7 +64,7 @@ class SeanceManager extends Manager
   //  SELECT count(s.id_seance) as nb, s.type, t.nom_type FROM seances s INNER JOIN type_seance t ON s.type = t.id_type_seance GROUP BY t.nom_type LIMIT 0,8
 
     //$sql = 'SELECT count(*) as nb, type FROM seances GROUP BY type LIMIT 0,8';
-    $sql = 'SELECT count(s.id_seance) as nb, s.type, t.nom_type, t.color_camembert, t.color_dash, t.color_boot FROM seances s INNER JOIN type_seance t ON s.type = t.id_type_seance GROUP BY t.nom_type';
+    $sql = 'SELECT count(s.id_seance) as nb, s.type, t.nom_type, t.color_camembert, t.color_dash, t.color_boot FROM seances s INNER JOIN type_seance t ON s.type = t.id_type_seance GROUP BY t.nom_type ORDER BY nb DESC';
     $req = $db->query($sql);
 
     return $req;

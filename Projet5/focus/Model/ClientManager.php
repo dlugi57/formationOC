@@ -34,7 +34,9 @@ class ClientManager extends Manager
 
     public function contactBy(){
       $db = $this->dbConnect();
-      $sql = 'SELECT count(*) as nb, contact_by FROM clients GROUP BY contact_by LIMIT 0,8';
+      //$sql = 'SELECT count(s.id_seance) as nb, s.type, t.nom_type, t.color_camembert, t.color_dash, t.color_boot FROM seances s INNER JOIN type_seance t ON s.type = t.id_type_seance GROUP BY t.nom_type';
+      $sql = 'SELECT count(c.id_client) as nb, c.contact_by, b.nom_contact_by, b.color_camembert, b.color_dash, b.color_boot FROM clients c INNER JOIN contact_by b ON c.contact_by = b.id_contact_by GROUP BY b.nom_contact_by ORDER BY nb DESC';
+      //$sql = 'SELECT count(*) as nb, contact_by FROM clients GROUP BY contact_by LIMIT 0,8';
       $req = $db->query($sql);
 
       return $req;

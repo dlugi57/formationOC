@@ -18,7 +18,7 @@
           <th>Nom</th>
           <th>Date</th>
           <th>Type</th>
-          <th>Ville</th>
+          <th>Endroit</th>
         </tr>
         </thead>
         <tbody>

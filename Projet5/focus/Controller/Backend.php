@@ -27,6 +27,8 @@ class Backend
       $countFutureSeances = $seancesManager->countFutureSeances();
       $sumBrutSeances = $seancesManager->totals();
       $monthSeances = $seancesManager->monthSeances();
+      $monthSeancesCmd = $seancesManager->monthSeancesCmd();
+
       $typeSession = $seancesManager->typeSession();
       $seancesList= $seancesManager->getSeances();
 
@@ -37,12 +39,47 @@ class Backend
       $sumBrut = Backend::sumBrut();
     //  $instagram = Backend::instagram();
       $facebook = Backend::facebook();
+      //create array to send them into js
+      $resultsNb = array();
+      $resultsMonth = array();
+      $resultsNbSeance = array();
+      $resultsMonthCash = array();
+      $resultsMonthCashNet = array();
+
+      while ($data = $monthClients->fetch())
+      {
+        $monthNum  = $data['month'];
+        $monthName = date('F', mktime(0, 0, 0, $monthNum, 10));
+        array_push($resultsNb,$data['nb']);
+        array_push($resultsMonth, $monthName);
+      }
+
+      while ($data = $monthSeances->fetch())
+      {
+        //$depenses = $data['drove'] * 0.15 + $data['paied'];
+        //$cashNet = $data['cash'] - $depenses;
+      //  array_push($resultsMonthCashNet,$cashNet);
+        array_push($resultsNbSeance,$data['nb']);
+      //  array_push($resultsMonthCash, $data['cash']);
+      }
+
+      while ($data = $monthSeancesCmd->fetch())
+      {
+      //  monthname(creation_date), sum(val1) seance_cash, sum(val2) cmd_cash, sum(val3) seance_depense, sum(val4) cmd_depense, sum(val5) seances_km, sum(val6) cmd_km
+        $depenses = $data['seances_km'] * 0.15 + $data['cmd_km'] * 0.15 + $data['seance_depense'] + $data['cmd_depense'];
+        $entrance = $data['seance_cash'] + $data['cmd_cash'];
+        $cashNet = $entrance - $depenses;
+        array_push($resultsMonthCashNet,$cashNet);
+      //  array_push($resultsNbSeance,$data['nb']);
+        array_push($resultsMonthCash, $entrance);
+      }
+
 
 
       require('View/dashboard.php');
 
     }
-    
+
 
     public function sumNet(){
       $seancesManager = new SeanceManager();

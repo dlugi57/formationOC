@@ -36,28 +36,16 @@
 <!-- /.box -->
 <?php
 //create array to send them into js
-$resultsNb = array();
-$resultsMonth = array();
-$resultsNbSeance = array();
-$resultsMonthCash = array();
-$resultsMonthCashNet = array();
 
-while ($data = $monthClients->fetch())
-{
-  $monthNum  = $data['month'];
-  $monthName = date('F', mktime(0, 0, 0, $monthNum, 10));
-  array_push($resultsNb,$data['nb']);
-  array_push($resultsMonth, $monthName);
-}
 
-while ($data = $monthSeances->fetch())
-{
-  $depenses = $data['drove'] * 0.15 + $data['paied'];
-  $cashNet = $data['cash'] - $depenses;
-  array_push($resultsMonthCashNet,$cashNet);
-  array_push($resultsNbSeance,$data['nb']);
-  array_push($resultsMonthCash, $data['cash']);
-}
+
+/*
+*
+*
+*
+*
+*
+*/
 
 ?>
 <script type="text/javascript">

@@ -256,11 +256,14 @@ var newAjax = new Ajax;
 
 //AJAX
 newAjax.ajaxGet(url, function(reponse) {
+var instagram = JSON.parse(reponse);
 
-console.log(reponse);
-
-
-
+$("#instaFullName").text(instagram.data.full_name);
+$("#instaUserName").text(instagram.data.username);
+$("#instaProfile").attr("src", instagram.data.profile_picture);
+$("#instaPosts").text(instagram.data.counts.media);
+$("#instaFollowers").text(instagram.data.counts.followed_by);
+$("#instaFollows").text(instagram.data.counts.follows);
 })
 
 

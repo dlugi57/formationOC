@@ -144,7 +144,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/charts/chartjs.html"><i class="fa fa-list-ul"></i> Liste</a></li>
+            <li><a href="index.php?action=listCommands"><i class="fa fa-list-ul"></i> Liste</a></li>
             <li><a href="pages/charts/morris.html"><i class="fa fa-plus"></i> Ajouter</a></li>
 
           </ul>

@@ -33,6 +33,14 @@ try {
             $seancesList = $controller->listSeances();
             //listClients();
         break;
+//CLIENT LIST
+        case 'listCommands':
+            $commandsList = $controller->listCommands();
+            //listClients();
+        break;
+
+
+
 
 //DEFAULT HOME
         default:

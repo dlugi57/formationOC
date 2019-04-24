@@ -4,9 +4,11 @@ namespace Controller;
 
 require_once "Model/ClientManager.php";
 require_once "Model/SeanceManager.php";
+require_once "Model/CommandManager.php";
 
 use Model\SeanceManager;
 use Model\ClientManager;
+use Model\CommandManager;
 use Exception;
 
 class Backend
@@ -76,5 +78,19 @@ class Backend
       {
           require('View/seancesList.php');
       }
+    }
+
+    public function listCommands()
+    {
+      $commandsManager = new CommandManager();
+      $commands = $commandsManager->getCommands();
+      if ($commands === false)
+      {
+          throw new Exception('Impossible d\'afficher le contenue !');
+      }else
+      {
+          require('View/commandsList.php');
+      }
+
     }
 }

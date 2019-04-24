@@ -1,6 +1,7 @@
 $(function () {
 
   'use strict';
+
   console.log(document.location.href);
   if (document.location.href.indexOf("dashboard") >= 0) {
       console.log("zmien to stworz script balise i tam zawolaj te js w dashboard html");
@@ -247,5 +248,21 @@ pieChartCont.Doughnut(PieData, pieOptionsCont);
 // -----------------
 // - END PIE CHART -
 // -----------------
+
+console.log('chuj');
+var newAjax = new Ajax;
+
+ var url = 'https://api.instagram.com/v1/users/self/?access_token=6995657814.d948bef.c504d590713243449dd958d4c3b31495';
+
+//AJAX
+newAjax.ajaxGet(url, function(reponse) {
+
+console.log(reponse);
+
+
+
+})
+
+
 }
 });

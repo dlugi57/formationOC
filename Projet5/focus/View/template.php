@@ -276,6 +276,7 @@
 
 <script src="Public/dist/js/monthlyRecap.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="Public/dist/js/pages/ajax.js"></script>
 <script src="Public/dist/js/pages/dashboard.js"></script>
 <script src="Public/dist/js/pages/dashboard2.js"></script>
 <!-- AdminLTE for demo purposes -->

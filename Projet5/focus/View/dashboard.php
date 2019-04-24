@@ -111,7 +111,7 @@ ob_start();
 
           <?php require('widgets/typesCammemberts.php') ?>
                           <?php require('widgets/insta.php'); ?>
-
+<?php require('widgets/fb.php'); ?>
 
 
 
@@ -128,7 +128,7 @@ ob_start();
     <div class="row">
 
 
-                  <?php require('widgets/fb.php'); ?>
+
                   <?php require('widgets/site.php'); ?>
 
     </div>

@@ -31,6 +31,8 @@ class Backend
       $seancesList= $seancesManager->getSeances();
 
       $sumNet =  Backend::sumNet();
+      $sumBrut = Backend::sumBrut();
+      $instagram = Backend::instagram();
 
 
       require('View/dashboard.php');
@@ -40,12 +42,28 @@ class Backend
     public function sumNet(){
       $seancesManager = new SeanceManager();
       $sumNetSeances = $seancesManager->totals();
+      $commandsManager = new CommandManager();
+      $sumNetCmd = $commandsManager->totalsCmd();
 
-      $summary = $sumNetSeances['sumPrise'] - $sumNetSeances['sumDep'] - ($sumNetSeances['sumKm'] * 0.15);
+      $summarySeances = $sumNetSeances['sumPrise'] - $sumNetSeances['sumDep'] - ($sumNetSeances['sumKm'] * 0.15);
+      $sumaryCmd = $sumNetCmd['sumPriseCmd'] - $sumNetCmd['sumDepCmd'];
+      $summary = $summarySeances + $sumaryCmd;
 
       return $summary;
 
     }
+
+    public function sumBrut(){
+      $seancesManager = new SeanceManager();
+      $sumBrutSeances = $seancesManager->totals();
+      $commandsManager = new CommandManager();
+      $sumBrutCmd = $commandsManager->totalsCmd();
+
+      $summary = $sumBrutSeances['sumPrise'] + $sumBrutCmd['sumPriseCmd'];
+      return $summary;
+
+    }
+
     public function listClients()
     {
         $clientsManager = new ClientManager();
@@ -92,5 +110,18 @@ class Backend
           require('View/commandsList.php');
       }
 
+    }
+
+    public function instagram(){
+      $url = 'https://api.instagram.com/v1/users/self/?access_token=6995657814.d948bef.c504d590713243449dd958d4c3b31495';
+      //$url = 'https://api.instagram.com/v1/users/sunnymoments.photo?access_token=6995657814.d948bef.c504d590713243449dd958d4c3b31495';
+      $api_response = file_get_contents($url);
+      $record = json_decode($api_response);
+      return $record;
+    //  echo $record->data->counts->followed_by;
+
+      // if nothing is echoed try
+      //echo '<pre>' . print_r($api_response, true) . '</pre>';
+    //  echo '<pre>' . print_r($record, true) . '</pre>';
     }
 }

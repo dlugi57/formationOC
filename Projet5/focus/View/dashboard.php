@@ -28,7 +28,7 @@ ob_start();
             <div class="inner">
               <h3><?= $sumNet ?><sup style="font-size: 20px">€</sup></h3>
 
-              <p>Net</p>
+              <p>Net = Seances + CMD</p>
             </div>
             <div class="icon">
               <i class="fa fa-home"></i>
@@ -40,9 +40,9 @@ ob_start();
           <!-- small box -->
           <div class="small-box bg-green">
             <div class="inner">
-              <h3><?= $sumBrutSeances['sumPrise'] ?><sup style="font-size: 20px">€</sup></h3>
+              <h3><?= $sumBrut ?><sup style="font-size: 20px">€</sup></h3>
 
-              <p>Brut</p>
+              <p>Brut = Seances + CMD</p>
             </div>
             <div class="icon">
               <i class="fa fa-money"></i>
@@ -110,6 +110,7 @@ ob_start();
         <section class="col-lg-4">
 
           <?php require('widgets/typesCammemberts.php') ?>
+                          <?php require('widgets/insta.php'); ?>
 
 
 
@@ -126,7 +127,7 @@ ob_start();
 
     <div class="row">
 
-                  <?php require('widgets/insta.php'); ?>
+
                   <?php require('widgets/fb.php'); ?>
                   <?php require('widgets/site.php'); ?>
 

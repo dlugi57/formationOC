@@ -30,6 +30,9 @@ class Backend
       $typeSession = $seancesManager->typeSession();
       $seancesList= $seancesManager->getSeances();
 
+      $commandsManager = new CommandManager();
+      $sumMonthCmd = $commandsManager->monthCmd();
+
       $sumNet =  Backend::sumNet();
       $sumBrut = Backend::sumBrut();
     //  $instagram = Backend::instagram();
@@ -39,12 +42,14 @@ class Backend
       require('View/dashboard.php');
 
     }
+    
 
     public function sumNet(){
       $seancesManager = new SeanceManager();
       $sumNetSeances = $seancesManager->totals();
       $commandsManager = new CommandManager();
       $sumNetCmd = $commandsManager->totalsCmd();
+      //$sumMonthCmd = $commandsManager->monthCmd();
 
       $summarySeances = $sumNetSeances['sumPrise'] - $sumNetSeances['sumDep'] - ($sumNetSeances['sumKm'] * 0.15);
       $sumaryCmd = $sumNetCmd['sumPriseCmd'] - $sumNetCmd['sumDepCmd'];

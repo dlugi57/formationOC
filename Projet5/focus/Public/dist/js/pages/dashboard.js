@@ -249,23 +249,27 @@ pieChartCont.Doughnut(PieData, pieOptionsCont);
 // - END PIE CHART -
 // -----------------
 
-console.log('chuj');
+
+// -----------------
+// -   AJAX INSTA  -
+// -----------------
+
 var newAjax = new Ajax;
-
- var url = 'https://api.instagram.com/v1/users/self/?access_token=6995657814.d948bef.c504d590713243449dd958d4c3b31495';
-
-//AJAX
-newAjax.ajaxGet(url, function(reponse) {
-var instagram = JSON.parse(reponse);
-
-$("#instaFullName").text(instagram.data.full_name);
-$("#instaUserName").text(instagram.data.username);
-$("#instaProfile").attr("src", instagram.data.profile_picture);
-$("#instaPosts").text(instagram.data.counts.media);
-$("#instaFollowers").text(instagram.data.counts.followed_by);
-$("#instaFollows").text(instagram.data.counts.follows);
+var url = 'https://api.instagram.com/v1/users/self/?access_token=6995657814.d948bef.c504d590713243449dd958d4c3b31495';
+newAjax.ajaxGet(url, function(reponse)
+{
+  var instagram = JSON.parse(reponse);
+  $("#instaFullName").text(instagram.data.full_name);
+  $("#instaUserName").text(instagram.data.username);
+  $("#instaProfile").attr("src", instagram.data.profile_picture);
+  $("#instaPosts").text(instagram.data.counts.media);
+  $("#instaFollowers").text(instagram.data.counts.followed_by);
+  $("#instaFollows").text(instagram.data.counts.follows);
 })
 
+// -----------------
+// -END AJAX INSTA -
+// -----------------
 
 }
 });

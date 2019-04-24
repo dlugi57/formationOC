@@ -41,7 +41,7 @@ class SeanceManager extends Manager
   {
 
     $db = $this->dbConnect();
-    $sql = 'SELECT SUM(prise) AS sumPrise,SUM(depenses) AS sumDep, SUM(km) AS sumKm FROM `seances`';
+    $sql = 'SELECT SUM(prise) AS sumPrise,SUM(depenses) AS sumDep, SUM(km) AS sumKm FROM seances';
     $result = $db->query($sql);
     $sumSeances = $result->fetch();
     return $sumSeances;

@@ -24,5 +24,14 @@ class CommandManager extends Manager
 
   }
 
+  public function monthCmd()
+  {
+    $db = $this->dbConnect();
+    $sql = 'SELECT Month(command_date) as month, Count(*) as nb, SUM(prise_command) as cash, SUM(cost_command) as paied FROM commands GROUP BY Month(command_date) LIMIT 0,6';
+    $req = $db->query($sql);
+
+    return $req;
+  }
+
 
 }

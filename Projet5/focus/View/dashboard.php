@@ -109,7 +109,7 @@ ob_start();
         <!-- right col (We are only adding the ID to make the widgets sortable)-->
         <section class="col-lg-4">
 
-          <?php require('widgets/typesCammemberts.php') ?>
+          <?php require('widgets/typesCammemberts.php') ?><?php require('widgets/commands.php'); ?>
                           <?php require('widgets/insta.php'); ?>
 <?php require('widgets/fb.php'); ?>
 

@@ -13,108 +13,137 @@ use Model\CommandManager;
 use Model\TaxesManager;
 use Exception;
 
-/**
- *
- */
 class Dashboard
 {
   public function dashboard()
   {
     $clientsManager = new ClientManager();
+    $seancesManager = new SeanceManager();
+    $commandsManager = new CommandManager();
+    //GLOBAL CASH 4 mini widgets
+    $sumNet =  Dashboard::sumNet();
+    $sumBrut = Dashboard::sumBrut();
     $countClients = $clientsManager->countClients();
-    $monthClients = $clientsManager->monthClients();
+    $countSeances = $seancesManager->countSeances();
+
+    //CLIENTS
     $contactBy = $clientsManager->contactBy();
     $clientsList = $clientsManager->getClients();
 
-
-    $seancesManager = new SeanceManager();
-    $countSeances = $seancesManager->countSeances();
+    //SEANCES
     $countFutureSeances = $seancesManager->countFutureSeances();
     $sumBrutSeances = $seancesManager->totals();
-    $monthSeances = $seancesManager->monthSeances();
-    $monthSeancesCmd = $seancesManager->monthSeancesCmd();
-
-    //$test = $seancesManager->test();
-
     $typeSession = $seancesManager->typeSession();
     $seancesList= $seancesManager->getSeances();
 
-    $commandsManager = new CommandManager();
+    //COMMANDS
     $sumMonthCmd = $commandsManager->monthCmd();
 
-    $taxesManager = new TaxesManager();
-    $monthPaiedTax = $taxesManager->monthPaiedTax();
+    //Monthly recaps send arrays into JS
+    $resultsMonthPaiedTax = Dashboard::monthTax();
+    $resultsNb = Dashboard::monthClients();
+    $resultsMonth = Dashboard::monthList();
+    $resultsNbSeance = Dashboard::monthBySeances();
+    $resultsMonthCashNet = Dashboard::monthNet();
+    $resultsMonthCash = Dashboard::monthBrut();
 
-
-    $sumNet =  Dashboard::sumNet();
-    $sumBrut = Dashboard::sumBrut();
-  //  $instagram = Backend::instagram();
+    //facebook
     $facebook = Dashboard::facebook();
-    //create array to send them into js
-    $resultsNb = array();
-    $resultsMonth = array();
-    $resultsNbSeance = array();
-    $resultsMonthCash = array();
-    $resultsMonthCashNet = array();
-    $resultsMonthPaiedTax = array();
-
-    while ($data = $monthClients->fetch())
-    {
-      $monthNum  = $data['month'];
-      $monthName = date('F', mktime(0, 0, 0, $monthNum, 10));
-      array_push($resultsNb,intval($data['nb']));
-      array_push($resultsMonth, $monthName);
-    }
-
-    while ($data = $monthPaiedTax->fetch())
-    {
-      $sumTax  = $data['taxesMonth'];
-
-      array_push($resultsMonthPaiedTax, intval($sumTax));
-    }
-
-    while ($data = $monthSeances->fetch())
-    {
-      //$depenses = $data['drove'] * 0.15 + $data['paied'];
-      //$cashNet = $data['cash'] - $depenses;
-    //  array_push($resultsMonthCashNet,$cashNet);
-      array_push($resultsNbSeance,intval($data['nb']));
-    //  array_push($resultsMonthCash, $data['cash']);
-    }
-
-    while ($data = $monthSeancesCmd->fetch())
-    {
-    //  monthname(creation_date), sum(val1) seance_cash, sum(val2) cmd_cash, sum(val3) seance_depense, sum(val4) cmd_depense, sum(val5) seances_km, sum(val6) cmd_km
-      $depenses = $data['seances_km'] * 0.15 + $data['cmd_km'] * 0.15 + $data['seance_depense'] + $data['cmd_depense'];
-      $entrance = $data['seance_cash'] + $data['cmd_cash'];
-      $cashNet = $entrance - $depenses;
-      array_push($resultsMonthCashNet,intval($cashNet));
-    //  array_push($resultsNbSeance,$data['nb']);
-      array_push($resultsMonthCash, intval($entrance));
-    }
-
-
-
     require('View/dashboard.php');
 
   }
 
+  public function monthBrut()
+  {
+    $seancesManager = new SeanceManager();
+    $monthSeancesCmd = $seancesManager->monthSeancesCmd();
+    $resultsMonthCash = array();
+    while ($data = $monthSeancesCmd->fetch())
+    {
+      $entrance = $data['seance_cash'] + $data['cmd_cash'];
+      array_push($resultsMonthCash, intval($entrance));
+    }
+    return $resultsMonthCash;
+  }
+
+  public function monthNet()
+  {
+    $seancesManager = new SeanceManager();
+    $monthSeancesCmd = $seancesManager->monthSeancesCmd();
+    $resultsMonthCashNet = array();
+    while ($data = $monthSeancesCmd->fetch())
+    {
+      $depenses = $data['seances_km'] * 0.15 + $data['cmd_km'] * 0.15 + $data['seance_depense'] + $data['cmd_depense'];
+      $entrance = $data['seance_cash'] + $data['cmd_cash'];
+      $cashNet = $entrance - $depenses;
+      array_push($resultsMonthCashNet,intval($cashNet));
+    }
+    return $resultsMonthCashNet;
+  }
+
+  public function monthBySeances()
+  {
+    $seancesManager = new SeanceManager();
+    $monthSeances = $seancesManager->monthSeances();
+    $resultsNbSeance = array();
+    while ($data = $monthSeances->fetch())
+    {
+      array_push($resultsNbSeance,intval($data['nb']));
+    }
+    return $resultsNbSeance;
+  }
+
+  public function monthList()
+  {
+    $clientsManager = new ClientManager();
+    $monthClients = $clientsManager->monthClients();
+    $resultsMonth = array();
+    while ($data = $monthClients->fetch())
+    {
+      $monthNum  = $data['month'];
+      $monthName = date('F', mktime(0, 0, 0, $monthNum, 10));
+      array_push($resultsMonth, $monthName);
+    }
+    return $resultsMonth;
+  }
+
+  public function monthClients()
+  {
+    $clientsManager = new ClientManager();
+    $monthClients = $clientsManager->monthClients();
+    $resultsNb = array();
+    while ($data = $monthClients->fetch())
+    {
+      array_push($resultsNb,intval($data['nb']));
+    }
+    return $resultsNb;
+  }
+
+  public function monthTax()
+  {
+    $taxesManager = new TaxesManager();
+    $monthPaiedTax = $taxesManager->monthPaiedTax();
+    $resultsMonthPaiedTax = array();
+    while ($data = $monthPaiedTax->fetch())
+    {
+      $sumTax  = $data['taxesMonth'];
+      array_push($resultsMonthPaiedTax, intval($sumTax));
+    }
+    return $resultsMonthPaiedTax;
+  }
 
   public function sumNet(){
     $seancesManager = new SeanceManager();
     $sumNetSeances = $seancesManager->totals();
     $commandsManager = new CommandManager();
     $sumNetCmd = $commandsManager->totalsCmd();
-    //$sumMonthCmd = $commandsManager->monthCmd();
     $taxesManager = new TaxesManager();
     $sumTaxes = $taxesManager->totalsTax();
-
     $summarySeances = $sumNetSeances['sumPrise'] - $sumNetSeances['sumDep'] - ($sumNetSeances['sumKm'] * 0.15);
     $sumaryCmd = $sumNetCmd['sumPriseCmd'] - $sumNetCmd['sumDepCmd'];
     $summary = $summarySeances + $sumaryCmd - $sumTaxes['sumPaidTax'];
 
     return $summary;
-
   }
 
   public function sumBrut(){
@@ -122,12 +151,13 @@ class Dashboard
     $sumBrutSeances = $seancesManager->totals();
     $commandsManager = new CommandManager();
     $sumBrutCmd = $commandsManager->totalsCmd();
-
     $summary = $sumBrutSeances['sumPrise'] + $sumBrutCmd['sumPriseCmd'];
-    return $summary;
 
+    return $summary;
   }
-  public function facebook(){
+
+  public function facebook()
+  {
     $urlFB = "https://graph.facebook.com/";
     $fb_page = 'SunnyMomentsPhoto';
     $infosFB = '?fields=engagement,name,rating_count,overall_star_rating,username,cover,picture.height(300)&access_token=';

@@ -301,6 +301,7 @@
 <script src="Public/js/ajax.js"></script>
 <script src="Public/js/dashboard.js"></script>
 <script src="Public/js/backend.js"></script>
+<script src="Public/js/seances.js"></script>
 <!-- DataTables -->
 <script src="Public/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
 <script src="Public/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>

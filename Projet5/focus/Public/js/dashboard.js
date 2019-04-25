@@ -5,11 +5,11 @@ $(function () {
   console.log(document.location.href);
   if (document.location.href.indexOf("dashboard") >= 0) {
       console.log("zmien to stworz script balise i tam zawolaj te js w dashboard html");
-
+/*
   $(".clickableRow").click(function() {
       window.location = $(this).data("href");
   });
-
+*/
 
 
 

@@ -89,7 +89,7 @@ class SeanceManager extends Manager
 
   public function typeCashSession(){
     $db = $this->dbConnect();
-    $sql = 'SELECT sum(prise) AS summaryType, nom_type FROM `seances` INNER JOIN type_seance ON id_type_seance = type GROUP BY type ORDER BY summaryType DESC';
+    $sql = 'SELECT sum(prise) AS summaryType, color_boot, nom_type FROM `seances` INNER JOIN type_seance ON id_type_seance = type GROUP BY type ORDER BY summaryType DESC LIMIT 0,4';
     $req = $db->query($sql);
 
     return $req;

@@ -1,4 +1,4 @@
-<div class="box box-default">
+<div class="box box-primary">
   <div class="box-header with-border">
     <h3 class="box-title">Contacte Par</h3>
 
@@ -74,7 +74,7 @@
   <!-- /.footer -->
 </div>
 <!-- /.box -->
-<div class="box box-default">
+<div class="box box-success">
   <div class="box-header with-border">
     <h3 class="box-title">Type session</h3>
 

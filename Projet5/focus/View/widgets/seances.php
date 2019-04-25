@@ -1,5 +1,5 @@
 <!-- TABLE: LATEST ORDERS -->
-<div class="box box-info">
+<div class="box box-danger">
   <div class="box-header with-border">
     <h3 class="box-title">Seances</h3>
 
@@ -44,7 +44,7 @@
   </div>
   <!-- /.box-body -->
   <div class="box-footer clearfix">
-    <a href="index.php?action=newSeance" class="btn btn-sm btn-info btn-flat pull-left">Ajouter Seance</a>
+    <a href="index.php?action=newSeance" class="btn btn-sm btn-danger btn-flat pull-left">Ajouter Seance</a>
     <a href="index.php?action=listSeances" class="btn btn-sm btn-default btn-flat pull-right">Seances List</a>
   </div>
   <!-- /.box-footer -->

@@ -1,6 +1,6 @@
 <!-- TABLE: LATEST ORDERS -->
 
-<div class="box box-info">
+<div class="box box-warning">
   <div class="box-header with-border">
     <h3 class="box-title">Clients</h3>
 
@@ -33,7 +33,7 @@
               <td><?= $client['tel'] ?></td>
               <td><?= $client['email'] ?></td>
               <td><span class="label <?= $client['color_boot']  ?>"><?= $client['nom_contact_by'] ?></span></td>
-              <td><?= $client['city'] ?></td>              
+              <td><?= $client['city'] ?></td>
             </tr>
             <?php
           }
@@ -45,7 +45,7 @@
   </div>
   <!-- /.box-body -->
   <div class="box-footer clearfix">
-    <a href="index.php?action=newClient" class="btn btn-sm btn-info btn-flat pull-left">Ajouter Client</a>
+    <a href="index.php?action=addClient" class="btn btn-sm btn-warning btn-flat pull-left">Ajouter Client</a>
     <a href="index.php?action=listClients" class="btn btn-sm btn-default btn-flat pull-right">Clients List</a>
   </div>
   <!-- /.box-footer -->

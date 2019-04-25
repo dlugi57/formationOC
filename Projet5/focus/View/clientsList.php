@@ -16,14 +16,17 @@ ob_start();
   <div class="row">
     <!-- Main col -->
     <section class="col-md-12">
-      <div class="box">
+      <div class="box box-primary">
         <div class="box-header">
-          <h3 class="box-title">Data Table With Full Features</h3>
+          <h3 class="box-title">Liste de clients</h3>
+          <div class="pull-right box-tools">
+            <a type="button" href="index.php?action=addClient" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Ajouter client</a>
+          </div>
         </div>
         <!-- /.box-header -->
         <div class="box-body">
           <div class="table-responsive">
-          <table id="example1" class="table table-bordered table-striped table-hover">
+          <table id="clientsTable" class="clientsTable table table-bordered table-striped table-hover">
             <thead>
             <tr>
               <th>Nom</th>
@@ -75,6 +78,7 @@ ob_start();
           </div>
         </div>
         <!-- /.box-body -->
+
       </div>
       <!-- /.box -->
 

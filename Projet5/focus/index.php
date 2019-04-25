@@ -38,6 +38,11 @@ try {
             $commandsList = $controller->listCommands();
             //listClients();
         break;
+//CLIENT LIST
+        case 'listTaxes':
+            $taxList = $controller->listTaxes();
+            //listClients();
+        break;
 
 
 

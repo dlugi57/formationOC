@@ -10,6 +10,9 @@ $(function () {
       window.location = $(this).data("href");
   });
 
+
+
+
   //----------------
   //- Monthly Cash -
   //----------------

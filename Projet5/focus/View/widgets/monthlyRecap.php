@@ -34,24 +34,10 @@
   <!-- /.box-body -->
 </div>
 <!-- /.box -->
-<?php
-//create array to send them into js
 
-
-
-/*
-*
-*
-*
-*
-*
-*/
-
-?>
 <script type="text/javascript">
 //summary of taxes by month
 var arrayFromPHPTaxes = <?php echo json_encode($resultsMonthPaiedTax); ?>;
-console.log(arrayFromPHPTaxes);
 //summary of cash from month and commands by month
 var arrayFromPHPCashNet = <?php echo json_encode($resultsMonthCashNet); ?>;
 //summary of all by month

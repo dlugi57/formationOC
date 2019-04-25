@@ -23,13 +23,6 @@
           <?php
           //array to populate data to show
           $contactByArray = array();
-          //array with colors of cammemberts
-          //$colors = array('#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de','#f56954', '#00a65a', '#f39c12');
-          //array with colors of icons next to the cammemberts
-          //$colorsIcon = array('text-red', 'text-green', 'text-yellow', 'text-aqua', 'text-light-blue', 'text-gray', 'text-red', 'text-green', 'text-yellow');
-          //initialize first color
-          //$colorNumber = 0;
-          //fetch of the result
           $result = $contactBy->fetchAll();
           //first of 2 loops client
           foreach($result as $data)
@@ -43,8 +36,6 @@
             $contactByObj->color = $data['color_camembert'];
             $contactByObj->highlight = $data['color_camembert'];
             $contactByObj->label = $data['nom_contact_by'];
-            //change color
-            //$colorNumber = $colorNumber + 1;
             //put object into array to send to the js
             array_push($contactByArray,$contactByObj);
           };
@@ -110,8 +101,6 @@
           $typeSessionArray = array();
           //fetch of data
           $resultSession = $typeSession->fetchAll();
-          //initialize colors
-          //$colorSessionNumber = 0;
           //first of two session loops
           foreach ($resultSession as $data)
           {
@@ -124,8 +113,6 @@
             $typeSessionObj->color = $data['color_camembert'];
             $typeSessionObj->highlight = $data['color_camembert'];
             $typeSessionObj->label = $data['nom_type'];
-            //change color
-            //$colorSessionNumber = $colorSessionNumber + 1;
             //put the object into array to send it to the js
             array_push($typeSessionArray,$typeSessionObj);
           }

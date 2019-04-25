@@ -1,12 +1,15 @@
 <?php
 session_start();
-require_once "Controller/Backend.php";
+require_once "Controller/Focus.php";
+require_once "Controller/Dashboard.php";
 
 //require('Controller/frontend.php');
 //require('Controller/backend.php');
-use Controller\Backend;
+use Controller\Dashboard;
+use Controller\Focus;
 
-$controller = new Backend();
+$controller = new Focus();
+$controllerDash = new Dashboard();
 
 
 
@@ -18,7 +21,7 @@ try {
 //DASHBOARD
         case 'dashboard':
       //  $sumBrut = $controller->sumBrut();
-            $dashboard = $controller->dashboard();
+            $dashboard = $controllerDash->dashboard();
 
             //dashboard();
         break;

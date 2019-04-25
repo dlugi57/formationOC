@@ -103,10 +103,12 @@ class Backend
       $commandsManager = new CommandManager();
       $sumNetCmd = $commandsManager->totalsCmd();
       //$sumMonthCmd = $commandsManager->monthCmd();
+      $taxesManager = new TaxesManager();
+      $sumTaxes = $taxesManager->totalsTax();
 
       $summarySeances = $sumNetSeances['sumPrise'] - $sumNetSeances['sumDep'] - ($sumNetSeances['sumKm'] * 0.15);
       $sumaryCmd = $sumNetCmd['sumPriseCmd'] - $sumNetCmd['sumDepCmd'];
-      $summary = $summarySeances + $sumaryCmd;
+      $summary = $summarySeances + $sumaryCmd - $sumTaxes['sumPaidTax'];
 
       return $summary;
 

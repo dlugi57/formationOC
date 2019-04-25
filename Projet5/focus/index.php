@@ -49,12 +49,14 @@ try {
 
 //DEFAULT HOME
         default:
-            $dashboard = $controller->dashboard();
+            //$dashboard = $controller->dashboard();
+            header('Location: index.php?action=dashboard');
             //dashboard();
         break;
       endswitch;
     else :
-        $dashboard = $controller->dashboard();
+      header('Location: index.php?action=dashboard');
+        //$dashboard = $controller->dashboard();
       //  dashboard();
     endif;
 }

@@ -26,9 +26,9 @@ ob_start();
           <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
-              <h3><?= $sumNet ?><sup style="font-size: 20px">€</sup></h3>
+              <h3><?= intval($sumNet) ?><sup style="font-size: 20px">€</sup></h3>
 
-              <p>Net = Seances + CMD</p>
+              <p>Net = Seances + CMD - Tax</p>
             </div>
             <div class="icon">
               <i class="fa fa-home"></i>
@@ -40,7 +40,7 @@ ob_start();
           <!-- small box -->
           <div class="small-box bg-green">
             <div class="inner">
-              <h3><?= $sumBrut ?><sup style="font-size: 20px">€</sup></h3>
+              <h3><?= intval($sumBrut) ?><sup style="font-size: 20px">€</sup></h3>
 
               <p>Brut = Seances + CMD</p>
             </div>

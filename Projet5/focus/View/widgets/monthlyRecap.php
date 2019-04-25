@@ -49,9 +49,21 @@
 
 ?>
 <script type="text/javascript">
+//summary of taxes by month
+var arrayFromPHPTaxes = <?php echo json_encode($resultsMonthPaiedTax); ?>;
+//summary of cash from month and commands by month
 var arrayFromPHPCashNet = <?php echo json_encode($resultsMonthCashNet); ?>;
+//summary of all by month
+var summarySeanceCmdTaxNet = arrayFromPHPCashNet.map(function (num, idx)
+{
+  return num - arrayFromPHPTaxes[idx];
+})
+//summary of all cash depensed brut by month
 var arrayFromPHPCash = <?php echo json_encode($resultsMonthCash); ?>;
+//summary of numbers of seances by month
 var arrayFromPHPNbSeances = <?php echo json_encode($resultsNbSeance); ?>;
+//get month from data base
 var arrayFromPHPMonth = <?php echo json_encode($resultsMonth); ?>;
+//number of clients by month
 var arrayFromPHPNb = <?php echo json_encode($resultsNb); ?>;
 </script>

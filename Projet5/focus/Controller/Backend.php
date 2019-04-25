@@ -5,10 +5,12 @@ namespace Controller;
 require_once "Model/ClientManager.php";
 require_once "Model/SeanceManager.php";
 require_once "Model/CommandManager.php";
+require_once "Model/TaxesManager.php";
 
 use Model\SeanceManager;
 use Model\ClientManager;
 use Model\CommandManager;
+use Model\TaxesManager;
 use Exception;
 
 class Backend
@@ -29,11 +31,17 @@ class Backend
       $monthSeances = $seancesManager->monthSeances();
       $monthSeancesCmd = $seancesManager->monthSeancesCmd();
 
+      //$test = $seancesManager->test();
+
       $typeSession = $seancesManager->typeSession();
       $seancesList= $seancesManager->getSeances();
 
       $commandsManager = new CommandManager();
       $sumMonthCmd = $commandsManager->monthCmd();
+
+      $taxesManager = new TaxesManager();
+      $monthPaiedTax = $taxesManager->monthPaiedTax();
+
 
       $sumNet =  Backend::sumNet();
       $sumBrut = Backend::sumBrut();
@@ -45,13 +53,21 @@ class Backend
       $resultsNbSeance = array();
       $resultsMonthCash = array();
       $resultsMonthCashNet = array();
+      $resultsMonthPaiedTax = array();
 
       while ($data = $monthClients->fetch())
       {
         $monthNum  = $data['month'];
         $monthName = date('F', mktime(0, 0, 0, $monthNum, 10));
-        array_push($resultsNb,$data['nb']);
+        array_push($resultsNb,intval($data['nb']));
         array_push($resultsMonth, $monthName);
+      }
+
+      while ($data = $monthPaiedTax->fetch())
+      {
+        $sumTax  = $data['taxesMonth'];
+
+        array_push($resultsMonthPaiedTax, intval($sumTax));
       }
 
       while ($data = $monthSeances->fetch())
@@ -59,7 +75,7 @@ class Backend
         //$depenses = $data['drove'] * 0.15 + $data['paied'];
         //$cashNet = $data['cash'] - $depenses;
       //  array_push($resultsMonthCashNet,$cashNet);
-        array_push($resultsNbSeance,$data['nb']);
+        array_push($resultsNbSeance,intval($data['nb']));
       //  array_push($resultsMonthCash, $data['cash']);
       }
 
@@ -69,9 +85,9 @@ class Backend
         $depenses = $data['seances_km'] * 0.15 + $data['cmd_km'] * 0.15 + $data['seance_depense'] + $data['cmd_depense'];
         $entrance = $data['seance_cash'] + $data['cmd_cash'];
         $cashNet = $entrance - $depenses;
-        array_push($resultsMonthCashNet,$cashNet);
+        array_push($resultsMonthCashNet,intval($cashNet));
       //  array_push($resultsNbSeance,$data['nb']);
-        array_push($resultsMonthCash, $entrance);
+        array_push($resultsMonthCash, intval($entrance));
       }
 
 

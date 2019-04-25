@@ -60,13 +60,14 @@ class SeanceManager extends Manager
   public function monthSeancesCmd(){
     $db = $this->dbConnect();
     $sql = 'SELECT monthname(creation_date), sum(val1) seance_cash, sum(val2) cmd_cash, sum(val3) seance_depense, sum(val4) cmd_depense, sum(val5) seances_km, sum(val6) cmd_km from (select creation_date, val1, val2 , val3, val4, val5, val6
-        from (select creation_date, prise val1, 0 val2 , depenses val3, 0 val4, km val5, 0 val6
-                 from seances) s1
-              union
-              (select command_date m, 0 val1, prise_command val2 , 0 val3 , cost_command val4, 0 val5, km_cmd val6
-                 from commands ) ) t
-   group by month(creation_date)
-   order by creation_date';
+            from (select creation_date, prise val1, 0 val2 , depenses val3, 0 val4, km val5, 0 val6
+            from seances) s1
+            union
+            (select command_date m, 0 val1, prise_command val2 , 0 val3 , cost_command val4, 0 val5, km_cmd val6
+             from commands ) ) t
+             group by month(creation_date)
+             order by creation_date
+             LIMIT 0,6';
    $req = $db->query($sql);
 
    return $req;
@@ -84,6 +85,23 @@ class SeanceManager extends Manager
     $req = $db->query($sql);
 
     return $req;
+  }
+
+  public function test(){
+$db = $this->dbConnect();
+    $sql = 'SELECT monthname(creation_date), sum(val1) DESPESAS, sum(val2) RECEITAS
+   from (
+     select creation_date, val1, val2
+        from (select creation_date, prise val1, 0 val2
+                 from seances) s1
+              union
+              (select command_date m, 0 val1, prise_command val2
+                 from commands ) ) t
+   group by month(creation_date)
+   order by creation_date';
+   $req = $db->query($sql);
+
+   return $req;
   }
 
 

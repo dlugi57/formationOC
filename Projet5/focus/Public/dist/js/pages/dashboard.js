@@ -10,9 +10,9 @@ $(function () {
       window.location = $(this).data("href");
   });
 
-  //--------------
-  //- AREA CHART -
-  //--------------
+  //----------------
+  //- Monthly Cash -
+  //----------------
 
   // Get context with jQuery - using jQuery's .get() method.
   var areaChartCanvas = $('#areaChart').get(0).getContext('2d')
@@ -40,7 +40,7 @@ $(function () {
         pointStrokeColor    : 'rgba(60,141,188,1)',
         pointHighlightFill  : '#fff',
         pointHighlightStroke: 'rgba(60,141,188,1)',
-        data                : arrayFromPHPCashNet
+        data                : summarySeanceCmdTaxNet
       }
     ]
   }

@@ -28,10 +28,14 @@ class Focus
         }
     }
 
+    //SEANCES
     public function listSeances()
     {
       $seancesManager = new SeanceManager();
       $seances = $seancesManager->getSeances();
+      $seancesMonthly = $seancesManager->monthSeances();
+      $cashTypeSeance = $seancesManager->typeCashSession();
+      $cashTypeSeance = $seancesManager->totals();
       if ($seances === false)
       {
           throw new Exception('Impossible d\'afficher le contenue !');
@@ -40,6 +44,7 @@ class Focus
           require('View/seancesList.php');
       }
     }
+
 
     public function listCommands()
     {

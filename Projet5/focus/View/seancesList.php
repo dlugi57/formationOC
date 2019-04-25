@@ -5,7 +5,7 @@ ob_start();
 <!-- Content Header (Page header) -->
 <section class="content-header">
   <h1>
-    Clients
+    Seances
     <small>Control panel</small>
   </h1>
 </section>
@@ -18,26 +18,27 @@ ob_start();
     <section class="col-md-12">
       <div class="box box-primary">
         <div class="box-header">
-          <h3 class="box-title">Liste de clients</h3>
+          <h3 class="box-title">Liste de seances</h3>
           <div class="pull-right box-tools">
-            <a type="button" href="index.php?action=addClient" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Ajouter client</a>
+            <a type="button" href="index.php?action=addSeance" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Ajouter seance</a>
           </div>
         </div>
         <!-- /.box-header -->
         <div class="box-body">
           <div class="table-responsive">
-          <table id="clientsTable" class="clientsTable table table-bordered table-striped table-hover">
+          <table class="clientsTable table table-bordered table-striped table-hover">
             <thead>
             <tr>
               <th>Nom</th>
-              <th>Tel</th>
-              <th>Email</th>
+              <th>Type</th>
+              <th>Date</th>
+              <th>Prix</th>
               <th>Ville</th>
               <th>Adresse</th>
-              <th>CP</th>
-              <th>Contacte par</th>
+              <th>KM</th>
+              <th>Depenses</th>
               <th>Description</th>
-              <th>Date</th>
+              <th>Creation Date</th>
             </tr>
             </thead>
             <tbody>
@@ -45,16 +46,17 @@ ob_start();
               while ($data = $seances->fetch())
               {
               ?>
-              <tr class='clickableRowClient' data-href='index.php?action=client&amp;id=<?= $data['id_client'] ?>'>
+              <tr class='clickableRowClient' data-href='index.php?action=seance&amp;id=<?= $data['id_seance'] ?>'>
                 <td><?= $data['name'] ?></td>
-                <td><?= $data['tel'] ?></td>
-                <td><?= $data['email'] ?></td>
-                <td><?= $data['city'] ?></td>
-                <td><?= $data['adress'] ?></td>
-                <td><?= $data['post_code'] ?></td>
-                <td><?= $data['nom_contact_by'] ?></td>
+                <td><?= $data['nom_type'] ?></td>
+                <td><?= $data['seance_date_fr'] ?></td>
+                <td><?= $data['prise'] ?> €</td>
+                <td><?= $data['city_seance'] ?></td>
+                <td><?= $data['adresse_seance'] ?></td>
+                <td><?= $data['km'] ?></td>
+                <td><?= $data['depenses'] ?> €</td>
                 <td><?= $data['description'] ?></td>
-                <td><?= $data['creation_date_fr'] ?></td>
+                <td><?= $data['creation_date'] ?></td>
               </tr>
               <?php
               }
@@ -64,14 +66,15 @@ ob_start();
             <tfoot>
             <tr>
               <th>Nom</th>
-              <th>Tel</th>
-              <th>Email</th>
+              <th>Type</th>
+              <th>Date</th>
+              <th>Prix</th>
               <th>Ville</th>
               <th>Adresse</th>
-              <th>CP</th>
-              <th>Contacte par</th>
+              <th>KM</th>
+              <th>Depenses</th>
               <th>Description</th>
-              <th>Date</th>
+              <th>Creation Date</th>
             </tr>
             </tfoot>
           </table>

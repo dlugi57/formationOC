@@ -30,7 +30,7 @@ class ClientManager extends Manager
 
     public function monthClients(){
       $db = $this->dbConnect();
-      $sql = 'SELECT Month(creation_date) as month, Count(*) as nb FROM clients GROUP BY Month(creation_date) LIMIT 0,6';
+      $sql = 'SELECT Month(creation_date) as month, Count(*) as nb FROM clients GROUP BY Month(creation_date) LIMIT 0,7';
       $req = $db->query($sql);
 
       return $req;

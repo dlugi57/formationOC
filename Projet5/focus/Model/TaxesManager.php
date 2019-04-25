@@ -27,7 +27,7 @@ class TaxesManager extends Manager
   public function monthTax()
   {
     $db = $this->dbConnect();
-    $sql = 'SELECT Month(tax_date) as month, Count(*) as nb, SUM(tax_declare) as cashDeclared, SUM(tax_paid) as paied FROM taxes GROUP BY Month(tax_date) LIMIT 0,6';
+    $sql = 'SELECT Month(tax_date) as month, Count(*) as nb, SUM(tax_declare) as cashDeclared, SUM(tax_paid) as paied FROM taxes GROUP BY Month(tax_date) LIMIT 0,7';
     $req = $db->query($sql);
 
     return $req;
@@ -45,7 +45,7 @@ class TaxesManager extends Manager
             from taxes ) ) t
             group by month(creation_date)
             order by creation_date
-            LIMIT 0,6';
+            LIMIT 0,7';
     $req = $db->query($sql);
 
     return $req;

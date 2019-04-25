@@ -31,7 +31,7 @@
               <td><?= $seance['name'] ?></td>
               <td><?= $seance['seance_date_fr'] ?></td>
               <td><span class="label <?= $seance['color_boot']  ?>"><?= $seance['nom_type'] ?></span></td>
-              <td><?= $seance['place'] ?></td>
+              <td><?= $seance['city_seance'] ?></td>
               <td><?= $seance['prise'] ?> €</td>
             </tr>
             <?php
@@ -44,7 +44,7 @@
   </div>
   <!-- /.box-body -->
   <div class="box-footer clearfix">
-    <a href="index.php?action=newSeance" class="btn btn-sm btn-danger btn-flat pull-left">Ajouter Seance</a>
+    <a href="index.php?action=addSeance" class="btn btn-sm btn-danger btn-flat pull-left">Ajouter Seance</a>
     <a href="index.php?action=listSeances" class="btn btn-sm btn-default btn-flat pull-right">Seances List</a>
   </div>
   <!-- /.box-footer -->

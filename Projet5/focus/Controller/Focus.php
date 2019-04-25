@@ -15,13 +15,10 @@ use Exception;
 
 class Focus
 {
-
-
     public function listClients()
     {
         $clientsManager = new ClientManager();
         $clients = $clientsManager->getClients();
-
         if ($clients === false)
         {
             throw new Exception('Impossible d\'afficher le contenue !');
@@ -29,19 +26,12 @@ class Focus
         {
             require('View/clientsList.php');
         }
-
     }
-
-
-
-
-
 
     public function listSeances()
     {
       $seancesManager = new SeanceManager();
       $seances = $seancesManager->getSeances();
-
       if ($seances === false)
       {
           throw new Exception('Impossible d\'afficher le contenue !');

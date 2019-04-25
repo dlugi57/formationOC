@@ -1,5 +1,4 @@
 <?php
-
 namespace Controller;
 
 require_once "Model/ClientManager.php";

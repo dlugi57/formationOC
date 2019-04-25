@@ -250,6 +250,12 @@
 
 </div>
 <!-- /.content-wrapper -->
+<footer class="main-footer">
+  <div class="pull-right hidden-xs">
+  </div>
+  <strong>Copyright &copy; 2019 Sunny Moments.</strong> All rights
+  reserved.
+</footer>
   </div>
   <!-- ./wrapper -->
 

@@ -33,9 +33,23 @@ class Focus
     {
       $seancesManager = new SeanceManager();
       $seances = $seancesManager->getSeances();
-      $seancesMonthly = $seancesManager->monthSeances();
+      //$seancesMonthly = $seancesManager->monthSeances();
       $cashTypeSeance = $seancesManager->typeCashSession();
-      $cashTypeSeance = $seancesManager->totals();
+      $cashSummarySeance = $seancesManager->totals();
+      $monthSeances = $seancesManager->monthSeances();
+      $resultsMonthSeance = array();
+      $resultsSeancesCash = array();
+      $resultsSeancesDepenses = array();
+      while ($data = $monthSeances->fetch())
+      {
+        $monthNum  = $data['month'];
+        $monthName = date('F', mktime(0, 0, 0, $monthNum, 10));
+        $depensesSeance = $data['drove'] * 0.15 +$data['paied'];
+        $depensesSeanceSummary = $data['cash'] - intval($depensesSeance);
+        array_push($resultsMonthSeance, $monthName);
+        array_push($resultsSeancesCash, intval($data['cash']));
+        array_push($resultsSeancesDepenses, $depensesSeanceSummary);
+      }
       if ($seances === false)
       {
           throw new Exception('Impossible d\'afficher le contenue !');
@@ -44,6 +58,12 @@ class Focus
           require('View/seancesList.php');
       }
     }
+
+    /*public function recapSeanceMonth(){
+      $seancesManager = new SeanceManager();
+
+      return $resultsMonthSeance;
+    }*/
 
 
     public function listCommands()

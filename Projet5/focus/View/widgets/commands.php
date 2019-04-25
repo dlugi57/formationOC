@@ -24,28 +24,28 @@
         $gainedCmd = $data['cash']-$data['paied'];
         $colorPercents = "label-info";
         $colorLinePercents = "progress-bar-info";
-        if (number_format($percentsCmd) > 90) {
+        if (number_format($percentsCmd) > 90):
           $colorPercents = "label-success";
           $colorLinePercents = "progress-bar-success";
-        }elseif (number_format($percentsCmd) > 80) {
+        elseif (number_format($percentsCmd) > 80):
           $colorPercents = "label-primary";
           $colorLinePercents = "progress-bar-primary";
-        }elseif (number_format($percentsCmd) > 70) {
+        elseif (number_format($percentsCmd) > 70):
           $colorPercents = "label-info";
           $colorLinePercents = "progress-bar-info";
-        }elseif (number_format($percentsCmd) > 60) {
+        elseif (number_format($percentsCmd) > 60):
           $colorPercents = "label-info";
           $colorLinePercents = "progress-bar-info";
-        }elseif (number_format($percentsCmd) > 50) {
+        elseif (number_format($percentsCmd) > 50):
           $colorPercents = "label-secondary";
           $colorLinePercents = "progress-bar-secondary";
-        }elseif (number_format($percentsCmd) > 40) {
+        elseif (number_format($percentsCmd) > 40):
           $colorPercents = "label-warning";
           $colorLinePercents = "progress-bar-warning";
-        }elseif (number_format($percentsCmd) <= 40) {
+        elseif (number_format($percentsCmd) <= 40):
           $colorPercents = "label-danger";
           $colorLinePercents = "progress-bar-danger";
-        }
+        endif;
         ?>
         <tr>
           <td><?= $data['nb'] ?></td>

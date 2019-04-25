@@ -166,7 +166,7 @@
         </li>
 
         <li class="treeview">
-          <a href="#" class="btn disabled">
+          <a href="#">
             <i class="fa fa-credit-card"></i>
             <span>Achats</span>
             <span class="pull-right-container">
@@ -181,14 +181,14 @@
         </li>
 
         <li>
-          <a href="pages/widgets.html" class="btn disabled">
+          <a href="pages/widgets.html">
             <i class="fa fa-balance-scale"></i> <span>Test</span>
 
           </a>
         </li>
 
         <li class="treeview">
-          <a href="#" class="btn disabled">
+          <a href="#">
             <i class="fa fa-file-pdf-o"></i>
             <span>Devis</span>
             <span class="pull-right-container">
@@ -203,7 +203,7 @@
         </li>
 
         <li class="treeview">
-          <a href="#" class="btn disabled">
+          <a href="#">
             <i class="fa fa-pencil-square-o"></i>
             <span>Factures</span>
             <span class="pull-right-container">
@@ -218,7 +218,7 @@
         </li>
 
         <li class="treeview">
-          <a href="#" class="btn disabled">
+          <a href="#">
             <i class="fa fa-picture-o"></i>
             <span>Galeries</span>
             <span class="pull-right-container">
@@ -243,7 +243,7 @@
   <div class="content-wrapper">
 
     <?= $content ?>
-    
+
 
 
 </div>
@@ -296,12 +296,10 @@
 
 
 
-<script src="Public/dist/js/monthlyRecap.js"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="Public/dist/js/pages/ajax.js"></script>
-<script src="Public/dist/js/pages/dashboard.js"></script>
-<script src="Public/dist/js/pages/dashboard2.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="Public/dist/js/demo.js"></script>
+
+<!-- MAIN SCRIPTS -->
+<script src="Public/js/ajax.js"></script>
+<script src="Public/js/dashboard.js"></script>
+
 </body>
 </html>

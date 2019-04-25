@@ -1,7 +1,8 @@
 <?php
 session_start();
-require_once "Controller/Focus.php";
-require_once "Controller/Dashboard.php";
+require "vendor/autoload.php";
+//require_once "Controller/Focus.php";
+//require_once "Controller/Dashboard.php";
 
 //require('Controller/frontend.php');
 //require('Controller/backend.php');

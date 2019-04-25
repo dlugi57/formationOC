@@ -2,7 +2,7 @@
 
 namespace Model;
 
-require_once("Model/Manager.php");
+//require_once("Model/Manager.php");
 
 class ClientManager extends Manager
 {

@@ -1,7 +1,7 @@
 <?php
 namespace Model;
 
-require_once("Model/Manager.php");
+//require_once("Model/Manager.php");
 
 class TaxesManager extends Manager
 {

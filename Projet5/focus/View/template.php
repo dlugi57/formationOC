@@ -150,8 +150,23 @@
           </ul>
         </li>
 
+
         <li class="treeview">
           <a href="#">
+            <i class="fa fa-balance-scale"></i>
+            <span>Taxes</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="index.php?action=listTaxes"><i class="fa fa-list-ul"></i> Liste</a></li>
+            <li><a href="pages/charts/morris.html"><i class="fa fa-plus"></i> Ajouter</a></li>
+          </ul>
+        </li>
+
+        <li class="treeview">
+          <a href="#" class="btn disabled">
             <i class="fa fa-credit-card"></i>
             <span>Achats</span>
             <span class="pull-right-container">
@@ -165,33 +180,15 @@
           </ul>
         </li>
 
-
-
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-balance-scale"></i>
-            <span>Taxes</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="index.php?action=listTaxes"><i class="fa fa-list-ul"></i> Liste</a></li>
-            <li><a href="pages/charts/morris.html"><i class="fa fa-plus"></i> Ajouter</a></li>
-
-          </ul>
-        </li>
-
-
         <li>
-          <a href="pages/widgets.html">
+          <a href="pages/widgets.html" class="btn disabled">
             <i class="fa fa-balance-scale"></i> <span>Test</span>
 
           </a>
         </li>
 
         <li class="treeview">
-          <a href="#">
+          <a href="#" class="btn disabled">
             <i class="fa fa-file-pdf-o"></i>
             <span>Devis</span>
             <span class="pull-right-container">
@@ -206,7 +203,7 @@
         </li>
 
         <li class="treeview">
-          <a href="#">
+          <a href="#" class="btn disabled">
             <i class="fa fa-pencil-square-o"></i>
             <span>Factures</span>
             <span class="pull-right-container">
@@ -221,7 +218,7 @@
         </li>
 
         <li class="treeview">
-          <a href="#">
+          <a href="#" class="btn disabled">
             <i class="fa fa-picture-o"></i>
             <span>Galeries</span>
             <span class="pull-right-container">
@@ -246,6 +243,7 @@
   <div class="content-wrapper">
 
     <?= $content ?>
+    
 
 
 </div>

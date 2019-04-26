@@ -85,6 +85,7 @@ class Focus
     {
       $taxesManager = new TaxesManager();
       $taxes = $taxesManager->getTaxes();
+      $totalTaxes = $taxesManager->totalsTax();
       if ($taxes === false)
       {
           throw new Exception('Impossible d\'afficher le contenue !');

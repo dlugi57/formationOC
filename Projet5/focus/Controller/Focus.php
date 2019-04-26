@@ -15,6 +15,7 @@ use Exception;
 
 class Focus
 {
+    //CLIENTS
     public function listClients()
     {
         $clientsManager = new ClientManager();
@@ -25,6 +26,29 @@ class Focus
         }else
         {
             require('View/clientsList.php');
+        }
+    }
+
+    function client()
+    {
+        $clientsManager = new ClientManager();
+        $client = $clientsManager->getClient($_GET['id_client']);
+        $seancesManager = new SeanceManager();
+        $seance = $seancesManager->getClientSeance($_GET['id_client']);
+        $commandsManager = new CommandManager();
+        $command = $commandsManager->getClientCommand($_GET['id_client']);
+
+
+        //$post = $postManager->getPost($_GET['id']);
+        //$comments = $commentManager->getComments($_GET['id']);
+
+        if ($client === false)
+        {
+            throw new Exception('Impossible d\'afficher le chapitre !');
+        }
+        else
+        {
+            require('View/client.php');
         }
     }
 

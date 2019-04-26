@@ -18,6 +18,16 @@ class ClientManager extends Manager
         return $req;
     }
 
+    public function getClient($clientId)
+    {
+        $db = $this->dbConnect();
+        $req = $db->prepare('SELECT * , DATE_FORMAT(creation_date, \'%d/%m/%Y à %HH%i\') AS creation_date_fr FROM clients WHERE id_client = ?');
+        $req->execute(array($clientId));
+        $post = $req->fetch();
+
+        return $post;
+    }
+
     public function countClients()
     {
       $db = $this->dbConnect();

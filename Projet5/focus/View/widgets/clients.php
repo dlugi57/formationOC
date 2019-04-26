@@ -28,7 +28,7 @@
           while ($client = $clientsList->fetch())
           {
             ?>
-            <tr class='clickableRow' data-href='index.php?action=client&amp;id=<?= $client['id_client'] ?>'>
+            <tr class='clickableRowClient' data-href='index.php?action=client&amp;id_client=<?= $client['id_client'] ?>'>
               <td><?= $client['name'] ?></td>
               <td><?= $client['tel'] ?></td>
               <td><?= $client['email'] ?></td>

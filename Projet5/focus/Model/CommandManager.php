@@ -13,6 +13,30 @@ class CommandManager extends Manager
     return $req;
   }
 
+  public function getClientCommand($clientId)
+  {
+
+    //'SELECT *, comments.id AS c_id, DATE_FORMAT(comment_date, \'%d/%m/%Y à %HH%i\') AS comment_date_fr FROM comments INNER JOIN membres ON comments.author = membres.id WHERE post_id = ? ORDER BY comment_date DESC'
+
+    $db = $this->dbConnect();
+    //$req = $db->query('SELECT *, DATE_FORMAT(seance_date, \'%d/%m/%Y\') AS seance_date_fr FROM seances ORDER BY creation_date DESC');
+    $req = $db->prepare('SELECT *,commands.command_date AS creation_date_command, DATE_FORMAT(command_date, \'%d/%m/%Y\') AS command_date_fr FROM commands INNER JOIN clients ON commands.client_id_cmd = clients.id_client INNER JOIN type_command ON type_command = id_type_command WHERE client_id_cmd = ? ORDER BY command_date ASC');
+    $req->execute(array($clientId));
+
+    return $req;
+  }
+
+  public function getCommand($commandId)
+  {
+      $db = $this->dbConnect();
+      $request = $db->prepare('SELECT *,commands.command_date AS creation_date_command, DATE_FORMAT(command_date, \'%d/%m/%Y\') AS command_date_fr FROM commands INNER JOIN clients ON commands.client_id_cmd = clients.id_client INNER JOIN type_command ON type_command = id_type_command  WHERE id_command = ? ORDER BY command_date ASC');
+      $request->execute(array($commandId));
+      $command = $request->fetch();
+      $request->closeCursor();
+
+      return $command;
+  }
+
   public function totalsCmd()
   {
 

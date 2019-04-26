@@ -33,6 +33,11 @@ try {
             $clientsList = $controller->listClients();
             //listClients();
         break;
+//CLIENT
+        case 'client':
+            $client = $controller->client();
+            //listClients();
+        break;
 
 //CLIENT LIST
         case 'listSeances':

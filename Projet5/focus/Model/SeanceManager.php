@@ -18,6 +18,31 @@ class SeanceManager extends Manager
     return $req;
   }
 
+
+  public function getClientSeance($clientId)
+  {
+
+    //'SELECT *, comments.id AS c_id, DATE_FORMAT(comment_date, \'%d/%m/%Y à %HH%i\') AS comment_date_fr FROM comments INNER JOIN membres ON comments.author = membres.id WHERE post_id = ? ORDER BY comment_date DESC'
+
+    $db = $this->dbConnect();
+    //$req = $db->query('SELECT *, DATE_FORMAT(seance_date, \'%d/%m/%Y\') AS seance_date_fr FROM seances ORDER BY creation_date DESC');
+    $req = $db->prepare('SELECT *,seances.creation_date AS creation_date_seance, DATE_FORMAT(seance_date, \'%d/%m/%Y\') AS seance_date_fr FROM seances INNER JOIN clients ON seances.clients_id = clients.id_client INNER JOIN type_seance ON type = id_type_seance WHERE clients_id = ? ORDER BY seance_date ASC');
+    $req->execute(array($clientId));
+
+    return $req;
+  }
+
+  public function getSeance($seanceId)
+  {
+      $db = $this->dbConnect();
+      $request = $db->prepare('SELECT *,seances.creation_date AS creation_date_seance, DATE_FORMAT(seance_date, \'%d/%m/%Y\') AS seance_date_fr FROM seances INNER JOIN clients ON seances.clients_id = clients.id_client INNER JOIN type_seance ON type = id_type_seance WHERE id_seance = ?');
+      $request->execute(array($seanceId));
+      $seance = $request->fetch();
+      $request->closeCursor();
+
+      return $seance;
+  }
+
   public function countSeances()
   {
     $db = $this->dbConnect();

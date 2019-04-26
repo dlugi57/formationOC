@@ -8,7 +8,7 @@ class TaxesManager extends Manager
   public function getTaxes()
   {
     $db = $this->dbConnect();
-    $req = $db->query('SELECT * FROM taxes ORDER BY tax_date ASC');
+    $req = $db->query('SELECT * ,Month(tax_date) as month FROM taxes ORDER BY tax_date ASC');
 
     return $req;
   }

@@ -29,11 +29,12 @@ ob_start();
           <table class="clientsTable table table-bordered table-striped table-hover">
             <thead>
             <tr>
-              <th>Date</th>
+              <th>Mois</th>
               <th>Declared</th>
               <th>Paid</th>
               <th>Percents</th>
               <th>Description</th>
+              <th>Date</th>
             </tr>
             </thead>
             <tbody>
@@ -42,11 +43,12 @@ ob_start();
               {
               ?>
               <tr class='clickableRowClient' data-href='index.php?action=command&amp;id=<?= $data['tax_id'] ?>'>
-                <td><?= $data['tax_date'] ?></td>
+                <td><?= $monthTax = date('F', mktime(0, 0, 0, $data['month'], 10)); ?></td>
                 <td><?= $data['tax_declare'] ?> €</td>
                 <td><?= $data['tax_paid'] ?> €</td>
                 <td><?= $percentsTaxRow = intval(($data['tax_paid']/$data['tax_declare'])*100); ?> %</td>
                 <td><?= $data['tax_description'] ?></td>
+                <td><?= $data['tax_date'] ?></td>
               </tr>
               <?php
               }
@@ -55,11 +57,12 @@ ob_start();
             </tbody>
             <tfoot>
             <tr>
-              <th>Date</th>
+              <th>Mois</th>
               <th>Declared</th>
               <th>Paid</th>
               <th>Percents</th>
               <th>Description</th>
+              <th>Date</th>
             </tr>
             </tfoot>
           </table>

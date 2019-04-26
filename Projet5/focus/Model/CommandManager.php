@@ -21,7 +21,6 @@ class CommandManager extends Manager
     $result = $db->query($sql);
     $sumCmd = $result->fetch();
     return $sumCmd;
-
   }
 
   public function monthCmd()

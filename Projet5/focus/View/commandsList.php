@@ -14,17 +14,13 @@ ob_start();
 <section class="content">
   <!-- Main row -->
   <div class="row">
-
-
-
-
     <!-- Main col -->
     <section class="col-md-12">
-      <div class="box box-primary">
+      <div class="box box-warning">
         <div class="box-header">
           <h3 class="box-title">Liste de commands</h3>
           <div class="pull-right box-tools">
-            <a type="button" href="index.php?action=addCommand" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Ajouter command</a>
+            <a type="button" href="index.php?action=addCommand" class="btn btn-warning pull-right"><i class="fa fa-plus"></i> Ajouter command</a>
           </div>
         </div>
         <!-- /.box-header -->
@@ -37,7 +33,6 @@ ob_start();
               <th>Type</th>
               <th>Prix</th>
               <th>Costs</th>
-              <th>KM</th>
               <th>Description</th>
               <th>Date</th>
             </tr>
@@ -52,7 +47,6 @@ ob_start();
                 <td><?= $data['nom_type_command'] ?></td>
                 <td><?= $data['prise_command'] ?> €</td>
                 <td><?= $data['cost_command'] ?> €</td>
-                <td><?= $data['km_cmd'] ?></td>
                 <td><?= $data['description_command'] ?></td>
                 <td><?= $data['command_date_fr'] ?></td>
               </tr>
@@ -67,7 +61,6 @@ ob_start();
               <th>Type</th>
               <th>Prix</th>
               <th>Costs</th>
-              <th>KM</th>
               <th>Description</th>
               <th>Date</th>
             </tr>
@@ -76,24 +69,16 @@ ob_start();
           </div>
         </div>
         <!-- /.box-body -->
-
       </div>
       <!-- /.box -->
-
     </section>
     <!-- /.Main col -->
-
-
-
-
-
     <div class="col-md-3 col-sm-6 col-xs-12">
       <div class="info-box">
-        <span class="info-box-icon bg-aqua"><i class="fa fa-envelope-o"></i></span>
-
+        <span class="info-box-icon bg-aqua"><i class="fa fa-eur"></i></span>
         <div class="info-box-content">
-          <span class="info-box-text">Messages</span>
-          <span class="info-box-number">1,410</span>
+          <span class="info-box-text">Brut</span>
+          <span class="info-box-number"><?= $commandsTotal['sumPriseCmd']; ?></span>
         </div>
         <!-- /.info-box-content -->
       </div>
@@ -101,18 +86,14 @@ ob_start();
     </div>
     <div class="col-md-3 col-sm-6 col-xs-12">
       <div class="info-box bg-green">
-        <span class="info-box-icon"><i class="fa fa-thumbs-o-up"></i></span>
-
+        <span class="info-box-icon"><i class="fa fa-home"></i></span>
         <div class="info-box-content">
-          <span class="info-box-text">Likes</span>
-          <span class="info-box-number">41,410</span>
-
+          <span class="info-box-text">Net</span>
+          <span class="info-box-number"><?= $commandsNet = $commandsTotal['sumPriseCmd'] - $commandsTotal['sumDepCmd']; ?></span>
           <div class="progress">
-            <div class="progress-bar" style="width: 70%"></div>
+            <div class="progress-bar" style="width: <?= $percentsCmdNet = intval(($commandsNet/$commandsTotal['sumPriseCmd'])*100);?>%"></div>
           </div>
-              <span class="progress-description">
-                70% Increase in 30 Days
-              </span>
+          <span class="progress-description"><?= $percentsCmdNet;?> % of whole gain</span>
         </div>
         <!-- /.info-box-content -->
       </div>
@@ -121,18 +102,14 @@ ob_start();
     <!-- /.col -->
     <div class="col-md-3 col-sm-6 col-xs-12">
       <div class="info-box bg-yellow">
-        <span class="info-box-icon"><i class="fa fa-calendar"></i></span>
-
+        <span class="info-box-icon"><i class="fa fa-money"></i></span>
         <div class="info-box-content">
-          <span class="info-box-text">Events</span>
-          <span class="info-box-number">41,410</span>
-
+          <span class="info-box-text">Depenses</span>
+          <span class="info-box-number"><?= $commandsTotal['sumDepCmd']; ?> €</span>
           <div class="progress">
-            <div class="progress-bar" style="width: 70%"></div>
+            <div class="progress-bar" style="width: <?= $percentsCmdDep = intval(($commandsTotal['sumDepCmd']/$commandsTotal['sumPriseCmd'])*100);  ?>%"></div>
           </div>
-              <span class="progress-description">
-                70% Increase in 30 Days
-              </span>
+          <span class="progress-description"><?= $percentsCmdDep;  ?> % of whole gains</span>
         </div>
         <!-- /.info-box-content -->
       </div>
@@ -141,11 +118,10 @@ ob_start();
     <!-- /.col -->
     <div class="col-md-3 col-sm-6 col-xs-12">
       <div class="info-box">
-        <span class="info-box-icon bg-red"><i class="fa fa-star-o"></i></span>
-
+        <span class="info-box-icon bg-red"><i class="fa fa-calculator"></i></span>
         <div class="info-box-content">
-          <span class="info-box-text">Likes</span>
-          <span class="info-box-number">93,139</span>
+          <span class="info-box-text">Qty</span>
+          <span class="info-box-number"><?= $commandsTotal['totalCmd'] ?></span>
         </div>
         <!-- /.info-box-content -->
       </div>

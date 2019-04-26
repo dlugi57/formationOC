@@ -70,6 +70,7 @@ class Focus
     {
       $commandsManager = new CommandManager();
       $commands = $commandsManager->getCommands();
+      $commandsTotal = $commandsManager->totalsCmd();
       if ($commands === false)
       {
           throw new Exception('Impossible d\'afficher le contenue !');

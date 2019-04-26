@@ -44,6 +44,11 @@ try {
             $seancesList = $controller->listSeances();
             //listClients();
         break;
+//SEANCE
+        case 'seance':
+            $seance = $controller->seance();
+            //listClients();
+        break;
 //CLIENT LIST
         case 'listCommands':
             $commandsList = $controller->listCommands();

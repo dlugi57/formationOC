@@ -45,7 +45,7 @@ ob_start();
               while ($data = $clients->fetch())
               {
               ?>
-              <tr class='clickableRowClient' data-href='index.php?action=client&amp;id_client=<?= $data['id_client'] ?>'>
+              <tr class='clickableRowClient' data-href='index.php?action=client&amp;id=<?= $data['id_client'] ?>'>
                 <td><?= $data['name'] ?></td>
                 <td><?= $data['tel'] ?></td>
                 <td><?= $data['email'] ?></td>

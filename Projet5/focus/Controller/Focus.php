@@ -32,15 +32,11 @@ class Focus
     function client()
     {
         $clientsManager = new ClientManager();
-        $client = $clientsManager->getClient($_GET['id_client']);
+        $client = $clientsManager->getClient($_GET['id']);
         $seancesManager = new SeanceManager();
-        $seance = $seancesManager->getClientSeance($_GET['id_client']);
+        $seance = $seancesManager->getClientSeance($_GET['id']);
         $commandsManager = new CommandManager();
-        $command = $commandsManager->getClientCommand($_GET['id_client']);
-
-
-        //$post = $postManager->getPost($_GET['id']);
-        //$comments = $commentManager->getComments($_GET['id']);
+        $command = $commandsManager->getClientCommand($_GET['id']);
 
         if ($client === false)
         {
@@ -80,6 +76,19 @@ class Focus
       }else
       {
           require('View/seancesList.php');
+      }
+    }
+
+    public function seance()
+    {
+      $seancesManager = new SeanceManager();
+      $seance = $seancesManager->getSeance($_GET['id']);
+      if ($seance === false)
+      {
+          throw new Exception('Impossible d\'afficher le contenue !');
+      }else
+      {
+          require('View/seance.php');
       }
     }
 

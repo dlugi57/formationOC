@@ -92,7 +92,7 @@ class SeanceManager extends Manager
              from commands ) ) t
              group by month(creation_date)
              order by creation_date
-             LIMIT 0,6';
+             LIMIT 0,7';
    $req = $db->query($sql);
 
    return $req;

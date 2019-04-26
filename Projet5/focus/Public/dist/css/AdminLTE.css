@@ -4992,6 +4992,10 @@ MAIN
 .logo-img-small{
   width: 100%;
 }
+.link-unstyled{
+  text-decoration: none;
+  color: inherit;
+}
 
 @media (max-width: 767px) {
   .logo-img{

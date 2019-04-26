@@ -17,6 +17,7 @@
         <tr>
           <th>Nom</th>
           <th>Date</th>
+          <th>Heure</th>
           <th>Type</th>
           <th>Endroit</th>
           <th>Prix</th>
@@ -27,9 +28,10 @@
           while ($seance = $seancesList->fetch())
           {
             ?>
-            <tr class='clickableRow' data-href='index.php?action=seance&amp;id=<?= $seance['id_seance'] ?>'>
+            <tr class='clickableRowClient' data-href='index.php?action=seance&amp;id=<?= $seance['id_seance'] ?>'>
               <td><?= $seance['name'] ?></td>
               <td><?= $seance['seance_date_fr'] ?></td>
+              <td><?= $seance['time_seance'] ?></td>
               <td><span class="label <?= $seance['color_boot']  ?>"><?= $seance['nom_type'] ?></span></td>
               <td><?= $seance['city_seance'] ?></td>
               <td><?= $seance['prise'] ?> €</td>

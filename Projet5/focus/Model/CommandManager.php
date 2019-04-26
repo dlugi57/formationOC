@@ -17,7 +17,7 @@ class CommandManager extends Manager
   {
 
     $db = $this->dbConnect();
-    $sql = 'SELECT SUM(prise_command) AS sumPriseCmd,SUM(cost_command) AS sumDepCmd FROM commands';
+    $sql = 'SELECT COUNT(*) AS totalCmd, SUM(prise_command) AS sumPriseCmd,SUM(cost_command) AS sumDepCmd FROM commands';
     $result = $db->query($sql);
     $sumCmd = $result->fetch();
     return $sumCmd;

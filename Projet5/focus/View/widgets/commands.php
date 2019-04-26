@@ -63,5 +63,10 @@
     </table>
   </div>
   <!-- /.box-body -->
+  <div class="box-footer clearfix">
+    <a href="index.php?action=addCommand" class="btn btn-sm btn-info btn-flat pull-left">Ajouter command</a>
+    <a href="index.php?action=listCommands" class="btn btn-sm btn-default btn-flat pull-right">Commands List</a>
+  </div>
+  <!-- /.box-footer -->
 </div>
 <!-- /.box -->

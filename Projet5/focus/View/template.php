@@ -34,7 +34,7 @@
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="Public/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs">Alexander Pierce</span>
+              <span class="hidden-xs">Dlugosz Anna</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
@@ -42,8 +42,8 @@
                 <img src="Public/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                 <p>
-                  Alexander Pierce - Web Developer
-                  <small>Member since Nov. 2012</small>
+                  Dlugosz Anna - Photographe
+                  <small>Depuis 2017</small>
                 </p>
               </li>
               <!-- Menu Body -->
@@ -145,7 +145,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="index.php?action=listCommands"><i class="fa fa-list-ul"></i> Liste</a></li>
-            <li><a href="pages/charts/morris.html"><i class="fa fa-plus"></i> Ajouter</a></li>
+            <li><a href="index.php?action=addCommand"><i class="fa fa-plus"></i> Ajouter</a></li>
 
           </ul>
         </li>

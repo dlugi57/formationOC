@@ -33,6 +33,7 @@ ob_start();
               <th>Type</th>
               <th>Prix</th>
               <th>Costs</th>
+              <th>Net</th>
               <th>Description</th>
               <th>Date</th>
             </tr>
@@ -47,6 +48,7 @@ ob_start();
                 <td><?= $data['nom_type_command'] ?></td>
                 <td><?= $data['prise_command'] ?> €</td>
                 <td><?= $data['cost_command'] ?> €</td>
+                <td><?= $cashCmdNet = $data['prise_command'] - $data['cost_command'] ?> €</td>
                 <td><?= $data['description_command'] ?></td>
                 <td><?= $data['command_date_fr'] ?></td>
               </tr>
@@ -61,6 +63,7 @@ ob_start();
               <th>Type</th>
               <th>Prix</th>
               <th>Costs</th>
+              <th>Net</th>
               <th>Description</th>
               <th>Date</th>
             </tr>

@@ -1,12 +1,16 @@
 <?php
 $title = "Seance | Sunny Moments";
 ob_start();
-?>
+
+$dayofweek = date('w', strtotime($seance['seance_date']));
+$days = array('Sunday', 'Monday', 'Tuesday', 'Wednesday','Thursday','Friday', 'Saturday');
+$dayOfWeek = $days[$dayofweek];
+ ?>
 <!-- Content Header (Page header) -->
 <section class="content-header">
   <h1>
-    <?= $seance['name'] ?>
-    <small>Control panel</small>
+    <?= $seance['name']?>
+    <small><?= "Seance ".$seance['nom_type'] ?></small>
   </h1>
 </section>
 <!-- Main content -->
@@ -18,7 +22,7 @@ ob_start();
 
         <div class="info-box-content">
           <span class="info-box-text">Date</span>
-          <span class="info-box-number"><?= $seance['seance_date_fr'] ?></span>
+          <span class="info-box-number"><?= $seance['seance_date_fr']. " " .$dayOfWeek ?></span>
           <span class="info-box-text"><?= $seance['time_seance'] ?></span>
         </div>
         <!-- /.info-box-content -->
@@ -78,7 +82,7 @@ ob_start();
   <!-- Main row -->
   <div class="row">
     <!-- Main col right-->
-    <div class="col-sm-6 col-md-8">
+    <div class="col-md-6">
 
       <!-- Profile Image -->
       <div class="box box-primary">
@@ -91,34 +95,47 @@ ob_start();
             <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
           </div>
 
-`type``creation_date``seance_date``prise``adresse_seance``city_seance``km``description_seance``depenses``nom_type`time_seance model
-
         </div>
         <div class="box-body box-profile">
-          <h3 class="profile-username text-center"><?= $seance['nom_type'] ?></h3>
-          <p class="text-muted text-center"><?= $seance['seance_date_fr'] ?></p>
-          <hr>
-          <strong><i class="fa fa-phone margin-r-5"></i> <?= $seance['tel'] ?></strong>
-          <a href="tel:<?= $seance['tel'] ?>" type="button" class="btn btn-primary btn-sm daterange pull-right">
-            <i class="fa fa-phone"></i>
-          </a>
-          <hr>
-          <strong><i class="fa fa-envelope margin-r-5"></i> <?= $seance['email'] ?></strong>
-          <a target="_blank" href="mailto:<?= $seance['email'] ?>" type="button" class="btn btn-primary btn-sm daterange pull-right">
-            <i class="fa fa-send"></i>
-          </a>
-          <hr>
-          <strong><i class="fa fa-map margin-r-5"></i> <?= $seance['adress'] ?></strong>
-          <a target="_blank" href="https://maps.google.com/?q=<?= $mapsAdresseClient = $seance['city'] . ' ' . $seance['adress']  ?>" type="button" class="btn btn-primary btn-sm daterange pull-right">
-            <i class="fa fa-map-marker"></i>
-          </a>
-          <hr>
-          <strong><i class="fa fa-home margin-r-5"></i> <?= $seance['city'] ?></strong>
-          <hr>
-          <strong><i class="fa  fa-map-signs margin-r-5"></i> <?= $seance['post_code'] ?></strong>
+          <h3 class="profile-username text-center">Seance <?= $seance['nom_type'] ?></h3>
+          <p class="text-muted text-center"><?= $seance['creation_date_seance'] ?></p>
+<hr>
+          <strong><i class="fa fa-money margin-r-5"></i> Prix</strong>
+
+          <p>
+            Gagne : <?= $seance['prise'] ?> €
+            <br>
+            Depenses : <?= $depensesWidget ?> €
+          </p>
 
           <hr>
-          <p class="text-muted text-center"><?= $seance['description'] ?></p>
+          <strong><i class="fa fa-calendar margin-r-5"></i> Date</strong>
+
+          <p><?= $seance['seance_date_fr'] ?>  <?= $seance['time_seance'] ?> <?= $dayOfWeek ?></p>
+          <hr>
+
+          <strong><i class="fa fa-user margin-r-5"></i> Model</strong>
+
+          <p><?= $seance['model'] ?></p>
+
+          <hr>
+          <strong><i class="fa fa-map margin-r-5"></i> Adresse</strong>
+          <a target="_blank" href="https://maps.google.com/?q=<?= $mapsAdresseSeance = $seance['city_seance'] . ' ' . $seance['adresse_seance']  ?>" type="button" class="btn btn-primary btn-sm daterange pull-right">
+            <i class="fa fa-map-marker"></i>
+          </a>
+
+            <p><?= $seance['adresse_seance'] ?></p>
+            <p><?= $seance['city_seance'] ?></p>
+<hr>
+            <strong><i class="fa fa-automobile margin-r-5"></i> Route</strong>
+
+            <p><?= $seance['km'] ?> KM</p>
+
+
+
+          <hr>
+          <strong><i class="fa fa-pencil margin-r-5"></i> Description</strong>
+          <p class="text-center"><?= $seance['description_seance'] ?></p>
           <hr>
           <div>
             <a href="#" class="btn btn-danger pull-left"><b><i class="fa fa-trash-o"></i></b></a>
@@ -130,7 +147,7 @@ ob_start();
       <!-- /.box -->
     </div>
     <!-- Main col left-->
-    <div class="col-sm-6 col-md-4">
+    <div class="col-md-4">
       <!-- Client -->
       <div class="box box-primary">
         <div class="box-header with-border">
@@ -168,9 +185,12 @@ ob_start();
           <hr>
           <p class="text-muted text-center"><?= $seance['description'] ?></p>
           <hr>
-          <div>
+          <div class="">
+          <div class="btn-group">
             <a href="#" class="btn btn-danger pull-left"><b><i class="fa fa-trash-o"></i></b></a>
-            <a href="#" class="btn btn-primary pull-right"><b>Modifier</b></a>
+            <a href="#" class="btn btn-primary "><b>Modifier</b></a>
+            </div>
+            <a href="index.php?action=client&amp;id=<?= $seance['id_client'] ?>" class="btn btn-success pull-right"><b>Acceder</b></a>
           </div>
         </div>
         <!-- /.box-body -->

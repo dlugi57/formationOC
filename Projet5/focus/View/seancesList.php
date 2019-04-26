@@ -32,7 +32,9 @@ ob_start();
               <th>Nom</th>
               <th>Type</th>
               <th>Date</th>
+              <th>Heure</th>
               <th>Prix</th>
+              <th>Model</th>
               <th>Ville</th>
               <th>Adresse</th>
               <th>KM</th>
@@ -51,7 +53,9 @@ ob_start();
                 <td><?= $data['name'] ?></td>
                 <td><?= $data['nom_type'] ?></td>
                 <td><?= $data['seance_date_fr'] ?></td>
+                <td><?= $data['time_seance'] ?></td>
                 <td><?= $data['prise'] ?> €</td>
+                <td><?= $data['model'] ?></td>
                 <td><?= $data['city_seance'] ?></td>
                 <td><?= $data['adresse_seance'] ?></td>
                 <td><?= $data['km'] ?></td>
@@ -70,7 +74,9 @@ ob_start();
               <th>Nom</th>
               <th>Type</th>
               <th>Date</th>
+              <th>Heure</th>
               <th>Prix</th>
+              <th>Model</th>
               <th>Ville</th>
               <th>Adresse</th>
               <th>KM</th>

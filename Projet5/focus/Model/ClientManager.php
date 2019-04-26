@@ -21,7 +21,7 @@ class ClientManager extends Manager
     public function getClient($clientId)
     {
         $db = $this->dbConnect();
-        $req = $db->prepare('SELECT * , DATE_FORMAT(creation_date, \'%d/%m/%Y à %HH%i\') AS creation_date_fr FROM clients WHERE id_client = ?');
+        $req = $db->prepare('SELECT * , DATE_FORMAT(creation_date, \'%d/%m/%Y\') AS creation_date_fr FROM clients INNER JOIN contact_by ON contact_by = id_contact_by WHERE id_client = ?');
         $req->execute(array($clientId));
         $post = $req->fetch();
 

@@ -37,6 +37,7 @@ ob_start();
               <th>Adresse</th>
               <th>KM</th>
               <th>Depenses</th>
+              <th>Net</th>
               <th>Description</th>
               <th>Creation Date</th>
             </tr>
@@ -55,7 +56,8 @@ ob_start();
                 <td><?= $data['adresse_seance'] ?></td>
                 <td><?= $data['km'] ?></td>
                 <td><?= $data['depenses'] ?> €</td>
-                <td><?= $data['description'] ?></td>
+                <td><?= $senceNetRow = intval($data['prise'] - $data['depenses'] -($data['km'] * 0.15)) ?> €</td>
+                <td><?= $data['description_seance'] ?></td>
                 <td><?= $data['creation_date'] ?></td>
               </tr>
               <?php
@@ -73,6 +75,7 @@ ob_start();
               <th>Adresse</th>
               <th>KM</th>
               <th>Depenses</th>
+              <th>Net</th>
               <th>Description</th>
               <th>Creation Date</th>
             </tr>

@@ -1,4 +1,9 @@
 $(function () {
+/*
+  $('#addClientDash').click(function(){
+    $('#clientForm').removeClass('hidden');
+  })
+*/
 
   $('.clientsTable').DataTable({
     'paging'      : true,

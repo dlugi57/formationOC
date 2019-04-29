@@ -48,35 +48,52 @@ class Focus
         }
     }
 
+
+
+    public function createPost($postTitle, $postContent)
+    {
+        $postManager = new \OpenClassrooms\Blog\Model\PostManager();
+        $addedPost = $postManager->addPost($postTitle, $postContent);
+
+        if ($addedPost === false)
+        {
+            throw new Exception('Impossible d\'ajouter le post !');
+        }
+        else
+        {
+            header('Location: index.php?action=listPosts');
+        }
+    }
+
     //SEANCES
     public function listSeances()
     {
-      $seancesManager = new SeanceManager();
-      $seances = $seancesManager->getSeances();
-      //$seancesMonthly = $seancesManager->monthSeances();
-      $cashTypeSeance = $seancesManager->typeCashSession();
-      $cashSummarySeance = $seancesManager->totals();
-      $monthSeances = $seancesManager->monthSeances();
-      $resultsMonthSeance = array();
-      $resultsSeancesCash = array();
-      $resultsSeancesDepenses = array();
-      while ($data = $monthSeances->fetch())
-      {
-        $monthNum  = $data['month'];
-        $monthName = date('F', mktime(0, 0, 0, $monthNum, 10));
-        $depensesSeance = $data['drove'] * 0.15 +$data['paied'];
-        $depensesSeanceSummary = $data['cash'] - intval($depensesSeance);
-        array_push($resultsMonthSeance, $monthName);
-        array_push($resultsSeancesCash, intval($data['cash']));
-        array_push($resultsSeancesDepenses, $depensesSeanceSummary);
-      }
-      if ($seances === false)
-      {
-          throw new Exception('Impossible d\'afficher le contenue !');
-      }else
-      {
-          require('View/seancesList.php');
-      }
+        $seancesManager = new SeanceManager();
+        $seances = $seancesManager->getSeances();
+        //$seancesMonthly = $seancesManager->monthSeances();
+        $cashTypeSeance = $seancesManager->typeCashSession();
+        $cashSummarySeance = $seancesManager->totals();
+        $monthSeances = $seancesManager->monthSeances();
+        $resultsMonthSeance = array();
+        $resultsSeancesCash = array();
+        $resultsSeancesDepenses = array();
+        while ($data = $monthSeances->fetch())
+        {
+            $monthNum  = $data['month'];
+            $monthName = date('F', mktime(0, 0, 0, $monthNum, 10));
+            $depensesSeance = $data['drove'] * 0.15 +$data['paied'];
+            $depensesSeanceSummary = $data['cash'] - intval($depensesSeance);
+            array_push($resultsMonthSeance, $monthName);
+            array_push($resultsSeancesCash, intval($data['cash']));
+            array_push($resultsSeancesDepenses, $depensesSeanceSummary);
+        }
+        if ($seances === false)
+        {
+            throw new Exception('Impossible d\'afficher le contenue !');
+        }else
+        {
+            require('View/seancesList.php');
+        }
     }
 
     public function seance()

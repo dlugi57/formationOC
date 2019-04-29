@@ -28,6 +28,16 @@ class ClientManager extends Manager
         return $post;
     }
 
+
+    public function newClient()
+    {
+        $db = $this->dbConnect();
+        $req = $db->prepare('INSERT INTO clients(name, tel, email, adress, city, post_code, contact_by, description, creation_date) VALUES(?, ?, ?, ?, ?, ?, ?, ?, NOW())');
+        $addedClient = $req->execute(array($name, $tel, $email, $adress, $city, $post, $contact, $description));
+
+        return $addedClient;
+    }
+
     public function countClients()
     {
       $db = $this->dbConnect();

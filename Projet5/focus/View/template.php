@@ -115,7 +115,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="index.php?action=listClients"><i class="fa fa-list-ul"></i> Liste</a></li>
-            <li><a href="index.php?action=addClient"><i class="fa fa-user-plus"></i> Ajouter</a></li>
+            <li><a href="index.php?action=addClientPage"><i class="fa fa-user-plus"></i> Ajouter</a></li>
 
           </ul>
         </li>

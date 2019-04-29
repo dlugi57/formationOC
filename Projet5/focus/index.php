@@ -4,9 +4,11 @@ require "vendor/autoload.php";
 
 use Controller\Dashboard;
 use Controller\Focus;
+use Controller\FocusBack;
 
 $controller = new Focus();
 $controllerDash = new Dashboard();
+$controllerBack = new FocusBack();
 
 try {
     if (isset($_GET['action'])):
@@ -23,6 +25,13 @@ try {
 //CLIENT
         case 'client':
             $client = $controller->client();
+        break;
+//ADD CLIENT
+        case 'addClientPage':
+            require('View/backend/addClient.php');
+        break;
+        case 'addClient':
+            $addClient = $controllerBack->addClient();
         break;
 //SEANCES LIST
         case 'listSeances':

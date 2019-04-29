@@ -45,7 +45,7 @@
   </div>
   <!-- /.box-body -->
   <div class="box-footer clearfix">
-    <a href="index.php?action=addClient" class="btn btn-sm btn-warning btn-flat pull-left">Ajouter Client</a>
+    <a href="index.php?action=addClientPage" class="btn btn-sm btn-warning btn-flat pull-left">Ajouter Client</a>
     <a href="index.php?action=listClients" class="btn btn-sm btn-default btn-flat pull-right">Clients List</a>
   </div>
   <!-- /.box-footer -->

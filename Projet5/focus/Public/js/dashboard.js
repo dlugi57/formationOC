@@ -274,5 +274,54 @@ newAjax.ajaxGet(url, function(reponse)
 // -END AJAX INSTA -
 // -----------------
 
+
+// -----------------
+// -  PAGINATION   -
+// -----------------
+
+var $elementPaginationContact = $(".pagination_dashboard_");
+var pageSize = 7;
+$elementPaginationContact.slice(0, pageSize).show();
+$elementPaginationContact.slice(pageSize, $elementPaginationContact.length).hide();
+function addSlice(num) {
+  return num + pageSize;
+}
+function subtractSlice(num) {
+  return num - pageSize;
+}
+var slice = [0, pageSize];
+$(".nextBlockDashboard").click(function() {
+  if (slice[1] < $elementPaginationContact.length)
+  {
+    slice = slice.map(addSlice);
+  }
+  showSlice(slice);
+});
+$(".prevBlockDashboard").click(function() {
+  if (slice[0] > 0)
+  {
+    slice = slice.map(subtractSlice);
+  }
+  showSlice(slice);
+});
+function showSlice(slice) {
+  $elementPaginationContact.hide();
+  $elementPaginationContact.slice(slice[0], slice[1]).show();
+};
+$(".tout_afficher_").click(function(){
+  if ($elementPaginationContact.is(":hidden"))
+  {
+    $elementPaginationContact.slice(0, $elementPaginationContact.length).show();
+  }else
+  {
+    $elementPaginationContact.slice(pageSize, $elementPaginationContact.length).hide();
+  }
+})
+
+// -----------------
+// -END PAGINATION -
+// -----------------
+
+
 }
 });

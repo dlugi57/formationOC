@@ -28,7 +28,7 @@
           while ($client = $clientsList->fetch())
           {
             ?>
-            <tr class='clickableRowClient' data-href='index.php?action=client&amp;id=<?= $client['id_client'] ?>'>
+            <tr class='clickableRowClient pagination_dashboard_' data-href='index.php?action=client&amp;id=<?= $client['id_client'] ?>'>
               <td><?= $client['name'] ?></td>
               <td><?= $client['tel'] ?></td>
               <td><?= $client['email'] ?></td>
@@ -47,7 +47,17 @@
   <div class="box-footer clearfix">
     <a href="index.php?action=addClientPage" class="btn btn-sm btn-warning btn-flat pull-left">Ajouter Client</a>
     <a href="index.php?action=listClients" class="btn btn-sm btn-default btn-flat pull-right">Clients List</a>
+
+    <ul class="pagination pagination-sm no-margin pull-right">
+      <li><a class="prevBlockDashboard">&laquo;</a></li>
+      <li><a class="tout_afficher_">Tout afficher</a></li>
+      <li><a class="nextBlockDashboard">&raquo;</a></li>
+    </ul>
   </div>
   <!-- /.box-footer -->
 </div>
 <!-- /.box -->
+<script type="text/javascript">
+
+
+</script>

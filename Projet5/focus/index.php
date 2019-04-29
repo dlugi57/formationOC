@@ -28,7 +28,7 @@ try {
         break;
 //ADD CLIENT
         case 'addClientPage':
-            require('View/backend/addClient.php');
+            $addClientPage = $controllerBack->addClientPage();
         break;
         case 'addClient':
             $addClient = $controllerBack->addClient();
@@ -69,5 +69,5 @@ try {
 catch(Exception $e)
 {
     $errorMsg = $e->getMessage();
-    require('view/errorView.php');
+    require('View/errorView.php');
 }

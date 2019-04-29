@@ -25,6 +25,7 @@
 <!-- Main CSS -->
 <!-- DataTables -->
 <link rel="stylesheet" href="Public/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+<link rel="stylesheet" href="Public/css/styles.css">
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

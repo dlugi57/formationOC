@@ -29,11 +29,13 @@ class ClientManager extends Manager
     }
 
 
-    public function newClient()
+    public function newClient($name, $tel, $email, $adress, $city, $post, $contact, $description)
     {
         $db = $this->dbConnect();
         $req = $db->prepare('INSERT INTO clients(name, tel, email, adress, city, post_code, contact_by, description, creation_date) VALUES(?, ?, ?, ?, ?, ?, ?, ?, NOW())');
         $addedClient = $req->execute(array($name, $tel, $email, $adress, $city, $post, $contact, $description));
+        $last_id = $db->lastInsertId();
+        $_SESSION['last_id'] = $last_id;
 
         return $addedClient;
     }
@@ -60,6 +62,16 @@ class ClientManager extends Manager
       $db = $this->dbConnect();
       //$sql = 'SELECT count(s.id_seance) as nb, s.type, t.nom_type, t.color_camembert, t.color_dash, t.color_boot FROM seances s INNER JOIN type_seance t ON s.type = t.id_type_seance GROUP BY t.nom_type';
       $sql = 'SELECT count(c.id_client) as nb, c.contact_by, b.nom_contact_by, b.color_camembert, b.color_dash, b.color_boot FROM clients c INNER JOIN contact_by b ON c.contact_by = b.id_contact_by GROUP BY b.nom_contact_by ORDER BY nb DESC';
+      //$sql = 'SELECT count(*) as nb, contact_by FROM clients GROUP BY contact_by LIMIT 0,8';
+      $req = $db->query($sql);
+
+      return $req;
+    }
+
+    public function contactByList(){
+      $db = $this->dbConnect();
+      //$sql = 'SELECT count(s.id_seance) as nb, s.type, t.nom_type, t.color_camembert, t.color_dash, t.color_boot FROM seances s INNER JOIN type_seance t ON s.type = t.id_type_seance GROUP BY t.nom_type';
+      $sql = 'SELECT * FROM contact_by';
       //$sql = 'SELECT count(*) as nb, contact_by FROM clients GROUP BY contact_by LIMIT 0,8';
       $req = $db->query($sql);
 

@@ -4,7 +4,7 @@
       <meta charset="utf-8" />
       <title>Error page</title>
       <!-- HEAD with all metadata -->
-      <?php require('view/head.php'); ?>
+      <?php require('View/head.php'); ?>
   </head>
   <body>
     <section class="errorShow">

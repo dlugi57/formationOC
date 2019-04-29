@@ -18,6 +18,22 @@ use Exception;
  */
 class FocusBack
 {
+
+  public function addClientPage()
+  {
+      $clientsManager = new ClientManager();
+      $newClientPage = $clientsManager->contactByList();
+      if ($newClientPage === false)
+      {
+          throw new Exception('Impossible d\'afficher le client !');
+      }
+      else
+      {
+          require('View/backend/addClient.php');
+      }
+
+  }
+
   public function addClient()
   {
       $clientsManager = new ClientManager();
@@ -28,7 +44,8 @@ class FocusBack
       }
       else
       {
-          header('Location: index.php?action=listPosts');
+        //throw new Exception('Impossible d\'ajouter le client !');
+          header('Location: index.php?action=client&id='.$_SESSION['last_id'].'');
       }
 
   }

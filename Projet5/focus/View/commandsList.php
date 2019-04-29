@@ -75,7 +75,7 @@ ob_start();
       </div>
       <!-- /.box -->
     </section>
-    <!-- /.Main col -->
+    <!-- /.Main col -->    
     <div class="col-md-3 col-sm-6 col-xs-12">
       <div class="info-box">
         <span class="info-box-icon bg-aqua"><i class="fa fa-eur"></i></span>

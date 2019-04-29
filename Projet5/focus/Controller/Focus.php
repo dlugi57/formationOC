@@ -114,6 +114,21 @@ class Focus
 
     }
 
+    public function command()
+    {
+      $commandsManager = new CommandManager();
+      $command = $commandsManager->getCommand($_GET['id']);
+
+      if ($command === false)
+      {
+          throw new Exception('Impossible d\'afficher le contenue !');
+      }else
+      {
+          require('View/command.php');
+      }
+
+    }
+
     public function listTaxes()
     {
       $taxesManager = new TaxesManager();

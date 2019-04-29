@@ -1,19 +1,12 @@
 <?php
 session_start();
 require "vendor/autoload.php";
-//require_once "Controller/Focus.php";
-//require_once "Controller/Dashboard.php";
 
-//require('Controller/frontend.php');
-//require('Controller/backend.php');
 use Controller\Dashboard;
 use Controller\Focus;
 
 $controller = new Focus();
 $controllerDash = new Dashboard();
-
-
-
 
 try {
     if (isset($_GET['action'])):
@@ -21,43 +14,35 @@ try {
       switch ($_GET['action']):
 //DASHBOARD
         case 'dashboard':
-      //  $sumBrut = $controller->sumBrut();
-
-          //  $dashboard = $controllerDash->monthlyRecap();
             $dashboard = $controllerDash->dashboard();
-
-            //dashboard();
         break;
 //CLIENT LIST
         case 'listClients':
             $clientsList = $controller->listClients();
-            //listClients();
         break;
 //CLIENT
         case 'client':
             $client = $controller->client();
-            //listClients();
         break;
-
-//CLIENT LIST
+//SEANCES LIST
         case 'listSeances':
             $seancesList = $controller->listSeances();
-            //listClients();
         break;
 //SEANCE
         case 'seance':
             $seance = $controller->seance();
-            //listClients();
         break;
-//CLIENT LIST
+//COMMAND LIST
         case 'listCommands':
             $commandsList = $controller->listCommands();
-            //listClients();
         break;
-//CLIENT LIST
+//COMMAND
+        case 'command':
+            $command = $controller->command();
+        break;
+//TAXES LIST
         case 'listTaxes':
             $taxList = $controller->listTaxes();
-            //listClients();
         break;
 
 
@@ -65,15 +50,11 @@ try {
 
 //DEFAULT HOME
         default:
-            //$dashboard = $controller->dashboard();
             header('Location: index.php?action=dashboard');
-            //dashboard();
         break;
       endswitch;
     else :
       header('Location: index.php?action=dashboard');
-        //$dashboard = $controller->dashboard();
-      //  dashboard();
     endif;
 }
 catch(Exception $e)

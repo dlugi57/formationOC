@@ -19,6 +19,7 @@ use Exception;
 class FocusBack
 {
 
+  //CLIENT
   public function addClientPage()
   {
       $clientsManager = new ClientManager();
@@ -46,6 +47,22 @@ class FocusBack
       {
         //throw new Exception('Impossible d\'ajouter le client !');
           header('Location: index.php?action=client&id='.$_SESSION['last_id'].'');
+      }
+
+  }
+
+  //SEANCE
+  public function addSeancePage()
+  {
+      $seancesManager = new SeanceManager();
+      $newSeancePage = $seancesManager->typeSeanceList();
+      if ($newSeancePage === false)
+      {
+          throw new Exception('Impossible d\'afficher le client !');
+      }
+      else
+      {
+          require('View/backend/addSeance.php');
       }
 
   }

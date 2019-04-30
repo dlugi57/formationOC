@@ -131,7 +131,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="index.php?action=listSeances"><i class="fa fa-list-ul"></i>Liste</a></li>
-            <li><a href="index.php?action=addSeance"><i class="fa fa-plus"></i>Ajouter</a></li>
+            <li><a href="index.php?action=addSeancePage"><i class="fa fa-plus"></i>Ajouter</a></li>
           </ul>
         </li>
 

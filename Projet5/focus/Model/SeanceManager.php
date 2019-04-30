@@ -120,6 +120,14 @@ class SeanceManager extends Manager
     return $req;
   }
 
+  public function typeSeanceList()
+  {
+    $db = $this->dbConnect();
+    $sql = 'SELECT * FROM type_seance';
+    $req = $db->query($sql);
+    return $req;
+  }
+
   public function test(){
 $db = $this->dbConnect();
     $sql = 'SELECT monthname(creation_date), sum(val1) DESPESAS, sum(val2) RECEITAS

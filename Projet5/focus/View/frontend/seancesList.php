@@ -20,7 +20,7 @@ ob_start();
         <div class="box-header">
           <h3 class="box-title">Liste de seances</h3>
           <div class="pull-right box-tools">
-            <a type="button" href="index.php?action=addSeance" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Ajouter seance</a>
+            <a type="button" href="index.php?action=addSeancePage" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Ajouter seance</a>
           </div>
         </div>
         <!-- /.box-header -->

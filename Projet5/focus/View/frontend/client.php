@@ -111,7 +111,7 @@ ob_start();
         </div>
         <!-- /.box-body -->
         <div class="box-footer clearfix">
-          <a href="index.php?action=addSeance" class="btn btn-sm btn-danger btn-flat pull-left">Ajouter Seance</a>
+          <a href="index.php?action=addSeancePage" class="btn btn-sm btn-danger btn-flat pull-left">Ajouter Seance</a>
           <a href="index.php?action=listSeances" class="btn btn-sm btn-default btn-flat pull-right">Seances List</a>
         </div>
         <!-- /.box-footer -->

@@ -41,6 +41,13 @@ try {
         case 'seance':
             $seance = $controller->seance();
         break;
+//ADD SEANCE
+        case 'addSeancePage':
+            $addSeancePage = $controllerBack->addSeancePage();
+        break;
+        case 'addSeance':
+            $addSeance = $controllerBack->addSeance();
+        break;
 //COMMAND LIST
         case 'listCommands':
             $commandsList = $controller->listCommands();

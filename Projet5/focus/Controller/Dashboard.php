@@ -48,7 +48,7 @@ class Dashboard
 
     //facebook
     $facebook = Dashboard::facebook();
-    require('View/dashboard.php');
+    require('View/frontend/dashboard.php');
 
   }
 

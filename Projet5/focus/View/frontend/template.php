@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title><?= $title ?></title>
   <!-- HEAD with all metadata -->
-  <?php require('view/head.php'); ?>
+  <?php require('View/frontend/head.php'); ?>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 

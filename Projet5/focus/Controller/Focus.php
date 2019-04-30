@@ -25,7 +25,7 @@ class Focus
             throw new Exception('Impossible d\'afficher le contenue !');
         }else
         {
-            require('View/clientsList.php');
+            require('View/frontend/clientsList.php');
         }
     }
 
@@ -44,7 +44,7 @@ class Focus
         }
         else
         {
-            require('View/client.php');
+            require('View/frontend/client.php');
         }
     }
 
@@ -92,7 +92,7 @@ class Focus
             throw new Exception('Impossible d\'afficher le contenue !');
         }else
         {
-            require('View/seancesList.php');
+            require('View/frontend/seancesList.php');
         }
     }
 
@@ -105,7 +105,7 @@ class Focus
           throw new Exception('Impossible d\'afficher le contenue !');
       }else
       {
-          require('View/seance.php');
+          require('View/frontend/seance.php');
       }
     }
 
@@ -126,7 +126,7 @@ class Focus
           throw new Exception('Impossible d\'afficher le contenue !');
       }else
       {
-          require('View/commandsList.php');
+          require('View/frontend/commandsList.php');
       }
 
     }
@@ -141,7 +141,7 @@ class Focus
           throw new Exception('Impossible d\'afficher le contenue !');
       }else
       {
-          require('View/command.php');
+          require('View/frontend/command.php');
       }
 
     }
@@ -156,7 +156,7 @@ class Focus
           throw new Exception('Impossible d\'afficher le contenue !');
       }else
       {
-          require('View/taxesList.php');
+          require('View/frontend/taxesList.php');
       }
 
     }

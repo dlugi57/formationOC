@@ -8,6 +8,8 @@
 <link rel="stylesheet" href="Public/bower_components/Ionicons/css/ionicons.min.css">
 <!-- Select2                                                              dont errase-->
 <link rel="stylesheet" href="Public/bower_components/select2/dist/css/select2.min.css">
+<!-- Bootstrap time Picker                                                           -->
+<link rel="stylesheet" href="Public/plugins/timepicker/bootstrap-timepicker.min.css">
 <!-- Theme style -->
 <link rel="stylesheet" href="Public/dist/css/AdminLTE.css">
 <!-- AdminLTE Skins. Choose a skin from the css/skins

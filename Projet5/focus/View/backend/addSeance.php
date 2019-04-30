@@ -24,17 +24,17 @@ ob_start();
         <div class="col-md-6">
           <div class="form-group">
             <label>Nom </label>
-              <select name="contact_by" class="form-control select2">
-            <?php
-            if (isset($client['name'])):
-              ?>
-              <option value="<?= $client['id_client'] ?>" selected="selected"><?= $client['name'] ?></option>
+            <select name="clients_id" class="form-control select2">
               <?php
-            else:
-              ?>
-              <option value="" selected="selected"></option>
-              <?php
-            endif;
+              if (isset($client['name'])):
+                ?>
+                <option value="<?= $client['id_client'] ?>" selected="selected"><?= $client['name'] ?></option>
+                <?php
+              else:
+                ?>
+                <option value="" selected="selected"></option>
+                <?php
+              endif;
               while ($data = $clientsList->fetch())
               {
                 ?>
@@ -42,19 +42,82 @@ ob_start();
                 <?php
               }
               ?>
-              <!-- text input -->
-              <!--<input name="name" value="<?php // echo $client['name']; ?>" class="form-control" placeholder="Enter ...">-->
-
             </select>
           </div>
-            <div class="form-group">
-              <label>Telephone</label>
-              <input name="tel" class="form-control" placeholder="Enter ...">
+          <!-- select -->
+          <div class="form-group">
+            <label>Seance type</label>
+            <select name="type" class="form-control">
+              <?php
+              while ($data = $newSeancePage->fetch()) {
+
+                ?>
+                <option value="<?= $data['id_type_seance'] ?>"><?= $data['nom_type'] ?></option>
+                <?php
+
+              }
+               ?>
+            </select>
+        </div>
+
+        <!-- Date -->
+        <div class="form-group">
+          <label>Date seance:</label>
+
+          <div class="input-group date">
+            <div class="input-group-addon">
+              <i class="fa fa-calendar"></i>
             </div>
-            <div class="form-group">
-              <label>Email</label>
-              <input name="email" class="form-control" placeholder="Enter ...">
+            <input name="seance_date" type="text" class="form-control pull-right" id="datepickerSeance">
+          </div>
+          <!-- /.input group -->
+        </div>
+        <!-- /.form group -->
+
+        <!-- time Picker -->
+        <div class="bootstrap-timepicker">
+          <div class="form-group">
+            <label>Heure:</label>
+            <div class="input-group">
+              <div class="input-group-addon">
+                <i class="fa fa-clock-o"></i>
+              </div>
+              <input name="time_seance" type="text" class="form-control timepicker">
             </div>
+            <!-- /.input group -->
+          </div>
+          <!-- /.form group -->
+        </div>
+
+
+        <!-- Prix -->
+        <div class="form-group">
+          <label>Prix</label>
+
+          <div class="input-group date">
+            <div class="input-group-addon">
+              <i class="fa fa-eur"></i>
+            </div>
+            <input name="prise" type="number" class="form-control">
+          </div>
+          <!-- /.input group -->
+        </div>
+        <!-- /.form group -->
+
+        <!-- Depenses -->
+        <div class="form-group">
+          <label>Depenses</label>
+
+          <div class="input-group date">
+            <div class="input-group-addon">
+              <i class="fa fa-money"></i>
+            </div>
+            <input name="depenses" type="number" class="form-control">
+          </div>
+          <!-- /.input group -->
+        </div>
+        <!-- /.form group -->
+
 
 
 
@@ -68,19 +131,28 @@ ob_start();
           <div class="col-md-6">
 
             <div class="form-group">
+              <label>Model</label>
+              <input name="model" type="text" class="form-control">
+            </div>
+
+            <div class="form-group">
               <label>Adresse</label>
-              <input name="adress" class="form-control" placeholder="Enter ...">
+              <input name="adresse_seance" type="text" class="form-control">
             </div>
             <div class="form-group">
               <label>Ville</label>
-              <input name="city" class="form-control" placeholder="Enter ...">
+              <input name="city_seance" type="text" class="form-control">
             </div>
             <div class="form-group">
-              <label>Code postale</label>
-              <input name="post_code" class="form-control" placeholder="Enter ...">
+              <label>Distance KM</label>
+              <input name="km" class="form-control" type="number">
             </div>
 
-
+            <!-- textarea -->
+            <div class="form-group">
+              <label>Description</label>
+              <textarea name="description_seance" class="form-control" rows="5"></textarea>
+            </div>
 
 
             </div>
@@ -90,26 +162,11 @@ ob_start();
 
         </div>
         <!--/.col-->
-        <!-- select -->
-        <div class="form-group">
-          <label>Seance type</label>
-          <select name="contact_by" class="form-control">
-            <?php
-            while ($data = $newSeancePage->fetch()) {
 
-              ?>
-              <option value="<?= $data['id_type_seance'] ?>"><?= $data['nom_type'] ?></option>
-              <?php
 
-            }
-             ?>
-          </select>
-      </div>
-      <!-- textarea -->
-      <div class="form-group">
-        <label>Description</label>
-        <textarea name="description" class="form-control" rows="3" placeholder="Enter ..."></textarea>
-      </div>
+
+
+
       <!--/.row-->
       <div class="box-footer">
         <?php

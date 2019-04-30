@@ -31,16 +31,38 @@ ob_start();
             <!-- text input -->
             <div class="form-group">
               <label>Nom</label>
-              <input name="name" class="form-control" placeholder="Enter ...">
+              <input name="name" type="text" class="form-control">
             </div>
+
+
+            <!-- Telephone -->
             <div class="form-group">
               <label>Telephone</label>
-              <input name="tel" class="form-control" placeholder="Enter ...">
+
+              <div class="input-group">
+                <div class="input-group-addon">
+                  <i class="fa fa-phone"></i>
+                </div>
+                <input name="tel" type="tel" class="form-control" data-inputmask='"mask": "9999999999"' data-mask>
+              </div>
+              <!-- /.input group -->
             </div>
+            <!-- /.form group -->
+
+            <!-- Date -->
             <div class="form-group">
               <label>Email</label>
-              <input name="email" class="form-control" placeholder="Enter ...">
+
+              <div class="input-group">
+                <div class="input-group-addon">
+                  <i class="fa fa-envelope"></i>
+                </div>
+                <input name="email" type="email" class="form-control">
+              </div>
+              <!-- /.input group -->
             </div>
+            <!-- /.form group -->
+
 
 
 
@@ -55,15 +77,15 @@ ob_start();
 
             <div class="form-group">
               <label>Adresse</label>
-              <input name="adress" class="form-control" placeholder="Enter ...">
+              <input name="adress" type="text" class="form-control">
             </div>
             <div class="form-group">
               <label>Ville</label>
-              <input name="city" class="form-control" placeholder="Enter ...">
+              <input name="city" type="text" class="form-control">
             </div>
             <div class="form-group">
               <label>Code postale</label>
-              <input name="post_code" class="form-control" placeholder="Enter ...">
+              <input name="post_code" type="text" class="form-control" data-inputmask='"mask": "99999"' data-mask>
             </div>
 
 
@@ -94,7 +116,7 @@ ob_start();
       <!-- textarea -->
       <div class="form-group">
         <label>Description</label>
-        <textarea name="description" class="form-control" rows="3" placeholder="Enter ..."></textarea>
+        <textarea name="description" class="form-control" rows="3"></textarea>
       </div>
       <!--/.row-->
       <div class="box-footer">

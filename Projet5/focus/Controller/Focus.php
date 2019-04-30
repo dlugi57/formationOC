@@ -50,20 +50,7 @@ class Focus
 
 
 
-    public function createPost($postTitle, $postContent)
-    {
-        $postManager = new \OpenClassrooms\Blog\Model\PostManager();
-        $addedPost = $postManager->addPost($postTitle, $postContent);
 
-        if ($addedPost === false)
-        {
-            throw new Exception('Impossible d\'ajouter le post !');
-        }
-        else
-        {
-            header('Location: index.php?action=listPosts');
-        }
-    }
 
     //SEANCES
     public function listSeances()

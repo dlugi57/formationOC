@@ -18,6 +18,22 @@ class SeanceManager extends Manager
     return $req;
   }
 
+  public function getFutureSeances()
+  {
+
+  //  $sql = 'SELECT COUNT(*) AS nb FROM seances WHERE seance_date >= CURDATE()';
+
+
+
+
+    $db = $this->dbConnect();
+    //$req = $db->query('SELECT *, DATE_FORMAT(seance_date, \'%d/%m/%Y\') AS seance_date_fr FROM seances ORDER BY creation_date DESC');
+    $req = $db->query('SELECT *,seances.creation_date AS creation_date_seance, DATE_FORMAT(seance_date, \'%d/%m/%Y\') AS seance_date_fr FROM seances INNER JOIN clients ON seances.clients_id = clients.id_client INNER JOIN type_seance ON type = id_type_seance WHERE seance_date >= CURDATE() ORDER BY seance_date ASC');
+
+    return $req;
+
+  }
+
 
   public function getClientSeance($clientId)
   {

@@ -33,7 +33,8 @@ class Dashboard
     $countFutureSeances = $seancesManager->countFutureSeances();
     $sumBrutSeances = $seancesManager->totals();
     $typeSession = $seancesManager->typeSession();
-    $seancesList= $seancesManager->getSeances();
+    $seancesList= $seancesManager->getFutureSeances();
+    //$seancesList= $seancesManager->getSeances();
 
     //COMMANDS
     $sumMonthCmd = $commandsManager->monthCmd();

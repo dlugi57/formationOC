@@ -76,5 +76,5 @@ try {
 catch(Exception $e)
 {
     $errorMsg = $e->getMessage();
-    require('View/errorView.php');
+    require('View/frontend/errorView.php');
 }

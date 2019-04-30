@@ -93,11 +93,15 @@ $dayOfWeek = $days[$dayofweek];
           <p class="text-muted text-center"><?= $seance['creation_date_seance'] ?></p>
           <hr>
 
-          <strong><i class="fa fa-money margin-r-5"></i> Prix</strong>
+          <strong><i class="fa fa-money margin-r-5"></i> Prix : <?= $netSeance = $seance['prise'] - $depensesWidget  ?> €</strong>
           <p>
             Gagne : <?= $seance['prise'] ?> €
             <br>
-            Depenses : <?= $depensesWidget ?> €
+            Depenses : <?= $seance['depenses'] ?> €
+            <br>
+            Depenses + KM : <?= $depensesWidget ?> €
+            <br>
+            Net : <?= $netSeance = $seance['prise'] - $depensesWidget  ?> €
           </p>
           <hr>
 

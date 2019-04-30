@@ -43,6 +43,19 @@ class SeanceManager extends Manager
       return $seance;
   }
 
+
+  public function newSeance($clients_id, $type, $seance_date, $time_seance, $prise, $depenses, $model, $adresse_seance, $city_seance, $km, $description_seance)
+  {
+      $db = $this->dbConnect();
+      $req = $db->prepare('INSERT INTO seances(clients_id, type, seance_date, time_seance, prise, depenses, model, adresse_seance, city_seance, km, description_seance, creation_date) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())');
+      $addedSeance = $req->execute(array($clients_id, $type, $seance_date, $time_seance, $prise, $depenses, $model, $adresse_seance, $city_seance, $km, $description_seance));
+      $last_id = $db->lastInsertId();
+      $_SESSION['last_id'] = $last_id;
+
+      return $addedSeance;
+  }
+
+
   public function countSeances()
   {
     $db = $this->dbConnect();

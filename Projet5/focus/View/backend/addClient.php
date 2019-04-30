@@ -106,7 +106,7 @@ ob_start();
         <?php
         }
         ?>
-        <button type="submit" class="btn btn-info pull-right">Sign in</button>
+        <button type="submit" class="btn btn-info pull-right">Ajouter</button>
       </div>
       <!-- /.box-footer -->
     </div>
@@ -118,4 +118,4 @@ ob_start();
 
 <?php
 $content = ob_get_clean();
-require('View/template.php');
+require('View/frontend/template.php');

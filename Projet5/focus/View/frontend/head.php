@@ -6,6 +6,8 @@
 <link rel="stylesheet" href="Public/bower_components/font-awesome/css/font-awesome.min.css">
 <!-- Ionicons -->
 <link rel="stylesheet" href="Public/bower_components/Ionicons/css/ionicons.min.css">
+<!-- Select2                                                              dont errase-->
+<link rel="stylesheet" href="Public/bower_components/select2/dist/css/select2.min.css">
 <!-- Theme style -->
 <link rel="stylesheet" href="Public/dist/css/AdminLTE.css">
 <!-- AdminLTE Skins. Choose a skin from the css/skins
@@ -25,6 +27,7 @@
 <!-- Main CSS -->
 <!-- DataTables -->
 <link rel="stylesheet" href="Public/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+
 <link rel="stylesheet" href="Public/css/styles.css">
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->

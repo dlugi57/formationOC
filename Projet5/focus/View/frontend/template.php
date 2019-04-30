@@ -305,6 +305,8 @@
 <!-- DataTables -->
 <script src="Public/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
 <script src="Public/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<!-- SELECT -->
+<script src="Public/bower_components/select2/dist/js/select2.full.min.js"></script>
 
 </body>
 </html>

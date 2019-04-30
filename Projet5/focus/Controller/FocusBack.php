@@ -56,6 +56,16 @@ class FocusBack
   {
       $seancesManager = new SeanceManager();
       $newSeancePage = $seancesManager->typeSeanceList();
+      $clientsManager = new ClientManager();
+      if (isset($_GET['id']) && $_GET['id'] > 0)
+      {
+        $client = $clientsManager->getClient($_GET['id']);
+      }
+
+      $clientsList = $clientsManager->getClients();
+
+
+
       if ($newSeancePage === false)
       {
           throw new Exception('Impossible d\'afficher le client !');

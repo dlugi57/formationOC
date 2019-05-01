@@ -75,7 +75,7 @@ class FocusBack
       $updateClient = $clientsManager->updateClient($_GET['id'],$_POST['name'], $_POST['tel'], $_POST['email'], $_POST['adress'], $_POST['city'], $_POST['post_code'], $_POST['contact_by'], $_POST['description']);
       if ($updateClient === false):
 
-          throw new Exception('Impossible d\'ajouter le client !');
+          throw new Exception('Impossible de modifier le client !');
 
       else:
 
@@ -143,6 +143,21 @@ class FocusBack
       else:
 
           require('View/backend/modifySeance.php');
+
+      endif;
+
+  }
+  public function modifySeance()
+  {
+      $seancesManager = new SeanceManager();
+      $updateSeance = $seancesManager->updateSeance($_GET['id'],$_POST['clients_id'], $_POST['type'], $_POST['seance_date'], $_POST['time_seance'], $_POST['prise'], $_POST['depenses'], $_POST['model'], $_POST['adresse_seance'], $_POST['city_seance'], $_POST['km'], $_POST['description_seance']);
+      if ($updateSeance === false):
+
+          throw new Exception('Impossible de modifier le client !');
+
+      else:
+
+          header('Location: index.php?action=seance&id='.$_GET['id'].'');
 
       endif;
 

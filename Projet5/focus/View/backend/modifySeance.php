@@ -5,8 +5,8 @@ ob_start();
 <!-- Content Header (Page header) -->
 <section class="content-header">
   <h1>
-    <?= $modifySeance['name']?>
-    <small><?= "Seance ".$modifySeance['nom_type'] ?></small>
+    <?= "Seance ".$modifySeance['nom_type'] ?>
+    <small><?= $modifySeance['name']?></small>
   </h1>
 </section>
 <!-- Main content -->

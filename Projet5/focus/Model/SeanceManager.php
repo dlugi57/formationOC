@@ -60,6 +60,28 @@ class SeanceManager extends Manager
   }
 
 
+  public function updateSeance($id_seance, $clients_id, $type, $seance_date, $time_seance, $prise, $depenses, $model, $adresse_seance, $city_seance, $km, $description_seance)
+  {
+      $db = $this->dbConnect();
+      $request = $db->prepare('UPDATE seances SET clients_id = :clients_id, type = :type, seance_date = :seance_date, time_seance = :time_seance, prise = :prise, depenses = :depenses, model = :model, adresse_seance = :adresse_seance, city_seance = :city_seance, km = :km, description_seance = :description_seance WHERE id_seance = :id_seance');
+      $request->execute(array('clients_id' => $clients_id,
+                              'type' => $type,
+                              'seance_date' => $seance_date,
+                              'time_seance' => $time_seance,
+                              'prise' => $prise,
+                              'depenses' => $depenses,
+                              'model' => $model,
+                              'adresse_seance' => $adresse_seance,
+                              'city_seance' => $city_seance,
+                              'km' => $km,
+                              'description_seance' => $description_seance,
+                              'id_seance' => $id_seance));
+
+      return $request;
+
+  }
+
+
   public function newSeance($clients_id, $type, $seance_date, $time_seance, $prise, $depenses, $model, $adresse_seance, $city_seance, $km, $description_seance)
   {
       $db = $this->dbConnect();

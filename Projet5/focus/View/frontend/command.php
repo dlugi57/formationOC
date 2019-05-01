@@ -159,10 +159,7 @@ ob_start();
           <hr>
 
           <div>
-            <div class="btn-group">
-              <a href="#" class="btn btn-danger pull-left"><b><i class="fa fa-trash-o"></i></b></a>
-              <a href="#" class="btn btn-primary "><b>Modifier</b></a>
-            </div>
+            <a href="index.php?action=modifyClientPage&amp;id=<?= $command['id_client'] ?>" class="btn btn-primary pull-left"><b>Modifier</b></a>
             <a href="index.php?action=client&amp;id=<?= $command['id_client'] ?>" class="btn btn-success pull-right"><b>Acceder</b></a>
           </div>
         </div>

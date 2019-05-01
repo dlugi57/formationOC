@@ -17,14 +17,14 @@ ob_start();
       <h3 class="box-title">Modifier command</h3>
     </div>
     <!-- /.box-header -->
-    <form role="form" method="post" action="index.php?action=addCommand">
+    <form role="form" method="post" action="index.php?action=modifyCommand&amp;id=<?= $modifyCommand['id_command'] ?>">
       <div class="box-body">
         <div class="row">
           <!-- col left -->
           <div class="col-md-6">
             <div class="form-group">
               <label>Nom </label>
-              <select name="clients_id" class="form-control select2" style="width: 100%;">
+              <select name="client_id_cmd" class="form-control select2" style="width: 100%;">
 
                 <option value="<?= $modifyCommand['id_client'] ?>" selected="selected"><?= $modifyCommand['name'] ?></option>
                 <?php

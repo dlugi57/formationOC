@@ -50,6 +50,22 @@ class CommandManager extends Manager
   }
 
 
+  public function updateCommand($id_command, $client_id_cmd, $type_command, $description_command, $prise_command, $cost_command)
+  {
+      $db = $this->dbConnect();
+      $request = $db->prepare('UPDATE commands SET client_id_cmd = :client_id_cmd, type_command = :type_command, description_command = :description_command, prise_command = :prise_command, cost_command = :cost_command WHERE id_command = :id_command');
+      $request->execute(array('client_id_cmd' => $client_id_cmd,
+                              'type_command' => $type_command,
+                              'description_command' => $description_command,
+                              'prise_command' => $prise_command,
+                              'cost_command' => $cost_command,
+                              'id_command' => $id_command));
+
+      return $request;
+
+  }
+
+
 
 
   public function totalsCmd()

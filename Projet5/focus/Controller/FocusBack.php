@@ -194,7 +194,7 @@ class FocusBack
       $newCommand = $commandsManager->newCommand($_POST['client_id_cmd'], $_POST['type_command'], $_POST['description_command'], $_POST['prise_command'], $_POST['cost_command']);
       if ($newCommand === false):
 
-          throw new Exception('Impossible d\'ajouter la command !');
+          throw new Exception('Impossible d\'ajouter la commande !');
 
       else:
 
@@ -215,7 +215,7 @@ class FocusBack
 
     if ($modifyCommand === false):
 
-        throw new Exception('Impossible d\'afficher la command !');
+        throw new Exception('Impossible d\'afficher la commande !');
 
     else:
 
@@ -226,7 +226,17 @@ class FocusBack
 
   public function modifyCommand()
   {
+    $commandsManager = new CommandManager();
+    $updateCommand = $commandsManager->updateCommand($_GET['id'],$_POST['client_id_cmd'], $_POST['type_command'], $_POST['description_command'], $_POST['prise_command'], $_POST['cost_command']);
+    if ($updateCommand === false):
 
+        throw new Exception('Impossible de modifier le commande !');
+
+    else:
+
+        header('Location: index.php?action=command&id='.$_GET['id'].'');
+
+    endif;
   }
 
   //TAXES

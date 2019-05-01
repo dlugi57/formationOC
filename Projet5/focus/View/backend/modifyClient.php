@@ -5,8 +5,8 @@ ob_start();
 <!-- Content Header (Page header) -->
 <section class="content-header">
   <h1>
-    Modifier Client
-    <small>Control panel</small>
+    <?= $modifyClient['name'] ?>
+    <small>Modifier client</small>
   </h1>
 </section>
 

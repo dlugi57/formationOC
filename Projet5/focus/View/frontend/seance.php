@@ -106,7 +106,13 @@ $dayOfWeek = $days[$dayofweek];
           <hr>
 
           <strong><i class="fa fa-calendar margin-r-5"></i> Date</strong>
-          <p><?= $seance['seance_date_fr'] ." ". $seance['time_seance'] ." ". $dayOfWeek ?></p>
+          <p>
+            <?= $seance['seance_date_fr'] ?>
+            <br>
+            <?= $seance['time_seance'] ?>
+            <br>
+            <?= $dayOfWeek ?>
+          </p>
           <hr>
 
           <strong><i class="fa fa-user margin-r-5"></i> Model</strong>
@@ -134,7 +140,7 @@ $dayOfWeek = $days[$dayofweek];
 
           <div>
             <a href="#" class="btn btn-danger pull-left"><b><i class="fa fa-trash-o"></i></b></a>
-            <a href="#" class="btn btn-primary pull-right"><b>Modifier</b></a>
+            <a href="index.php?action=modifySeancePage&amp;id=<?= $seance['id_seance'] ?>" class="btn btn-primary pull-right"><b>Modifier</b></a>
           </div>
         </div>
         <!-- /.box-body -->

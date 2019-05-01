@@ -125,6 +125,29 @@ class FocusBack
       endif;
   }
 
+
+
+  public function modifySeancePage()
+  {
+      $seancesManager = new SeanceManager();
+      $modifySeance = $seancesManager->getSeance($_GET['id']);
+      $modifySeanceType = $seancesManager->typeSeanceList();
+      $clientsManager = new ClientManager();
+      $modifySeanceClients = $clientsManager->getClients();
+
+
+      if ($modifySeance === false):
+
+          throw new Exception('Impossible d\'afficher le seance !');
+
+      else:
+
+          require('View/backend/modifySeance.php');
+
+      endif;
+
+  }
+
   //COMMAND
   public function addCommandPage()
   {

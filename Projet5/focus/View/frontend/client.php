@@ -54,7 +54,7 @@ ob_start();
           <p class="text-muted text-center"><?= $client['description'] ?></p>
           <hr>
           <div>
-            <a href="#" class="btn btn-danger pull-left"><b><i class="fa fa-trash-o"></i></b></a>
+            <a href="index.php?action=removeClient&amp;id=<?= $client['id_client'] ?>" class="btn btn-danger pull-left"><b><i class="fa fa-trash-o"></i></b></a>
             <a href="index.php?action=modifyClientPage&amp;id=<?= $client['id_client'] ?>" class="btn btn-primary pull-right"><b>Modifier</b></a>
           </div>
         </div>

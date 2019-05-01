@@ -85,6 +85,21 @@ class FocusBack
 
   }
 
+  public function removeClient()
+  {
+    $clientsManager = new ClientManager();
+    $deleteClient = $clientsManager->deleteClient($_GET['id']);
+    if ($deleteClient === false):
+
+        throw new Exception('Impossible de supprime client !');
+
+    else:
+
+        header('Location: index.php?action=dashboard');
+
+    endif;
+  }
+
   //SEANCE
   public function addSeancePage()
   {

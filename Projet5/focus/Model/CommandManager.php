@@ -95,6 +95,15 @@ class CommandManager extends Manager
     return $req;
   }
 
+  public function deleteCommand($id_command)
+  {
+      $db = $this->dbConnect();
+      $request = $db->prepare('DELETE FROM commands WHERE id_command = :id_command');
+      $request->execute(array('id_command' => $id_command));
+
+      $request->closeCursor();
+  }
+
 
 
 

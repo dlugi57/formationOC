@@ -179,7 +179,16 @@ class SeanceManager extends Manager
     return $req;
   }
 
-  public function test(){
+  public function deleteSeance($id_seance)
+  {
+      $db = $this->dbConnect();
+      $request = $db->prepare('DELETE FROM seances WHERE id_seance = :id_seance');
+      $request->execute(array('id_seance' => $id_seance));
+
+      $request->closeCursor();
+  }
+
+  /*public function test(){
 $db = $this->dbConnect();
     $sql = 'SELECT monthname(creation_date), sum(val1) DESPESAS, sum(val2) RECEITAS
    from (
@@ -194,7 +203,7 @@ $db = $this->dbConnect();
    $req = $db->query($sql);
 
    return $req;
-  }
+ }*/
 
 
 

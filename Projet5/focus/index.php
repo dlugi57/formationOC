@@ -40,6 +40,10 @@ try {
         case 'modifyClient':
             $modifyClient = $controllerBack->modifyClient();
         break;
+//REMOVE CLIENT
+        case 'removeClient':
+            $removeClient = $controllerBack->removeClient();
+        break;
 //SEANCES LIST
         case 'listSeances':
             $seancesList = $controller->listSeances();
@@ -55,12 +59,16 @@ try {
         case 'addSeance':
             $addSeance = $controllerBack->addSeance();
         break;
-//ADD SEANCE
+//MODIFY SEANCE
         case 'modifySeancePage':
             $modifySeancePage = $controllerBack->modifySeancePage();
         break;
         case 'modifySeance':
             $modifySeance = $controllerBack->modifySeance();
+        break;
+//REMOVE SEANCE
+        case 'removeSeance':
+            $removeSeance = $controllerBack->removeSeance();
         break;
 //COMMAND LIST
         case 'listCommands':
@@ -84,6 +92,10 @@ try {
         case 'modifyCommand':
             $modifyCommand = $controllerBack->modifyCommand();
         break;
+//REMOVE COMMAND
+        case 'removeCommand':
+            $removeCommand = $controllerBack->removeCommand();
+        break;
 //TAXES LIST
         case 'listTaxes':
             $taxList = $controller->listTaxes();
@@ -105,6 +117,10 @@ try {
         break;
         case 'modifyTaxes':
             $modifyTaxes = $controllerBack->modifyTaxes();
+        break;
+//REMOVE TAXE
+        case 'removeTaxe':
+            $removeTaxe = $controllerBack->removeTaxe();
         break;
 
 

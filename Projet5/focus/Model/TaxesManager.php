@@ -102,6 +102,15 @@ class TaxesManager extends Manager
 
   }
 
+  public function deleteTaxe($tax_id)
+  {
+      $db = $this->dbConnect();
+      $request = $db->prepare('DELETE FROM taxes WHERE tax_id = :tax_id');
+      $request->execute(array('tax_id' => $tax_id));
+
+      $request->closeCursor();
+  }
+
 
 
 

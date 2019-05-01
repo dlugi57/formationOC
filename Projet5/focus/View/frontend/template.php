@@ -145,7 +145,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="index.php?action=listCommands"><i class="fa fa-list-ul"></i> Liste</a></li>
-            <li><a href="index.php?action=addCommand"><i class="fa fa-plus"></i> Ajouter</a></li>
+            <li><a href="index.php?action=addCommandPage"><i class="fa fa-plus"></i> Ajouter</a></li>
 
           </ul>
         </li>

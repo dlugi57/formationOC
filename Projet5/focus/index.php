@@ -56,6 +56,13 @@ try {
         case 'command':
             $command = $controller->command();
         break;
+//ADD COMMAND
+        case 'addCommandPage':
+            $addCommandPage = $controller->addCommandPage();
+        break;
+        case 'addCommand':
+            $addCommand = $controller->addCommand();
+        break;
 //TAXES LIST
         case 'listTaxes':
             $taxList = $controller->listTaxes();

@@ -46,11 +46,10 @@
   <!-- /.box-body -->
   <div class="box-footer clearfix">
     <a href="index.php?action=addClientPage" class="btn btn-sm btn-warning btn-flat pull-left">Ajouter Client</a>
-    <a href="index.php?action=listClients" class="btn btn-sm btn-default btn-flat pull-right">Clients List</a>
 
     <ul class="pagination pagination-sm no-margin pull-right">
       <li><a class="prevBlockDashboard">&laquo;</a></li>
-      <li><a class="tout_afficher_">Tout afficher</a></li>
+      <li><a href="index.php?action=listClients" class="btn btn-sm btn-default btn-flat">Clients List</a></li>
       <li><a class="nextBlockDashboard">&raquo;</a></li>
     </ul>
   </div>

@@ -64,8 +64,6 @@ class FocusBack
 
       $clientsList = $clientsManager->getClients();
 
-
-
       if ($newSeancePage === false)
       {
           throw new Exception('Impossible d\'afficher le client !');
@@ -80,9 +78,6 @@ class FocusBack
   public function addSeance()
   {
       $seancesManager = new SeanceManager();
-
-
-
       $newSeance = $seancesManager->newSeance($_POST['clients_id'], $_POST['type'], $_POST['seance_date'], $_POST['time_seance'], $_POST['prise'], $_POST['depenses'], $_POST['model'], $_POST['adresse_seance'], $_POST['city_seance'], $_POST['km'], $_POST['description_seance']);
       if ($newSeance === false)
       {
@@ -92,6 +87,30 @@ class FocusBack
       {
         //throw new Exception('Impossible d\'ajouter le client !');
           header('Location: index.php?action=seance&id='.$_SESSION['last_id'].'');
+      }
+  }
+
+  //COMMAND
+  public function addCommandPage()
+  {
+      $commandsManager = new CommandManager();
+      $newCommandPage = $commandsManager->typeCommandList();
+
+      $clientsManager = new ClientManager();
+      if (isset($_GET['id']) && $_GET['id'] > 0)
+      {
+        $client = $clientsManager->getClient($_GET['id']);
+      }
+
+      $clientsList = $clientsManager->getClients();
+
+      if ($newCommandPage === false)
+      {
+          throw new Exception('Impossible d\'afficher le client !');
+      }
+      else
+      {
+          require('View/backend/addCommand.php');
       }
 
   }

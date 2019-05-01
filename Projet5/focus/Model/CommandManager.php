@@ -56,6 +56,14 @@ class CommandManager extends Manager
     return $req;
   }
 
+  public function typeCommandList()
+  {
+    $db = $this->dbConnect();
+    $sql = 'SELECT * FROM type_command';
+    $req = $db->query($sql);
+    return $req;
+  }
+
 
 
 

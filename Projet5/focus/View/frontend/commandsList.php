@@ -20,7 +20,7 @@ ob_start();
         <div class="box-header">
           <h3 class="box-title">Liste de commands</h3>
           <div class="pull-right box-tools">
-            <a type="button" href="index.php?action=addCommand" class="btn btn-warning pull-right"><i class="fa fa-plus"></i> Ajouter command</a>
+            <a type="button" href="index.php?action=addCommandPage" class="btn btn-warning pull-right"><i class="fa fa-plus"></i> Ajouter command</a>
           </div>
         </div>
         <!-- /.box-header -->
@@ -75,7 +75,7 @@ ob_start();
       </div>
       <!-- /.box -->
     </section>
-    <!-- /.Main col -->    
+    <!-- /.Main col -->
     <div class="col-md-3 col-sm-6 col-xs-12">
       <div class="info-box">
         <span class="info-box-icon bg-aqua"><i class="fa fa-eur"></i></span>

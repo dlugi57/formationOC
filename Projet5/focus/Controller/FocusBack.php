@@ -269,6 +269,21 @@ class FocusBack
     endif;
   }
 
+  public function removeCommand()
+  {
+    $commandsManager = new CommandManager();
+    $deleteCommand = $commandsManager->deleteCommand($_GET['id']);
+    if ($deleteCommand === false):
+
+        throw new Exception('Impossible de supprimer la commande !');
+
+    else:
+
+        header('Location: index.php?action=dashboard');
+
+    endif;
+  }
+
   //TAXES
 
 

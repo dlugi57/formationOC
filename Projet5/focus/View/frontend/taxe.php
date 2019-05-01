@@ -1,5 +1,5 @@
 <?php
-$title = "Command | Sunny Moments";
+$title = "Taxe | Sunny Moments";
 $monthTaxShow = date('F', mktime(0, 0, 0, $taxe['month'], 10));
 ob_start();
  ?>
@@ -7,7 +7,7 @@ ob_start();
 <section class="content-header">
   <h1>
     <?= $monthTaxShow?>
-    <small><?= "Taxe pour mois de ".$monthTaxShow ?></small>
+    <small><?= $taxe['year'] ?></small>
   </h1>
 </section>
 <!-- Main content -->
@@ -50,7 +50,7 @@ ob_start();
 
           <div>
             <a href="#" class="btn btn-danger pull-left"><b><i class="fa fa-trash-o"></i></b></a>
-            <a href="#" class="btn btn-primary pull-right"><b>Modifier</b></a>
+            <a href="index.php?action=modifyTaxesPage&amp;id=<?= $taxe['tax_id'] ?>" class="btn btn-primary pull-right"><b>Modifier</b></a>
           </div>
         </div>
         <!-- /.box-body -->

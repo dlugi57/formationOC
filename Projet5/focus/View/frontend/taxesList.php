@@ -34,6 +34,7 @@ ob_start();
               <th>Paid</th>
               <th>Percents</th>
               <th>Description</th>
+              <th>Anne</th>
               <th>Date ajout</th>
             </tr>
             </thead>
@@ -48,6 +49,7 @@ ob_start();
                 <td><?= $data['tax_paid'] ?> €</td>
                 <td><?= $percentsTaxRow = intval(($data['tax_paid']/$data['tax_declare'])*100); ?> %</td>
                 <td><?= $data['tax_description'] ?></td>
+                <td><?= $data['year'] ?></td>
                 <td><?= $data['taxe_date_add'] ?></td>
               </tr>
               <?php
@@ -62,6 +64,7 @@ ob_start();
               <th>Paid</th>
               <th>Percents</th>
               <th>Description</th>
+              <th>Anne</th>
               <th>Date ajout</th>
             </tr>
             </tfoot>

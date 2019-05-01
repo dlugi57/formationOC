@@ -8,7 +8,7 @@ class TaxesManager extends Manager
   public function getTaxes()
   {
     $db = $this->dbConnect();
-    $req = $db->query('SELECT * ,Month(tax_date) as month FROM taxes ORDER BY tax_date ASC');
+    $req = $db->query('SELECT * ,Month(tax_date) as month, Year(tax_date) as year  FROM taxes ORDER BY tax_date ASC');
 
     return $req;
   }
@@ -18,7 +18,7 @@ class TaxesManager extends Manager
 
 
     $db = $this->dbConnect();
-    $req = $db->prepare('SELECT * ,Month(tax_date) as month FROM taxes WHERE tax_id = ?');
+    $req = $db->prepare('SELECT * ,Month(tax_date) as month, Year(tax_date) as year  FROM taxes WHERE tax_id = ?');
     $req->execute(array($taxeId));
     $taxe = $req->fetch();
 
@@ -26,6 +26,21 @@ class TaxesManager extends Manager
   }
 
 
+
+  public function updateTaxe($tax_id, $tax_date, $tax_declare, $tax_paid, $tax_description)
+  {
+    $db = $this->dbConnect();
+    $request = $db->prepare('UPDATE taxes SET tax_date = :tax_date, tax_declare = :tax_declare, tax_paid = :tax_paid, tax_description = :tax_description WHERE tax_id = :tax_id');
+    $request->execute(array('tax_date' => $tax_date,
+                            'tax_declare' => $tax_declare,
+                            'tax_paid' => $tax_paid,
+                            'tax_description' => $tax_description,
+                            'tax_id' => $tax_id));
+
+    return $request;
+  }
+
+/*
   public function getClient($clientId)
   {
       $db = $this->dbConnect();
@@ -34,7 +49,7 @@ class TaxesManager extends Manager
       $post = $req->fetch();
 
       return $post;
-  }
+  }*/
 
   public function totalsTax()
   {

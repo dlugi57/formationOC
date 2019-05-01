@@ -95,10 +95,16 @@ try {
 //ADD TAXE
         case 'addTaxesPage':
             require('View/backend/addTaxes.php');
-            //$addTaxesPage = $controllerBack->addTaxesPage();
         break;
         case 'addTaxes':
             $addTaxes = $controllerBack->addTaxes();
+        break;
+//ADD TAXE
+        case 'modifyTaxesPage':
+            $modifyTaxesPage = $controllerBack->modifyTaxesPage();
+        break;
+        case 'modifyTaxes':
+            $modifyTaxes = $controllerBack->modifyTaxes();
         break;
 
 

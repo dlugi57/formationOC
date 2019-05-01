@@ -259,4 +259,41 @@ class FocusBack
 
   }
 
+  public function modifyTaxesPage()
+  {
+    $taxesManager = new TaxesManager();
+    $modifyTax = $taxesManager->getTaxe($_GET['id']);
+
+
+    if ($modifyTax === false):
+
+        throw new Exception('Impossible d\'afficher le taxe page !');
+
+    else:
+
+        require('View/backend/modifyTax.php');
+
+    endif;
+  }
+
+  public function modifyTaxes()
+  {
+
+
+
+
+
+    $taxesManager = new TaxesManager();
+    $updateTaxe = $taxesManager->updateTaxe($_GET['id'], $_POST['tax_date'], $_POST['tax_declare'], $_POST['tax_paid'], $_POST['tax_description']);
+    if ($updateTaxe === false):
+
+        throw new Exception('Impossible de modifier la taxe !');
+
+    else:
+
+        header('Location: index.php?action=taxe&id='.$_GET['id'].'');
+
+    endif;
+  }
+
 }

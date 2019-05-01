@@ -168,7 +168,7 @@ class FocusBack
       $updateSeance = $seancesManager->updateSeance($_GET['id'],$_POST['clients_id'], $_POST['type'], $_POST['seance_date'], $_POST['time_seance'], $_POST['prise'], $_POST['depenses'], $_POST['model'], $_POST['adresse_seance'], $_POST['city_seance'], $_POST['km'], $_POST['description_seance']);
       if ($updateSeance === false):
 
-          throw new Exception('Impossible de modifier le client !');
+          throw new Exception('Impossible de modifier le seance !');
 
       else:
 
@@ -176,6 +176,21 @@ class FocusBack
 
       endif;
 
+  }
+
+  public function removeSeance()
+  {
+    $seancesManager = new SeanceManager();
+    $deleteSeance = $seancesManager->deleteSeance($_GET['id']);
+    if ($deleteSeance === false):
+
+        throw new Exception('Impossible de supprimer le seance !');
+
+    else:
+
+        header('Location: index.php?action=dashboard');
+
+    endif;
   }
 
   //COMMAND

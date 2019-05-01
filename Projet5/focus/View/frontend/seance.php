@@ -139,7 +139,7 @@ $dayOfWeek = $days[$dayofweek];
           <hr>
 
           <div>
-            <a href="#" class="btn btn-danger pull-left"><b><i class="fa fa-trash-o"></i></b></a>
+            <a href="index.php?action=removeSeance&amp;id=<?= $seance['id_seance'] ?>" class="btn btn-danger pull-left"><b><i class="fa fa-trash-o"></i></b></a>
             <a href="index.php?action=modifySeancePage&amp;id=<?= $seance['id_seance'] ?>" class="btn btn-primary pull-right"><b>Modifier</b></a>
           </div>
         </div>

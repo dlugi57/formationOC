@@ -33,6 +33,13 @@ try {
         case 'addClient':
             $addClient = $controllerBack->addClient();
         break;
+//MODIFY CLIENT
+        case 'modifyClientPage':
+            $modifyClientPage = $controllerBack->modifyClientPage();
+        break;
+        case 'modifyClient':
+            $modifyClient = $controllerBack->modifyClient();
+        break;
 //SEANCES LIST
         case 'listSeances':
             $seancesList = $controller->listSeances();

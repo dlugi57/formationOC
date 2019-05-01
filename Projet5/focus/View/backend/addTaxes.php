@@ -73,8 +73,6 @@ ob_start();
         <!--/.col-->
         </div>
         <!--/.row-->
-
-
         <div class="box-footer">
           <?php
           //if we can return to the last page show button

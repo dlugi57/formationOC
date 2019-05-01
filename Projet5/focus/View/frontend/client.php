@@ -55,7 +55,7 @@ ob_start();
           <hr>
           <div>
             <a href="#" class="btn btn-danger pull-left"><b><i class="fa fa-trash-o"></i></b></a>
-            <a href="#" class="btn btn-primary pull-right"><b>Modifier</b></a>
+            <a href="index.php?action=modifyClientPage&amp;id=<?= $client['id_client'] ?>" class="btn btn-primary pull-right"><b>Modifier</b></a>
           </div>
         </div>
         <!-- /.box-body -->

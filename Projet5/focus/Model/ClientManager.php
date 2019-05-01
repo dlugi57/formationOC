@@ -40,6 +40,26 @@ class ClientManager extends Manager
         return $addedClient;
     }
 
+    public function updateClient($id_client, $name, $tel, $email, $adress, $city, $post_code, $contact_by, $description)
+    {
+        $db = $this->dbConnect();
+        //$db = $this->dbConnect($id_client, $name, $tel, $email, $adress, $city, $post_code, $contact_by, $description);
+        //$request = $db->prepare('UPDATE clients SET name = :name, tel = :tel, email = :email, adress = :adress, city = :city, post_code = :post_code, contact_by = :contact_by, description = :description,creation_date = NOW() WHERE id_client = :id_client');
+        $request = $db->prepare('UPDATE clients SET name = :name, tel = :tel, email = :email, adress = :adress, city = :city, post_code = :post_code, contact_by = :contact_by, description = :description WHERE id_client = :id_client');
+        $request->execute(array('name' => $name,
+                                'tel' => $tel,
+                                'email' => $email,
+                                'adress' => $adress,
+                                'city' => $city,
+                                'post_code' => $post_code,
+                                'contact_by' => $contact_by,
+                                'description' => $description,
+                                'id_client' => $id_client));
+
+        return $request;
+
+    }
+
     public function countClients()
     {
       $db = $this->dbConnect();

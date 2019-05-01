@@ -51,6 +51,40 @@ class FocusBack
 
   }
 
+  public function modifyClientPage()
+  {
+      $clientsManager = new ClientManager();
+      $modifyClient = $clientsManager->getClient($_GET['id']);
+      $modifyClientContact = $clientsManager->contactByList();
+
+
+      if ($modifyClient === false):
+
+          throw new Exception('Impossible d\'afficher le client !');
+
+      else:
+
+          require('View/backend/modifyClient.php');
+
+      endif;
+
+  }
+  public function modifyClient()
+  {
+      $clientsManager = new ClientManager();
+      $updateClient = $clientsManager->updateClient($_GET['id'],$_POST['name'], $_POST['tel'], $_POST['email'], $_POST['adress'], $_POST['city'], $_POST['post_code'], $_POST['contact_by'], $_POST['description']);
+      if ($updateClient === false):
+
+          throw new Exception('Impossible d\'ajouter le client !');
+
+      else:
+
+          header('Location: index.php?action=client&id='.$_GET['id'].'');
+
+      endif;
+
+  }
+
   //SEANCE
   public function addSeancePage()
   {

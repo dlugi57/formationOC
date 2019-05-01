@@ -28,7 +28,7 @@ class SeanceManager extends Manager
 
     $db = $this->dbConnect();
     //$req = $db->query('SELECT *, DATE_FORMAT(seance_date, \'%d/%m/%Y\') AS seance_date_fr FROM seances ORDER BY creation_date DESC');
-    $req = $db->query('SELECT *,seances.creation_date AS creation_date_seance, DATE_FORMAT(seance_date, \'%d/%m/%Y\') AS seance_date_fr FROM seances INNER JOIN clients ON seances.clients_id = clients.id_client INNER JOIN type_seance ON type = id_type_seance WHERE seance_date >= CURDATE() ORDER BY seance_date ASC');
+    $req = $db->query('SELECT *,seances.creation_date AS creation_date_seance, DATE_FORMAT(seance_date, \'%d/%m/%Y\') AS seance_date_fr FROM seances INNER JOIN clients ON seances.clients_id = clients.id_client INNER JOIN type_seance ON type = id_type_seance WHERE seance_date >= CURDATE() ORDER BY seance_date ASC LIMIT 0,7');
 
     return $req;
 

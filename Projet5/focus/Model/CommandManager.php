@@ -37,6 +37,21 @@ class CommandManager extends Manager
       return $command;
   }
 
+
+  public function newCommand($client_id_cmd, $type_command, $description_command, $prise_command, $cost_command)
+  {
+      $db = $this->dbConnect();
+      $req = $db->prepare('INSERT INTO commands(client_id_cmd, type_command, description_command, prise_command, cost_command, command_date, km_cmd) VALUES(?, ?, ?, ?, ?, NOW(), 0)');
+      $addedCommand = $req->execute(array($client_id_cmd, $type_command, $description_command, $prise_command, $cost_command));
+      $last_id = $db->lastInsertId();
+      $_SESSION['last_id'] = $last_id;
+
+      return $addedCommand;
+  }
+
+
+
+
   public function totalsCmd()
   {
 

@@ -20,7 +20,7 @@ ob_start();
         <div class="box-header">
           <h3 class="box-title">Liste de tax</h3>
           <div class="pull-right box-tools">
-            <a type="button" href="index.php?action=addTax" class="btn btn-danger pull-right"><i class="fa fa-plus"></i> Ajouter tax</a>
+            <a type="button" href="index.php?action=addTaxesPage" class="btn btn-danger pull-right"><i class="fa fa-plus"></i> Ajouter tax</a>
           </div>
         </div>
         <!-- /.box-header -->

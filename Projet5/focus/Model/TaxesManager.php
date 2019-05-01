@@ -78,7 +78,7 @@ class TaxesManager extends Manager
   {
 
         $db = $this->dbConnect();
-        $req = $db->prepare('INSERT INTO taxes(tax_date, tax_declare, tax_paid, tax_description, tax_date_add) VALUES(?, ?, ?, ?, NOW())');
+        $req = $db->prepare('INSERT INTO taxes(tax_date, tax_declare, tax_paid, tax_description, taxe_date_add) VALUES(?, ?, ?, ?, NOW())');
         $addedTaxe = $req->execute(array($tax_date, $tax_declare, $tax_paid, $tax_description));
         $last_id = $db->lastInsertId();
         $_SESSION['last_id'] = $last_id;

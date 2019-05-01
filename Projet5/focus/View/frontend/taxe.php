@@ -6,14 +6,12 @@ ob_start();
 <!-- Content Header (Page header) -->
 <section class="content-header">
   <h1>
-    Taxe
-    <small><?= "Pour mois de ".$monthTaxShow ?></small>
+    <?= $monthTaxShow?>
+    <small><?= "Taxe pour mois de ".$monthTaxShow ?></small>
   </h1>
 </section>
 <!-- Main content -->
 <section class="content">
-
-
   <!-- Main row -->
   <div class="row">
     <!-- Main col left-->
@@ -31,17 +29,19 @@ ob_start();
         <div class="box-body box-profile">
           <h3 class="profile-username text-center">Mois <?= $monthTaxShow ?></h3>
           <p class="text-muted text-center"><?= $taxe['tax_date'] ?></p>
-          <hr>
-          <strong><i class="fa fa-money margin-r-5"></i> Taxe</strong>
-          <p>
-            Declare : <?= $taxe['tax_declare'] ?> €
-            <br>
-            Paie : <?= $taxe['tax_paid'] ?> €
-          </p>
-          <hr>
 
-          <strong><i class="fa fa-calendar margin-r-5"></i> Date ajout</strong>
-          <p><?= $taxe['taxe_date_add']?></p>
+          <hr>
+          <strong><i class="fa fa-money margin-r-5"></i> Declare</strong>
+          <p><?= $taxe['tax_declare'] ?> €</p>
+          <hr>
+          <strong><i class="fa fa-eur margin-r-5"></i> Paie</strong>
+          <p><?= $taxe['tax_paid'] ?> €</p>
+          <hr>
+          <strong><i class="fa fa-calculator margin-r-5"></i> Reste</strong>
+          <p><?= $restTaxe = $taxe['tax_declare'] - $taxe['tax_paid'] ?> €</p>
+          <hr>
+          <strong><i class="fa fa-line-chart margin-r-5"></i> Pourcentages</strong>
+          <p><?= $percentsTaxShow = intval(($taxe['tax_paid']/$taxe['tax_declare'])*100); ?> %</p>
           <hr>
 
           <strong><i class="fa fa-pencil margin-r-5"></i> Description</strong>

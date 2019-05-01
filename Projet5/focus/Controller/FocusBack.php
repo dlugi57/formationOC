@@ -173,6 +173,7 @@ class FocusBack
       if (isset($_GET['id']) && $_GET['id'] > 0):
 
         $client = $clientsManager->getClient($_GET['id']);
+
       endif;
 
       $clientsList = $clientsManager->getClients();
@@ -200,6 +201,32 @@ class FocusBack
           header('Location: index.php?action=command&id='.$_SESSION['last_id'].'');
 
       endif;
+  }
+
+  public function modifyCommandPage()
+  {
+    $commandsManager = new CommandManager();
+    $modifyCommand = $commandsManager->getCommand($_GET['id']);
+
+    $modifyCommandType = $commandsManager->typeCommandList();
+    $clientsManager = new ClientManager();
+    $modifyCommandClients = $clientsManager->getClients();
+
+
+    if ($modifyCommand === false):
+
+        throw new Exception('Impossible d\'afficher la command !');
+
+    else:
+
+        require('View/backend/modifyCommand.php');
+
+    endif;
+  }
+
+  public function modifyCommand()
+  {
+
   }
 
   //TAXES

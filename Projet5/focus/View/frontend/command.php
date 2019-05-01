@@ -1,12 +1,12 @@
 <?php
-$title = "Command | Sunny Moments";
+$title = "Commande | Sunny Moments";
 ob_start();
  ?>
 <!-- Content Header (Page header) -->
 <section class="content-header">
   <h1>
     <?= $command['name']?>
-    <small><?= "Command ".$command['nom_type_command'] ?></small>
+    <small><?= "Commande ".$command['nom_type_command'] ?></small>
   </h1>
 </section>
 <!-- Main content -->
@@ -77,7 +77,7 @@ ob_start();
       <!-- Seance-->
       <div class="box box-primary">
         <div class="box-header with-border">
-          <h3 class="box-title">Command</h3>
+          <h3 class="box-title">Commande</h3>
           <div class="box-tools pull-right">
             <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
             </button>
@@ -85,7 +85,7 @@ ob_start();
           </div>
         </div>
         <div class="box-body box-profile">
-          <h3 class="profile-username text-center">Command <?= $command['nom_type_command'] ?></h3>
+          <h3 class="profile-username text-center">Commande <?= $command['nom_type_command'] ?></h3>
           <p class="text-muted text-center"><?= $command['command_date_fr'] ?></p>
           <hr>
 
@@ -107,7 +107,7 @@ ob_start();
 
           <div>
             <a href="#" class="btn btn-danger pull-left"><b><i class="fa fa-trash-o"></i></b></a>
-            <a href="#" class="btn btn-primary pull-right"><b>Modifier</b></a>
+            <a href="index.php?action=modifyCommandPage&amp;id=<?= $command['id_command'] ?>" class="btn btn-primary pull-right"><b>Modifier</b></a>
           </div>
         </div>
         <!-- /.box-body -->

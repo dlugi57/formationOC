@@ -1,12 +1,12 @@
 <?php
-$title = "Ajouter commande | Sunny Moments";
+$title = "Modifier commande | Sunny Moments";
 ob_start();
 ?>
 <!-- Content Header (Page header) -->
 <section class="content-header">
   <h1>
-    Ajouter commande
-    <small>Control panel</small>
+    <?= "Commande ".$modifyCommand['nom_type_command'] ?>
+    <small><?= $modifyCommand['name']?></small>
   </h1>
 </section>
 <!-- Main content -->
@@ -14,7 +14,7 @@ ob_start();
   <!-- general form elements disabled -->
   <div class="box box-warning">
     <div class="box-header with-border">
-      <h3 class="box-title">Ajouter commande</h3>
+      <h3 class="box-title">Modifier command</h3>
     </div>
     <!-- /.box-header -->
     <form role="form" method="post" action="index.php?action=addCommand">
@@ -24,18 +24,12 @@ ob_start();
           <div class="col-md-6">
             <div class="form-group">
               <label>Nom </label>
-              <select name="client_id_cmd" class="form-control select2" style="width: 100%;">
+              <select name="clients_id" class="form-control select2" style="width: 100%;">
+
+                <option value="<?= $modifyCommand['id_client'] ?>" selected="selected"><?= $modifyCommand['name'] ?></option>
                 <?php
-                if (isset($client['name'])):
-                  ?>
-                  <option value="<?= $client['id_client'] ?>" selected="selected"><?= $client['name'] ?></option>
-                  <?php
-                else:
-                  ?>
-                  <option value="" selected="selected"></option>
-                  <?php
-                endif;
-                while ($data = $clientsList->fetch())
+
+                while ($data = $modifyCommandClients->fetch())
                 {
                   ?>
                   <option value="<?= $data['id_client'] ?>"><?= $data['name'] ?></option>
@@ -49,8 +43,9 @@ ob_start();
             <div class="form-group">
               <label>Commande type</label>
               <select name="type_command" class="form-control">
+                <option value="<?= $modifyCommand['id_type_command'] ?>" selected="selected"><?= $modifyCommand['nom_type_command'] ?></option>
                 <?php
-                while ($data = $newCommandPage->fetch())
+                while ($data = $modifyCommandType->fetch())
                 {
                   ?>
                   <option value="<?= $data['id_type_command'] ?>"><?= $data['nom_type_command'] ?></option>
@@ -71,7 +66,7 @@ ob_start();
                 <div class="input-group-addon">
                   <i class="fa fa-eur"></i>
                 </div>
-                <input name="prise_command" type="number" class="form-control">
+                <input name="prise_command" value="<?= $modifyCommand['prise_command'] ?>" type="number" class="form-control">
               </div>
               <!-- /.input group -->
             </div>
@@ -84,7 +79,7 @@ ob_start();
                 <div class="input-group-addon">
                   <i class="fa fa-money"></i>
                 </div>
-                <input name="cost_command" type="number" class="form-control">
+                <input name="cost_command" value="<?= $modifyCommand['cost_command'] ?>" type="number" class="form-control">
               </div>
               <!-- /.input group -->
             </div>
@@ -96,7 +91,7 @@ ob_start();
         <!-- description -->
         <div class="form-group">
           <label>Description</label>
-          <textarea name="description_command" class="form-control" rows="3"></textarea>
+          <textarea name="description_command" class="form-control" rows="3"><?= $modifyCommand['description_command'] ?></textarea>
         </div>
         <!--footer-->
         <div class="box-footer">
@@ -108,7 +103,7 @@ ob_start();
             <?php
           endif;
           ?>
-          <button type="submit" class="btn btn-info pull-right">Ajouter</button>
+          <button type="submit" class="btn btn-info pull-right">Modifier</button>
         </div>
         <!-- /.box-footer -->
       </div>

@@ -148,6 +148,20 @@ class Focus
 
     }
 
+    public function taxe()
+    {
+      $taxesManager = new TaxesManager();
+      $taxe = $taxesManager->getTaxe($_GET['id']);
+
+      if ($taxe === false)
+      {
+          throw new Exception('Impossible d\'afficher le contenue !');
+      }else
+      {
+          require('View/frontend/taxe.php');
+      }
+    }
+
     /*public function instagram(){
       $url = 'https://api.instagram.com/v1/users/self/?access_token=6995657814.d948bef.c504d590713243449dd958d4c3b31495';
       $api_response = file_get_contents($url);

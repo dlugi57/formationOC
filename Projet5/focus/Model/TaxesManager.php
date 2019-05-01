@@ -13,6 +13,29 @@ class TaxesManager extends Manager
     return $req;
   }
 
+  public function getTaxe($taxeId)
+  {
+
+
+    $db = $this->dbConnect();
+    $req = $db->prepare('SELECT * ,Month(tax_date) as month FROM taxes WHERE tax_id = ?');
+    $req->execute(array($taxeId));
+    $taxe = $req->fetch();
+
+    return $taxe;
+  }
+
+
+  public function getClient($clientId)
+  {
+      $db = $this->dbConnect();
+      $req = $db->prepare('SELECT * , DATE_FORMAT(creation_date, \'%d/%m/%Y\') AS creation_date_fr FROM clients INNER JOIN contact_by ON contact_by = id_contact_by WHERE id_client = ?');
+      $req->execute(array($clientId));
+      $post = $req->fetch();
+
+      return $post;
+  }
+
   public function totalsTax()
   {
 
@@ -49,6 +72,19 @@ class TaxesManager extends Manager
     $req = $db->query($sql);
 
     return $req;
+  }
+
+  public function newTaxes($tax_date, $tax_declare, $tax_paid, $tax_description)
+  {
+
+        $db = $this->dbConnect();
+        $req = $db->prepare('INSERT INTO taxes(tax_date, tax_declare, tax_paid, tax_description, tax_date_add) VALUES(?, ?, ?, ?, NOW())');
+        $addedTaxe = $req->execute(array($tax_date, $tax_declare, $tax_paid, $tax_description));
+        $last_id = $db->lastInsertId();
+        $_SESSION['last_id'] = $last_id;
+
+        return $addedTaxe;
+
   }
 
 

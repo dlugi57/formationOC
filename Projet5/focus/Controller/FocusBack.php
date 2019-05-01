@@ -130,4 +130,24 @@ class FocusBack
       endif;
   }
 
+  //TAXES
+
+
+
+  public function addTaxes()
+  {
+    $taxesManager = new TaxesManager();
+    $newTaxe = $taxesManager->newTaxes($_POST['tax_date'], $_POST['tax_declare'], $_POST['tax_paid'], $_POST['tax_description']);
+    if ($newTaxe === false):
+
+        throw new Exception('Impossible d\'ajouter la taxe !');
+
+    else:
+
+        header('Location: index.php?action=taxe&id='.$_SESSION['last_id'].'');
+
+    endif;
+
+  }
+
 }

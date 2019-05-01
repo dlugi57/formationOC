@@ -67,6 +67,18 @@ try {
         case 'listTaxes':
             $taxList = $controller->listTaxes();
         break;
+//TAXES LIST
+        case 'taxe':
+            $taxe = $controller->taxe();
+        break;
+//ADD TAXE
+        case 'addTaxesPage':
+            require('View/backend/addTaxes.php');
+            //$addTaxesPage = $controllerBack->addTaxesPage();
+        break;
+        case 'addTaxes':
+            $addTaxes = $controllerBack->addTaxes();
+        break;
 
 
 

@@ -27,6 +27,11 @@ $(function () {
     format: 'yyyy-mm-dd'
   })
 
+  $('#datepickerTaxe').datepicker({
+    autoclose: true,
+    format: 'yyyy-mm-dd'
+  })
+
   //Timepicker
   $('.timepicker').timepicker({
     showInputs: false,

@@ -34,7 +34,7 @@ ob_start();
               <th>Paid</th>
               <th>Percents</th>
               <th>Description</th>
-              <th>Date</th>
+              <th>Date ajout</th>
             </tr>
             </thead>
             <tbody>
@@ -42,13 +42,13 @@ ob_start();
               while ($data = $taxes->fetch())
               {
               ?>
-              <tr class='clickableRowClient' data-href='index.php?action=command&amp;id=<?= $data['tax_id'] ?>'>
+              <tr class='clickableRowClient' data-href='index.php?action=taxe&amp;id=<?= $data['tax_id'] ?>'>
                 <td><?= $monthTax = date('F', mktime(0, 0, 0, $data['month'], 10)); ?></td>
                 <td><?= $data['tax_declare'] ?> €</td>
                 <td><?= $data['tax_paid'] ?> €</td>
                 <td><?= $percentsTaxRow = intval(($data['tax_paid']/$data['tax_declare'])*100); ?> %</td>
                 <td><?= $data['tax_description'] ?></td>
-                <td><?= $data['tax_date'] ?></td>
+                <td><?= $data['taxe_date_add'] ?></td>
               </tr>
               <?php
               }
@@ -62,7 +62,7 @@ ob_start();
               <th>Paid</th>
               <th>Percents</th>
               <th>Description</th>
-              <th>Date</th>
+              <th>Date ajout</th>
             </tr>
             </tfoot>
           </table>

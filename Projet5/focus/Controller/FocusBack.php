@@ -341,4 +341,19 @@ class FocusBack
     endif;
   }
 
+  public function removeTaxe()
+  {
+    $taxesManager = new TaxesManager();
+    $deleteTaxe = $taxesManager->deleteTaxe($_GET['id']);
+    if ($deleteTaxe === false):
+
+        throw new Exception('Impossible de supprimer la taxe !');
+
+    else:
+
+        header('Location: index.php?action=dashboard');
+
+    endif;
+  }
+
 }

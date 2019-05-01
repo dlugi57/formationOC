@@ -58,10 +58,10 @@ try {
         break;
 //ADD COMMAND
         case 'addCommandPage':
-            $addCommandPage = $controller->addCommandPage();
+            $addCommandPage = $controllerBack->addCommandPage();
         break;
         case 'addCommand':
-            $addCommand = $controller->addCommand();
+            $addCommand = $controllerBack->addCommand();
         break;
 //TAXES LIST
         case 'listTaxes':

@@ -1,11 +1,11 @@
 <?php
-$title = "Ajouter seance | Sunny Moments";
+$title = "Ajouter command | Sunny Moments";
 ob_start();
 ?>
 <!-- Content Header (Page header) -->
 <section class="content-header">
   <h1>
-    Ajouter Seance
+    Ajouter command
     <small>Control panel</small>
   </h1>
 </section>
@@ -14,17 +14,17 @@ ob_start();
   <!-- general form elements disabled -->
   <div class="box box-warning">
     <div class="box-header with-border">
-      <h3 class="box-title">Ajouter Seance</h3>
+      <h3 class="box-title">Ajouter command</h3>
     </div>
     <!-- /.box-header -->
-    <form role="form" method="post" action="index.php?action=addSeance">
+    <form role="form" method="post" action="index.php?action=addCommand">
       <div class="box-body">
         <div class="row">
           <!-- col left -->
           <div class="col-md-6">
             <div class="form-group">
               <label>Nom </label>
-              <select name="clients_id" class="form-control select2">
+              <select name="client_id_cmd" class="form-control select2" style="width: 100%;">
                 <?php
                 if (isset($client['name'])):
                   ?>
@@ -44,49 +44,26 @@ ob_start();
                 ?>
               </select>
             </div>
+
             <!-- select -->
             <div class="form-group">
-              <label>Seance type</label>
-              <select name="type" class="form-control">
+              <label>Command type</label>
+              <select name="type_command" class="form-control">
                 <?php
-                while ($data = $newSeancePage->fetch())
+                while ($data = $newCommandPage->fetch())
                 {
                   ?>
-                  <option value="<?= $data['id_type_seance'] ?>"><?= $data['nom_type'] ?></option>
+                  <option value="<?= $data['id_type_command'] ?>"><?= $data['nom_type_command'] ?></option>
                   <?php
                 }
                  ?>
               </select>
             </div>
+          </div>
+          <!-- /.col left -->
 
-            <!-- Date -->
-            <div class="form-group">
-              <label>Date seance:</label>
-              <div class="input-group date">
-                <div class="input-group-addon">
-                  <i class="fa fa-calendar"></i>
-                </div>
-                <input name="seance_date" type="text" class="form-control pull-right" id="datepickerSeance">
-              </div>
-              <!-- /.input group -->
-            </div>
-            <!-- /.form group -->
-
-            <!-- time Picker -->
-            <div class="bootstrap-timepicker">
-              <div class="form-group">
-                <label>Heure:</label>
-                <div class="input-group">
-                  <div class="input-group-addon">
-                    <i class="fa fa-clock-o"></i>
-                  </div>
-                  <input name="time_seance" type="text" class="form-control timepicker">
-                </div>
-                <!-- /.input group -->
-              </div>
-              <!-- /.form group -->
-            </div>
-
+          <!-- col roght -->
+          <div class="col-md-6">
             <!-- Prix -->
             <div class="form-group">
               <label>Prix</label>
@@ -94,7 +71,7 @@ ob_start();
                 <div class="input-group-addon">
                   <i class="fa fa-eur"></i>
                 </div>
-                <input name="prise" type="number" class="form-control">
+                <input name="prise_command" type="number" class="form-control">
               </div>
               <!-- /.input group -->
             </div>
@@ -107,45 +84,20 @@ ob_start();
                 <div class="input-group-addon">
                   <i class="fa fa-money"></i>
                 </div>
-                <input name="depenses" type="number" class="form-control">
+                <input name="cost_command" type="number" class="form-control">
               </div>
               <!-- /.input group -->
             </div>
             <!-- /.form group -->
           </div>
-          <!-- /.col left -->
-
-          <!-- col roght -->
-          <div class="col-md-6">
-            <!-- model -->
-            <div class="form-group">
-              <label>Model</label>
-              <input name="model" type="text" class="form-control">
-            </div>
-            <!-- adresse -->
-            <div class="form-group">
-              <label>Adresse</label>
-              <input name="adresse_seance" type="text" class="form-control">
-            </div>
-            <!-- city -->
-            <div class="form-group">
-              <label>Ville</label>
-              <input name="city_seance" type="text" class="form-control">
-            </div>
-            <!-- distance -->
-            <div class="form-group">
-              <label>Distance KM</label>
-              <input name="km" class="form-control" type="number">
-            </div>
-            <!-- description -->
-            <div class="form-group">
-              <label>Description</label>
-              <textarea name="description_seance" class="form-control" rows="5"></textarea>
-            </div>
-          </div>
           <!--/.col right-->
         </div>
         <!--/.row-->
+        <!-- description -->
+        <div class="form-group">
+          <label>Description</label>
+          <textarea name="description_command" class="form-control" rows="3"></textarea>
+        </div>
         <!--footer-->
         <div class="box-footer">
           <?php

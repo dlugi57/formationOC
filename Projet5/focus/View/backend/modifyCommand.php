@@ -5,8 +5,8 @@ ob_start();
 <!-- Content Header (Page header) -->
 <section class="content-header">
   <h1>
-    <?= "Commande ".$modifyCommand['nom_type_command'] ?>
-    <small><?= $modifyCommand['name']?></small>
+    <?= "Commande ".htmlspecialchars($modifyCommand['nom_type_command']) ?>
+    <small><?= htmlspecialchars($modifyCommand['name'])?></small>
   </h1>
 </section>
 <!-- Main content -->
@@ -26,13 +26,13 @@ ob_start();
               <label>Nom </label>
               <select name="client_id_cmd" class="form-control select2" style="width: 100%;">
 
-                <option value="<?= $modifyCommand['id_client'] ?>" selected="selected"><?= $modifyCommand['name'] ?></option>
+                <option value="<?= $modifyCommand['id_client'] ?>" selected="selected"><?= htmlspecialchars($modifyCommand['name']) ?></option>
                 <?php
 
                 while ($data = $modifyCommandClients->fetch())
                 {
                   ?>
-                  <option value="<?= $data['id_client'] ?>"><?= $data['name'] ?></option>
+                  <option value="<?= $data['id_client'] ?>"><?= htmlspecialchars($data['name']) ?></option>
                   <?php
                 }
                 ?>
@@ -43,12 +43,12 @@ ob_start();
             <div class="form-group">
               <label>Commande type</label>
               <select name="type_command" class="form-control">
-                <option value="<?= $modifyCommand['id_type_command'] ?>" selected="selected"><?= $modifyCommand['nom_type_command'] ?></option>
+                <option value="<?= $modifyCommand['id_type_command'] ?>" selected="selected"><?= htmlspecialchars($modifyCommand['nom_type_command']) ?></option>
                 <?php
                 while ($data = $modifyCommandType->fetch())
                 {
                   ?>
-                  <option value="<?= $data['id_type_command'] ?>"><?= $data['nom_type_command'] ?></option>
+                  <option value="<?= $data['id_type_command'] ?>"><?= htmlspecialchars($data['nom_type_command']) ?></option>
                   <?php
                 }
                  ?>
@@ -66,7 +66,7 @@ ob_start();
                 <div class="input-group-addon">
                   <i class="fa fa-eur"></i>
                 </div>
-                <input name="prise_command" value="<?= $modifyCommand['prise_command'] ?>" type="number" class="form-control">
+                <input name="prise_command" value="<?= htmlspecialchars($modifyCommand['prise_command']) ?>" type="number" class="form-control">
               </div>
               <!-- /.input group -->
             </div>
@@ -79,7 +79,7 @@ ob_start();
                 <div class="input-group-addon">
                   <i class="fa fa-money"></i>
                 </div>
-                <input name="cost_command" value="<?= $modifyCommand['cost_command'] ?>" type="number" class="form-control">
+                <input name="cost_command" value="<?= htmlspecialchars($modifyCommand['cost_command']) ?>" type="number" class="form-control">
               </div>
               <!-- /.input group -->
             </div>
@@ -91,7 +91,7 @@ ob_start();
         <!-- description -->
         <div class="form-group">
           <label>Description</label>
-          <textarea name="description_command" class="form-control" rows="3"><?= $modifyCommand['description_command'] ?></textarea>
+          <textarea name="description_command" class="form-control" rows="3"><?= htmlspecialchars($modifyCommand['description_command']) ?></textarea>
         </div>
         <!--footer-->
         <div class="box-footer">

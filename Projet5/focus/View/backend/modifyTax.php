@@ -1,6 +1,6 @@
 <?php
 $title = "Modifier taxe | Sunny Moments";
-$monthTaxShow = date('F', mktime(0, 0, 0, $modifyTax['month'], 10));
+$monthTaxShow = date('F', mktime(0, 0, 0, htmlspecialchars($modifyTax['month']), 10));
 ob_start();
 ?>
 <!-- Content Header (Page header) -->
@@ -31,7 +31,7 @@ ob_start();
               <div class="input-group-addon">
                 <i class="fa fa-calendar"></i>
               </div>
-              <input name="tax_date" value="<?= $modifyTax['tax_date'] ?>" type="text" class="form-control pull-right" id="datepickerTaxe">
+              <input name="tax_date" value="<?= htmlspecialchars($modifyTax['tax_date']) ?>" type="text" class="form-control pull-right" id="datepickerTaxe">
             </div>
             <!-- /.input group -->
           </div>
@@ -43,7 +43,7 @@ ob_start();
               <div class="input-group-addon">
                 <i class="fa fa-eur"></i>
               </div>
-              <input name="tax_declare" value="<?= $modifyTax['tax_declare'] ?>" type="number" class="form-control">
+              <input name="tax_declare" value="<?= htmlspecialchars($modifyTax['tax_declare']) ?>" type="number" class="form-control">
             </div>
             <!-- /.input group -->
           </div>
@@ -56,7 +56,7 @@ ob_start();
               <div class="input-group-addon">
                 <i class="fa fa-money"></i>
               </div>
-              <input name="tax_paid" value="<?= $modifyTax['tax_paid'] ?>" type="number" class="form-control">
+              <input name="tax_paid" value="<?= htmlspecialchars($modifyTax['tax_paid']) ?>" type="number" class="form-control">
             </div>
             <!-- /.input group -->
           </div>
@@ -68,7 +68,7 @@ ob_start();
           <!-- textarea -->
           <div class="form-group">
             <label>Description</label>
-            <textarea name="tax_description" class="form-control" rows="3"><?= $modifyTax['tax_description'] ?></textarea>
+            <textarea name="tax_description" class="form-control" rows="3"><?= htmlspecialchars($modifyTax['tax_description']) ?></textarea>
           </div>
         </div>
         <!--/.col-->

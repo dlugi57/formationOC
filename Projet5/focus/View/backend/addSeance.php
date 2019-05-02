@@ -28,7 +28,7 @@ ob_start();
                 <?php
                 if (isset($client['name'])):
                   ?>
-                  <option value="<?= $client['id_client'] ?>" selected="selected"><?= $client['name'] ?></option>
+                  <option value="<?= $client['id_client'] ?>" selected="selected"><?= htmlspecialchars($client['name']) ?></option>
                   <?php
                 else:
                   ?>
@@ -38,7 +38,7 @@ ob_start();
                 while ($data = $clientsList->fetch())
                 {
                   ?>
-                  <option value="<?= $data['id_client'] ?>"><?= $data['name'] ?></option>
+                  <option value="<?= $data['id_client'] ?>"><?= htmlspecialchars($data['name']) ?></option>
                   <?php
                 }
                 ?>
@@ -52,7 +52,7 @@ ob_start();
                 while ($data = $newSeancePage->fetch())
                 {
                   ?>
-                  <option value="<?= $data['id_type_seance'] ?>"><?= $data['nom_type'] ?></option>
+                  <option value="<?= $data['id_type_seance'] ?>"><?= htmlspecialchars($data['nom_type']) ?></option>
                   <?php
                 }
                  ?>

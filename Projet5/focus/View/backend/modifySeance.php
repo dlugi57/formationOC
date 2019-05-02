@@ -5,8 +5,8 @@ ob_start();
 <!-- Content Header (Page header) -->
 <section class="content-header">
   <h1>
-    <?= "Seance ".$modifySeance['nom_type'] ?>
-    <small><?= $modifySeance['name']?></small>
+    <?= "Seance ".htmlspecialchars($modifySeance['nom_type']) ?>
+    <small><?= htmlspecialchars($modifySeance['name'])?></small>
   </h1>
 </section>
 <!-- Main content -->
@@ -26,13 +26,13 @@ ob_start();
               <label>Nom </label>
               <select name="clients_id" class="form-control select2">
 
-                <option value="<?= $modifySeance['id_client'] ?>" selected="selected"><?= $modifySeance['name'] ?></option>
+                <option value="<?= $modifySeance['id_client'] ?>" selected="selected"><?= htmlspecialchars($modifySeance['name']) ?></option>
                 <?php
 
                 while ($data = $modifySeanceClients->fetch())
                 {
                   ?>
-                  <option value="<?= $data['id_client'] ?>"><?= $data['name'] ?></option>
+                  <option value="<?= $data['id_client'] ?>"><?= htmlspecialchars($data['name']) ?></option>
                   <?php
                 }
                 ?>
@@ -42,12 +42,12 @@ ob_start();
             <div class="form-group">
               <label>Seance type</label>
               <select name="type" class="form-control">
-                <option value="<?= $modifySeance['id_type_seance'] ?>" selected="selected"><?= $modifySeance['nom_type'] ?></option>
+                <option value="<?= $modifySeance['id_type_seance'] ?>" selected="selected"><?= htmlspecialchars($modifySeance['nom_type']) ?></option>
                 <?php
                 while ($data = $modifySeanceType->fetch())
                 {
                   ?>
-                  <option value="<?= $data['id_type_seance'] ?>"><?= $data['nom_type'] ?></option>
+                  <option value="<?= $data['id_type_seance'] ?>"><?= htmlspecialchars($data['nom_type']) ?></option>
                   <?php
                 }
                  ?>
@@ -61,7 +61,7 @@ ob_start();
                 <div class="input-group-addon">
                   <i class="fa fa-calendar"></i>
                 </div>
-                <input name="seance_date" value="<?= $modifySeance['seance_date'] ?>" type="text" class="form-control pull-right" id="datepickerSeance">
+                <input name="seance_date" value="<?= htmlspecialchars($modifySeance['seance_date']) ?>" type="text" class="form-control pull-right" id="datepickerSeance">
               </div>
               <!-- /.input group -->
             </div>
@@ -75,7 +75,7 @@ ob_start();
                   <div class="input-group-addon">
                     <i class="fa fa-clock-o"></i>
                   </div>
-                  <input name="time_seance" value="<?= $modifySeance['time_seance'] ?>" type="text" class="form-control timepicker">
+                  <input name="time_seance" value="<?= htmlspecialchars($modifySeance['time_seance']) ?>" type="text" class="form-control timepicker">
                 </div>
                 <!-- /.input group -->
               </div>
@@ -89,7 +89,7 @@ ob_start();
                 <div class="input-group-addon">
                   <i class="fa fa-eur"></i>
                 </div>
-                <input name="prise" value="<?= $modifySeance['prise'] ?>" type="number" class="form-control">
+                <input name="prise" value="<?= htmlspecialchars($modifySeance['prise']) ?>" type="number" class="form-control">
               </div>
               <!-- /.input group -->
             </div>
@@ -102,7 +102,7 @@ ob_start();
                 <div class="input-group-addon">
                   <i class="fa fa-money"></i>
                 </div>
-                <input name="depenses" value="<?= $modifySeance['depenses'] ?>" type="number" class="form-control">
+                <input name="depenses" value="<?= htmlspecialchars($modifySeance['depenses']) ?>" type="number" class="form-control">
               </div>
               <!-- /.input group -->
             </div>
@@ -115,27 +115,27 @@ ob_start();
             <!-- model -->
             <div class="form-group">
               <label>Model</label>
-              <input name="model" value="<?= $modifySeance['model'] ?>" type="text" class="form-control">
+              <input name="model" value="<?= htmlspecialchars($modifySeance['model']) ?>" type="text" class="form-control">
             </div>
             <!-- adresse -->
             <div class="form-group">
               <label>Adresse</label>
-              <input name="adresse_seance" value="<?= $modifySeance['adresse_seance'] ?>" type="text" class="form-control">
+              <input name="adresse_seance" value="<?= htmlspecialchars($modifySeance['adresse_seance']) ?>" type="text" class="form-control">
             </div>
             <!-- city -->
             <div class="form-group">
               <label>Ville</label>
-              <input name="city_seance" value="<?= $modifySeance['city_seance'] ?>" type="text" class="form-control">
+              <input name="city_seance" value="<?= htmlspecialchars($modifySeance['city_seance']) ?>" type="text" class="form-control">
             </div>
             <!-- distance -->
             <div class="form-group">
               <label>Distance KM</label>
-              <input name="km" value="<?= $modifySeance['km'] ?>" class="form-control" type="number">
+              <input name="km" value="<?= htmlspecialchars($modifySeance['km']) ?>" class="form-control" type="number">
             </div>
             <!-- description -->
             <div class="form-group">
               <label>Description</label>
-              <textarea name="description_seance" class="form-control" rows="5"><?= $modifySeance['description_seance'] ?></textarea>
+              <textarea name="description_seance" class="form-control" rows="5"><?= htmlspecialchars($modifySeance['description_seance']) ?></textarea>
             </div>
           </div>
           <!--/.col right-->

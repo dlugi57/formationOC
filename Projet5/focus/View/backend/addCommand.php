@@ -28,7 +28,7 @@ ob_start();
                 <?php
                 if (isset($client['name'])):
                   ?>
-                  <option value="<?= $client['id_client'] ?>" selected="selected"><?= $client['name'] ?></option>
+                  <option value="<?= $client['id_client'] ?>" selected="selected"><?= htmlspecialchars($client['name']) ?></option>
                   <?php
                 else:
                   ?>
@@ -38,7 +38,7 @@ ob_start();
                 while ($data = $clientsList->fetch())
                 {
                   ?>
-                  <option value="<?= $data['id_client'] ?>"><?= $data['name'] ?></option>
+                  <option value="<?= $data['id_client'] ?>"><?= htmlspecialchars($data['name']) ?></option>
                   <?php
                 }
                 ?>
@@ -53,7 +53,7 @@ ob_start();
                 while ($data = $newCommandPage->fetch())
                 {
                   ?>
-                  <option value="<?= $data['id_type_command'] ?>"><?= $data['nom_type_command'] ?></option>
+                  <option value="<?= $data['id_type_command'] ?>"><?= htmlspecialchars($data['nom_type_command']) ?></option>
                   <?php
                 }
                  ?>

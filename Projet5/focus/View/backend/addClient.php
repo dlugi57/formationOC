@@ -79,7 +79,7 @@ ob_start();
             while ($data = $newClientPage->fetch())
             {
               ?>
-              <option value="<?= $data['id_contact_by'] ?>"><?= $data['nom_contact_by'] ?></option>
+              <option value="<?= $data['id_contact_by'] ?>"><?= htmlspecialchars($data['nom_contact_by']) ?></option>
               <?php
             }
              ?>

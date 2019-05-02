@@ -5,7 +5,7 @@ ob_start();
 <!-- Content Header (Page header) -->
 <section class="content-header">
   <h1>
-    <?= $modifyClient['name'] ?>
+    <?= htmlspecialchars($modifyClient['name']) ?>
     <small>Modifier client</small>
   </h1>
 </section>
@@ -25,7 +25,7 @@ ob_start();
           <!-- text input -->
           <div class="form-group">
             <label>Nom</label>
-            <input name="name" value="<?= $modifyClient['name'] ?>" type="text" class="form-control">
+            <input name="name" value="<?= htmlspecialchars($modifyClient['name']) ?>" type="text" class="form-control">
           </div>
           <!-- Telephone -->
           <div class="form-group">
@@ -34,7 +34,7 @@ ob_start();
               <div class="input-group-addon">
                 <i class="fa fa-phone"></i>
               </div>
-              <input name="tel" type="tel" value="<?= $modifyClient['tel'] ?>" class="form-control" data-inputmask='"mask": "9999999999"' data-mask>
+              <input name="tel" type="tel" value="<?= htmlspecialchars($modifyClient['tel']) ?>" class="form-control" data-inputmask='"mask": "9999999999"' data-mask>
             </div>
             <!-- /.input group -->
           </div>
@@ -46,7 +46,7 @@ ob_start();
               <div class="input-group-addon">
                 <i class="fa fa-envelope"></i>
               </div>
-              <input name="email" value="<?= $modifyClient['email'] ?>" type="email" class="form-control">
+              <input name="email" value="<?= htmlspecialchars($modifyClient['email']) ?>" type="email" class="form-control">
             </div>
             <!-- /.input group -->
           </div>
@@ -57,15 +57,15 @@ ob_start();
         <div class="col-md-6">
           <div class="form-group">
             <label>Adresse</label>
-            <input name="adress" value="<?= $modifyClient['adress'] ?>" type="text" class="form-control">
+            <input name="adress" value="<?= htmlspecialchars($modifyClient['adress']) ?>" type="text" class="form-control">
           </div>
           <div class="form-group">
             <label>Ville</label>
-            <input name="city" value="<?= $modifyClient['city'] ?>" type="text" class="form-control">
+            <input name="city" value="<?= htmlspecialchars($modifyClient['city']) ?>" type="text" class="form-control">
           </div>
           <div class="form-group">
             <label>Code postale</label>
-            <input name="post_code" value="<?= $modifyClient['post_code'] ?>" type="text" class="form-control" data-inputmask='"mask": "99999"' data-mask>
+            <input name="post_code" value="<?= htmlspecialchars($modifyClient['post_code']) ?>" type="text" class="form-control" data-inputmask='"mask": "99999"' data-mask>
           </div>
         </div>
         <!--/.col-->
@@ -75,13 +75,13 @@ ob_start();
         <div class="form-group">
           <label>Contacte par</label>
           <select name="contact_by" class="form-control">
-            <option value="<?= $modifyClient['id_contact_by'] ?>" selected="selected"><?= $modifyClient['nom_contact_by'] ?></option>
+            <option value="<?= $modifyClient['id_contact_by'] ?>" selected="selected"><?= htmlspecialchars($modifyClient['nom_contact_by']) ?></option>
 
             <?php
             while ($data = $modifyClientContact->fetch())
             {
               ?>
-              <option value="<?= $data['id_contact_by'] ?>"><?= $data['nom_contact_by'] ?></option>
+              <option value="<?= $data['id_contact_by'] ?>"><?= htmlspecialchars($data['nom_contact_by']) ?></option>
               <?php
             }
              ?>
@@ -90,7 +90,7 @@ ob_start();
         <!-- textarea -->
         <div class="form-group">
           <label>Description</label>
-          <textarea name="description" class="form-control" rows="3"><?= $modifyClient['description'] ?></textarea>
+          <textarea name="description" class="form-control" rows="3"><?= htmlspecialchars($modifyClient['description']) ?></textarea>
         </div>
         <div class="box-footer">
           <?php

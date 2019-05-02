@@ -72,12 +72,12 @@ $(function() {
     return d.toISOString().slice(0, 10) === dateString;
   }
 
-  function isValidTime(timeString){
+  function isValidTime(timeString) {
     var regEx = /^\d{2}:\d{2}$/
     if (!timeString.match(regEx)) return false;
   }
 
-  //CLIENT
+  //CLIENT CONDITIONS
   $('.addClient').click(function() {
     if ($.trim($('.addClientName').val()) == "") {
       $('.addClientName').closest('div.form-group').addClass('has-error');
@@ -126,8 +126,7 @@ $(function() {
     }
   }) //end of client
 
-
-
+//SEANCES CONDITIONS
   $('.addSeance').click(function() {
     if ($.trim($('.addSeanceClient').val()) == "") {
       $('.addSeanceClient').closest('div.form-group').addClass('has-error');
@@ -164,26 +163,48 @@ $(function() {
       }
     }
 
-        if ($.trim($('.addSeancePrix').val()) == "") {
-          $('.addSeancePrix').closest('div.form-group').addClass('has-error');
-          $('.addSeancePrix').closest('div.form-group').find('span.help-block').text("Champs numerique obligatoire");
-          return false;
-        } else {
-          if ($.isNumeric($('.addSeancePrix').val())) {
-            $('.addSeancePrix').closest('div.form-group').removeClass('has-error');
-            $('.addSeancePrix').closest('div.form-group').find('span.help-block').text("");
-          } else {
-            $('.addSeancePrix').closest('div.form-group').addClass('has-error');
-            $('.addSeancePrix').closest('div.form-group').find('span.help-block').text("Chiffres obligatoire");
-            return false;
-          }
-        }
+    if ($.trim($('.addSeancePrix').val()) == "") {
+      $('.addSeancePrix').closest('div.form-group').addClass('has-error');
+      $('.addSeancePrix').closest('div.form-group').find('span.help-block').text("Champs numerique obligatoire");
+      return false;
+    } else {
+      if ($.isNumeric($('.addSeancePrix').val())) {
+        $('.addSeancePrix').closest('div.form-group').removeClass('has-error');
+        $('.addSeancePrix').closest('div.form-group').find('span.help-block').text("");
+      } else {
+        $('.addSeancePrix').closest('div.form-group').addClass('has-error');
+        $('.addSeancePrix').closest('div.form-group').find('span.help-block').text("Chiffres obligatoire");
+        return false;
+      }
+    }
+  })//end of seances
 
+//COMMANDS CONDITIONS
+  $('.addCommand').click(function() {
+    if ($.trim($('.addCommandClient').val()) == "") {
+      $('.addCommandClient').closest('div.form-group').addClass('has-error');
+      $('.addCommandClient').closest('div.form-group').find('span.help-block').text("Champs obligatoire");
+      return false;
+    } else {
+      $('.addCommandClient').closest('div.form-group').removeClass('has-error');
+      $('.addCommandClient').closest('div.form-group').find('span.help-block').text("");
+    }
 
-
-
-  })
-
+    if ($.trim($('.addCommandPrise').val()) == "") {
+      $('.addCommandPrise').closest('div.form-group').addClass('has-error');
+      $('.addCommandPrise').closest('div.form-group').find('span.help-block').text("Champs numerique obligatoire");
+      return false;
+    } else {
+      if ($.isNumeric($('.addCommandPrise').val())) {
+        $('.addCommandPrise').closest('div.form-group').removeClass('has-error');
+        $('.addCommandPrise').closest('div.form-group').find('span.help-block').text("");
+      } else {
+        $('.addCommandPrise').closest('div.form-group').addClass('has-error');
+        $('.addCommandPrise').closest('div.form-group').find('span.help-block').text("Chiffres obligatoire");
+        return false;
+      }
+    }
+  })//end of commands
 
 
 

@@ -24,7 +24,7 @@ ob_start();
           <div class="col-md-6">
             <div class="form-group">
               <label>Nom </label>
-              <select name="client_id_cmd" class="form-control select2" style="width: 100%;">
+              <select name="client_id_cmd" class="form-control select2 addCommandClient" style="width: 100%;" required>
 
                 <option value="<?= $modifyCommand['id_client'] ?>" selected="selected"><?= htmlspecialchars($modifyCommand['name']) ?></option>
                 <?php
@@ -37,6 +37,7 @@ ob_start();
                 }
                 ?>
               </select>
+              <span class="help-block"></span>
             </div>
 
             <!-- select -->
@@ -66,8 +67,9 @@ ob_start();
                 <div class="input-group-addon">
                   <i class="fa fa-eur"></i>
                 </div>
-                <input name="prise_command" value="<?= htmlspecialchars($modifyCommand['prise_command']) ?>" type="number" class="form-control">
+                <input name="prise_command" value="<?= htmlspecialchars($modifyCommand['prise_command']) ?>" type="number" class="form-control addCommandPrise" required>
               </div>
+              <span class="help-block"></span>
               <!-- /.input group -->
             </div>
             <!-- /.form group -->
@@ -91,7 +93,7 @@ ob_start();
         <!-- description -->
         <div class="form-group">
           <label>Description</label>
-          <textarea name="description_command" class="form-control" rows="3"><?= htmlspecialchars($modifyCommand['description_command']) ?></textarea>
+          <textarea name="description_command" class="form-control" rows="3" maxlength="250"><?= htmlspecialchars($modifyCommand['description_command']) ?></textarea>
         </div>
         <!--footer-->
         <div class="box-footer">
@@ -103,7 +105,7 @@ ob_start();
             <?php
           endif;
           ?>
-          <button type="submit" class="btn btn-info pull-right">Modifier</button>
+          <button type="submit" class="btn btn-info pull-right addCommand">Modifier</button>
         </div>
         <!-- /.box-footer -->
       </div>

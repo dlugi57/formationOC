@@ -36,9 +36,9 @@ class FocusBack
 
         if (!empty($_POST['name']) && trim($_POST['name']) !== '' && !empty($_POST['tel']) && trim($_POST['tel']) !== ''):
 
-            if(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)):
+            if(empty($_POST['email']) || filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)):
 
-                if (filter_var($_POST['tel'], FILTER_VALIDATE_INT) === false && filter_var($_POST['post_code'], FILTER_VALIDATE_INT) === false):
+                if (filter_var($_POST['tel'], FILTER_VALIDATE_INT) === false && (empty($_POST['post_code']) || filter_var($_POST['post_code'], FILTER_VALIDATE_INT)) === false):
 
                     throw new Exception("Le formats de donnes est invalide ex. letrres a la place de chiffres !");
 
@@ -108,9 +108,9 @@ class FocusBack
 
             if (!empty($_POST['name']) && trim($_POST['name']) !== '' && !empty($_POST['tel']) && trim($_POST['tel']) !== ''):
 
-                if(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)):
+              if(empty($_POST['email']) || filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)):
 
-                    if (filter_var($_POST['tel'], FILTER_VALIDATE_INT) === false && filter_var($_POST['post_code'], FILTER_VALIDATE_INT) === false):
+                  if (filter_var($_POST['tel'], FILTER_VALIDATE_INT) === false && (empty($_POST['post_code']) || filter_var($_POST['post_code'], FILTER_VALIDATE_INT)) === false):
 
                         throw new Exception("Le formats de donnes est invalide ex. letrres a la place de chiffres !");
 

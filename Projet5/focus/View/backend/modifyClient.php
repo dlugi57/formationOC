@@ -25,7 +25,8 @@ ob_start();
           <!-- text input -->
           <div class="form-group">
             <label>Nom</label>
-            <input name="name" value="<?= htmlspecialchars($modifyClient['name']) ?>" type="text" class="form-control">
+            <input name="name" value="<?= htmlspecialchars($modifyClient['name']) ?>" type="text" class="form-control addClientName" maxlength="250" required>
+            <span class="help-block"></span>
           </div>
           <!-- Telephone -->
           <div class="form-group">
@@ -34,8 +35,9 @@ ob_start();
               <div class="input-group-addon">
                 <i class="fa fa-phone"></i>
               </div>
-              <input name="tel" type="tel" value="<?= htmlspecialchars($modifyClient['tel']) ?>" class="form-control" data-inputmask='"mask": "9999999999"' data-mask>
+              <input name="tel" type="tel" value="<?= htmlspecialchars($modifyClient['tel']) ?>" class="form-control addClientTel" data-inputmask='"mask": "9999999999"' data-mask required>
             </div>
+            <span class="help-block"></span>
             <!-- /.input group -->
           </div>
           <!-- /.form group -->
@@ -46,8 +48,9 @@ ob_start();
               <div class="input-group-addon">
                 <i class="fa fa-envelope"></i>
               </div>
-              <input name="email" value="<?= htmlspecialchars($modifyClient['email']) ?>" type="email" class="form-control">
+              <input name="email" value="<?= htmlspecialchars($modifyClient['email']) ?>" type="email" class="form-control addClientEmail">
             </div>
+            <span class="help-block"></span>
             <!-- /.input group -->
           </div>
           <!-- /.form group -->
@@ -57,15 +60,16 @@ ob_start();
         <div class="col-md-6">
           <div class="form-group">
             <label>Adresse</label>
-            <input name="adress" value="<?= htmlspecialchars($modifyClient['adress']) ?>" type="text" class="form-control">
+            <input name="adress" value="<?= htmlspecialchars($modifyClient['adress']) ?>" type="text" class="form-control" maxlength="250">
           </div>
           <div class="form-group">
             <label>Ville</label>
-            <input name="city" value="<?= htmlspecialchars($modifyClient['city']) ?>" type="text" class="form-control">
+            <input name="city" value="<?= htmlspecialchars($modifyClient['city']) ?>" type="text" class="form-control" maxlength="250">
           </div>
           <div class="form-group">
             <label>Code postale</label>
-            <input name="post_code" value="<?= htmlspecialchars($modifyClient['post_code']) ?>" type="text" class="form-control" data-inputmask='"mask": "99999"' data-mask>
+            <input name="post_code" value="<?= htmlspecialchars($modifyClient['post_code']) ?>" type="text" class="form-control addClientPost" data-inputmask='"mask": "99999"' data-mask>
+            <span class="help-block"></span>
           </div>
         </div>
         <!--/.col-->
@@ -90,7 +94,7 @@ ob_start();
         <!-- textarea -->
         <div class="form-group">
           <label>Description</label>
-          <textarea name="description" class="form-control" rows="3"><?= htmlspecialchars($modifyClient['description']) ?></textarea>
+          <textarea name="description" class="form-control" rows="3" maxlength="500"><?= htmlspecialchars($modifyClient['description']) ?></textarea>
         </div>
         <div class="box-footer">
           <?php
@@ -101,7 +105,7 @@ ob_start();
             <?php
           endif;
           ?>
-          <button type="submit" class="btn btn-info pull-right">Modifier</button>
+          <button type="submit" class="btn btn-info pull-right addClient">Modifier</button>
         </div>
         <!-- /.box-footer -->
       </div>

@@ -46,15 +46,15 @@ ob_start();
               {
               ?>
               <tr class='clickableRowClient' data-href='index.php?action=client&amp;id=<?= $data['id_client'] ?>'>
-                <td><?= $data['name'] ?></td>
-                <td><?= $data['tel'] ?></td>
-                <td><?= $data['email'] ?></td>
-                <td><?= $data['city'] ?></td>
-                <td><?= $data['adress'] ?></td>
-                <td><?= $data['post_code'] ?></td>
-                <td><?= $data['nom_contact_by'] ?></td>
-                <td><?= $data['description'] ?></td>
-                <td><?= $data['creation_date_fr'] ?></td>
+                <td><?= htmlspecialchars($data['name']) ?></td>
+                <td><?= htmlspecialchars($data['tel']) ?></td>
+                <td><?= htmlspecialchars($data['email']) ?></td>
+                <td><?= htmlspecialchars($data['city']) ?></td>
+                <td><?= htmlspecialchars($data['adress']) ?></td>
+                <td><?= htmlspecialchars($data['post_code']) ?></td>
+                <td><?= htmlspecialchars($data['nom_contact_by']) ?></td>
+                <td><?= htmlspecialchars($data['description']) ?></td>
+                <td><?= htmlspecialchars($data['creation_date_fr']) ?></td>
               </tr>
               <?php
               }

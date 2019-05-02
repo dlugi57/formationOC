@@ -18,7 +18,6 @@
       <!-- logo for regular state and mobile devices
       <span class="logo-lg"><b>Sunny</b>Moments</span>-->
       <span class="logo-lg"><img class="logo-img" src="Public/dist/img/logo.png" ></span>
-
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
@@ -26,10 +25,8 @@
       <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
         <span class="sr-only">Toggle navigation</span>
       </a>
-
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
-
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -72,7 +69,6 @@
               </li>
             </ul>
           </li>
-
         </ul>
       </div>
     </nav>
@@ -94,9 +90,6 @@
       </form>
       <!-- /.search form -->
 
-
-
-
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION  </li>
@@ -110,13 +103,12 @@
             <i class="fa fa-users"></i>
             <span>Clients</span>
             <span class="pull-right-container">
-              <?php if(isset($countClients['nb'])){echo '<span class="label label-primary pull-right">'. $countClients['nb'];}else{echo '<i class="fa fa-angle-left pull-right"></i>';}  ?></span>
+              <?php if(isset($countClients['nb'])){echo '<span class="label label-primary pull-right">'. htmlspecialchars($countClients['nb']);}else{echo '<i class="fa fa-angle-left pull-right"></i>';}  ?></span>
             </span>
           </a>
           <ul class="treeview-menu">
             <li><a href="index.php?action=listClients"><i class="fa fa-list-ul"></i> Liste</a></li>
             <li><a href="index.php?action=addClientPage"><i class="fa fa-user-plus"></i> Ajouter</a></li>
-
           </ul>
         </li>
 
@@ -125,8 +117,8 @@
             <i class="fa fa-camera"></i>
             <span>Seances</span>
             <span class="pull-right-container">
-              <small class="label pull-right bg-yellow"><?php if (isset($countSeances['nb'])) {echo $countSeances['nb'];}  ?></small>
-              <?php if (isset($countFutureSeances['nb'])) {echo '<small class="label pull-right bg-green">'. $countFutureSeances['nb'];}else{echo '<i class="fa fa-angle-left pull-right"></i>';} ?></small>
+              <small class="label pull-right bg-yellow"><?php if (isset($countSeances['nb'])) {echo htmlspecialchars($countSeances['nb']);}  ?></small>
+              <?php if (isset($countFutureSeances['nb'])) {echo '<small class="label pull-right bg-green">'. htmlspecialchars($countFutureSeances['nb']);}else{echo '<i class="fa fa-angle-left pull-right"></i>';} ?></small>
             </span>
           </a>
           <ul class="treeview-menu">
@@ -146,10 +138,8 @@
           <ul class="treeview-menu">
             <li><a href="index.php?action=listCommands"><i class="fa fa-list-ul"></i> Liste</a></li>
             <li><a href="index.php?action=addCommandPage"><i class="fa fa-plus"></i> Ajouter</a></li>
-
           </ul>
         </li>
-
 
         <li class="treeview">
           <a href="#">
@@ -176,7 +166,6 @@
           <ul class="treeview-menu">
             <li><a href="pages/charts/chartjs.html"><i class="fa fa-list-ul"></i> Liste</a></li>
             <li><a href="pages/charts/morris.html"><i class="fa fa-plus"></i> Ajouter</a></li>
-
           </ul>
         </li>
 
@@ -231,10 +220,6 @@
 
           </ul>
         </li>
-
-
-
-
       </ul>
     </section>
     <!-- /.sidebar -->
@@ -243,8 +228,6 @@
   <div class="content-wrapper">
 
     <?= $content ?>
-
-
 
   </div>
   <!-- /.content-wrapper -->
@@ -280,7 +263,6 @@
   </footer>
 </div>
   <!-- ./wrapper -->
-
 
 <!-- jQuery 3 -->
 <script src="Public/bower_components/jquery/dist/jquery.min.js"></script>
@@ -318,9 +300,6 @@
 <script src="Public/bower_components/chart.js/Chart.js"></script>
 <!-- AdminLTE App -->
 <script src="Public/dist/js/adminlte.min.js"></script>
-
-
-
 
 <!-- MAIN SCRIPTS -->
 <script src="Public/js/ajax.js"></script>

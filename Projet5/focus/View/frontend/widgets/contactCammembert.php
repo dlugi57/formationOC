@@ -28,14 +28,14 @@
           foreach($result as $data)
           {
             ?>
-            <li><i class="fa fa-circle-o <?= $data['color_dash'];  ?>"></i> <?= $data['nom_contact_by']  ?></li>
+            <li><i class="fa fa-circle-o <?= htmlspecialchars($data['color_dash']);  ?>"></i> <?= htmlspecialchars($data['nom_contact_by'])  ?></li>
             <?php
             //create object to send to the js
             $contactByObj = new stdClass();
-            $contactByObj->value = $data['nb'];
-            $contactByObj->color = $data['color_camembert'];
-            $contactByObj->highlight = $data['color_camembert'];
-            $contactByObj->label = $data['nom_contact_by'];
+            $contactByObj->value = htmlspecialchars($data['nb']);
+            $contactByObj->color = htmlspecialchars($data['color_camembert']);
+            $contactByObj->highlight = htmlspecialchars($data['color_camembert']);
+            $contactByObj->label = htmlspecialchars($data['nom_contact_by']);
             //put object into array to send to the js
             array_push($contactByArray,$contactByObj);
           };
@@ -56,8 +56,8 @@
       foreach($result as $data)
       {
         ?>
-        <li><a href="#"><?= $data['nom_contact_by'] ?>
-          <span class="pull-right <?= $data['color_dash'];  ?>"> <?= $data['nb'] ?></span></a>
+        <li><a href="#"><?= htmlspecialchars($data['nom_contact_by']) ?>
+          <span class="pull-right <?= htmlspecialchars($data['color_dash']);  ?>"> <?= htmlspecialchars($data['nb']) ?></span></a>
         </li>
         <?php
         //change color and counter

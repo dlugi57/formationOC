@@ -44,13 +44,13 @@ ob_start();
               {
               ?>
               <tr class='clickableRowClient' data-href='index.php?action=taxe&amp;id=<?= $data['tax_id'] ?>'>
-                <td><?= $monthTax = date('F', mktime(0, 0, 0, $data['month'], 10)); ?></td>
-                <td><?= $data['tax_declare'] ?> €</td>
-                <td><?= $data['tax_paid'] ?> €</td>
-                <td><?= $percentsTaxRow = intval(($data['tax_paid']/$data['tax_declare'])*100); ?> %</td>
-                <td><?= $data['tax_description'] ?></td>
-                <td><?= $data['year'] ?></td>
-                <td><?= $data['taxe_date_add'] ?></td>
+                <td><?= $monthTax = date('F', mktime(0, 0, 0, htmlspecialchars($data['month']), 10)); ?></td>
+                <td><?= htmlspecialchars($data['tax_declare']) ?> €</td>
+                <td><?= htmlspecialchars($data['tax_paid']) ?> €</td>
+                <td><?= $percentsTaxRow = intval((htmlspecialchars($data['tax_paid'])/htmlspecialchars($data['tax_declare']))*100); ?> %</td>
+                <td><?= htmlspecialchars($data['tax_description']) ?></td>
+                <td><?= htmlspecialchars($data['year']) ?></td>
+                <td><?= htmlspecialchars($data['taxe_date_add']) ?></td>
               </tr>
               <?php
               }
@@ -82,7 +82,7 @@ ob_start();
         <span class="info-box-icon"><i class="fa fa-balance-scale"></i></span>
         <div class="info-box-content">
           <span class="info-box-text">Declare</span>
-          <span class="info-box-number"><?= $totalTaxes['sumDeclaredTax'] ?> €</span>
+          <span class="info-box-number"><?= htmlspecialchars($totalTaxes['sumDeclaredTax']) ?> €</span>
           <div class="progress">
             <div class="progress-bar" style="width: 100%"></div>
           </div>
@@ -98,9 +98,9 @@ ob_start();
         <span class="info-box-icon"><i class="fa fa-money"></i></span>
         <div class="info-box-content">
           <span class="info-box-text">Paye</span>
-          <span class="info-box-number"><?= $totalTaxes['sumPaidTax'] ?> €</span>
+          <span class="info-box-number"><?= htmlspecialchars($totalTaxes['sumPaidTax']) ?> €</span>
           <div class="progress">
-            <div class="progress-bar" style="width: <?= $percentsTax = intval(($totalTaxes['sumPaidTax']/$totalTaxes['sumDeclaredTax'])*100);  ?>%"></div>
+            <div class="progress-bar" style="width: <?= $percentsTax = intval((htmlspecialchars($totalTaxes['sumPaidTax'])/htmlspecialchars($totalTaxes['sumDeclaredTax']))*100);  ?>%"></div>
           </div>
           <span class="progress-description"><?= $percentsTax;  ?> % of whole declared</span>
         </div>
@@ -109,7 +109,6 @@ ob_start();
       <!-- /.info-box -->
     </div>
     <!-- /.col -->
-
   </div>
   <!-- /.row (main row) -->
 </section>

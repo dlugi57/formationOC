@@ -44,13 +44,13 @@ ob_start();
               {
               ?>
               <tr class='clickableRowClient' data-href='index.php?action=command&amp;id=<?= $data['id_command'] ?>'>
-                <td><?= $data['name'] ?></td>
-                <td><?= $data['nom_type_command'] ?></td>
-                <td><?= $data['prise_command'] ?> €</td>
-                <td><?= $data['cost_command'] ?> €</td>
-                <td><?= $cashCmdNet = $data['prise_command'] - $data['cost_command'] ?> €</td>
-                <td><?= $data['description_command'] ?></td>
-                <td><?= $data['command_date_fr'] ?></td>
+                <td><?= htmlspecialchars($data['name']) ?></td>
+                <td><?= htmlspecialchars($data['nom_type_command']) ?></td>
+                <td><?= htmlspecialchars($data['prise_command']) ?> €</td>
+                <td><?= htmlspecialchars($data['cost_command']) ?> €</td>
+                <td><?= $cashCmdNet = htmlspecialchars($data['prise_command']) - htmlspecialchars($data['cost_command']) ?> €</td>
+                <td><?= htmlspecialchars($data['description_command']) ?></td>
+                <td><?= htmlspecialchars($data['command_date_fr']) ?></td>
               </tr>
               <?php
               }
@@ -81,7 +81,7 @@ ob_start();
         <span class="info-box-icon bg-aqua"><i class="fa fa-eur"></i></span>
         <div class="info-box-content">
           <span class="info-box-text">Brut</span>
-          <span class="info-box-number"><?= $commandsTotal['sumPriseCmd']; ?></span>
+          <span class="info-box-number"><?= htmlspecialchars($commandsTotal['sumPriseCmd']); ?></span>
         </div>
         <!-- /.info-box-content -->
       </div>
@@ -92,9 +92,9 @@ ob_start();
         <span class="info-box-icon"><i class="fa fa-home"></i></span>
         <div class="info-box-content">
           <span class="info-box-text">Net</span>
-          <span class="info-box-number"><?= $commandsNet = $commandsTotal['sumPriseCmd'] - $commandsTotal['sumDepCmd']; ?></span>
+          <span class="info-box-number"><?= $commandsNet = htmlspecialchars($commandsTotal['sumPriseCmd']) - htmlspecialchars($commandsTotal['sumDepCmd']); ?></span>
           <div class="progress">
-            <div class="progress-bar" style="width: <?= $percentsCmdNet = intval(($commandsNet/$commandsTotal['sumPriseCmd'])*100);?>%"></div>
+            <div class="progress-bar" style="width: <?= $percentsCmdNet = intval(($commandsNet/htmlspecialchars($commandsTotal['sumPriseCmd']))*100);?>%"></div>
           </div>
           <span class="progress-description"><?= $percentsCmdNet;?> % of whole gain</span>
         </div>
@@ -108,9 +108,9 @@ ob_start();
         <span class="info-box-icon"><i class="fa fa-money"></i></span>
         <div class="info-box-content">
           <span class="info-box-text">Depenses</span>
-          <span class="info-box-number"><?= $commandsTotal['sumDepCmd']; ?> €</span>
+          <span class="info-box-number"><?= htmlspecialchars($commandsTotal['sumDepCmd']); ?> €</span>
           <div class="progress">
-            <div class="progress-bar" style="width: <?= $percentsCmdDep = intval(($commandsTotal['sumDepCmd']/$commandsTotal['sumPriseCmd'])*100);  ?>%"></div>
+            <div class="progress-bar" style="width: <?= $percentsCmdDep = intval((htmlspecialchars($commandsTotal['sumDepCmd'])/htmlspecialchars($commandsTotal['sumPriseCmd']))*100);  ?>%"></div>
           </div>
           <span class="progress-description"><?= $percentsCmdDep;  ?> % of whole gains</span>
         </div>
@@ -124,7 +124,7 @@ ob_start();
         <span class="info-box-icon bg-red"><i class="fa fa-calculator"></i></span>
         <div class="info-box-content">
           <span class="info-box-text">Qty</span>
-          <span class="info-box-number"><?= $commandsTotal['totalCmd'] ?></span>
+          <span class="info-box-number"><?= htmlspecialchars($commandsTotal['totalCmd']) ?></span>
         </div>
         <!-- /.info-box-content -->
       </div>

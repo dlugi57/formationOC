@@ -49,13 +49,13 @@
         ?>
         <tr>
           <td><?= $data['nb'] ?></td>
-          <td><?= $monthCmdName = date('F', mktime(0, 0, 0, $data['month'], 10)); ?></td>
+          <td><?= $monthCmdName = date('F', mktime(0, 0, 0, htmlspecialchars($data['month']), 10)); ?></td>
           <td>
             <div class="progress progress-xs">
               <div class="progress-bar <?= $colorLinePercents ?>" style="width: <?= number_format($percentsCmd)?>%"></div>
             </div>
           </td>
-          <td><span class="badge <?= $colorPercents ?>"><?= $gainedCmd?>/<?= $data['cash']?></span></td>
+          <td><span class="badge <?= $colorPercents ?>"><?= $gainedCmd?>/<?= htmlspecialchars($data['cash'])?></span></td>
         </tr>
         <?php
       }

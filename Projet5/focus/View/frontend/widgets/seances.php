@@ -28,13 +28,13 @@
           while ($seance = $seancesList->fetch())
           {
             ?>
-            <tr class='clickableRowClient' data-href='index.php?action=seance&amp;id=<?= $seance['id_seance'] ?>'>
-              <td><?= $seance['name'] ?></td>
-              <td><?= $seance['seance_date_fr'] ?></td>
-              <td><?= $seance['time_seance'] ?></td>
-              <td><span class="label <?= $seance['color_boot']  ?>"><?= $seance['nom_type'] ?></span></td>
-              <td><?= $seance['city_seance'] ?></td>
-              <td><?= $seance['prise'] ?> €</td>
+            <tr class='clickableRowClient' data-href='index.php?action=seance&amp;id=<?= htmlspecialchars($seance['id_seance']) ?>'>
+              <td><?= htmlspecialchars($seance['name']) ?></td>
+              <td><?= htmlspecialchars($seance['seance_date_fr']) ?></td>
+              <td><?= htmlspecialchars($seance['time_seance']) ?></td>
+              <td><span class="label <?= htmlspecialchars($seance['color_boot'])  ?>"><?= htmlspecialchars($seance['nom_type']) ?></span></td>
+              <td><?= htmlspecialchars($seance['city_seance']) ?></td>
+              <td><?= htmlspecialchars($seance['prise']) ?> €</td>
             </tr>
             <?php
           }

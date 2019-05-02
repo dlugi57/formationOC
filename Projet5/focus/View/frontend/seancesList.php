@@ -50,19 +50,19 @@ ob_start();
               {
               ?>
               <tr class='clickableRowClient' data-href='index.php?action=seance&amp;id=<?= $data['id_seance'] ?>'>
-                <td><?= $data['name'] ?></td>
-                <td><?= $data['nom_type'] ?></td>
-                <td><?= $data['seance_date_fr'] ?></td>
-                <td><?= $data['time_seance'] ?></td>
-                <td><?= $data['prise'] ?> €</td>
-                <td><?= $data['model'] ?></td>
-                <td><?= $data['city_seance'] ?></td>
-                <td><?= $data['adresse_seance'] ?></td>
-                <td><?= $data['km'] ?></td>
-                <td><?= $data['depenses'] ?> €</td>
-                <td><?= $senceNetRow = intval($data['prise'] - $data['depenses'] -($data['km'] * 0.15)) ?> €</td>
-                <td><?= $data['description_seance'] ?></td>
-                <td><?= $data['creation_date'] ?></td>
+                <td><?= htmlspecialchars($data['name']) ?></td>
+                <td><?= htmlspecialchars($data['nom_type']) ?></td>
+                <td><?= htmlspecialchars($data['seance_date_fr']) ?></td>
+                <td><?= htmlspecialchars($data['time_seance']) ?></td>
+                <td><?= htmlspecialchars($data['prise']) ?> €</td>
+                <td><?= htmlspecialchars($data['model']) ?></td>
+                <td><?= htmlspecialchars($data['city_seance']) ?></td>
+                <td><?= htmlspecialchars($data['adresse_seance']) ?></td>
+                <td><?= htmlspecialchars($data['km']) ?></td>
+                <td><?= htmlspecialchars($data['depenses']) ?> €</td>
+                <td><?= $senceNetRow = intval(htmlspecialchars($data['prise']) - htmlspecialchars($data['depenses']) -(htmlspecialchars($data['km']) * 0.15)) ?> €</td>
+                <td><?= htmlspecialchars($data['description_seance']) ?></td>
+                <td><?= htmlspecialchars($data['creation_date']) ?></td>
               </tr>
               <?php
               }
@@ -125,16 +125,16 @@ ob_start();
                     <strong>Gains par type</strong>
                   </p>
                   <?php
-                  $totalSeance = $cashSummarySeance['sumPrise'];
+                  $totalSeance = htmlspecialchars($cashSummarySeance['sumPrise']);
                   while ($data = $cashTypeSeance->fetch())
                   {
-                    $percentsSeances = ($data['summaryType']/$totalSeance)*100;
+                    $percentsSeances = (htmlspecialchars($data['summaryType'])/$totalSeance)*100;
                     ?>
                     <div class="progress-group">
-                      <span class="progress-text"><?= $data['nom_type']; ?> <?= number_format($percentsSeances); ?>%</span>
-                      <span class="progress-number"><b><?= $data['summaryType']; ?></b>/ <?= $totalSeance ?> €</span>
+                      <span class="progress-text"><?= htmlspecialchars($data['nom_type']); ?> <?= number_format($percentsSeances); ?>%</span>
+                      <span class="progress-number"><b><?= htmlspecialchars($data['summaryType']); ?></b>/ <?= $totalSeance ?> €</span>
                       <div class="progress sm">
-                        <div class="progress-bar <?= $data['color_boot'] ?>" style="width: <?= number_format($percentsSeances); ?>%"></div>
+                        <div class="progress-bar <?= htmlspecialchars($data['color_boot']) ?>" style="width: <?= number_format($percentsSeances); ?>%"></div>
                       </div>
                     </div>
                     <!-- /.progress-group -->
@@ -152,7 +152,7 @@ ob_start();
               <div class="row">
                 <div class="col-sm-3 col-xs-6">
                   <div class="description-block border-right">
-                    <h5 class="description-header"><?= $cashSummarySeance['sumPrise'] ?> €</h5>
+                    <h5 class="description-header"><?= htmlspecialchars($cashSummarySeance['sumPrise']) ?> €</h5>
                     <span class="description-text">TOTAL REVENUE</span>
                   </div>
                   <!-- /.description-block -->
@@ -160,7 +160,7 @@ ob_start();
                 <!-- /.col -->
                 <div class="col-sm-3 col-xs-6">
                   <div class="description-block border-right">
-                    <h5 class="description-header"><?= intval($depSeance = $cashSummarySeance['sumDep'] + ($cashSummarySeance['sumKm']*0.15)) ?> €</h5>
+                    <h5 class="description-header"><?= intval($depSeance = htmlspecialchars($cashSummarySeance['sumDep']) + (htmlspecialchars($cashSummarySeance['sumKm'])*0.15)) ?> €</h5>
                     <span class="description-text">TOTAL COST</span>
                   </div>
                   <!-- /.description-block -->
@@ -168,7 +168,7 @@ ob_start();
                 <!-- /.col -->
                 <div class="col-sm-3 col-xs-6">
                   <div class="description-block border-right">
-                    <h5 class="description-header"><?= intval($netSeance = $cashSummarySeance['sumPrise'] - ($cashSummarySeance['sumDep'] + ($cashSummarySeance['sumKm']*0.15))) ?> €</h5>
+                    <h5 class="description-header"><?= intval($netSeance = htmlspecialchars($cashSummarySeance['sumPrise']) - (htmlspecialchars($cashSummarySeance['sumDep']) + (htmlspecialchars($cashSummarySeance['sumKm'])*0.15))) ?> €</h5>
                     <span class="description-text">TOTAL PROFIT</span>
                   </div>
                   <!-- /.description-block -->
@@ -176,7 +176,7 @@ ob_start();
                 <!-- /.col -->
                 <div class="col-sm-3 col-xs-6">
                   <div class="description-block">
-                    <h5 class="description-header"><?= $cashSummarySeance['sumKm'] ?></h5>
+                    <h5 class="description-header"><?= htmlspecialchars($cashSummarySeance['sumKm']) ?></h5>
                     <span class="description-text">KM</span>
                   </div>
                   <!-- /.description-block -->
@@ -191,7 +191,6 @@ ob_start();
         <!-- /.col -->
       </div>
       <!-- /.row -->
-
     </section>
     <!-- /.Main col -->
   </div>

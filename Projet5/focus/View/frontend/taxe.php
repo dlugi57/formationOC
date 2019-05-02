@@ -1,13 +1,13 @@
 <?php
 $title = "Taxe | Sunny Moments";
-$monthTaxShow = date('F', mktime(0, 0, 0, $taxe['month'], 10));
+$monthTaxShow = date('F', mktime(0, 0, 0, htmlspecialchars($taxe['month']), 10));
 ob_start();
  ?>
 <!-- Content Header (Page header) -->
 <section class="content-header">
   <h1>
     <?= $monthTaxShow?>
-    <small><?= $taxe['year'] ?></small>
+    <small><?= htmlspecialchars($taxe['year']) ?></small>
   </h1>
 </section>
 <!-- Main content -->
@@ -28,29 +28,24 @@ ob_start();
         </div>
         <div class="box-body box-profile">
           <h3 class="profile-username text-center">Mois <?= $monthTaxShow ?></h3>
-          <p class="text-muted text-center"><?= $taxe['tax_date'] ?></p>
+          <p class="text-muted text-center"><?= htmlspecialchars($taxe['tax_date']) ?></p>
 
           <hr>
           <strong><i class="fa fa-money margin-r-5"></i> Declare</strong>
-          <p><?= $taxe['tax_declare'] ?> €</p>
+          <p><?= htmlspecialchars($taxe['tax_declare']) ?> €</p>
           <hr>
           <strong><i class="fa fa-eur margin-r-5"></i> Paie</strong>
-          <p><?= $taxe['tax_paid'] ?> €</p>
+          <p><?= htmlspecialchars($taxe['tax_paid']) ?> €</p>
           <hr>
           <strong><i class="fa fa-calculator margin-r-5"></i> Reste</strong>
-          <p><?= $restTaxe = $taxe['tax_declare'] - $taxe['tax_paid'] ?> €</p>
+          <p><?= $restTaxe = htmlspecialchars($taxe['tax_declare']) - htmlspecialchars($taxe['tax_paid']) ?> €</p>
           <hr>
           <strong><i class="fa fa-line-chart margin-r-5"></i> Pourcentages</strong>
-          <p><?= $percentsTaxShow = intval(($taxe['tax_paid']/$taxe['tax_declare'])*100); ?> %</p>
+          <p><?= $percentsTaxShow = intval((htmlspecialchars($taxe['tax_paid'])/htmlspecialchars($taxe['tax_declare']))*100); ?> %</p>
           <hr>
-
           <strong><i class="fa fa-pencil margin-r-5"></i> Description</strong>
-          <p class="text-center"><?= $taxe['tax_description'] ?></p>
+          <p class="text-center"><?= htmlspecialchars($taxe['tax_description']) ?></p>
           <hr>
-
-
-
-
           <div>
             <?php $modalMsg = "Êtes vous sûr de vouloir supprimer taxe?"; ?>
             <a data-href="index.php?action=removeTaxe&amp;id=<?= $taxe['tax_id'] ?>" class="btn btn-danger pull-left" data-toggle="modal" data-target="#modalShow"><b><i class="fa fa-trash-o"></i></b></a>

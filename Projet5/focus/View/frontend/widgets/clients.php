@@ -29,11 +29,11 @@
           {
             ?>
             <tr class='clickableRowClient pagination_dashboard_' data-href='index.php?action=client&amp;id=<?= $client['id_client'] ?>'>
-              <td><?= $client['name'] ?></td>
-              <td><?= $client['tel'] ?></td>
-              <td><?= $client['email'] ?></td>
-              <td><span class="label <?= $client['color_boot']  ?>"><?= $client['nom_contact_by'] ?></span></td>
-              <td><?= $client['city'] ?></td>
+              <td><?= htmlspecialchars($client['name']) ?></td>
+              <td><?= htmlspecialchars($client['tel']) ?></td>
+              <td><?= htmlspecialchars($client['email']) ?></td>
+              <td><span class="label <?= htmlspecialchars($client['color_boot']) ?>"><?= htmlspecialchars($client['nom_contact_by']) ?></span></td>
+              <td><?= htmlspecialchars($client['city']) ?></td>
             </tr>
             <?php
           }
@@ -56,7 +56,3 @@
   <!-- /.box-footer -->
 </div>
 <!-- /.box -->
-<script type="text/javascript">
-
-
-</script>

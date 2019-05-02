@@ -5,7 +5,7 @@ ob_start();
 <!-- Content Header (Page header) -->
 <section class="content-header">
   <h1>
-    <?= $client['name'] ?>
+    <?= htmlspecialchars($client['name']) ?>
     <small>Control panel</small>
   </h1>
 </section>
@@ -27,31 +27,31 @@ ob_start();
           </div>
         </div>
         <div class="box-body box-profile">
-          <h3 class="profile-username text-center"><?= $client['name'] ?></h3>
-          <p class="text-muted text-center"><?= $client['creation_date_fr'] ?></p>
+          <h3 class="profile-username text-center"><?= htmlspecialchars($client['name']) ?></h3>
+          <p class="text-muted text-center"><?= htmlspecialchars($client['creation_date_fr']) ?></p>
           <hr>
-          <strong><i class="fa fa-phone margin-r-5"></i> <?= $client['tel'] ?></strong>
-          <a href="tel:<?= $client['tel'] ?>" type="button" class="btn btn-primary btn-sm daterange pull-right">
+          <strong><i class="fa fa-phone margin-r-5"></i> <?= htmlspecialchars($client['tel']) ?></strong>
+          <a href="tel:<?= htmlspecialchars($client['tel']) ?>" type="button" class="btn btn-primary btn-sm daterange pull-right">
             <i class="fa fa-phone"></i>
           </a>
           <hr>
-          <strong><i class="fa fa-envelope margin-r-5"></i> <?= $client['email'] ?></strong>
-          <a target="_blank" href="mailto:<?= $client['email'] ?>" type="button" class="btn btn-primary btn-sm daterange pull-right">
+          <strong><i class="fa fa-envelope margin-r-5"></i> <?= htmlspecialchars($client['email']) ?></strong>
+          <a target="_blank" href="mailto:<?= htmlspecialchars($client['email']) ?>" type="button" class="btn btn-primary btn-sm daterange pull-right">
             <i class="fa fa-send"></i>
           </a>
           <hr>
-          <strong><i class="fa fa-map margin-r-5"></i> <?= $client['adress'] ?></strong>
-          <a target="_blank" href="https://maps.google.com/?q=<?= $mapsAdresseClient = $client['city'] . ' ' . $client['adress']  ?>" type="button" class="btn btn-primary btn-sm daterange pull-right">
+          <strong><i class="fa fa-map margin-r-5"></i> <?= htmlspecialchars($client['adress']) ?></strong>
+          <a target="_blank" href="https://maps.google.com/?q=<?= $mapsAdresseClient = htmlspecialchars($client['city']) . ' ' . htmlspecialchars($client['adress'])  ?>" type="button" class="btn btn-primary btn-sm daterange pull-right">
             <i class="fa fa-map-marker"></i>
           </a>
           <hr>
-          <strong><i class="fa fa-home margin-r-5"></i> <?= $client['city'] ?></strong>
+          <strong><i class="fa fa-home margin-r-5"></i> <?= htmlspecialchars($client['city']) ?></strong>
           <hr>
-          <strong><i class="fa  fa-map-signs margin-r-5"></i> <?= $client['post_code'] ?></strong>
+          <strong><i class="fa  fa-map-signs margin-r-5"></i> <?= htmlspecialchars($client['post_code']) ?></strong>
           <hr>
-          <strong><i class="fa fa-search margin-r-5"></i> <?= $client['nom_contact_by'] ?></strong>
+          <strong><i class="fa fa-search margin-r-5"></i> <?= htmlspecialchars($client['nom_contact_by']) ?></strong>
           <hr>
-          <p class="text-muted text-center"><?= $client['description'] ?></p>
+          <p class="text-muted text-center"><?= htmlspecialchars($client['description']) ?></p>
           <hr>
           <div>
             <?php $modalMsg = "Êtes vous sûr de vouloir supprimer client?"; ?>
@@ -96,11 +96,11 @@ ob_start();
                 {
                   ?>
                   <tr class='clickableRowClient' data-href='index.php?action=seance&amp;id=<?= $seanceData['id_seance'] ?>'>
-                    <td><?= $seanceData['name'] ?></td>
-                    <td><?= $seanceData['seance_date_fr'] ?></td>
-                    <td><span class="label <?= $seanceData['color_boot']  ?>"><?= $seanceData['nom_type'] ?></span></td>
-                    <td><?= $seanceData['city_seance'] ?></td>
-                    <td><?= $seanceData['prise'] ?> €</td>
+                    <td><?= htmlspecialchars($seanceData['name']) ?></td>
+                    <td><?= htmlspecialchars($seanceData['seance_date_fr']) ?></td>
+                    <td><span class="label <?= htmlspecialchars($seanceData['color_boot'])  ?>"><?= htmlspecialchars($seanceData['nom_type']) ?></span></td>
+                    <td><?= htmlspecialchars($seanceData['city_seance']) ?></td>
+                    <td><?= htmlspecialchars($seanceData['prise']) ?> €</td>
                   </tr>
                   <?php
                 }
@@ -150,12 +150,12 @@ ob_start();
                 {
                   ?>
                   <tr class='clickableRowClient' data-href='index.php?action=command&amp;id=<?= $commandData['id_command'] ?>'>
-                    <td><?= $commandData['nom_type_command'] ?></td>
-                    <td><?= $commandData['prise_command'] ?> €</td>
-                    <td><?= $commandData['cost_command'] ?> €</td>
-                    <td><?= $cashCmdNet = $commandData['prise_command'] - $commandData['cost_command'] ?> €</td>
-                    <td><?= $commandData['description_command'] ?></td>
-                    <td><?= $commandData['command_date_fr'] ?></td>
+                    <td><?= htmlspecialchars($commandData['nom_type_command']) ?></td>
+                    <td><?= htmlspecialchars($commandData['prise_command']) ?> €</td>
+                    <td><?= htmlspecialchars($commandData['cost_command']) ?> €</td>
+                    <td><?= $cashCmdNet = htmlspecialchars($commandData['prise_command']) - htmlspecialchars($commandData['cost_command']) ?> €</td>
+                    <td><?= htmlspecialchars($commandData['description_command']) ?></td>
+                    <td><?= htmlspecialchars($commandData['command_date_fr']) ?></td>
                   </tr>
                   <?php
                 }

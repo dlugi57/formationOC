@@ -20,7 +20,7 @@ ob_start();
       <!-- small box -->
       <div class="small-box bg-aqua">
         <div class="inner">
-          <h3><?= intval($sumNet) ?><sup style="font-size: 20px">€</sup></h3>
+          <h3><?= intval(htmlspecialchars($sumNet)) ?><sup style="font-size: 20px">€</sup></h3>
           <p>Net = Seances + CMD - Tax</p>
         </div>
         <div class="icon">
@@ -35,7 +35,7 @@ ob_start();
       <!-- small box -->
       <div class="small-box bg-green">
         <div class="inner">
-          <h3><?= intval($sumBrut) ?><sup style="font-size: 20px">€</sup></h3>
+          <h3><?= intval(htmlspecialchars($sumBrut)) ?><sup style="font-size: 20px">€</sup></h3>
           <p>Brut = Seances + CMD</p>
         </div>
         <div class="icon">
@@ -50,7 +50,7 @@ ob_start();
       <!-- small box -->
       <div class="small-box bg-yellow">
         <div class="inner">
-          <h3><?= $countClients['nb'] ?></h3>
+          <h3><?= htmlspecialchars($countClients['nb']) ?></h3>
           <p>Clients</p>
         </div>
         <div class="icon">
@@ -65,7 +65,7 @@ ob_start();
       <!-- small box -->
       <div class="small-box bg-red">
         <div class="inner">
-          <h3><?= $countSeances['nb'] ?></h3>
+          <h3><?= htmlspecialchars($countSeances['nb']) ?></h3>
           <p>Seances</p>
         </div>
         <div class="icon">
@@ -79,9 +79,7 @@ ob_start();
 
   <!-- Main row -->
   <div class="row">
-
-    <!--<section class="col-md-12"></section>-->
-
+    
     <!-- Left col -->
     <section class="col-lg-8">
       <?php require('widgets/clients.php'); ?>
@@ -98,17 +96,11 @@ ob_start();
       <?php require('widgets/commands.php'); ?>
       <?php require('widgets/insta.php'); ?>
       <?php require('widgets/fb.php'); ?>
+      <?php // require('widgets/site.php'); ?>
     </section>
     <!-- right col -->
   </div>
   <!-- /.row (main row) -->
-
-  <!-- SOCIAL MEDIA SITE
-  <h2 class="page-header">Social Widgets</h2>
-  <div class="row">
-    <?php // require('widgets/site.php'); ?>
-  </div>-->
-
 </section>
 <!-- /.content -->
 

@@ -30,14 +30,14 @@
           foreach ($resultSession as $data)
           {
             ?>
-            <li><i class="fa fa-circle-o <?= $data['color_dash'];  ?>"></i> <?= $data['nom_type']  ?></li>
+            <li><i class="fa fa-circle-o <?= htmlspecialchars($data['color_dash']);  ?>"></i> <?= htmlspecialchars($data['nom_type'])  ?></li>
             <?php
             //create object to send to the js
             $typeSessionObj = new stdClass();
-            $typeSessionObj->value = $data['nb'];
-            $typeSessionObj->color = $data['color_camembert'];
-            $typeSessionObj->highlight = $data['color_camembert'];
-            $typeSessionObj->label = $data['nom_type'];
+            $typeSessionObj->value = htmlspecialchars($data['nb']);
+            $typeSessionObj->color = htmlspecialchars($data['color_camembert']);
+            $typeSessionObj->highlight = htmlspecialchars($data['color_camembert']);
+            $typeSessionObj->label = htmlspecialchars($data['nom_type']);
             //put the object into array to send it to the js
             array_push($typeSessionArray,$typeSessionObj);
           }
@@ -58,8 +58,8 @@
       foreach ($resultSession as $data)
       {
         ?>
-         <li><a href="#"><?= $data['nom_type'] ?>
-           <span class="pull-right <?= $data['color_dash'];  ?>"> <?= $data['nb'] ?></span></a>
+         <li><a href="#"><?= htmlspecialchars($data['nom_type']) ?>
+           <span class="pull-right <?= htmlspecialchars($data['color_dash']);  ?>"> <?= htmlspecialchars($data['nb']) ?></span></a>
          </li>
         <?php
         //change color and counter

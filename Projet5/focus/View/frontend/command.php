@@ -5,8 +5,8 @@ ob_start();
 <!-- Content Header (Page header) -->
 <section class="content-header">
   <h1>
-    <?= $command['name']?>
-    <small><?= "Commande ".$command['nom_type_command'] ?></small>
+    <?= htmlspecialchars($command['name'])?>
+    <small><?= "Commande ".htmlspecialchars($command['nom_type_command']) ?></small>
   </h1>
 </section>
 <!-- Main content -->
@@ -28,9 +28,9 @@ ob_start();
         <span class="info-box-icon"><i class="fa fa-home"></i></span>
         <div class="info-box-content">
           <span class="info-box-text">Net</span>
-          <span class="info-box-number"><?= $commandNet = $command['prise_command'] - $command['cost_command']; ?></span>
+          <span class="info-box-number"><?= $commandNet = htmlspecialchars($command['prise_command']) - htmlspecialchars($command['cost_command']); ?></span>
           <div class="progress">
-            <div class="progress-bar" style="width: <?= $percentCmdNet = intval(($commandNet/$command['prise_command'])*100);?>%"></div>
+            <div class="progress-bar" style="width: <?= $percentCmdNet = intval(($commandNet/htmlspecialchars($command['prise_command']))*100);?>%"></div>
           </div>
           <span class="progress-description"><?= $percentCmdNet;?> % of whole gain</span>
         </div>
@@ -44,9 +44,9 @@ ob_start();
         <span class="info-box-icon"><i class="fa fa-money"></i></span>
         <div class="info-box-content">
           <span class="info-box-text">Depenses</span>
-          <span class="info-box-number"><?= $command['cost_command']; ?> €</span>
+          <span class="info-box-number"><?= htmlspecialchars($command['cost_command']); ?> €</span>
           <div class="progress">
-            <div class="progress-bar" style="width: <?= $percentCmdDep = intval(($command['cost_command']/$command['prise_command'])*100);  ?>%"></div>
+            <div class="progress-bar" style="width: <?= $percentCmdDep = intval((htmlspecialchars($command['cost_command'])/htmlspecialchars($command['prise_command']))*100);  ?>%"></div>
           </div>
           <span class="progress-description"><?= $percentCmdDep;  ?> % of whole gains</span>
         </div>
@@ -60,7 +60,7 @@ ob_start();
         <span class="info-box-icon bg-red"><i class="fa fa-calculator"></i></span>
         <div class="info-box-content">
           <span class="info-box-text">Qty</span>
-          <span class="info-box-number"><?= $command['nom_type_command'] ?></span>
+          <span class="info-box-number"><?= htmlspecialchars($command['nom_type_command']) ?></span>
         </div>
         <!-- /.info-box-content -->
       </div>
@@ -85,24 +85,24 @@ ob_start();
           </div>
         </div>
         <div class="box-body box-profile">
-          <h3 class="profile-username text-center">Commande <?= $command['nom_type_command'] ?></h3>
-          <p class="text-muted text-center"><?= $command['command_date_fr'] ?></p>
+          <h3 class="profile-username text-center">Commande <?= htmlspecialchars($command['nom_type_command']) ?></h3>
+          <p class="text-muted text-center"><?= htmlspecialchars($command['command_date_fr']) ?></p>
           <hr>
 
           <strong><i class="fa fa-money margin-r-5"></i> Prix</strong>
           <p>
-            Gagne : <?= $command['prise_command'] ?> €
+            Gagne : <?= htmlspecialchars($command['prise_command']) ?> €
             <br>
-            Depenses : <?= $command['cost_command'] ?> €
+            Depenses : <?= htmlspecialchars($command['cost_command']) ?> €
           </p>
           <hr>
 
           <strong><i class="fa fa-calendar margin-r-5"></i> Date</strong>
-          <p><?= $command['command_date_fr']?></p>
+          <p><?= htmlspecialchars($command['command_date_fr'])?></p>
           <hr>
 
           <strong><i class="fa fa-pencil margin-r-5"></i> Description</strong>
-          <p class="text-center"><?= $command['description_command'] ?></p>
+          <p class="text-center"><?= htmlspecialchars($command['description_command']) ?></p>
           <hr>
 
           <div>
@@ -129,34 +129,34 @@ ob_start();
           </div>
         </div>
         <div class="box-body box-profile">
-          <h3 class="profile-username text-center"><?= $command['name'] ?></h3>
-          <p class="text-muted text-center"><?= $command['creation_date'] ?></p>
+          <h3 class="profile-username text-center"><?= htmlspecialchars($command['name']) ?></h3>
+          <p class="text-muted text-center"><?= htmlspecialchars($command['creation_date']) ?></p>
           <hr>
 
-          <strong><i class="fa fa-phone margin-r-5"></i> <?= $command['tel'] ?></strong>
-          <a href="tel:<?= $command['tel'] ?>" type="button" class="btn btn-primary btn-sm daterange pull-right">
+          <strong><i class="fa fa-phone margin-r-5"></i> <?= htmlspecialchars($command['tel']) ?></strong>
+          <a href="tel:<?= htmlspecialchars($command['tel']) ?>" type="button" class="btn btn-primary btn-sm daterange pull-right">
             <i class="fa fa-phone"></i>
           </a>
           <hr>
 
-          <strong><i class="fa fa-envelope margin-r-5"></i> <?= $command['email'] ?></strong>
-          <a target="_blank" href="mailto:<?= $command['email'] ?>" type="button" class="btn btn-primary btn-sm daterange pull-right">
+          <strong><i class="fa fa-envelope margin-r-5"></i> <?= htmlspecialchars($command['email']) ?></strong>
+          <a target="_blank" href="mailto:<?= htmlspecialchars($command['email']) ?>" type="button" class="btn btn-primary btn-sm daterange pull-right">
             <i class="fa fa-send"></i>
           </a>
           <hr>
 
-          <strong><i class="fa fa-map margin-r-5"></i> <?= $command['adress'] ?></strong>
-          <a target="_blank" href="https://maps.google.com/?q=<?= $mapsAdresseClient = $command['city'] . ' ' . $command['adress']  ?>" type="button" class="btn btn-primary btn-sm daterange pull-right">
+          <strong><i class="fa fa-map margin-r-5"></i> <?= htmlspecialchars($command['adress']) ?></strong>
+          <a target="_blank" href="https://maps.google.com/?q=<?= $mapsAdresseClient = htmlspecialchars($command['city']) . ' ' . htmlspecialchars($command['adress'])  ?>" type="button" class="btn btn-primary btn-sm daterange pull-right">
             <i class="fa fa-map-marker"></i>
           </a>
           <hr>
 
-          <strong><i class="fa fa-home margin-r-5"></i> <?= $command['city'] ?></strong>
+          <strong><i class="fa fa-home margin-r-5"></i> <?= htmlspecialchars($command['city']) ?></strong>
           <hr>
-          <strong><i class="fa  fa-map-signs margin-r-5"></i> <?= $command['post_code'] ?></strong>
+          <strong><i class="fa  fa-map-signs margin-r-5"></i> <?= htmlspecialchars($command['post_code']) ?></strong>
           <hr>
 
-          <p class="text-muted text-center"><?= $command['description'] ?></p>
+          <p class="text-muted text-center"><?= htmlspecialchars($command['description']) ?></p>
           <hr>
 
           <div>

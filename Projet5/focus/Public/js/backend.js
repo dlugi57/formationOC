@@ -27,6 +27,13 @@ $(function() {
     format: 'yyyy-mm-dd'
   })
 
+  $('#datepickerSeanceModify').datepicker({
+    autoclose: true,
+    format: 'yyyy-mm-dd'
+  })
+
+
+
   $('#datepickerTaxe').datepicker({
     autoclose: true,
     viewMode: "months",
@@ -55,6 +62,20 @@ $(function() {
     var pattern = new RegExp(/^(("[\w-+\s]+")|([\w-+]+(?:\.[\w-+]+)*)|("[\w-+\s]+")([\w-+]+(?:\.[\w-+]+)*))(@((?:[\w-+]+\.)*\w[\w-+]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][\d]\.|1[\d]{2}\.|[\d]{1,2}\.))((25[0-5]|2[0-4][\d]|1[\d]{2}|[\d]{1,2})\.){2}(25[0-5]|2[0-4][\d]|1[\d]{2}|[\d]{1,2})\]?$)/i);
     return pattern.test(emailAddress);
   };
+
+  function isValidDate(dateString) {
+    var regEx = /^\d{4}-\d{2}-\d{2}$/;
+    if (!dateString.match(regEx)) return false; // Invalid format
+    var d = new Date(dateString);
+    var dNum = d.getTime();
+    if (!dNum && dNum !== 0) return false; // NaN value, Invalid date
+    return d.toISOString().slice(0, 10) === dateString;
+  }
+
+  function isValidTime(timeString){
+    var regEx = /^\d{2}:\d{2}$/
+    if (!timeString.match(regEx)) return false;
+  }
 
   //CLIENT
   $('.addClient').click(function() {
@@ -103,7 +124,65 @@ $(function() {
         return false;
       }
     }
-  })//end of client
+  }) //end of client
+
+
+
+  $('.addSeance').click(function() {
+    if ($.trim($('.addSeanceClient').val()) == "") {
+      $('.addSeanceClient').closest('div.form-group').addClass('has-error');
+      $('.addSeanceClient').closest('div.form-group').find('span.help-block').text("Champs obligatoire");
+      return false;
+    } else {
+      $('.addSeanceClient').closest('div.form-group').removeClass('has-error');
+      $('.addSeanceClient').closest('div.form-group').find('span.help-block').text("");
+    }
+
+    if ($.trim($('.addSeanceDate').val()) == "") {
+      $('.addSeanceDate').closest('div.form-group').addClass('has-error');
+      $('.addSeanceDate').closest('div.form-group').find('span.help-block').text("Champs obligatoire");
+      return false;
+    } else {
+      if (!isValidDate($('.addSeanceDate').val())) {
+        $('.addSeanceDate').closest('div.form-group').addClass('has-error');
+        $('.addSeanceDate').closest('div.form-group').find('span.help-block').text("Format mail invalide");
+        return false;
+      } else {
+        $('.addSeanceDate').closest('div.form-group').removeClass('has-error');
+        $('.addSeanceDate').closest('div.form-group').find('span.help-block').text("");
+      }
+    }
+
+    if ($('.addSeanceTime').val() !== "") {
+      if (!isValidTime($('.addSeanceTime').val())) {
+        $('.addSeanceTime').closest('div.form-group').removeClass('has-error');
+        $('.addSeanceTime').closest('div.form-group').find('span.help-block').text("");
+      } else {
+        $('.addSeanceTime').closest('div.form-group').addClass('has-error');
+        $('.addSeanceTime').closest('div.form-group').find('span.help-block').text("Chiffres obligatoire");
+        return false;
+      }
+    }
+
+        if ($.trim($('.addSeancePrix').val()) == "") {
+          $('.addSeancePrix').closest('div.form-group').addClass('has-error');
+          $('.addSeancePrix').closest('div.form-group').find('span.help-block').text("Champs numerique obligatoire");
+          return false;
+        } else {
+          if ($.isNumeric($('.addSeancePrix').val())) {
+            $('.addSeancePrix').closest('div.form-group').removeClass('has-error');
+            $('.addSeancePrix').closest('div.form-group').find('span.help-block').text("");
+          } else {
+            $('.addSeancePrix').closest('div.form-group').addClass('has-error');
+            $('.addSeancePrix').closest('div.form-group').find('span.help-block').text("Chiffres obligatoire");
+            return false;
+          }
+        }
+
+
+
+
+  })
 
 
 

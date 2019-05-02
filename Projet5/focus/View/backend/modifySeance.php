@@ -24,7 +24,7 @@ ob_start();
           <div class="col-md-6">
             <div class="form-group">
               <label>Nom </label>
-              <select name="clients_id" class="form-control select2">
+              <select name="clients_id" class="form-control select2 addSeanceClient" required>
 
                 <option value="<?= $modifySeance['id_client'] ?>" selected="selected"><?= htmlspecialchars($modifySeance['name']) ?></option>
                 <?php
@@ -37,6 +37,7 @@ ob_start();
                 }
                 ?>
               </select>
+              <span class="help-block"></span>
             </div>
             <!-- select -->
             <div class="form-group">
@@ -61,8 +62,9 @@ ob_start();
                 <div class="input-group-addon">
                   <i class="fa fa-calendar"></i>
                 </div>
-                <input name="seance_date" value="<?= htmlspecialchars($modifySeance['seance_date']) ?>" type="text" class="form-control pull-right" id="datepickerSeance">
+                <input name="seance_date" value="<?= htmlspecialchars($modifySeance['seance_date']) ?>" type="text" class="form-control pull-right addSeanceDate" id="datepickerSeanceModify" required>
               </div>
+              <span class="help-block"></span>
               <!-- /.input group -->
             </div>
             <!-- /.form group -->
@@ -75,8 +77,9 @@ ob_start();
                   <div class="input-group-addon">
                     <i class="fa fa-clock-o"></i>
                   </div>
-                  <input name="time_seance" value="<?= htmlspecialchars($modifySeance['time_seance']) ?>" type="text" class="form-control timepicker">
+                  <input name="time_seance" value="<?= htmlspecialchars($modifySeance['time_seance']) ?>" type="text" class="form-control timepicker addSeanceTime">
                 </div>
+                <span class="help-block"></span>
                 <!-- /.input group -->
               </div>
               <!-- /.form group -->
@@ -89,8 +92,9 @@ ob_start();
                 <div class="input-group-addon">
                   <i class="fa fa-eur"></i>
                 </div>
-                <input name="prise" value="<?= htmlspecialchars($modifySeance['prise']) ?>" type="number" class="form-control">
+                <input name="prise" value="<?= htmlspecialchars($modifySeance['prise']) ?>" type="number" class="form-control addSeancePrix" required>
               </div>
+              <span class="help-block"></span>
               <!-- /.input group -->
             </div>
             <!-- /.form group -->
@@ -115,17 +119,17 @@ ob_start();
             <!-- model -->
             <div class="form-group">
               <label>Model</label>
-              <input name="model" value="<?= htmlspecialchars($modifySeance['model']) ?>" type="text" class="form-control">
+              <input name="model" value="<?= htmlspecialchars($modifySeance['model']) ?>" type="text" class="form-control" maxlength="250">
             </div>
             <!-- adresse -->
             <div class="form-group">
               <label>Adresse</label>
-              <input name="adresse_seance" value="<?= htmlspecialchars($modifySeance['adresse_seance']) ?>" type="text" class="form-control">
+              <input name="adresse_seance" value="<?= htmlspecialchars($modifySeance['adresse_seance']) ?>" type="text" class="form-control" maxlength="250">
             </div>
             <!-- city -->
             <div class="form-group">
               <label>Ville</label>
-              <input name="city_seance" value="<?= htmlspecialchars($modifySeance['city_seance']) ?>" type="text" class="form-control">
+              <input name="city_seance" value="<?= htmlspecialchars($modifySeance['city_seance']) ?>" type="text" class="form-control" maxlength="250">
             </div>
             <!-- distance -->
             <div class="form-group">
@@ -135,7 +139,7 @@ ob_start();
             <!-- description -->
             <div class="form-group">
               <label>Description</label>
-              <textarea name="description_seance" class="form-control" rows="5"><?= htmlspecialchars($modifySeance['description_seance']) ?></textarea>
+              <textarea name="description_seance" class="form-control" rows="5" maxlength="500"><?= htmlspecialchars($modifySeance['description_seance']) ?></textarea>
             </div>
           </div>
           <!--/.col right-->
@@ -151,7 +155,7 @@ ob_start();
             <?php
           endif;
           ?>
-          <button type="submit" class="btn btn-info pull-right">Modifier</button>
+          <button type="submit" class="btn btn-info pull-right addSeance">Modifier</button>
         </div>
         <!-- /.box-footer -->
       </div>

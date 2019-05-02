@@ -24,7 +24,7 @@ ob_start();
           <div class="col-md-6">
             <div class="form-group">
               <label>Nom </label>
-              <select name="clients_id" class="form-control select2">
+              <select name="clients_id" class="form-control select2 addSeanceClient" required>
                 <?php
                 if (isset($client['name'])):
                   ?>
@@ -43,6 +43,7 @@ ob_start();
                 }
                 ?>
               </select>
+              <span class="help-block"></span>
             </div>
             <!-- select -->
             <div class="form-group">
@@ -66,8 +67,9 @@ ob_start();
                 <div class="input-group-addon">
                   <i class="fa fa-calendar"></i>
                 </div>
-                <input name="seance_date" type="text" class="form-control pull-right" id="datepickerSeance">
+                <input name="seance_date" type="text" class="form-control pull-right addSeanceDate" id="datepickerSeance" required>
               </div>
+              <span class="help-block"></span>
               <!-- /.input group -->
             </div>
             <!-- /.form group -->
@@ -80,8 +82,9 @@ ob_start();
                   <div class="input-group-addon">
                     <i class="fa fa-clock-o"></i>
                   </div>
-                  <input name="time_seance" type="text" class="form-control timepicker">
+                  <input name="time_seance" type="text" class="form-control timepicker addSeanceTime">
                 </div>
+                <span class="help-block"></span>
                 <!-- /.input group -->
               </div>
               <!-- /.form group -->
@@ -94,8 +97,9 @@ ob_start();
                 <div class="input-group-addon">
                   <i class="fa fa-eur"></i>
                 </div>
-                <input name="prise" type="number" class="form-control">
+                <input name="prise" type="number" class="form-control addSeancePrix" required>
               </div>
+              <span class="help-block"></span>
               <!-- /.input group -->
             </div>
             <!-- /.form group -->
@@ -120,17 +124,17 @@ ob_start();
             <!-- model -->
             <div class="form-group">
               <label>Model</label>
-              <input name="model" type="text" class="form-control">
+              <input name="model" type="text" class="form-control" maxlength="250">
             </div>
             <!-- adresse -->
             <div class="form-group">
               <label>Adresse</label>
-              <input name="adresse_seance" type="text" class="form-control">
+              <input name="adresse_seance" type="text" class="form-control" maxlength="250">
             </div>
             <!-- city -->
             <div class="form-group">
               <label>Ville</label>
-              <input name="city_seance" type="text" class="form-control">
+              <input name="city_seance" type="text" class="form-control" maxlength="250">
             </div>
             <!-- distance -->
             <div class="form-group">
@@ -140,7 +144,7 @@ ob_start();
             <!-- description -->
             <div class="form-group">
               <label>Description</label>
-              <textarea name="description_seance" class="form-control" rows="5"></textarea>
+              <textarea name="description_seance" class="form-control" rows="5" maxlength="500"></textarea>
             </div>
           </div>
           <!--/.col right-->
@@ -156,7 +160,7 @@ ob_start();
             <?php
           endif;
           ?>
-          <button type="submit" class="btn btn-info pull-right">Ajouter</button>
+          <button type="submit" class="btn btn-info pull-right addSeance">Ajouter</button>
         </div>
         <!-- /.box-footer -->
       </div>

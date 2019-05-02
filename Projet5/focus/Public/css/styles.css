@@ -3,7 +3,6 @@
   background-size: cover;
   background-position: top;
   background-repeat: no-repeat;
-  margin-top: -50px;
   transition: all 1s;
   background-image: url('../img/error.gif');
   height: 100vh;

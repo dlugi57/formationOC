@@ -6,6 +6,7 @@ use Model\ClientManager;
 use Model\CommandManager;
 use Model\TaxesManager;
 use Exception;
+use DateTime;
 
 class FocusBack
 {
@@ -35,7 +36,23 @@ class FocusBack
 
         if (!empty($_POST['name']) && trim($_POST['name']) !== '' && !empty($_POST['tel']) && trim($_POST['tel']) !== ''):
 
-              $newClient = $clientsManager->newClient($_POST['name'], $_POST['tel'], $_POST['email'], $_POST['adress'], $_POST['city'], $_POST['post_code'], $_POST['contact_by'], $_POST['description']);
+            if(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)):
+
+                if (filter_var($_POST['tel'], FILTER_VALIDATE_INT) === false && filter_var($_POST['post_code'], FILTER_VALIDATE_INT) === false):
+
+                    throw new Exception("Le formats de donnes est invalide ex. letrres a la place de chiffres !");
+
+                else:
+
+                    $newClient = $clientsManager->newClient($_POST['name'], $_POST['tel'], $_POST['email'], $_POST['adress'], $_POST['city'], $_POST['post_code'], $_POST['contact_by'], $_POST['description']);
+
+                endif;
+
+            else:
+
+                throw new Exception("Format d'adresse mail non valide");
+
+            endif;
 
         else:
 
@@ -91,7 +108,23 @@ class FocusBack
 
             if (!empty($_POST['name']) && trim($_POST['name']) !== '' && !empty($_POST['tel']) && trim($_POST['tel']) !== ''):
 
-                $updateClient = $clientsManager->updateClient($_GET['id'],$_POST['name'], $_POST['tel'], $_POST['email'], $_POST['adress'], $_POST['city'], $_POST['post_code'], $_POST['contact_by'], $_POST['description']);
+                if(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)):
+
+                    if (filter_var($_POST['tel'], FILTER_VALIDATE_INT) === false && filter_var($_POST['post_code'], FILTER_VALIDATE_INT) === false):
+
+                        throw new Exception("Le formats de donnes est invalide ex. letrres a la place de chiffres !");
+
+                    else:
+
+                        $updateClient = $clientsManager->updateClient($_GET['id'],$_POST['name'], $_POST['tel'], $_POST['email'], $_POST['adress'], $_POST['city'], $_POST['post_code'], $_POST['contact_by'], $_POST['description']);
+
+                    endif;
+
+                else:
+
+                    throw new Exception("Format d'adresse mail non valide");
+
+                endif;
 
             else:
 
@@ -194,7 +227,15 @@ class FocusBack
 
             else:
 
-                $newSeance = $seancesManager->newSeance($_POST['clients_id'], $_POST['type'], $_POST['seance_date'], $_POST['time_seance'], $_POST['prise'], $depenses, $_POST['model'], $_POST['adresse_seance'], $_POST['city_seance'], $kilometers, $_POST['description_seance']);
+              if (DateTime::createFromFormat('Y-m-d', $_POST['seance_date']) !== FALSE):
+
+                  $newSeance = $seancesManager->newSeance($_POST['clients_id'], $_POST['type'], $_POST['seance_date'], $_POST['time_seance'], $_POST['prise'], $depenses, $_POST['model'], $_POST['adresse_seance'], $_POST['city_seance'], $kilometers, $_POST['description_seance']);
+
+              else:
+
+                  throw new Exception("Le formats de date est invalide !");
+
+              endif;
 
             endif;
 
@@ -277,7 +318,15 @@ class FocusBack
 
                     else:
 
-                        $updateSeance = $seancesManager->updateSeance($_GET['id'],$_POST['clients_id'], $_POST['type'], $_POST['seance_date'], $_POST['time_seance'], $_POST['prise'], $depenses, $_POST['model'], $_POST['adresse_seance'], $_POST['city_seance'], $kilometers, $_POST['description_seance']);
+                        if (DateTime::createFromFormat('Y-m-d', $_POST['seance_date']) !== FALSE):
+
+                            $updateSeance = $seancesManager->updateSeance($_GET['id'],$_POST['clients_id'], $_POST['type'], $_POST['seance_date'], $_POST['time_seance'], $_POST['prise'], $depenses, $_POST['model'], $_POST['adresse_seance'], $_POST['city_seance'], $kilometers, $_POST['description_seance']);
+
+                        else:
+
+                            throw new Exception("Le formats de date est invalide !");
+
+                        endif;
 
                     endif;
 
@@ -376,7 +425,15 @@ class FocusBack
               $costs = 0;
             endif;
 
-            $newCommand = $commandsManager->newCommand($_POST['client_id_cmd'], $_POST['type_command'], $_POST['description_command'], $_POST['prise_command'], $costs);
+            if (filter_var($_POST['prise_command'], FILTER_VALIDATE_INT) === false && filter_var($costs, FILTER_VALIDATE_INT) === false):
+
+                throw new Exception("Le formats de donnes est invalide ex. letrres a la place de chiffres !");
+
+            else:
+
+                $newCommand = $commandsManager->newCommand($_POST['client_id_cmd'], $_POST['type_command'], $_POST['description_command'], $_POST['prise_command'], $costs);
+
+            endif;
 
         else:
 
@@ -439,7 +496,15 @@ class FocusBack
                 $costs = 0;
               endif;
 
-              $updateCommand = $commandsManager->updateCommand($_GET['id'],$_POST['client_id_cmd'], $_POST['type_command'], $_POST['description_command'], $_POST['prise_command'], $costs);
+              if (filter_var($_POST['prise_command'], FILTER_VALIDATE_INT) === false && filter_var($costs, FILTER_VALIDATE_INT) === false):
+
+                  throw new Exception("Le formats de donnes est invalide ex. letrres a la place de chiffres !");
+
+              else:
+
+                  $updateCommand = $commandsManager->updateCommand($_GET['id'],$_POST['client_id_cmd'], $_POST['type_command'], $_POST['description_command'], $_POST['prise_command'], $costs);
+
+              endif;
 
           else:
 
@@ -498,7 +563,15 @@ class FocusBack
 
       if (!empty($_POST['tax_date']) && trim($_POST['tax_date']) !== '' && !empty($_POST['tax_declare']) && trim($_POST['tax_declare']) !== '' && !empty($_POST['tax_paid']) && trim($_POST['tax_paid']) !== ''):
 
-          $newTaxe = $taxesManager->newTaxes($_POST['tax_date'], $_POST['tax_declare'], $_POST['tax_paid'], $_POST['tax_description']);
+          if (filter_var($_POST['tax_declare'], FILTER_VALIDATE_INT) === false && filter_var($_POST['tax_paid'], FILTER_VALIDATE_INT) === false):
+
+              throw new Exception("Le formats de donnes est invalide ex. letrres a la place de chiffres !");
+
+          else:
+
+              $newTaxe = $taxesManager->newTaxes($_POST['tax_date'], $_POST['tax_declare'], $_POST['tax_paid'], $_POST['tax_description']);
+
+          endif;
 
       else:
 
@@ -551,7 +624,15 @@ class FocusBack
 
             if (!empty($_POST['tax_date']) && trim($_POST['tax_date']) !== '' && !empty($_POST['tax_declare']) && trim($_POST['tax_declare']) !== '' && !empty($_POST['tax_paid']) && trim($_POST['tax_paid']) !== ''):
 
-                $updateTaxe = $taxesManager->updateTaxe($_GET['id'], $_POST['tax_date'], $_POST['tax_declare'], $_POST['tax_paid'], $_POST['tax_description']);
+                if (filter_var($_POST['tax_declare'], FILTER_VALIDATE_INT) === false && filter_var($_POST['tax_paid'], FILTER_VALIDATE_INT) === false):
+
+                    throw new Exception("Le formats de donnes est invalide ex. letrres a la place de chiffres !");
+
+                else:
+
+                    $updateTaxe = $taxesManager->updateTaxe($_GET['id'], $_POST['tax_date'], $_POST['tax_declare'], $_POST['tax_paid'], $_POST['tax_description']);
+
+                endif;
 
             else:
 

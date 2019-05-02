@@ -48,8 +48,12 @@ ob_start();
           <p class="text-center"><?= $taxe['tax_description'] ?></p>
           <hr>
 
+
+
+
           <div>
-            <a href="index.php?action=removeTaxe&amp;id=<?= $taxe['tax_id'] ?>" class="btn btn-danger pull-left"><b><i class="fa fa-trash-o"></i></b></a>
+            <?php $modalMsg = "Êtes vous sûr de vouloir supprimer taxe?"; ?>
+            <a data-href="index.php?action=removeTaxe&amp;id=<?= $taxe['tax_id'] ?>" class="btn btn-danger pull-left" data-toggle="modal" data-target="#modalShow"><b><i class="fa fa-trash-o"></i></b></a>
             <a href="index.php?action=modifyTaxesPage&amp;id=<?= $taxe['tax_id'] ?>" class="btn btn-primary pull-right"><b>Modifier</b></a>
           </div>
         </div>

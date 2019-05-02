@@ -106,7 +106,8 @@ ob_start();
           <hr>
 
           <div>
-            <a href="index.php?action=removeCommand&amp;id=<?= $command['id_command'] ?>" class="btn btn-danger pull-left"><b><i class="fa fa-trash-o"></i></b></a>
+            <?php $modalMsg = "Êtes vous sûr de vouloir supprimer commande?"; ?>
+            <a data-href="index.php?action=removeCommand&amp;id=<?= $command['id_command'] ?>" class="btn btn-danger pull-left" data-toggle="modal" data-target="#modalShow"><b><i class="fa fa-trash-o"></i></b></a>
             <a href="index.php?action=modifyCommandPage&amp;id=<?= $command['id_command'] ?>" class="btn btn-primary pull-right"><b>Modifier</b></a>
           </div>
         </div>

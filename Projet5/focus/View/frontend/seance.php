@@ -139,7 +139,8 @@ $dayOfWeek = $days[$dayofweek];
           <hr>
 
           <div>
-            <a href="index.php?action=removeSeance&amp;id=<?= $seance['id_seance'] ?>" class="btn btn-danger pull-left"><b><i class="fa fa-trash-o"></i></b></a>
+            <?php $modalMsg = "Êtes vous sûr de vouloir supprimer seance?"; ?>
+            <a data-href="index.php?action=removeSeance&amp;id=<?= $seance['id_seance'] ?>" class="btn btn-danger pull-left" data-toggle="modal" data-target="#modalShow"><b><i class="fa fa-trash-o"></i></b></a>
             <a href="index.php?action=modifySeancePage&amp;id=<?= $seance['id_seance'] ?>" class="btn btn-primary pull-right"><b>Modifier</b></a>
           </div>
         </div>

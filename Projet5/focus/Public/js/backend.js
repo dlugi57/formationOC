@@ -39,7 +39,13 @@ $(function () {
   })
 
   //Money Euro
-  $('[data-mask]').inputmask()
+  $('[data-mask]').inputmask();
+
+  //MODAL
+  //Function to get adres from submit button and put it into modal window to accept
+  $('#modalShow').on('show.bs.modal', function(e) {
+    $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
+  });
 
 
 

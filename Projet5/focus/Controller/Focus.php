@@ -66,12 +66,12 @@ class Focus
         $resultsSeancesDepenses = array();
         while ($data = $monthSeances->fetch())
         {
-            $monthNum  = $data['month'];
+            $monthNum  = htmlspecialchars($data['month']);
             $monthName = date('F', mktime(0, 0, 0, $monthNum, 10));
-            $depensesSeance = $data['drove'] * 0.15 +$data['paied'];
-            $depensesSeanceSummary = $data['cash'] - intval($depensesSeance);
+            $depensesSeance = htmlspecialchars($data['drove']) * 0.15 +htmlspecialchars($data['paied']);
+            $depensesSeanceSummary = htmlspecialchars($data['cash']) - intval($depensesSeance);
             array_push($resultsMonthSeance, $monthName);
-            array_push($resultsSeancesCash, intval($data['cash']));
+            array_push($resultsSeancesCash, intval(htmlspecialchars($data['cash'])));
             array_push($resultsSeancesDepenses, $depensesSeanceSummary);
         }
         if ($seances === false)

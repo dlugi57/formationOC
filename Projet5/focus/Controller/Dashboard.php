@@ -60,7 +60,7 @@ class Dashboard
     $resultsMonthCash = array();
     while ($data = $monthSeancesCmd->fetch())
     {
-      $entrance = $data['seance_cash'] + $data['cmd_cash'];
+      $entrance = htmlspecialchars($data['seance_cash']) + htmlspecialchars($data['cmd_cash']);
       array_push($resultsMonthCash, intval($entrance));
     }
     return $resultsMonthCash;
@@ -73,8 +73,8 @@ class Dashboard
     $resultsMonthCashNet = array();
     while ($data = $monthSeancesCmd->fetch())
     {
-      $depenses = $data['seances_km'] * 0.15 + $data['cmd_km'] * 0.15 + $data['seance_depense'] + $data['cmd_depense'];
-      $entrance = $data['seance_cash'] + $data['cmd_cash'];
+      $depenses = htmlspecialchars($data['seances_km']) * 0.15 + htmlspecialchars($data['cmd_km']) * 0.15 + htmlspecialchars($data['seance_depense']) + htmlspecialchars($data['cmd_depense']);
+      $entrance = htmlspecialchars($data['seance_cash']) + htmlspecialchars($data['cmd_cash']);
       $cashNet = $entrance - $depenses;
       array_push($resultsMonthCashNet,intval($cashNet));
     }
@@ -88,7 +88,7 @@ class Dashboard
     $resultsNbSeance = array();
     while ($data = $monthSeances->fetch())
     {
-      array_push($resultsNbSeance,intval($data['nb']));
+      array_push($resultsNbSeance,intval(htmlspecialchars($data['nb'])));
     }
     return $resultsNbSeance;
   }
@@ -100,7 +100,7 @@ class Dashboard
     $resultsMonth = array();
     while ($data = $monthClients->fetch())
     {
-      $monthNum  = $data['month'];
+      $monthNum  = htmlspecialchars($data['month']);
       $monthName = date('F', mktime(0, 0, 0, $monthNum, 10));
       array_push($resultsMonth, $monthName);
     }
@@ -114,7 +114,7 @@ class Dashboard
     $resultsNb = array();
     while ($data = $monthClients->fetch())
     {
-      array_push($resultsNb,intval($data['nb']));
+      array_push($resultsNb,intval(htmlspecialchars($data['nb'])));
     }
     return $resultsNb;
   }
@@ -126,7 +126,7 @@ class Dashboard
     $resultsMonthPaiedTax = array();
     while ($data = $monthPaiedTax->fetch())
     {
-      $sumTax  = $data['taxesMonth'];
+      $sumTax  = htmlspecialchars($data['taxesMonth']);
       array_push($resultsMonthPaiedTax, intval($sumTax));
     }
     return $resultsMonthPaiedTax;
@@ -139,9 +139,9 @@ class Dashboard
     $sumNetCmd = $commandsManager->totalsCmd();
     $taxesManager = new TaxesManager();
     $sumTaxes = $taxesManager->totalsTax();
-    $summarySeances = $sumNetSeances['sumPrise'] - $sumNetSeances['sumDep'] - ($sumNetSeances['sumKm'] * 0.15);
-    $sumaryCmd = $sumNetCmd['sumPriseCmd'] - $sumNetCmd['sumDepCmd'];
-    $summary = $summarySeances + $sumaryCmd - $sumTaxes['sumPaidTax'];
+    $summarySeances = htmlspecialchars($sumNetSeances['sumPrise']) - htmlspecialchars($sumNetSeances['sumDep']) - (htmlspecialchars($sumNetSeances['sumKm']) * 0.15);
+    $sumaryCmd = htmlspecialchars($sumNetCmd['sumPriseCmd']) - htmlspecialchars($sumNetCmd['sumDepCmd']);
+    $summary = $summarySeances + $sumaryCmd - htmlspecialchars($sumTaxes['sumPaidTax']);
 
     return $summary;
   }
@@ -151,7 +151,7 @@ class Dashboard
     $sumBrutSeances = $seancesManager->totals();
     $commandsManager = new CommandManager();
     $sumBrutCmd = $commandsManager->totalsCmd();
-    $summary = $sumBrutSeances['sumPrise'] + $sumBrutCmd['sumPriseCmd'];
+    $summary = htmlspecialchars($sumBrutSeances['sumPrise']) + htmlspecialchars($sumBrutCmd['sumPriseCmd']);
 
     return $summary;
   }

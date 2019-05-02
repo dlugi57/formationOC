@@ -154,7 +154,7 @@
             <li><a href="index.php?action=addTaxesPage"><i class="fa fa-plus"></i> Ajouter</a></li>
           </ul>
         </li>
-
+        <!--
         <li class="treeview">
           <a href="#">
             <i class="fa fa-credit-card"></i>
@@ -168,14 +168,16 @@
             <li><a href="pages/charts/morris.html"><i class="fa fa-plus"></i> Ajouter</a></li>
           </ul>
         </li>
-
+        -->
+        <!--
         <li>
           <a href="pages/widgets.html">
             <i class="fa fa-balance-scale"></i> <span>Test</span>
 
           </a>
         </li>
-
+        -->
+        <!--
         <li class="treeview">
           <a href="#">
             <i class="fa fa-file-pdf-o"></i>
@@ -190,7 +192,8 @@
 
           </ul>
         </li>
-
+        -->
+        <!--
         <li class="treeview">
           <a href="#">
             <i class="fa fa-pencil-square-o"></i>
@@ -202,9 +205,9 @@
           <ul class="treeview-menu">
             <li><a href="pages/charts/chartjs.html"><i class="fa fa-list-ul"></i> Liste</a></li>
             <li><a href="pages/charts/morris.html"><i class="fa fa-plus"></i> Ajouter</a></li>
-
           </ul>
         </li>
+      -->
 
         <li class="treeview">
           <a href="#">

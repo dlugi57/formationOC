@@ -32,7 +32,17 @@ class FocusBack
     public function addClient()
     {
         $clientsManager = new ClientManager();
-        $newClient = $clientsManager->newClient($_POST['name'], $_POST['tel'], $_POST['email'], $_POST['adress'], $_POST['city'], $_POST['post_code'], $_POST['contact_by'], $_POST['description']);
+
+        if (!empty($_POST['name']) && trim($_POST['name']) !== '' && !empty($_POST['tel']) && trim($_POST['tel']) !== ''):
+
+              $newClient = $clientsManager->newClient($_POST['name'], $_POST['tel'], $_POST['email'], $_POST['adress'], $_POST['city'], $_POST['post_code'], $_POST['contact_by'], $_POST['description']);
+
+        else:
+
+            throw new Exception("Tous les champs obligatoires ne sont pas remplis !");
+
+        endif;
+
 
         if ($newClient === false):
 
@@ -79,7 +89,15 @@ class FocusBack
 
         if (isset($_GET['id']) && $_GET['id'] > 0):
 
-            $updateClient = $clientsManager->updateClient($_GET['id'],$_POST['name'], $_POST['tel'], $_POST['email'], $_POST['adress'], $_POST['city'], $_POST['post_code'], $_POST['contact_by'], $_POST['description']);
+            if (!empty($_POST['name']) && trim($_POST['name']) !== '' && !empty($_POST['tel']) && trim($_POST['tel']) !== ''):
+
+                $updateClient = $clientsManager->updateClient($_GET['id'],$_POST['name'], $_POST['tel'], $_POST['email'], $_POST['adress'], $_POST['city'], $_POST['post_code'], $_POST['contact_by'], $_POST['description']);
+
+            else:
+
+                throw new Exception("Tous les champs obligatoires ne sont pas remplis !");
+
+            endif;
 
         else:
 
@@ -156,7 +174,35 @@ class FocusBack
     public function addSeance()
     {
         $seancesManager = new SeanceManager();
-        $newSeance = $seancesManager->newSeance($_POST['clients_id'], $_POST['type'], $_POST['seance_date'], $_POST['time_seance'], $_POST['prise'], $_POST['depenses'], $_POST['model'], $_POST['adresse_seance'], $_POST['city_seance'], $_POST['km'], $_POST['description_seance']);
+
+        if (!empty($_POST['clients_id']) && trim($_POST['clients_id']) !== '' && !empty($_POST['type']) && trim($_POST['type']) !== '' && !empty($_POST['seance_date']) && trim($_POST['seance_date']) !== '' && !empty($_POST['prise']) && trim($_POST['prise']) !== ''):
+
+            if (!empty($_POST['depenses']) && trim($_POST['depenses']) !== ''):
+              $depenses = $_POST['depenses'];
+            else:
+              $depenses = 0;
+            endif;
+            if (!empty($_POST['km']) && trim($_POST['km']) !== ''):
+              $kilometers = $_POST['km'];
+            else:
+              $kilometers = 0;
+            endif;
+
+            if (filter_var($_POST['prise'], FILTER_VALIDATE_INT) === false && filter_var($depenses, FILTER_VALIDATE_INT) === false && filter_var($kilometers, FILTER_VALIDATE_INT) === false):
+
+                throw new Exception("Le formats de donnes est invalide ex. letrres a la place de chiffres !");
+
+            else:
+
+                $newSeance = $seancesManager->newSeance($_POST['clients_id'], $_POST['type'], $_POST['seance_date'], $_POST['time_seance'], $_POST['prise'], $depenses, $_POST['model'], $_POST['adresse_seance'], $_POST['city_seance'], $kilometers, $_POST['description_seance']);
+
+            endif;
+
+        else:
+
+            throw new Exception("Tous les champs obligatoires ne sont pas remplis !");
+
+        endif;
 
         if ($newSeance === false):
 
@@ -177,6 +223,12 @@ class FocusBack
 
             $modifySeance = $seancesManager->getSeance($_GET['id']);
 
+            if ($modifySeance === false):
+
+                throw new Exception('Impossible d\'afficher le seance modifier page!');
+
+            endif;
+
         else:
 
             throw new Exception("Aucun identifiant de seance envoyé");
@@ -187,7 +239,7 @@ class FocusBack
         $clientsManager = new ClientManager();
         $modifySeanceClients = $clientsManager->getClients();
 
-        if ($modifySeance === false || $modifySeanceType === false || $modifySeanceClients === false):
+        if ($modifySeanceType === false || $modifySeanceClients === false):
 
             throw new Exception('Impossible d\'afficher le seance modifier page!');
 
@@ -205,7 +257,35 @@ class FocusBack
 
         if (isset($_GET['id']) && $_GET['id'] > 0):
 
-            $updateSeance = $seancesManager->updateSeance($_GET['id'],$_POST['clients_id'], $_POST['type'], $_POST['seance_date'], $_POST['time_seance'], $_POST['prise'], $_POST['depenses'], $_POST['model'], $_POST['adresse_seance'], $_POST['city_seance'], $_POST['km'], $_POST['description_seance']);
+
+            if (!empty($_POST['clients_id']) && trim($_POST['clients_id']) !== '' && !empty($_POST['type']) && trim($_POST['type']) !== '' && !empty($_POST['seance_date']) && trim($_POST['seance_date']) !== '' && !empty($_POST['prise']) && trim($_POST['prise']) !== ''):
+
+                if (!empty($_POST['depenses']) && trim($_POST['depenses']) !== ''):
+                  $depenses = $_POST['depenses'];
+                else:
+                  $depenses = 0;
+                endif;
+                if (!empty($_POST['km']) && trim($_POST['km']) !== ''):
+                  $kilometers = $_POST['km'];
+                else:
+                  $kilometers = 0;
+                endif;
+
+                    if (filter_var($_POST['prise'], FILTER_VALIDATE_INT) === false && filter_var($depenses, FILTER_VALIDATE_INT) === false && filter_var($kilometers, FILTER_VALIDATE_INT) === false):
+
+                        throw new Exception("Le formats de donnes est invalide ex. letrres a la place de chiffres !");
+
+                    else:
+
+                        $updateSeance = $seancesManager->updateSeance($_GET['id'],$_POST['clients_id'], $_POST['type'], $_POST['seance_date'], $_POST['time_seance'], $_POST['prise'], $depenses, $_POST['model'], $_POST['adresse_seance'], $_POST['city_seance'], $kilometers, $_POST['description_seance']);
+
+                    endif;
+
+            else:
+
+                throw new Exception("Tous les champs obligatoires ne sont pas remplis !");
+
+            endif;
 
         else:
 
@@ -261,13 +341,19 @@ class FocusBack
         $clientsManager = new ClientManager();
         if (isset($_GET['id']) && $_GET['id'] > 0):
 
-          $client = $clientsManager->getClient($_GET['id']);
+            $client = $clientsManager->getClient($_GET['id']);
+
+            if ($client === false):
+
+                throw new Exception('Impossible d\'afficher le commande page !');
+
+            endif;
 
         endif;
 
         $clientsList = $clientsManager->getClients();
 
-        if ($newCommandPage === false || $client === false || $clientsList === false):
+        if ($newCommandPage === false || $clientsList === false):
 
             throw new Exception('Impossible d\'afficher le commande page !');
 
@@ -281,7 +367,22 @@ class FocusBack
     public function addCommand()
     {
         $commandsManager = new CommandManager();
-        $newCommand = $commandsManager->newCommand($_POST['client_id_cmd'], $_POST['type_command'], $_POST['description_command'], $_POST['prise_command'], $_POST['cost_command']);
+
+        if (!empty($_POST['client_id_cmd']) && trim($_POST['client_id_cmd']) !== '' && !empty($_POST['type_command']) && trim($_POST['type_command']) !== '' && !empty($_POST['prise_command']) && trim($_POST['prise_command']) !== ''):
+
+            if (!empty($_POST['cost_command']) && trim($_POST['cost_command']) !== ''):
+              $costs = $_POST['cost_command'];
+            else:
+              $costs = 0;
+            endif;
+
+            $newCommand = $commandsManager->newCommand($_POST['client_id_cmd'], $_POST['type_command'], $_POST['description_command'], $_POST['prise_command'], $costs);
+
+        else:
+
+            throw new Exception("Tous les champs obligatoires ne sont pas remplis !");
+
+        endif;
 
         if ($newCommand === false):
 
@@ -330,7 +431,21 @@ class FocusBack
 
       if (isset($_GET['id']) && $_GET['id'] > 0):
 
-          $updateCommand = $commandsManager->updateCommand($_GET['id'],$_POST['client_id_cmd'], $_POST['type_command'], $_POST['description_command'], $_POST['prise_command'], $_POST['cost_command']);
+          if (!empty($_POST['client_id_cmd']) && trim($_POST['client_id_cmd']) !== '' && !empty($_POST['type_command']) && trim($_POST['type_command']) !== '' && !empty($_POST['prise_command']) && trim($_POST['prise_command']) !== ''):
+
+              if (!empty($_POST['cost_command']) && trim($_POST['cost_command']) !== ''):
+                $costs = $_POST['cost_command'];
+              else:
+                $costs = 0;
+              endif;
+
+              $updateCommand = $commandsManager->updateCommand($_GET['id'],$_POST['client_id_cmd'], $_POST['type_command'], $_POST['description_command'], $_POST['prise_command'], $costs);
+
+          else:
+
+              throw new Exception("Tous les champs obligatoires ne sont pas remplis !");
+
+          endif;
 
       else:
 
@@ -380,7 +495,16 @@ class FocusBack
     public function addTaxes()
     {
       $taxesManager = new TaxesManager();
-      $newTaxe = $taxesManager->newTaxes($_POST['tax_date'], $_POST['tax_declare'], $_POST['tax_paid'], $_POST['tax_description']);
+
+      if (!empty($_POST['tax_date']) && trim($_POST['tax_date']) !== '' && !empty($_POST['tax_declare']) && trim($_POST['tax_declare']) !== '' && !empty($_POST['tax_paid']) && trim($_POST['tax_paid']) !== ''):
+
+          $newTaxe = $taxesManager->newTaxes($_POST['tax_date'], $_POST['tax_declare'], $_POST['tax_paid'], $_POST['tax_description']);
+
+      else:
+
+          throw new Exception("Tous les champs obligatoires ne sont pas remplis !");
+
+      endif;
 
       if ($newTaxe === false):
 
@@ -425,7 +549,15 @@ class FocusBack
 
         if (isset($_GET['id']) && $_GET['id'] > 0):
 
-            $updateTaxe = $taxesManager->updateTaxe($_GET['id'], $_POST['tax_date'], $_POST['tax_declare'], $_POST['tax_paid'], $_POST['tax_description']);
+            if (!empty($_POST['tax_date']) && trim($_POST['tax_date']) !== '' && !empty($_POST['tax_declare']) && trim($_POST['tax_declare']) !== '' && !empty($_POST['tax_paid']) && trim($_POST['tax_paid']) !== ''):
+
+                $updateTaxe = $taxesManager->updateTaxe($_GET['id'], $_POST['tax_date'], $_POST['tax_declare'], $_POST['tax_paid'], $_POST['tax_description']);
+
+            else:
+
+                throw new Exception("Tous les champs obligatoires ne sont pas remplis !");
+
+            endif;
 
         else:
 

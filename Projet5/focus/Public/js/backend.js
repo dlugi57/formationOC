@@ -29,6 +29,8 @@ $(function () {
 
   $('#datepickerTaxe').datepicker({
     autoclose: true,
+    viewMode: "months",
+    minViewMode: "months",
     format: 'yyyy-mm-dd'
   })
 

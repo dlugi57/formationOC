@@ -208,5 +208,58 @@ $(function() {
 
 
 
+  $('.addTax').click(function() {
+
+    if ($.trim($('.addTaxDate').val()) == "") {
+      $('.addTaxDate').closest('div.form-group').addClass('has-error');
+      $('.addTaxDate').closest('div.form-group').find('span.help-block').text("Champs obligatoire");
+      return false;
+    } else {
+      if (!isValidDate($('.addTaxDate').val())) {
+        $('.addTaxDate').closest('div.form-group').addClass('has-error');
+        $('.addTaxDate').closest('div.form-group').find('span.help-block').text("Format mail invalide");
+        return false;
+      } else {
+        $('.addTaxDate').closest('div.form-group').removeClass('has-error');
+        $('.addTaxDate').closest('div.form-group').find('span.help-block').text("");
+      }
+    }
+
+    if ($.trim($('.addTaxDeclare').val()) == "") {
+      $('.addTaxDeclare').closest('div.form-group').addClass('has-error');
+      $('.addTaxDeclare').closest('div.form-group').find('span.help-block').text("Champs numerique obligatoire");
+      return false;
+    } else {
+      if ($.isNumeric($('.addTaxDeclare').val())) {
+        $('.addTaxDeclare').closest('div.form-group').removeClass('has-error');
+        $('.addTaxDeclare').closest('div.form-group').find('span.help-block').text("");
+      } else {
+        $('.addTaxDeclare').closest('div.form-group').addClass('has-error');
+        $('.addTaxDeclare').closest('div.form-group').find('span.help-block').text("Chiffres obligatoire");
+        return false;
+      }
+    }
+
+    if ($.trim($('.addTaxPaie').val()) == "") {
+      $('.addTaxPaie').closest('div.form-group').addClass('has-error');
+      $('.addTaxPaie').closest('div.form-group').find('span.help-block').text("Champs numerique obligatoire");
+      return false;
+    } else {
+      if ($.isNumeric($('.addTaxPaie').val())) {
+        $('.addTaxPaie').closest('div.form-group').removeClass('has-error');
+        $('.addTaxPaie').closest('div.form-group').find('span.help-block').text("");
+      } else {
+        $('.addTaxPaie').closest('div.form-group').addClass('has-error');
+        $('.addTaxPaie').closest('div.form-group').find('span.help-block').text("Chiffres obligatoire");
+        return false;
+      }
+    }
+
+
+
+
+
+  })//end of tax
+
 
 })

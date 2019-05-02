@@ -30,8 +30,9 @@ ob_start();
               <div class="input-group-addon">
                 <i class="fa fa-calendar"></i>
               </div>
-              <input name="tax_date" type="text" class="form-control pull-right" id="datepickerTaxe">
+              <input name="tax_date" type="text" class="form-control pull-right addTaxDate" id="datepickerTaxe" required>
             </div>
+            <span class="help-block"></span>
             <!-- /.input group -->
           </div>
           <!-- /.form group -->
@@ -42,8 +43,9 @@ ob_start();
               <div class="input-group-addon">
                 <i class="fa fa-eur"></i>
               </div>
-              <input name="tax_declare" type="number" class="form-control">
+              <input name="tax_declare" type="number" class="form-control addTaxDeclare" required>
             </div>
+            <span class="help-block"></span>
             <!-- /.input group -->
           </div>
           <!-- /.form group -->
@@ -55,8 +57,9 @@ ob_start();
               <div class="input-group-addon">
                 <i class="fa fa-money"></i>
               </div>
-              <input name="tax_paid" type="number" class="form-control">
+              <input name="tax_paid" type="number" class="form-control addTaxPaie" required>
             </div>
+            <span class="help-block"></span>
             <!-- /.input group -->
           </div>
           <!-- /.form group -->
@@ -67,7 +70,7 @@ ob_start();
           <!-- textarea -->
           <div class="form-group">
             <label>Description</label>
-            <textarea name="tax_description" class="form-control" rows="3"></textarea>
+            <textarea name="tax_description" class="form-control" rows="3" maxlength="500"></textarea>
           </div>
         </div>
         <!--/.col-->
@@ -82,7 +85,7 @@ ob_start();
             <?php
           endif;
           ?>
-          <button type="submit" class="btn btn-info pull-right">Ajouter</button>
+          <button type="submit" class="btn btn-info pull-right addTax">Ajouter</button>
         </div>
         <!-- /.box-footer -->
       </div>

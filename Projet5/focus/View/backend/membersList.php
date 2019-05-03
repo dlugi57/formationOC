@@ -33,11 +33,12 @@ ob_start();
             <table class="table table-hover no-margin">
               <thead>
               <tr>
-                <th>Nom</th>
-                <th>Telephone</th>
+                <th>Pseudo</th>
                 <th>Email</th>
-                <th>Contact par</th>
-                <th>Ville</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th>Change status</th>
+                <th>Supprimer</th>
               </tr>
               </thead>
               <tbody>
@@ -47,14 +48,17 @@ ob_start();
                   if ($data['admin'] == 0):
                     $statusColor = "label-danger";
                     $statusName = "demandeur";
+                    $statusLink = "<a href='index.php?action=status&amp;member_id=". $data['id'] ."&amp;status=2'><i class='fa fa-user-plus' style='color:green'></i></a>";
 
 
                   elseif ($data['admin'] == 1):
                     $statusColor = "label-success";
                     $statusName = "administrateur";
-                  else:
+                    $statusLink = "<a href='index.php?action=status&amp;member_id=". $data['id'] ."&amp;status=2'><i class='fa fa-user-times' style='color:orange'></i></a>";
+                  elseif ($data['admin'] == 2):
                     $statusColor = "label-warning";
                     $statusName = "utilisateur";
+                    $statusLink = "<a href='index.php?action=status&amp;member_id=". $data['id'] ."&amp;status=0'><i class='fa fa-user-times' style='color:red'></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='index.php?action=status&amp;member_id=". $data['id'] ."&amp;status=1'><i class='fa fa-user-secret' style='color:blue'></i></a>";
                   endif;
                   ?>
 
@@ -63,10 +67,8 @@ ob_start();
                     <td><?= htmlspecialchars($data['email']) ?></td>
                     <td><?= htmlspecialchars($data['inscription_date_fr']) ?></td>
                     <td><span class="label <?= $statusColor ?>"><?= htmlspecialchars($statusName) ?></span></td>
-                    <td>                  <div class="tools"><a href="#"><i class="fa fa-edit"></i></a>
-
-                                        <i class="fa fa-trash-o"></i>
-                                      </div></td>
+                    <td><div class="tools"><?= $statusLink ?></div></td>
+                    <td> <a href="#"><i class="fa fa-trash-o" style='color:red'></i></a> </td>
                   </tr>
                   <?php
                 }

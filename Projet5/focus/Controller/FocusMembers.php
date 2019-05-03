@@ -133,6 +133,35 @@ class FocusMembers
 
     endif;
   }
+
+  public function status()
+  {
+
+    $memberManager = new MemberManager();
+
+
+    if (isset($_GET['member_id']) && $_GET['member_id'] > 0 && isset($_GET['status'])):
+
+        $changeStatus = $memberManager->changeStatus($_GET['member_id'], $_GET['status']);
+
+    else:
+
+        throw new Exception("Aucun identifiant de client envoyé");
+
+    endif;
+
+    if ($changeStatus === false):
+
+        throw new Exception('Impossible de changer le status !');
+
+    else:
+
+        header("Location: index.php?action=membersList");
+
+    endif;
+
+
+  }
 }
 
  ?>

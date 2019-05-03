@@ -134,6 +134,10 @@ try {
               case 'membersList':
                   $membersList = $controllerMembers->membersList();
               break;
+      //MEMBERS LIST
+              case 'status':
+                  $status = $controllerMembers->status();
+              break;
       //HOME PAGE
               case 'home':
                   require('View/frontend/homePage/homeViev.php');

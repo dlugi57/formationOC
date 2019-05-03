@@ -118,6 +118,21 @@ class FocusMembers
     session_destroy();
     header("Location: index.php?action=home");
   }
+
+  public function membersList()
+  {
+    $memberManager = new MemberManager();
+    $members = $memberManager->getMembers();
+    if ($members === false):
+
+        throw new Exception('Impossible d\'afficher le contenue de members list !');
+
+    else:
+
+        require('View/backend/membersList.php');
+
+    endif;
+  }
 }
 
  ?>

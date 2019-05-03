@@ -8,7 +8,7 @@ ob_start();
   <div class="ancre100" id="intro"></div>
   <div class="introBlock" id="introBlock">
     <div id="introDescription">
-      <h1 id="introTitle">Billet simple pour l'Alaska</h1>
+      <h1 id="introTitle">Work less shoot more</h1>
       <p id="introText">Le nouveau roman de Jean Forteroche</p>
     </div>
   </div>

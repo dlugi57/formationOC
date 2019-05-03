@@ -129,6 +129,11 @@ try {
                   $removeTaxe = $controllerBack->removeTaxe();
               break;
 
+
+      //MEMBERS LIST
+              case 'membersList':
+                  $membersList = $controllerMembers->membersList();
+              break;
       //HOME PAGE
               case 'home':
                   require('View/frontend/homePage/homeViev.php');

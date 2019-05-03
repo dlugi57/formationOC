@@ -30,7 +30,10 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="Public/img/profile.jpg" class="user-image" alt="User Image">
+              <?php if (isset($_SESSION['admin']) && ($_SESSION['admin'] == 1)): ?>
+                <img src="Public/img/profile.jpg" class="user-image" alt="User Image">
+              <?php endif; ?>
+
               <span class="hidden-xs">
                 <?php
                 if (isset($_SESSION['nick']))
@@ -44,7 +47,10 @@
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="Public/img/profile.jpg" class="img-circle" alt="User Image">
+                <?php if (isset($_SESSION['admin']) && ($_SESSION['admin'] == 1)): ?>
+                  <img src="Public/img/profile.jpg" class="img-circle" alt="User Image">
+                <?php endif; ?>
+
 
                 <p>
                   <?php
@@ -169,6 +175,16 @@
             <li><a href="index.php?action=addTaxesPage"><i class="fa fa-plus"></i> Ajouter</a></li>
           </ul>
         </li>
+        <?php if (isset($_SESSION['admin']) && ($_SESSION['admin'] == 1)): ?>
+          <li>
+            <a href="index.php?action=membersList">
+              <i class="fa fa-user"></i> <span>Members</span>
+
+            </a>
+          </li>
+
+        <?php endif; ?>
+
         <!--
         <li class="treeview">
           <a href="#">

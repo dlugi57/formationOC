@@ -14,13 +14,11 @@
     <input class="menu-btn" type="checkbox" id="menu-btn" />
     <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
     <ul class="menu">
-      <li><a href="index.php?action=listPosts">Livre</a></li>
       <?php
       //with different authorisation show or hide buttons
       if (isset($_SESSION['admin'])):
-        if ($_SESSION['admin'] == 1):
+        if ($_SESSION['admin'] == 1 || $_SESSION['admin'] == 2):
           ?>
-
           <li><a href="?action=dashboard">Dashboard</a></li>
           <?php
         endif;

@@ -41,4 +41,21 @@ class MemberManager extends Manager
       return $connectMember;
 
     }
+
+    public function getMembers()
+    {
+      $db = $this->dbConnect();
+      $req = $db->query('SELECT *, DATE_FORMAT(date_inscription, \'%d/%m/%Y\') AS inscription_date_fr FROM membres  ORDER BY date_inscription DESC');
+
+      return $req;
+    }
+
+    public function changeStatus($memberId, $memberStatus)
+    {
+        $db = $this->dbConnect();
+        $status = $db->prepare('UPDATE membres SET admin = :admin WHERE id = :id');
+        $status->execute(array('admin' => $memberStatus, 'id' => $memberId));
+
+        return $status;
+    }
 }

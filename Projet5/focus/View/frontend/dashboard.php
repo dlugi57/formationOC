@@ -79,7 +79,7 @@ ob_start();
 
   <!-- Main row -->
   <div class="row">
-    
+
     <!-- Left col -->
     <section class="col-lg-8">
       <?php require('widgets/clients.php'); ?>
@@ -94,8 +94,10 @@ ob_start();
       <?php require('widgets/contactCammembert.php') ?>
       <?php require('widgets/typesCammemberts.php') ?>
       <?php require('widgets/commands.php'); ?>
+      <?php if (isset($_SESSION['admin']) && ($_SESSION['admin'] == 1)): ?>
       <?php require('widgets/insta.php'); ?>
       <?php require('widgets/fb.php'); ?>
+      <?php endif; ?>
       <?php // require('widgets/site.php'); ?>
     </section>
     <!-- right col -->

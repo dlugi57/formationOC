@@ -10,65 +10,35 @@ class MemberManager extends Manager
         $nickCheck = $db->prepare('SELECT COUNT(*) FROM membres WHERE pseudo = ?');
         $nickCheck->execute(array($nick));
         $nickCheckData = $nickCheck->fetch();
-        if(filter_var($email, FILTER_VALIDATE_EMAIL))
-        {
-            if($nickCheckData['COUNT(*)'] == 0)
-            {
-                $pass_hache = password_hash($pass, PASSWORD_DEFAULT);
+
+            if($nickCheckData['COUNT(*)'] == 0):
+
                 $member = $db->prepare('INSERT INTO membres(pseudo, pass, email, date_inscription, admin) VALUES(?, ?, ?, NOW(),0)');
-                $newMember = $member->execute(array($nick, $pass_hache, $email));
+                $newMember = $member->execute(array($nick, $pass, $email));
                 session_start();
                 $_SESSION['nick'] = $nick;
                 $_SESSION['admin'] = 0;
                 $last_id = $db->lastInsertId();
                 $_SESSION['userId'] = $last_id;
 
-                header("Location: index.php?action=dashboard&nick=".$last_id);
-
                 return $newMember;
-            }else
-            {
-                $errorMsg = "Identifiant déjà utilisé";
-                header('Location: ?action=createMember&error='. urlencode($errorMsg) .'');
-            }
-        }else
-        {
-            $errorMsg = "Format d'adresse mail non valide";
-            header('Location: ?action=createMember&error='. urlencode($errorMsg) .'');
-        }
+
+            else:
+
+              return "nickExist";
+
+            endif;
+
     }
 
     public function login($login, $password){
 
       $db = $this->dbConnect();
       $user = $db->prepare('SELECT admin, pass, id FROM membres WHERE pseudo = :pseudo');
-      $user->execute(array(
-          'pseudo' => $login));
+      $user->execute(array('pseudo' => $login));
       $connectMember = $user->fetch();
 
-      $isPasswordCorrect = password_verify($password, $connectMember['pass']);
+      return $connectMember;
 
-      if (!$connectMember)
-      {
-          $errorMsg = "Mauvais identifiant ou mot de passe !";
-          header('Location: ?action=loginPage&error='. urlencode($errorMsg) .'');
-      }
-      else
-      {
-          if ($isPasswordCorrect)
-          {
-              session_start();
-              $_SESSION['admin'] = $connectMember['admin'];
-              $_SESSION['nick'] = $login;
-              $_SESSION['userId'] = $connectMember['id'];
-
-              header("Location: index.php?action=dashboard&nick=".$_SESSION['nick']);
-          }
-          else
-          {
-              $errorMsg = "Mauvais identifiant ou mot de passe !";
-              header('Location: ?action=loginPage&error='. urlencode($errorMsg) .'');
-          }
-      }
     }
 }

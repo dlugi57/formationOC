@@ -64,7 +64,7 @@
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>-->
                 <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="?action=deconnect" class="btn btn-default btn-flat">Sign out</a>
                 </div>
               </li>
             </ul>
@@ -320,6 +320,8 @@
 <script src="Public/adminLte/input-mask/jquery.inputmask.js"></script>
 <script src="Public/adminLte/input-mask/jquery.inputmask.date.extensions.js"></script>
 <script src="Public/adminLte/input-mask/jquery.inputmask.extensions.js"></script>
+
+
 
 </body>
 </html>

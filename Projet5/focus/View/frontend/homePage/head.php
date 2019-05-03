@@ -29,4 +29,4 @@
 <!-- Stylesheets from page css-->
 <link href="public/css/style.css" rel="stylesheet" />
 <link href="public/css/header.css" rel="stylesheet" />
-<link rel="shortcut icon" type="image/x-icon" href="public/images/favicon.ico">
+<link rel="shortcut icon" type="image/x-icon" href="public/img/favicon.ico">

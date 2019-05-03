@@ -13,13 +13,12 @@
     //for some pages there is different aspect with smaller photo and subtitle
     if (isset($_GET['action'])):
       //if (($_GET['action'] !== 'home') && ($_GET['action'] !== 'createMember') && ($_GET['action'] !== 'loginPage')):
-      if (($_GET['action'] === 'listPosts') || ($_GET['action'] === 'post') || ($_GET['action'] === 'editComment') || ($_GET['action'] === 'commentList') || ($_GET['action'] === 'createPost')): ?>
+      if (($_GET['action'] === 'acceptMember')): ?>
         <section class="headline">
           <div class="ancre100" id="intro"></div>
           <div class="headlineBlock" id="headlineBlock">
             <div id="headlineDescription">
-              <h1 id="headlineTitle"><?= $title ?></h1>
-              <p id="headlineText"><?= $subTitle ?></p>
+            <p>poczekasz na acceptacje</p>
             </div>
           </div>
         </section>
@@ -57,7 +56,8 @@
       </ul>
     </footer>
     <!-- SCRIPTS -->
-    <script src="public/js/scripts.js" type="text/javascript"></script>
+    <!-- HomePage -->
+    <script src="Public/js/home.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   </body>

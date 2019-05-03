@@ -20,8 +20,8 @@
       if (isset($_SESSION['admin'])):
         if ($_SESSION['admin'] == 1):
           ?>
-          <li><a href="?action=createPost">Nouveau chapitre</a></li>
-          <li><a href="?action=commentList">Commentaires</a></li>
+
+          <li><a href="?action=dashboard">Dashboard</a></li>
           <?php
         endif;
         ?>

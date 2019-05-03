@@ -76,7 +76,7 @@
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
-                  <a href="?acction=home" class="btn btn-default btn-flat">Home</a>
+                  <a href="?action=home" class="btn btn-default btn-flat">Home</a>
                 </div>
                 <div class="pull-right">
                   <a href="?action=deconnect" class="btn btn-default btn-flat">Sign out</a>
@@ -125,7 +125,7 @@
             <li><a href="index.php?action=listClients"><i class="fa fa-list-ul"></i> Liste</a></li>
             <li><a href="index.php?action=addClientPage"><i class="fa fa-user-plus"></i> Ajouter</a></li>
           </ul>
-        </li>       
+        </li>
 
         <li class="treeview">
           <a href="#">

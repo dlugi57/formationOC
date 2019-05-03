@@ -85,4 +85,20 @@ class FocusGallery
 
     }
 
+    function downloadPhoto(){
+
+        if (isset($_GET['file'])):
+            $file_url = $_GET['file'];
+            header('Content-Type: application/octet-stream');
+            header("Content-Transfer-Encoding: Binary");
+            header("Content-disposition: attachment; filename=\"" . basename($file_url) . "\"");
+            readfile($file_url);
+        else:
+
+          $errorMsg = "Sorry, no file to delete.";
+          header('Location: ?action=addPhotoPage&error='. urlencode($errorMsg) .'');
+
+        endif;
+    }
+
 }

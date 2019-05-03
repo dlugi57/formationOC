@@ -156,6 +156,12 @@ try {
               case 'removePhoto':
                   $removePhoto = $controllerGallery->removePhoto();
               break;
+      //PHOTO PAGE
+              case 'downloadPhoto':
+                  $downloadPhoto = $controllerGallery->downloadPhoto();
+              break;
+
+
 
       //HOME PAGE
               case 'home':

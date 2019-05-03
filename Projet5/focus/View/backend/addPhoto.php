@@ -79,7 +79,8 @@ ob_start();
               <h3 class="box-title"><?= basename($image) ?></h3>
 
               <div class="box-tools pull-right">
-                </button>
+                <a href="?action=downloadPhoto&file=<?=urlencode($image) ?>" type="button" class="btn btn-box-tool"><i class="fa fa-minus"></i>
+                </a>
                 <?php $modalMsg = "Êtes vous sûr de vouloir supprimer le photo ".basename($image)." ?"; ?>
                 <a data-href="?action=removePhoto&file=<?=urlencode($image) ?>" type="button" class="btn btn-box-tool" data-toggle="modal" data-target="#modalShow"><i class="fa fa-times"></i></a>
               </div>

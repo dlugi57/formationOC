@@ -136,13 +136,19 @@ $dayOfWeek = $days[$dayofweek];
 
           <strong><i class="fa fa-pencil margin-r-5"></i> Description</strong>
           <p class="text-center"><?= htmlspecialchars($seance['description_seance']) ?></p>
-          <hr>
 
-          <div>
-            <?php $modalMsg = "Êtes vous sûr de vouloir supprimer seance?"; ?>
-            <a data-href="index.php?action=removeSeance&amp;id=<?= $seance['id_seance'] ?>" class="btn btn-danger pull-left" data-toggle="modal" data-target="#modalShow"><b><i class="fa fa-trash-o"></i></b></a>
-            <a href="index.php?action=modifySeancePage&amp;id=<?= $seance['id_seance'] ?>" class="btn btn-primary pull-right"><b>Modifier</b></a>
-          </div>
+          <?php
+          if (isset($_SESSION['admin']) && $_SESSION['admin'] == 1):
+          ?>
+            <hr>
+            <div>
+              <?php $modalMsg = "Êtes vous sûr de vouloir supprimer seance?"; ?>
+              <a data-href="index.php?action=removeSeance&amp;id=<?= $seance['id_seance'] ?>" class="btn btn-danger pull-left" data-toggle="modal" data-target="#modalShow"><b><i class="fa fa-trash-o"></i></b></a>
+              <a href="index.php?action=modifySeancePage&amp;id=<?= $seance['id_seance'] ?>" class="btn btn-primary pull-right"><b>Modifier</b></a>
+            </div>
+          <?php
+          endif;
+           ?>
         </div>
         <!-- /.box-body -->
       </div>
@@ -193,7 +199,13 @@ $dayOfWeek = $days[$dayofweek];
           <hr>
 
           <div>
+            <?php
+            if (isset($_SESSION['admin']) && $_SESSION['admin'] == 1):
+            ?>
               <a href="index.php?action=modifyClientPage&amp;id=<?= $seance['id_client'] ?>" class="btn btn-primary pull-left"><b>Modifier</b></a>
+            <?php
+            endif;
+             ?>
             <a href="index.php?action=client&amp;id=<?= $seance['id_client'] ?>" class="btn btn-success pull-right"><b>Acceder</b></a>
           </div>
         </div>

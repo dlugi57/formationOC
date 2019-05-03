@@ -145,6 +145,10 @@ try {
         case 'newMember':
             $memberNew = $controllerMembers->newMember();
         break;
+//ACCEPT MEMBER
+        case 'acceptMember':
+            require('View/frontend/homePage/acceptMember.php');
+        break;
 
 //DECONNECT
         case 'deconnect':

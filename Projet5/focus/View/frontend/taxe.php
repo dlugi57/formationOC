@@ -45,12 +45,18 @@ ob_start();
           <hr>
           <strong><i class="fa fa-pencil margin-r-5"></i> Description</strong>
           <p class="text-center"><?= htmlspecialchars($taxe['tax_description']) ?></p>
+          <?php
+          if (isset($_SESSION['admin']) && $_SESSION['admin'] == 1):
+          ?>
           <hr>
           <div>
             <?php $modalMsg = "Êtes vous sûr de vouloir supprimer taxe?"; ?>
             <a data-href="index.php?action=removeTaxe&amp;id=<?= $taxe['tax_id'] ?>" class="btn btn-danger pull-left" data-toggle="modal" data-target="#modalShow"><b><i class="fa fa-trash-o"></i></b></a>
             <a href="index.php?action=modifyTaxesPage&amp;id=<?= $taxe['tax_id'] ?>" class="btn btn-primary pull-right"><b>Modifier</b></a>
           </div>
+          <?php
+          endif;
+           ?>
         </div>
         <!-- /.box-body -->
       </div>

@@ -31,7 +31,15 @@
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="Public/img/profile.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs">Dlugosz Anna</span>
+              <span class="hidden-xs">
+                <?php
+                if (isset($_SESSION['nick']))
+                {
+                    $nick = $_SESSION['nick'];
+                    echo 'Bonjour '.htmlspecialchars($nick);
+                }
+                 ?>
+              </span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
@@ -39,7 +47,14 @@
                 <img src="Public/img/profile.jpg" class="img-circle" alt="User Image">
 
                 <p>
-                  Dlugosz Anna - Photographe
+                  <?php
+                  if (isset($_SESSION['nick']))
+                  {
+                      $nick = $_SESSION['nick'];
+                      echo htmlspecialchars($nick);
+                  }
+                   ?>
+                    - Photographe
                   <small>Depuis 2017</small>
                 </p>
               </li>
@@ -60,9 +75,9 @@
               </li>
               <!-- Menu Footer-->
               <li class="user-footer">
-                <!--<div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">Profile</a>
-                </div>-->
+                <div class="pull-left">
+                  <a href="?acction=home" class="btn btn-default btn-flat">Home</a>
+                </div>
                 <div class="pull-right">
                   <a href="?action=deconnect" class="btn btn-default btn-flat">Sign out</a>
                 </div>
@@ -110,7 +125,7 @@
             <li><a href="index.php?action=listClients"><i class="fa fa-list-ul"></i> Liste</a></li>
             <li><a href="index.php?action=addClientPage"><i class="fa fa-user-plus"></i> Ajouter</a></li>
           </ul>
-        </li>
+        </li>       
 
         <li class="treeview">
           <a href="#">

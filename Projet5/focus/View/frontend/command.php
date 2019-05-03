@@ -103,13 +103,18 @@ ob_start();
 
           <strong><i class="fa fa-pencil margin-r-5"></i> Description</strong>
           <p class="text-center"><?= htmlspecialchars($command['description_command']) ?></p>
-          <hr>
-
-          <div>
-            <?php $modalMsg = "Êtes vous sûr de vouloir supprimer commande?"; ?>
-            <a data-href="index.php?action=removeCommand&amp;id=<?= $command['id_command'] ?>" class="btn btn-danger pull-left" data-toggle="modal" data-target="#modalShow"><b><i class="fa fa-trash-o"></i></b></a>
-            <a href="index.php?action=modifyCommandPage&amp;id=<?= $command['id_command'] ?>" class="btn btn-primary pull-right"><b>Modifier</b></a>
-          </div>
+          <?php
+          if (isset($_SESSION['admin']) && $_SESSION['admin'] == 1):
+          ?>
+            <hr>
+            <div>
+              <?php $modalMsg = "Êtes vous sûr de vouloir supprimer commande?"; ?>
+              <a data-href="index.php?action=removeCommand&amp;id=<?= $command['id_command'] ?>" class="btn btn-danger pull-left" data-toggle="modal" data-target="#modalShow"><b><i class="fa fa-trash-o"></i></b></a>
+              <a href="index.php?action=modifyCommandPage&amp;id=<?= $command['id_command'] ?>" class="btn btn-primary pull-right"><b>Modifier</b></a>
+            </div>
+          <?php
+          endif;
+           ?>
         </div>
         <!-- /.box-body -->
       </div>
@@ -160,7 +165,13 @@ ob_start();
           <hr>
 
           <div>
-            <a href="index.php?action=modifyClientPage&amp;id=<?= $command['id_client'] ?>" class="btn btn-primary pull-left"><b>Modifier</b></a>
+            <?php
+            if (isset($_SESSION['admin']) && $_SESSION['admin'] == 1):
+            ?>
+              <a href="index.php?action=modifyClientPage&amp;id=<?= $command['id_client'] ?>" class="btn btn-primary pull-left"><b>Modifier</b></a>
+            <?php
+            endif;
+             ?>
             <a href="index.php?action=client&amp;id=<?= $command['id_client'] ?>" class="btn btn-success pull-right"><b>Acceder</b></a>
           </div>
         </div>

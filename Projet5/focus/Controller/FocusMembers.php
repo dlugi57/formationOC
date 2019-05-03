@@ -49,7 +49,7 @@ class FocusMembers
 
     else:
 
-      header("Location: index.php?action=dashboard&nick=".$_SESSION['userId']);
+      header("Location: index.php?action=acceptMember&nick=".$_SESSION['userId']);
 
     endif;
   }
@@ -84,7 +84,15 @@ class FocusMembers
             $_SESSION['nick'] = $_POST['login'];
             $_SESSION['userId'] = $connectMember['id'];
 
-            header("Location: index.php?action=dashboard&nick=".$_SESSION['nick']);
+            if($connectMember['admin'] == 0):
+
+              header("Location: index.php?action=acceptMember&nick=".$_SESSION['nick']);
+
+            else:
+
+              header("Location: index.php?action=dashboard&nick=".$_SESSION['nick']);
+
+            endif;
 
         else:
 

@@ -6,11 +6,13 @@ use Controller\Dashboard;
 use Controller\Focus;
 use Controller\FocusBack;
 use Controller\FocusMembers;
+use Controller\FocusGallery;
 
 $controller = new Focus();
 $controllerDash = new Dashboard();
 $controllerBack = new FocusBack();
 $controllerMembers = new FocusMembers();
+$controllerGallery = new FocusGallery();
 
 try {
     if (isset($_GET['action'])):
@@ -134,14 +136,23 @@ try {
               case 'membersList':
                   $membersList = $controllerMembers->membersList();
               break;
-      //MEMBERS LIST
+      //MEMBERS CHANGE STATUS
               case 'status':
                   $status = $controllerMembers->status();
               break;
-      //MEMBERS LIST
+      //DELETE MEMBER
               case 'removeMember':
                   $removeMember = $controllerMembers->removeMember();
               break;
+      //PHOTO PAGE
+              case 'addPhotoPage':
+                  require('View/backend/addPhoto.php');
+              break;
+      //PHOTO PAGE
+              case 'addPhoto':
+                  $addPhoto = $controllerGallery->addPhoto();
+              break;
+
       //HOME PAGE
               case 'home':
                   require('View/frontend/homePage/homeViev.php');

@@ -14,10 +14,10 @@
     <!-- Logo -->
     <a href="index.php?action=dashboard" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><img class="logo-img-small" src="Public/dist/img/logo-rond.png" ></span>
+      <span class="logo-mini"><img class="logo-img-small" src="Public/img/logo-rond.png" ></span>
       <!-- logo for regular state and mobile devices
       <span class="logo-lg"><b>Sunny</b>Moments</span>-->
-      <span class="logo-lg"><img class="logo-img" src="Public/dist/img/logo.png" ></span>
+      <span class="logo-lg"><img class="logo-img" src="Public/img/logo.png" ></span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
@@ -36,7 +36,7 @@
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="Public/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                <img src="Public/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                 <p>
                   Dlugosz Anna - Photographe
@@ -268,41 +268,41 @@
   <!-- ./wrapper -->
 
 <!-- jQuery 3 -->
-<script src="Public/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="Public/adminLte/jquery/dist/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
-<script src="Public/bower_components/jquery-ui/jquery-ui.min.js"></script>
+<script src="Public/adminLte/jquery-ui/jquery-ui.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
   $.widget.bridge('uibutton', $.ui.button);
 </script>
 <!-- Bootstrap 3.3.7 -->
-<script src="Public/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="Public/adminLte/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- Morris.js charts -->
-<script src="Public/bower_components/raphael/raphael.min.js"></script>
-<script src="Public/bower_components/morris.js/morris.min.js"></script>
+<!--<script src="Public/bower_components/raphael/raphael.min.js"></script>-->
+<!--<script src="Public/bower_components/morris.js/morris.min.js"></script>-->
 <!-- Sparkline -->
-<script src="Public/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
+<!--<script src="Public/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>-->
 <!-- jvectormap -->
-<script src="Public/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-<script src="Public/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+<!--<script src="Public/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>-->
+<!--<script src="Public/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>-->
 <!-- jQuery Knob Chart -->
-<script src="Public/bower_components/jquery-knob/dist/jquery.knob.min.js"></script>
+<!--<script src="Public/bower_components/jquery-knob/dist/jquery.knob.min.js"></script>-->
 <!-- daterangepicker -->
-<script src="Public/bower_components/moment/min/moment.min.js"></script>
-<script src="Public/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+<!--<script src="Public/bower_components/moment/min/moment.min.js"></script>-->
+<!--<script src="Public/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>-->
 <!-- datepicker                                                                                              -->
-<script src="Public/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+<script src="Public/adminLte/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
 
 <!-- Bootstrap WYSIHTML5 -->
-<script src="Public/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+<!--<script src="Public/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>-->
 <!-- Slimscroll -->
-<script src="Public/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<!--<script src="Public/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>-->
 <!-- FastClick -->
-<script src="Public/bower_components/fastclick/lib/fastclick.js"></script>
+<!--<script src="Public/bower_components/fastclick/lib/fastclick.js"></script>-->
 <!-- ChartJS -->
-<script src="Public/bower_components/chart.js/Chart.js"></script>
+<script src="Public/adminLte/chart.js/Chart.js"></script>
 <!-- AdminLTE App -->
-<script src="Public/dist/js/adminlte.min.js"></script>
+<script src="Public/adminLte/adminlte.js"></script>
 
 <!-- MAIN SCRIPTS -->
 <script src="Public/js/ajax.js"></script>
@@ -310,16 +310,16 @@
 <script src="Public/js/backend.js"></script>
 <script src="Public/js/seances.js"></script>
 <!-- DataTables -->
-<script src="Public/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
-<script src="Public/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script src="Public/adminLte/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="Public/adminLte/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
 <!-- SELECT -->
-<script src="Public/bower_components/select2/dist/js/select2.full.min.js"></script>
+<script src="Public/adminLte/select2/dist/js/select2.full.min.js"></script>
 <!-- bootstrap time picker                                                                                      -->
-<script src="Public/plugins/timepicker/bootstrap-timepicker.min.js"></script>
+<script src="Public/adminLte/timepicker/bootstrap-timepicker.min.js"></script>
 <!-- InputMask -->
-<script src="Public/plugins/input-mask/jquery.inputmask.js"></script>
-<script src="Public/plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
-<script src="Public/plugins/input-mask/jquery.inputmask.extensions.js"></script>
+<script src="Public/adminLte/input-mask/jquery.inputmask.js"></script>
+<script src="Public/adminLte/input-mask/jquery.inputmask.date.extensions.js"></script>
+<script src="Public/adminLte/input-mask/jquery.inputmask.extensions.js"></script>
 
 </body>
 </html>

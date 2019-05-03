@@ -126,7 +126,7 @@ $(function() {
     }
   }) //end of client
 
-//SEANCES CONDITIONS
+  //SEANCES CONDITIONS
   $('.addSeance').click(function() {
     if ($.trim($('.addSeanceClient').val()) == "") {
       $('.addSeanceClient').closest('div.form-group').addClass('has-error');
@@ -177,9 +177,9 @@ $(function() {
         return false;
       }
     }
-  })//end of seances
+  }) //end of seances
 
-//COMMANDS CONDITIONS
+  //COMMANDS CONDITIONS
   $('.addCommand').click(function() {
     if ($.trim($('.addCommandClient').val()) == "") {
       $('.addCommandClient').closest('div.form-group').addClass('has-error');
@@ -204,12 +204,10 @@ $(function() {
         return false;
       }
     }
-  })//end of commands
+  }) //end of commands
 
-
-
+  //TAXE CONDITIONS
   $('.addTax').click(function() {
-
     if ($.trim($('.addTaxDate').val()) == "") {
       $('.addTaxDate').closest('div.form-group').addClass('has-error');
       $('.addTaxDate').closest('div.form-group').find('span.help-block').text("Champs obligatoire");
@@ -254,12 +252,5 @@ $(function() {
         return false;
       }
     }
-
-
-
-
-
-  })//end of tax
-
-
+  }) //end of tax
 })

@@ -138,6 +138,10 @@ try {
               case 'status':
                   $status = $controllerMembers->status();
               break;
+      //MEMBERS LIST
+              case 'removeMember':
+                  $removeMember = $controllerMembers->removeMember();
+              break;
       //HOME PAGE
               case 'home':
                   require('View/frontend/homePage/homeViev.php');

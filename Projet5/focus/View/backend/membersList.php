@@ -68,7 +68,8 @@ ob_start();
                     <td><?= htmlspecialchars($data['inscription_date_fr']) ?></td>
                     <td><span class="label <?= $statusColor ?>"><?= htmlspecialchars($statusName) ?></span></td>
                     <td><div class="tools"><?= $statusLink ?></div></td>
-                    <td> <a href="#"><i class="fa fa-trash-o" style='color:red'></i></a> </td>
+                    <?php $modalMsg = "Êtes vous sûr de vouloir supprimer seance?"; ?>
+                    <td> <a data-href="index.php?action=removeMember&amp;id=<?= $data['id'] ?>" data-toggle="modal" data-target="#modalShow"><i class="fa fa-trash-o" style='color:red'></i></a> </td>
                   </tr>
                   <?php
                 }
@@ -91,7 +92,7 @@ ob_start();
 
           <ul class="pagination pagination-sm no-margin pull-right">
             <li><a class="prevBlockDashboard">&laquo;</a></li>
-            <li><a href="index.php?action=listClients" class="btn btn-sm btn-default btn-flat">Clients List</a></li>
+            <li><a href="index.php?action=listClients" class="btn btn-sm btn-default btn-flat">List</a></li>
             <li><a class="nextBlockDashboard">&raquo;</a></li>
           </ul>
         </div>
@@ -107,20 +108,3 @@ ob_start();
 <?php
 $content = ob_get_clean();
 require('View/frontend/template.php');
-
-?>
-<!-- Custom tabs (Charts with tabs)-->
-<div class="nav-tabs-custom">
-  <!-- Tabs within a box -->
-  <ul class="nav nav-tabs pull-right">
-    <li class="active"><a href="#revenue-chart" data-toggle="tab">Area</a></li>
-    <li><a href="#sales-chart" data-toggle="tab">Donut</a></li>
-    <li class="pull-left header"><i class="fa fa-inbox"></i> Sales</li>
-  </ul>
-  <div class="tab-content no-padding">
-    <!-- Morris chart - Sales -->
-    <div class="chart tab-pane active" id="revenue-chart" style="position: relative; height: 300px;"></div>
-    <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 300px;"></div>
-  </div>
-</div>
-<!-- /.nav-tabs-custom -->

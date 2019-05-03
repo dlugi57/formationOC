@@ -159,8 +159,31 @@ class FocusMembers
         header("Location: index.php?action=membersList");
 
     endif;
+  }
+  public function removeMember()
+  {
+      $memberManager = new MemberManager();
+
+      if (isset($_GET['id']) && $_GET['id'] > 0):
 
 
+          $deleteMember = $memberManager->deleteMember($_GET['id']);
+
+      else:
+
+          throw new Exception("Aucun identifiant de member envoyé");
+
+      endif;
+
+      if ($deleteMember === false):
+
+          throw new Exception('Impossible de supprimer le membre !');
+
+      else:
+
+          header('Location: index.php?action=membersList');
+
+      endif;
   }
 }
 

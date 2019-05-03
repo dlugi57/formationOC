@@ -58,4 +58,13 @@ class MemberManager extends Manager
 
         return $status;
     }
+
+    public function deleteMember($id)
+    {
+        $db = $this->dbConnect();
+        $request = $db->prepare('DELETE FROM membres WHERE id = :id');
+        $request->execute(array('id' => $id));
+
+        $request->closeCursor();
+    }    
 }

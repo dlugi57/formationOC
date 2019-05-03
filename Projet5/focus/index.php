@@ -152,6 +152,10 @@ try {
               case 'addPhoto':
                   $addPhoto = $controllerGallery->addPhoto();
               break;
+      //PHOTO PAGE
+              case 'removePhoto':
+                  $removePhoto = $controllerGallery->removePhoto();
+              break;
 
       //HOME PAGE
               case 'home':

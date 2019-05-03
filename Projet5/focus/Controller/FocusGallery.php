@@ -63,4 +63,26 @@ class FocusGallery
         }
     }
 
+    function removePhoto()
+    {
+
+      if (isset($_GET['file'])):
+        $filename = $_GET['file'];
+        if (file_exists($filename)) {
+          unlink($filename);
+          $errorMsg = 'File '.$filename.' has been deleted';
+          header('Location: ?action=addPhotoPage&error='. urlencode($errorMsg) .'');
+        } else {
+          $errorMsg = 'Could not delete '.$filename.', file does not exist';
+          header('Location: ?action=addPhotoPage&error='. urlencode($errorMsg) .'');
+        }
+      else:
+
+        $errorMsg = "Sorry, no file to delete.";
+        header('Location: ?action=addPhotoPage&error='. urlencode($errorMsg) .'');
+
+      endif;
+
+    }
+
 }

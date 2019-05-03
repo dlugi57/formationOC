@@ -47,6 +47,8 @@ ob_start();
                   if ($data['admin'] == 0):
                     $statusColor = "label-danger";
                     $statusName = "demandeur";
+
+
                   elseif ($data['admin'] == 1):
                     $statusColor = "label-success";
                     $statusName = "administrateur";
@@ -56,11 +58,15 @@ ob_start();
                   endif;
                   ?>
 
-                  <tr class='pagination_dashboard_'>
+                  <tr class="pagination_dashboard_ <?= $statusName ?>">
                     <td><?= htmlspecialchars($data['pseudo']) ?></td>
                     <td><?= htmlspecialchars($data['email']) ?></td>
                     <td><?= htmlspecialchars($data['inscription_date_fr']) ?></td>
                     <td><span class="label <?= $statusColor ?>"><?= htmlspecialchars($statusName) ?></span></td>
+                    <td>                  <div class="tools"><a href="#"><i class="fa fa-edit"></i></a>
+
+                                        <i class="fa fa-trash-o"></i>
+                                      </div></td>
                   </tr>
                   <?php
                 }
@@ -72,7 +78,14 @@ ob_start();
         </div>
         <!-- /.box-body -->
         <div class="box-footer clearfix">
-          <a href="index.php?action=addClientPage" class="btn btn-sm btn-warning btn-flat pull-left">Ajouter Client</a>
+
+
+            <div class="btn-group">
+              <button id="demandeur" type="button" class="btn btn-default">Demandeurs</button>
+              <button id="utilisateur" type="button" class="btn btn-default">Utilisateurs</button>
+              <button id="administrateur" type="button" class="btn btn-default">Admins</button>
+              <button id="tousMembers" type="button" class="btn btn-primary">Tous</button>
+            </div>
 
           <ul class="pagination pagination-sm no-margin pull-right">
             <li><a class="prevBlockDashboard">&laquo;</a></li>
@@ -92,3 +105,20 @@ ob_start();
 <?php
 $content = ob_get_clean();
 require('View/frontend/template.php');
+
+?>
+<!-- Custom tabs (Charts with tabs)-->
+<div class="nav-tabs-custom">
+  <!-- Tabs within a box -->
+  <ul class="nav nav-tabs pull-right">
+    <li class="active"><a href="#revenue-chart" data-toggle="tab">Area</a></li>
+    <li><a href="#sales-chart" data-toggle="tab">Donut</a></li>
+    <li class="pull-left header"><i class="fa fa-inbox"></i> Sales</li>
+  </ul>
+  <div class="tab-content no-padding">
+    <!-- Morris chart - Sales -->
+    <div class="chart tab-pane active" id="revenue-chart" style="position: relative; height: 300px;"></div>
+    <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 300px;"></div>
+  </div>
+</div>
+<!-- /.nav-tabs-custom -->

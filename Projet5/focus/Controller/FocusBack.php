@@ -38,15 +38,7 @@ class FocusBack
 
             if(empty($_POST['email']) || filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)):
 
-                if (filter_var($_POST['tel'], FILTER_VALIDATE_INT) === false && (empty($_POST['post_code']) || filter_var($_POST['post_code'], FILTER_VALIDATE_INT)) === false):
-
-                    throw new Exception("Le formats de donnes est invalide ex. letrres a la place de chiffres !");
-
-                else:
-
-                    $newClient = $clientsManager->newClient($_POST['name'], $_POST['tel'], $_POST['email'], $_POST['adress'], $_POST['city'], $_POST['post_code'], $_POST['contact_by'], $_POST['description']);
-
-                endif;
+                $newClient = $clientsManager->newClient($_POST['name'], $_POST['tel'], $_POST['email'], $_POST['adress'], $_POST['city'], $_POST['post_code'], $_POST['contact_by'], $_POST['description']);                
 
             else:
 
@@ -108,17 +100,9 @@ class FocusBack
 
             if (!empty($_POST['name']) && trim($_POST['name']) !== '' && !empty($_POST['tel']) && trim($_POST['tel']) !== ''):
 
-              if(empty($_POST['email']) || filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)):
+                if(empty($_POST['email']) || filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)):
 
-                  if (filter_var($_POST['tel'], FILTER_VALIDATE_INT) === false && (empty($_POST['post_code']) || filter_var($_POST['post_code'], FILTER_VALIDATE_INT)) === false):
-
-                        throw new Exception("Le formats de donnes est invalide ex. letrres a la place de chiffres !");
-
-                    else:
-
-                        $updateClient = $clientsManager->updateClient($_GET['id'],$_POST['name'], $_POST['tel'], $_POST['email'], $_POST['adress'], $_POST['city'], $_POST['post_code'], $_POST['contact_by'], $_POST['description']);
-
-                    endif;
+                    $updateClient = $clientsManager->updateClient($_GET['id'],$_POST['name'], $_POST['tel'], $_POST['email'], $_POST['adress'], $_POST['city'], $_POST['post_code'], $_POST['contact_by'], $_POST['description']);
 
                 else:
 

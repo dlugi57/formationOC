@@ -253,4 +253,56 @@ $(function() {
       }
     }
   }) //end of tax
+
+  /*
+  *
+  *
+  MEMBERS
+  *
+  *
+  */
+  $('#demandeur').click(function(){
+    $('.demandeur').show();
+    $('.utilisateur').hide();
+    $('.administrateur').hide();
+    $(this).removeClass('btn-default').addClass('btn-danger');
+    $('#utilisateur').removeClass('btn-warning').addClass('btn-default');
+    $('#administrateur').removeClass('btn-success').addClass('btn-default');
+    $('#tousMembers').removeClass('btn-primary').addClass('btn-default');
+  })
+
+  $('#utilisateur').click(function(){
+    $('.demandeur').hide();
+    $('.utilisateur').show();
+    $('.administrateur').hide();
+    $(this).removeClass('btn-default').addClass('btn-warning');
+    $('#demandeur').removeClass('btn-danger').addClass('btn-default');
+    $('#administrateur').removeClass('btn-success').addClass('btn-default');
+    $('#tousMembers').removeClass('btn-primary').addClass('btn-default');
+  })
+
+  $('#administrateur').click(function(){
+    $('.demandeur').hide();
+    $('.utilisateur').hide();
+    $('.administrateur').show();
+    $(this).removeClass('btn-default').addClass('btn-success');
+    $('#demandeur').removeClass('btn-danger').addClass('btn-default');
+    $('#utilisateur').removeClass('btn-warning').addClass('btn-default');
+    $('#tousMembers').removeClass('btn-primary').addClass('btn-default');
+  })
+
+  $('#tousMembers').click(function(){
+    $('.demandeur').show();
+    $('.utilisateur').show();
+    $('.administrateur').show();
+    $(this).removeClass('btn-default').addClass('btn-primary');
+    $('#demandeur').removeClass('btn-danger').addClass('btn-default');
+    $('#administrateur').removeClass('btn-success').addClass('btn-default');
+    $('#utilisateur').removeClass('btn-warning').addClass('btn-default');
+  })
+
+
+
+
+
 })

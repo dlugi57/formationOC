@@ -2,7 +2,7 @@
   <!-- Widget: user widget style 1 -->
   <div class="box box-widget widget-user">
     <!-- Add the bg color to the header using any of the bg-* classes -->
-        <div class="widget-user-header bg-black" style="background: url('Public/dist/img/instagram.jpg') center center;">
+        <div class="widget-user-header bg-black" style="background: url('Public/img/instagram.jpg') center center;">
       <h3 class="widget-user-username" id="instaFullName"></h3>
       <h5 class="widget-user-desc" id="instaUserName"></h5>
     </div>

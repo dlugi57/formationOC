@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>FOCUS CRM pour les photographes</title>
+    <title>FOCUS - CRM, gestion clients et séances pour photographes</title>
     <!-- HEAD with all metadata -->
     <?php require('View/frontend/homePage/head.php'); ?>
   </head>
@@ -18,7 +18,7 @@
           <div class="ancre100" id="intro"></div>
           <div class="headlineBlock" id="headlineBlock">
             <div id="headlineDescription">
-            <p>poczekasz na acceptacje</p>
+            <h2>demande d'inscription</h2>
             </div>
           </div>
         </section>
@@ -30,11 +30,11 @@
 
     <!-- MODAL -->
     <!-- Modal is visible only few times with deleting and reporting -->
-    <div class="modal fade" id="modalShow" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="modalShowHome" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Confirmation</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Information</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -43,8 +43,7 @@
             <?php if (isset($modalMsg)) {echo $modalMsg;} ?>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Retour</button>
-            <a type="" class="btn btn-danger btn-ok">OK</a>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
           </div>
         </div>
       </div>
@@ -52,7 +51,7 @@
     <!-- FOOTER -->
     <footer id="footer">
       <ul class="copyright">
-        <li>Copyright © Jean Forteroche</li><li>DESIGN : SUNNY MOMENTS</li>
+        <li>FOCUS © CRM</li><li>DESIGN : SUNNY MOMENTS</li>
       </ul>
     </footer>
     <!-- SCRIPTS -->

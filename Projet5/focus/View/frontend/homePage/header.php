@@ -1,7 +1,7 @@
 <!-- HEADER -->
 <header class="header">
   <!-- Logo -->
-  <a href="?action=home"><img src="public/images/logo.png" class="logo" title="" alt=""/></a>
+  <a href="?action=home"><img src="public/img/logo-home.png" class="logo" title="" alt=""/></a>
   <?php
   if (isset($_SESSION['nick']))
   {

@@ -144,7 +144,7 @@ $(function() {
     } else {
       if (!isValidDate($('.addSeanceDate').val())) {
         $('.addSeanceDate').closest('div.form-group').addClass('has-error');
-        $('.addSeanceDate').closest('div.form-group').find('span.help-block').text("Format mail invalide");
+        $('.addSeanceDate').closest('div.form-group').find('span.help-block').text("Format date invalide");
         return false;
       } else {
         $('.addSeanceDate').closest('div.form-group').removeClass('has-error');
@@ -215,7 +215,7 @@ $(function() {
     } else {
       if (!isValidDate($('.addTaxDate').val())) {
         $('.addTaxDate').closest('div.form-group').addClass('has-error');
-        $('.addTaxDate').closest('div.form-group').find('span.help-block').text("Format mail invalide");
+        $('.addTaxDate').closest('div.form-group').find('span.help-block').text("Format date invalide");
         return false;
       } else {
         $('.addTaxDate').closest('div.form-group').removeClass('has-error');

@@ -1,3 +1,9 @@
+console.log();
+if (document.location.href.indexOf("home") >= 0) {
+    $(window).on('load',function(){
+        $('#modalShowHome').modal('show');
+    });
+}
 //INSCRIPTION PAGE CONDITIONS
 $('#registerBtn').click(function() {
 

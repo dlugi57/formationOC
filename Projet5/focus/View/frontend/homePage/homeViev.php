@@ -2,41 +2,66 @@
 $title = "Jean Forteroche - Billet simple pour l'Alaska";
 ob_start();
 ?>
-
 <!-- SECTION INTRO -->
 <section class="intro">
   <div class="ancre100" id="intro"></div>
   <div class="introBlock" id="introBlock">
     <div id="introDescription">
-      <h1 id="introTitle">Work less shoot more</h1>
-      <p id="introText">Le nouveau roman de Jean Forteroche</p>
+      <h1 id="introTitle">Photographiez plus, travaillez moins!</h1>
+      <p id="introText">FOCUS simplifie la gestion de vos séances</p>
     </div>
   </div>
 </section>
 
-<!-- SECTION AUTHOR -->
-<section class="author">
-  <div class="authorBlock">
-    <div id="biography">
-      <h2>Jean Forteroche</h2>
-      <p>Jean Forteroche né le 21 juin 1948 à Łódź, est un écrivain polonais, auteur d'histoires fantastiques et de fantasy. Il est surtout connu pour sa série littéraire Le Sorceleur qui a ensuite été adaptée en la série de jeu vidéo The Witcher.</p>
-    </div>
-    <div id="portrait">
-      <img src="public/images/portrait.jpeg" alt="">
-    </div>
+<!-- SECTION SERVICES -->
+<section class="services">
+  <!-- break point to get the right position of the section after navbar click -->
+  <div class="ancre100" id="services"></div>
+  <!-- Services title -->
+  <div class="introduction">
+    <h2>Organisez, automatisez et profitez!</h2>
+    <p>FOCUS est un outil de gestion clients et séances spécialement conçu pour les photographes.<br> Simple d'utilisation et rapide à prendre en main.</p>
   </div>
+  <!-- Services content -->
+  <div class="content">
+    <!-- Services main photo -->
+    <div class="photo content-block">
+      <img src="public/img/portrait.jpg" title="Nos services en ligne" alt="services de focus">
+    </div>
+      <!-- Services descriptions list -->
+      <ul class="descriptions content-block">
+        <li class="description">
+          <h3>Entrez vos données</h3>
+          <p>Saisissez facilement vos données: clients, séances, ... tout reste organisé et structuré dans FOCUS.</p>
+          <div class="icones">
+            <i class="fas fa-calendar-alt fa-2x"></i><br/><i class="fas fa-circle fa-sm"></i>
+          </div>
+        </li>
+        <li class="description">
+          <h3>Gagnez du temps</h3>
+          <p>FOCUS travaille pour vous: date séances, prix, l'heures ... gagnez du temps et sortez cela de votre tête!</p>
+          <div class="icones">
+            <i class="fab fa-algolia fa-2x"></i><br/><i class="fas fa-circle fa-sm"></i>
+          </div>
+        </li>
+        <li class="description">
+          <h3>Profitez!</h3>
+          <p>Profitez du temps gagné pour prendre des photos, trouver des nouveaux clients!</p>
+          <div class="icones">
+            <i class="fas fa-camera fa-2x"></i><br/><i class="fas fa-circle fa-sm"></i>
+          </div>
+        </li>
+      </ul>
+    </div><!-- /content -->
 </section>
 
 <!-- SECTION BOOK -->
 <section id="book">
   <div id="bookDescription">
-    <p><a id="last-btn" href="index.php?action=post&amp;id=">DERNIER CHAPITRE</a></p>
-    <h2 id="bookTitle"> </h2>
-    <div id="bookText">...<a id="last-btn" href="index.php?action=post&amp;id=">[Lire la suite]</a></div>
-    <a href="index.php?action=listPosts" class="btn btn-outline-dark btn-lg btn-perso">LIRE LE LIVRE</a>
+    <h2 id="bookTitle">Et si vous commenciez à améliorer votre productivité?</h2>
+    <a href="index.php?action=createMember" class="btn btn-outline-dark btn-lg btn-perso">INSCRIVEZ-VOUS</a>
   </div>
 </section>
-
 
 <?php
 $content = ob_get_clean();

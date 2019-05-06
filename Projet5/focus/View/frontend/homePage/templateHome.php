@@ -40,7 +40,7 @@
             </button>
           </div>
           <div class="modal-body">
-            <?php if (isset($modalMsg)) {echo $modalMsg;} ?>
+            Ce site est un projet OpenClassroom et n'est en aucun cas lié à la vente au distribution de solution presente.
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>

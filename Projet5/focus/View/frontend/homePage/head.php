@@ -27,6 +27,6 @@
 <script src="https://cloud.tinymce.com/5/tinymce.min.js?apiKey=wla0vfvhs3281qj2cpgsqhpxll4j76pv2sy1kqiqk4moj66c"></script>
 
 <!-- Stylesheets from page css-->
-<link href="public/css/style.css" rel="stylesheet" />
+<link href="public/css/home.css" rel="stylesheet" />
 <link href="public/css/header.css" rel="stylesheet" />
 <link rel="shortcut icon" type="image/x-icon" href="public/img/favicon-home.ico">

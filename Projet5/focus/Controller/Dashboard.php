@@ -37,6 +37,7 @@ class Dashboard
 
         //COMMANDS
         $sumMonthCmd = $commandsManager->monthCmd();
+        $countCommands = $commandsManager->totalsCmd();
 
         //Monthly recaps send arrays into JS
         $resultsMonthPaiedTax = Dashboard::monthTax();

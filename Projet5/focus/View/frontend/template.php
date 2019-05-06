@@ -135,20 +135,16 @@
             <i class="fa fa-camera"></i>
             <span>Séances</span>
             <span class="pull-right-container">
-              <small class="label pull-right bg-yellow">
-                <?php
-                if (isset($countSeances['nb'])):
-                  echo htmlspecialchars($countSeances['nb']);
-                endif;
-                ?>
-              </small>
-                <?php
-                if (isset($countFutureSeances['nb'])):
-                  echo '<small class="label pull-right bg-green">'. htmlspecialchars($countFutureSeances['nb']).'</small>';
-                else:
-                  echo '<i class="fa fa-angle-left pull-right"></i>';
-                endif;
-                ?>
+              <?php
+              if (isset($countSeances['nb'])):
+                echo '<small class="label pull-right bg-yellow">'.htmlspecialchars($countSeances['nb']).'</small>';
+              endif;
+              if (isset($countFutureSeances['nb'])):
+                echo '<small class="label pull-right bg-green">'. htmlspecialchars($countFutureSeances['nb']).'</small>';
+              else:
+                echo '<i class="fa fa-angle-left pull-right"></i>';
+              endif;
+              ?>
             </span>
           </a>
           <ul class="treeview-menu">
@@ -162,7 +158,13 @@
             <i class="fa fa-shopping-cart"></i>
             <span>Commandes</span>
             <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
+              <?php
+              if(isset($countCommands['totalCmd'])):
+                echo '<span class="label label-primary pull-right">'. htmlspecialchars($countCommands['totalCmd']).'</span>';
+              else:
+                echo '<i class="fa fa-angle-left pull-right"></i>';
+              endif;
+              ?>
             </span>
           </a>
           <ul class="treeview-menu">

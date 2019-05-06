@@ -185,75 +185,14 @@
 
         <?php endif; ?>
 
-        <!--
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-credit-card"></i>
-            <span>Achats</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="pages/charts/chartjs.html"><i class="fa fa-list-ul"></i> Liste</a></li>
-            <li><a href="pages/charts/morris.html"><i class="fa fa-plus"></i> Ajouter</a></li>
-          </ul>
-        </li>
-        -->
-        <!--
+
         <li>
-          <a href="pages/widgets.html">
-            <i class="fa fa-balance-scale"></i> <span>Test</span>
+          <a href="index.php?action=addPhotoPage">
+            <i class="fa fa-picture-o"></i> <span>Galerie</span>
 
           </a>
         </li>
-        -->
-        <!--
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-file-pdf-o"></i>
-            <span>Devis</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="pages/charts/chartjs.html"><i class="fa fa-list-ul"></i> Liste</a></li>
-            <li><a href="pages/charts/morris.html"><i class="fa fa-plus"></i> Ajouter</a></li>
 
-          </ul>
-        </li>
-        -->
-        <!--
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-pencil-square-o"></i>
-            <span>Factures</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="pages/charts/chartjs.html"><i class="fa fa-list-ul"></i> Liste</a></li>
-            <li><a href="pages/charts/morris.html"><i class="fa fa-plus"></i> Ajouter</a></li>
-          </ul>
-        </li>
-      -->
-
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-picture-o"></i>
-            <span>Galeries</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="index.php?action=addPhotoPage"><i class="fa fa-list-ul"></i> Liste</a></li>
-            <li><a href="pages/charts/morris.html"><i class="fa fa-file-image-o"></i> Ajouter</a></li>
-
-          </ul>
-        </li>
       </ul>
     </section>
     <!-- /.sidebar -->
@@ -308,28 +247,8 @@
 </script>
 <!-- Bootstrap 3.3.7 -->
 <script src="Public/adminLte/bootstrap/dist/js/bootstrap.min.js"></script>
-<!-- Morris.js charts -->
-<!--<script src="Public/bower_components/raphael/raphael.min.js"></script>-->
-<!--<script src="Public/bower_components/morris.js/morris.min.js"></script>-->
-<!-- Sparkline -->
-<!--<script src="Public/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>-->
-<!-- jvectormap -->
-<!--<script src="Public/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>-->
-<!--<script src="Public/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>-->
-<!-- jQuery Knob Chart -->
-<!--<script src="Public/bower_components/jquery-knob/dist/jquery.knob.min.js"></script>-->
-<!-- daterangepicker -->
-<!--<script src="Public/bower_components/moment/min/moment.min.js"></script>-->
-<!--<script src="Public/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>-->
-<!-- datepicker                                                                                              -->
+<!-- datepicker -->
 <script src="Public/adminLte/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
-
-<!-- Bootstrap WYSIHTML5 -->
-<!--<script src="Public/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>-->
-<!-- Slimscroll -->
-<!--<script src="Public/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>-->
-<!-- FastClick -->
-<!--<script src="Public/bower_components/fastclick/lib/fastclick.js"></script>-->
 <!-- ChartJS -->
 <script src="Public/adminLte/chart.js/Chart.js"></script>
 <!-- AdminLTE App -->
@@ -345,14 +264,11 @@
 <script src="Public/adminLte/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
 <!-- SELECT -->
 <script src="Public/adminLte/select2/dist/js/select2.full.min.js"></script>
-<!-- bootstrap time picker                                                                                      -->
+<!-- bootstrap time picker-->
 <script src="Public/adminLte/timepicker/bootstrap-timepicker.min.js"></script>
 <!-- InputMask -->
 <script src="Public/adminLte/input-mask/jquery.inputmask.js"></script>
 <script src="Public/adminLte/input-mask/jquery.inputmask.date.extensions.js"></script>
 <script src="Public/adminLte/input-mask/jquery.inputmask.extensions.js"></script>
-
-
-
 </body>
 </html>

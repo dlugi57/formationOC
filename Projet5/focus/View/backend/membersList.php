@@ -1,5 +1,5 @@
 <?php
-$title = "Clients | Sunny Moments";
+$title = "Membres | Sunny Moments";
 ob_start();
 ?>
 <!-- Content Header (Page header) -->
@@ -48,17 +48,17 @@ ob_start();
                   if ($data['admin'] == 0):
                     $statusColor = "label-danger";
                     $statusName = "demandeur";
-                    $statusLink = "<a href='index.php?action=status&amp;member_id=". $data['id'] ."&amp;status=2' title='accept Member'><i class='fa fa-user-plus' style='color:green'></i></a>";
+                    $statusLink = "<a href='index.php?action=status&amp;member_id=". $data['id'] ."&amp;status=2' title='accepter demande'><i class='fa fa-user-plus' style='color:green'></i></a>";
 
 
                   elseif ($data['admin'] == 1):
                     $statusColor = "label-success";
                     $statusName = "administrateur";
-                    $statusLink = "<a href='index.php?action=status&amp;member_id=". $data['id'] ."&amp;status=2'><i class='fa fa-user-times' style='color:orange'></i></a>";
+                    $statusLink = "<a href='index.php?action=status&amp;member_id=". $data['id'] ."&amp;status=2' title='degrade admin'><i class='fa fa-user-times' style='color:orange'></i></a>";
                   elseif ($data['admin'] == 2):
                     $statusColor = "label-warning";
                     $statusName = "utilisateur";
-                    $statusLink = "<a href='index.php?action=status&amp;member_id=". $data['id'] ."&amp;status=0'><i class='fa fa-user-times' style='color:red'></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='index.php?action=status&amp;member_id=". $data['id'] ."&amp;status=1'><i class='fa fa-user-secret' style='color:blue'></i></a>";
+                    $statusLink = "<a href='index.php?action=status&amp;member_id=". $data['id'] ."&amp;status=0' title='degrade utilisateur'><i class='fa fa-user-times' style='color:red'></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='index.php?action=status&amp;member_id=". $data['id'] ."&amp;status=1' title='admin'><i class='fa fa-user-secret' style='color:blue'></i></a>";
                   endif;
                   ?>
 

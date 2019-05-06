@@ -10,13 +10,13 @@
 <meta name="twitter:title" content="FOCUS - CRM, gestion clients et séances pour photographes">
 <meta name="twitter:description" content="Outil de gestion clients et séances spécialisé pour les photographes ! Photographiez plus, travaillez moins !">
 <meta name="twitter:creator" content="@author_handle">
-<meta name="twitter:image" content="http://piotr.la-gaude.com/focus/public/img/social-og.jpg">
+<meta name="twitter:image" content="http://piotr.la-gaude.com/focus/Public/img/social-og.jpg">
 
 <!-- Open Graph data -->
 <meta property="og:title" content="FOCUS - CRM, gestion clients et séances pour photographes" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://piotr.la-gaude.com/focus/" />
-<meta property="og:image" content="http://piotr.la-gaude.com/focus/public/img/social-og.jpg" />
+<meta property="og:image" content="http://piotr.la-gaude.com/focus/Public/img/social-og.jpg" />
 <meta property="og:description" content="Outil de gestion clients et séances spécialisé pour les photographes ! Photographiez plus, travaillez moins !" />
 
 <!-- Stylesheets & Scripts for map and fonts-->
@@ -27,6 +27,6 @@
 <script src="https://cloud.tinymce.com/5/tinymce.min.js?apiKey=wla0vfvhs3281qj2cpgsqhpxll4j76pv2sy1kqiqk4moj66c"></script>
 
 <!-- Stylesheets from page css-->
-<link href="public/css/home.css" rel="stylesheet" />
-<link href="public/css/header.css" rel="stylesheet" />
-<link rel="shortcut icon" type="image/x-icon" href="public/img/favicon-home.ico">
+<link href="Public/css/home.css" rel="stylesheet" />
+<link href="Public/css/header.css" rel="stylesheet" />
+<link rel="shortcut icon" type="image/x-icon" href="Public/img/favicon-home.ico">

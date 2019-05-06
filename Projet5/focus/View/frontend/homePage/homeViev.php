@@ -26,7 +26,7 @@ ob_start();
   <div class="content">
     <!-- Services main photo -->
     <div class="photo content-block">
-      <img src="public/img/portrait.jpg" title="Nos services en ligne" alt="services de focus">
+      <img src="Public/img/portrait.jpg" title="Nos services en ligne" alt="services de focus">
     </div>
       <!-- Services descriptions list -->
       <ul class="descriptions content-block">

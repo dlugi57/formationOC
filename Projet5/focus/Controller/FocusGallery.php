@@ -26,8 +26,8 @@ class FocusGallery
             $uploadOk = 0;
         endif;
         // Check file size
-        if ($_FILES["fileToUpload"]["size"] > 500000):
-            $errorMsg = "Désolé, votre fichier est trop volumineux.";
+        if ($_FILES["fileToUpload"]["size"] > 5000000):
+            $errorMsg = "Désolé, votre fichier est trop volumineux. MAX 5MB";
             $uploadOk = 0;
         endif;
         // Allow certain file formats

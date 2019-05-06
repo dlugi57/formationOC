@@ -58,7 +58,7 @@ ob_start();
 <!-- SECTION BOOK -->
 <section id="book">
   <div id="bookDescription">
-    <h2 id="bookTitle">Et si vous commenciez à améliorer votre productivité?</h2>
+    <h3 id="bookTitle">Et si vous commenciez à améliorer votre productivité?</h3>
     <a href="index.php?action=createMember" class="btn btn-outline-dark btn-lg btn-perso">INSCRIVEZ-VOUS</a>
   </div>
 </section>

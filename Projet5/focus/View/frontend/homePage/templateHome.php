@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8" />
     <title>FOCUS - CRM, gestion clients et séances pour photographes</title>

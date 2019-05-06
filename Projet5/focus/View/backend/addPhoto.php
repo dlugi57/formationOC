@@ -1,11 +1,11 @@
 <?php
-$title = "Ajouter photo | Sunny Moments";
+$title = "Galeire photo | Sunny Moments";
 ob_start();
 ?>
 <!-- Content Header (Page header) -->
 <section class="content-header">
   <h1>
-    Ajouter photo
+    Galerie photo
     <small>Control panel</small>
   </h1>
 </section>
@@ -68,7 +68,7 @@ ob_start();
               <div class="box-tools pull-right">
                 <a href="?action=downloadPhoto&file=<?=urlencode($image) ?>" type="button" class="btn btn-box-tool"><i class="fa fa-download"></i>
                 </a>
-                <?php $modalMsg = "Êtes vous sûr de vouloir supprimer le photo ".basename($image)." ?"; ?>
+                <?php $modalMsg = "Êtes vous sûr de vouloir supprimer le photo ?"; ?>
                 <a data-href="?action=removePhoto&file=<?=urlencode($image) ?>" type="button" class="btn btn-box-tool" data-toggle="modal" data-target="#modalShow"><i class="fa fa-times"></i></a>
               </div>
             </div>

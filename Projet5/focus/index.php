@@ -131,7 +131,6 @@ try {
                   $removeTaxe = $controllerBack->removeTaxe();
               break;
 
-
       //MEMBERS LIST
               case 'membersList':
                   $membersList = $controllerMembers->membersList();
@@ -148,20 +147,18 @@ try {
               case 'addPhotoPage':
                   require('View/backend/addPhoto.php');
               break;
-      //PHOTO PAGE
+      //ADD PHOTO
               case 'addPhoto':
                   $addPhoto = $controllerGallery->addPhoto();
               break;
-      //PHOTO PAGE
+      //DELETE PHOTO
               case 'removePhoto':
                   $removePhoto = $controllerGallery->removePhoto();
               break;
-      //PHOTO PAGE
+      //DOWNLOAD PHOTO
               case 'downloadPhoto':
                   $downloadPhoto = $controllerGallery->downloadPhoto();
               break;
-
-
 
       //HOME PAGE
               case 'home':

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,8 +15,7 @@
     <a href="index.php?action=dashboard" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><img class="logo-img-small" src="Public/img/logo-rond.png" ></span>
-      <!-- logo for regular state and mobile devices
-      <span class="logo-lg"><b>Sunny</b>Moments</span>-->
+      <!-- logo for regular state and mobile devices-->
       <span class="logo-lg"><img class="logo-img" src="Public/img/logo.png" ></span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
@@ -30,38 +29,42 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <?php if (isset($_SESSION['admin']) && ($_SESSION['admin'] == 1)): ?>
+              <?php
+              if (isset($_SESSION['admin']) && ($_SESSION['admin'] == 1)):
+              ?>
                 <img src="Public/img/profile.jpg" class="user-image" alt="User Image">
-              <?php endif; ?>
-
+              <?php
+              endif;
+              ?>
               <span class="hidden-xs">
                 <?php
-                if (isset($_SESSION['nick']))
-                {
+                if (isset($_SESSION['nick'])):
+
                     $nick = $_SESSION['nick'];
                     echo 'Bonjour '.htmlspecialchars($nick);
-                }
-                 ?>
+
+                endif;
+                ?>
               </span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <?php if (isset($_SESSION['admin']) && ($_SESSION['admin'] == 1)): ?>
+                <?php
+                if (isset($_SESSION['admin']) && ($_SESSION['admin'] == 1)):
+                ?>
                   <img src="Public/img/profile.jpg" class="img-circle" alt="User Image">
-                <?php endif; ?>
-
-
+                <?php
+                endif;
+                ?>
                 <p>
                   <?php
-                  if (isset($_SESSION['nick']))
-                  {
+                  if (isset($_SESSION['nick'])):
+
                       $nick = $_SESSION['nick'];
                       echo htmlspecialchars($nick);
-                  }
-                   ?>
-                    - Photographe
-                  <small>Depuis 2017</small>
+                  endif;
+                  ?>
                 </p>
               </li>
               <!-- Menu Body -->
@@ -85,7 +88,7 @@
                   <a href="?action=home" class="btn btn-default btn-flat">Home</a>
                 </div>
                 <div class="pull-right">
-                  <a href="?action=deconnect" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="?action=deconnect" class="btn btn-default btn-flat">Logout</a>
                 </div>
               </li>
             </ul>
@@ -99,21 +102,9 @@
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
 
-      <!-- search form -->
-      <form action="#" method="get" class="sidebar-form">
-        <div class="input-group">
-          <input type="text" name="q" class="form-control" placeholder="Search...">
-          <span class="input-group-btn">
-                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-                </button>
-              </span>
-        </div>
-      </form>
-      <!-- /.search form -->
-
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
-        <li class="header">MAIN NAVIGATION  </li>
+        <li class="header">MENU  </li>
         <li>
           <a href="index.php?action=dashboard">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
@@ -124,7 +115,13 @@
             <i class="fa fa-users"></i>
             <span>Clients</span>
             <span class="pull-right-container">
-              <?php if(isset($countClients['nb'])){echo '<span class="label label-primary pull-right">'. htmlspecialchars($countClients['nb']);}else{echo '<i class="fa fa-angle-left pull-right"></i>';}  ?></span>
+              <?php
+              if(isset($countClients['nb'])):
+                echo '<span class="label label-primary pull-right">'. htmlspecialchars($countClients['nb']).'</span>';
+              else:
+                echo '<i class="fa fa-angle-left pull-right"></i>';
+              endif;
+              ?>
             </span>
           </a>
           <ul class="treeview-menu">
@@ -138,8 +135,20 @@
             <i class="fa fa-camera"></i>
             <span>Séances</span>
             <span class="pull-right-container">
-              <small class="label pull-right bg-yellow"><?php if (isset($countSeances['nb'])) {echo htmlspecialchars($countSeances['nb']);}  ?></small>
-              <?php if (isset($countFutureSeances['nb'])) {echo '<small class="label pull-right bg-green">'. htmlspecialchars($countFutureSeances['nb']);}else{echo '<i class="fa fa-angle-left pull-right"></i>';} ?></small>
+              <small class="label pull-right bg-yellow">
+                <?php
+                if (isset($countSeances['nb'])):
+                  echo htmlspecialchars($countSeances['nb']);
+                endif;
+                ?>
+              </small>
+                <?php
+                if (isset($countFutureSeances['nb'])):
+                  echo '<small class="label pull-right bg-green">'. htmlspecialchars($countFutureSeances['nb']).'</small>';
+                else:
+                  echo '<i class="fa fa-angle-left pull-right"></i>';
+                endif;
+                ?>
             </span>
           </a>
           <ul class="treeview-menu">
@@ -175,24 +184,22 @@
             <li><a href="index.php?action=addTaxesPage"><i class="fa fa-plus"></i> Ajouter</a></li>
           </ul>
         </li>
-        <?php if (isset($_SESSION['admin']) && ($_SESSION['admin'] == 1)): ?>
+        <?php
+        if (isset($_SESSION['admin']) && ($_SESSION['admin'] == 1)):
+        ?>
           <li>
             <a href="index.php?action=membersList">
               <i class="fa fa-user"></i> <span>Members</span>
-
             </a>
           </li>
-
-        <?php endif; ?>
-
-
+        <?php
+        endif;
+        ?>
         <li>
           <a href="index.php?action=addPhotoPage">
             <i class="fa fa-picture-o"></i> <span>Galerie</span>
-
           </a>
         </li>
-
       </ul>
     </section>
     <!-- /.sidebar -->
@@ -215,7 +222,11 @@
           <h4 class="modal-title">Confirmation</h4>
         </div>
         <div class="modal-body">
-          <?php if (isset($modalMsg)) {echo $modalMsg;} ?>
+          <?php
+          if (isset($modalMsg)):
+            echo $modalMsg;
+          endif;
+          ?>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Retour</button>

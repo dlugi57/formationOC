@@ -41,9 +41,7 @@ try {
               break;
       //MODIFY CLIENT
               case 'modifyClientPage':
-
                   $modifyClientPage = $controllerBack->modifyClientPage();
-
               break;
               case 'modifyClient':
                   $modifyClient = $controllerBack->modifyClient();

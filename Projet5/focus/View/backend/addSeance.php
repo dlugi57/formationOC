@@ -1,11 +1,11 @@
 <?php
-$title = "Ajouter seance | Sunny Moments";
+$title = "Ajouter séance | Sunny Moments";
 ob_start();
 ?>
 <!-- Content Header (Page header) -->
 <section class="content-header">
   <h1>
-    Ajouter Seance
+    Ajouter Séance
     <small>Control panel</small>
   </h1>
 </section>
@@ -14,7 +14,7 @@ ob_start();
   <!-- general form elements disabled -->
   <div class="box box-warning">
     <div class="box-header with-border">
-      <h3 class="box-title">Ajouter Seance</h3>
+      <h3 class="box-title">Ajouter Séance</h3>
     </div>
     <!-- /.box-header -->
     <form role="form" method="post" action="index.php?action=addSeance">
@@ -47,7 +47,7 @@ ob_start();
             </div>
             <!-- select -->
             <div class="form-group">
-              <label>Seance type</label>
+              <label>Séance type</label>
               <select name="type" class="form-control">
                 <?php
                 while ($data = $newSeancePage->fetch())
@@ -62,7 +62,7 @@ ob_start();
 
             <!-- Date -->
             <div class="form-group">
-              <label>Date seance:</label>
+              <label>Date séance:</label>
               <div class="input-group date">
                 <div class="input-group-addon">
                   <i class="fa fa-calendar"></i>

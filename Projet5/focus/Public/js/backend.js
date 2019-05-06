@@ -14,9 +14,6 @@ $(function() {
     'autoWidth': true
   })
 
-  $(".clickableRowClient").click(function() {
-    window.location = $(this).data("href");
-  });
 
   //Initialize Select2 Elements
   $('.select2').select2()
@@ -300,9 +297,8 @@ $(function() {
     $('#administrateur').removeClass('btn-success').addClass('btn-default');
     $('#utilisateur').removeClass('btn-warning').addClass('btn-default');
   })
-
-
-
-
-
 })
+
+$(".clickableRowClient").click(function() {
+  window.location = $(this).data("href");
+});

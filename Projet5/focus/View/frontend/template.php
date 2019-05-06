@@ -71,7 +71,7 @@
                     <a href="index.php?action=listClients">Clients</a>
                   </div>
                   <div class="col-xs-4 text-center">
-                    <a href="index.php?action=listSeances">Seances</a>
+                    <a href="index.php?action=listSeances">Séances</a>
                   </div>
                   <div class="col-xs-4 text-center">
                     <a href="index.php?action=listCommands">Commands</a>
@@ -136,7 +136,7 @@
         <li class="treeview">
           <a href="#">
             <i class="fa fa-camera"></i>
-            <span>Seances</span>
+            <span>Séances</span>
             <span class="pull-right-container">
               <small class="label pull-right bg-yellow"><?php if (isset($countSeances['nb'])) {echo htmlspecialchars($countSeances['nb']);}  ?></small>
               <?php if (isset($countFutureSeances['nb'])) {echo '<small class="label pull-right bg-green">'. htmlspecialchars($countFutureSeances['nb']);}else{echo '<i class="fa fa-angle-left pull-right"></i>';} ?></small>

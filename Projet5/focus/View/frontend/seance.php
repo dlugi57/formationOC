@@ -1,5 +1,5 @@
 <?php
-$title = "Seance | Sunny Moments";
+$title = "Séance | Sunny Moments";
 ob_start();
 //get the name of the week
 $dayofweek = date('w', strtotime(htmlspecialchars($seance['seance_date'])));
@@ -81,7 +81,7 @@ $dayOfWeek = $days[$dayofweek];
       <!-- Seance-->
       <div class="box box-primary">
         <div class="box-header with-border">
-          <h3 class="box-title">Seance</h3>
+          <h3 class="box-title">Séance</h3>
           <div class="box-tools pull-right">
             <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
             </button>
@@ -89,7 +89,7 @@ $dayOfWeek = $days[$dayofweek];
           </div>
         </div>
         <div class="box-body box-profile">
-          <h3 class="profile-username text-center">Seance <?= htmlspecialchars($seance['nom_type']) ?></h3>
+          <h3 class="profile-username text-center">Séance <?= htmlspecialchars($seance['nom_type']) ?></h3>
           <p class="text-muted text-center"><?= htmlspecialchars($seance['creation_date_seance']) ?></p>
           <hr>
 

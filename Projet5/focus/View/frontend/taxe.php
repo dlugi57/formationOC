@@ -16,7 +16,7 @@ ob_start();
   <div class="row">
     <!-- Main col left-->
     <div class="col-md-6">
-      <!-- Seance-->
+      <!-- Tax-->
       <div class="box box-primary">
         <div class="box-header with-border">
           <h3 class="box-title">Taxe</h3>

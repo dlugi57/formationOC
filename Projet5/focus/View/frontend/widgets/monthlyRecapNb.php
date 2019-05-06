@@ -1,7 +1,7 @@
 <!-- BAR CHART -->
 <div class="box box-success">
   <div class="box-header with-border">
-    <h3 class="box-title"><i class="fa fa-bar-chart-o text-gray"></i> Seances & <i class="fa fa-bar-chart text-green"></i> Clients</h3>
+    <h3 class="box-title"><i class="fa fa-bar-chart-o text-gray"></i> Séances & <i class="fa fa-bar-chart text-green"></i> Clients</h3>
     <div class="box-tools pull-right">
       <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
       </button>
@@ -27,5 +27,5 @@ var summarySeanceCmdTaxNet = arrayFromPHPCashNet.map(function (num, idx)
   return num - arrayFromPHPTaxes[idx];
 })
 //summary of all cash depensed brut by month
-var arrayFromPHPCash = <?php echo json_encode($resultsMonthCash); ?>;  
+var arrayFromPHPCash = <?php echo json_encode($resultsMonthCash); ?>;
 </script>

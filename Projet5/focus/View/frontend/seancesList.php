@@ -1,11 +1,11 @@
 <?php
-$title = "Seances | Sunny Moments";
+$title = "Séances | Sunny Moments";
 ob_start();
 ?>
 <!-- Content Header (Page header) -->
 <section class="content-header">
   <h1>
-    Seances
+    Séances
     <small>Control panel</small>
   </h1>
 </section>
@@ -18,9 +18,9 @@ ob_start();
     <section class="col-md-12">
       <div class="box box-primary">
         <div class="box-header">
-          <h3 class="box-title">Liste de seances</h3>
+          <h3 class="box-title">Liste de séances</h3>
           <div class="pull-right box-tools">
-            <a type="button" href="index.php?action=addSeancePage" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Ajouter seance</a>
+            <a type="button" href="index.php?action=addSeancePage" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Ajouter séance</a>
           </div>
         </div>
         <!-- /.box-header -->
@@ -97,7 +97,7 @@ ob_start();
         <div class="col-md-12">
           <div class="box box-danger">
             <div class="box-header with-border">
-              <h3 class="box-title">Seance rapport</h3>
+              <h3 class="box-title">Séance rapport</h3>
 
               <div class="box-tools pull-right">
                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -201,11 +201,8 @@ ob_start();
 
 //get month from data base
 var afpMonthSeance = <?php echo json_encode($resultsMonthSeance); ?>;
-console.log(afpMonthSeance);
 var afpMonthSeanceCash = <?php echo json_encode($resultsSeancesCash); ?>;
-console.log(afpMonthSeanceCash);
 var afpMonthSeanceDep = <?php echo json_encode($resultsSeancesDepenses); ?>;
-console.log(afpMonthSeanceDep);
 
 </script>
 <?php

@@ -21,7 +21,7 @@ ob_start();
       <div class="small-box bg-aqua">
         <div class="inner">
           <h3><?= intval(htmlspecialchars($sumNet)) ?><sup style="font-size: 20px">€</sup></h3>
-          <p>Net = Seances + CMD - Tax</p>
+          <p>Net = Séances + CMD - Tax</p>
         </div>
         <div class="icon">
           <i class="fa fa-home"></i>
@@ -36,7 +36,7 @@ ob_start();
       <div class="small-box bg-green">
         <div class="inner">
           <h3><?= intval(htmlspecialchars($sumBrut)) ?><sup style="font-size: 20px">€</sup></h3>
-          <p>Brut = Seances + CMD</p>
+          <p>Brut = Séances + CMD</p>
         </div>
         <div class="icon">
           <i class="fa fa-money"></i>
@@ -66,7 +66,7 @@ ob_start();
       <div class="small-box bg-red">
         <div class="inner">
           <h3><?= htmlspecialchars($countSeances['nb']) ?></h3>
-          <p>Seances</p>
+          <p>Séances</p>
         </div>
         <div class="icon">
           <i class="fa fa-camera"></i>

@@ -1,11 +1,11 @@
 <?php
-$title = "Ajouter seance | Sunny Moments";
+$title = "Ajouter photo | Sunny Moments";
 ob_start();
 ?>
 <!-- Content Header (Page header) -->
 <section class="content-header">
   <h1>
-    Ajouter Seance
+    Ajouter photo
     <small>Control panel</small>
   </h1>
 </section>
@@ -17,7 +17,7 @@ ob_start();
       <!-- general form elements disabled -->
       <div class="box box-warning">
         <div class="box-header with-border">
-          <h3 class="box-title">Ajouter Seance</h3>
+          <h3 class="box-title">Ajouter photo</h3>
         </div>
         <!-- /.box-header -->
         <!-- form start -->
@@ -35,7 +35,7 @@ ob_start();
                 <?php
               };
               ?>
-              <label for="exampleInputFile">File input</label>
+              <label for="exampleInputFile">Ajouter photo</label>
               <input type="file" name="fileToUpload" id="fileToUpload">
 
               <p class="help-block">Example block-level help text here.</p>

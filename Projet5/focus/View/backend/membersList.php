@@ -48,7 +48,7 @@ ob_start();
                   if ($data['admin'] == 0):
                     $statusColor = "label-danger";
                     $statusName = "demandeur";
-                    $statusLink = "<a href='index.php?action=status&amp;member_id=". $data['id'] ."&amp;status=2'><i class='fa fa-user-plus' style='color:green'></i></a>";
+                    $statusLink = "<a href='index.php?action=status&amp;member_id=". $data['id'] ."&amp;status=2' title='accept Member'><i class='fa fa-user-plus' style='color:green'></i></a>";
 
 
                   elseif ($data['admin'] == 1):
@@ -68,7 +68,7 @@ ob_start();
                     <td><?= htmlspecialchars($data['inscription_date_fr']) ?></td>
                     <td><span class="label <?= $statusColor ?>"><?= htmlspecialchars($statusName) ?></span></td>
                     <td><div class="tools"><?= $statusLink ?></div></td>
-                    <?php $modalMsg = "Êtes vous sûr de vouloir supprimer seance?"; ?>
+                    <?php $modalMsg = "Êtes vous sûr de vouloir supprimer membre?"; ?>
                     <td> <a data-href="index.php?action=removeMember&amp;id=<?= $data['id'] ?>" data-toggle="modal" data-target="#modalShow"><i class="fa fa-trash-o" style='color:red'></i></a> </td>
                   </tr>
                   <?php

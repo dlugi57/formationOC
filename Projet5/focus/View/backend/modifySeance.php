@@ -1,11 +1,11 @@
 <?php
-$title = "Modifier seance | Sunny Moments";
+$title = "Modifier séance | Sunny Moments";
 ob_start();
 ?>
 <!-- Content Header (Page header) -->
 <section class="content-header">
   <h1>
-    <?= "Seance ".htmlspecialchars($modifySeance['nom_type']) ?>
+    <?= "Séance ".htmlspecialchars($modifySeance['nom_type']) ?>
     <small><?= htmlspecialchars($modifySeance['name'])?></small>
   </h1>
 </section>
@@ -14,7 +14,7 @@ ob_start();
   <!-- general form elements disabled -->
   <div class="box box-warning">
     <div class="box-header with-border">
-      <h3 class="box-title">Modifier Seance</h3>
+      <h3 class="box-title">Modifier Séance</h3>
     </div>
     <!-- /.box-header -->
     <form role="form" method="post" action="index.php?action=modifySeance&amp;id=<?= $modifySeance['id_seance'] ?>">
@@ -41,7 +41,7 @@ ob_start();
             </div>
             <!-- select -->
             <div class="form-group">
-              <label>Seance type</label>
+              <label>Séance type</label>
               <select name="type" class="form-control">
                 <option value="<?= $modifySeance['id_type_seance'] ?>" selected="selected"><?= htmlspecialchars($modifySeance['nom_type']) ?></option>
                 <?php
@@ -57,7 +57,7 @@ ob_start();
 
             <!-- Date -->
             <div class="form-group">
-              <label>Date seance:</label>
+              <label>Date séance:</label>
               <div class="input-group date">
                 <div class="input-group-addon">
                   <i class="fa fa-calendar"></i>

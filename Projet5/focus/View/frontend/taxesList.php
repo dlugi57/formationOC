@@ -42,9 +42,12 @@ ob_start();
               <?php
               while ($data = $taxes->fetch())
               {
+                $monthNameEng = date('F', mktime(0, 0, 0, $data['month'], 10));
+                setlocale (LC_TIME, 'fr_FR.utf8','fra');
+                $monthName = utf8_encode(strftime( "%B", strtotime($monthNameEng)));
               ?>
               <tr class='clickableRowClient' data-href='index.php?action=taxe&amp;id=<?= $data['tax_id'] ?>'>
-                <td><?= $monthTax = date('F', mktime(0, 0, 0, htmlspecialchars($data['month']), 10)); ?></td>
+                <td>(<?= $data['month'] ?>) <?= ucfirst($monthName) ?></td>
                 <td><?= htmlspecialchars($data['tax_declare']) ?> €</td>
                 <td><?= htmlspecialchars($data['tax_paid']) ?> €</td>
                 <td><?= $percentsTaxRow = intval((htmlspecialchars($data['tax_paid'])/htmlspecialchars($data['tax_declare']))*100); ?> %</td>

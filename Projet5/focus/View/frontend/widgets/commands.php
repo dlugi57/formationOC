@@ -20,6 +20,9 @@
       <?php
       while ($data = $sumMonthCmd->fetch())
       {
+        $monthNameEng = date('F', mktime(0, 0, 0, $data['month'], 10));
+        setlocale (LC_TIME, 'fr_FR.utf8','fra');
+        $monthName = utf8_encode(strftime( "%B", strtotime($monthNameEng)));
         $percentsCmd = (($data['cash']-$data['paied'])/$data['cash'])*100;
         $gainedCmd = $data['cash']-$data['paied'];
         $colorPercents = "label-info";
@@ -49,7 +52,7 @@
         ?>
         <tr>
           <td><?= $data['nb'] ?></td>
-          <td><?= $monthCmdName = date('F', mktime(0, 0, 0, htmlspecialchars($data['month']), 10)); ?></td>
+          <td><?= ucfirst($monthName) ?></td>
           <td>
             <div class="progress progress-xs">
               <div class="progress-bar <?= $colorLinePercents ?>" style="width: <?= number_format($percentsCmd)?>%"></div>

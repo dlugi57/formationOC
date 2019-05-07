@@ -156,8 +156,10 @@ class Dashboard
             while ($data = $monthClients->fetch())
             {
               $monthNum  = htmlspecialchars($data['month']);
-              $monthName = date('F', mktime(0, 0, 0, $monthNum, 10));
-              array_push($resultsMonth, $monthName);
+              $monthNameEng = date('F', mktime(0, 0, 0, $monthNum, 10));
+              setlocale (LC_TIME, 'fr_FR.utf8','fra');
+              $monthName = utf8_encode(strftime( "%B", strtotime($monthNameEng)));
+              array_push($resultsMonth, ucfirst($monthName));
             }
             return $resultsMonth;
 

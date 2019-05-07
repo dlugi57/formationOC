@@ -3,7 +3,7 @@ $title = "Séance | Sunny Moments";
 ob_start();
 //get the name of the week
 $dayofweek = date('w', strtotime(htmlspecialchars($seance['seance_date'])));
-$days = array('Sunday', 'Monday', 'Tuesday', 'Wednesday','Thursday','Friday', 'Saturday');
+$days = array('Dimanche', 'Lundi', 'Mardi', 'Mercredi','Jeudi','Vendredi', 'Samedi');
 $dayOfWeek = $days[$dayofweek];
  ?>
 <!-- Content Header (Page header) -->
@@ -34,7 +34,7 @@ $dayOfWeek = $days[$dayofweek];
         <div class="info-box">
           <span class="info-box-icon bg-green"><i class="fa fa-phone"></i></span>
           <div class="info-box-content">
-            <span class="info-box-text">Telephone</span>
+            <span class="info-box-text">Téléphone</span>
             <span class="info-box-number"><?= htmlspecialchars($seance['tel']) ?></span>
           </div>
           <!-- /.info-box-content -->
@@ -64,7 +64,7 @@ $dayOfWeek = $days[$dayofweek];
         <div class="info-box-content">
           <span class="info-box-text">Prix</span>
           <span class="info-box-number"><?= htmlspecialchars($seance['prise']) ?> €</span>
-          <span class="info-box-text">Depenses <?= $depensesWidget = htmlspecialchars($seance['depenses']) + intval(htmlspecialchars($seance['km'])*0.15) ?> €</span>
+          <span class="info-box-text">Dépenses <?= $depensesWidget = htmlspecialchars($seance['depenses']) + intval(htmlspecialchars($seance['km'])*0.15) ?> €</span>
         </div>
         <!-- /.info-box-content -->
       </div>
@@ -95,11 +95,11 @@ $dayOfWeek = $days[$dayofweek];
 
           <strong><i class="fa fa-money margin-r-5"></i> Prix : </strong>
           <p>
-            Gagne : <?= htmlspecialchars($seance['prise']) ?> €
+            Gagné : <?= htmlspecialchars($seance['prise']) ?> €
             <br>
-            Depenses : <?= htmlspecialchars($seance['depenses']) ?> €
+            Dépenses : <?= htmlspecialchars($seance['depenses']) ?> €
             <br>
-            Depenses + KM : <?= $depensesWidget ?> €
+            Dépenses + KM : <?= $depensesWidget ?> €
             <br>
             Net : <?= $netSeance = htmlspecialchars($seance['prise']) - $depensesWidget  ?> €
           </p>
@@ -115,7 +115,7 @@ $dayOfWeek = $days[$dayofweek];
           </p>
           <hr>
 
-          <strong><i class="fa fa-user margin-r-5"></i> Model</strong>
+          <strong><i class="fa fa-user margin-r-5"></i> Modèle</strong>
           <p><?= $seance['model'] ?></p>
           <hr>
 
@@ -206,7 +206,7 @@ $dayOfWeek = $days[$dayofweek];
             <?php
             endif;
              ?>
-            <a href="index.php?action=client&amp;id=<?= $seance['id_client'] ?>" class="btn btn-success pull-right"><b>Acceder</b></a>
+            <a href="index.php?action=client&amp;id=<?= $seance['id_client'] ?>" class="btn btn-success pull-right"><b>Accéder</b></a>
           </div>
         </div>
         <!-- /.box-body -->

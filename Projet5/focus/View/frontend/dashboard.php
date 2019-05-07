@@ -21,7 +21,7 @@ ob_start();
       <div class="small-box bg-aqua">
         <div class="inner">
           <h3><?= intval(htmlspecialchars($sumNet)) ?><sup style="font-size: 20px">€</sup></h3>
-          <p>Net = Séances + CMD - Tax</p>
+          <p>Net = Séances + CMD - Taxe</p>
         </div>
         <div class="icon">
           <i class="fa fa-home"></i>
@@ -82,23 +82,26 @@ ob_start();
 
     <!-- Left col -->
     <section class="col-lg-8">
-      <?php require('widgets/clients.php'); ?>
-      <?php require('widgets/seances.php'); ?>
-      <?php require('widgets/monthlyRecapCash.php'); ?>
-      <?php require('widgets/monthlyRecapNb.php'); ?>
+      <?php
+      require('widgets/clients.php');
+      require('widgets/seances.php');
+      require('widgets/monthlyRecapCash.php');
+      require('widgets/monthlyRecapNb.php');
+      ?>
     </section>
     <!-- /.Left col -->
 
-    <!-- right col (We are only adding the ID to make the widgets sortable)-->
+    <!-- right col-->
     <section class="col-lg-4">
-      <?php require('widgets/contactCammembert.php') ?>
-      <?php require('widgets/typesCammemberts.php') ?>
-      <?php require('widgets/commands.php'); ?>
-      <?php if (isset($_SESSION['admin']) && ($_SESSION['admin'] == 1)): ?>
-      <?php require('widgets/insta.php'); ?>
-      <?php require('widgets/fb.php'); ?>
-      <?php endif; ?>
-      <?php // require('widgets/site.php'); ?>
+      <?php
+      require('widgets/contactCammembert.php');
+      require('widgets/typesCammemberts.php');
+      require('widgets/commands.php');
+      if (isset($_SESSION['admin']) && ($_SESSION['admin'] == 1)):
+        require('widgets/insta.php');
+        require('widgets/fb.php');
+      endif; 
+      ?>
     </section>
     <!-- right col -->
   </div>

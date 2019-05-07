@@ -1,11 +1,11 @@
 <?php
-$title = "Commands | Sunny Moments";
+$title = "Commandes | Sunny Moments";
 ob_start();
 ?>
 <!-- Content Header (Page header) -->
 <section class="content-header">
   <h1>
-    Commands
+    Commandes
     <small>Control panel</small>
   </h1>
 </section>
@@ -18,9 +18,9 @@ ob_start();
     <section class="col-md-12">
       <div class="box box-warning">
         <div class="box-header">
-          <h3 class="box-title">Liste de commands</h3>
+          <h3 class="box-title">Liste des commandes</h3>
           <div class="pull-right box-tools">
-            <a type="button" href="index.php?action=addCommandPage" class="btn btn-warning pull-right"><i class="fa fa-plus"></i> Ajouter command</a>
+            <a type="button" href="index.php?action=addCommandPage" class="btn btn-warning pull-right"><i class="fa fa-plus"></i> Ajouter commande</a>
           </div>
         </div>
         <!-- /.box-header -->
@@ -32,7 +32,7 @@ ob_start();
               <th>Nom</th>
               <th>Type</th>
               <th>Prix</th>
-              <th>Costs</th>
+              <th>Frais</th>
               <th>Net</th>
               <th>Description</th>
               <th>Date</th>
@@ -62,7 +62,7 @@ ob_start();
               <th>Nom</th>
               <th>Type</th>
               <th>Prix</th>
-              <th>Costs</th>
+              <th>Frais</th>
               <th>Net</th>
               <th>Description</th>
               <th>Date</th>
@@ -81,7 +81,7 @@ ob_start();
         <span class="info-box-icon bg-aqua"><i class="fa fa-eur"></i></span>
         <div class="info-box-content">
           <span class="info-box-text">Brut</span>
-          <span class="info-box-number"><?= htmlspecialchars($commandsTotal['sumPriseCmd']); ?></span>
+          <span class="info-box-number"><?= htmlspecialchars($commandsTotal['sumPriseCmd']); ?> €</span>
         </div>
         <!-- /.info-box-content -->
       </div>
@@ -92,11 +92,11 @@ ob_start();
         <span class="info-box-icon"><i class="fa fa-home"></i></span>
         <div class="info-box-content">
           <span class="info-box-text">Net</span>
-          <span class="info-box-number"><?= $commandsNet = htmlspecialchars($commandsTotal['sumPriseCmd']) - htmlspecialchars($commandsTotal['sumDepCmd']); ?></span>
+          <span class="info-box-number"><?= $commandsNet = htmlspecialchars($commandsTotal['sumPriseCmd']) - htmlspecialchars($commandsTotal['sumDepCmd']); ?> €</span>
           <div class="progress">
             <div class="progress-bar" style="width: <?= $percentsCmdNet = intval(($commandsNet/htmlspecialchars($commandsTotal['sumPriseCmd']))*100);?>%"></div>
           </div>
-          <span class="progress-description"><?= $percentsCmdNet;?> % of whole gain</span>
+          <span class="progress-description"><?= $percentsCmdNet;?> % de gain total</span>
         </div>
         <!-- /.info-box-content -->
       </div>
@@ -107,12 +107,12 @@ ob_start();
       <div class="info-box bg-yellow">
         <span class="info-box-icon"><i class="fa fa-money"></i></span>
         <div class="info-box-content">
-          <span class="info-box-text">Depenses</span>
+          <span class="info-box-text">Dépenses</span>
           <span class="info-box-number"><?= htmlspecialchars($commandsTotal['sumDepCmd']); ?> €</span>
           <div class="progress">
             <div class="progress-bar" style="width: <?= $percentsCmdDep = intval((htmlspecialchars($commandsTotal['sumDepCmd'])/htmlspecialchars($commandsTotal['sumPriseCmd']))*100);  ?>%"></div>
           </div>
-          <span class="progress-description"><?= $percentsCmdDep;  ?> % of whole gains</span>
+          <span class="progress-description"><?= $percentsCmdDep;  ?> % de gain total</span>
         </div>
         <!-- /.info-box-content -->
       </div>

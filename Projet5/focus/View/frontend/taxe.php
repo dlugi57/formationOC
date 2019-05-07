@@ -31,10 +31,10 @@ ob_start();
           <p class="text-muted text-center"><?= htmlspecialchars($taxe['tax_date']) ?></p>
 
           <hr>
-          <strong><i class="fa fa-money margin-r-5"></i> Declare</strong>
+          <strong><i class="fa fa-money margin-r-5"></i> Déclaré</strong>
           <p><?= htmlspecialchars($taxe['tax_declare']) ?> €</p>
           <hr>
-          <strong><i class="fa fa-eur margin-r-5"></i> Paie</strong>
+          <strong><i class="fa fa-eur margin-r-5"></i> Paié</strong>
           <p><?= htmlspecialchars($taxe['tax_paid']) ?> €</p>
           <hr>
           <strong><i class="fa fa-calculator margin-r-5"></i> Reste</strong>

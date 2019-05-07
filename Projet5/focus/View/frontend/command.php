@@ -17,7 +17,7 @@ ob_start();
         <span class="info-box-icon bg-aqua"><i class="fa fa-eur"></i></span>
         <div class="info-box-content">
           <span class="info-box-text">Brut</span>
-          <span class="info-box-number"><?= $command['prise_command']; ?></span>
+          <span class="info-box-number"><?= $command['prise_command']; ?> €</span>
         </div>
         <!-- /.info-box-content -->
       </div>
@@ -28,11 +28,11 @@ ob_start();
         <span class="info-box-icon"><i class="fa fa-home"></i></span>
         <div class="info-box-content">
           <span class="info-box-text">Net</span>
-          <span class="info-box-number"><?= $commandNet = htmlspecialchars($command['prise_command']) - htmlspecialchars($command['cost_command']); ?></span>
+          <span class="info-box-number"><?= $commandNet = htmlspecialchars($command['prise_command']) - htmlspecialchars($command['cost_command']); ?> €</span>
           <div class="progress">
             <div class="progress-bar" style="width: <?= $percentCmdNet = intval(($commandNet/htmlspecialchars($command['prise_command']))*100);?>%"></div>
           </div>
-          <span class="progress-description"><?= $percentCmdNet;?> % of whole gain</span>
+          <span class="progress-description"><?= $percentCmdNet;?> % de gain total</span>
         </div>
         <!-- /.info-box-content -->
       </div>
@@ -43,12 +43,12 @@ ob_start();
       <div class="info-box bg-yellow">
         <span class="info-box-icon"><i class="fa fa-money"></i></span>
         <div class="info-box-content">
-          <span class="info-box-text">Depenses</span>
+          <span class="info-box-text">Dépenses</span>
           <span class="info-box-number"><?= htmlspecialchars($command['cost_command']); ?> €</span>
           <div class="progress">
             <div class="progress-bar" style="width: <?= $percentCmdDep = intval((htmlspecialchars($command['cost_command'])/htmlspecialchars($command['prise_command']))*100);  ?>%"></div>
           </div>
-          <span class="progress-description"><?= $percentCmdDep;  ?> % of whole gains</span>
+          <span class="progress-description"><?= $percentCmdDep;  ?> % de gain total</span>
         </div>
         <!-- /.info-box-content -->
       </div>
@@ -59,7 +59,7 @@ ob_start();
       <div class="info-box">
         <span class="info-box-icon bg-red"><i class="fa fa-calculator"></i></span>
         <div class="info-box-content">
-          <span class="info-box-text">Qty</span>
+          <span class="info-box-text">Type</span>
           <span class="info-box-number"><?= htmlspecialchars($command['nom_type_command']) ?></span>
         </div>
         <!-- /.info-box-content -->
@@ -91,9 +91,9 @@ ob_start();
 
           <strong><i class="fa fa-money margin-r-5"></i> Prix</strong>
           <p>
-            Gagne : <?= htmlspecialchars($command['prise_command']) ?> €
+            Gagné : <?= htmlspecialchars($command['prise_command']) ?> €
             <br>
-            Depenses : <?= htmlspecialchars($command['cost_command']) ?> €
+            Dépenses : <?= htmlspecialchars($command['cost_command']) ?> €
           </p>
           <hr>
 

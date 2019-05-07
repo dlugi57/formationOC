@@ -47,7 +47,7 @@
   <!-- /.box-body -->
   <div class="box-footer clearfix">
     <a href="index.php?action=addSeancePage" class="btn btn-sm btn-danger btn-flat pull-left">Ajouter Séance</a>
-    <a href="index.php?action=listSeances" class="btn btn-sm btn-default btn-flat pull-right">Séances List</a>
+    <a href="index.php?action=listSeances" class="btn btn-sm btn-default btn-flat pull-right">Liste des séances</a>
   </div>
   <!-- /.box-footer -->
 </div>

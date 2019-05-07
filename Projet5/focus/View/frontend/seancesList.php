@@ -18,7 +18,7 @@ ob_start();
     <section class="col-md-12">
       <div class="box box-primary">
         <div class="box-header">
-          <h3 class="box-title">Liste de séances</h3>
+          <h3 class="box-title">Liste des séances</h3>
           <div class="pull-right box-tools">
             <a type="button" href="index.php?action=addSeancePage" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Ajouter séance</a>
           </div>
@@ -34,14 +34,14 @@ ob_start();
               <th>Date</th>
               <th>Heure</th>
               <th>Prix</th>
-              <th>Model</th>
+              <th>Modèle</th>
               <th>Ville</th>
               <th>Adresse</th>
               <th>KM</th>
-              <th>Depenses</th>
+              <th>Dépenses</th>
               <th>Net</th>
               <th>Description</th>
-              <th>Creation Date</th>
+              <th>Date de création</th>
             </tr>
             </thead>
             <tbody>
@@ -76,14 +76,14 @@ ob_start();
               <th>Date</th>
               <th>Heure</th>
               <th>Prix</th>
-              <th>Model</th>
+              <th>Modèle</th>
               <th>Ville</th>
               <th>Adresse</th>
               <th>KM</th>
-              <th>Depenses</th>
+              <th>Dépenses</th>
               <th>Net</th>
               <th>Description</th>
-              <th>Creation Date</th>
+              <th>Date de création</th>
             </tr>
             </tfoot>
           </table>
@@ -97,7 +97,7 @@ ob_start();
         <div class="col-md-12">
           <div class="box box-danger">
             <div class="box-header with-border">
-              <h3 class="box-title">Séance rapport</h3>
+              <h3 class="box-title">Rapport de séance</h3>
 
               <div class="box-tools pull-right">
                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -153,7 +153,7 @@ ob_start();
                 <div class="col-sm-3 col-xs-6">
                   <div class="description-block border-right">
                     <h5 class="description-header"><?= htmlspecialchars($cashSummarySeance['sumPrise']) ?> €</h5>
-                    <span class="description-text">TOTAL REVENUE</span>
+                    <span class="description-text">TOTAL REVENUES</span>
                   </div>
                   <!-- /.description-block -->
                 </div>
@@ -161,7 +161,7 @@ ob_start();
                 <div class="col-sm-3 col-xs-6">
                   <div class="description-block border-right">
                     <h5 class="description-header"><?= intval($depSeance = htmlspecialchars($cashSummarySeance['sumDep']) + (htmlspecialchars($cashSummarySeance['sumKm'])*0.15)) ?> €</h5>
-                    <span class="description-text">TOTAL COST</span>
+                    <span class="description-text">TOTAL FRAIS</span>
                   </div>
                   <!-- /.description-block -->
                 </div>
@@ -169,7 +169,7 @@ ob_start();
                 <div class="col-sm-3 col-xs-6">
                   <div class="description-block border-right">
                     <h5 class="description-header"><?= intval($netSeance = htmlspecialchars($cashSummarySeance['sumPrise']) - (htmlspecialchars($cashSummarySeance['sumDep']) + (htmlspecialchars($cashSummarySeance['sumKm'])*0.15))) ?> €</h5>
-                    <span class="description-text">TOTAL PROFIT</span>
+                    <span class="description-text">TOTAL GAINS</span>
                   </div>
                   <!-- /.description-block -->
                 </div>

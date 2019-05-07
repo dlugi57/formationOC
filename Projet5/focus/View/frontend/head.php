@@ -8,30 +8,19 @@
 <link rel="stylesheet" href="Public/adminLte/font-awesome/css/font-awesome.min.css">
 <!-- Ionicons -->
 <link rel="stylesheet" href="Public/adminLte/Ionicons/css/ionicons.min.css">
-<!-- Select2                                                              dont errase-->
+<!-- Select2 -->
 <link rel="stylesheet" href="Public/adminLte/select2/dist/css/select2.min.css">
-<!-- Bootstrap time Picker                                                           -->
+<!-- Bootstrap time Picker -->
 <link rel="stylesheet" href="Public/adminLte/timepicker/bootstrap-timepicker.min.css">
 <!-- Theme style -->
 <link rel="stylesheet" href="Public/adminLte/AdminLTE.css">
-<!-- AdminLTE Skins. Choose a skin from the css/skins
-     folder instead of downloading all of them to reduce the load. -->
+<!-- AdminLTE Skins. -->
 <link rel="stylesheet" href="Public/adminLte/skins/skin-blue.min.css">
-<!-- Morris chart -->
-<!--<link rel="stylesheet" href="Public/bower_components/morris.js/morris.css">-->
-<!-- jvectormap -->
-<!--<link rel="stylesheet" href="Public/bower_components/jvectormap/jquery-jvectormap.css">-->
 <!-- Date Picker -->
 <link rel="stylesheet" href="Public/adminLte/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
-
-<!--<link rel="stylesheet" href="Public/bower_components/bootstrap-daterangepicker/daterangepicker.css">-->
-<!-- bootstrap wysihtml5 - text editor -->
-<!--<link rel="stylesheet" href="Public/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">-->
-
-<!-- Main CSS -->
 <!-- DataTables -->
 <link rel="stylesheet" href="Public/adminLte/datatables.net-bs/css/dataTables.bootstrap.min.css">
-
+<!-- Main CSS -->
 <link rel="stylesheet" href="Public/css/styles.css">
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->

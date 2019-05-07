@@ -18,7 +18,7 @@ ob_start();
     <section class="col-md-12">
       <div class="box box-danger">
         <div class="box-header">
-          <h3 class="box-title">Liste de tax</h3>
+          <h3 class="box-title">Liste de taxe</h3>
           <div class="pull-right box-tools">
             <a type="button" href="index.php?action=addTaxesPage" class="btn btn-danger pull-right"><i class="fa fa-plus"></i> Ajouter tax</a>
           </div>
@@ -30,12 +30,12 @@ ob_start();
             <thead>
             <tr>
               <th>Mois</th>
-              <th>Declared</th>
-              <th>Paid</th>
-              <th>Percents</th>
+              <th>Déclaré</th>
+              <th>Payé</th>
+              <th>Pourcentages</th>
               <th>Description</th>
-              <th>Anne</th>
-              <th>Date ajout</th>
+              <th>Année</th>
+              <th>Date d'ajout</th>
             </tr>
             </thead>
             <tbody>
@@ -60,12 +60,12 @@ ob_start();
             <tfoot>
             <tr>
               <th>Mois</th>
-              <th>Declared</th>
-              <th>Paid</th>
-              <th>Percents</th>
+              <th>Déclaré</th>
+              <th>Payé</th>
+              <th>Pourcentages</th>
               <th>Description</th>
-              <th>Anne</th>
-              <th>Date ajout</th>
+              <th>Année</th>
+              <th>Date d'ajout</th>
             </tr>
             </tfoot>
           </table>
@@ -81,7 +81,7 @@ ob_start();
       <div class="info-box bg-green">
         <span class="info-box-icon"><i class="fa fa-balance-scale"></i></span>
         <div class="info-box-content">
-          <span class="info-box-text">Declare</span>
+          <span class="info-box-text">Déclaré</span>
           <span class="info-box-number"><?= htmlspecialchars($totalTaxes['sumDeclaredTax']) ?> €</span>
           <div class="progress">
             <div class="progress-bar" style="width: 100%"></div>
@@ -97,12 +97,12 @@ ob_start();
       <div class="info-box bg-red">
         <span class="info-box-icon"><i class="fa fa-money"></i></span>
         <div class="info-box-content">
-          <span class="info-box-text">Paye</span>
+          <span class="info-box-text">Payé</span>
           <span class="info-box-number"><?= htmlspecialchars($totalTaxes['sumPaidTax']) ?> €</span>
           <div class="progress">
             <div class="progress-bar" style="width: <?= $percentsTax = intval((htmlspecialchars($totalTaxes['sumPaidTax'])/htmlspecialchars($totalTaxes['sumDeclaredTax']))*100);  ?>%"></div>
           </div>
-          <span class="progress-description"><?= $percentsTax;  ?> % of whole declared</span>
+          <span class="progress-description"><?= $percentsTax;  ?> % de l'ensemble déclaré</span>
         </div>
         <!-- /.info-box-content -->
       </div>

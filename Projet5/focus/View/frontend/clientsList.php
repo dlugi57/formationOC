@@ -18,7 +18,7 @@ ob_start();
     <section class="col-md-12">
       <div class="box box-primary">
         <div class="box-header">
-          <h3 class="box-title">Liste de clients</h3>
+          <h3 class="box-title">Liste des clients</h3>
           <div class="pull-right box-tools">
             <a type="button" href="index.php?action=addClientPage" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Ajouter client</a>
           </div>
@@ -30,12 +30,12 @@ ob_start();
             <thead>
             <tr>
               <th>Nom</th>
-              <th>Tel</th>
+              <th>Téléphone</th>
               <th>Email</th>
               <th>Ville</th>
               <th>Adresse</th>
               <th>CP</th>
-              <th>Contacte par</th>
+              <th>Contact via</th>
               <th>Description</th>
               <th>Date</th>
             </tr>
@@ -64,12 +64,12 @@ ob_start();
             <tfoot>
             <tr>
               <th>Nom</th>
-              <th>Tel</th>
+              <th>Téléphone</th>
               <th>Email</th>
               <th>Ville</th>
               <th>Adresse</th>
               <th>CP</th>
-              <th>Contacte par</th>
+              <th>Contact via</th>
               <th>Description</th>
               <th>Date</th>
             </tr>
@@ -78,10 +78,8 @@ ob_start();
           </div>
         </div>
         <!-- /.box-body -->
-
       </div>
       <!-- /.box -->
-
     </section>
     <!-- /.Main col -->
   </div>

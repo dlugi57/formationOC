@@ -120,7 +120,7 @@ ob_start();
         <!-- /.box-body -->
         <div class="box-footer clearfix">
           <a href="index.php?action=addSeancePage&amp;id=<?= $client['id_client'] ?>" class="btn btn-sm btn-danger btn-flat pull-left">Ajouter Séance</a>
-          <a href="index.php?action=listSeances" class="btn btn-sm btn-default btn-flat pull-right">Séances List</a>
+          <a href="index.php?action=listSeances" class="btn btn-sm btn-default btn-flat pull-right">Liste des séances</a>
         </div>
         <!-- /.box-footer -->
       </div>
@@ -129,7 +129,7 @@ ob_start();
       <!-- TABLE: COMMANDS -->
       <div class="box box-danger">
         <div class="box-header with-border">
-          <h3 class="box-title">Commands</h3>
+          <h3 class="box-title">Commandes</h3>
 
           <div class="box-tools pull-right">
             <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -144,8 +144,8 @@ ob_start();
               <thead>
               <tr>
                 <th>Type</th>
-                <th>Prise</th>
-                <th>Cost</th>
+                <th>Prix</th>
+                <th>Dépenses</th>
                 <th>Net</th>
                 <th>Description</th>
                 <th>Date</th>
@@ -175,8 +175,8 @@ ob_start();
         </div>
         <!-- /.box-body -->
         <div class="box-footer clearfix">
-          <a href="index.php?action=addCommandPage&amp;id=<?= $client['id_client'] ?>" class="btn btn-sm btn-danger btn-flat pull-left">Ajouter Command</a>
-          <a href="index.php?action=listCommands" class="btn btn-sm btn-default btn-flat pull-right">Commands List</a>
+          <a href="index.php?action=addCommandPage&amp;id=<?= $client['id_client'] ?>" class="btn btn-sm btn-danger btn-flat pull-left">Ajouter Commande</a>
+          <a href="index.php?action=listCommands" class="btn btn-sm btn-default btn-flat pull-right">Liste des commandes</a>
         </div>
         <!-- /.box-footer -->
       </div>

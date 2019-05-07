@@ -103,7 +103,7 @@ class Dashboard
 
         if ($monthSeancesCmd === false):
 
-            throw new Exception('Impossible d\'afficher le month brut contenue!');
+            throw new Exception('Impossible d\'afficher le month net contenue!');
 
         else:
 

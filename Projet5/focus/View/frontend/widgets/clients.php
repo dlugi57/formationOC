@@ -1,9 +1,7 @@
-<!-- TABLE: LATEST ORDERS -->
-
+<!-- TABLE: Clients -->
 <div class="box box-warning">
   <div class="box-header with-border">
     <h3 class="box-title">Clients</h3>
-
     <div class="box-tools pull-right">
       <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
       </button>
@@ -19,7 +17,7 @@
           <th>Nom</th>
           <th>Telephone</th>
           <th>Email</th>
-          <th>Contact par</th>
+          <th>Contact Via</th>
           <th>Ville</th>
         </tr>
         </thead>
@@ -49,7 +47,7 @@
 
     <ul class="pagination pagination-sm no-margin pull-right">
       <li><a class="prevBlockDashboard">&laquo;</a></li>
-      <li><a href="index.php?action=listClients" class="btn btn-sm btn-default btn-flat">Clients List</a></li>
+      <li><a href="index.php?action=listClients" class="btn btn-sm btn-default btn-flat">Liste des clients</a></li>
       <li><a class="nextBlockDashboard">&raquo;</a></li>
     </ul>
   </div>

@@ -14,8 +14,8 @@
       <tr>
         <th style="width: 10px">Qty</th>
         <th>Mois</th>
-        <th>Gagne</th>
-        <th style="width: 40px">Cash</th>
+        <th>Gagné</th>
+        <th style="width: 40px">Argent</th>
       </tr>
       <?php
       while ($data = $sumMonthCmd->fetch())
@@ -67,8 +67,8 @@
   </div>
   <!-- /.box-body -->
   <div class="box-footer clearfix">
-    <a href="index.php?action=addCommandPage" class="btn btn-sm btn-info btn-flat pull-left">Ajouter command</a>
-    <a href="index.php?action=listCommands" class="btn btn-sm btn-default btn-flat pull-right">Commands List</a>
+    <a href="index.php?action=addCommandPage" class="btn btn-sm btn-info btn-flat pull-left">Ajouter commande</a>
+    <a href="index.php?action=listCommands" class="btn btn-sm btn-default btn-flat pull-right">Liste des commandes</a>
   </div>
   <!-- /.box-footer -->
 </div>

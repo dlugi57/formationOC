@@ -30,7 +30,7 @@ ob_start();
           </div>
           <!-- Telephone -->
           <div class="form-group">
-            <label>Telephone</label>
+            <label>Téléphone</label>
             <div class="input-group">
               <div class="input-group-addon">
                 <i class="fa fa-phone"></i>
@@ -67,7 +67,7 @@ ob_start();
             <input name="city" value="<?= htmlspecialchars($modifyClient['city']) ?>" type="text" class="form-control" maxlength="250">
           </div>
           <div class="form-group">
-            <label>Code postale</label>
+            <label>Code postal</label>
             <input name="post_code" value="<?= htmlspecialchars($modifyClient['post_code']) ?>" type="text" class="form-control addClientPost" data-inputmask='"mask": "99999"' data-mask>
             <span class="help-block"></span>
           </div>
@@ -77,7 +77,7 @@ ob_start();
         <!--/.row-->
         <!-- select -->
         <div class="form-group">
-          <label>Contacte par</label>
+          <label>Contact Via</label>
           <select name="contact_by" class="form-control">
             <option value="<?= $modifyClient['id_contact_by'] ?>" selected="selected"><?= htmlspecialchars($modifyClient['nom_contact_by']) ?></option>
 

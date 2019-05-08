@@ -29,12 +29,11 @@ ob_start();
                 <option value="<?= $modifyCommand['id_client'] ?>" selected="selected"><?= htmlspecialchars($modifyCommand['name']) ?></option>
                 <?php
 
-                while ($data = $modifyCommandClients->fetch())
-                {
+                while ($data = $modifyCommandClients->fetch()):
                   ?>
                   <option value="<?= $data['id_client'] ?>"><?= htmlspecialchars($data['name']) ?></option>
                   <?php
-                }
+                endwhile;
                 ?>
               </select>
               <span class="help-block"></span>
@@ -46,12 +45,11 @@ ob_start();
               <select name="type_command" class="form-control">
                 <option value="<?= $modifyCommand['id_type_command'] ?>" selected="selected"><?= htmlspecialchars($modifyCommand['nom_type_command']) ?></option>
                 <?php
-                while ($data = $modifyCommandType->fetch())
-                {
+                while ($data = $modifyCommandType->fetch()):
                   ?>
                   <option value="<?= $data['id_type_command'] ?>"><?= htmlspecialchars($data['nom_type_command']) ?></option>
                   <?php
-                }
+                endwhile;
                  ?>
               </select>
             </div>

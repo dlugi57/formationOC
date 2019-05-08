@@ -23,8 +23,7 @@
         </thead>
         <tbody>
           <?php
-          while ($client = $clientsList->fetch())
-          {
+          while ($client = $clientsList->fetch()):
             ?>
             <tr class='clickableRowClient pagination_dashboard_' data-href='index.php?action=client&amp;id=<?= $client['id_client'] ?>'>
               <td><?= htmlspecialchars($client['name']) ?></td>
@@ -34,7 +33,7 @@
               <td><?= htmlspecialchars($client['city']) ?></td>
             </tr>
             <?php
-          }
+          endwhile;
            ?>
         </tbody>
       </table>

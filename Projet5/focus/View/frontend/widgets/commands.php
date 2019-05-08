@@ -18,8 +18,7 @@
         <th style="width: 40px">Argent</th>
       </tr>
       <?php
-      while ($data = $sumMonthCmd->fetch())
-      {
+      while ($data = $sumMonthCmd->fetch()):
         $monthNameEng = date('F', mktime(0, 0, 0, $data['month'], 10));
         setlocale (LC_TIME, 'fr_FR.utf8','fra');
         $monthName = utf8_encode(strftime( "%B", strtotime($monthNameEng)));
@@ -61,7 +60,7 @@
           <td><span class="badge <?= $colorPercents ?>"><?= $gainedCmd?>/<?= htmlspecialchars($data['cash'])?></span></td>
         </tr>
         <?php
-      }
+      endwhile;
       ?>
     </table>
   </div>

@@ -29,12 +29,11 @@ ob_start();
                 <option value="<?= $modifySeance['id_client'] ?>" selected="selected"><?= htmlspecialchars($modifySeance['name']) ?></option>
                 <?php
 
-                while ($data = $modifySeanceClients->fetch())
-                {
+                while ($data = $modifySeanceClients->fetch()):
                   ?>
                   <option value="<?= $data['id_client'] ?>"><?= htmlspecialchars($data['name']) ?></option>
                   <?php
-                }
+                endwhile;
                 ?>
               </select>
               <span class="help-block"></span>
@@ -45,12 +44,11 @@ ob_start();
               <select name="type" class="form-control">
                 <option value="<?= $modifySeance['id_type_seance'] ?>" selected="selected"><?= htmlspecialchars($modifySeance['nom_type']) ?></option>
                 <?php
-                while ($data = $modifySeanceType->fetch())
-                {
+                while ($data = $modifySeanceType->fetch()):
                   ?>
                   <option value="<?= $data['id_type_seance'] ?>"><?= htmlspecialchars($data['nom_type']) ?></option>
                   <?php
-                }
+                endwhile;
                  ?>
               </select>
             </div>

@@ -25,8 +25,7 @@
         </thead>
         <tbody>
           <?php
-          while ($seance = $seancesList->fetch())
-          {
+          while ($seance = $seancesList->fetch()):
             ?>
             <tr class='clickableRowClient' data-href='index.php?action=seance&amp;id=<?= htmlspecialchars($seance['id_seance']) ?>'>
               <td><?= htmlspecialchars($seance['name']) ?></td>
@@ -37,7 +36,7 @@
               <td><?= htmlspecialchars($seance['prise']) ?> €</td>
             </tr>
             <?php
-          }
+          endwhile;
           ?>
         </tbody>
       </table>

@@ -80,12 +80,11 @@ ob_start();
           <label>Contacte par</label>
           <select name="contact_by" class="form-control">
             <?php
-            while ($data = $newClientPage->fetch())
-            {
+            while ($data = $newClientPage->fetch()):
               ?>
               <option value="<?= $data['id_contact_by'] ?>"><?= htmlspecialchars($data['nom_contact_by']) ?></option>
               <?php
-            }
+            endwhile;
              ?>
           </select>
         </div>

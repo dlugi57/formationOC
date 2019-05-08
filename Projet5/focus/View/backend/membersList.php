@@ -43,8 +43,7 @@ ob_start();
               </thead>
               <tbody>
                 <?php
-                while ($data = $members->fetch())
-                {
+                while ($data = $members->fetch()):
                   if ($data['admin'] == 0):
                     $statusColor = "label-danger";
                     $statusName = "demandeur";
@@ -70,7 +69,7 @@ ob_start();
                     <td> <a data-href="index.php?action=removeMember&amp;id=<?= $data['id'] ?>" data-toggle="modal" data-target="#modalShow"><i class="fa fa-trash-o" style='color:red'></i></a> </td>
                   </tr>
                   <?php
-                }
+                endwhile;
                  ?>
               </tbody>
             </table>

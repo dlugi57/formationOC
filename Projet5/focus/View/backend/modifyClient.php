@@ -82,12 +82,11 @@ ob_start();
             <option value="<?= $modifyClient['id_contact_by'] ?>" selected="selected"><?= htmlspecialchars($modifyClient['nom_contact_by']) ?></option>
 
             <?php
-            while ($data = $modifyClientContact->fetch())
-            {
+            while ($data = $modifyClientContact->fetch()):
               ?>
               <option value="<?= $data['id_contact_by'] ?>"><?= htmlspecialchars($data['nom_contact_by']) ?></option>
               <?php
-            }
+            endwhile;
              ?>
           </select>
         </div>

@@ -16,14 +16,11 @@ class Focus
     {
         $clientsManager = new ClientManager();
         $clients = $clientsManager->getClients();
+
         if ($clients === false):
-
             throw new Exception('Impossible d\'afficher le contenue de clients list !');
-
         else:
-
             require('View/frontend/clientsList.php');
-
         endif;
     }
 
@@ -37,13 +34,9 @@ class Focus
         $command = $commandsManager->getClientCommand($_GET['id']);
 
         if ($client === false || $seance === false || $command === false):
-
             throw new Exception('Impossible d\'afficher le client contenue !');
-
         else:
-
             require('View/frontend/client.php');
-
         endif;
     }
 
@@ -58,18 +51,14 @@ class Focus
         $cashSummarySeance = $seancesManager->totals();
         $monthSeances = $seancesManager->monthSeances();
 
-
         if ($seances === false || $cashTypeSeance === false || $cashSummarySeance === false || $monthSeances === false):
-
             throw new Exception('Impossible d\'afficher le listSeances contenue !');
-
         else:
-
             $resultsMonthSeance = array();
             $resultsSeancesCash = array();
             $resultsSeancesDepenses = array();
-            while ($data = $monthSeances->fetch()):
 
+            while ($data = $monthSeances->fetch()):
                 $monthNum  = htmlspecialchars($data['month']);
                 $monthName = date('F', mktime(0, 0, 0, $monthNum, 10));
                 $depensesSeance = htmlspecialchars($data['drove']) * 0.15 +htmlspecialchars($data['paied']);
@@ -80,7 +69,6 @@ class Focus
             endwhile;
 
             require('View/frontend/seancesList.php');
-
         endif;
     }
 
@@ -88,13 +76,11 @@ class Focus
     {
         $seancesManager = new SeanceManager();
         $seance = $seancesManager->getSeance($_GET['id']);
-        if ($seance === false):
 
+        if ($seance === false):
             throw new Exception('Impossible d\'afficher le seance contenue !');
         else:
-
             require('View/frontend/seance.php');
-
         endif;
     }
 
@@ -108,13 +94,9 @@ class Focus
         $commandsTotal = $commandsManager->totalsCmd();
 
         if ($commands === false || $commandsTotal === false):
-
             throw new Exception('Impossible d\'afficher le listCommands contenue !');
-
         else:
-
             require('View/frontend/commandsList.php');
-
         endif;
     }
 
@@ -124,13 +106,9 @@ class Focus
         $command = $commandsManager->getCommand($_GET['id']);
 
         if ($command === false):
-
             throw new Exception('Impossible d\'afficher le command contenue !');
-
         else:
-
             require('View/frontend/command.php');
-
         endif;
     }
 
@@ -142,16 +120,12 @@ class Focus
         $taxesManager = new TaxesManager();
         $taxes = $taxesManager->getTaxes();
         $totalTaxes = $taxesManager->totalsTax();
+
         if ($taxes === false || $totalTaxes === false):
-
             throw new Exception('Impossible d\'afficher le listTaxes contenue !');
-
         else:
-
             require('View/frontend/taxesList.php');
-
         endif;
-
     }
 
     public function taxe()
@@ -160,13 +134,9 @@ class Focus
         $taxe = $taxesManager->getTaxe($_GET['id']);
 
         if ($taxe === false):
-
             throw new Exception('Impossible d\'afficher le contenue !');
-
         else:
-
             require('View/frontend/taxe.php');
-
         endif;
     }
 

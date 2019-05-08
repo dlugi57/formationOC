@@ -1,11 +1,6 @@
 <?php
 namespace Controller;
 
-//require_once "Model/ClientManager.php";
-//require_once "Model/SeanceManager.php";
-//require_once "Model/CommandManager.php";
-//require_once "Model/TaxesManager.php";
-
 use Model\SeanceManager;
 use Model\ClientManager;
 use Model\CommandManager;
@@ -51,25 +46,15 @@ class Dashboard
         $facebook = Dashboard::facebook();
 
         if ($countClients === false || $countSeances === false):
-
             throw new Exception('Impossible d\'afficher le widgets contenue !');
-
         elseif($contactBy === false || $clientsList === false) :
-
             throw new Exception('Impossible d\'afficher le client contenue !');
-
         elseif($countFutureSeances === false || $sumBrutSeances === false || $typeSession === false || $seancesList === false) :
-
             throw new Exception('Impossible d\'afficher le seance contenue !');
-
         elseif($sumMonthCmd === false) :
-
             throw new Exception('Impossible d\'afficher le command contenue !');
-
         else:
-
             require('View/frontend/dashboard.php');
-
         endif;
     }
 
@@ -79,15 +64,13 @@ class Dashboard
         $monthSeancesCmd = $seancesManager->monthSeancesCmd();
 
         if ($monthSeancesCmd === false):
-
             throw new Exception('Impossible d\'afficher le month brut contenue !');
-
         else:
-
             $resultsMonthCash = array();
+
             while ($data = $monthSeancesCmd->fetch()):
-              $entrance = htmlspecialchars($data['seance_cash']) + htmlspecialchars($data['cmd_cash']);
-              array_push($resultsMonthCash, intval($entrance));
+                $entrance = htmlspecialchars($data['seance_cash']) + htmlspecialchars($data['cmd_cash']);
+                array_push($resultsMonthCash, intval($entrance));
             endwhile;
 
             return $resultsMonthCash;
@@ -101,19 +84,18 @@ class Dashboard
         $monthSeancesCmd = $seancesManager->monthSeancesCmd();
 
         if ($monthSeancesCmd === false):
-
             throw new Exception('Impossible d\'afficher le month net contenue!');
-
         else:
+            $resultsMonthCashNet = array();
 
-          $resultsMonthCashNet = array();
-          while ($data = $monthSeancesCmd->fetch()):
-            $depenses = htmlspecialchars($data['seances_km']) * 0.15 + htmlspecialchars($data['cmd_km']) * 0.15 + htmlspecialchars($data['seance_depense']) + htmlspecialchars($data['cmd_depense']);
-            $entrance = htmlspecialchars($data['seance_cash']) + htmlspecialchars($data['cmd_cash']);
-            $cashNet = $entrance - $depenses;
-            array_push($resultsMonthCashNet,intval($cashNet));
-          endwhile;
-          return $resultsMonthCashNet;
+            while ($data = $monthSeancesCmd->fetch()):
+                $depenses = htmlspecialchars($data['seances_km']) * 0.15 + htmlspecialchars($data['cmd_km']) * 0.15 + htmlspecialchars($data['seance_depense']) + htmlspecialchars($data['cmd_depense']);
+                $entrance = htmlspecialchars($data['seance_cash']) + htmlspecialchars($data['cmd_cash']);
+                $cashNet = $entrance - $depenses;
+                array_push($resultsMonthCashNet,intval($cashNet));
+            endwhile;
+
+            return $resultsMonthCashNet;
 
         endif;
     }
@@ -124,15 +106,14 @@ class Dashboard
         $monthSeances = $seancesManager->monthSeances();
 
         if ($monthSeances === false):
-
             throw new Exception('Impossible d\'afficher le monthBySeances contenue!');
-
         else:
-
             $resultsNbSeance = array();
             while ($data = $monthSeances->fetch()):
-              array_push($resultsNbSeance,intval(htmlspecialchars($data['nb'])));
+
+                array_push($resultsNbSeance,intval(htmlspecialchars($data['nb'])));
             endwhile;
+
             return $resultsNbSeance;
 
         endif;
@@ -144,19 +125,18 @@ class Dashboard
         $monthClients = $clientsManager->monthClients();
 
         if ($monthClients === false):
-
             throw new Exception('Impossible d\'afficher le monthList contenue!');
-
         else:
-
             $resultsMonth = array();
+
             while ($data = $monthClients->fetch()):
-              $monthNum  = htmlspecialchars($data['month']);
-              $monthNameEng = date('F', mktime(0, 0, 0, $monthNum, 10));
-              setlocale (LC_TIME, 'fr_FR.utf8','fra');
-              $monthName = utf8_encode(strftime( "%B", strtotime($monthNameEng)));
-              array_push($resultsMonth, ucfirst($monthName));
+                $monthNum  = htmlspecialchars($data['month']);
+                $monthNameEng = date('F', mktime(0, 0, 0, $monthNum, 10));
+                setlocale (LC_TIME, 'fr_FR.utf8','fra');
+                $monthName = utf8_encode(strftime( "%B", strtotime($monthNameEng)));
+                array_push($resultsMonth, ucfirst($monthName));
             endwhile;
+
             return $resultsMonth;
 
         endif;
@@ -168,15 +148,14 @@ class Dashboard
         $monthClients = $clientsManager->monthClients();
 
         if ($monthClients === false):
-
             throw new Exception('Impossible d\'afficher le monthClients contenue!');
-
         else:
-
             $resultsNb = array();
+
             while ($data = $monthClients->fetch()):
-              array_push($resultsNb,intval(htmlspecialchars($data['nb'])));
+                array_push($resultsNb,intval(htmlspecialchars($data['nb'])));
             endwhile;
+
             return $resultsNb;
 
         endif;
@@ -188,16 +167,15 @@ class Dashboard
         $monthPaiedTax = $taxesManager->monthPaiedTax();
 
         if ($monthPaiedTax === false):
-
             throw new Exception('Impossible d\'afficher le monthTax contenue!');
-
         else:
-
             $resultsMonthPaiedTax = array();
+
             while ($data = $monthPaiedTax->fetch()):
-              $sumTax  = htmlspecialchars($data['taxesMonth']);
-              array_push($resultsMonthPaiedTax, intval($sumTax));
+                $sumTax  = htmlspecialchars($data['taxesMonth']);
+                array_push($resultsMonthPaiedTax, intval($sumTax));
             endwhile;
+
             return $resultsMonthPaiedTax;
 
         endif;
@@ -213,11 +191,8 @@ class Dashboard
         $sumTaxes = $taxesManager->totalsTax();
 
         if ($sumNetSeances === false || $sumNetCmd === false || $sumTaxes === false):
-
             throw new Exception('Impossible d\'afficher le sumNet contenue!');
-
         else:
-
             $summarySeances = htmlspecialchars($sumNetSeances['sumPrise']) - htmlspecialchars($sumNetSeances['sumDep']) - (htmlspecialchars($sumNetSeances['sumKm']) * 0.15);
             $sumaryCmd = htmlspecialchars($sumNetCmd['sumPriseCmd']) - htmlspecialchars($sumNetCmd['sumDepCmd']);
             $summary = $summarySeances + $sumaryCmd - htmlspecialchars($sumTaxes['sumPaidTax']);
@@ -235,12 +210,10 @@ class Dashboard
         $sumBrutCmd = $commandsManager->totalsCmd();
 
         if ($sumBrutSeances === false || $sumBrutCmd === false):
-
             throw new Exception('Impossible d\'afficher le sumNet contenue!');
-
         else:
-
             $summary = htmlspecialchars($sumBrutSeances['sumPrise']) + htmlspecialchars($sumBrutCmd['sumPriseCmd']);
+            
             return $summary;
 
         endif;

@@ -54,18 +54,20 @@ class FocusGallery
     function removePhoto()
     {
       if (isset($_GET['file'])):
-        $filename = $_GET['file'];
-        if (file_exists($filename)):
-          unlink($filename);
-          $errorMsg = 'Photo '.$filename.' a été supprime';
-          header('Location: ?action=addPhotoPage&error='. urlencode($errorMsg) .'');
-        else:
-          $errorMsg = 'Impossible de supprimer '.$filename.', fichier ne existe pas';
-          header('Location: ?action=addPhotoPage&error='. urlencode($errorMsg) .'');
-        endif;
+          $filename = $_GET['file'];
+
+          if (file_exists($filename)):
+              unlink($filename);
+              $errorMsg = 'Photo '.$filename.' a été supprime';
+              header('Location: ?action=addPhotoPage&error='. urlencode($errorMsg) .'');
+          else:
+              $errorMsg = 'Impossible de supprimer '.$filename.', fichier ne existe pas';
+              header('Location: ?action=addPhotoPage&error='. urlencode($errorMsg) .'');
+          endif;
+
       else:
-        $errorMsg = "Désolé, pas de fichier à supprimer.";
-        header('Location: ?action=addPhotoPage&error='. urlencode($errorMsg) .'');
+          $errorMsg = "Désolé, pas de fichier à supprimer.";
+          header('Location: ?action=addPhotoPage&error='. urlencode($errorMsg) .'');
       endif;
     }
 
@@ -78,8 +80,8 @@ class FocusGallery
             header("Content-disposition: attachment; filename=\"" . basename($file_url) . "\"");
             readfile($file_url);
         else:
-          $errorMsg = "Désolé, aucun fichier à télécharger.";
-          header('Location: ?action=addPhotoPage&error='. urlencode($errorMsg) .'');
+            $errorMsg = "Désolé, aucun fichier à télécharger.";
+            header('Location: ?action=addPhotoPage&error='. urlencode($errorMsg) .'');
         endif;
     }
 }

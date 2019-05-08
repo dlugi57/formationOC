@@ -32,14 +32,14 @@ ob_start();
           <div class="table-responsive">
             <table class="table table-hover no-margin">
               <thead>
-              <tr>
-                <th>Pseudo</th>
-                <th>Email</th>
-                <th>Date</th>
-                <th>Status</th>
-                <th>Change status</th>
-                <th>Supprimer</th>
-              </tr>
+                <tr>
+                  <th>Pseudo</th>
+                  <th>Email</th>
+                  <th>Date</th>
+                  <th>Statut</th>
+                  <th>Change statut</th>
+                  <th>Supprimer</th>
+                </tr>
               </thead>
               <tbody>
                 <?php
@@ -49,8 +49,6 @@ ob_start();
                     $statusColor = "label-danger";
                     $statusName = "demandeur";
                     $statusLink = "<a href='index.php?action=status&amp;member_id=". $data['id'] ."&amp;status=2' title='accepter demande'><i class='fa fa-user-plus' style='color:green'></i></a>";
-
-
                   elseif ($data['admin'] == 1):
                     $statusColor = "label-success";
                     $statusName = "administrateur";
@@ -81,20 +79,12 @@ ob_start();
         </div>
         <!-- /.box-body -->
         <div class="box-footer clearfix">
-
-
-            <div class="btn-group">
-              <button id="demandeur" type="button" class="btn btn-default">Demandeurs</button>
-              <button id="utilisateur" type="button" class="btn btn-default">Utilisateurs</button>
-              <button id="administrateur" type="button" class="btn btn-default">Admins</button>
-              <button id="tousMembers" type="button" class="btn btn-primary">Tous</button>
-            </div>
-
-          <ul class="pagination pagination-sm no-margin pull-right">
-            <li><a class="prevBlockDashboard">&laquo;</a></li>
-            <li><a href="index.php?action=listClients" class="btn btn-sm btn-default btn-flat">List</a></li>
-            <li><a class="nextBlockDashboard">&raquo;</a></li>
-          </ul>
+          <div class="btn-group">
+            <button id="demandeur" type="button" class="btn btn-default">Demandeurs</button>
+            <button id="utilisateur" type="button" class="btn btn-default">Utilisateurs</button>
+            <button id="administrateur" type="button" class="btn btn-default">Admins</button>
+            <button id="tousMembers" type="button" class="btn btn-primary">Tous</button>
+          </div>
         </div>
         <!-- /.box-footer -->
       </div>

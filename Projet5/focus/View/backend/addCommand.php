@@ -47,7 +47,7 @@ ob_start();
 
             <!-- select -->
             <div class="form-group">
-              <label>Commande type</label>
+              <label>Type commande</label>
               <select name="type_command" class="form-control">
                 <?php
                 while ($data = $newCommandPage->fetch()):
@@ -79,7 +79,7 @@ ob_start();
 
             <!-- Depenses -->
             <div class="form-group">
-              <label>Depenses</label>
+              <label>Dépenses</label>
               <div class="input-group date">
                 <div class="input-group-addon">
                   <i class="fa fa-money"></i>

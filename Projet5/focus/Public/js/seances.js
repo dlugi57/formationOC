@@ -1,22 +1,18 @@
 $(function () {
 if (document.location.href.indexOf("listSeances") >= 0) {
   //----------------
-  //- Monthly Seances -
+  //- Seances -
   //----------------
 
   // Get context with jQuery - using jQuery's .get() method.
   var seanceCanvas = $('#seanceChart').get(0).getContext('2d')
   // This will get the first returned node in the jQuery collection.
   var seanceChart       = new Chart(seanceCanvas)
-
-
-
-
   var seanceChartData = {
     labels  : afpMonthSeance,
     datasets: [
       {
-        label               : 'Electronics',
+        label               : 'Gains',
         fillColor           : 'rgba(210, 214, 222, 1)',
         strokeColor         : 'rgba(210, 214, 222, 1)',
         pointColor          : 'rgba(210, 214, 222, 1)',
@@ -26,7 +22,7 @@ if (document.location.href.indexOf("listSeances") >= 0) {
         data                : afpMonthSeanceCash
       },
       {
-        label               : 'Digital Goods',
+        label               : 'Depenses',
         fillColor           : 'rgba(60,141,188,0.9)',
         strokeColor         : 'rgba(60,141,188,0.8)',
         pointColor          : '#3b8bba',
@@ -81,7 +77,7 @@ if (document.location.href.indexOf("listSeances") >= 0) {
   seanceChart.Line(seanceChartData, seanceChartOptions)
 
   // ---------------------------
-  // - END MONTHLY SALES CHART -
+  // - END SEANCES -
   // ---------------------------
 }
 })

@@ -103,6 +103,7 @@ $('#loginBtn').click(function() {
     $('#pass').removeClass('is-invalid');
   }
 })
+
 //add some class to header if page move change background color to white
 $(window).on("scroll", function() {
   var scrollPos = $(window).scrollTop();

@@ -1,10 +1,6 @@
 $(function() {
-  /*
-    $('#addClientDash').click(function(){
-      $('#clientForm').removeClass('hidden');
-    })
-  */
 
+  //Initialize datatables for every list
   $('.clientsTable').DataTable({
     'paging': true,
     'lengthChange': true,
@@ -19,19 +15,19 @@ $(function() {
   $('.select2').select2()
 
 
-
-    $.fn.datepicker.dates.fr = {
-      days: ["dimanche", "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi"],
-      daysShort: ["dim.", "lun.", "mar.", "mer.", "jeu.", "ven.", "sam."],
-      daysMin: ["D", "L", "MA", "ME", "J", "V", "S"],
-      months: ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"],
-      monthsShort: ["Janv.", "Févr.", "Mars", "Avril", "Mai", "Juin", "Juil.", "Août", "Sept.", "Oct.", "Nov.", "Déc."],
-      today: "Aujourd'hui",
-      monthsTitle: "Mois",
-      clear: "Effacer",
-      weekStart: 1,
-      format: "dd/mm/yyyy"
-    }
+  //Change langage for datepicker
+  $.fn.datepicker.dates.fr = {
+    days: ["dimanche", "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi"],
+    daysShort: ["dim.", "lun.", "mar.", "mer.", "jeu.", "ven.", "sam."],
+    daysMin: ["D", "L", "MA", "ME", "J", "V", "S"],
+    months: ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"],
+    monthsShort: ["Janv.", "Févr.", "Mars", "Avril", "Mai", "Juin", "Juil.", "Août", "Sept.", "Oct.", "Nov.", "Déc."],
+    today: "Aujourd'hui",
+    monthsTitle: "Mois",
+    clear: "Effacer",
+    weekStart: 1,
+    format: "dd/mm/yyyy"
+  }
 
   //Date picker
   $('#datepickerSeance').datepicker({
@@ -47,8 +43,6 @@ $(function() {
     format: 'yyyy-mm-dd'
   })
 
-
-
   $('#datepickerTaxe').datepicker({
     autoclose: true,
     viewMode: "months",
@@ -63,7 +57,7 @@ $(function() {
     showMeridian: false
   })
 
-  //Money Euro
+  //Put data mask on inputs with telephone and code postal
   $('[data-mask]').inputmask();
 
   //MODAL
@@ -318,6 +312,7 @@ $(function() {
   })
 })
 
+//make clickable all row in every table or datatable
 $(".clickableRowClient").click(function() {
   window.location = $(this).data("href");
 });

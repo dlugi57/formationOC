@@ -16,7 +16,7 @@ $(function() {
     var areaChartData = {
       labels: arrayFromPHPMonth,
       datasets: [{
-          label: 'Electronics',
+          label: 'Brut',
           fillColor: 'rgba(210, 214, 222, 1)',
           strokeColor: 'rgba(210, 214, 222, 1)',
           pointColor: 'rgba(210, 214, 222, 1)',
@@ -26,7 +26,7 @@ $(function() {
           data: arrayFromPHPCash
         },
         {
-          label: 'Digital Goods',
+          label: 'Net',
           fillColor: 'rgba(60,141,188,0.9)',
           strokeColor: 'rgba(60,141,188,0.8)',
           pointColor: '#3b8bba',
@@ -82,13 +82,13 @@ $(function() {
     // - END MONTHLY SALES CHART -
     // ---------------------------
 
-    //-------------
-    //- BAR CHART -
-    //-------------
+    //-------------------
+    //- Monthly seances -
+    //-------------------
     var areaBarData = {
       labels: arrayFromPHPMonth,
       datasets: [{
-          label: 'Electronics',
+          label: 'Seances',
           fillColor: 'rgba(210, 214, 222, 1)',
           strokeColor: 'rgba(210, 214, 222, 1)',
           pointColor: 'rgba(210, 214, 222, 1)',
@@ -98,7 +98,7 @@ $(function() {
           data: arrayFromPHPNbSeances
         },
         {
-          label: 'Digital Goods',
+          label: 'Clients',
           fillColor: 'rgba(60,141,188,0.9)',
           strokeColor: 'rgba(60,141,188,0.8)',
           pointColor: '#3b8bba',
@@ -146,10 +146,13 @@ $(function() {
 
     barChartOptions.datasetFill = false
     barChart.Bar(barChartData, barChartOptions)
-    // -------------
-    // - PIE CHART -
-    // -------------
+    //-----------------------
+    //- END Monthly seances -
+    //-----------------------
 
+    // --------------
+    // - CONTACT BY -
+    // --------------
     // Get context with jQuery - using jQuery's .get() method.
     var pieChartCanvas = $('#pieChartContact').get(0).getContext('2d');
     var pieChart = new Chart(pieChartCanvas);
@@ -183,13 +186,13 @@ $(function() {
     // Create pie or douhnut chart
     // You can switch between pie and douhnut using the method below.
     pieChart.Doughnut(PieData, pieOptions);
-    // -----------------
-    // - END PIE CHART -
-    // -----------------
+    // ------------------
+    // - END CONTACT BY -
+    // ------------------
 
-    // -------------
-    // - PIE CHART -
-    // -------------
+    // ----------------
+    // - TYPE SESSION -
+    // ----------------
     // Get context with jQuery - using jQuery's .get() method.
     var pieChartCanvasCont = $('#pieChart').get(0).getContext('2d');
     var pieChartCont = new Chart(pieChartCanvasCont);
@@ -224,9 +227,9 @@ $(function() {
     // Create pie or douhnut chart
     // You can switch between pie and douhnut using the method below.
     pieChartCont.Doughnut(PieData, pieOptionsCont);
-    // -----------------
-    // - END PIE CHART -
-    // -----------------
+    // --------------------
+    // - END TYPE SESSION -
+    // --------------------
 
     // -----------------
     // -   AJAX INSTA  -

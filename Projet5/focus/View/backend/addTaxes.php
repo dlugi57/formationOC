@@ -30,7 +30,7 @@ ob_start();
               <div class="input-group-addon">
                 <i class="fa fa-calendar"></i>
               </div>
-              <input name="tax_date" type="text" class="form-control pull-right addTaxDate" id="datepickerTaxe" required>
+              <input name="tax_date" type="text" class="form-control pull-right addTaxDate" id="datepickerTaxe" autocomplete="off" required>
             </div>
             <span class="help-block"></span>
             <!-- /.input group -->

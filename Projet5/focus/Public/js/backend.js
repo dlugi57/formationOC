@@ -18,14 +18,32 @@ $(function() {
   //Initialize Select2 Elements
   $('.select2').select2()
 
+
+
+    $.fn.datepicker.dates.fr = {
+      days: ["dimanche", "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi"],
+      daysShort: ["dim.", "lun.", "mar.", "mer.", "jeu.", "ven.", "sam."],
+      daysMin: ["D", "L", "MA", "ME", "J", "V", "S"],
+      months: ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"],
+      monthsShort: ["Janv.", "Févr.", "Mars", "Avril", "Mai", "Juin", "Juil.", "Août", "Sept.", "Oct.", "Nov.", "Déc."],
+      today: "Aujourd'hui",
+      monthsTitle: "Mois",
+      clear: "Effacer",
+      weekStart: 1,
+      format: "dd/mm/yyyy"
+    }
+
   //Date picker
   $('#datepickerSeance').datepicker({
+    todayHighlight: true,
+    language: 'fr',
     autoclose: true,
     format: 'yyyy-mm-dd'
   })
 
   $('#datepickerSeanceModify').datepicker({
     autoclose: true,
+    language: 'fr',
     format: 'yyyy-mm-dd'
   })
 
@@ -34,6 +52,7 @@ $(function() {
   $('#datepickerTaxe').datepicker({
     autoclose: true,
     viewMode: "months",
+    language: 'fr',
     minViewMode: "months",
     format: 'yyyy-mm-dd'
   })
@@ -258,7 +277,7 @@ $(function() {
   *
   *
   */
-  $('#demandeur').click(function(){
+  $('#demandeur').click(function() {
     $('.demandeur').show();
     $('.utilisateur').hide();
     $('.administrateur').hide();
@@ -268,7 +287,7 @@ $(function() {
     $('#tousMembers').removeClass('btn-primary').addClass('btn-default');
   })
 
-  $('#utilisateur').click(function(){
+  $('#utilisateur').click(function() {
     $('.demandeur').hide();
     $('.utilisateur').show();
     $('.administrateur').hide();
@@ -278,7 +297,7 @@ $(function() {
     $('#tousMembers').removeClass('btn-primary').addClass('btn-default');
   })
 
-  $('#administrateur').click(function(){
+  $('#administrateur').click(function() {
     $('.demandeur').hide();
     $('.utilisateur').hide();
     $('.administrateur').show();
@@ -288,7 +307,7 @@ $(function() {
     $('#tousMembers').removeClass('btn-primary').addClass('btn-default');
   })
 
-  $('#tousMembers').click(function(){
+  $('#tousMembers').click(function() {
     $('.demandeur').show();
     $('.utilisateur').show();
     $('.administrateur').show();

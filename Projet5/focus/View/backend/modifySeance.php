@@ -62,7 +62,7 @@ ob_start();
                 <div class="input-group-addon">
                   <i class="fa fa-calendar"></i>
                 </div>
-                <input name="seance_date" value="<?= htmlspecialchars($modifySeance['seance_date']) ?>" type="text" class="form-control pull-right addSeanceDate" id="datepickerSeanceModify" required>
+                <input name="seance_date" value="<?= htmlspecialchars($modifySeance['seance_date']) ?>" type="text" class="form-control pull-right addSeanceDate"  autocomplete="off" id="datepickerSeanceModify" required>
               </div>
               <span class="help-block"></span>
               <!-- /.input group -->

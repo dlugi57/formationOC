@@ -28,12 +28,12 @@ ob_start();
 
           <!-- Date -->
           <div class="form-group">
-            <label>Taxe pour :</label>
+            <label>Taxe pour</label>
             <div class="input-group date">
               <div class="input-group-addon">
                 <i class="fa fa-calendar"></i>
               </div>
-              <input name="tax_date" value="<?= htmlspecialchars($modifyTax['tax_date']) ?>" type="text" class="form-control pull-right addTaxDate" id="datepickerTaxe" required>
+              <input name="tax_date" value="<?= htmlspecialchars($modifyTax['tax_date']) ?>" type="text" class="form-control pull-right addTaxDate" id="datepickerTaxe" autocomplete="off" required>
             </div>
             <span class="help-block"></span>
             <!-- /.input group -->

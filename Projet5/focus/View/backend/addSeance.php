@@ -5,7 +5,7 @@ ob_start();
 <!-- Content Header (Page header) -->
 <section class="content-header">
   <h1>
-    Ajouter Séance
+    Ajouter séance
     <small>Control panel</small>
   </h1>
 </section>
@@ -14,7 +14,7 @@ ob_start();
   <!-- general form elements disabled -->
   <div class="box box-warning">
     <div class="box-header with-border">
-      <h3 class="box-title">Ajouter Séance</h3>
+      <h3 class="box-title">Ajouter séance</h3>
     </div>
     <!-- /.box-header -->
     <form role="form" method="post" action="index.php?action=addSeance">
@@ -47,7 +47,7 @@ ob_start();
             </div>
             <!-- select -->
             <div class="form-group">
-              <label>Séance type</label>
+              <label>Type séance</label>
               <select name="type" class="form-control">
                 <?php
                 while ($data = $newSeancePage->fetch())
@@ -62,12 +62,12 @@ ob_start();
 
             <!-- Date -->
             <div class="form-group">
-              <label>Date séance:</label>
+              <label>Date séance</label>
               <div class="input-group date">
                 <div class="input-group-addon">
                   <i class="fa fa-calendar"></i>
                 </div>
-                <input name="seance_date" type="text" class="form-control pull-right addSeanceDate" id="datepickerSeance" required>
+                <input name="seance_date" type="text" class="form-control pull-right addSeanceDate" autocomplete="off" id="datepickerSeance" required>
               </div>
               <span class="help-block"></span>
               <!-- /.input group -->
@@ -77,7 +77,7 @@ ob_start();
             <!-- time Picker -->
             <div class="bootstrap-timepicker">
               <div class="form-group">
-                <label>Heure:</label>
+                <label>Heure</label>
                 <div class="input-group">
                   <div class="input-group-addon">
                     <i class="fa fa-clock-o"></i>
@@ -106,7 +106,7 @@ ob_start();
 
             <!-- Depenses -->
             <div class="form-group">
-              <label>Depenses</label>
+              <label>Dépenses</label>
               <div class="input-group date">
                 <div class="input-group-addon">
                   <i class="fa fa-money"></i>
@@ -123,7 +123,7 @@ ob_start();
           <div class="col-md-6">
             <!-- model -->
             <div class="form-group">
-              <label>Model</label>
+              <label>Modèle</label>
               <input name="model" type="text" class="form-control" maxlength="250">
             </div>
             <!-- adresse -->

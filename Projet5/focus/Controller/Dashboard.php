@@ -85,11 +85,10 @@ class Dashboard
         else:
 
             $resultsMonthCash = array();
-            while ($data = $monthSeancesCmd->fetch())
-            {
+            while ($data = $monthSeancesCmd->fetch()):
               $entrance = htmlspecialchars($data['seance_cash']) + htmlspecialchars($data['cmd_cash']);
               array_push($resultsMonthCash, intval($entrance));
-            }
+            endwhile;
 
             return $resultsMonthCash;
 
@@ -108,13 +107,12 @@ class Dashboard
         else:
 
           $resultsMonthCashNet = array();
-          while ($data = $monthSeancesCmd->fetch())
-          {
+          while ($data = $monthSeancesCmd->fetch()):
             $depenses = htmlspecialchars($data['seances_km']) * 0.15 + htmlspecialchars($data['cmd_km']) * 0.15 + htmlspecialchars($data['seance_depense']) + htmlspecialchars($data['cmd_depense']);
             $entrance = htmlspecialchars($data['seance_cash']) + htmlspecialchars($data['cmd_cash']);
             $cashNet = $entrance - $depenses;
             array_push($resultsMonthCashNet,intval($cashNet));
-          }
+          endwhile;
           return $resultsMonthCashNet;
 
         endif;
@@ -132,10 +130,9 @@ class Dashboard
         else:
 
             $resultsNbSeance = array();
-            while ($data = $monthSeances->fetch())
-            {
+            while ($data = $monthSeances->fetch()):
               array_push($resultsNbSeance,intval(htmlspecialchars($data['nb'])));
-            }
+            endwhile;
             return $resultsNbSeance;
 
         endif;
@@ -153,14 +150,13 @@ class Dashboard
         else:
 
             $resultsMonth = array();
-            while ($data = $monthClients->fetch())
-            {
+            while ($data = $monthClients->fetch()):
               $monthNum  = htmlspecialchars($data['month']);
               $monthNameEng = date('F', mktime(0, 0, 0, $monthNum, 10));
               setlocale (LC_TIME, 'fr_FR.utf8','fra');
               $monthName = utf8_encode(strftime( "%B", strtotime($monthNameEng)));
               array_push($resultsMonth, ucfirst($monthName));
-            }
+            endwhile;
             return $resultsMonth;
 
         endif;
@@ -178,10 +174,9 @@ class Dashboard
         else:
 
             $resultsNb = array();
-            while ($data = $monthClients->fetch())
-            {
+            while ($data = $monthClients->fetch()):
               array_push($resultsNb,intval(htmlspecialchars($data['nb'])));
-            }
+            endwhile;
             return $resultsNb;
 
         endif;
@@ -199,11 +194,10 @@ class Dashboard
         else:
 
             $resultsMonthPaiedTax = array();
-            while ($data = $monthPaiedTax->fetch())
-            {
+            while ($data = $monthPaiedTax->fetch()):
               $sumTax  = htmlspecialchars($data['taxesMonth']);
               array_push($resultsMonthPaiedTax, intval($sumTax));
-            }
+            endwhile;
             return $resultsMonthPaiedTax;
 
         endif;

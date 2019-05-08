@@ -68,8 +68,7 @@ class Focus
             $resultsMonthSeance = array();
             $resultsSeancesCash = array();
             $resultsSeancesDepenses = array();
-            while ($data = $monthSeances->fetch())
-            {
+            while ($data = $monthSeances->fetch()):
 
                 $monthNum  = htmlspecialchars($data['month']);
                 $monthName = date('F', mktime(0, 0, 0, $monthNum, 10));
@@ -78,7 +77,7 @@ class Focus
                 array_push($resultsMonthSeance, $monthName);
                 array_push($resultsSeancesCash, intval(htmlspecialchars($data['cash'])));
                 array_push($resultsSeancesDepenses, $depensesSeanceSummary);
-            }
+            endwhile;
 
             require('View/frontend/seancesList.php');
 

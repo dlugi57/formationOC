@@ -46,8 +46,7 @@ ob_start();
             </thead>
             <tbody>
               <?php
-              while ($data = $seances->fetch())
-              {
+              while ($data = $seances->fetch()):
               ?>
               <tr class='clickableRowClient' data-href='index.php?action=seance&amp;id=<?= $data['id_seance'] ?>'>
                 <td><?= htmlspecialchars($data['name']) ?></td>
@@ -65,7 +64,7 @@ ob_start();
                 <td><?= htmlspecialchars($data['creation_date']) ?></td>
               </tr>
               <?php
-              }
+              endwhile;
               $seances->closeCursor();
               ?>
             </tbody>
@@ -126,8 +125,7 @@ ob_start();
                   </p>
                   <?php
                   $totalSeance = htmlspecialchars($cashSummarySeance['sumPrise']);
-                  while ($data = $cashTypeSeance->fetch())
-                  {
+                  while ($data = $cashTypeSeance->fetch()):
                     $percentsSeances = (htmlspecialchars($data['summaryType'])/$totalSeance)*100;
                     ?>
                     <div class="progress-group">
@@ -139,7 +137,7 @@ ob_start();
                     </div>
                     <!-- /.progress-group -->
                     <?php
-                  }
+                  endwhile;
                   $cashTypeSeance->closeCursor();
                   ?>
                 </div>

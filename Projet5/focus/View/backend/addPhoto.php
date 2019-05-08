@@ -26,13 +26,13 @@ ob_start();
             <div class="form-group">
               <?php
               //show error messages from server
-              if (isset($_GET['error'])) {
+              if (isset($_GET['error'])):
                 ?>
                 <div class="alert alert-danger" role="alert">
                   <?= $_GET['error'] ?>
                 </div>
                 <?php
-              };
+              endif;
               ?>
               <label for="exampleInputFile">Ajouter photo</label>
               <input type="file" name="fileToUpload" id="fileToUpload">

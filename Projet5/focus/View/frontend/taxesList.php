@@ -40,8 +40,7 @@ ob_start();
             </thead>
             <tbody>
               <?php
-              while ($data = $taxes->fetch())
-              {
+              while ($data = $taxes->fetch()):              
                 $monthNameEng = date('F', mktime(0, 0, 0, $data['month'], 10));
                 setlocale (LC_TIME, 'fr_FR.utf8','fra');
                 $monthName = utf8_encode(strftime( "%B", strtotime($monthNameEng)));
@@ -56,7 +55,7 @@ ob_start();
                 <td><?= htmlspecialchars($data['taxe_date_add']) ?></td>
               </tr>
               <?php
-              }
+              endwhile;
               $taxes->closeCursor();
               ?>
             </tbody>

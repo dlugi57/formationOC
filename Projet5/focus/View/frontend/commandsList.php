@@ -40,8 +40,7 @@ ob_start();
             </thead>
             <tbody>
               <?php
-              while ($data = $commands->fetch())
-              {
+              while ($data = $commands->fetch()):
               ?>
               <tr class='clickableRowClient' data-href='index.php?action=command&amp;id=<?= $data['id_command'] ?>'>
                 <td><?= htmlspecialchars($data['name']) ?></td>
@@ -53,7 +52,7 @@ ob_start();
                 <td><?= htmlspecialchars($data['command_date_fr']) ?></td>
               </tr>
               <?php
-              }
+              endwhile;
               $commands->closeCursor();
               ?>
             </tbody>

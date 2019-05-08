@@ -99,8 +99,7 @@ ob_start();
               </thead>
               <tbody>
                 <?php
-                while ($seanceData = $seance->fetch())
-                {
+                while ($seanceData = $seance->fetch()):
                   ?>
                   <tr class='clickableRowClient' data-href='index.php?action=seance&amp;id=<?= $seanceData['id_seance'] ?>'>
                     <td><?= htmlspecialchars($seanceData['name']) ?></td>
@@ -110,7 +109,7 @@ ob_start();
                     <td><?= htmlspecialchars($seanceData['prise']) ?> €</td>
                   </tr>
                   <?php
-                }
+                endwhile;
                 ?>
               </tbody>
             </table>
@@ -153,8 +152,7 @@ ob_start();
               </thead>
               <tbody>
                 <?php
-                while ($commandData = $command->fetch())
-                {
+                while ($commandData = $command->fetch()):
                   ?>
                   <tr class='clickableRowClient' data-href='index.php?action=command&amp;id=<?= $commandData['id_command'] ?>'>
                     <td><?= htmlspecialchars($commandData['nom_type_command']) ?></td>
@@ -165,7 +163,7 @@ ob_start();
                     <td><?= htmlspecialchars($commandData['command_date_fr']) ?></td>
                   </tr>
                   <?php
-                }
+                endwhile;
                 $command->closeCursor();
                 ?>
               </tbody>

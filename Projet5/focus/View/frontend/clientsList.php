@@ -42,8 +42,7 @@ ob_start();
             </thead>
             <tbody>
               <?php
-              while ($data = $clients->fetch())
-              {
+              while ($data = $clients->fetch()):
               ?>
               <tr class='clickableRowClient' data-href='index.php?action=client&amp;id=<?= $data['id_client'] ?>'>
                 <td><?= htmlspecialchars($data['name']) ?></td>
@@ -57,7 +56,7 @@ ob_start();
                 <td><?= htmlspecialchars($data['creation_date_fr']) ?></td>
               </tr>
               <?php
-              }
+              endwhile;
               $clients->closeCursor();
               ?>
             </tbody>

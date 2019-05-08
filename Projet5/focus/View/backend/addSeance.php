@@ -35,12 +35,11 @@ ob_start();
                   <option value="" selected="selected"></option>
                   <?php
                 endif;
-                while ($data = $clientsList->fetch())
-                {
+                while ($data = $clientsList->fetch()):
                   ?>
                   <option value="<?= $data['id_client'] ?>"><?= htmlspecialchars($data['name']) ?></option>
                   <?php
-                }
+                endwhile;
                 ?>
               </select>
               <span class="help-block"></span>
@@ -50,12 +49,11 @@ ob_start();
               <label>Type séance</label>
               <select name="type" class="form-control">
                 <?php
-                while ($data = $newSeancePage->fetch())
-                {
+                while ($data = $newSeancePage->fetch()):
                   ?>
                   <option value="<?= $data['id_type_seance'] ?>"><?= htmlspecialchars($data['nom_type']) ?></option>
                   <?php
-                }
+                endwhile;
                  ?>
               </select>
             </div>

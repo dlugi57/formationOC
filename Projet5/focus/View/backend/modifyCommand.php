@@ -14,7 +14,7 @@ ob_start();
   <!-- general form elements disabled -->
   <div class="box box-warning">
     <div class="box-header with-border">
-      <h3 class="box-title">Modifier command</h3>
+      <h3 class="box-title">Modifier commande</h3>
     </div>
     <!-- /.box-header -->
     <form role="form" method="post" action="index.php?action=modifyCommand&amp;id=<?= $modifyCommand['id_command'] ?>">
@@ -42,7 +42,7 @@ ob_start();
 
             <!-- select -->
             <div class="form-group">
-              <label>Commande type</label>
+              <label>Type commande</label>
               <select name="type_command" class="form-control">
                 <option value="<?= $modifyCommand['id_type_command'] ?>" selected="selected"><?= htmlspecialchars($modifyCommand['nom_type_command']) ?></option>
                 <?php
@@ -76,7 +76,7 @@ ob_start();
 
             <!-- Depenses -->
             <div class="form-group">
-              <label>Depenses</label>
+              <label>Dépenses</label>
               <div class="input-group date">
                 <div class="input-group-addon">
                   <i class="fa fa-money"></i>

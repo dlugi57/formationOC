@@ -108,7 +108,8 @@ class SeanceManager extends Manager
         return $req;
     }
 
-    public function monthSeancesCmd(){
+    public function monthSeancesCmd()
+    {
         $db = $this->dbConnect();
         $sql = 'SELECT monthname(creation_date), sum(val1) seance_cash, sum(val2) cmd_cash, sum(val3) seance_depense, sum(val4) cmd_depense, sum(val5) seances_km, sum(val6) cmd_km from (select creation_date, val1, val2 , val3, val4, val5, val6
                 from (select creation_date, prise val1, 0 val2 , depenses val3, 0 val4, km val5, 0 val6
@@ -124,7 +125,8 @@ class SeanceManager extends Manager
        return $req;
     }
 
-    public function typeSession(){
+    public function typeSession()
+    {
         $db = $this->dbConnect();
         $sql = 'SELECT count(s.id_seance) as nb, s.type, t.nom_type, t.color_camembert, t.color_dash, t.color_boot FROM seances s INNER JOIN type_seance t ON s.type = t.id_type_seance GROUP BY t.nom_type ORDER BY nb DESC';
         $req = $db->query($sql);
@@ -132,7 +134,8 @@ class SeanceManager extends Manager
         return $req;
     }
 
-    public function typeCashSession(){
+    public function typeCashSession()
+    {
         $db = $this->dbConnect();
         $sql = 'SELECT sum(prise) AS summaryType, color_boot, nom_type FROM `seances` INNER JOIN type_seance ON id_type_seance = type GROUP BY type ORDER BY summaryType DESC LIMIT 0,4';
         $req = $db->query($sql);

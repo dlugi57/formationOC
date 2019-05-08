@@ -28,26 +28,24 @@ class MemberManager extends Manager
               return "nickExist";
 
             endif;
-
     }
 
-    public function login($login, $password){
+    public function login($login, $password)
+    {
+        $db = $this->dbConnect();
+        $user = $db->prepare('SELECT admin, pass, id FROM membres WHERE pseudo = :pseudo');
+        $user->execute(array('pseudo' => $login));
+        $connectMember = $user->fetch();
 
-      $db = $this->dbConnect();
-      $user = $db->prepare('SELECT admin, pass, id FROM membres WHERE pseudo = :pseudo');
-      $user->execute(array('pseudo' => $login));
-      $connectMember = $user->fetch();
-
-      return $connectMember;
-
+        return $connectMember;
     }
 
     public function getMembers()
     {
-      $db = $this->dbConnect();
-      $req = $db->query('SELECT *, DATE_FORMAT(date_inscription, \'%d/%m/%Y\') AS inscription_date_fr FROM membres  ORDER BY date_inscription DESC');
+        $db = $this->dbConnect();
+        $req = $db->query('SELECT *, DATE_FORMAT(date_inscription, \'%d/%m/%Y\') AS inscription_date_fr FROM membres  ORDER BY date_inscription DESC');
 
-      return $req;
+        return $req;
     }
 
     public function changeStatus($memberId, $memberStatus)
@@ -66,5 +64,5 @@ class MemberManager extends Manager
         $request->execute(array('id' => $id));
 
         $request->closeCursor();
-    }    
+    }
 }

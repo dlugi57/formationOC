@@ -101,5 +101,4 @@ class ClientManager extends Manager
 
         $request->closeCursor();
     }
-
 }

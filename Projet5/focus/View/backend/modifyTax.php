@@ -1,12 +1,14 @@
 <?php
 $title = "Modifier taxe | Sunny Moments";
-$monthTaxShow = date('F', mktime(0, 0, 0, htmlspecialchars($modifyTax['month']), 10));
+$monthTaxShowEng = date('F', mktime(0, 0, 0, htmlspecialchars($modifyTax['month']), 10));
+setlocale (LC_TIME, 'fr_FR.utf8','fra');
+$monthTaxShow = utf8_encode(strftime( "%B", strtotime($monthTaxShowEng)));
 ob_start();
 ?>
 <!-- Content Header (Page header) -->
 <section class="content-header">
   <h1>
-    <?= $monthTaxShow ?>
+    <?= ucfirst($monthTaxShow) ?>
     <small>Modifier taxe</small>
   </h1>
 </section>
@@ -39,7 +41,7 @@ ob_start();
           <!-- /.form group -->
           <!-- Prix -->
           <div class="form-group">
-            <label>Taxe declare</label>
+            <label>Taxe déclaré</label>
             <div class="input-group date">
               <div class="input-group-addon">
                 <i class="fa fa-eur"></i>
@@ -53,7 +55,7 @@ ob_start();
 
           <!-- Depenses -->
           <div class="form-group">
-            <label>Taxe paie</label>
+            <label>Taxe payée</label>
             <div class="input-group date">
               <div class="input-group-addon">
                 <i class="fa fa-money"></i>

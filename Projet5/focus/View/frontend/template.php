@@ -191,7 +191,7 @@
         ?>
           <li>
             <a href="index.php?action=membersList">
-              <i class="fa fa-user"></i> <span>Members</span>
+              <i class="fa fa-user"></i> <span>Membres</span>
             </a>
           </li>
         <?php

@@ -25,7 +25,7 @@ ob_start();
 
           <!-- Date -->
           <div class="form-group">
-            <label>Taxe pour :</label>
+            <label>Taxe pour</label>
             <div class="input-group date">
               <div class="input-group-addon">
                 <i class="fa fa-calendar"></i>
@@ -38,7 +38,7 @@ ob_start();
           <!-- /.form group -->
           <!-- Prix -->
           <div class="form-group">
-            <label>Taxe declare</label>
+            <label>Taxe déclare</label>
             <div class="input-group date">
               <div class="input-group-addon">
                 <i class="fa fa-eur"></i>
@@ -52,7 +52,7 @@ ob_start();
 
           <!-- Depenses -->
           <div class="form-group">
-            <label>Taxe paie</label>
+            <label>Taxe payée</label>
             <div class="input-group date">
               <div class="input-group-addon">
                 <i class="fa fa-money"></i>

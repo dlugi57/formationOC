@@ -1,6 +1,6 @@
 <?php
 $title = "Taxe | Sunny Moments";
-setlocale (LC_TIME, 'fr_FR.utf8','fra');
+setlocale (LC_TIME, 'fr_FR','fr_FR.utf8','fra');
 $monthTaxShowEng = date('F', mktime(0, 0, 0, htmlspecialchars($taxe['month']), 10));
 $monthTaxShow = utf8_encode(strftime( "%B", strtotime($monthTaxShowEng)));
 ob_start();

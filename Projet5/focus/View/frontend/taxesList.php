@@ -42,7 +42,7 @@ ob_start();
               <?php
               while ($data = $taxes->fetch()):
                 $monthNameEng = date('F', mktime(0, 0, 0, $data['month'], 10));
-                setlocale (LC_TIME, 'fr_FR.utf8','fra');
+                setlocale (LC_TIME, 'fr_FR','fr_FR.utf8','fra');
                 $monthName = utf8_encode(strftime( "%B", strtotime($monthNameEng)));
               ?>
               <tr class='clickableRowClient' data-href='index.php?action=taxe&amp;id=<?= $data['tax_id'] ?>'>

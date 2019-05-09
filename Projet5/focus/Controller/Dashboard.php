@@ -132,11 +132,10 @@ class Dashboard
             while ($data = $monthClients->fetch()):
                 $monthNum  = htmlspecialchars($data['month']);
                 $monthNameEng = date('F', mktime(0, 0, 0, $monthNum, 10));
-                setlocale (LC_TIME, 'fr_FR.utf8','fra');
+                setlocale(LC_TIME, 'fr_FR','fr_FR.utf8','fra');
                 $monthName = utf8_encode(strftime( "%B", strtotime($monthNameEng)));
                 array_push($resultsMonth, ucfirst($monthName));
             endwhile;
-
             return $resultsMonth;
 
         endif;
@@ -213,7 +212,7 @@ class Dashboard
             throw new Exception('Impossible d\'afficher le sumNet contenue!');
         else:
             $summary = htmlspecialchars($sumBrutSeances['sumPrise']) + htmlspecialchars($sumBrutCmd['sumPriseCmd']);
-            
+
             return $summary;
 
         endif;

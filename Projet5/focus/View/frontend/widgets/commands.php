@@ -20,7 +20,7 @@
       <?php
       while ($data = $sumMonthCmd->fetch()):
         $monthNameEng = date('F', mktime(0, 0, 0, $data['month'], 10));
-        setlocale (LC_TIME, 'fr_FR.utf8','fra');
+        setlocale (LC_TIME, 'fr_FR','fr_FR.utf8','fra');
         $monthName = utf8_encode(strftime( "%B", strtotime($monthNameEng)));
         $percentsCmd = (($data['cash']-$data['paied'])/$data['cash'])*100;
         $gainedCmd = $data['cash']-$data['paied'];

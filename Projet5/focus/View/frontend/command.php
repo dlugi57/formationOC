@@ -115,6 +115,9 @@ ob_start();
           <?php
           endif;
            ?>
+           <div class="btn-group pull-right">
+             <a href="index.php?action=listCommands" class="btn btn-default"><b>Commands list</b></a>&nbsp;&nbsp;&nbsp;
+           </div>
         </div>
         <!-- /.box-body -->
       </div>

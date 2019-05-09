@@ -56,15 +56,18 @@ ob_start();
           <?php
           if (isset($_SESSION['admin']) && $_SESSION['admin'] == 1):
           ?>
-          <hr>
-          <div>
-            <?php $modalMsg = "Êtes vous sûr de vouloir supprimer client?"; ?>
-            <a data-href="index.php?action=removeClient&amp;id=<?= $client['id_client'] ?>" class="btn btn-danger pull-left" data-toggle="modal" data-target="#modalShow"><b><i class="fa fa-trash-o"></i></b></a>
-            <a href="index.php?action=modifyClientPage&amp;id=<?= $client['id_client'] ?>" class="btn btn-primary pull-right"><b>Modifier</b></a>
-          </div>
+            <hr>
+            <div>
+              <?php $modalMsg = "Êtes vous sûr de vouloir supprimer client?"; ?>
+              <a data-href="index.php?action=removeClient&amp;id=<?= $client['id_client'] ?>" class="btn btn-danger pull-left" data-toggle="modal" data-target="#modalShow"><b><i class="fa fa-trash-o"></i></b></a>
+              <a href="index.php?action=modifyClientPage&amp;id=<?= $client['id_client'] ?>" class="btn btn-primary pull-right"><b>Modifier</b></a>
+            </div>
           <?php
           endif;
-           ?>
+          ?>
+          <div class="btn-group pull-right">
+            <a href="index.php?action=listClients" class="btn btn-default"><b>Clients list</b></a>&nbsp;&nbsp;&nbsp;
+          </div>
         </div>
         <!-- /.box-body -->
       </div>

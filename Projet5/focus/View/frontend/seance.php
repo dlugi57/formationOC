@@ -148,7 +148,10 @@ $dayOfWeek = $days[$dayofweek];
             </div>
           <?php
           endif;
-           ?>
+          ?>
+          <div class="btn-group pull-right">
+            <a href="index.php?action=listSeances" class="btn btn-default"><b>Séances list</b></a>&nbsp;&nbsp;&nbsp;
+          </div>
         </div>
         <!-- /.box-body -->
       </div>

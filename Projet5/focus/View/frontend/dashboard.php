@@ -21,7 +21,7 @@ ob_start();
       <div class="small-box bg-aqua">
         <div class="inner">
           <h3><?= intval(htmlspecialchars($sumNet)) ?><sup style="font-size: 20px">€</sup></h3>
-          <p>Net = Séances + CMD - Taxe</p>
+          <p>Séances + CMD - Taxe</p>
         </div>
         <div class="icon">
           <i class="fa fa-home"></i>
@@ -36,7 +36,7 @@ ob_start();
       <div class="small-box bg-green">
         <div class="inner">
           <h3><?= intval(htmlspecialchars($sumBrut)) ?><sup style="font-size: 20px">€</sup></h3>
-          <p>Brut = Séances + CMD</p>
+          <p>Séances + CMD</p>
         </div>
         <div class="icon">
           <i class="fa fa-money"></i>
@@ -100,7 +100,7 @@ ob_start();
       if (isset($_SESSION['admin']) && ($_SESSION['admin'] == 1)):
         require('widgets/insta.php');
         require('widgets/fb.php');
-      endif; 
+      endif;
       ?>
     </section>
     <!-- right col -->

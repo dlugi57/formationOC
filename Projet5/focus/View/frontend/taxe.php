@@ -50,15 +50,20 @@ ob_start();
           <?php
           if (isset($_SESSION['admin']) && $_SESSION['admin'] == 1):
           ?>
-          <hr>
-          <div>
-            <?php $modalMsg = "Êtes vous sûr de vouloir supprimer taxe?"; ?>
-            <a data-href="index.php?action=removeTaxe&amp;id=<?= $taxe['tax_id'] ?>" class="btn btn-danger pull-left" data-toggle="modal" data-target="#modalShow"><b><i class="fa fa-trash-o"></i></b></a>
-            <a href="index.php?action=modifyTaxesPage&amp;id=<?= $taxe['tax_id'] ?>" class="btn btn-primary pull-right"><b>Modifier</b></a>
-          </div>
+            <hr>
+            <div>
+              <?php $modalMsg = "Êtes vous sûr de vouloir supprimer taxe?"; ?>
+              <a data-href="index.php?action=removeTaxe&amp;id=<?= $taxe['tax_id'] ?>" class="btn btn-danger pull-left" data-toggle="modal" data-target="#modalShow"><b><i class="fa fa-trash-o"></i></b></a>
+
+              <a href="index.php?action=modifyTaxesPage&amp;id=<?= $taxe['tax_id'] ?>" class="btn btn-primary pull-right"><b>Modifier</b></a>
+
+            </div>
           <?php
           endif;
-           ?>
+          ?>
+          <div class="btn-group pull-right">
+            <a href="index.php?action=listTaxes" class="btn btn-default"><b>Taxe list</b></a>&nbsp;&nbsp;&nbsp;
+          </div>
         </div>
         <!-- /.box-body -->
       </div>

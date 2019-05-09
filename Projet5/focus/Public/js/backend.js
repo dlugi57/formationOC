@@ -7,8 +7,36 @@ $(function() {
     'searching': true,
     'ordering': true,
     'info': true,
+    'autoWidth': true,
+    "order": [ 8, 'desc' ]
+  })
+  $('.seanceTable').DataTable({
+    'paging': true,
+    'lengthChange': true,
+    'searching': true,
+    'ordering': true,
+    'info': true,
+    'autoWidth': true,
+    "order": [ 12, 'desc' ]
+  })
+  $('.commandTable').DataTable({
+    'paging': true,
+    'lengthChange': true,
+    'searching': true,
+    'ordering': true,
+    'info': true,
+    'autoWidth': true,
+    "order": [ 6, 'desc' ]
+  })
+  $('.texeTable').DataTable({
+    'paging': true,
+    'lengthChange': true,
+    'searching': true,
+    'ordering': true,
+    'info': true,
     'autoWidth': true
   })
+
 
 
   //Initialize Select2 Elements

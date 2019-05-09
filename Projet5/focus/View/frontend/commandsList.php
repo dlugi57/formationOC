@@ -26,7 +26,7 @@ ob_start();
         <!-- /.box-header -->
         <div class="box-body">
           <div class="table-responsive">
-          <table class="clientsTable table table-bordered table-striped table-hover">
+          <table class="commandTable table table-bordered table-striped table-hover">
             <thead>
             <tr>
               <th>Nom</th>
@@ -49,7 +49,7 @@ ob_start();
                 <td><?= htmlspecialchars($data['cost_command']) ?> €</td>
                 <td><?= $cashCmdNet = htmlspecialchars($data['prise_command']) - htmlspecialchars($data['cost_command']) ?> €</td>
                 <td><?= htmlspecialchars($data['description_command']) ?></td>
-                <td><?= htmlspecialchars($data['command_date_fr']) ?></td>
+                <td data-order="<?= $data['command_date'] ?>"><?= htmlspecialchars($data['command_date_fr']) ?></td>
               </tr>
               <?php
               endwhile;

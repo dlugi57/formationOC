@@ -26,7 +26,7 @@ ob_start();
         <!-- /.box-header -->
         <div class="box-body">
           <div class="table-responsive">
-          <table class="clientsTable table table-bordered table-striped table-hover">
+          <table class="texeTable table table-bordered table-striped table-hover">
             <thead>
             <tr>
               <th>Mois</th>
@@ -40,13 +40,13 @@ ob_start();
             </thead>
             <tbody>
               <?php
-              while ($data = $taxes->fetch()):              
+              while ($data = $taxes->fetch()):
                 $monthNameEng = date('F', mktime(0, 0, 0, $data['month'], 10));
                 setlocale (LC_TIME, 'fr_FR.utf8','fra');
                 $monthName = utf8_encode(strftime( "%B", strtotime($monthNameEng)));
               ?>
               <tr class='clickableRowClient' data-href='index.php?action=taxe&amp;id=<?= $data['tax_id'] ?>'>
-                <td>(<?= $data['month'] ?>) <?= ucfirst($monthName) ?></td>
+                <td data-order="<?= $data['tax_date'] ?>"> <?= ucfirst($monthName) ?></td>
                 <td><?= htmlspecialchars($data['tax_declare']) ?> €</td>
                 <td><?= htmlspecialchars($data['tax_paid']) ?> €</td>
                 <td><?= $percentsTaxRow = intval((htmlspecialchars($data['tax_paid'])/htmlspecialchars($data['tax_declare']))*100); ?> %</td>

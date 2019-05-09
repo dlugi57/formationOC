@@ -26,7 +26,7 @@ ob_start();
         <!-- /.box-header -->
         <div class="box-body">
           <div class="table-responsive">
-          <table class="clientsTable table table-bordered table-striped table-hover">
+          <table class="seanceTable table table-bordered table-striped table-hover">
             <thead>
             <tr>
               <th>Nom</th>
@@ -51,7 +51,7 @@ ob_start();
               <tr class='clickableRowClient' data-href='index.php?action=seance&amp;id=<?= $data['id_seance'] ?>'>
                 <td><?= htmlspecialchars($data['name']) ?></td>
                 <td><?= htmlspecialchars($data['nom_type']) ?></td>
-                <td><?= htmlspecialchars($data['seance_date_fr']) ?></td>
+                <td data-order="<?= $data['seance_date'] ?>"><?= htmlspecialchars($data['seance_date_fr']) ?></td>
                 <td><?= htmlspecialchars($data['time_seance']) ?></td>
                 <td><?= htmlspecialchars($data['prise']) ?> €</td>
                 <td><?= htmlspecialchars($data['model']) ?></td>

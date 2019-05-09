@@ -43,19 +43,19 @@ ob_start();
             <tbody>
               <?php
               while ($data = $clients->fetch()):
-              ?>
-              <tr class='clickableRowClient' data-href='index.php?action=client&amp;id=<?= $data['id_client'] ?>'>
-                <td><?= htmlspecialchars($data['name']) ?></td>
-                <td><?= htmlspecialchars($data['tel']) ?></td>
-                <td><?= htmlspecialchars($data['email']) ?></td>
-                <td><?= htmlspecialchars($data['city']) ?></td>
-                <td><?= htmlspecialchars($data['adress']) ?></td>
-                <td><?= htmlspecialchars($data['post_code']) ?></td>
-                <td><?= htmlspecialchars($data['nom_contact_by']) ?></td>
-                <td><?= htmlspecialchars($data['description']) ?></td>
-                <td><?= htmlspecialchars($data['creation_date_fr']) ?></td>
-              </tr>
-              <?php
+                ?>
+                <tr class='clickableRowClient' data-href='index.php?action=client&amp;id=<?= $data['id_client'] ?>'>
+                  <td><?= htmlspecialchars($data['name']) ?></td>
+                  <td><?= htmlspecialchars($data['tel']) ?></td>
+                  <td><?= htmlspecialchars($data['email']) ?></td>
+                  <td><?= htmlspecialchars($data['city']) ?></td>
+                  <td><?= htmlspecialchars($data['adress']) ?></td>
+                  <td><?= htmlspecialchars($data['post_code']) ?></td>
+                  <td><?= htmlspecialchars($data['nom_contact_by']) ?></td>
+                  <td><?= htmlspecialchars($data['description']) ?></td>
+                  <td data-order="<?= $month = strtotime($data['creation_date']); ?>"><?= htmlspecialchars($data['creation_date_fr']) ?></td>
+                </tr>
+                <?php
               endwhile;
               $clients->closeCursor();
               ?>

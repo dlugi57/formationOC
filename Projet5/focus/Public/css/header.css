@@ -160,4 +160,8 @@
   .header li {
     float: none;
   }
+
+  .header .logo {
+    margin-left: 0;
+  }
 }
